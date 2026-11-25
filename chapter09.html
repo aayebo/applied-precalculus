@@ -1,0 +1,1308 @@
+<!DOCTYPE html>
+
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8"/>
+<meta content="pandoc" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+<title>Trigonometric
+Functions and Their Graphs | Applied Precalculus</title>
+<style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+
+
+<link href="site.css" rel="stylesheet"/><script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script defer="" src="search-index.js"></script><script defer="" src="site.js"></script></head><body><nav class="site-nav" id="book-nav"><strong class="brand">Applied Precalculus</strong><p class="subtitle">Using R and Python</p><input aria-label="Search the book" id="book-search" placeholder="Search the book"/><div aria-live="polite" class="search-results" id="search-results"></div><p class="nav-label">Contents</p><a class="" href="index.html">Preface</a><a class="" href="chapter01.html">1. Real Numbers, Algebraic Expressions, and Mathematical Reasoning</a><a class="" href="chapter02.html">2. Equations, Inequalities, and Applications</a><a class="" href="chapter03.html">3. Coordinate Geometry, Lines, and Systems of Equations</a><a class="" href="chapter04.html">4. Functions, Graphs, and Multiple Representations</a><a class="" href="chapter05.html">5. Transformations, Compositions, and Inverse Functions</a><a class="" href="chapter06.html">6. Polynomial and Rational Functions</a><a class="" href="chapter07.html">7. Exponential and Logarithmic Functions</a><a class="" href="chapter08.html">8. Angles, Radian Measure, and the Unit Circle</a><a class="active" href="chapter09.html">9. Trigonometric Functions and Their Graphs</a><a class="" href="chapter10.html">10. Trigonometric Identities and Equations</a><a class="" href="chapter11.html">11. Applications of Trigonometry and Periodic Models</a><a class="" href="chapter12.html">12. Sequences, Series, and Mathematical Patterns</a><a class="" href="chapter13.html">13. Conic Sections and Parametric Equations</a><a class="" href="chapter14.html">14. Vectors, Polar Coordinates, and Geometric Modeling</a><a class="" href="chapter15.html">15. Rates of Change, Difference Quotients, and Limits</a><a class="" href="chapter16.html">16. Integrated Mathematical Modeling with R and Python</a><a class="" href="programming.html">Getting Started with R and Python</a><a class="" href="resources.html">Computational Resource Guide</a></nav><a class="skip" href="#main-content">Skip to content</a><header class="topbar"><button aria-controls="book-nav" aria-expanded="false" class="menu">Contents</button><span>Applied Precalculus / Online edition</span><span class="spacer"></span><a href="resources.html">Resources</a></header><div class="page-grid"><main id="main-content">
+
+<h1 id="trigonometric-functions-and-their-graphs">Trigonometric
+Functions and Their Graphs</h1>
+<h2 class="unnumbered" id="opening-context-periodic-signals-in-health-sciences">Opening
+context: periodic signals in health sciences</h2>
+<p>Breathing, heart rhythms, daily temperature cycles, and rotating
+sensors motivate the study of periodic functions. This chapter develops
+graph-based and algebraic models from the unit-circle ideas of Chapter
+8.</p>
+<h2 class="unnumbered" id="learning-outcomes">Learning outcomes</h2>
+<p>Students will sketch and interpret sine, cosine, tangent, cotangent,
+secant, and cosecant; identify amplitude, midline, period, and phase
+shift; construct periodic models from data; solve basic trigonometric
+equations; and use R and Python to investigate model behavior.</p>
+<h2 class="unnumbered" id="prerequisite-check">Prerequisite check</h2>
+<p>Review radians, the unit circle, exact values at multiples of <span class="math inline">\(\pi/6\)</span> and <span class="math inline">\(\pi/4\)</span>, and function transformations from
+Chapter 5.</p>
+<h2 class="unnumbered" id="computational-workflow">Computational
+workflow</h2>
+<p>For each investigation, first predict the mathematics, then run the R
+listing, followed by the equivalent Python listing. The listings are
+deliberately sequential rather than side-by-side.</p>
+<h2 id="from-circular-motion-to-periodic-functions">From circular motion
+to periodic functions</h2>
+<p>A point rotating counterclockwise on the unit circle through angle
+<span class="math inline">\(t\)</span> has horizontal and vertical
+coordinates <span class="math inline">\(\cos t\)</span> and <span class="math inline">\(\sin t\)</span>. Plotting these coordinates
+against <span class="math inline">\(t\)</span> creates the cosine and
+sine graphs. A periodic function satisfies <span class="math inline">\(f(t+P)=f(t)\)</span> for all inputs in its domain
+and some <span class="math inline">\(P&gt;0\)</span>; the smallest such
+positive <span class="math inline">\(P\)</span>, when it exists, is the
+fundamental period. For sine and cosine, <span class="math inline">\(P=2\pi\)</span>. Unlike the circle itself, the
+graph of sine has horizontal input measured in radians and vertical
+output measured as a coordinate.</p>
+<p><strong>Example.</strong> Find <span class="math inline">\(\sin(13\pi/6)\)</span> and explain the repetition.
+Since <span class="math inline">\(13\pi/6=2\pi+\pi/6\)</span>,
+periodicity gives <span class="math inline">\(\sin(13\pi/6)=1/2\)</span>.</p>
+<p><strong>Guided practice.</strong> Use periodicity to evaluate <span class="math inline">\(\cos(-11\pi/3)\)</span> and <span class="math inline">\(\sin(17\pi/4)\)</span> without a calculator.</p>
+<h5 id="reasoning-check.">Reasoning check.</h5>
+<p>Explain which conclusions follow from exact mathematics and which
+depend on a modeling assumption. State the domain and units where
+appropriate.</p>
+<h2 id="graphing-sine-and-cosine">Graphing sine and cosine</h2>
+<p>The five quarter-period points of <span class="math inline">\(y=\sin
+x\)</span> on <span class="math inline">\([0,2\pi]\)</span> are <span class="math inline">\((0,0)\)</span>, <span class="math inline">\((\pi/2,1)\)</span>, <span class="math inline">\((\pi,0)\)</span>, <span class="math inline">\((3\pi/2,-1)\)</span>, and <span class="math inline">\((2\pi,0)\)</span>. For <span class="math inline">\(y=\cos x\)</span>, the corresponding outputs are
+<span class="math inline">\(1,0,-1,0,1\)</span>. Smoothness between
+these points is important: connecting them with straight lines would not
+reproduce the trigonometric functions. Both have domain <span class="math inline">\(\mathbb R\)</span> and range <span class="math inline">\([-1,1]\)</span>. Sine is odd, <span class="math inline">\(\sin(-x)=-\sin x\)</span>; cosine is even, <span class="math inline">\(\cos(-x)=\cos x\)</span>.</p>
+<p><strong>Example.</strong> Locate all maxima of <span class="math inline">\(\cos x\)</span> on <span class="math inline">\([-2\pi,2\pi]\)</span>. They occur at <span class="math inline">\(-2\pi,0,2\pi\)</span>.</p>
+<p><strong>Guided practice.</strong> Sketch two full cycles of sine and
+cosine; label zeros, extrema, and the period.</p>
+<h5 id="reasoning-check.-1">Reasoning check.</h5>
+<p>Explain which conclusions follow from exact mathematics and which
+depend on a modeling assumption. State the domain and units where
+appropriate.</p>
+<figure>
+<img alt="image" src="figures/precompiled/chapter09-01.svg"/>
+<figcaption aria-hidden="true">image</figcaption>
+</figure>
+<h2 id="amplitude-midline-and-vertical-changes">Amplitude, midline, and
+vertical changes</h2>
+<p>Consider <span class="math inline">\(y=A\sin x+D\)</span> or <span class="math inline">\(y=A\cos x+D\)</span>. The amplitude is <span class="math inline">\(|A|\)</span> and the midline is <span class="math inline">\(y=D\)</span>. When <span class="math inline">\(A\ne0\)</span>, the range is <span class="math inline">\([D-|A|,D+|A|]\)</span>. A negative <span class="math inline">\(A\)</span> reflects the basic curve about its
+midline. Amplitude is a nonnegative distance, never a signed
+quantity.</p>
+<p><strong>Example.</strong> For <span class="math inline">\(y=-3\cos
+x+2\)</span>, the amplitude is <span class="math inline">\(3\)</span>,
+midline <span class="math inline">\(2\)</span>, maximum <span class="math inline">\(5\)</span>, and minimum <span class="math inline">\(-1\)</span>. At <span class="math inline">\(x=0\)</span>, the output is <span class="math inline">\(-1\)</span>.</p>
+<p><strong>Guided practice.</strong> Determine amplitude, midline,
+maximum, and minimum for <span class="math inline">\(y=4\sin
+x-1\)</span> and <span class="math inline">\(y=-\tfrac12\cos
+x+3\)</span>.</p>
+<h5 id="reasoning-check.-2">Reasoning check.</h5>
+<p>Explain which conclusions follow from exact mathematics and which
+depend on a modeling assumption. State the domain and units where
+appropriate.</p>
+<h2 id="period-and-horizontal-scaling">Period and horizontal
+scaling</h2>
+<p>For <span class="math inline">\(y=A\sin(Bx)+D\)</span> and <span class="math inline">\(y=A\cos(Bx)+D\)</span> with <span class="math inline">\(B\ne0\)</span>, the fundamental period is <span class="math inline">\(P=2\pi/|B|\)</span>. The parameter <span class="math inline">\(B\)</span> controls the horizontal scale, not the
+amplitude. Larger <span class="math inline">\(|B|\)</span> means more
+cycles in the same interval. The quarter-period is <span class="math inline">\(P/4\)</span>, useful when constructing graphs by
+hand.</p>
+<p><strong>Example.</strong> For <span class="math inline">\(y=2\sin(3x)\)</span>, the period is <span class="math inline">\(2\pi/3\)</span> and quarter-period <span class="math inline">\(\pi/6\)</span>. Starting at <span class="math inline">\(x=0\)</span>, the five key outputs are <span class="math inline">\(0,2,0,-2,0\)</span>.</p>
+<p><strong>Guided practice.</strong> Find the periods of <span class="math inline">\(\cos(x/4)\)</span> and <span class="math inline">\(\sin(-5x)\)</span> and sketch one cycle of
+each.</p>
+<h5 id="reasoning-check.-3">Reasoning check.</h5>
+<p>Explain which conclusions follow from exact mathematics and which
+depend on a modeling assumption. State the domain and units where
+appropriate.</p>
+<h2 id="phase-shifts-and-the-complete-sinusoidal-model">Phase shifts and
+the complete sinusoidal model</h2>
+<p>A flexible model is <span class="math inline">\(f(x)=A\sin(B(x-C))+D\)</span> or <span class="math inline">\(A\cos(B(x-C))+D\)</span>. Here <span class="math inline">\(C\)</span> shifts the graph horizontally to the
+right when positive. The period remains <span class="math inline">\(2\pi/|B|\)</span>; <span class="math inline">\(D\)</span> sets the midline. The equivalent
+expression <span class="math inline">\(A\sin(Bx+\phi)+D\)</span> has
+phase shift <span class="math inline">\(-\phi/B\)</span> (when <span class="math inline">\(B\ne0\)</span>). It is essential to factor <span class="math inline">\(B\)</span> before reading the shift.</p>
+<p><strong>Example.</strong> Rewrite <span class="math inline">\(2\sin(3x-\pi)+1\)</span> as <span class="math inline">\(2\sin(3(x-\pi/3))+1\)</span>. Its amplitude is
+<span class="math inline">\(2\)</span>, period <span class="math inline">\(2\pi/3\)</span>, right shift <span class="math inline">\(\pi/3\)</span>, and midline <span class="math inline">\(1\)</span>.</p>
+<p><strong>Guided practice.</strong> Identify the four parameters of
+<span class="math inline">\(-4\cos(2(x+\pi/6))-3\)</span> and draw a
+key-point table.</p>
+<h5 id="reasoning-check.-4">Reasoning check.</h5>
+<p>Explain which conclusions follow from exact mathematics and which
+depend on a modeling assumption. State the domain and units where
+appropriate.</p>
+<figure>
+<img alt="image" src="figures/precompiled/chapter09-02.svg"/>
+<figcaption aria-hidden="true">image</figcaption>
+</figure>
+<h2 id="constructing-a-sinusoid-from-a-graph-or-data">Constructing a
+sinusoid from a graph or data</h2>
+<p>When a graph has maximum <span class="math inline">\(M\)</span> and
+minimum <span class="math inline">\(m\)</span>, compute <span class="math inline">\(A=(M-m)/2\)</span> and <span class="math inline">\(D=(M+m)/2\)</span>. Measure the horizontal
+separation between consecutive peaks to obtain <span class="math inline">\(P\)</span>, then set <span class="math inline">\(|B|=2\pi/P\)</span>. Choose sine or cosine and
+determine a shift using a known maximum or midline crossing. Multiple
+equivalent formulas may represent the same function.</p>
+<p><strong>Example.</strong> A periodic measurement has maximum <span class="math inline">\(9\)</span>, minimum <span class="math inline">\(3\)</span>, and successive maxima at <span class="math inline">\(t=2\)</span> and <span class="math inline">\(t=10\)</span>. Then <span class="math inline">\(A=3\)</span>, <span class="math inline">\(D=6\)</span>, <span class="math inline">\(P=8\)</span>, and a cosine model is <span class="math inline">\(f(t)=6+3\cos(\pi(t-2)/4)\)</span>.</p>
+<p><strong>Guided practice.</strong> Build a cosine model for maximum
+<span class="math inline">\(12\)</span>, minimum <span class="math inline">\(4\)</span>, and peaks at <span class="math inline">\(t=1\)</span> and <span class="math inline">\(t=7\)</span>.</p>
+<h5 id="reasoning-check.-5">Reasoning check.</h5>
+<p>Explain which conclusions follow from exact mathematics and which
+depend on a modeling assumption. State the domain and units where
+appropriate.</p>
+<h2 id="tangent-and-cotangent-graphs">Tangent and cotangent graphs</h2>
+<p>Since <span class="math inline">\(\tan x=\sin x/\cos x\)</span>,
+tangent is undefined at <span class="math inline">\(x=\pi/2+k\pi\)</span>. These are vertical
+asymptotes. Tangent has period <span class="math inline">\(\pi\)</span>,
+range <span class="math inline">\(\mathbb R\)</span>, and zeros at <span class="math inline">\(k\pi\)</span>. The cotangent function <span class="math inline">\(\cot x=\cos x/\sin x\)</span> is undefined at
+<span class="math inline">\(k\pi\)</span> and has zeros at <span class="math inline">\(\pi/2+k\pi\)</span>. Both require careful domain
+analysis; asymptotes are not points on the graph.</p>
+<p><strong>Example.</strong> For <span class="math inline">\(y=\tan(2x)\)</span>, the period is <span class="math inline">\(\pi/2\)</span>, and asymptotes satisfy <span class="math inline">\(2x=\pi/2+k\pi\)</span>, giving <span class="math inline">\(x=\pi/4+k\pi/2\)</span>.</p>
+<p><strong>Guided practice.</strong> Find all zeros and asymptotes of
+<span class="math inline">\(y=\tan(x-\pi/4)\)</span> on <span class="math inline">\([-\pi,\pi]\)</span>.</p>
+<h5 id="reasoning-check.-6">Reasoning check.</h5>
+<p>Explain which conclusions follow from exact mathematics and which
+depend on a modeling assumption. State the domain and units where
+appropriate.</p>
+<figure>
+<img alt="image" src="figures/precompiled/chapter09-03.svg"/>
+<figcaption aria-hidden="true">image</figcaption>
+</figure>
+<h2 id="secant-and-cosecant-graphs">Secant and cosecant graphs</h2>
+<p>The reciprocal functions are <span class="math inline">\(\sec
+x=1/\cos x\)</span> and <span class="math inline">\(\csc x=1/\sin
+x\)</span>. They have no outputs strictly between <span class="math inline">\(-1\)</span> and <span class="math inline">\(1\)</span>. Their domains exclude zeros of the
+denominator, creating vertical asymptotes. Their graph branches touch
+<span class="math inline">\(y=\pm1\)</span> at extrema of the
+corresponding sine or cosine graph.</p>
+<p><strong>Example.</strong> <span class="math inline">\(\csc x\)</span>
+is undefined at <span class="math inline">\(k\pi\)</span>, has value
+<span class="math inline">\(1\)</span> at <span class="math inline">\(\pi/2+2k\pi\)</span>, and value <span class="math inline">\(-1\)</span> at <span class="math inline">\(3\pi/2+2k\pi\)</span>.</p>
+<p><strong>Guided practice.</strong> Explain why <span class="math inline">\(\sec x\)</span> cannot equal <span class="math inline">\(0.5\)</span> for any real <span class="math inline">\(x\)</span>.</p>
+<h5 id="reasoning-check.-7">Reasoning check.</h5>
+<p>Explain which conclusions follow from exact mathematics and which
+depend on a modeling assumption. State the domain and units where
+appropriate.</p>
+<figure>
+<img alt="image" src="figures/precompiled/chapter09-04.svg"/>
+<figcaption aria-hidden="true">image</figcaption>
+</figure>
+<h2 id="inverse-trigonometric-functions-and-restricted-domains">Inverse
+trigonometric functions and restricted domains</h2>
+<p>Sine, cosine, and tangent are not one-to-one on their full natural
+domains, so inverse functions require restricted branches. <span class="math inline">\(\arcsin:[-1,1]\to[-\pi/2,\pi/2]\)</span>, <span class="math inline">\(\arccos:[-1,1]\to[0,\pi]\)</span>, and <span class="math inline">\(\arctan:\mathbb R\to(-\pi/2,\pi/2)\)</span>. These
+return principal values; solving an equation like <span class="math inline">\(\sin x=a\)</span> requires periodic families of
+solutions.</p>
+<p><strong>Example.</strong> <span class="math inline">\(\arcsin(1/2)=\pi/6\)</span>, but <span class="math inline">\(\sin x=1/2\)</span> has solutions <span class="math inline">\(x=\pi/6+2k\pi\)</span> or <span class="math inline">\(x=5\pi/6+2k\pi\)</span>.</p>
+<p><strong>Guided practice.</strong> Evaluate <span class="math inline">\(\arccos(-1/2)\)</span> and solve <span class="math inline">\(\cos x=-1/2\)</span> on <span class="math inline">\([0,2\pi)\)</span>.</p>
+<h5 id="reasoning-check.-8">Reasoning check.</h5>
+<p>Explain which conclusions follow from exact mathematics and which
+depend on a modeling assumption. State the domain and units where
+appropriate.</p>
+<h2 id="modeling-periodic-health-science-measurements">Modeling periodic
+health-science measurements</h2>
+<p>Periodic models approximate repeating measurements such as breathing
+displacement, circadian variation, and instrument oscillations.
+Parameters must have units: <span class="math inline">\(A\)</span> and
+<span class="math inline">\(D\)</span> share the response unit, <span class="math inline">\(B\)</span> has radians per unit time, and <span class="math inline">\(C\)</span> has time units. A sinusoid is a
+descriptive approximation; actual biological signals may be noisy,
+asymmetric, and nonstationary.</p>
+<p><strong>Example.</strong> A simplified respiratory displacement is
+<span class="math inline">\(d(t)=1.5\sin(\pi t/2)\)</span> cm. Its
+amplitude is <span class="math inline">\(1.5\)</span> cm and period
+<span class="math inline">\(4\)</span> seconds, corresponding to <span class="math inline">\(15\)</span> cycles per minute.</p>
+<p><strong>Guided practice.</strong> A model <span class="math inline">\(T(t)=37+0.4\cos(\pi(t-4)/12)\)</span> gives
+temperature in degrees Celsius with <span class="math inline">\(t\)</span> in hours. Identify its period, midline,
+maximum, and time of a peak.</p>
+<h5 id="reasoning-check.-9">Reasoning check.</h5>
+<p>Explain which conclusions follow from exact mathematics and which
+depend on a modeling assumption. State the domain and units where
+appropriate.</p>
+<h2 id="average-rate-of-change-and-calculus-preparation">Average rate of
+change and calculus preparation</h2>
+<p>For any function, the average rate of change over <span class="math inline">\([a,b]\)</span> is <span class="math inline">\([f(b)-f(a)]/(b-a)\)</span>. A sinusoid may have a
+positive average rate over an interval even when it decreases elsewhere.
+Small changes in input can be studied with a difference quotient <span class="math inline">\([\sin(x+h)-\sin x]/h\)</span>. The limit as <span class="math inline">\(h\to0\)</span> leads to the derivative of sine in
+calculus, and the radian convention is crucial for the familiar
+derivative formula.</p>
+<p><strong>Example.</strong> For <span class="math inline">\(f(t)=2\sin(\pi t/4)\)</span>, the average rate on
+<span class="math inline">\([0,2]\)</span> is <span class="math inline">\((2-0)/2=1\)</span> unit per second.</p>
+<p><strong>Guided practice.</strong> Calculate the average rate of
+change of <span class="math inline">\(\cos x\)</span> on <span class="math inline">\([0,\pi/2]\)</span> and explain its sign.</p>
+<h5 id="reasoning-check.-10">Reasoning check.</h5>
+<p>Explain which conclusions follow from exact mathematics and which
+depend on a modeling assumption. State the domain and units where
+appropriate.</p>
+<h2 id="visual-investigations-and-guided-workshops">Visual
+investigations and guided workshops</h2>
+<h3 class="unnumbered" id="investigation-1-tracing-the-unit-circle">Investigation 1: Tracing
+the unit circle</h3>
+<p>Complete a table for angles <span class="math inline">\(0,\pi/6,\pi/4,\pi/3,\pi/2,\pi,3\pi/2,2\pi\)</span>.
+Plot sine and cosine separately and explain why the vertical coordinate
+of the circle becomes a sinusoidal graph.</p>
+<h5 id="reflection.">Reflection.</h5>
+<p>Write a short explanation in words, a symbolic conclusion, and a
+graphical interpretation.</p>
+<h3 class="unnumbered" id="investigation-2-transformations-in-stages">Investigation 2:
+Transformations in stages</h3>
+<p>Start with <span class="math inline">\(y=\sin x\)</span>. Apply a
+vertical stretch by 2, horizontal compression by 3, right shift by <span class="math inline">\(\pi/6\)</span>, and upward shift by 1. Write the
+resulting equation and give five key points.</p>
+<h5 id="reflection.-1">Reflection.</h5>
+<p>Write a short explanation in words, a symbolic conclusion, and a
+graphical interpretation.</p>
+<h3 class="unnumbered" id="investigation-3-amplitude-and-period-from-observations">Investigation
+3: Amplitude and period from observations</h3>
+<p>A sensor oscillates between 2 and 10 units, with maxima 6 seconds
+apart. Derive a cosine model with a peak at <span class="math inline">\(t=1\)</span> and evaluate the prediction at <span class="math inline">\(t=4\)</span>.</p>
+<h5 id="reflection.-2">Reflection.</h5>
+<p>Write a short explanation in words, a symbolic conclusion, and a
+graphical interpretation.</p>
+<h3 class="unnumbered" id="investigation-4-the-meaning-of-asymptotes">Investigation 4: The
+meaning of asymptotes</h3>
+<p>Make a table of <span class="math inline">\(an x\)</span> for values
+approaching <span class="math inline">\(\pi/2\)</span> from both sides.
+Explain why <span class="math inline">\(an(\pi/2)\)</span> cannot be
+assigned a finite value.</p>
+<h5 id="reflection.-3">Reflection.</h5>
+<p>Write a short explanation in words, a symbolic conclusion, and a
+graphical interpretation.</p>
+<h3 class="unnumbered" id="investigation-5-respiration-and-model-limitations">Investigation 5:
+Respiration and model limitations</h3>
+<p>A simplified respiratory signal is <span class="math inline">\(R(t)=2+0.8\sin(\pi t/3)\)</span> liters. Find the
+baseline, range, cycle duration, and predicted breaths per minute.
+Identify two reasons real measurements might depart from this model.</p>
+<h5 id="reflection.-4">Reflection.</h5>
+<p>Write a short explanation in words, a symbolic conclusion, and a
+graphical interpretation.</p>
+<h3 class="unnumbered" id="investigation-6-comparing-periodic-models">Investigation 6:
+Comparing periodic models</h3>
+<p>Compare <span class="math inline">\(f(t)=2\sin(\pi t/4)\)</span> and
+<span class="math inline">\(g(t)=2\sin(\pi t/4+\pi/2)\)</span>.
+Determine whether their amplitudes and periods differ; explain the
+horizontal displacement.</p>
+<h5 id="reflection.-5">Reflection.</h5>
+<p>Write a short explanation in words, a symbolic conclusion, and a
+graphical interpretation.</p>
+<h3 class="unnumbered" id="investigation-7-rates-of-change">Investigation 7: Rates of
+change</h3>
+<p>Compute the secant slope of <span class="math inline">\(\sin
+x\)</span> on <span class="math inline">\([0,h]\)</span> for <span class="math inline">\(h=0.5,0.1,0.01\)</span> radians and compare to the
+same calculations using degree inputs.</p>
+<h5 id="reflection.-6">Reflection.</h5>
+<p>Write a short explanation in words, a symbolic conclusion, and a
+graphical interpretation.</p>
+<h2 id="computational-laboratory-a-sine-and-cosine-transformations">Computational
+laboratory A: Sine and cosine transformations</h2>
+<p>Explore how amplitude, period, phase, and midline change a graph.
+Predict the extrema and period before running the code.</p>
+<h3 class="unnumbered" id="r-code">R code</h3>
+<div class="code-shell"><div class="code-bar"><span>R</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a aria-hidden="true" href="#cb1-1" tabindex="-1"></a><span class="co"># Laboratory A: Sine and cosine transformations</span></span>
+<span id="cb1-2"><a aria-hidden="true" href="#cb1-2" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">2</span><span class="sc">*</span>pi, <span class="dv">2</span><span class="sc">*</span>pi, <span class="at">length.out=</span><span class="dv">600</span>)</span>
+<span id="cb1-3"><a aria-hidden="true" href="#cb1-3" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="dv">2</span><span class="sc">*</span><span class="fu">sin</span>(<span class="dv">3</span><span class="sc">*</span>(x<span class="sc">-</span>pi<span class="sc">/</span><span class="dv">6</span>))<span class="sc">+</span><span class="dv">1</span></span>
+<span id="cb1-4"><a aria-hidden="true" href="#cb1-4" tabindex="-1"></a><span class="fu">plot</span>(x, f, <span class="at">type=</span><span class="st">"l"</span>, <span class="at">col=</span><span class="st">"blue"</span>, <span class="at">lwd=</span><span class="dv">2</span>,</span>
+<span id="cb1-5"><a aria-hidden="true" href="#cb1-5" tabindex="-1"></a>     <span class="at">xlab=</span><span class="st">"x (radians)"</span>, <span class="at">ylab=</span><span class="st">"f(x)"</span>, <span class="at">main=</span><span class="st">"Transformed sine"</span>)</span>
+<span id="cb1-6"><a aria-hidden="true" href="#cb1-6" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="dv">1</span>, <span class="at">lty=</span><span class="dv">2</span>)</span>
+<span id="cb1-7"><a aria-hidden="true" href="#cb1-7" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Amplitude:"</span>, <span class="dv">2</span>, <span class="st">"Period:"</span>, <span class="dv">2</span><span class="sc">*</span>pi<span class="sc">/</span><span class="dv">3</span>, <span class="st">"Midline:"</span>, <span class="dv">1</span>, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb1-8"><a aria-hidden="true" href="#cb1-8" tabindex="-1"></a><span class="co"># Five key points, one cycle</span></span>
+<span id="cb1-9"><a aria-hidden="true" href="#cb1-9" tabindex="-1"></a>key_x <span class="ot">&lt;-</span> pi<span class="sc">/</span><span class="dv">6</span> <span class="sc">+</span> (<span class="dv">0</span><span class="sc">:</span><span class="dv">4</span>)<span class="sc">*</span>(<span class="dv">2</span><span class="sc">*</span>pi<span class="sc">/</span><span class="dv">3</span>)<span class="sc">/</span><span class="dv">4</span></span>
+<span id="cb1-10"><a aria-hidden="true" href="#cb1-10" tabindex="-1"></a>key_y <span class="ot">&lt;-</span> <span class="dv">2</span><span class="sc">*</span><span class="fu">sin</span>(<span class="dv">3</span><span class="sc">*</span>(key_x<span class="sc">-</span>pi<span class="sc">/</span><span class="dv">6</span>))<span class="sc">+</span><span class="dv">1</span></span>
+<span id="cb1-11"><a aria-hidden="true" href="#cb1-11" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">data.frame</span>(<span class="at">x=</span>key_x, <span class="at">y=</span>key_y))</span>
+<span id="cb1-12"><a aria-hidden="true" href="#cb1-12" tabindex="-1"></a><span class="co"># Save a portable image</span></span>
+<span id="cb1-13"><a aria-hidden="true" href="#cb1-13" tabindex="-1"></a><span class="fu">png</span>(<span class="st">"chapter09_transformation_R.png"</span>)</span>
+<span id="cb1-14"><a aria-hidden="true" href="#cb1-14" tabindex="-1"></a><span class="fu">plot</span>(x, f, <span class="at">type=</span><span class="st">"l"</span>, <span class="at">lwd=</span><span class="dv">2</span>, <span class="at">xlab=</span><span class="st">"x"</span>, <span class="at">ylab=</span><span class="st">"f(x)"</span>)</span>
+<span id="cb1-15"><a aria-hidden="true" href="#cb1-15" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="dv">1</span>,<span class="at">lty=</span><span class="dv">2</span>)</span>
+<span id="cb1-16"><a aria-hidden="true" href="#cb1-16" tabindex="-1"></a><span class="fu">dev.off</span>()</span>
+<span id="cb1-17"><a aria-hidden="true" href="#cb1-17" tabindex="-1"></a></span>
+<span id="cb1-18"><a aria-hidden="true" href="#cb1-18" tabindex="-1"></a><span class="co"># Laboratory B: tangent and reciprocal graphs</span></span>
+<span id="cb1-19"><a aria-hidden="true" href="#cb1-19" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">2</span><span class="sc">*</span>pi,<span class="dv">2</span><span class="sc">*</span>pi,<span class="at">length.out=</span><span class="dv">3000</span>)</span></code></pre></div></div>
+<h3 class="unnumbered" id="python-code">Python code</h3>
+<div class="code-shell"><div class="code-bar"><span>Python</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" href="#cb2-1" tabindex="-1"></a><span class="co"># Laboratory A: Sine and cosine transformations</span></span>
+<span id="cb2-2"><a aria-hidden="true" href="#cb2-2" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-3"><a aria-hidden="true" href="#cb2-3" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-4"><a aria-hidden="true" href="#cb2-4" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">2</span><span class="op">*</span>np.pi, <span class="dv">2</span><span class="op">*</span>np.pi, <span class="dv">600</span>)</span>
+<span id="cb2-5"><a aria-hidden="true" href="#cb2-5" tabindex="-1"></a>f <span class="op">=</span> <span class="dv">2</span><span class="op">*</span>np.sin(<span class="dv">3</span><span class="op">*</span>(x<span class="op">-</span>np.pi<span class="op">/</span><span class="dv">6</span>))<span class="op">+</span><span class="dv">1</span></span>
+<span id="cb2-6"><a aria-hidden="true" href="#cb2-6" tabindex="-1"></a>plt.figure()</span>
+<span id="cb2-7"><a aria-hidden="true" href="#cb2-7" tabindex="-1"></a>plt.plot(x,f,label<span class="op">=</span><span class="st">"Transformed sine"</span>)</span>
+<span id="cb2-8"><a aria-hidden="true" href="#cb2-8" tabindex="-1"></a>plt.axhline(<span class="dv">1</span>,linestyle<span class="op">=</span><span class="st">"--"</span>,label<span class="op">=</span><span class="st">"Midline"</span>)</span>
+<span id="cb2-9"><a aria-hidden="true" href="#cb2-9" tabindex="-1"></a>plt.xlabel(<span class="st">"x (radians)"</span>)<span class="op">;</span> plt.ylabel(<span class="st">"f(x)"</span>)</span>
+<span id="cb2-10"><a aria-hidden="true" href="#cb2-10" tabindex="-1"></a>plt.legend()<span class="op">;</span> plt.tight_layout()</span>
+<span id="cb2-11"><a aria-hidden="true" href="#cb2-11" tabindex="-1"></a>plt.savefig(<span class="st">"chapter09_transformation_python.png"</span>)<span class="op">;</span> plt.close()</span>
+<span id="cb2-12"><a aria-hidden="true" href="#cb2-12" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Amplitude:"</span>,<span class="dv">2</span>,<span class="st">"Period:"</span>,<span class="dv">2</span><span class="op">*</span>np.pi<span class="op">/</span><span class="dv">3</span>,<span class="st">"Midline:"</span>,<span class="dv">1</span>)</span>
+<span id="cb2-13"><a aria-hidden="true" href="#cb2-13" tabindex="-1"></a>key_x <span class="op">=</span> np.pi<span class="op">/</span><span class="dv">6</span> <span class="op">+</span> np.arange(<span class="dv">5</span>)<span class="op">*</span>(<span class="dv">2</span><span class="op">*</span>np.pi<span class="op">/</span><span class="dv">3</span>)<span class="op">/</span><span class="dv">4</span></span>
+<span id="cb2-14"><a aria-hidden="true" href="#cb2-14" tabindex="-1"></a>key_y <span class="op">=</span> <span class="dv">2</span><span class="op">*</span>np.sin(<span class="dv">3</span><span class="op">*</span>(key_x<span class="op">-</span>np.pi<span class="op">/</span><span class="dv">6</span>))<span class="op">+</span><span class="dv">1</span></span>
+<span id="cb2-15"><a aria-hidden="true" href="#cb2-15" tabindex="-1"></a><span class="cf">for</span> a,b <span class="kw">in</span> <span class="bu">zip</span>(key_x,key_y):</span>
+<span id="cb2-16"><a aria-hidden="true" href="#cb2-16" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"x=</span><span class="sc">{</span>a<span class="sc">:.4f}</span><span class="ss">, y=</span><span class="sc">{</span>b<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
+<span id="cb2-17"><a aria-hidden="true" href="#cb2-17" tabindex="-1"></a><span class="co"># Compare the exact period with measured peak separation</span></span>
+<span id="cb2-18"><a aria-hidden="true" href="#cb2-18" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Period in radians:"</span>,<span class="dv">2</span><span class="op">*</span>np.pi<span class="op">/</span><span class="dv">3</span>)</span>
+<span id="cb2-19"><a aria-hidden="true" href="#cb2-19" tabindex="-1"></a></span>
+<span id="cb2-20"><a aria-hidden="true" href="#cb2-20" tabindex="-1"></a><span class="co"># Laboratory B: tangent and reciprocal graphs</span></span></code></pre></div></div>
+<h5 id="interpretation.">Interpretation.</h5>
+<p>Compare the graph against the key-point table constructed by
+hand.</p>
+<h2 id="computational-laboratory-b-tangent-and-reciprocal-functions">Computational
+laboratory B: Tangent and reciprocal functions</h2>
+<h3 class="unnumbered" id="r-code-1">R code</h3>
+<div class="code-shell"><div class="code-bar"><span>R</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a aria-hidden="true" href="#cb3-1" tabindex="-1"></a>sec_y <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">/</span><span class="fu">cos</span>(x)</span>
+<span id="cb3-2"><a aria-hidden="true" href="#cb3-2" tabindex="-1"></a>tan_y[<span class="fu">abs</span>(<span class="fu">cos</span>(x)) <span class="sc">&lt;</span> <span class="fl">0.035</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb3-3"><a aria-hidden="true" href="#cb3-3" tabindex="-1"></a>sec_y[<span class="fu">abs</span>(<span class="fu">cos</span>(x)) <span class="sc">&lt;</span> <span class="fl">0.035</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb3-4"><a aria-hidden="true" href="#cb3-4" tabindex="-1"></a><span class="fu">png</span>(<span class="st">"chapter09_reciprocal_R.png"</span>)</span>
+<span id="cb3-5"><a aria-hidden="true" href="#cb3-5" tabindex="-1"></a><span class="fu">plot</span>(x,tan_y,<span class="at">type=</span><span class="st">"l"</span>,<span class="at">ylim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">4</span>,<span class="dv">4</span>),<span class="at">col=</span><span class="st">"blue"</span>,</span>
+<span id="cb3-6"><a aria-hidden="true" href="#cb3-6" tabindex="-1"></a>     <span class="at">xlab=</span><span class="st">"x (radians)"</span>,<span class="at">ylab=</span><span class="st">"y"</span>,<span class="at">main=</span><span class="st">"Tangent and secant"</span>)</span>
+<span id="cb3-7"><a aria-hidden="true" href="#cb3-7" tabindex="-1"></a><span class="fu">lines</span>(x,sec_y,<span class="at">col=</span><span class="st">"red"</span>)</span>
+<span id="cb3-8"><a aria-hidden="true" href="#cb3-8" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">"topright"</span>,<span class="fu">c</span>(<span class="st">"tangent"</span>,<span class="st">"secant"</span>),<span class="at">col=</span><span class="fu">c</span>(<span class="st">"blue"</span>,<span class="st">"red"</span>),<span class="at">lty=</span><span class="dv">1</span>)</span>
+<span id="cb3-9"><a aria-hidden="true" href="#cb3-9" tabindex="-1"></a><span class="fu">dev.off</span>()</span>
+<span id="cb3-10"><a aria-hidden="true" href="#cb3-10" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Tangent asymptotes: pi/2 + k*pi</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb3-11"><a aria-hidden="true" href="#cb3-11" tabindex="-1"></a><span class="co"># Excluded points are not zero values</span></span>
+<span id="cb3-12"><a aria-hidden="true" href="#cb3-12" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">c</span>(<span class="fu">tan</span>(pi<span class="sc">/</span><span class="dv">4</span>), <span class="dv">1</span><span class="sc">/</span><span class="fu">cos</span>(pi<span class="sc">/</span><span class="dv">3</span>)))</span>
+<span id="cb3-13"><a aria-hidden="true" href="#cb3-13" tabindex="-1"></a></span>
+<span id="cb3-14"><a aria-hidden="true" href="#cb3-14" tabindex="-1"></a><span class="co"># Laboratory C: fit a sinusoidal model</span></span>
+<span id="cb3-15"><a aria-hidden="true" href="#cb3-15" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">9</span>)</span>
+<span id="cb3-16"><a aria-hidden="true" href="#cb3-16" tabindex="-1"></a>t <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">24</span>,<span class="at">by=</span><span class="dv">1</span>)</span>
+<span id="cb3-17"><a aria-hidden="true" href="#cb3-17" tabindex="-1"></a>observed <span class="ot">&lt;-</span> <span class="dv">37</span> <span class="sc">+</span> <span class="fl">0.4</span><span class="sc">*</span><span class="fu">cos</span>(<span class="dv">2</span><span class="sc">*</span>pi<span class="sc">*</span>(t<span class="dv">-4</span>)<span class="sc">/</span><span class="dv">24</span>) <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="fu">length</span>(t),<span class="dv">0</span>,<span class="fl">0.06</span>)</span></code></pre></div></div>
+<h3 class="unnumbered" id="python-code-1">Python code</h3>
+<div class="code-shell"><div class="code-bar"><span>Python</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" href="#cb4-1" tabindex="-1"></a>cosx <span class="op">=</span> np.cos(x)</span>
+<span id="cb4-2"><a aria-hidden="true" href="#cb4-2" tabindex="-1"></a>tan_y <span class="op">=</span> np.divide(np.sin(x),cosx)</span>
+<span id="cb4-3"><a aria-hidden="true" href="#cb4-3" tabindex="-1"></a>sec_y <span class="op">=</span> np.divide(<span class="fl">1.0</span>,cosx)</span>
+<span id="cb4-4"><a aria-hidden="true" href="#cb4-4" tabindex="-1"></a>tan_y[np.<span class="bu">abs</span>(cosx)<span class="op">&lt;</span><span class="fl">0.035</span>] <span class="op">=</span> np.nan</span>
+<span id="cb4-5"><a aria-hidden="true" href="#cb4-5" tabindex="-1"></a>sec_y[np.<span class="bu">abs</span>(cosx)<span class="op">&lt;</span><span class="fl">0.035</span>] <span class="op">=</span> np.nan</span>
+<span id="cb4-6"><a aria-hidden="true" href="#cb4-6" tabindex="-1"></a>plt.figure()</span>
+<span id="cb4-7"><a aria-hidden="true" href="#cb4-7" tabindex="-1"></a>plt.plot(x,tan_y,label<span class="op">=</span><span class="st">"tangent"</span>)</span>
+<span id="cb4-8"><a aria-hidden="true" href="#cb4-8" tabindex="-1"></a>plt.plot(x,sec_y,label<span class="op">=</span><span class="st">"secant"</span>)</span>
+<span id="cb4-9"><a aria-hidden="true" href="#cb4-9" tabindex="-1"></a>plt.ylim(<span class="op">-</span><span class="dv">4</span>,<span class="dv">4</span>)<span class="op">;</span> plt.xlabel(<span class="st">"x (radians)"</span>)<span class="op">;</span> plt.ylabel(<span class="st">"y"</span>)</span>
+<span id="cb4-10"><a aria-hidden="true" href="#cb4-10" tabindex="-1"></a>plt.legend()<span class="op">;</span> plt.tight_layout()</span>
+<span id="cb4-11"><a aria-hidden="true" href="#cb4-11" tabindex="-1"></a>plt.savefig(<span class="st">"chapter09_reciprocal_python.png"</span>)<span class="op">;</span> plt.close()</span>
+<span id="cb4-12"><a aria-hidden="true" href="#cb4-12" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Tangent asymptotes: pi/2 + k*pi"</span>)</span>
+<span id="cb4-13"><a aria-hidden="true" href="#cb4-13" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"tan(pi/4):"</span>,np.tan(np.pi<span class="op">/</span><span class="dv">4</span>))</span>
+<span id="cb4-14"><a aria-hidden="true" href="#cb4-14" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"sec(pi/3):"</span>,<span class="dv">1</span><span class="op">/</span>np.cos(np.pi<span class="op">/</span><span class="dv">3</span>))</span>
+<span id="cb4-15"><a aria-hidden="true" href="#cb4-15" tabindex="-1"></a></span>
+<span id="cb4-16"><a aria-hidden="true" href="#cb4-16" tabindex="-1"></a><span class="co"># Laboratory C: periodic model fitting</span></span>
+<span id="cb4-17"><a aria-hidden="true" href="#cb4-17" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">9</span>)</span>
+<span id="cb4-18"><a aria-hidden="true" href="#cb4-18" tabindex="-1"></a>t <span class="op">=</span> np.arange(<span class="dv">25</span>)</span></code></pre></div></div>
+<h5 id="interpretation.-1">Interpretation.</h5>
+<p>Identify excluded input values and explain why plotting routines must
+not join points across asymptotes.</p>
+<h2 id="computational-laboratory-c-periodic-model-fitting">Computational
+laboratory C: Periodic model fitting</h2>
+<h3 class="unnumbered" id="r-code-2">R code</h3>
+<div class="code-shell"><div class="code-bar"><span>R</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a aria-hidden="true" href="#cb5-1" tabindex="-1"></a>pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(fit)</span>
+<span id="cb5-2"><a aria-hidden="true" href="#cb5-2" tabindex="-1"></a>residual <span class="ot">&lt;-</span> observed <span class="sc">-</span> pred</span>
+<span id="cb5-3"><a aria-hidden="true" href="#cb5-3" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">summary</span>(fit))</span>
+<span id="cb5-4"><a aria-hidden="true" href="#cb5-4" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"RMSE:"</span>,<span class="fu">sqrt</span>(<span class="fu">mean</span>(residual<span class="sc">^</span><span class="dv">2</span>)),<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb5-5"><a aria-hidden="true" href="#cb5-5" tabindex="-1"></a><span class="fu">png</span>(<span class="st">"chapter09_model_R.png"</span>)</span>
+<span id="cb5-6"><a aria-hidden="true" href="#cb5-6" tabindex="-1"></a><span class="fu">plot</span>(t,observed,<span class="at">pch=</span><span class="dv">19</span>,<span class="at">xlab=</span><span class="st">"Time (hours)"</span>,<span class="at">ylab=</span><span class="st">"Temperature (C)"</span>)</span>
+<span id="cb5-7"><a aria-hidden="true" href="#cb5-7" tabindex="-1"></a><span class="fu">lines</span>(t,pred,<span class="at">col=</span><span class="st">"blue"</span>,<span class="at">lwd=</span><span class="dv">2</span>)</span>
+<span id="cb5-8"><a aria-hidden="true" href="#cb5-8" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code></pre></div></div>
+<h3 class="unnumbered" id="python-code-2">Python code</h3>
+<div class="code-shell"><div class="code-bar"><span>Python</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a aria-hidden="true" href="#cb6-1" tabindex="-1"></a>X <span class="op">=</span> np.column_stack([np.ones(<span class="bu">len</span>(t)),np.cos(<span class="dv">2</span><span class="op">*</span>np.pi<span class="op">*</span>t<span class="op">/</span><span class="dv">24</span>),np.sin(<span class="dv">2</span><span class="op">*</span>np.pi<span class="op">*</span>t<span class="op">/</span><span class="dv">24</span>)])</span>
+<span id="cb6-2"><a aria-hidden="true" href="#cb6-2" tabindex="-1"></a>coef <span class="op">=</span> np.linalg.lstsq(X,observed,rcond<span class="op">=</span><span class="va">None</span>)[<span class="dv">0</span>]</span>
+<span id="cb6-3"><a aria-hidden="true" href="#cb6-3" tabindex="-1"></a>pred <span class="op">=</span> X <span class="op">@</span> coef</span>
+<span id="cb6-4"><a aria-hidden="true" href="#cb6-4" tabindex="-1"></a>residual <span class="op">=</span> observed<span class="op">-</span>pred</span>
+<span id="cb6-5"><a aria-hidden="true" href="#cb6-5" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Coefficients:"</span>,coef)</span>
+<span id="cb6-6"><a aria-hidden="true" href="#cb6-6" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"RMSE:"</span>,np.sqrt(np.mean(residual<span class="op">**</span><span class="dv">2</span>)))</span>
+<span id="cb6-7"><a aria-hidden="true" href="#cb6-7" tabindex="-1"></a>plt.figure()</span>
+<span id="cb6-8"><a aria-hidden="true" href="#cb6-8" tabindex="-1"></a>plt.scatter(t,observed,label<span class="op">=</span><span class="st">"Observed"</span>)</span>
+<span id="cb6-9"><a aria-hidden="true" href="#cb6-9" tabindex="-1"></a>plt.plot(t,pred,label<span class="op">=</span><span class="st">"Fitted"</span>)</span>
+<span id="cb6-10"><a aria-hidden="true" href="#cb6-10" tabindex="-1"></a>plt.xlabel(<span class="st">"Time (hours)"</span>)<span class="op">;</span> plt.ylabel(<span class="st">"Temperature (C)"</span>)</span>
+<span id="cb6-11"><a aria-hidden="true" href="#cb6-11" tabindex="-1"></a>plt.legend()<span class="op">;</span> plt.tight_layout()</span>
+<span id="cb6-12"><a aria-hidden="true" href="#cb6-12" tabindex="-1"></a>plt.savefig(<span class="st">"chapter09_model_python.png"</span>)<span class="op">;</span> plt.close()</span></code></pre></div></div>
+<h5 id="interpretation.-2">Interpretation.</h5>
+<p>Compare predicted and observed values; a small residual does not
+prove a model is scientifically appropriate.</p>
+<h2 id="further-worked-examples-and-problem-solving-strategies">Further
+worked examples and problem-solving strategies</h2>
+<blockquote class="example">
+<p><strong>Example 1: Finding a model from extrema.</strong> A signal
+has maximum <span class="math inline">\(14\)</span>, minimum <span class="math inline">\(6\)</span>, and peaks at <span class="math inline">\(t=3\)</span> and <span class="math inline">\(t=11\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> <span class="math inline">\(A=(14-6)/2=4\)</span>, <span class="math inline">\(D=(14+6)/2=10\)</span>, and <span class="math inline">\(P=8\)</span>, so <span class="math inline">\(B=\pi/4\)</span>. One model is <span class="math inline">\(10+4\cos(\pi(t-3)/4)\)</span>.</p>
+</blockquote>
+<blockquote class="example">
+<p><strong>Example 2: Finding the phase shift.</strong> Analyze <span class="math inline">\(-2\sin(4x+\pi)+5\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> Factor the argument as <span class="math inline">\(4(x+\pi/4)\)</span>. Amplitude <span class="math inline">\(2\)</span>, period <span class="math inline">\(\pi/2\)</span>, left shift <span class="math inline">\(\pi/4\)</span>, midline <span class="math inline">\(5\)</span>, range <span class="math inline">\([3,7]\)</span>.</p>
+</blockquote>
+<blockquote class="example">
+<p><strong>Example 3: Solving a trigonometric equation.</strong> Solve
+<span class="math inline">\(2\sin x-1=0\)</span> on <span class="math inline">\([0,2\pi)\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> <span class="math inline">\(\sin
+x=1/2\)</span>, hence <span class="math inline">\(x=\pi/6\)</span> or
+<span class="math inline">\(x=5\pi/6\)</span>.</p>
+</blockquote>
+<blockquote class="example">
+<p><strong>Example 4: Locating tangent asymptotes.</strong> Find the
+vertical asymptotes of <span class="math inline">\(y=\tan(3x-\pi/2)\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> Set <span class="math inline">\(3x-\pi/2=\pi/2+k\pi\)</span>, obtaining <span class="math inline">\(x=(k+1)\pi/3\)</span>, <span class="math inline">\(k\in\mathbb Z\)</span>.</p>
+</blockquote>
+<blockquote class="example">
+<p><strong>Example 5: Distinguishing amplitude from vertical
+shift.</strong> Interpret <span class="math inline">\(y=-5\cos(x/2)-2\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> Amplitude is <span class="math inline">\(5\)</span> (not <span class="math inline">\(-5\)</span>), midline <span class="math inline">\(-2\)</span>, period <span class="math inline">\(4\pi\)</span>, range <span class="math inline">\([-7,3]\)</span>.</p>
+</blockquote>
+<blockquote class="example">
+<p><strong>Example 6: Inverse trig and full solution sets.</strong>
+Solve <span class="math inline">\(\cos x=\sqrt2/2\)</span> for all real
+<span class="math inline">\(x\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> The principal inverse value is
+<span class="math inline">\(\pi/4\)</span>, but the full solution is
+<span class="math inline">\(x=2k\pi\pm\pi/4\)</span>, <span class="math inline">\(k\in\mathbb Z\)</span>.</p>
+</blockquote>
+<blockquote class="example">
+<p><strong>Example 7: Periodic model interpretation.</strong> A
+heart-rate model is <span class="math inline">\(H(t)=72+6\cos(2\pi
+t/24)\)</span> with <span class="math inline">\(t\)</span> in hours.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> The baseline is <span class="math inline">\(72\)</span> beats/minute, amplitude <span class="math inline">\(6\)</span> beats/minute, and period <span class="math inline">\(24\)</span> hours. The model is illustrative and
+not a clinical prediction.</p>
+</blockquote>
+<h2 id="extended-guided-practice-constructing-and-checking-graphs">Extended
+guided practice: constructing and checking graphs</h2>
+<h3 class="unnumbered" id="investigation-8-a-five-point-graphing-algorithm">Investigation 8: A
+five-point graphing algorithm</h3>
+<p>For <span class="math inline">\(f(x)=A\sin(B(x-C))+D\)</span> with
+<span class="math inline">\(B&gt;0\)</span>, start at <span class="math inline">\(x=C\)</span> and add the quarter-period <span class="math inline">\(P/4=\pi/(2B)\)</span> successively. The five
+outputs are <span class="math inline">\(D,D+A,D,D-A,D\)</span>. This
+gives a reliable graphing procedure without relying on a calculator. For
+cosine, use <span class="math inline">\(D+A,D,D-A,D,D+A\)</span>
+instead. The points must be connected by a smooth curve. A negative
+value of <span class="math inline">\(A\)</span> reverses the orientation
+of the cycle.</p>
+<blockquote class="example">
+<p><strong>Example 8.</strong> Build a five-point table for <span class="math inline">\(f(x)=-2\sin(2(x-\pi/4))+3\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> Here <span class="math inline">\(A=-2\)</span>, <span class="math inline">\(B=2\)</span>, <span class="math inline">\(C=\pi/4\)</span>, and <span class="math inline">\(D=3\)</span>. The period is <span class="math inline">\(\pi\)</span> and quarter-period is <span class="math inline">\(\pi/4\)</span>. The input points are <span class="math inline">\(\pi/4,\pi/2,3\pi/4,\pi,5\pi/4\)</span>, with
+outputs <span class="math inline">\(3,1,3,5,3\)</span>. The range is
+<span class="math inline">\([1,5]\)</span>.</p>
+</blockquote>
+<h5 id="guided-practice.">Guided practice.</h5>
+<p>Make a five-point table for <span class="math inline">\(g(x)=3\cos(\tfrac12(x+\pi))-2\)</span>. State the
+location of its first maximum and minimum.</p>
+<h3 class="unnumbered" id="investigation-9-equivalent-phase-shift-descriptions">Investigation
+9: Equivalent phase-shift descriptions</h3>
+<p>The identity <span class="math inline">\(\sin(x+\pi/2)=\cos
+x\)</span> illustrates that different formulas can describe exactly the
+same graph. A phase shift is not always uniquely determined unless the
+choice of sine or cosine and the sign of the amplitude are specified.
+Check equivalence algebraically using known identities or graphically
+over more than one cycle.</p>
+<blockquote class="example">
+<p><strong>Example 9.</strong> Compare <span class="math inline">\(f(x)=4\sin(x+\pi/2)\)</span> and <span class="math inline">\(g(x)=4\cos x\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> By the angle-addition identity,
+<span class="math inline">\(\sin(x+\pi/2)=\sin x\cos(\pi/2)+\cos
+x\sin(\pi/2)=\cos x\)</span>. Thus <span class="math inline">\(f=g\)</span> for all real <span class="math inline">\(x\)</span>.</p>
+</blockquote>
+<h5 id="guided-practice.-1">Guided practice.</h5>
+<p>Express <span class="math inline">\(3\sin(x-\pi/2)\)</span> as a
+cosine function and verify at <span class="math inline">\(x=0,\pi/2,\pi\)</span>.</p>
+<h3 class="unnumbered" id="investigation-10-recovering-a-model-from-a-data-table">Investigation
+10: Recovering a model from a data table</h3>
+<p>Suppose a periodic process has observed maximum <span class="math inline">\(18\)</span> at time <span class="math inline">\(t=2\)</span> and observed minimum <span class="math inline">\(6\)</span> at <span class="math inline">\(t=7\)</span>. If these are successive extrema,
+half a period is <span class="math inline">\(5\)</span> time units, so
+the full period is <span class="math inline">\(10\)</span>. The
+amplitude is <span class="math inline">\((18-6)/2=6\)</span> and the
+midline is <span class="math inline">\((18+6)/2=12\)</span>. A
+compatible model is <span class="math display">\[f(t)=12+6\cos\left(\frac{\pi}{5}(t-2)\right).\]</span>
+Verify that <span class="math inline">\(f(2)=18\)</span>, <span class="math inline">\(f(7)=6\)</span>, and <span class="math inline">\(f(12)=18\)</span>. If the observed extrema are not
+successive, the period cannot be inferred uniquely from these two
+times.</p>
+<h5 id="guided-practice.-2">Guided practice.</h5>
+<p>A temperature record has consecutive peaks at 4 and 28 hours, maximum
+<span class="math inline">\(37.4\)</span> and minimum <span class="math inline">\(36.6\)</span> degrees Celsius. Construct a model,
+state the units of each parameter, and explain why its predictions are
+approximate.</p>
+<h3 class="unnumbered" id="investigation-11-solving-by-graph-intersections">Investigation 11:
+Solving by graph intersections</h3>
+<p>The equation <span class="math inline">\(2\sin x=1\)</span> asks
+where the graph of <span class="math inline">\(y=2\sin x\)</span>
+intersects the horizontal line <span class="math inline">\(y=1\)</span>.
+Dividing by <span class="math inline">\(2\)</span> gives <span class="math inline">\(\sin x=1/2\)</span>. On one cycle <span class="math inline">\([0,2\pi)\)</span>, the intersections occur at
+<span class="math inline">\(\pi/6\)</span> and <span class="math inline">\(5\pi/6\)</span>. A graph can suggest solutions,
+but exact unit-circle reasoning establishes them.</p>
+<h5 id="guided-practice.-3">Guided practice.</h5>
+<p>Solve <span class="math inline">\(3\cos(2x)=3/2\)</span> on <span class="math inline">\([0,2\pi)\)</span>, listing every solution. Check
+your answer by graphing both sides.</p>
+<h3 class="unnumbered" id="investigation-12-sampling-and-apparent-frequency">Investigation 12:
+Sampling and apparent frequency</h3>
+<p>A computer displays a continuous periodic signal using discrete
+samples. If a signal is sampled too sparsely, different frequencies can
+appear indistinguishable at the sampled times, an effect known as
+aliasing. For example, at integer times <span class="math inline">\(t\)</span>, <span class="math inline">\(\sin(2\pi
+t)=0\)</span> and <span class="math inline">\(\sin(4\pi t)=0\)</span>,
+although the continuous functions have different periods. Therefore a
+graph of sample points alone may not reveal the underlying
+oscillation.</p>
+<h5 id="guided-practice.-4">Guided practice.</h5>
+<p>Evaluate <span class="math inline">\(\sin(\pi t)\)</span> and <span class="math inline">\(\sin(3\pi t)\)</span> at integer <span class="math inline">\(t\)</span> and at half-integer <span class="math inline">\(t\)</span>. Discuss which sampling schedule
+distinguishes the two functions.</p>
+<h2 id="additional-worked-applications">Additional worked
+applications</h2>
+<blockquote class="example">
+<p><strong>Example 10: Respiratory cycle and frequency.</strong> A
+simplified signal has the form <span class="math inline">\(V(t)=2.4+0.6\sin(\pi t/2)\)</span> liters, with
+<span class="math inline">\(t\)</span> in seconds. Determine its range
+and number of cycles per minute.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> The midline is <span class="math inline">\(2.4\)</span> liters and amplitude is <span class="math inline">\(0.6\)</span> liters, so the range is <span class="math inline">\([1.8,3.0]\)</span> liters. Its period is <span class="math inline">\(2\pi/(\pi/2)=4\)</span> seconds, corresponding to
+<span class="math inline">\(60/4=15\)</span> cycles per minute. This
+model is illustrative and does not establish a clinical breathing rate
+for an individual.</p>
+</blockquote>
+<blockquote class="example">
+<p><strong>Example 11: Tidal or circadian phase.</strong> A model <span class="math inline">\(T(t)=36.9+0.3\cos(\pi(t-5)/12)\)</span> has <span class="math inline">\(t\)</span> measured in hours. Find the first
+maximum at or after <span class="math inline">\(t=0\)</span> and the
+next minimum.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> Cosine is <span class="math inline">\(1\)</span> when its argument is an integer
+multiple of <span class="math inline">\(2\pi\)</span>. Thus maxima occur
+at <span class="math inline">\(t=5+24k\)</span>, so the first
+nonnegative maximum is at <span class="math inline">\(t=5\)</span>. The
+next minimum occurs half a period later at <span class="math inline">\(t=17\)</span>. The maximum is <span class="math inline">\(37.2\)</span> and minimum is <span class="math inline">\(36.6\)</span> degrees Celsius.</p>
+</blockquote>
+<blockquote class="example">
+<p><strong>Example 12: An oscillating sensor.</strong> A sensor output
+is modeled by <span class="math inline">\(S(t)=5-2\cos(4\pi t)\)</span>
+volts. Find the period, first minimum, and first maximum after <span class="math inline">\(t=0\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> The period is <span class="math inline">\(2\pi/(4\pi)=0.5\)</span> seconds. At <span class="math inline">\(t=0\)</span>, cosine equals <span class="math inline">\(1\)</span>, so the signal starts at its minimum
+<span class="math inline">\(3\)</span> volts. Half a period later, <span class="math inline">\(t=0.25\)</span> seconds, the signal reaches its
+maximum <span class="math inline">\(7\)</span> volts.</p>
+</blockquote>
+<blockquote class="example">
+<p><strong>Example 13: Model consistency check.</strong> A student
+claims that <span class="math inline">\(f(t)=10+2\sin(\pi t/3)\)</span>
+has a period of <span class="math inline">\(3\)</span> seconds because
+the denominator is <span class="math inline">\(3\)</span>. Assess the
+claim.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> The coefficient of <span class="math inline">\(t\)</span> is <span class="math inline">\(B=\pi/3\)</span>, hence <span class="math inline">\(P=2\pi/(\pi/3)=6\)</span> seconds. The student has
+confused the expression inside the sine with the period formula.</p>
+</blockquote>
+<h2 id="conceptual-discussion-and-common-misconceptions">Conceptual
+discussion and common misconceptions</h2>
+<ol type="1">
+<li><p>Why is the amplitude of <span class="math inline">\(-3\sin
+x\)</span> equal to <span class="math inline">\(3\)</span> rather than
+<span class="math inline">\(-3\)</span>?</p></li>
+<li><p>Explain why <span class="math inline">\(\tan x\)</span> has
+period <span class="math inline">\(\pi\)</span> while sine and cosine
+have period <span class="math inline">\(2\pi\)</span>.</p></li>
+<li><p>Can two sinusoidal functions have the same period and amplitude
+but different graphs? Give an example.</p></li>
+<li><p>Explain why <span class="math inline">\(\arcsin(\sin x)\)</span>
+is not always equal to <span class="math inline">\(x\)</span>.</p></li>
+<li><p>Why should a scientific model include units for the phase-shift
+parameter?</p></li>
+<li><p>Distinguish a graph’s vertical asymptote from a removable
+discontinuity.</p></li>
+<li><p>Why is it misleading to connect sampled measurements with a
+smooth sinusoid without considering the sampling interval?</p></li>
+<li><p>Explain how the secant slope of sine prepares students for
+instantaneous rate of change in calculus.</p></li>
+</ol>
+<h2 id="instructor-guided-exploration-parameter-sensitivity">Instructor-guided
+exploration: parameter sensitivity</h2>
+<h3 class="unnumbered" id="exploration-a-changing-one-parameter-at-a-time">Exploration A:
+Changing one parameter at a time</h3>
+<p>Start with <span class="math inline">\(f(x)=\sin x\)</span> and
+compare it to <span class="math inline">\(2\sin x\)</span>, <span class="math inline">\(\sin(2x)\)</span>, <span class="math inline">\(\sin(x-\pi/3)\)</span>, and <span class="math inline">\(\sin x+2\)</span>. Draw each graph on the same
+horizontal interval <span class="math inline">\([-2\pi,2\pi]\)</span>
+but use separate coordinate systems to prevent visual clutter. For each
+comparison, explain what stays invariant: the domain, period, range,
+zeros, or midline. Record your findings in the table below.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Function</th>
+<th style="text-align: left;">Changed feature</th>
+<th style="text-align: left;">Features preserved</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(2\sin
+x\)</span></td>
+<td style="text-align: left;">Vertical scale</td>
+<td style="text-align: left;">Period, midline</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\sin(2x)\)</span></td>
+<td style="text-align: left;">Horizontal scale</td>
+<td style="text-align: left;">Amplitude, midline</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\sin(x-\pi/3)\)</span></td>
+<td style="text-align: left;">Horizontal location</td>
+<td style="text-align: left;">Amplitude, period</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\sin
+x+2\)</span></td>
+<td style="text-align: left;">Vertical location</td>
+<td style="text-align: left;">Amplitude, period</td>
+</tr>
+</tbody>
+</table>
+<h5 id="interpretation-prompt.">Interpretation prompt.</h5>
+<p>Is the amplitude of <span class="math inline">\(\sin x+2\)</span>
+equal to <span class="math inline">\(3\)</span> because the maximum is
+<span class="math inline">\(3\)</span>? Explain carefully using the
+midline.</p>
+<h3 class="unnumbered" id="exploration-b-a-graph-with-two-different-representations">Exploration
+B: A graph with two different representations</h3>
+<p>Consider <span class="math inline">\(f(x)=2\cos(3x)\)</span>. Use the
+identity <span class="math inline">\(\cos u=\sin(u+\pi/2)\)</span> to
+obtain <span class="math inline">\(f(x)=2\sin(3x+\pi/2)\)</span>. Factor
+the sine argument to show a left shift of <span class="math inline">\(\pi/6\)</span>. Both formulas have amplitude <span class="math inline">\(2\)</span>, period <span class="math inline">\(2\pi/3\)</span>, and midline <span class="math inline">\(0\)</span>. Sketch both and explain why the curves
+coincide even though one description uses cosine and the other sine.</p>
+<h3 class="unnumbered" id="exploration-c-why-tangent-is-not-a-sinusoid">Exploration C: Why
+tangent is not a sinusoid</h3>
+<p>Although tangent is periodic, it is unbounded and has vertical
+asymptotes. Compare its range with that of <span class="math inline">\(A\sin(B(x-C))+D\)</span> for finite <span class="math inline">\(A\)</span>. The latter always has a bounded range,
+so no such sinusoidal formula can reproduce tangent on its entire
+domain. This distinction matters when selecting a model for a scientific
+signal.</p>
+<h2 id="independent-practice-interpret-calculate-justify">Independent
+practice: interpret, calculate, justify</h2>
+<ol type="1">
+<li><p>A graph has range <span class="math inline">\([-4,10]\)</span>
+and period <span class="math inline">\(5\)</span>. Find its amplitude
+and midline, and give one possible sine model.</p></li>
+<li><p>A sinusoidal curve crosses its midline upward at <span class="math inline">\(t=2\)</span> and repeats every <span class="math inline">\(12\)</span> units. Write a model with amplitude
+<span class="math inline">\(3\)</span> and midline <span class="math inline">\(8\)</span>.</p></li>
+<li><p>A cosine graph reaches a maximum at <span class="math inline">\(t=0\)</span> and its first minimum at <span class="math inline">\(t=3\)</span>. Determine the period and a formula
+with maximum <span class="math inline">\(5\)</span> and minimum <span class="math inline">\(-1\)</span>.</p></li>
+<li><p>Explain why the period of <span class="math inline">\(\cos(\pi
+x/6)\)</span> is <span class="math inline">\(12\)</span> rather than
+<span class="math inline">\(6\)</span>.</p></li>
+<li><p>Sketch <span class="math inline">\(y=\sec x\)</span> on <span class="math inline">\([-\pi,\pi]\)</span>, marking its asymptotes and
+branch extrema.</p></li>
+<li><p>Determine all solutions to <span class="math inline">\(\sin(2x)=0\)</span> on <span class="math inline">\([0,2\pi)\)</span> and check how many cycles the
+argument completes.</p></li>
+<li><p>A periodic sensor reading is <span class="math inline">\(S(t)=4+2\sin(\pi t/5)\)</span>. Find the first
+time after <span class="math inline">\(t=0\)</span> when the reading
+reaches its maximum.</p></li>
+<li><p>A student claims that changing <span class="math inline">\(C\)</span> in <span class="math inline">\(A\sin(B(x-C))+D\)</span> changes the period.
+Explain why this is false.</p></li>
+<li><p>Compare <span class="math inline">\(\arcsin(\sin(5\pi/6))\)</span> with <span class="math inline">\(5\pi/6\)</span> and explain the
+difference.</p></li>
+<li><p>Describe how you would test a sinusoidal model using a residual
+plot rather than merely checking whether the graph looks
+smooth.</p></li>
+</ol>
+<h5 id="study-strategy.">Study strategy.</h5>
+<p>For each exercise, produce a symbolic answer, a labeled sketch or
+table, and one sentence interpreting the result. Where relevant, confirm
+the result with R or Python, but retain the hand calculation as the
+primary mathematical justification.</p>
+<h2 id="chapter-review-exercises">Chapter review exercises</h2>
+<p>Show algebraic steps and explain graph-based conclusions. Use radians
+unless degrees are explicitly indicated.</p>
+<h3 class="unnumbered" id="core-mathematical-skills">Core mathematical
+skills</h3>
+<ol type="1">
+<li><p>Sketch <span class="math inline">\(y=\sin x\)</span> on <span class="math inline">\([-2\pi,2\pi]\)</span> and label all
+extrema.</p></li>
+<li><p>Sketch <span class="math inline">\(y=\cos x\)</span> on <span class="math inline">\([-\pi,3\pi]\)</span> and identify its
+zeros.</p></li>
+<li><p>Find the amplitude and period of <span class="math inline">\(3\sin(2x)\)</span>.</p></li>
+<li><p>Find the amplitude, midline, and range of <span class="math inline">\(-4\cos x+1\)</span>.</p></li>
+<li><p>Find the period of <span class="math inline">\(\sin(x/5)\)</span>.</p></li>
+<li><p>Find the period of <span class="math inline">\(\cos(7x)\)</span>.</p></li>
+<li><p>Write <span class="math inline">\(2\sin(3x-\pi)\)</span> in
+shifted form.</p></li>
+<li><p>Find all key points of one cycle of <span class="math inline">\(\sin(2x-\pi/2)\)</span>.</p></li>
+<li><p>Find the zeros of <span class="math inline">\(\sin x\)</span> on
+<span class="math inline">\([0,4\pi]\)</span>.</p></li>
+<li><p>Find the zeros of <span class="math inline">\(\cos x\)</span> on
+<span class="math inline">\([-\pi,\pi]\)</span>.</p></li>
+<li><p>Locate the vertical asymptotes of <span class="math inline">\(\tan x\)</span> on <span class="math inline">\([-2\pi,2\pi]\)</span>.</p></li>
+<li><p>Find the period and asymptotes of <span class="math inline">\(\tan(4x)\)</span>.</p></li>
+<li><p>Explain the domain of <span class="math inline">\(\csc
+x\)</span>.</p></li>
+<li><p>Explain why <span class="math inline">\(\sec x\)</span> cannot
+have values in <span class="math inline">\((-1,1)\)</span>.</p></li>
+<li><p>Solve <span class="math inline">\(\sin x=\sqrt3/2\)</span> on
+<span class="math inline">\([0,2\pi)\)</span>.</p></li>
+<li><p>Solve <span class="math inline">\(\cos x=-1/2\)</span> on <span class="math inline">\([0,2\pi)\)</span>.</p></li>
+<li><p>Solve <span class="math inline">\(\tan x=1\)</span> on <span class="math inline">\([0,2\pi)\)</span>.</p></li>
+<li><p>Compute <span class="math inline">\(\arcsin(-1/2)\)</span> and
+explain the principal range.</p></li>
+<li><p>Compute <span class="math inline">\(\arccos(0)\)</span> and
+explain the principal range.</p></li>
+<li><p>Find a sinusoid with maximum <span class="math inline">\(8\)</span>, minimum <span class="math inline">\(2\)</span>, and period <span class="math inline">\(6\)</span>.</p></li>
+<li><p>Construct a cosine model with maximum at <span class="math inline">\(t=3\)</span>, period <span class="math inline">\(10\)</span>, amplitude <span class="math inline">\(4\)</span>, and midline <span class="math inline">\(7\)</span>.</p></li>
+<li><p>Find the average rate of change of <span class="math inline">\(\sin x\)</span> on <span class="math inline">\([0,\pi/2]\)</span>.</p></li>
+<li><p>Compare <span class="math inline">\(\sin(x+\pi)\)</span> and
+<span class="math inline">\(-\sin x\)</span> graphically and
+algebraically.</p></li>
+<li><p>Explain why <span class="math inline">\(\sin x\)</span> is odd
+and <span class="math inline">\(\cos x\)</span> is even.</p></li>
+<li><p>For <span class="math inline">\(f(x)=3\cos(2(x-1))+4\)</span>,
+find its range and period.</p></li>
+<li><p>Describe the transformations in <span class="math inline">\(g(x)=-\tfrac12\sin(3(x+2))-1\)</span>.</p></li>
+<li><p>A periodic signal repeats every 12 seconds. Find its angular
+frequency in radians per second.</p></li>
+<li><p>A wheel completes 90 rotations per minute. Find its angular
+frequency in radians per second.</p></li>
+<li><p>A temperature model has midline <span class="math inline">\(37\)</span> and amplitude <span class="math inline">\(0.3\)</span>. Find its predicted range.</p></li>
+<li><p>Explain why fitting a sinusoid to noisy measurements requires
+examining residuals.</p></li>
+</ol>
+<h2 id="calculus-readiness-checkpoint">Calculus-readiness
+checkpoint</h2>
+<p>For <span class="math inline">\(f(x)=\sin x\)</span>, calculate <span class="math inline">\([f(h)-f(0)]/h\)</span> at <span class="math inline">\(h=0.5,0.1,0.01\)</span> radians. Predict the
+limiting slope. Explain why radians, not degrees, are the natural input
+unit for calculus.</p>
+<h2 id="extended-application-daily-environmental-cycle">Extended
+application: Daily environmental cycle</h2>
+<p>A controlled room has a synthetic daily temperature cycle centered at
+22 degrees Celsius with amplitude 3 and a maximum at hour 6. The
+quantities in this investigation are illustrative rather than measured
+observations.</p>
+<h3 id="formulating-the-mathematical-model">Formulating the mathematical
+model</h3>
+<p>The proposed relationship is <span class="math display">\[T(t)=22+3\cos(\pi(t-6)/12).\]</span> Before
+calculating, identify the input and output, their units, and the
+interval on which the model is being studied. Distinguish the
+mathematical domain from the practical domain. The numerical study uses
+inputs from <span class="math inline">\(0\)</span> to <span class="math inline">\(48\)</span>.</p>
+<blockquote class="example">
+<p><strong>Example 14: Analytical investigation.</strong> Identify
+period, midline, maximum and minimum. Find the first two midline
+crossings after hour 0.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> Period 24 h; midline 22; extrema 25
+and 19. Crossings after 0 occur at 12 and 24 h.</p>
+</blockquote>
+<h3 id="connecting-numerical-and-graphical-representations">Connecting
+numerical and graphical representations</h3>
+<table>
+<caption>Selected predictions from the illustrative model. Values are
+rounded for display.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Time (h)</th>
+<th style="text-align: right;">Temperature (C)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">22</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">22</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">22</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">36</td>
+<td style="text-align: right;">22</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">48</td>
+<td style="text-align: right;">22</td>
+</tr>
+</tbody>
+</table>
+<figure>
+<img alt="Model predictions over the stated investigation interval. The graph represents a mathematical model, not observed data." src="figures/ch09/applied_project.svg" style="width:90.0%"/>
+<figcaption aria-hidden="true">Model predictions over the stated
+investigation interval. The graph represents a mathematical model, not
+observed data.</figcaption>
+</figure>
+<p><strong>Interpretation.</strong> Compare the tabulated values with
+the graph. Identify the intervals over which the output increases or
+decreases, and distinguish a sampled extremum from an exact analytical
+extremum. Explain whether interpolation and extrapolation have the same
+justification in this setting.</p>
+<h3 id="r-implementation">R implementation</h3>
+<p>The following standalone script defines the model, generates
+predictions, and draws a labeled graph. Read the formula before running
+the code. The sampled range is a numerical diagnostic, not a proof of
+the exact range.</p>
+<div class="code-shell"><div class="code-bar"><span>R</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a aria-hidden="true" href="#cb7-1" tabindex="-1"></a><span class="co"># Applied investigation: Daily environmental cycle</span></span>
+<span id="cb7-2"><a aria-hidden="true" href="#cb7-2" tabindex="-1"></a><span class="co"># 1. Define the input domain and model</span></span>
+<span id="cb7-3"><a aria-hidden="true" href="#cb7-3" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">48</span>, <span class="at">length.out =</span> <span class="dv">301</span>)</span>
+<span id="cb7-4"><a aria-hidden="true" href="#cb7-4" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">22</span><span class="sc">+</span><span class="dv">3</span><span class="sc">*</span><span class="fu">cos</span>(pi<span class="sc">*</span>(x<span class="dv">-6</span>)<span class="sc">/</span><span class="dv">12</span>)</span>
+<span id="cb7-5"><a aria-hidden="true" href="#cb7-5" tabindex="-1"></a></span>
+<span id="cb7-6"><a aria-hidden="true" href="#cb7-6" tabindex="-1"></a><span class="co"># 2. Inspect numerical predictions</span></span>
+<span id="cb7-7"><a aria-hidden="true" href="#cb7-7" tabindex="-1"></a>idx <span class="ot">&lt;-</span> <span class="fu">unique</span>(<span class="fu">round</span>(<span class="fu">seq</span>(<span class="dv">1</span>, <span class="fu">length</span>(x), <span class="at">length.out =</span> <span class="dv">5</span>)))</span>
+<span id="cb7-8"><a aria-hidden="true" href="#cb7-8" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">data.frame</span>(<span class="at">input =</span> x[idx], <span class="at">output =</span> y[idx]))</span>
+<span id="cb7-9"><a aria-hidden="true" href="#cb7-9" tabindex="-1"></a></span>
+<span id="cb7-10"><a aria-hidden="true" href="#cb7-10" tabindex="-1"></a><span class="co"># 3. Visualize the model with labeled axes</span></span>
+<span id="cb7-11"><a aria-hidden="true" href="#cb7-11" tabindex="-1"></a><span class="fu">plot</span>(x, y, <span class="at">type =</span> <span class="st">"l"</span>, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">"#176B87"</span>,</span>
+<span id="cb7-12"><a aria-hidden="true" href="#cb7-12" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Time (h)"</span>, <span class="at">ylab =</span> <span class="st">"Temperature (C)"</span>)</span>
+<span id="cb7-13"><a aria-hidden="true" href="#cb7-13" tabindex="-1"></a><span class="fu">grid</span>()</span>
+<span id="cb7-14"><a aria-hidden="true" href="#cb7-14" tabindex="-1"></a></span>
+<span id="cb7-15"><a aria-hidden="true" href="#cb7-15" tabindex="-1"></a><span class="co"># 4. Check the sampled output range</span></span>
+<span id="cb7-16"><a aria-hidden="true" href="#cb7-16" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">range</span>(y))</span></code></pre></div></div>
+<h3 id="python-implementation">Python implementation</h3>
+<p>Repeat the same investigation using NumPy arrays and Matplotlib.
+Compare the printed predictions with the R output, allowing for
+rounding.</p>
+<div class="code-shell"><div class="code-bar"><span>Python</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a aria-hidden="true" href="#cb8-1" tabindex="-1"></a><span class="co"># Applied investigation: Daily environmental cycle</span></span>
+<span id="cb8-2"><a aria-hidden="true" href="#cb8-2" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb8-3"><a aria-hidden="true" href="#cb8-3" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb8-4"><a aria-hidden="true" href="#cb8-4" tabindex="-1"></a></span>
+<span id="cb8-5"><a aria-hidden="true" href="#cb8-5" tabindex="-1"></a><span class="co"># 1. Define the input domain and model</span></span>
+<span id="cb8-6"><a aria-hidden="true" href="#cb8-6" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">48</span>, <span class="dv">301</span>)</span>
+<span id="cb8-7"><a aria-hidden="true" href="#cb8-7" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">22</span><span class="op">+</span><span class="dv">3</span><span class="op">*</span>np.cos(np.pi<span class="op">*</span>(x<span class="op">-</span><span class="dv">6</span>)<span class="op">/</span><span class="dv">12</span>)</span>
+<span id="cb8-8"><a aria-hidden="true" href="#cb8-8" tabindex="-1"></a></span>
+<span id="cb8-9"><a aria-hidden="true" href="#cb8-9" tabindex="-1"></a><span class="co"># 2. Inspect numerical predictions</span></span>
+<span id="cb8-10"><a aria-hidden="true" href="#cb8-10" tabindex="-1"></a>idx <span class="op">=</span> np.unique(np.linspace(<span class="dv">0</span>, <span class="bu">len</span>(x)<span class="op">-</span><span class="dv">1</span>, <span class="dv">5</span>).<span class="bu">round</span>().astype(<span class="bu">int</span>))</span>
+<span id="cb8-11"><a aria-hidden="true" href="#cb8-11" tabindex="-1"></a><span class="bu">print</span>(np.column_stack((x[idx], y[idx])))</span>
+<span id="cb8-12"><a aria-hidden="true" href="#cb8-12" tabindex="-1"></a></span>
+<span id="cb8-13"><a aria-hidden="true" href="#cb8-13" tabindex="-1"></a><span class="co"># 3. Visualize the model with labeled axes</span></span>
+<span id="cb8-14"><a aria-hidden="true" href="#cb8-14" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="fl">3.6</span>))</span>
+<span id="cb8-15"><a aria-hidden="true" href="#cb8-15" tabindex="-1"></a>ax.plot(x, y, <span class="st">"-"</span>, color<span class="op">=</span><span class="st">"#176B87"</span>, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb8-16"><a aria-hidden="true" href="#cb8-16" tabindex="-1"></a>ax.<span class="bu">set</span>(xlabel<span class="op">=</span><span class="st">"Time (h)"</span>, ylabel<span class="op">=</span><span class="st">"Temperature (C)"</span>)</span>
+<span id="cb8-17"><a aria-hidden="true" href="#cb8-17" tabindex="-1"></a>ax.grid(alpha<span class="op">=</span><span class="fl">0.22</span>)</span>
+<span id="cb8-18"><a aria-hidden="true" href="#cb8-18" tabindex="-1"></a>ax.spines[[<span class="st">"top"</span>, <span class="st">"right"</span>]].set_visible(<span class="va">False</span>)</span>
+<span id="cb8-19"><a aria-hidden="true" href="#cb8-19" tabindex="-1"></a>fig.tight_layout()</span>
+<span id="cb8-20"><a aria-hidden="true" href="#cb8-20" tabindex="-1"></a>plt.show()</span>
+<span id="cb8-21"><a aria-hidden="true" href="#cb8-21" tabindex="-1"></a></span>
+<span id="cb8-22"><a aria-hidden="true" href="#cb8-22" tabindex="-1"></a><span class="co"># 4. Check the sampled output range</span></span>
+<span id="cb8-23"><a aria-hidden="true" href="#cb8-23" tabindex="-1"></a><span class="bu">print</span>(np.<span class="bu">min</span>(y), np.<span class="bu">max</span>(y))</span></code></pre></div></div>
+<h3 id="guided-practice-checking-the-model">Guided practice: checking
+the model</h3>
+<ol type="1">
+<li><p>Calculate the outputs at the two endpoints by hand. Compare them
+with the numerical table.</p></li>
+<li><p>Select an interior input not listed in the table. Predict the
+output before evaluating it in either language.</p></li>
+<li><p>Explain the meaning of the difference between the two endpoint
+outputs, including units. If appropriate, calculate the average rate of
+change.</p></li>
+<li><p>Identify a physical assumption of the model and describe a
+circumstance in which it would fail.</p></li>
+</ol>
+<h2 id="chapter-project-investigating-daily-environmental-cycle">Chapter
+project: investigating Daily environmental cycle</h2>
+<p>Prepare a short technical report for a reader who has not studied the
+model. Use the preceding case as a starting point, but develop your own
+investigation rather than merely reproducing the worked example.</p>
+<ol type="1">
+<li><p>State a quantitative question that can be answered using the
+model. Define all variables, units, and restrictions.</p></li>
+<li><p>Modify one meaningful numerical parameter in the formula. Explain
+what the change represents in the original context. Derive the revised
+formula and predict the direction of change before computing.</p></li>
+<li><p>Compare the original and revised models at five common admissible
+inputs. Present a labeled table and explain the largest difference in
+the table.</p></li>
+<li><p>Produce a graph containing both models on the same axes. Use a
+legend and distinguish the curves with line styles or markers. Explain
+the shape and any intersections.</p></li>
+<li><p>Solve your quantitative question algebraically where possible.
+Verify the result using R and Python; report any differences due to
+numerical precision.</p></li>
+<li><p>Discuss at least two limitations. Describe what measurements
+would be needed to assess the model in practice. Do not present
+simulated predictions as empirical evidence.</p></li>
+</ol>
+<h3 class="unnumbered" id="project-deliverables-and-assessment">Project
+deliverables and assessment</h3>
+<p>Submit a two- to three-page report, the two runnable scripts, and the
+labeled figure. The report should stand on its own without requiring the
+reader to inspect the code.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Criterion</th>
+<th style="text-align: right;">Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Mathematical formulation and domain</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Analytical reasoning and verification</td>
+<td style="text-align: right;">25</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Reproducible R and Python
+computations</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Graph and table quality</td>
+<td style="text-align: right;">15</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Interpretation and limitations</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Total</td>
+<td style="text-align: right;">100</td>
+</tr>
+</tbody>
+</table>
+<h2 class="unnumbered" id="chapter-summary">Chapter summary</h2>
+<p>Sine and cosine convert circular motion into periodic coordinate
+graphs. Amplitude, period, phase shift, and midline describe sinusoidal
+transformations. Tangent, cotangent, secant, and cosecant introduce
+domain restrictions and asymptotes. These ideas support mathematical
+models of repeated processes and prepare students to study trigonometric
+limits and derivatives.</p>
+<h2>Companion scripts</h2><p><a download="" href="code/ch09/applied_project.R">applied_project.R</a></p><p><a download="" href="code/ch09/applied_project.py">applied_project.py</a></p><p><a download="" href="code/ch09/chapter09_labs.R">chapter09_labs.R</a></p><p><a download="" href="code/ch09/chapter09_labs.py">chapter09_labs.py</a></p><footer><a href="chapter08.html">← Previous</a><a href="chapter10.html">Next →</a></footer><section class="investigation"><h2 id="interactive-investigation">Interactive investigation: Sinusoidal graphs</h2><div data-investigation="9"><p>Enable JavaScript to explore the model.</p></div><p><strong>Explore and explain:</strong> Determine the period and midline from the parameters.</p></section>
+</main><nav aria-label="On this page" class="chapter-toc" id="TOC" role="doc-toc"><strong>On this page</strong>
+<ul>
+<li><a href="#trigonometric-functions-and-their-graphs" id="toc-trigonometric-functions-and-their-graphs">Trigonometric
+Functions and Their Graphs</a>
+<ul>
+<li><a href="#opening-context-periodic-signals-in-health-sciences" id="toc-opening-context-periodic-signals-in-health-sciences">Opening
+context: periodic signals in health sciences</a></li>
+<li><a href="#learning-outcomes" id="toc-learning-outcomes">Learning
+outcomes</a></li>
+<li><a href="#prerequisite-check" id="toc-prerequisite-check">Prerequisite check</a></li>
+<li><a href="#computational-workflow" id="toc-computational-workflow">Computational workflow</a></li>
+<li><a href="#from-circular-motion-to-periodic-functions" id="toc-from-circular-motion-to-periodic-functions">From circular motion
+to periodic functions</a></li>
+<li><a href="#graphing-sine-and-cosine" id="toc-graphing-sine-and-cosine">Graphing sine and cosine</a></li>
+<li><a href="#amplitude-midline-and-vertical-changes" id="toc-amplitude-midline-and-vertical-changes">Amplitude, midline, and
+vertical changes</a></li>
+<li><a href="#period-and-horizontal-scaling" id="toc-period-and-horizontal-scaling">Period and horizontal
+scaling</a></li>
+<li><a href="#phase-shifts-and-the-complete-sinusoidal-model" id="toc-phase-shifts-and-the-complete-sinusoidal-model">Phase shifts and
+the complete sinusoidal model</a></li>
+<li><a href="#constructing-a-sinusoid-from-a-graph-or-data" id="toc-constructing-a-sinusoid-from-a-graph-or-data">Constructing a
+sinusoid from a graph or data</a></li>
+<li><a href="#tangent-and-cotangent-graphs" id="toc-tangent-and-cotangent-graphs">Tangent and cotangent
+graphs</a></li>
+<li><a href="#secant-and-cosecant-graphs" id="toc-secant-and-cosecant-graphs">Secant and cosecant graphs</a></li>
+<li><a href="#inverse-trigonometric-functions-and-restricted-domains" id="toc-inverse-trigonometric-functions-and-restricted-domains">Inverse
+trigonometric functions and restricted domains</a></li>
+<li><a href="#modeling-periodic-health-science-measurements" id="toc-modeling-periodic-health-science-measurements">Modeling periodic
+health-science measurements</a></li>
+<li><a href="#average-rate-of-change-and-calculus-preparation" id="toc-average-rate-of-change-and-calculus-preparation">Average rate of
+change and calculus preparation</a></li>
+<li><a href="#visual-investigations-and-guided-workshops" id="toc-visual-investigations-and-guided-workshops">Visual
+investigations and guided workshops</a>
+<ul>
+<li><a href="#investigation-1-tracing-the-unit-circle" id="toc-investigation-1-tracing-the-unit-circle">Investigation 1:
+Tracing the unit circle</a></li>
+<li><a href="#investigation-2-transformations-in-stages" id="toc-investigation-2-transformations-in-stages">Investigation 2:
+Transformations in stages</a></li>
+<li><a href="#investigation-3-amplitude-and-period-from-observations" id="toc-investigation-3-amplitude-and-period-from-observations">Investigation
+3: Amplitude and period from observations</a></li>
+<li><a href="#investigation-4-the-meaning-of-asymptotes" id="toc-investigation-4-the-meaning-of-asymptotes">Investigation 4: The
+meaning of asymptotes</a></li>
+<li><a href="#investigation-5-respiration-and-model-limitations" id="toc-investigation-5-respiration-and-model-limitations">Investigation
+5: Respiration and model limitations</a></li>
+<li><a href="#investigation-6-comparing-periodic-models" id="toc-investigation-6-comparing-periodic-models">Investigation 6:
+Comparing periodic models</a></li>
+<li><a href="#investigation-7-rates-of-change" id="toc-investigation-7-rates-of-change">Investigation 7: Rates of
+change</a></li>
+</ul></li>
+<li><a href="#computational-laboratory-a-sine-and-cosine-transformations" id="toc-computational-laboratory-a-sine-and-cosine-transformations">Computational
+laboratory A: Sine and cosine transformations</a>
+<ul>
+<li><a href="#r-code" id="toc-r-code">R code</a></li>
+<li><a href="#python-code" id="toc-python-code">Python code</a></li>
+</ul></li>
+<li><a href="#computational-laboratory-b-tangent-and-reciprocal-functions" id="toc-computational-laboratory-b-tangent-and-reciprocal-functions">Computational
+laboratory B: Tangent and reciprocal functions</a>
+<ul>
+<li><a href="#r-code-1" id="toc-r-code-1">R code</a></li>
+<li><a href="#python-code-1" id="toc-python-code-1">Python code</a></li>
+</ul></li>
+<li><a href="#computational-laboratory-c-periodic-model-fitting" id="toc-computational-laboratory-c-periodic-model-fitting">Computational
+laboratory C: Periodic model fitting</a>
+<ul>
+<li><a href="#r-code-2" id="toc-r-code-2">R code</a></li>
+<li><a href="#python-code-2" id="toc-python-code-2">Python code</a></li>
+</ul></li>
+<li><a href="#further-worked-examples-and-problem-solving-strategies" id="toc-further-worked-examples-and-problem-solving-strategies">Further
+worked examples and problem-solving strategies</a></li>
+<li><a href="#extended-guided-practice-constructing-and-checking-graphs" id="toc-extended-guided-practice-constructing-and-checking-graphs">Extended
+guided practice: constructing and checking graphs</a>
+<ul>
+<li><a href="#investigation-8-a-five-point-graphing-algorithm" id="toc-investigation-8-a-five-point-graphing-algorithm">Investigation
+8: A five-point graphing algorithm</a></li>
+<li><a href="#investigation-9-equivalent-phase-shift-descriptions" id="toc-investigation-9-equivalent-phase-shift-descriptions">Investigation
+9: Equivalent phase-shift descriptions</a></li>
+<li><a href="#investigation-10-recovering-a-model-from-a-data-table" id="toc-investigation-10-recovering-a-model-from-a-data-table">Investigation
+10: Recovering a model from a data table</a></li>
+<li><a href="#investigation-11-solving-by-graph-intersections" id="toc-investigation-11-solving-by-graph-intersections">Investigation
+11: Solving by graph intersections</a></li>
+<li><a href="#investigation-12-sampling-and-apparent-frequency" id="toc-investigation-12-sampling-and-apparent-frequency">Investigation
+12: Sampling and apparent frequency</a></li>
+</ul></li>
+<li><a href="#additional-worked-applications" id="toc-additional-worked-applications">Additional worked
+applications</a></li>
+<li><a href="#conceptual-discussion-and-common-misconceptions" id="toc-conceptual-discussion-and-common-misconceptions">Conceptual
+discussion and common misconceptions</a></li>
+<li><a href="#instructor-guided-exploration-parameter-sensitivity" id="toc-instructor-guided-exploration-parameter-sensitivity">Instructor-guided
+exploration: parameter sensitivity</a>
+<ul>
+<li><a href="#exploration-a-changing-one-parameter-at-a-time" id="toc-exploration-a-changing-one-parameter-at-a-time">Exploration A:
+Changing one parameter at a time</a></li>
+<li><a href="#exploration-b-a-graph-with-two-different-representations" id="toc-exploration-b-a-graph-with-two-different-representations">Exploration
+B: A graph with two different representations</a></li>
+<li><a href="#exploration-c-why-tangent-is-not-a-sinusoid" id="toc-exploration-c-why-tangent-is-not-a-sinusoid">Exploration C: Why
+tangent is not a sinusoid</a></li>
+</ul></li>
+<li><a href="#independent-practice-interpret-calculate-justify" id="toc-independent-practice-interpret-calculate-justify">Independent
+practice: interpret, calculate, justify</a></li>
+<li><a href="#chapter-review-exercises" id="toc-chapter-review-exercises">Chapter review exercises</a>
+<ul>
+<li><a href="#core-mathematical-skills" id="toc-core-mathematical-skills">Core mathematical skills</a></li>
+</ul></li>
+<li><a href="#calculus-readiness-checkpoint" id="toc-calculus-readiness-checkpoint">Calculus-readiness
+checkpoint</a></li>
+<li><a href="#extended-application-daily-environmental-cycle" id="toc-extended-application-daily-environmental-cycle">Extended
+application: Daily environmental cycle</a>
+<ul>
+<li><a href="#formulating-the-mathematical-model" id="toc-formulating-the-mathematical-model">Formulating the mathematical
+model</a></li>
+<li><a href="#connecting-numerical-and-graphical-representations" id="toc-connecting-numerical-and-graphical-representations">Connecting
+numerical and graphical representations</a></li>
+<li><a href="#r-implementation" id="toc-r-implementation">R
+implementation</a></li>
+<li><a href="#python-implementation" id="toc-python-implementation">Python implementation</a></li>
+<li><a href="#guided-practice-checking-the-model" id="toc-guided-practice-checking-the-model">Guided practice: checking
+the model</a></li>
+</ul></li>
+<li><a href="#chapter-project-investigating-daily-environmental-cycle" id="toc-chapter-project-investigating-daily-environmental-cycle">Chapter
+project: investigating Daily environmental cycle</a>
+<ul>
+<li><a href="#project-deliverables-and-assessment" id="toc-project-deliverables-and-assessment">Project deliverables and
+assessment</a></li>
+</ul></li>
+<li><a href="#chapter-summary" id="toc-chapter-summary">Chapter
+summary</a></li>
+</ul></li>
+</ul>
+</nav></div><script src="investigations.js"></script></body></html>

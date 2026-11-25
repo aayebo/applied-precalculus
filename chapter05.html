@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8"/>
+<meta content="pandoc" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+<title>Transformations,
+Compositions, and Inverse Functions | Applied Precalculus</title>
+<style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+
+
+<link href="site.css" rel="stylesheet"/><script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script defer="" src="search-index.js"></script><script defer="" src="site.js"></script></head><body><nav class="site-nav" id="book-nav"><strong class="brand">Applied Precalculus</strong><p class="subtitle">Using R and Python</p><input aria-label="Search the book" id="book-search" placeholder="Search the book"/><div aria-live="polite" class="search-results" id="search-results"></div><p class="nav-label">Contents</p><a class="" href="index.html">Preface</a><a class="" href="chapter01.html">1. Real Numbers, Algebraic Expressions, and Mathematical Reasoning</a><a class="" href="chapter02.html">2. Equations, Inequalities, and Applications</a><a class="" href="chapter03.html">3. Coordinate Geometry, Lines, and Systems of Equations</a><a class="" href="chapter04.html">4. Functions, Graphs, and Multiple Representations</a><a class="active" href="chapter05.html">5. Transformations, Compositions, and Inverse Functions</a><a class="" href="chapter06.html">6. Polynomial and Rational Functions</a><a class="" href="chapter07.html">7. Exponential and Logarithmic Functions</a><a class="" href="chapter08.html">8. Angles, Radian Measure, and the Unit Circle</a><a class="" href="chapter09.html">9. Trigonometric Functions and Their Graphs</a><a class="" href="chapter10.html">10. Trigonometric Identities and Equations</a><a class="" href="chapter11.html">11. Applications of Trigonometry and Periodic Models</a><a class="" href="chapter12.html">12. Sequences, Series, and Mathematical Patterns</a><a class="" href="chapter13.html">13. Conic Sections and Parametric Equations</a><a class="" href="chapter14.html">14. Vectors, Polar Coordinates, and Geometric Modeling</a><a class="" href="chapter15.html">15. Rates of Change, Difference Quotients, and Limits</a><a class="" href="chapter16.html">16. Integrated Mathematical Modeling with R and Python</a><a class="" href="programming.html">Getting Started with R and Python</a><a class="" href="resources.html">Computational Resource Guide</a></nav><a class="skip" href="#main-content">Skip to content</a><header class="topbar"><button aria-controls="book-nav" aria-expanded="false" class="menu">Contents</button><span>Applied Precalculus / Online edition</span><span class="spacer"></span><a href="resources.html">Resources</a></header><div class="page-grid"><main id="main-content">
+
+<h1 id="transformations-compositions-and-inverse-functions">Transformations,
+Compositions, and Inverse Functions</h1>
+<h2 class="unnumbered" id="opening-investigation-how-do-mathematical-models-change">Opening
+investigation: How do mathematical models change?</h2>
+<p>Suppose a laboratory instrument reports a measurement with a fixed
+baseline offset. Another laboratory measures the same quantity using a
+different scale. These changes correspond to vertical translations and
+stretches of a function. When a model uses the output of one calculation
+as the input to another, we compose functions; when we recover an input
+from a measured output, we use an inverse. These operations are central
+to scientific modeling and later calculus.</p>
+<h2 class="unnumbered" id="learning-outcomes">Learning outcomes</h2>
+<p>After completing this chapter, you should be able to describe and
+graph translations, reflections, and stretches; map points under
+combined transformations; combine functions while respecting domains;
+construct and interpret compositions; determine domains of compositions;
+test whether a function is one-to-one; find, verify, and graph inverses;
+and implement these ideas using R and Python.</p>
+<h2 class="unnumbered" id="prerequisite-check">Prerequisite check</h2>
+<p>Before proceeding, review function notation, domains and ranges,
+graphing, and slope from Chapters 3–4. Evaluate <span class="math inline">\(f(-2)\)</span> for <span class="math inline">\(f(x)=x^2+1\)</span>; state the domain of <span class="math inline">\(\sqrt{x-3}\)</span>; and identify the vertex of
+<span class="math inline">\((x-2)^2+5\)</span>. Answers: <span class="math inline">\(5\)</span>, <span class="math inline">\([3,\infty)\)</span>, and <span class="math inline">\((2,5)\)</span>.</p>
+<h2 class="unnumbered" id="chapter-roadmap">Chapter roadmap</h2>
+<p>Transformations change a known function; arithmetic combines two
+functions; composition chains them; inversion reverses a one-to-one
+relationship. Each operation changes what inputs are allowed and what
+outputs mean.</p>
+<h2 id="from-parent-functions-to-families">From parent functions to
+families</h2>
+<p>A parent function provides a familiar reference graph. Common parents
+include <span class="math inline">\(f(x)=x\)</span>, <span class="math inline">\(x^2\)</span>, <span class="math inline">\(|x|\)</span>, <span class="math inline">\(\sqrt{x}\)</span>, <span class="math inline">\(1/x\)</span>, and <span class="math inline">\(x^3\)</span>. Transformations create related
+graphs without plotting every point from scratch. The essential skill is
+to distinguish a change to the <em>input</em> from a change to the
+<em>output</em>. A change to the output affects vertical coordinates; a
+change to the input affects horizontal coordinates.</p>
+<p><strong>Investigation.</strong> Starting from <span class="math inline">\(f(x)=x^2\)</span>, list the points <span class="math inline">\((-2,4),(-1,1),(0,0),(1,1),(2,4)\)</span>. Predict
+the points on <span class="math inline">\(y=f(x)+3\)</span> and <span class="math inline">\(y=f(x-3)\)</span> before sketching.</p>
+<blockquote class="example">
+<p><strong>Example 1: Parent-function recognition.</strong> Identify the
+parent of <span class="math inline">\(g(x)=\sqrt{x+2}-1\)</span> and
+describe its starting point.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> The parent is <span class="math inline">\(f(x)=\sqrt{x}\)</span>. Moving left two and down
+one sends the starting point <span class="math inline">\((0,0)\)</span>
+to <span class="math inline">\((-2,-1)\)</span>.</p>
+</blockquote>
+<h5 id="guided-practice-1.">Guided practice 1.</h5>
+<p>Identify the parent and describe <span class="math inline">\(y=|x-4|+2\)</span>. Explain each step, and check
+your result against the graph when appropriate.</p>
+<h2 id="vertical-translations">Vertical translations</h2>
+<p>For <span class="math inline">\(g(x)=f(x)+k\)</span>, every point
+<span class="math inline">\((x,y)\)</span> on the graph of <span class="math inline">\(f\)</span> becomes <span class="math inline">\((x,y+k)\)</span> on the graph of <span class="math inline">\(g\)</span>. A positive <span class="math inline">\(k\)</span> shifts upward and a negative <span class="math inline">\(k\)</span> shifts downward. The domain remains the
+same, while the range is shifted by <span class="math inline">\(k\)</span>. In a measurement model, a vertical
+shift can represent a baseline correction or a constant offset.</p>
+<p><strong>Investigation.</strong> Compare <span class="math inline">\(x^2\)</span>, <span class="math inline">\(x^2+2\)</span>, and <span class="math inline">\(x^2-3\)</span> on the same axes. Track the vertex
+and the minimum output.</p>
+<blockquote class="example">
+<p><strong>Example 2: Baseline adjustment.</strong> A sensor model is
+<span class="math inline">\(S(t)=2t+5\)</span>. After calibration, every
+reading increases by <span class="math inline">\(1.5\)</span> units.
+Find the adjusted model.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> <span class="math inline">\(A(t)=S(t)+1.5=2t+6.5\)</span>. The slope remains
+<span class="math inline">\(2\)</span> because only the baseline
+changes.</p>
+</blockquote>
+<h5 id="guided-practice-2.">Guided practice 2.</h5>
+<p>Find the vertex and range of <span class="math inline">\(y=(x+1)^2-4\)</span>. Explain each step, and check
+your result against the graph when appropriate.</p>
+<h2 id="horizontal-translations">Horizontal translations</h2>
+<p>For <span class="math inline">\(g(x)=f(x-h)\)</span>, the graph
+shifts <span class="math inline">\(h\)</span> units to the right. The
+apparent reversal is explained by solving <span class="math inline">\(x-h=a\)</span>: to obtain the original output
+<span class="math inline">\(f(a)\)</span>, the new input must be <span class="math inline">\(x=a+h\)</span>. Thus a point <span class="math inline">\((a,f(a))\)</span> moves to <span class="math inline">\((a+h,f(a))\)</span>. If <span class="math inline">\(h&lt;0\)</span>, the shift is left. Domain
+restrictions move with the graph.</p>
+<p><strong>Investigation.</strong> Compare <span class="math inline">\(\sqrt{x}\)</span>, <span class="math inline">\(\sqrt{x-4}\)</span>, and <span class="math inline">\(\sqrt{x+2}\)</span>; write each domain before
+graphing.</p>
+<blockquote class="example">
+<p><strong>Example 3: Shift and domain.</strong> Find the domain and
+vertex of <span class="math inline">\(g(x)=(x-4)^2+1\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> Every real input is allowed, so the
+domain is <span class="math inline">\(\mathbb R\)</span>. The vertex
+moves from <span class="math inline">\((0,0)\)</span> to <span class="math inline">\((4,1)\)</span>.</p>
+</blockquote>
+<h5 id="guided-practice-3.">Guided practice 3.</h5>
+<p>Find the domain of <span class="math inline">\(y=\sqrt{x+5}\)</span>.
+Explain each step, and check your result against the graph when
+appropriate.</p>
+<h2 id="reflections-across-coordinate-axes">Reflections across
+coordinate axes</h2>
+<p>The graph of <span class="math inline">\(g(x)=-f(x)\)</span> is the
+reflection of <span class="math inline">\(f\)</span> across the
+horizontal axis: <span class="math inline">\((x,y)\)</span> becomes
+<span class="math inline">\((x,-y)\)</span>. The graph of <span class="math inline">\(h(x)=f(-x)\)</span> reflects across the vertical
+axis: <span class="math inline">\((x,y)\)</span> becomes <span class="math inline">\((-x,y)\)</span>. For even functions, horizontal
+reflection produces the same graph; for odd functions, reflecting
+horizontally or vertically produces the same result.</p>
+<p><strong>Investigation.</strong> Compare <span class="math inline">\(\sqrt{x}\)</span>, <span class="math inline">\(-\sqrt{x}\)</span>, and <span class="math inline">\(\sqrt{-x}\)</span>. Explain their different
+domains and ranges.</p>
+<blockquote class="example">
+<p><strong>Example 4: Reflection and domain.</strong> Describe <span class="math inline">\(g(x)=\sqrt{-x}\)</span> and determine its
+domain.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> Reflect <span class="math inline">\(\sqrt{x}\)</span> across the vertical axis. The
+radicand requires <span class="math inline">\(-x\ge0\)</span>, hence
+<span class="math inline">\(x\le0\)</span>. The range is <span class="math inline">\([0,\infty)\)</span>.</p>
+</blockquote>
+<h5 id="guided-practice-4.">Guided practice 4.</h5>
+<p>Compare the graphs of <span class="math inline">\(y=-|x|\)</span> and
+<span class="math inline">\(y=|-x|\)</span>. Explain each step, and
+check your result against the graph when appropriate.</p>
+<h2 id="vertical-stretching-and-compression">Vertical stretching and
+compression</h2>
+<p>For <span class="math inline">\(g(x)=af(x)\)</span>, each output is
+multiplied by <span class="math inline">\(a\)</span>. If <span class="math inline">\(|a|&gt;1\)</span>, vertical distances from the
+horizontal axis increase; if <span class="math inline">\(0&lt;|a|&lt;1\)</span>, they decrease. A negative
+<span class="math inline">\(a\)</span> also reflects across the
+horizontal axis. Vertical scaling changes units and magnitude, but it
+does not change the allowable input values.</p>
+<p><strong>Investigation.</strong> Compare <span class="math inline">\(x^2\)</span>, <span class="math inline">\(3x^2\)</span>, and <span class="math inline">\(\frac14x^2\)</span>. For each, find the output at
+<span class="math inline">\(x=2\)</span> and discuss which graph appears
+narrower.</p>
+<blockquote class="example">
+<p><strong>Example 5: Scaled quadratic.</strong> Describe <span class="math inline">\(g(x)=-2(x-1)^2+3\)</span> and find its
+maximum.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> Shift right one, stretch vertically
+by factor two, reflect across the horizontal axis, and shift up three.
+The vertex <span class="math inline">\((1,3)\)</span> is a maximum.</p>
+</blockquote>
+<h5 id="guided-practice-5.">Guided practice 5.</h5>
+<p>Find the vertex and maximum of <span class="math inline">\(y=-3(x-2)^2+7\)</span>. Explain each step, and
+check your result against the graph when appropriate.</p>
+<h2 id="horizontal-stretching-and-compression">Horizontal stretching and
+compression</h2>
+<p>For <span class="math inline">\(g(x)=f(bx)\)</span> with <span class="math inline">\(b\ne0\)</span>, a point <span class="math inline">\((a,f(a))\)</span> moves to <span class="math inline">\((a/b,f(a))\)</span>. Thus the horizontal scale
+factor is <span class="math inline">\(1/|b|\)</span>, not <span class="math inline">\(|b|\)</span>. When <span class="math inline">\(|b|&gt;1\)</span> the graph is compressed
+horizontally; when <span class="math inline">\(0&lt;|b|&lt;1\)</span> it
+is stretched. A negative <span class="math inline">\(b\)</span> also
+reflects across the vertical axis.</p>
+<p><strong>Investigation.</strong> Compare <span class="math inline">\(|x|\)</span>, <span class="math inline">\(|2x|\)</span>, and <span class="math inline">\(|x/2|\)</span>. Explain why the scale factor
+appears reciprocal.</p>
+<blockquote class="example">
+<p><strong>Example 6: Horizontal scale.</strong> Describe <span class="math inline">\(g(x)=\sqrt{3x}\)</span> and find its domain.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> The graph of <span class="math inline">\(\sqrt{x}\)</span> is compressed horizontally by
+factor <span class="math inline">\(1/3\)</span>. Since <span class="math inline">\(3x\ge0\)</span>, its domain remains <span class="math inline">\([0,\infty)\)</span>.</p>
+</blockquote>
+<h5 id="guided-practice-6.">Guided practice 6.</h5>
+<p>For <span class="math inline">\(f(x)=x^2\)</span>, compare <span class="math inline">\(f(3x)\)</span> and <span class="math inline">\(3f(x)\)</span>. Explain each step, and check your
+result against the graph when appropriate.</p>
+<h2 id="combining-transformations-systematically">Combining
+transformations systematically</h2>
+<p>A useful general form is <span class="math inline">\(g(x)=a
+f(b(x-h))+k\)</span>. Begin by identifying the reference graph and the
+roles of <span class="math inline">\(a,b,h,k\)</span>. The point-mapping
+formula is <span class="math inline">\((u,v)\mapsto(h+u/b,\,k+av)\)</span> for <span class="math inline">\(b\ne0\)</span>. This formula handles reflections,
+stretches, and translations simultaneously and avoids ambiguity about
+the order of operations. Always check the transformed domain.</p>
+<p><strong>Investigation.</strong> Use the points <span class="math inline">\((0,0),(1,1),(4,2)\)</span> on <span class="math inline">\(y=\sqrt{x}\)</span> to generate points on <span class="math inline">\(g(x)=-2\sqrt{3(x-1)}+4\)</span>.</p>
+<blockquote class="example">
+<p><strong>Example 7: Point mapping.</strong> If <span class="math inline">\((2,5)\)</span> is on <span class="math inline">\(y=f(x)\)</span>, find the corresponding point on
+<span class="math inline">\(y=3f(2(x-4))-1\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> Solve <span class="math inline">\(2(x-4)=2\)</span> to obtain <span class="math inline">\(x=5\)</span>. The output is <span class="math inline">\(3(5)-1=14\)</span>, so the new point is <span class="math inline">\((5,14)\)</span>.</p>
+</blockquote>
+<h5 id="guided-practice-7.">Guided practice 7.</h5>
+<p>Map <span class="math inline">\((2,3)\)</span> under <span class="math inline">\(y=-2f(4(x-1))+5\)</span>. Explain each step, and
+check your result against the graph when appropriate.</p>
+<h2 id="function-arithmetic-and-domains">Function arithmetic and
+domains</h2>
+<p>Given functions <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span>, define <span class="math inline">\((f+g)(x)=f(x)+g(x)\)</span>, <span class="math inline">\((fg)(x)=f(x)g(x)\)</span>, and <span class="math inline">\((f/g)(x)=f(x)/g(x)\)</span> wherever both original
+expressions are defined. Division additionally requires <span class="math inline">\(g(x)\ne0\)</span>. The domain of a combination is
+therefore the intersection of the original domains, with further
+exclusions for division. Simplifying an expression does not restore
+excluded inputs.</p>
+<p><strong>Investigation.</strong> Let <span class="math inline">\(f(x)=\sqrt{x-1}\)</span> and <span class="math inline">\(g(x)=1/(x-3)\)</span>. Determine the domains of
+<span class="math inline">\(f+g\)</span>, <span class="math inline">\(fg\)</span>, and <span class="math inline">\(f/g\)</span>.</p>
+<blockquote class="example">
+<p><strong>Example 8: A removable-looking restriction.</strong> Let
+<span class="math inline">\(f(x)=x^2-1\)</span> and <span class="math inline">\(g(x)=x-1\)</span>. Find <span class="math inline">\((f/g)(x)\)</span> and its domain.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> For <span class="math inline">\(x\ne1\)</span>, <span class="math inline">\((f/g)(x)=(x^2-1)/(x-1)=x+1\)</span>. The original
+quotient is undefined at <span class="math inline">\(x=1\)</span>, so
+the domain excludes <span class="math inline">\(1\)</span>.</p>
+</blockquote>
+<h5 id="guided-practice-8.">Guided practice 8.</h5>
+<p>If <span class="math inline">\(f(x)=\sqrt{x}\)</span> and <span class="math inline">\(g(x)=x-2\)</span>, determine the domain of <span class="math inline">\(f/g\)</span>. Explain each step, and check your
+result against the graph when appropriate.</p>
+<h2 id="composition-of-functions">Composition of functions</h2>
+<p>The composition <span class="math inline">\((f\circ
+g)(x)=f(g(x))\)</span> means apply <span class="math inline">\(g\)</span> first, then use its output as the input
+to <span class="math inline">\(f\)</span>. The order matters: <span class="math inline">\(f\circ g\)</span> and <span class="math inline">\(g\circ f\)</span> generally differ. A composition
+is defined only where <span class="math inline">\(x\)</span> belongs to
+the domain of <span class="math inline">\(g\)</span> and <span class="math inline">\(g(x)\)</span> belongs to the domain of <span class="math inline">\(f\)</span>. This input-output chain is useful for
+multistage models, such as converting elapsed time into dosage and then
+dosage into predicted response.</p>
+<p><strong>Investigation.</strong> Draw an input-output diagram for
+<span class="math inline">\(g(x)=2x+1\)</span> and <span class="math inline">\(f(x)=x^2\)</span>; compare <span class="math inline">\(f(g(2))\)</span> with <span class="math inline">\(g(f(2))\)</span>.</p>
+<blockquote class="example">
+<p><strong>Example 9: Two orders of composition.</strong> For <span class="math inline">\(f(x)=x^2+1\)</span> and <span class="math inline">\(g(x)=3x-2\)</span>, compute both compositions.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> <span class="math inline">\((f\circ
+g)(x)=(3x-2)^2+1=9x^2-12x+5\)</span>. <span class="math inline">\((g\circ f)(x)=3(x^2+1)-2=3x^2+1\)</span>.</p>
+</blockquote>
+<h5 id="guided-practice-9.">Guided practice 9.</h5>
+<p>For <span class="math inline">\(f(x)=2x+1\)</span> and <span class="math inline">\(g(x)=x^2\)</span>, compute <span class="math inline">\((f\circ g)(-2)\)</span> and <span class="math inline">\((g\circ f)(-2)\)</span>. Explain each step, and
+check your result against the graph when appropriate.</p>
+<h2 id="domains-of-composite-functions">Domains of composite
+functions</h2>
+<p>The domain of <span class="math inline">\(f\circ g\)</span> is <span class="math inline">\(\{x\in\operatorname{Dom}(g):g(x)\in\operatorname{Dom}(f)\}\)</span>.
+A frequent mistake is to check only the inner function. For example,
+<span class="math inline">\(\sqrt{1-x^2}\)</span> requires <span class="math inline">\(1-x^2\ge0\)</span>, not merely that the polynomial
+<span class="math inline">\(1-x^2\)</span> exists. If a denominator
+occurs in either stage, it must also be nonzero.</p>
+<p><strong>Investigation.</strong> For <span class="math inline">\(f(u)=\sqrt{u}\)</span> and <span class="math inline">\(g(x)=2-x\)</span>, identify the domain of <span class="math inline">\(f\circ g\)</span> and explain why <span class="math inline">\(g\circ f\)</span> has a different domain.</p>
+<blockquote class="example">
+<p><strong>Example 10: Composite domain.</strong> If <span class="math inline">\(f(u)=1/(u-4)\)</span> and <span class="math inline">\(g(x)=x^2\)</span>, find the domain of <span class="math inline">\(f\circ g\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> <span class="math inline">\((f\circ
+g)(x)=1/(x^2-4)\)</span>, which requires <span class="math inline">\(x\ne-2\)</span> and <span class="math inline">\(x\ne2\)</span>.</p>
+</blockquote>
+<h5 id="guided-practice-10.">Guided practice 10.</h5>
+<p>Find the domain of <span class="math inline">\(\sqrt{9-x^2}\)</span>.
+Explain each step, and check your result against the graph when
+appropriate.</p>
+<h2 id="one-to-one-functions-and-the-horizontal-line-test">One-to-one
+functions and the horizontal-line test</h2>
+<p>A function is one-to-one if different inputs always produce different
+outputs. Equivalently, <span class="math inline">\(f(a)=f(b)\)</span>
+implies <span class="math inline">\(a=b\)</span>. A graph passes the
+horizontal-line test if every horizontal line intersects it at most
+once. A one-to-one function can be reversed without ambiguity. The
+quadratic <span class="math inline">\(x^2\)</span> fails this test on
+all real numbers, but it passes when its domain is restricted to <span class="math inline">\([0,\infty)\)</span>.</p>
+<p><strong>Investigation.</strong> Compare <span class="math inline">\(x^2\)</span> and <span class="math inline">\(x^3\)</span>. Explain which has a unique input for
+every output and how domain restriction changes the answer.</p>
+<blockquote class="example">
+<p><strong>Example 11: Restricting a domain.</strong> Is <span class="math inline">\(f(x)=(x-2)^2\)</span> one-to-one on <span class="math inline">\([2,\infty)\)</span>?</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> Yes. On <span class="math inline">\(x\ge2\)</span>, the function is strictly
+increasing, so no output is repeated. On all real numbers, it is not
+one-to-one.</p>
+</blockquote>
+<h5 id="guided-practice-11.">Guided practice 11.</h5>
+<p>Explain why <span class="math inline">\(f(x)=|x|\)</span> is not
+one-to-one on <span class="math inline">\(\mathbb R\)</span>. Explain
+each step, and check your result against the graph when appropriate.</p>
+<h2 id="inverse-functions-and-their-meaning">Inverse functions and their
+meaning</h2>
+<p>If <span class="math inline">\(f\)</span> is one-to-one, its inverse
+<span class="math inline">\(f^{-1}\)</span> reverses the input-output
+relationship: <span class="math inline">\(f(a)=b\)</span> exactly when
+<span class="math inline">\(f^{-1}(b)=a\)</span>. The domain of <span class="math inline">\(f^{-1}\)</span> is the range of <span class="math inline">\(f\)</span>, and the range of <span class="math inline">\(f^{-1}\)</span> is the domain of <span class="math inline">\(f\)</span>. The notation <span class="math inline">\(f^{-1}\)</span> does not mean <span class="math inline">\(1/f\)</span>. Graphs of inverse functions are
+reflections across <span class="math inline">\(y=x\)</span>.</p>
+<p><strong>Investigation.</strong> Make a table for <span class="math inline">\(f(x)=2x+3\)</span> and reverse the input and
+output columns. Plot both sets of points with <span class="math inline">\(y=x\)</span>.</p>
+<blockquote class="example">
+<p><strong>Example 12: Inverse of an affine model.</strong> Find the
+inverse of <span class="math inline">\(f(x)=5x-7\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> Write <span class="math inline">\(y=5x-7\)</span>, interchange variables to get
+<span class="math inline">\(x=5y-7\)</span>, then solve <span class="math inline">\(y=(x+7)/5\)</span>. Thus <span class="math inline">\(f^{-1}(x)=(x+7)/5\)</span>.</p>
+</blockquote>
+<h5 id="guided-practice-12.">Guided practice 12.</h5>
+<p>Find the inverse of <span class="math inline">\(f(x)=3x+8\)</span>.
+Explain each step, and check your result against the graph when
+appropriate.</p>
+<h2 id="finding-and-checking-inverses-algebraically">Finding and
+checking inverses algebraically</h2>
+<p>To find an inverse, write <span class="math inline">\(y=f(x)\)</span>, exchange <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, solve for <span class="math inline">\(y\)</span>, and record the necessary domain and
+range restrictions. Verify by computing <span class="math inline">\(f(f^{-1}(x))=x\)</span> and <span class="math inline">\(f^{-1}(f(x))=x\)</span> on the appropriate
+domains. If the original function is not one-to-one, first restrict its
+domain to a suitable interval.</p>
+<p><strong>Investigation.</strong> Derive the inverse of <span class="math inline">\(f(x)=(x-1)^2\)</span> on <span class="math inline">\([1,\infty)\)</span> and test both
+compositions.</p>
+<blockquote class="example">
+<p><strong>Example 13: Quadratic inverse.</strong> Find the inverse of
+<span class="math inline">\(f(x)=(x+2)^2+1\)</span> on <span class="math inline">\([-2,\infty)\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> From <span class="math inline">\(y=(x+2)^2+1\)</span>, obtain <span class="math inline">\(x=-2+\sqrt{y-1}\)</span> using the nonnegative
+branch. Hence <span class="math inline">\(f^{-1}(x)=-2+\sqrt{x-1}\)</span>, defined for
+<span class="math inline">\(x\ge1\)</span>.</p>
+</blockquote>
+<h5 id="guided-practice-13.">Guided practice 13.</h5>
+<p>Find the inverse of <span class="math inline">\(f(x)=\sqrt{x-1}\)</span> and its domain. Explain
+each step, and check your result against the graph when appropriate.</p>
+<h2 id="inverse-models-units-and-interpretation">Inverse models, units,
+and interpretation</h2>
+<p>In applications, an inverse answers a different question from the
+original model. If a calibration equation converts concentration (mg/L)
+into sensor signal (mV), the inverse converts signal back into
+concentration. The physical domain and range must remain meaningful;
+algebraic inverses can produce implausible predictions when used outside
+the calibration interval.</p>
+<p><strong>Investigation.</strong> A signal model is <span class="math inline">\(S(c)=0.8c+2\)</span> for <span class="math inline">\(0\le c\le20\)</span>. Find the range of <span class="math inline">\(S\)</span>, its inverse, and the concentration
+corresponding to a signal of <span class="math inline">\(10\)</span>
+mV.</p>
+<blockquote class="example">
+<p><strong>Example 14: Calibration inverse.</strong> A sensor reads
+<span class="math inline">\(S(c)=1.2c+0.5\)</span>. Estimate <span class="math inline">\(c\)</span> when <span class="math inline">\(S=8.9\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> <span class="math inline">\(c=(8.9-0.5)/1.2=7\)</span>. The numerical answer
+has concentration units, assuming the model applies at that reading.</p>
+</blockquote>
+<h5 id="guided-practice-14.">Guided practice 14.</h5>
+<p>Invert <span class="math inline">\(S(c)=2.5c+1\)</span> and interpret
+<span class="math inline">\(S^{-1}(11)\)</span>. Explain each step, and
+check your result against the graph when appropriate.</p>
+<h2 id="visual-investigation-i-the-geometry-of-transformations">Visual
+investigation I: the geometry of transformations</h2>
+<figure>
+<img alt="image" src="figures/precompiled/chapter05-01.svg"/>
+<figcaption aria-hidden="true">image</figcaption>
+</figure>
+<p><strong>Questions.</strong> Locate the vertex of each curve;
+calculate the image of <span class="math inline">\((1,1)\)</span>;
+distinguish a vertical stretch from a horizontal translation; and
+identify how the minimum output changes. Explain which transformations
+preserve the domain and which alter the range.</p>
+<h2 id="visual-investigation-ii-composition-as-a-two-stage-process">Visual
+investigation II: composition as a two-stage process</h2>
+<figure>
+<img alt="image" src="figures/precompiled/chapter05-02.svg"/>
+<figcaption aria-hidden="true">image</figcaption>
+</figure>
+<p>At <span class="math inline">\(x=2\)</span>, the inner function
+returns <span class="math inline">\(5\)</span> and the outer returns
+<span class="math inline">\(25\)</span>. Reversing the order gives <span class="math inline">\(g(f(2))=9\)</span>. Draw a second flowchart for
+the reverse order and discuss why order is mathematically
+consequential.</p>
+<h2 id="visual-investigation-iii-reflecting-inverse-graphs">Visual
+investigation III: reflecting inverse graphs</h2>
+<figure>
+<img alt="image" src="figures/precompiled/chapter05-03.svg"/>
+<figcaption aria-hidden="true">image</figcaption>
+</figure>
+<p>For each point <span class="math inline">\((a,b)\)</span> on the
+original line, find <span class="math inline">\((b,a)\)</span> on the
+inverse. Verify that the two graphs are mirror images across <span class="math inline">\(y=x\)</span>. Explain how this reflection
+exchanges the domain and range.</p>
+<h2 id="visual-investigation-iv-why-domain-restriction-matters">Visual
+investigation IV: why domain restriction matters</h2>
+<figure>
+<img alt="image" src="figures/precompiled/chapter05-04.svg"/>
+<figcaption aria-hidden="true">image</figcaption>
+</figure>
+<p>The horizontal line <span class="math inline">\(y=4\)</span>
+intersects <span class="math inline">\(y=x^2\)</span> twice. Restricting
+the domain to <span class="math inline">\(x\ge0\)</span> removes the
+negative branch and permits the inverse <span class="math inline">\(f^{-1}(x)=\sqrt{x}\)</span> on <span class="math inline">\(x\ge0\)</span>. Why is <span class="math inline">\(-\sqrt{x}\)</span> the inverse for the restriction
+<span class="math inline">\(x\le0\)</span> instead?</p>
+<h2 id="computational-laboratory-a-exploring-transformations">Computational
+laboratory A: exploring transformations</h2>
+<p>Graph a parent quadratic and a transformed quadratic. Compare
+vertices, reflection, and vertical scaling. Predict the output before
+running each program. Run the R code first, followed by Python.</p>
+<h3 class="unnumbered" id="r-code">R code</h3>
+<div class="code-shell"><div class="code-bar"><span>R</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a aria-hidden="true" href="#cb1-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">4</span>, <span class="dv">6</span>, <span class="at">length.out=</span><span class="dv">500</span>)</span>
+<span id="cb1-2"><a aria-hidden="true" href="#cb1-2" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x) x<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb1-3"><a aria-hidden="true" href="#cb1-3" tabindex="-1"></a><span class="fu">plot</span>(x, <span class="fu">f</span>(x), <span class="at">type=</span><span class="st">"l"</span>, <span class="at">lwd=</span><span class="dv">2</span>, <span class="at">col=</span><span class="st">"blue"</span>, <span class="at">ylim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">4</span>,<span class="dv">12</span>),</span>
+<span id="cb1-4"><a aria-hidden="true" href="#cb1-4" tabindex="-1"></a>     <span class="at">xlab=</span><span class="st">"x"</span>, <span class="at">ylab=</span><span class="st">"Output"</span>, <span class="at">main=</span><span class="st">"Function transformations"</span>)</span>
+<span id="cb1-5"><a aria-hidden="true" href="#cb1-5" tabindex="-1"></a><span class="fu">lines</span>(x, <span class="sc">-</span><span class="dv">2</span><span class="sc">*</span><span class="fu">f</span>(x<span class="dv">-2</span>)<span class="sc">+</span><span class="dv">5</span>, <span class="at">col=</span><span class="st">"red"</span>, <span class="at">lwd=</span><span class="dv">2</span>)</span>
+<span id="cb1-6"><a aria-hidden="true" href="#cb1-6" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">"topright"</span>, <span class="fu">c</span>(<span class="st">"x^2"</span>, <span class="st">"-2(x-2)^2+5"</span>),</span>
+<span id="cb1-7"><a aria-hidden="true" href="#cb1-7" tabindex="-1"></a>       <span class="at">col=</span><span class="fu">c</span>(<span class="st">"blue"</span>, <span class="st">"red"</span>), <span class="at">lty=</span><span class="dv">1</span>, <span class="at">lwd=</span><span class="dv">2</span>)</span></code></pre></div></div>
+<h3 class="unnumbered" id="python-code">Python code</h3>
+<div class="code-shell"><div class="code-bar"><span>Python</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" href="#cb2-1" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-2"><a aria-hidden="true" href="#cb2-2" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-3"><a aria-hidden="true" href="#cb2-3" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">500</span>)</span>
+<span id="cb2-4"><a aria-hidden="true" href="#cb2-4" tabindex="-1"></a>f <span class="op">=</span> <span class="kw">lambda</span> z: z<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb2-5"><a aria-hidden="true" href="#cb2-5" tabindex="-1"></a>plt.plot(x, f(x), label<span class="op">=</span><span class="st">"x^2"</span>)</span>
+<span id="cb2-6"><a aria-hidden="true" href="#cb2-6" tabindex="-1"></a>plt.plot(x, <span class="op">-</span><span class="dv">2</span><span class="op">*</span>f(x<span class="op">-</span><span class="dv">2</span>)<span class="op">+</span><span class="dv">5</span>, label<span class="op">=</span><span class="st">"-2(x-2)^2+5"</span>)</span>
+<span id="cb2-7"><a aria-hidden="true" href="#cb2-7" tabindex="-1"></a>plt.ylim(<span class="op">-</span><span class="dv">4</span>, <span class="dv">12</span>)</span>
+<span id="cb2-8"><a aria-hidden="true" href="#cb2-8" tabindex="-1"></a>plt.xlabel(<span class="st">"x"</span>)<span class="op">;</span> plt.ylabel(<span class="st">"Output"</span>)</span>
+<span id="cb2-9"><a aria-hidden="true" href="#cb2-9" tabindex="-1"></a>plt.legend()<span class="op">;</span> plt.grid(<span class="va">True</span>)<span class="op">;</span> plt.show()</span></code></pre></div></div>
+<h5 id="interpretation-and-reflection.">Interpretation and
+reflection.</h5>
+<p>Identify the maximum of the transformed graph. What happens if the
+coefficient <span class="math inline">\(-2\)</span> becomes <span class="math inline">\(-1/2\)</span>? Compare numerical output with your
+algebraic reasoning.</p>
+<h2 id="computational-laboratory-b-composition-and-valid-domains">Computational
+laboratory B: composition and valid domains</h2>
+<p>Construct <span class="math inline">\(f(g(x))=\sqrt{3-x^2}\)</span>
+and ensure the square root is evaluated only on valid inputs. Predict
+the output before running each program. Run the R code first, followed
+by Python.</p>
+<h3 class="unnumbered" id="r-code-1">R code</h3>
+<div class="code-shell"><div class="code-bar"><span>R</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a aria-hidden="true" href="#cb3-1" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x) <span class="fu">sqrt</span>(x)</span>
+<span id="cb3-2"><a aria-hidden="true" href="#cb3-2" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="cf">function</span>(x) <span class="dv">3</span> <span class="sc">-</span> x<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb3-3"><a aria-hidden="true" href="#cb3-3" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">2</span>, <span class="dv">2</span>, <span class="at">length.out=</span><span class="dv">401</span>)</span>
+<span id="cb3-4"><a aria-hidden="true" href="#cb3-4" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA_real_</span>, <span class="fu">length</span>(x))</span>
+<span id="cb3-5"><a aria-hidden="true" href="#cb3-5" tabindex="-1"></a>valid <span class="ot">&lt;-</span> <span class="fu">g</span>(x) <span class="sc">&gt;=</span> <span class="dv">0</span></span>
+<span id="cb3-6"><a aria-hidden="true" href="#cb3-6" tabindex="-1"></a>y[valid] <span class="ot">&lt;-</span> <span class="fu">f</span>(<span class="fu">g</span>(x[valid]))</span>
+<span id="cb3-7"><a aria-hidden="true" href="#cb3-7" tabindex="-1"></a><span class="fu">plot</span>(x, y, <span class="at">type=</span><span class="st">"l"</span>, <span class="at">lwd=</span><span class="dv">2</span>, <span class="at">col=</span><span class="st">"blue"</span>,</span>
+<span id="cb3-8"><a aria-hidden="true" href="#cb3-8" tabindex="-1"></a>     <span class="at">xlab=</span><span class="st">"x"</span>, <span class="at">ylab=</span><span class="st">"f(g(x))"</span>,</span>
+<span id="cb3-9"><a aria-hidden="true" href="#cb3-9" tabindex="-1"></a>     <span class="at">main=</span><span class="st">"Composite function with restricted domain"</span>)</span>
+<span id="cb3-10"><a aria-hidden="true" href="#cb3-10" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">c</span>(<span class="sc">-</span><span class="fu">sqrt</span>(<span class="dv">3</span>), <span class="fu">sqrt</span>(<span class="dv">3</span>)))</span></code></pre></div></div>
+<h3 class="unnumbered" id="python-code-1">Python code</h3>
+<div class="code-shell"><div class="code-bar"><span>Python</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" href="#cb4-1" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb4-2"><a aria-hidden="true" href="#cb4-2" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb4-3"><a aria-hidden="true" href="#cb4-3" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">401</span>)</span>
+<span id="cb4-4"><a aria-hidden="true" href="#cb4-4" tabindex="-1"></a>g <span class="op">=</span> <span class="kw">lambda</span> z: <span class="dv">3</span><span class="op">-</span>z<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb4-5"><a aria-hidden="true" href="#cb4-5" tabindex="-1"></a>f <span class="op">=</span> <span class="kw">lambda</span> u: np.sqrt(u)</span>
+<span id="cb4-6"><a aria-hidden="true" href="#cb4-6" tabindex="-1"></a>y <span class="op">=</span> np.full_like(x, np.nan)</span>
+<span id="cb4-7"><a aria-hidden="true" href="#cb4-7" tabindex="-1"></a>valid <span class="op">=</span> g(x) <span class="op">&gt;=</span> <span class="dv">0</span></span>
+<span id="cb4-8"><a aria-hidden="true" href="#cb4-8" tabindex="-1"></a>y[valid] <span class="op">=</span> f(g(x[valid]))</span>
+<span id="cb4-9"><a aria-hidden="true" href="#cb4-9" tabindex="-1"></a>plt.plot(x, y)</span>
+<span id="cb4-10"><a aria-hidden="true" href="#cb4-10" tabindex="-1"></a>plt.xlabel(<span class="st">"x"</span>)<span class="op">;</span> plt.ylabel(<span class="st">"f(g(x))"</span>)</span>
+<span id="cb4-11"><a aria-hidden="true" href="#cb4-11" tabindex="-1"></a>plt.grid(<span class="va">True</span>)<span class="op">;</span> plt.show()</span>
+<span id="cb4-12"><a aria-hidden="true" href="#cb4-12" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Domain:"</span>, <span class="op">-</span>np.sqrt(<span class="dv">3</span>), np.sqrt(<span class="dv">3</span>))</span></code></pre></div></div>
+<h5 id="interpretation-and-reflection.-1">Interpretation and
+reflection.</h5>
+<p>Explain why the composite domain is <span class="math inline">\([-\sqrt3,\sqrt3]\)</span>. Why does a plotting
+program need an explicit validity mask? Compare numerical output with
+your algebraic reasoning.</p>
+<h2 id="computational-laboratory-c-inverse-calibration">Computational
+laboratory C: inverse calibration</h2>
+<p>Convert concentration to signal, invert the model, and verify the
+round trip. Predict the output before running each program. Run the R
+code first, followed by Python.</p>
+<h3 class="unnumbered" id="r-code-2">R code</h3>
+<div class="code-shell"><div class="code-bar"><span>R</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a aria-hidden="true" href="#cb5-1" tabindex="-1"></a>signal <span class="ot">&lt;-</span> <span class="cf">function</span>(c) <span class="fl">0.8</span><span class="sc">*</span>c <span class="sc">+</span> <span class="dv">2</span></span>
+<span id="cb5-2"><a aria-hidden="true" href="#cb5-2" tabindex="-1"></a>inverse <span class="ot">&lt;-</span> <span class="cf">function</span>(s) (s<span class="dv">-2</span>)<span class="sc">/</span><span class="fl">0.8</span></span>
+<span id="cb5-3"><a aria-hidden="true" href="#cb5-3" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">20</span>, <span class="at">length.out=</span><span class="dv">101</span>)</span>
+<span id="cb5-4"><a aria-hidden="true" href="#cb5-4" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="fu">signal</span>(c)</span>
+<span id="cb5-5"><a aria-hidden="true" href="#cb5-5" tabindex="-1"></a><span class="fu">plot</span>(c, s, <span class="at">type=</span><span class="st">"l"</span>, <span class="at">col=</span><span class="st">"blue"</span>, <span class="at">lwd=</span><span class="dv">2</span>,</span>
+<span id="cb5-6"><a aria-hidden="true" href="#cb5-6" tabindex="-1"></a>     <span class="at">xlab=</span><span class="st">"Concentration (mg/L)"</span>, <span class="at">ylab=</span><span class="st">"Signal (mV)"</span>)</span>
+<span id="cb5-7"><a aria-hidden="true" href="#cb5-7" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">data.frame</span>(<span class="at">signal=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">6</span>,<span class="dv">10</span>,<span class="dv">18</span>),</span>
+<span id="cb5-8"><a aria-hidden="true" href="#cb5-8" tabindex="-1"></a>                 <span class="at">concentration=</span><span class="fu">inverse</span>(<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">6</span>,<span class="dv">10</span>,<span class="dv">18</span>))))</span>
+<span id="cb5-9"><a aria-hidden="true" href="#cb5-9" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="fu">all</span>(<span class="fu">abs</span>(<span class="fu">inverse</span>(<span class="fu">signal</span>(c))<span class="sc">-</span>c) <span class="sc">&lt;</span> <span class="fl">1e-10</span>))</span></code></pre></div></div>
+<h3 class="unnumbered" id="python-code-2">Python code</h3>
+<div class="code-shell"><div class="code-bar"><span>Python</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a aria-hidden="true" href="#cb6-1" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb6-2"><a aria-hidden="true" href="#cb6-2" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb6-3"><a aria-hidden="true" href="#cb6-3" tabindex="-1"></a>signal <span class="op">=</span> <span class="kw">lambda</span> c: <span class="fl">0.8</span><span class="op">*</span>c<span class="op">+</span><span class="dv">2</span></span>
+<span id="cb6-4"><a aria-hidden="true" href="#cb6-4" tabindex="-1"></a>inverse <span class="op">=</span> <span class="kw">lambda</span> s: (s<span class="op">-</span><span class="dv">2</span>)<span class="op">/</span><span class="fl">0.8</span></span>
+<span id="cb6-5"><a aria-hidden="true" href="#cb6-5" tabindex="-1"></a>c <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">20</span>, <span class="dv">101</span>)</span>
+<span id="cb6-6"><a aria-hidden="true" href="#cb6-6" tabindex="-1"></a>plt.plot(c, signal(c))</span>
+<span id="cb6-7"><a aria-hidden="true" href="#cb6-7" tabindex="-1"></a>plt.xlabel(<span class="st">"Concentration (mg/L)"</span>)</span>
+<span id="cb6-8"><a aria-hidden="true" href="#cb6-8" tabindex="-1"></a>plt.ylabel(<span class="st">"Signal (mV)"</span>)<span class="op">;</span> plt.grid(<span class="va">True</span>)<span class="op">;</span> plt.show()</span>
+<span id="cb6-9"><a aria-hidden="true" href="#cb6-9" tabindex="-1"></a><span class="cf">for</span> s <span class="kw">in</span> [<span class="dv">2</span>, <span class="dv">6</span>, <span class="dv">10</span>, <span class="dv">18</span>]:</span>
+<span id="cb6-10"><a aria-hidden="true" href="#cb6-10" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Signal </span><span class="sc">{</span>s<span class="sc">:.1f}</span><span class="ss"> -&gt; concentration </span><span class="sc">{</span>inverse(s)<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb6-11"><a aria-hidden="true" href="#cb6-11" tabindex="-1"></a><span class="cf">assert</span> np.allclose(inverse(signal(c)), c)</span></code></pre></div></div>
+<h5 id="interpretation-and-reflection.-2">Interpretation and
+reflection.</h5>
+<p>Find the signal range for concentrations between <span class="math inline">\(0\)</span> and <span class="math inline">\(20\)</span> mg/L. Explain why extrapolating
+outside this interval needs validation. Compare numerical output with
+your algebraic reasoning.</p>
+<h2 id="workshop-1-translating-a-dose-response-curve">Workshop 1:
+translating a dose-response curve</h2>
+<p>A hypothetical response score is <span class="math inline">\(R(d)=-(d-4)^2+16\)</span> for <span class="math inline">\(0\le d\le8\)</span>. (a) Find the dose that
+maximizes the score. (b) Define <span class="math inline">\(A(d)=R(d)+3\)</span> and interpret the shift. (c)
+Define <span class="math inline">\(B(d)=R(d-1)\)</span>; determine the
+mathematical domain inherited from the original model and explain why an
+extended physical domain would need justification. (d) Compare the two
+models at <span class="math inline">\(d=4\)</span>. (e) Sketch the
+graphs with labeled units.</p>
+<p><strong>Guided solution.</strong> The vertex of <span class="math inline">\(R\)</span> is <span class="math inline">\((4,16)\)</span>, so the maximum is <span class="math inline">\(16\)</span> at <span class="math inline">\(d=4\)</span>. <span class="math inline">\(A\)</span> adds three points to every output and
+has maximum <span class="math inline">\(19\)</span>. For <span class="math inline">\(B\)</span>, the condition <span class="math inline">\(0\le d-1\le8\)</span> gives <span class="math inline">\(1\le d\le9\)</span>; the curve shifts right one
+unit. <span class="math inline">\(A(4)=19\)</span> and <span class="math inline">\(B(4)=R(3)=15\)</span>. In practice, a transformed
+response curve is a modeling hypothesis, not evidence of treatment
+effectiveness.</p>
+<h2 id="workshop-2-two-stage-laboratory-processing">Workshop 2:
+two-stage laboratory processing</h2>
+<p>A specimen concentration <span class="math inline">\(c\)</span>
+(mg/L) produces a signal <span class="math inline">\(g(c)=1.5c+2\)</span> mV. A second instrument
+reports an adjusted value <span class="math inline">\(f(s)=0.4s-0.8\)</span>. (a) Write <span class="math inline">\(f\circ g\)</span> and simplify. (b) Compute the
+final report at <span class="math inline">\(c=6\)</span>. (c) Reverse
+the operations algebraically and compare <span class="math inline">\(g\circ f\)</span>. (d) Describe the units at each
+stage. (e) Explain why the two compositions are not interchangeable.</p>
+<p><strong>Guided solution.</strong> <span class="math inline">\(f(g(c))=0.4(1.5c+2)-0.8=0.6c\)</span>, so at <span class="math inline">\(c=6\)</span> the report is <span class="math inline">\(3.6\)</span> in the second instruments output
+units. By contrast, <span class="math inline">\(g(f(c))=1.5(0.4c-0.8)+2=0.6c+0.8\)</span>, a
+different formula that may be physically meaningless if <span class="math inline">\(f\)</span> expects a signal rather than a
+concentration. Function order must respect input and output units.</p>
+<h2 id="workshop-3-recovering-an-input-from-a-measured-output">Workshop
+3: recovering an input from a measured output</h2>
+<p>A calibration model is <span class="math inline">\(S(c)=2+0.8c\)</span> for <span class="math inline">\(0\le c\le20\)</span>, with signal <span class="math inline">\(S\)</span> in mV and concentration <span class="math inline">\(c\)</span> in mg/L. (a) Find the range of <span class="math inline">\(S\)</span>. (b) Find <span class="math inline">\(S^{-1}\)</span>. (c) Recover <span class="math inline">\(c\)</span> when <span class="math inline">\(S=11.6\)</span>. (d) Verify both compositions. (e)
+Explain why a reading of <span class="math inline">\(25\)</span> mV
+should not be used for unvalidated extrapolation.</p>
+<p><strong>Guided solution.</strong> The range is <span class="math inline">\([2,18]\)</span> mV. The inverse is <span class="math inline">\(S^{-1}(s)=(s-2)/0.8\)</span> for <span class="math inline">\(2\le s\le18\)</span>. Thus <span class="math inline">\(S^{-1}(11.6)=12\)</span> mg/L. Algebraically,
+<span class="math inline">\(S^{-1}(S(c))=c\)</span> for <span class="math inline">\(c\in[0,20]\)</span> and <span class="math inline">\(S(S^{-1}(s))=s\)</span> for <span class="math inline">\(s\in[2,18]\)</span>. A signal of <span class="math inline">\(25\)</span> lies outside the validated range.</p>
+<h2 id="workshop-4-restricted-quadratic-inverses">Workshop 4: restricted
+quadratic inverses</h2>
+<p>A hypothetical cost model is <span class="math inline">\(C(q)=(q-3)^2+5\)</span>. (a) Explain why it is not
+one-to-one on <span class="math inline">\(\mathbb R\)</span>. (b)
+Restrict the domain to <span class="math inline">\(q\ge3\)</span>. (c)
+Find the inverse and its domain. (d) Find the input corresponding to
+output <span class="math inline">\(14\)</span>. (e) Sketch the original
+restricted graph, inverse, and <span class="math inline">\(y=x\)</span>.</p>
+<p><strong>Guided solution.</strong> The unrestricted model gives equal
+costs at <span class="math inline">\(q=3-t\)</span> and <span class="math inline">\(q=3+t\)</span>. On <span class="math inline">\(q\ge3\)</span> it is increasing. Solving <span class="math inline">\(y=(q-3)^2+5\)</span> with <span class="math inline">\(q\ge3\)</span> gives <span class="math inline">\(q=3+\sqrt{y-5}\)</span>. Thus <span class="math inline">\(C^{-1}(y)=3+\sqrt{y-5}\)</span> for <span class="math inline">\(y\ge5\)</span>, and <span class="math inline">\(C^{-1}(14)=6\)</span>.</p>
+<h2 id="workshop-5-diagnosing-transformation-errors">Workshop 5:
+diagnosing transformation errors</h2>
+<p>A student claims that <span class="math inline">\(f(2x)\)</span>
+stretches a graph horizontally by factor <span class="math inline">\(2\)</span>, and that <span class="math inline">\(f^{-1}(x)=1/f(x)\)</span>. (a) Use <span class="math inline">\(f(x)=x^2\)</span> to disprove the first claim
+using a point. (b) Use <span class="math inline">\(f(x)=2x+1\)</span> to
+disprove the second. (c) State the correct horizontal scaling rule. (d)
+Find and verify the actual inverse of <span class="math inline">\(2x+1\)</span>. (e) Explain how graphing can help
+detect both errors.</p>
+<p><strong>Guided solution.</strong> The point <span class="math inline">\((2,4)\)</span> on <span class="math inline">\(y=x^2\)</span> corresponds to <span class="math inline">\((1,4)\)</span> on <span class="math inline">\(y=f(2x)\)</span>, so the graph compresses by
+factor <span class="math inline">\(1/2\)</span>. For <span class="math inline">\(f(x)=2x+1\)</span>, <span class="math inline">\(1/f(x)=1/(2x+1)\)</span> while <span class="math inline">\(f^{-1}(x)=(x-1)/2\)</span>. Inverse graphs reflect
+across <span class="math inline">\(y=x\)</span>; reciprocal graphs
+generally do not.</p>
+<h2 id="chapter-review-key-ideas-and-common-errors">Chapter review: key
+ideas and common errors</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Operation</th>
+<th style="text-align: left;">Rule and interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Vertical shift</td>
+<td style="text-align: left;"><span class="math inline">\(f(x)+k\)</span>: outputs change by <span class="math inline">\(k\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Horizontal shift</td>
+<td style="text-align: left;"><span class="math inline">\(f(x-h)\)</span>: shift right by <span class="math inline">\(h\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Vertical scaling</td>
+<td style="text-align: left;"><span class="math inline">\(af(x)\)</span>: output distances scaled by <span class="math inline">\(|a|\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Horizontal scaling</td>
+<td style="text-align: left;"><span class="math inline">\(f(bx)\)</span>: input coordinates scaled by <span class="math inline">\(1/|b|\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Composition</td>
+<td style="text-align: left;"><span class="math inline">\((f\circ
+g)(x)=f(g(x))\)</span>; apply <span class="math inline">\(g\)</span>
+first</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Inverse</td>
+<td style="text-align: left;"><span class="math inline">\(f^{-1}(f(x))=x\)</span> on the original
+domain</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Common errors to avoid.</strong> Confusing <span class="math inline">\(f(x-h)\)</span> with a left shift; treating <span class="math inline">\(f(2x)\)</span> as a horizontal stretch by two;
+composing functions in the wrong order; forgetting domain restrictions;
+assuming every function has an inverse; confusing <span class="math inline">\(f^{-1}(x)\)</span> with <span class="math inline">\(1/f(x)\)</span>; and using inverse models outside
+the measured range.</p>
+<h2 id="chapter-exercises">Chapter exercises</h2>
+<p>Complete the following exercises without technology first. Then use R
+or Python to verify selected graphs or calculations. Explain the domain
+of every function you construct.</p>
+<h3 class="unnumbered" id="transformations-and-graph-interpretation">Transformations and graph
+interpretation</h3>
+<ol type="1">
+<li><p>Describe all transformations taking <span class="math inline">\(y=x^2\)</span> to <span class="math inline">\(y=3(x-2)^2-4\)</span>. State the vertex and
+range.</p></li>
+<li><p>Graph <span class="math inline">\(y=-|x+3|+2\)</span> using five
+transformed points. State the maximum.</p></li>
+<li><p>Find the domain and range of <span class="math inline">\(y=\sqrt{x-5}+1\)</span>.</p></li>
+<li><p>Describe the transformation from <span class="math inline">\(y=1/x\)</span> to <span class="math inline">\(y=1/(x+2)-3\)</span> and identify both
+asymptotes.</p></li>
+<li><p>Compare <span class="math inline">\(f(3x)\)</span> and <span class="math inline">\(3f(x)\)</span> for <span class="math inline">\(f(x)=x^2\)</span>.</p></li>
+<li><p>If <span class="math inline">\((4,-2)\)</span> lies on <span class="math inline">\(y=f(x)\)</span>, find its image on <span class="math inline">\(y=-3f(2(x-1))+5\)</span>.</p></li>
+<li><p>Explain why the graph of <span class="math inline">\(f(-x)\)</span> reflects across the vertical
+axis.</p></li>
+<li><p>Find the domain of <span class="math inline">\(g(x)=2\sqrt{4-x}-1\)</span> and state its
+endpoint.</p></li>
+<li><p>Determine whether <span class="math inline">\(y=-2(x+1)^2+6\)</span> has a maximum or minimum,
+and find its value.</p></li>
+<li><p>For <span class="math inline">\(f(x)=|x|\)</span>, compare <span class="math inline">\(f(x-2)+1\)</span> and <span class="math inline">\(f(x+1)-2\)</span> using vertices.</p></li>
+<li><p>Let <span class="math inline">\(f(x)=\sqrt{x}\)</span> and <span class="math inline">\(g(x)=x-4\)</span>. Find the domain of <span class="math inline">\(f+g\)</span>.</p></li>
+<li><p>For the same functions, determine the domain of <span class="math inline">\(f/g\)</span>.</p></li>
+<li><p>Let <span class="math inline">\(f(x)=x^2+1\)</span> and <span class="math inline">\(g(x)=2x-3\)</span>. Find <span class="math inline">\(f\circ g\)</span> and <span class="math inline">\(g\circ f\)</span>.</p></li>
+<li><p>For <span class="math inline">\(f(x)=1/(x-2)\)</span> and <span class="math inline">\(g(x)=x^2\)</span>, determine the domain of <span class="math inline">\(f\circ g\)</span>.</p></li>
+<li><p>For <span class="math inline">\(f(x)=\sqrt{x+1}\)</span> and
+<span class="math inline">\(g(x)=3-x\)</span>, determine the domain of
+<span class="math inline">\(f\circ g\)</span>.</p></li>
+<li><p>Explain in words why <span class="math inline">\((f\circ
+g)(x)\)</span> is generally not equal to <span class="math inline">\((g\circ f)(x)\)</span>.</p></li>
+<li><p>Find <span class="math inline">\((f\circ g)(2)\)</span> when
+<span class="math inline">\(f(u)=u^3\)</span> and <span class="math inline">\(g(x)=x-5\)</span>.</p></li>
+<li><p>If <span class="math inline">\(f(x)=x+2\)</span> and <span class="math inline">\(g(x)=1/x\)</span>, compute both compositions and
+state their domains.</p></li>
+<li><p>Determine whether <span class="math inline">\(f(x)=x^3-1\)</span>
+is one-to-one on <span class="math inline">\(\mathbb R\)</span>.
+Justify.</p></li>
+<li><p>Explain why <span class="math inline">\(f(x)=x^2-4\)</span> is
+not one-to-one on <span class="math inline">\(\mathbb
+R\)</span>.</p></li>
+<li><p>Find the inverse of <span class="math inline">\(f(x)=4x-9\)</span> and verify by
+composition.</p></li>
+<li><p>Find the inverse of <span class="math inline">\(f(x)=(x-1)/3\)</span> and state both
+domains.</p></li>
+<li><p>Find the inverse of <span class="math inline">\(f(x)=\sqrt{x+2}\)</span> and give its domain and
+range.</p></li>
+<li><p>Find the inverse of <span class="math inline">\(f(x)=(x-4)^2\)</span> on <span class="math inline">\([4,\infty)\)</span>.</p></li>
+<li><p>Find the inverse of <span class="math inline">\(f(x)=(x-4)^2\)</span> on <span class="math inline">\((-\infty,4]\)</span>. Explain the
+difference.</p></li>
+<li><p>A calibration function is <span class="math inline">\(S(c)=0.5c+1\)</span> for <span class="math inline">\(0\le c\le30\)</span>. Find its inverse and valid
+signal range.</p></li>
+<li><p>Use the inverse from Exercise 26 to find the concentration at
+signal <span class="math inline">\(9\)</span>.</p></li>
+<li><p>For <span class="math inline">\(f(x)=2x+3\)</span>, graph <span class="math inline">\(f\)</span>, <span class="math inline">\(f^{-1}\)</span>, and <span class="math inline">\(y=x\)</span> on common axes.</p></li>
+<li><p>Explain why a horizontal line can intersect a graph twice even
+when it passes the vertical-line test.</p></li>
+<li><p>Find <span class="math inline">\(f^{-1}(f(7))\)</span> for a
+one-to-one <span class="math inline">\(f\)</span> whose domain includes
+<span class="math inline">\(7\)</span>. Explain without knowing the
+formula.</p></li>
+</ol>
+<h2 id="calculus-readiness-checkpoint">Calculus-readiness
+checkpoint</h2>
+<ol type="1">
+<li><p>For <span class="math inline">\(f(x)=x^2\)</span>, simplify <span class="math inline">\(\frac{f(a+h)-f(a)}{h}\)</span> for <span class="math inline">\(h\ne0\)</span>. Explain why the resulting
+expression is useful when <span class="math inline">\(h\)</span> becomes
+very small.</p></li>
+<li><p>If <span class="math inline">\(g(x)=f(3x-6)\)</span>, identify
+the input to <span class="math inline">\(f\)</span> and explain how the
+graph changes. This anticipates the chain rule.</p></li>
+<li><p>A concentration model is <span class="math inline">\(C(t)=e^{-0.2t}\)</span> for <span class="math inline">\(t\ge0\)</span>. Describe what an inverse function
+would answer and why the output range matters.</p></li>
+<li><p>Show algebraically that <span class="math inline">\(f^{-1}(f(x))=x\)</span> for <span class="math inline">\(f(x)=5x+2\)</span> and discuss the meaning of
+reversing a model.</p></li>
+<li><p>Explain how restricting a quadratic to a monotonic interval makes
+an inverse possible and how this prepares for inverse trigonometric
+functions.</p></li>
+</ol>
+<h2 class="unnumbered" id="looking-ahead">Looking ahead</h2>
+<p>Chapter 6 studies polynomial and rational functions in greater depth.
+Transformations will help us graph their families, composition will help
+us analyze complex formulas, and inverse-function reasoning will later
+connect exponential and logarithmic functions and calculus.</p>
+<h2 id="extended-application-temperature-sensor-conversion">Extended
+application: Temperature sensor conversion</h2>
+<p>A sensor reports a raw voltage. The calibration first subtracts 0.5
+volts and then multiplies by 20 to obtain a temperature in degrees
+Celsius. The quantities in this investigation are illustrative rather
+than measured observations.</p>
+<h3 id="formulating-the-mathematical-model">Formulating the mathematical
+model</h3>
+<p>The proposed relationship is <span class="math display">\[T(v)=20(v-0.5).\]</span> Before calculating,
+identify the input and output, their units, and the interval on which
+the model is being studied. Distinguish the mathematical domain from the
+practical domain. The numerical study uses inputs from <span class="math inline">\(0.5\)</span> to <span class="math inline">\(3\)</span>.</p>
+<blockquote class="example">
+<p><strong>Example 15: Analytical investigation.</strong> Express the
+calibration as a composition. Derive its inverse and find the voltage
+for 30 degrees Celsius.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> Compose <span class="math inline">\(g(v)=v-0.5\)</span> with <span class="math inline">\(f(u)=20u\)</span>. The inverse is <span class="math inline">\(v=T/20+0.5\)</span>, giving 2 V.</p>
+</blockquote>
+<h3 id="connecting-numerical-and-graphical-representations">Connecting
+numerical and graphical representations</h3>
+<table>
+<caption>Selected predictions from the illustrative model. Values are
+rounded for display.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Voltage (V)</th>
+<th style="text-align: right;">Temperature (C)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">0.5</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1.12</td>
+<td style="text-align: right;">12.5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1.75</td>
+<td style="text-align: right;">25</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2.38</td>
+<td style="text-align: right;">37.5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">50</td>
+</tr>
+</tbody>
+</table>
+<figure>
+<img alt="Model predictions over the stated investigation interval. The graph represents a mathematical model, not observed data." src="figures/ch05/applied_project.svg" style="width:90.0%"/>
+<figcaption aria-hidden="true">Model predictions over the stated
+investigation interval. The graph represents a mathematical model, not
+observed data.</figcaption>
+</figure>
+<p><strong>Interpretation.</strong> Compare the tabulated values with
+the graph. Identify the intervals over which the output increases or
+decreases, and distinguish a sampled extremum from an exact analytical
+extremum. Explain whether interpolation and extrapolation have the same
+justification in this setting.</p>
+<h3 id="r-implementation">R implementation</h3>
+<p>The following standalone script defines the model, generates
+predictions, and draws a labeled graph. Read the formula before running
+the code. The sampled range is a numerical diagnostic, not a proof of
+the exact range.</p>
+<div class="code-shell"><div class="code-bar"><span>R</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a aria-hidden="true" href="#cb7-1" tabindex="-1"></a><span class="co"># Applied investigation: Temperature sensor conversion</span></span>
+<span id="cb7-2"><a aria-hidden="true" href="#cb7-2" tabindex="-1"></a><span class="co"># 1. Define the input domain and model</span></span>
+<span id="cb7-3"><a aria-hidden="true" href="#cb7-3" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fl">0.5</span>, <span class="dv">3</span>, <span class="at">length.out =</span> <span class="dv">301</span>)</span>
+<span id="cb7-4"><a aria-hidden="true" href="#cb7-4" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">20</span><span class="sc">*</span>(x<span class="fl">-0.5</span>)</span>
+<span id="cb7-5"><a aria-hidden="true" href="#cb7-5" tabindex="-1"></a></span>
+<span id="cb7-6"><a aria-hidden="true" href="#cb7-6" tabindex="-1"></a><span class="co"># 2. Inspect numerical predictions</span></span>
+<span id="cb7-7"><a aria-hidden="true" href="#cb7-7" tabindex="-1"></a>idx <span class="ot">&lt;-</span> <span class="fu">unique</span>(<span class="fu">round</span>(<span class="fu">seq</span>(<span class="dv">1</span>, <span class="fu">length</span>(x), <span class="at">length.out =</span> <span class="dv">5</span>)))</span>
+<span id="cb7-8"><a aria-hidden="true" href="#cb7-8" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">data.frame</span>(<span class="at">input =</span> x[idx], <span class="at">output =</span> y[idx]))</span>
+<span id="cb7-9"><a aria-hidden="true" href="#cb7-9" tabindex="-1"></a></span>
+<span id="cb7-10"><a aria-hidden="true" href="#cb7-10" tabindex="-1"></a><span class="co"># 3. Visualize the model with labeled axes</span></span>
+<span id="cb7-11"><a aria-hidden="true" href="#cb7-11" tabindex="-1"></a><span class="fu">plot</span>(x, y, <span class="at">type =</span> <span class="st">"l"</span>, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">"#176B87"</span>,</span>
+<span id="cb7-12"><a aria-hidden="true" href="#cb7-12" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Voltage (V)"</span>, <span class="at">ylab =</span> <span class="st">"Temperature (C)"</span>)</span>
+<span id="cb7-13"><a aria-hidden="true" href="#cb7-13" tabindex="-1"></a><span class="fu">grid</span>()</span>
+<span id="cb7-14"><a aria-hidden="true" href="#cb7-14" tabindex="-1"></a></span>
+<span id="cb7-15"><a aria-hidden="true" href="#cb7-15" tabindex="-1"></a><span class="co"># 4. Check the sampled output range</span></span>
+<span id="cb7-16"><a aria-hidden="true" href="#cb7-16" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">range</span>(y))</span></code></pre></div></div>
+<h3 id="python-implementation">Python implementation</h3>
+<p>Repeat the same investigation using NumPy arrays and Matplotlib.
+Compare the printed predictions with the R output, allowing for
+rounding.</p>
+<div class="code-shell"><div class="code-bar"><span>Python</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a aria-hidden="true" href="#cb8-1" tabindex="-1"></a><span class="co"># Applied investigation: Temperature sensor conversion</span></span>
+<span id="cb8-2"><a aria-hidden="true" href="#cb8-2" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb8-3"><a aria-hidden="true" href="#cb8-3" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb8-4"><a aria-hidden="true" href="#cb8-4" tabindex="-1"></a></span>
+<span id="cb8-5"><a aria-hidden="true" href="#cb8-5" tabindex="-1"></a><span class="co"># 1. Define the input domain and model</span></span>
+<span id="cb8-6"><a aria-hidden="true" href="#cb8-6" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="fl">0.5</span>, <span class="dv">3</span>, <span class="dv">301</span>)</span>
+<span id="cb8-7"><a aria-hidden="true" href="#cb8-7" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">20</span><span class="op">*</span>(x<span class="op">-</span><span class="fl">0.5</span>)</span>
+<span id="cb8-8"><a aria-hidden="true" href="#cb8-8" tabindex="-1"></a></span>
+<span id="cb8-9"><a aria-hidden="true" href="#cb8-9" tabindex="-1"></a><span class="co"># 2. Inspect numerical predictions</span></span>
+<span id="cb8-10"><a aria-hidden="true" href="#cb8-10" tabindex="-1"></a>idx <span class="op">=</span> np.unique(np.linspace(<span class="dv">0</span>, <span class="bu">len</span>(x)<span class="op">-</span><span class="dv">1</span>, <span class="dv">5</span>).<span class="bu">round</span>().astype(<span class="bu">int</span>))</span>
+<span id="cb8-11"><a aria-hidden="true" href="#cb8-11" tabindex="-1"></a><span class="bu">print</span>(np.column_stack((x[idx], y[idx])))</span>
+<span id="cb8-12"><a aria-hidden="true" href="#cb8-12" tabindex="-1"></a></span>
+<span id="cb8-13"><a aria-hidden="true" href="#cb8-13" tabindex="-1"></a><span class="co"># 3. Visualize the model with labeled axes</span></span>
+<span id="cb8-14"><a aria-hidden="true" href="#cb8-14" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="fl">3.6</span>))</span>
+<span id="cb8-15"><a aria-hidden="true" href="#cb8-15" tabindex="-1"></a>ax.plot(x, y, <span class="st">"-"</span>, color<span class="op">=</span><span class="st">"#176B87"</span>, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb8-16"><a aria-hidden="true" href="#cb8-16" tabindex="-1"></a>ax.<span class="bu">set</span>(xlabel<span class="op">=</span><span class="st">"Voltage (V)"</span>, ylabel<span class="op">=</span><span class="st">"Temperature (C)"</span>)</span>
+<span id="cb8-17"><a aria-hidden="true" href="#cb8-17" tabindex="-1"></a>ax.grid(alpha<span class="op">=</span><span class="fl">0.22</span>)</span>
+<span id="cb8-18"><a aria-hidden="true" href="#cb8-18" tabindex="-1"></a>ax.spines[[<span class="st">"top"</span>, <span class="st">"right"</span>]].set_visible(<span class="va">False</span>)</span>
+<span id="cb8-19"><a aria-hidden="true" href="#cb8-19" tabindex="-1"></a>fig.tight_layout()</span>
+<span id="cb8-20"><a aria-hidden="true" href="#cb8-20" tabindex="-1"></a>plt.show()</span>
+<span id="cb8-21"><a aria-hidden="true" href="#cb8-21" tabindex="-1"></a></span>
+<span id="cb8-22"><a aria-hidden="true" href="#cb8-22" tabindex="-1"></a><span class="co"># 4. Check the sampled output range</span></span>
+<span id="cb8-23"><a aria-hidden="true" href="#cb8-23" tabindex="-1"></a><span class="bu">print</span>(np.<span class="bu">min</span>(y), np.<span class="bu">max</span>(y))</span></code></pre></div></div>
+<h3 id="guided-practice-checking-the-model">Guided practice: checking
+the model</h3>
+<ol type="1">
+<li><p>Calculate the outputs at the two endpoints by hand. Compare them
+with the numerical table.</p></li>
+<li><p>Select an interior input not listed in the table. Predict the
+output before evaluating it in either language.</p></li>
+<li><p>Explain the meaning of the difference between the two endpoint
+outputs, including units. If appropriate, calculate the average rate of
+change.</p></li>
+<li><p>Identify a physical assumption of the model and describe a
+circumstance in which it would fail.</p></li>
+</ol>
+<h2 id="chapter-project-investigating-temperature-sensor-conversion">Chapter
+project: investigating Temperature sensor conversion</h2>
+<p>Prepare a short technical report for a reader who has not studied the
+model. Use the preceding case as a starting point, but develop your own
+investigation rather than merely reproducing the worked example.</p>
+<ol type="1">
+<li><p>State a quantitative question that can be answered using the
+model. Define all variables, units, and restrictions.</p></li>
+<li><p>Modify one meaningful numerical parameter in the formula. Explain
+what the change represents in the original context. Derive the revised
+formula and predict the direction of change before computing.</p></li>
+<li><p>Compare the original and revised models at five common admissible
+inputs. Present a labeled table and explain the largest difference in
+the table.</p></li>
+<li><p>Produce a graph containing both models on the same axes. Use a
+legend and distinguish the curves with line styles or markers. Explain
+the shape and any intersections.</p></li>
+<li><p>Solve your quantitative question algebraically where possible.
+Verify the result using R and Python; report any differences due to
+numerical precision.</p></li>
+<li><p>Discuss at least two limitations. Describe what measurements
+would be needed to assess the model in practice. Do not present
+simulated predictions as empirical evidence.</p></li>
+</ol>
+<h3 class="unnumbered" id="project-deliverables-and-assessment">Project
+deliverables and assessment</h3>
+<p>Submit a two- to three-page report, the two runnable scripts, and the
+labeled figure. The report should stand on its own without requiring the
+reader to inspect the code.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Criterion</th>
+<th style="text-align: right;">Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Mathematical formulation and domain</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Analytical reasoning and verification</td>
+<td style="text-align: right;">25</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Reproducible R and Python
+computations</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Graph and table quality</td>
+<td style="text-align: right;">15</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Interpretation and limitations</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Total</td>
+<td style="text-align: right;">100</td>
+</tr>
+</tbody>
+</table>
+<h2>Companion scripts</h2><p><a download="" href="code/ch05/applied_project.R">applied_project.R</a></p><p><a download="" href="code/ch05/applied_project.py">applied_project.py</a></p><p><a download="" href="code/ch05/chapter05_labs.R">chapter05_labs.R</a></p><p><a download="" href="code/ch05/chapter05_labs.py">chapter05_labs.py</a></p><footer><a href="chapter04.html">← Previous</a><a href="chapter06.html">Next →</a></footer><section class="investigation"><h2 id="interactive-investigation">Interactive investigation: Function transformations</h2><div data-investigation="5"><p>Enable JavaScript to explore the model.</p></div><p><strong>Explore and explain:</strong> Predict the vertex before moving each slider. What happens at zero stretch?</p></section>
+</main><nav aria-label="On this page" class="chapter-toc" id="TOC" role="doc-toc"><strong>On this page</strong>
+<ul>
+<li><a href="#transformations-compositions-and-inverse-functions" id="toc-transformations-compositions-and-inverse-functions">Transformations,
+Compositions, and Inverse Functions</a>
+<ul>
+<li><a href="#opening-investigation-how-do-mathematical-models-change" id="toc-opening-investigation-how-do-mathematical-models-change">Opening
+investigation: How do mathematical models change?</a></li>
+<li><a href="#learning-outcomes" id="toc-learning-outcomes">Learning
+outcomes</a></li>
+<li><a href="#prerequisite-check" id="toc-prerequisite-check">Prerequisite check</a></li>
+<li><a href="#chapter-roadmap" id="toc-chapter-roadmap">Chapter
+roadmap</a></li>
+<li><a href="#from-parent-functions-to-families" id="toc-from-parent-functions-to-families">From parent functions to
+families</a></li>
+<li><a href="#vertical-translations" id="toc-vertical-translations">Vertical translations</a></li>
+<li><a href="#horizontal-translations" id="toc-horizontal-translations">Horizontal translations</a></li>
+<li><a href="#reflections-across-coordinate-axes" id="toc-reflections-across-coordinate-axes">Reflections across
+coordinate axes</a></li>
+<li><a href="#vertical-stretching-and-compression" id="toc-vertical-stretching-and-compression">Vertical stretching and
+compression</a></li>
+<li><a href="#horizontal-stretching-and-compression" id="toc-horizontal-stretching-and-compression">Horizontal stretching and
+compression</a></li>
+<li><a href="#combining-transformations-systematically" id="toc-combining-transformations-systematically">Combining
+transformations systematically</a></li>
+<li><a href="#function-arithmetic-and-domains" id="toc-function-arithmetic-and-domains">Function arithmetic and
+domains</a></li>
+<li><a href="#composition-of-functions" id="toc-composition-of-functions">Composition of functions</a></li>
+<li><a href="#domains-of-composite-functions" id="toc-domains-of-composite-functions">Domains of composite
+functions</a></li>
+<li><a href="#one-to-one-functions-and-the-horizontal-line-test" id="toc-one-to-one-functions-and-the-horizontal-line-test">One-to-one
+functions and the horizontal-line test</a></li>
+<li><a href="#inverse-functions-and-their-meaning" id="toc-inverse-functions-and-their-meaning">Inverse functions and their
+meaning</a></li>
+<li><a href="#finding-and-checking-inverses-algebraically" id="toc-finding-and-checking-inverses-algebraically">Finding and
+checking inverses algebraically</a></li>
+<li><a href="#inverse-models-units-and-interpretation" id="toc-inverse-models-units-and-interpretation">Inverse models, units,
+and interpretation</a></li>
+<li><a href="#visual-investigation-i-the-geometry-of-transformations" id="toc-visual-investigation-i-the-geometry-of-transformations">Visual
+investigation I: the geometry of transformations</a></li>
+<li><a href="#visual-investigation-ii-composition-as-a-two-stage-process" id="toc-visual-investigation-ii-composition-as-a-two-stage-process">Visual
+investigation II: composition as a two-stage process</a></li>
+<li><a href="#visual-investigation-iii-reflecting-inverse-graphs" id="toc-visual-investigation-iii-reflecting-inverse-graphs">Visual
+investigation III: reflecting inverse graphs</a></li>
+<li><a href="#visual-investigation-iv-why-domain-restriction-matters" id="toc-visual-investigation-iv-why-domain-restriction-matters">Visual
+investigation IV: why domain restriction matters</a></li>
+<li><a href="#computational-laboratory-a-exploring-transformations" id="toc-computational-laboratory-a-exploring-transformations">Computational
+laboratory A: exploring transformations</a>
+<ul>
+<li><a href="#r-code" id="toc-r-code">R code</a></li>
+<li><a href="#python-code" id="toc-python-code">Python code</a></li>
+</ul></li>
+<li><a href="#computational-laboratory-b-composition-and-valid-domains" id="toc-computational-laboratory-b-composition-and-valid-domains">Computational
+laboratory B: composition and valid domains</a>
+<ul>
+<li><a href="#r-code-1" id="toc-r-code-1">R code</a></li>
+<li><a href="#python-code-1" id="toc-python-code-1">Python code</a></li>
+</ul></li>
+<li><a href="#computational-laboratory-c-inverse-calibration" id="toc-computational-laboratory-c-inverse-calibration">Computational
+laboratory C: inverse calibration</a>
+<ul>
+<li><a href="#r-code-2" id="toc-r-code-2">R code</a></li>
+<li><a href="#python-code-2" id="toc-python-code-2">Python code</a></li>
+</ul></li>
+<li><a href="#workshop-1-translating-a-dose-response-curve" id="toc-workshop-1-translating-a-dose-response-curve">Workshop 1:
+translating a dose-response curve</a></li>
+<li><a href="#workshop-2-two-stage-laboratory-processing" id="toc-workshop-2-two-stage-laboratory-processing">Workshop 2:
+two-stage laboratory processing</a></li>
+<li><a href="#workshop-3-recovering-an-input-from-a-measured-output" id="toc-workshop-3-recovering-an-input-from-a-measured-output">Workshop
+3: recovering an input from a measured output</a></li>
+<li><a href="#workshop-4-restricted-quadratic-inverses" id="toc-workshop-4-restricted-quadratic-inverses">Workshop 4: restricted
+quadratic inverses</a></li>
+<li><a href="#workshop-5-diagnosing-transformation-errors" id="toc-workshop-5-diagnosing-transformation-errors">Workshop 5:
+diagnosing transformation errors</a></li>
+<li><a href="#chapter-review-key-ideas-and-common-errors" id="toc-chapter-review-key-ideas-and-common-errors">Chapter review: key
+ideas and common errors</a></li>
+<li><a href="#chapter-exercises" id="toc-chapter-exercises">Chapter
+exercises</a>
+<ul>
+<li><a href="#transformations-and-graph-interpretation" id="toc-transformations-and-graph-interpretation">Transformations and
+graph interpretation</a></li>
+</ul></li>
+<li><a href="#calculus-readiness-checkpoint" id="toc-calculus-readiness-checkpoint">Calculus-readiness
+checkpoint</a></li>
+<li><a href="#looking-ahead" id="toc-looking-ahead">Looking
+ahead</a></li>
+<li><a href="#extended-application-temperature-sensor-conversion" id="toc-extended-application-temperature-sensor-conversion">Extended
+application: Temperature sensor conversion</a>
+<ul>
+<li><a href="#formulating-the-mathematical-model" id="toc-formulating-the-mathematical-model">Formulating the mathematical
+model</a></li>
+<li><a href="#connecting-numerical-and-graphical-representations" id="toc-connecting-numerical-and-graphical-representations">Connecting
+numerical and graphical representations</a></li>
+<li><a href="#r-implementation" id="toc-r-implementation">R
+implementation</a></li>
+<li><a href="#python-implementation" id="toc-python-implementation">Python implementation</a></li>
+<li><a href="#guided-practice-checking-the-model" id="toc-guided-practice-checking-the-model">Guided practice: checking
+the model</a></li>
+</ul></li>
+<li><a href="#chapter-project-investigating-temperature-sensor-conversion" id="toc-chapter-project-investigating-temperature-sensor-conversion">Chapter
+project: investigating Temperature sensor conversion</a>
+<ul>
+<li><a href="#project-deliverables-and-assessment" id="toc-project-deliverables-and-assessment">Project deliverables and
+assessment</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav></div><script src="investigations.js"></script></body></html>

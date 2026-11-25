@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8"/>
+<meta content="pandoc" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+<title>Conic Sections and
+Parametric Equations | Applied Precalculus</title>
+<style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+
+
+<link href="site.css" rel="stylesheet"/><script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script defer="" src="search-index.js"></script><script defer="" src="site.js"></script></head><body><nav class="site-nav" id="book-nav"><strong class="brand">Applied Precalculus</strong><p class="subtitle">Using R and Python</p><input aria-label="Search the book" id="book-search" placeholder="Search the book"/><div aria-live="polite" class="search-results" id="search-results"></div><p class="nav-label">Contents</p><a class="" href="index.html">Preface</a><a class="" href="chapter01.html">1. Real Numbers, Algebraic Expressions, and Mathematical Reasoning</a><a class="" href="chapter02.html">2. Equations, Inequalities, and Applications</a><a class="" href="chapter03.html">3. Coordinate Geometry, Lines, and Systems of Equations</a><a class="" href="chapter04.html">4. Functions, Graphs, and Multiple Representations</a><a class="" href="chapter05.html">5. Transformations, Compositions, and Inverse Functions</a><a class="" href="chapter06.html">6. Polynomial and Rational Functions</a><a class="" href="chapter07.html">7. Exponential and Logarithmic Functions</a><a class="" href="chapter08.html">8. Angles, Radian Measure, and the Unit Circle</a><a class="" href="chapter09.html">9. Trigonometric Functions and Their Graphs</a><a class="" href="chapter10.html">10. Trigonometric Identities and Equations</a><a class="" href="chapter11.html">11. Applications of Trigonometry and Periodic Models</a><a class="" href="chapter12.html">12. Sequences, Series, and Mathematical Patterns</a><a class="active" href="chapter13.html">13. Conic Sections and Parametric Equations</a><a class="" href="chapter14.html">14. Vectors, Polar Coordinates, and Geometric Modeling</a><a class="" href="chapter15.html">15. Rates of Change, Difference Quotients, and Limits</a><a class="" href="chapter16.html">16. Integrated Mathematical Modeling with R and Python</a><a class="" href="programming.html">Getting Started with R and Python</a><a class="" href="resources.html">Computational Resource Guide</a></nav><a class="skip" href="#main-content">Skip to content</a><header class="topbar"><button aria-controls="book-nav" aria-expanded="false" class="menu">Contents</button><span>Applied Precalculus / Online edition</span><span class="spacer"></span><a href="resources.html">Resources</a></header><div class="page-grid"><main id="main-content">
+
+<h1 id="conic-sections-and-parametric-equations">Conic Sections and
+Parametric Equations</h1>
+<h2 class="unnumbered" id="opening-context-geometry-in-science-and-motion">Opening context:
+geometry in science and motion</h2>
+<p>Circular calibration targets, elliptical cross sections, parabolic
+trajectories, and moving sensors all connect algebra with geometry.
+Conic sections give concise equations for important curves; parametric
+equations add a description of how a point moves along a curve. This
+chapter builds on coordinate geometry (Chapter 3), functions (Chapter
+4), quadratic equations (Chapter 2), and trigonometry (Chapters
+8–11).</p>
+<h2 class="unnumbered" id="learning-outcomes">Learning outcomes</h2>
+<p>By the end of this chapter, students will be able to (1) derive and
+graph standard conic equations; (2) complete the square to find
+geometric features; (3) distinguish nondegenerate conics from special or
+degenerate cases; (4) locate vertices, foci, directrices, and
+asymptotes; (5) construct and interpret parametric curves with parameter
+restrictions; (6) connect parameterization with motion; (7) use R and
+Python to visualize conics; and (8) assess assumptions and units in
+applied models.</p>
+<h2 class="unnumbered" id="working-with-r-and-python">Working with R and
+Python</h2>
+<p>Each computational laboratory begins with a prediction, then presents
+a full-width <strong>R code</strong> listing followed by a full-width
+<strong>Python code</strong> listing. Run them separately, compare
+results with exact mathematics, and interpret plots in context.</p>
+<h2 id="coordinate-geometry-and-the-conic-family">Coordinate geometry
+and the conic family</h2>
+<p>A conic section is a curve obtained by intersecting a plane with a
+double cone. Algebraically, the familiar axis-aligned conics arise from
+second-degree equations. The general quadratic equation <span class="math inline">\(Ax^2+Bxy+Cy^2+Dx+Ey+F=0\)</span> can represent a
+conic, a degenerate conic, or no real points. This chapter focuses first
+on axis-aligned forms, then introduces the role of the <span class="math inline">\(xy\)</span> term. A graph is a set of ordered
+pairs; an equation alone must be interpreted together with its real
+solutions.</p>
+<p><strong>Example.</strong> The equation <span class="math inline">\(x^2+y^2=9\)</span> describes all points at
+distance 3 from the origin, whereas <span class="math inline">\(x^2+y^2=-9\)</span> has no real solutions.</p>
+<p><strong>Guided practice 1.</strong> Explain why <span class="math inline">\(x^2+y^2=0\)</span> represents a single point, not
+a circle of positive radius.</p>
+<h2 id="circles-distance-and-completing-the-square">Circles: distance
+and completing the square</h2>
+<p>From the distance formula, points <span class="math inline">\((x,y)\)</span> a distance <span class="math inline">\(r&gt;0\)</span> from <span class="math inline">\((h,k)\)</span> satisfy <span class="math inline">\(\sqrt{(x-h)^2+(y-k)^2}=r\)</span>. Squaring gives
+<span class="math inline">\(\boxed{(x-h)^2+(y-k)^2=r^2}\)</span>. The
+center is <span class="math inline">\((h,k)\)</span> and radius <span class="math inline">\(r\)</span>. Completing the square converts
+expanded equations to standard form.</p>
+<p><strong>Worked example.</strong> Rewrite <span class="math inline">\(x^2+y^2-6x+4y-12=0\)</span>. Group terms: <span class="math inline">\((x^2-6x)+(y^2+4y)=12\)</span>. Add 9 and 4 to both
+sides to obtain <span class="math inline">\((x-3)^2+(y+2)^2=25\)</span>.
+Center <span class="math inline">\((3,-2)\)</span>, radius 5. Check that
+<span class="math inline">\((8,-2)\)</span> lies on the circle.</p>
+<p><strong>Guided practice 2.</strong> Convert <span class="math inline">\(x^2+y^2+8x-2y+8=0\)</span> to standard form;
+identify center, radius, and intercepts.</p>
+<h5 id="visual-investigation-1.">Visual investigation 1.</h5>
+<p>Sketch the relevant curve by hand before computing coordinates. Mark
+its center or vertex, the direction of its axes, and two diagnostic
+points. Explain what the graph communicates that a list of numerical
+values does not. Compare a geometric prediction with a
+computer-generated graph.</p>
+<p><strong>Reflection.</strong> Identify one feature that changes under
+translation and one that remains unchanged.</p>
+<h2 id="parabolas-as-loci-and-quadratic-graphs">Parabolas as loci and
+quadratic graphs</h2>
+<p>A parabola consists of points equidistant from a fixed point (focus)
+and a fixed line (directrix). For vertical axis, <span class="math inline">\(\boxed{(x-h)^2=4p(y-k)}\)</span> has vertex <span class="math inline">\((h,k)\)</span>, focus <span class="math inline">\((h,k+p)\)</span>, directrix <span class="math inline">\(y=k-p\)</span>. The parameter <span class="math inline">\(p\)</span> is signed: positive opens upward,
+negative downward. Equivalently <span class="math inline">\(y=k+(x-h)^2/(4p)\)</span>. Horizontal-axis form is
+<span class="math inline">\((y-k)^2=4p(x-h)\)</span>.</p>
+<p><strong>Derivation.</strong> For vertex at the origin, focus <span class="math inline">\((0,p)\)</span> and directrix <span class="math inline">\(y=-p\)</span>, equate <span class="math inline">\(\sqrt{x^2+(y-p)^2}=|y+p|\)</span>. Squaring and
+canceling <span class="math inline">\(y^2+p^2\)</span> gives <span class="math inline">\(x^2=4py\)</span>.</p>
+<p><strong>Worked example.</strong> For <span class="math inline">\((x-2)^2=-8(y+1)\)</span>, <span class="math inline">\(4p=-8\)</span>, so <span class="math inline">\(p=-2\)</span>. Vertex <span class="math inline">\((2,-1)\)</span>, focus <span class="math inline">\((2,-3)\)</span>, directrix <span class="math inline">\(y=1\)</span>.</p>
+<p><strong>Guided practice 3.</strong> Find the focus and directrix of
+<span class="math inline">\(y=(x+1)^2/12+4\)</span>. Explain the meaning
+of the sign of <span class="math inline">\(p\)</span>.</p>
+<h5 id="visual-investigation-2.">Visual investigation 2.</h5>
+<p>Sketch the relevant curve by hand before computing coordinates. Mark
+its center or vertex, the direction of its axes, and two diagnostic
+points. Explain what the graph communicates that a list of numerical
+values does not. Compare a geometric prediction with a
+computer-generated graph.</p>
+<p><strong>Reflection.</strong> Identify one feature that changes under
+translation and one that remains unchanged.</p>
+<h2 id="ellipses-constant-sum-of-distances">Ellipses: constant sum of
+distances</h2>
+<p>An ellipse is the set of points whose sum of distances to two foci is
+constant and greater than the distance between the foci. For a
+horizontal major axis, <span class="math inline">\(\boxed{\frac{(x-h)^2}{a^2}+\frac{(y-k)^2}{b^2}=1}\)</span>
+with <span class="math inline">\(a&gt;b&gt;0\)</span>. Vertices <span class="math inline">\((h\pm a,k)\)</span>, co-vertices <span class="math inline">\((h,k\pm b)\)</span>, and foci <span class="math inline">\((h\pm c,k)\)</span> where <span class="math inline">\(c^2=a^2-b^2\)</span>. For a vertical major axis,
+interchange the denominators. The eccentricity <span class="math inline">\(e=c/a\)</span> satisfies <span class="math inline">\(0&lt;e&lt;1\)</span> for a noncircular ellipse; a
+circle is the limiting case <span class="math inline">\(e=0\)</span>.</p>
+<p><strong>Worked example.</strong> <span class="math inline">\(\frac{(x-1)^2}{25}+\frac{(y+2)^2}{9}=1\)</span>
+has center <span class="math inline">\((1,-2)\)</span>, <span class="math inline">\(a=5\)</span>, <span class="math inline">\(b=3\)</span>, <span class="math inline">\(c=4\)</span>, vertices <span class="math inline">\((-4,-2)\)</span> and <span class="math inline">\((6,-2)\)</span>, foci <span class="math inline">\((-3,-2)\)</span> and <span class="math inline">\((5,-2)\)</span>.</p>
+<p><strong>Guided practice 4.</strong> Analyze <span class="math inline">\(\frac{(x+2)^2}{4}+\frac{(y-1)^2}{16}=1\)</span>
+and sketch its major and minor axes.</p>
+<h5 id="visual-investigation-3.">Visual investigation 3.</h5>
+<p>Sketch the relevant curve by hand before computing coordinates. Mark
+its center or vertex, the direction of its axes, and two diagnostic
+points. Explain what the graph communicates that a list of numerical
+values does not. Compare a geometric prediction with a
+computer-generated graph.</p>
+<p><strong>Reflection.</strong> Identify one feature that changes under
+translation and one that remains unchanged.</p>
+<h2 id="hyperbolas-constant-difference-of-distances">Hyperbolas:
+constant difference of distances</h2>
+<p>A hyperbola consists of points whose absolute difference of distances
+to two foci is a positive constant smaller than the focal separation. A
+horizontal hyperbola satisfies <span class="math inline">\(\boxed{\frac{(x-h)^2}{a^2}-\frac{(y-k)^2}{b^2}=1}\)</span>.
+Vertices <span class="math inline">\((h\pm a,k)\)</span>, foci <span class="math inline">\((h\pm c,k)\)</span>, <span class="math inline">\(c^2=a^2+b^2\)</span>, and asymptotes <span class="math inline">\(y-k=\pm(b/a)(x-h)\)</span>. For a vertical
+hyperbola the positive term is the <span class="math inline">\(y\)</span> term and asymptote slopes are <span class="math inline">\(\pm a/b\)</span>. Eccentricity <span class="math inline">\(e=c/a&gt;1\)</span>.</p>
+<p><strong>Worked example.</strong> <span class="math inline">\(\frac{(x+1)^2}{9}-\frac{(y-2)^2}{16}=1\)</span>
+has center <span class="math inline">\((-1,2)\)</span>, vertices <span class="math inline">\((-4,2),(2,2)\)</span>, and asymptotes <span class="math inline">\(y-2=\pm\frac43(x+1)\)</span>. Its foci are <span class="math inline">\((-6,2)\)</span> and <span class="math inline">\((4,2)\)</span>.</p>
+<p><strong>Guided practice 5.</strong> Find the center, vertices, foci,
+and asymptotes of <span class="math inline">\(\frac{(y+3)^2}{4}-\frac{(x-2)^2}{9}=1\)</span>.</p>
+<h5 id="visual-investigation-4.">Visual investigation 4.</h5>
+<p>Sketch the relevant curve by hand before computing coordinates. Mark
+its center or vertex, the direction of its axes, and two diagnostic
+points. Explain what the graph communicates that a list of numerical
+values does not. Compare a geometric prediction with a
+computer-generated graph.</p>
+<p><strong>Reflection.</strong> Identify one feature that changes under
+translation and one that remains unchanged.</p>
+<h2 id="recognizing-conics-and-avoiding-classification-errors">Recognizing
+conics and avoiding classification errors</h2>
+<p>When there is no <span class="math inline">\(xy\)</span> term,
+compare the squared coefficients: equal positive coefficients suggest a
+circle; same-sign unequal nonzero coefficients suggest an ellipse;
+opposite signs suggest a hyperbola; exactly one squared variable
+suggests a parabola. This classification requires care: constants may
+produce a point, intersecting lines, a single line, or no real graph.
+For <span class="math inline">\(Ax^2+Bxy+Cy^2+\cdots=0\)</span>, the
+discriminant <span class="math inline">\(B^2-4AC\)</span> distinguishes
+the basic nondegenerate types: negative for ellipse type, zero for
+parabola type, and positive for hyperbola type. It does not alone
+guarantee a nondegenerate real curve.</p>
+<p><strong>Worked example.</strong> <span class="math inline">\(9x^2+4y^2=36\)</span> is an ellipse; <span class="math inline">\(9x^2-4y^2=36\)</span> is a hyperbola; <span class="math inline">\(x^2=12y\)</span> is a parabola.</p>
+<p><strong>Guided practice 6.</strong> Classify <span class="math inline">\(x^2-y^2=0\)</span>, <span class="math inline">\(x^2+y^2+4=0\)</span>, and <span class="math inline">\(x^2+4y^2=0\)</span> and explain why these are
+special cases.</p>
+<h2 id="completing-the-square-in-two-variables">Completing the square in
+two variables</h2>
+<p>To convert an expanded conic, group <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> terms, factor out unequal squared
+coefficients, complete squares inside parentheses, and divide to
+normalize. Keep every added constant balanced on both sides.</p>
+<p><strong>Worked example.</strong> <span class="math inline">\(4x^2+9y^2-16x+18y-11=0\)</span> becomes <span class="math inline">\(4(x^2-4x)+9(y^2+2y)=11\)</span>, hence <span class="math inline">\(4(x-2)^2+9(y+1)^2=36\)</span>. Thus <span class="math inline">\(\frac{(x-2)^2}{9}+\frac{(y+1)^2}{4}=1\)</span>.
+Center <span class="math inline">\((2,-1)\)</span>, horizontal major
+axis, <span class="math inline">\(a=3\)</span>, <span class="math inline">\(b=2\)</span>, <span class="math inline">\(c=\sqrt5\)</span>.</p>
+<p><strong>Guided practice 7.</strong> Put <span class="math inline">\(9x^2-4y^2-18x-16y-43=0\)</span> in standard form,
+checking each constant.</p>
+<h2 id="parametric-equations-and-orientation">Parametric equations and
+orientation</h2>
+<p>A parametric curve is described by <span class="math inline">\(x=f(t)\)</span> and <span class="math inline">\(y=g(t)\)</span> over a specified parameter
+interval. The same geometric curve can have different parametrizations
+and different directions of travel. Eliminating <span class="math inline">\(t\)</span> often gives a Cartesian equation but
+can lose restrictions or orientation. For a circle centered at <span class="math inline">\((h,k)\)</span>, <span class="math inline">\(x=h+r\cos t\)</span>, <span class="math inline">\(y=k+r\sin t\)</span> for <span class="math inline">\(0\le t&lt;2\pi\)</span> traces it once
+counterclockwise.</p>
+<p><strong>Worked example.</strong> <span class="math inline">\(x=2t+1\)</span>, <span class="math inline">\(y=t^2\)</span> gives <span class="math inline">\(t=(x-1)/2\)</span>, so <span class="math inline">\(y=(x-1)^2/4\)</span>. If <span class="math inline">\(-1\le t\le2\)</span>, then <span class="math inline">\(-1\le x\le5\)</span>; the graph is only that part
+of the parabola.</p>
+<p><strong>Guided practice 8.</strong> Eliminate <span class="math inline">\(t\)</span> from <span class="math inline">\(x=3\cos t\)</span>, <span class="math inline">\(y=2\sin t\)</span>, <span class="math inline">\(0\le t\le\pi\)</span>; describe which half of the
+ellipse is traced.</p>
+<h5 id="visual-investigation-5.">Visual investigation 5.</h5>
+<p>Sketch the relevant curve by hand before computing coordinates. Mark
+its center or vertex, the direction of its axes, and two diagnostic
+points. Explain what the graph communicates that a list of numerical
+values does not. Compare a geometric prediction with a
+computer-generated graph.</p>
+<p><strong>Reflection.</strong> Identify one feature that changes under
+translation and one that remains unchanged.</p>
+<h2 id="parametric-lines-motion-and-velocity">Parametric lines, motion,
+and velocity</h2>
+<p>A moving point can be modeled by <span class="math inline">\(x(t)=x_0+v_xt\)</span>, <span class="math inline">\(y(t)=y_0+v_yt\)</span>. The vector <span class="math inline">\((v_x,v_y)\)</span> gives constant velocity in
+coordinate units per unit time. A nonlinear path may have varying
+direction and speed. In calculus, velocity is <span class="math inline">\(\bigl(x'(t),y'(t)\bigr)\)</span>, and when
+<span class="math inline">\(x'(t)\ne0\)</span>, the tangent slope is
+<span class="math inline">\(dy/dx=y'(t)/x'(t)\)</span>. These
+are previews rather than prerequisites.</p>
+<p><strong>Worked example.</strong> A simulated tracking point has <span class="math inline">\(x(t)=1+3t\)</span>, <span class="math inline">\(y(t)=5-2t\)</span>. At <span class="math inline">\(t=4\)</span>, its position is <span class="math inline">\((13,-3)\)</span> and speed is <span class="math inline">\(\sqrt{3^2+(-2)^2}=\sqrt{13}\)</span> distance
+units per time unit.</p>
+<p><strong>Guided practice 9.</strong> For <span class="math inline">\(x(t)=2t\)</span>, <span class="math inline">\(y(t)=t^2-1\)</span>, tabulate positions at <span class="math inline">\(t=-2,-1,0,1,2\)</span> and indicate direction.</p>
+<h2 id="parametric-ellipses-and-circular-motion">Parametric ellipses and
+circular motion</h2>
+<p>The equations <span class="math inline">\(x=h+a\cos t\)</span>, <span class="math inline">\(y=k+b\sin t\)</span> trace an ellipse, with <span class="math inline">\(a,b&gt;0\)</span>. Substitution into standard form
+confirms the identity <span class="math inline">\(\cos^2t+\sin^2t=1\)</span>. Replacing <span class="math inline">\(t\)</span> by <span class="math inline">\(\omega
+t+\phi\)</span> changes angular frequency and starting phase. When <span class="math inline">\(a=b\)</span>, the path is circular. If <span class="math inline">\(a\ne b\)</span>, the coordinate parameter <span class="math inline">\(t\)</span> is not the polar angle from the center
+in general.</p>
+<p><strong>Worked example.</strong> <span class="math inline">\(x(t)=4+5\cos(2t)\)</span>, <span class="math inline">\(y(t)=-1+2\sin(2t)\)</span> traces an ellipse
+centered at <span class="math inline">\((4,-1)\)</span> with semiaxes 5
+and 2, completing a cycle in <span class="math inline">\(\pi\)</span>
+time units.</p>
+<p><strong>Guided practice 10.</strong> Find the period and initial
+position of <span class="math inline">\(x=3\cos(\pi t)\)</span>, <span class="math inline">\(y=3\sin(\pi t)\)</span>.</p>
+<h5 id="visual-investigation-6.">Visual investigation 6.</h5>
+<p>Sketch the relevant curve by hand before computing coordinates. Mark
+its center or vertex, the direction of its axes, and two diagnostic
+points. Explain what the graph communicates that a list of numerical
+values does not. Compare a geometric prediction with a
+computer-generated graph.</p>
+<p><strong>Reflection.</strong> Identify one feature that changes under
+translation and one that remains unchanged.</p>
+<h2 id="projectile-style-paths-as-mathematical-models">Projectile-style
+paths as mathematical models</h2>
+<p>A simple idealized two-dimensional model with constant horizontal
+velocity and vertical acceleration is <span class="math inline">\(x(t)=x_0+v_xt\)</span>, <span class="math inline">\(y(t)=y_0+v_yt-\tfrac12gt^2\)</span>, with <span class="math inline">\(g&gt;0\)</span>. Eliminating <span class="math inline">\(t\)</span> when <span class="math inline">\(v_x\ne0\)</span> produces a downward-opening
+parabola. The model neglects air resistance and should not be applied to
+clinical or engineering decisions without validation.</p>
+<p><strong>Worked example.</strong> For <span class="math inline">\(x(t)=4t\)</span>, <span class="math inline">\(y(t)=2+6t-5t^2\)</span>, substitute <span class="math inline">\(t=x/4\)</span> to obtain <span class="math inline">\(y=2+\frac32x-\frac5{16}x^2\)</span>. Restrict to
+physically relevant <span class="math inline">\(t\ge0\)</span> and
+before reaching the chosen ground level.</p>
+<p><strong>Guided practice 11.</strong> Find the maximum height and the
+time at which it occurs by completing the square in <span class="math inline">\(y(t)\)</span>.</p>
+<h2 id="intersection-problems-and-algebraic-verification">Intersection
+problems and algebraic verification</h2>
+<p>Intersections of conics can be found by substitution or elimination.
+Algebraic solutions must be checked in the original equations,
+especially after squaring. A tangent intersection may yield a repeated
+algebraic root. Numerical graphs can suggest solutions but cannot
+certify exact values.</p>
+<p><strong>Worked example.</strong> Intersect the circle <span class="math inline">\(x^2+y^2=25\)</span> with the line <span class="math inline">\(y=3\)</span>. Then <span class="math inline">\(x^2=16\)</span>, giving <span class="math inline">\((-4,3)\)</span> and <span class="math inline">\((4,3)\)</span>. Each satisfies both original
+equations.</p>
+<p><strong>Guided practice 12.</strong> Find the intersection of <span class="math inline">\(y=x^2\)</span> and <span class="math inline">\(y=2x+3\)</span> and interpret the solutions
+geometrically.</p>
+<h2 id="applied-modeling-elliptical-cross-sections">Applied modeling:
+elliptical cross sections</h2>
+<p>Suppose an idealized imaging cross section is approximated by <span class="math inline">\(x^2/16+y^2/9=1\)</span> with lengths in
+centimeters. The full width is 8 cm and full height is 6 cm. Its
+enclosed area is <span class="math inline">\(\pi
+ab=12\pi\,\mathrm{cm}^2\)</span>. This is a geometric approximation to a
+cross section, not a diagnostic measurement. Units must be squared when
+reporting area.</p>
+<p><strong>Worked example.</strong> If a uniform scaling factor <span class="math inline">\(s=1.1\)</span> is applied to both axes, the area
+becomes <span class="math inline">\(s^2(12\pi)=14.52\pi\,\mathrm{cm}^2\)</span>. A 10%
+increase in linear dimensions gives a 21% increase in area.</p>
+<p><strong>Guided practice 13.</strong> Compute the area if the
+horizontal semiaxis increases by 10% but the vertical semiaxis is
+unchanged.</p>
+<h2 id="model-selection-residuals-and-measurement-uncertainty">Model
+selection, residuals, and measurement uncertainty</h2>
+<p>Choosing a conic from measured coordinates is a modeling decision.
+Scatterplots, units, symmetry, and scientific context matter. A fitted
+curve may be descriptive without being mechanistic. Residuals are
+observed minus predicted values; for parametric curves, vertical
+residuals may be inappropriate when multiple <span class="math inline">\(y\)</span> values correspond to one <span class="math inline">\(x\)</span>. Measurement error can alter fitted
+centers and axes.</p>
+<p><strong>Worked example.</strong> If an observed ellipse has estimated
+semiaxes <span class="math inline">\(a=4.0\pm0.1\)</span> and <span class="math inline">\(b=3.0\pm0.1\)</span> cm, compare the areas <span class="math inline">\(\pi ab\)</span> at <span class="math inline">\((a,b)=(3.9,2.9)\)</span> and <span class="math inline">\((4.1,3.1)\)</span> to illustrate uncertainty
+bounds.</p>
+<p><strong>Guided practice 14.</strong> Explain why a circle fitted to
+elongated observations may systematically underfit near the major-axis
+ends.</p>
+<h2 id="connections-to-calculus-and-future-mathematics">Connections to
+calculus and future mathematics</h2>
+<p>Conics recur as level curves in multivariable calculus, while
+parametric curves allow position, velocity, tangent vectors, and arc
+length to be described using a single parameter. For <span class="math inline">\(x=a\cos t\)</span> and <span class="math inline">\(y=b\sin t\)</span>, derivatives give <span class="math inline">\(x'=-a\sin t\)</span> and <span class="math inline">\(y'=b\cos t\)</span>, so the tangent slope is
+<span class="math inline">\(-(b/a)\cot t\)</span> where <span class="math inline">\(\sin t\ne0\)</span>. At <span class="math inline">\(t=0\)</span>, the tangent is vertical,
+illustrating why the quotient <span class="math inline">\(y'/x'\)</span> requires care.</p>
+<p><strong>Guided practice 15.</strong> Use nearby parameter values to
+estimate the tangent direction at <span class="math inline">\(t=\pi/2\)</span> for the ellipse <span class="math inline">\(x=4\cos t\)</span>, <span class="math inline">\(y=2\sin t\)</span>.</p>
+<h2 id="visual-gallery-comparing-the-conics">Visual gallery: comparing
+the conics</h2>
+<figure>
+<img alt="image" src="figures/precompiled/chapter13-01.svg"/>
+<figcaption aria-hidden="true">image</figcaption>
+</figure>
+<p>These curves are drawn together for comparison, not as one fitted
+model. A hyperbola has disconnected branches and is explored in
+Laboratory A.</p>
+<h2 id="computational-laboratory-a-graphing-and-classifying-conics">Computational
+laboratory A: graphing and classifying conics</h2>
+<p><strong>Prediction.</strong> Which plotted curves are bounded? Which
+have asymptotes? Explain before executing the code.</p>
+<h3 class="unnumbered" id="r-code">R code</h3>
+<div class="code-shell"><div class="code-bar"><span>R</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a aria-hidden="true" href="#cb1-1" tabindex="-1"></a>t <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">2</span><span class="sc">*</span>pi, <span class="at">length.out=</span><span class="dv">400</span>)</span>
+<span id="cb1-2"><a aria-hidden="true" href="#cb1-2" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
+<span id="cb1-3"><a aria-hidden="true" href="#cb1-3" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">3</span><span class="sc">*</span><span class="fu">cos</span>(t), <span class="dv">2</span><span class="sc">*</span><span class="fu">sin</span>(t), <span class="at">type=</span><span class="st">"l"</span>, <span class="at">asp=</span><span class="dv">1</span>, <span class="at">xlab=</span><span class="st">"x"</span>, <span class="at">ylab=</span><span class="st">"y"</span>, <span class="at">main=</span><span class="st">"Ellipse"</span>)</span>
+<span id="cb1-4"><a aria-hidden="true" href="#cb1-4" tabindex="-1"></a>u <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="fl">1.4</span>,<span class="fl">1.4</span>,<span class="at">length.out=</span><span class="dv">300</span>)</span>
+<span id="cb1-5"><a aria-hidden="true" href="#cb1-5" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">c</span>(<span class="dv">2</span><span class="sc">*</span><span class="fu">cosh</span>(u),<span class="sc">-</span><span class="dv">2</span><span class="sc">*</span><span class="fu">cosh</span>(u)), <span class="fu">c</span>(<span class="dv">3</span><span class="sc">*</span><span class="fu">sinh</span>(u),<span class="dv">3</span><span class="sc">*</span><span class="fu">sinh</span>(u)), <span class="at">type=</span><span class="st">"n"</span>, <span class="at">asp=</span><span class="dv">1</span>, <span class="at">xlab=</span><span class="st">"x"</span>, <span class="at">ylab=</span><span class="st">"y"</span>, <span class="at">main=</span><span class="st">"Hyperbola"</span>)</span>
+<span id="cb1-6"><a aria-hidden="true" href="#cb1-6" tabindex="-1"></a><span class="fu">lines</span>(<span class="dv">2</span><span class="sc">*</span><span class="fu">cosh</span>(u),<span class="dv">3</span><span class="sc">*</span><span class="fu">sinh</span>(u),<span class="at">col=</span><span class="st">"blue"</span>); <span class="fu">lines</span>(<span class="sc">-</span><span class="dv">2</span><span class="sc">*</span><span class="fu">cosh</span>(u),<span class="dv">3</span><span class="sc">*</span><span class="fu">sinh</span>(u),<span class="at">col=</span><span class="st">"red"</span>)</span>
+<span id="cb1-7"><a aria-hidden="true" href="#cb1-7" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">a=</span><span class="dv">0</span>,<span class="at">b=</span><span class="fl">1.5</span>,<span class="at">lty=</span><span class="dv">2</span>);<span class="fu">abline</span>(<span class="at">a=</span><span class="dv">0</span>,<span class="at">b=</span><span class="sc">-</span><span class="fl">1.5</span>,<span class="at">lty=</span><span class="dv">2</span>)</span>
+<span id="cb1-8"><a aria-hidden="true" href="#cb1-8" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>))</span></code></pre></div></div>
+<h3 class="unnumbered" id="python-code">Python code</h3>
+<div class="code-shell"><div class="code-bar"><span>Python</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" href="#cb2-1" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-2"><a aria-hidden="true" href="#cb2-2" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-3"><a aria-hidden="true" href="#cb2-3" tabindex="-1"></a>t<span class="op">=</span>np.linspace(<span class="dv">0</span>,<span class="dv">2</span><span class="op">*</span>np.pi,<span class="dv">400</span>)<span class="op">;</span>u<span class="op">=</span>np.linspace(<span class="op">-</span><span class="fl">1.4</span>,<span class="fl">1.4</span>,<span class="dv">300</span>)</span>
+<span id="cb2-4"><a aria-hidden="true" href="#cb2-4" tabindex="-1"></a>fig,ax<span class="op">=</span>plt.subplots(<span class="dv">1</span>,<span class="dv">2</span>,figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">4</span>))</span>
+<span id="cb2-5"><a aria-hidden="true" href="#cb2-5" tabindex="-1"></a>ax[<span class="dv">0</span>].plot(<span class="dv">3</span><span class="op">*</span>np.cos(t),<span class="dv">2</span><span class="op">*</span>np.sin(t))<span class="op">;</span>ax[<span class="dv">0</span>].set_title(<span class="st">"Ellipse"</span>)</span>
+<span id="cb2-6"><a aria-hidden="true" href="#cb2-6" tabindex="-1"></a>ax[<span class="dv">1</span>].plot(<span class="dv">2</span><span class="op">*</span>np.cosh(u),<span class="dv">3</span><span class="op">*</span>np.sinh(u))<span class="op">;</span>ax[<span class="dv">1</span>].plot(<span class="op">-</span><span class="dv">2</span><span class="op">*</span>np.cosh(u),<span class="dv">3</span><span class="op">*</span>np.sinh(u))</span>
+<span id="cb2-7"><a aria-hidden="true" href="#cb2-7" tabindex="-1"></a>x<span class="op">=</span>np.linspace(<span class="op">-</span><span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">200</span>)<span class="op">;</span>ax[<span class="dv">1</span>].plot(x,<span class="fl">1.5</span><span class="op">*</span>x,<span class="st">"--"</span>)<span class="op">;</span>ax[<span class="dv">1</span>].plot(x,<span class="op">-</span><span class="fl">1.5</span><span class="op">*</span>x,<span class="st">"--"</span>)</span>
+<span id="cb2-8"><a aria-hidden="true" href="#cb2-8" tabindex="-1"></a>ax[<span class="dv">1</span>].set_title(<span class="st">"Hyperbola"</span>)</span>
+<span id="cb2-9"><a aria-hidden="true" href="#cb2-9" tabindex="-1"></a><span class="cf">for</span> a <span class="kw">in</span> ax:a.set_aspect(<span class="st">"equal"</span>,adjustable<span class="op">=</span><span class="st">"box"</span>)<span class="op">;</span>a.grid(<span class="va">True</span>)<span class="op">;</span>a.set_xlabel(<span class="st">"x"</span>)<span class="op">;</span>a.set_ylabel(<span class="st">"y"</span>)</span>
+<span id="cb2-10"><a aria-hidden="true" href="#cb2-10" tabindex="-1"></a>fig.tight_layout()<span class="op">;</span>fig.savefig(<span class="st">"labA_python.png"</span>,dpi<span class="op">=</span><span class="dv">180</span>)<span class="op">;</span>plt.close(fig)</span></code></pre></div></div>
+<p><strong>Interpretation.</strong> Verify ellipse intercepts and
+hyperbola asymptote slopes by hand. Explain why equal axis scales are
+essential.</p>
+<h2 id="computational-laboratory-b-parametric-curves-and-orientation">Computational
+laboratory B: parametric curves and orientation</h2>
+<p><strong>Prediction.</strong> Predict the starting point and direction
+for <span class="math inline">\(x=3\cos t\)</span>, <span class="math inline">\(y=2\sin t\)</span> when <span class="math inline">\(0\le t\le2\pi\)</span>.</p>
+<h3 class="unnumbered" id="r-code-1">R code</h3>
+<div class="code-shell"><div class="code-bar"><span>R</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a aria-hidden="true" href="#cb3-1" tabindex="-1"></a>t <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">2</span><span class="sc">*</span>pi,<span class="at">length.out=</span><span class="dv">400</span>)</span>
+<span id="cb3-2"><a aria-hidden="true" href="#cb3-2" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">3</span><span class="sc">*</span><span class="fu">cos</span>(t); y <span class="ot">&lt;-</span> <span class="dv">2</span><span class="sc">*</span><span class="fu">sin</span>(t)</span>
+<span id="cb3-3"><a aria-hidden="true" href="#cb3-3" tabindex="-1"></a><span class="fu">plot</span>(x,y,<span class="at">type=</span><span class="st">"l"</span>,<span class="at">asp=</span><span class="dv">1</span>,<span class="at">xlab=</span><span class="st">"x"</span>,<span class="at">ylab=</span><span class="st">"y"</span>,<span class="at">main=</span><span class="st">"Parameterized ellipse"</span>)</span>
+<span id="cb3-4"><a aria-hidden="true" href="#cb3-4" tabindex="-1"></a><span class="fu">points</span>(x[<span class="dv">1</span>],y[<span class="dv">1</span>],<span class="at">pch=</span><span class="dv">19</span>,<span class="at">col=</span><span class="st">"red"</span>)</span>
+<span id="cb3-5"><a aria-hidden="true" href="#cb3-5" tabindex="-1"></a>idx <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">101</span>,<span class="dv">201</span>,<span class="dv">301</span>)</span>
+<span id="cb3-6"><a aria-hidden="true" href="#cb3-6" tabindex="-1"></a><span class="fu">arrows</span>(x[idx],y[idx],x[idx<span class="sc">+</span><span class="dv">4</span>],y[idx<span class="sc">+</span><span class="dv">4</span>],<span class="at">length=</span><span class="fl">0.12</span>,<span class="at">col=</span><span class="st">"blue"</span>)</span>
+<span id="cb3-7"><a aria-hidden="true" href="#cb3-7" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Start:"</span>,x[<span class="dv">1</span>],y[<span class="dv">1</span>],<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code></pre></div></div>
+<h3 class="unnumbered" id="python-code-1">Python code</h3>
+<div class="code-shell"><div class="code-bar"><span>Python</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" href="#cb4-1" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb4-2"><a aria-hidden="true" href="#cb4-2" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb4-3"><a aria-hidden="true" href="#cb4-3" tabindex="-1"></a>t<span class="op">=</span>np.linspace(<span class="dv">0</span>,<span class="dv">2</span><span class="op">*</span>np.pi,<span class="dv">400</span>)<span class="op">;</span>x<span class="op">=</span><span class="dv">3</span><span class="op">*</span>np.cos(t)<span class="op">;</span>y<span class="op">=</span><span class="dv">2</span><span class="op">*</span>np.sin(t)</span>
+<span id="cb4-4"><a aria-hidden="true" href="#cb4-4" tabindex="-1"></a>fig,ax<span class="op">=</span>plt.subplots()<span class="op">;</span>ax.plot(x,y)<span class="op">;</span>ax.scatter([x[<span class="dv">0</span>]],[y[<span class="dv">0</span>]],label<span class="op">=</span><span class="st">"start"</span>)</span>
+<span id="cb4-5"><a aria-hidden="true" href="#cb4-5" tabindex="-1"></a><span class="cf">for</span> k <span class="kw">in</span> [<span class="dv">0</span>,<span class="dv">100</span>,<span class="dv">200</span>,<span class="dv">300</span>]:ax.annotate(<span class="st">""</span>,xy<span class="op">=</span>(x[k<span class="op">+</span><span class="dv">5</span>],y[k<span class="op">+</span><span class="dv">5</span>]),xytext<span class="op">=</span>(x[k],y[k]),arrowprops<span class="op">=</span>{<span class="st">"arrowstyle"</span>:<span class="st">"-&gt;"</span>})</span>
+<span id="cb4-6"><a aria-hidden="true" href="#cb4-6" tabindex="-1"></a>ax.set_aspect(<span class="st">"equal"</span>)<span class="op">;</span>ax.grid(<span class="va">True</span>)<span class="op">;</span>ax.legend()<span class="op">;</span>ax.set_xlabel(<span class="st">"x"</span>)<span class="op">;</span>ax.set_ylabel(<span class="st">"y"</span>)</span>
+<span id="cb4-7"><a aria-hidden="true" href="#cb4-7" tabindex="-1"></a>fig.savefig(<span class="st">"labB_python.png"</span>,dpi<span class="op">=</span><span class="dv">180</span>)<span class="op">;</span>plt.close(fig)</span></code></pre></div></div>
+<p><strong>Interpretation.</strong> Compare the full curve with <span class="math inline">\(0\le t\le\pi\)</span>. Describe the effect of
+reversing the parameter.</p>
+<h2 id="computational-laboratory-c-fitting-an-ellipse-and-examining-residuals">Computational
+laboratory C: fitting an ellipse and examining residuals</h2>
+<p><strong>Prediction.</strong> Noisy observations near an ellipse
+should not lie exactly on the model. What should a residual plot
+reveal?</p>
+<h3 class="unnumbered" id="r-code-2">R code</h3>
+<div class="code-shell"><div class="code-bar"><span>R</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a aria-hidden="true" href="#cb5-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">13</span>)</span>
+<span id="cb5-2"><a aria-hidden="true" href="#cb5-2" tabindex="-1"></a>t <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">2</span><span class="sc">*</span>pi,<span class="at">length.out=</span><span class="dv">80</span>)</span>
+<span id="cb5-3"><a aria-hidden="true" href="#cb5-3" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">4</span>; b <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb5-4"><a aria-hidden="true" href="#cb5-4" tabindex="-1"></a>r <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">+</span><span class="fu">rnorm</span>(<span class="fu">length</span>(t),<span class="dv">0</span>,<span class="fl">0.04</span>)</span>
+<span id="cb5-5"><a aria-hidden="true" href="#cb5-5" tabindex="-1"></a>x <span class="ot">&lt;-</span> a<span class="sc">*</span>r<span class="sc">*</span><span class="fu">cos</span>(t); y <span class="ot">&lt;-</span> b<span class="sc">*</span>r<span class="sc">*</span><span class="fu">sin</span>(t)</span>
+<span id="cb5-6"><a aria-hidden="true" href="#cb5-6" tabindex="-1"></a>radial_residual <span class="ot">&lt;-</span> <span class="fu">sqrt</span>((x<span class="sc">/</span>a)<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>(y<span class="sc">/</span>b)<span class="sc">^</span><span class="dv">2</span>)<span class="sc">-</span><span class="dv">1</span></span>
+<span id="cb5-7"><a aria-hidden="true" href="#cb5-7" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
+<span id="cb5-8"><a aria-hidden="true" href="#cb5-8" tabindex="-1"></a><span class="fu">plot</span>(x,y,<span class="at">asp=</span><span class="dv">1</span>,<span class="at">pch=</span><span class="dv">19</span>,<span class="at">cex=</span><span class="fl">0.5</span>,<span class="at">main=</span><span class="st">"Simulated measurements"</span>)</span>
+<span id="cb5-9"><a aria-hidden="true" href="#cb5-9" tabindex="-1"></a><span class="fu">lines</span>(a<span class="sc">*</span><span class="fu">cos</span>(<span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">2</span><span class="sc">*</span>pi,<span class="at">length.out=</span><span class="dv">300</span>)),b<span class="sc">*</span><span class="fu">sin</span>(<span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">2</span><span class="sc">*</span>pi,<span class="at">length.out=</span><span class="dv">300</span>)),<span class="at">col=</span><span class="st">"blue"</span>)</span>
+<span id="cb5-10"><a aria-hidden="true" href="#cb5-10" tabindex="-1"></a><span class="fu">plot</span>(t,radial_residual,<span class="at">pch=</span><span class="dv">19</span>,<span class="at">cex=</span><span class="fl">0.5</span>,<span class="at">main=</span><span class="st">"Normalized radial residuals"</span>)</span>
+<span id="cb5-11"><a aria-hidden="true" href="#cb5-11" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="dv">0</span>,<span class="at">lty=</span><span class="dv">2</span>);<span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>))</span>
+<span id="cb5-12"><a aria-hidden="true" href="#cb5-12" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">summary</span>(radial_residual))</span></code></pre></div></div>
+<h3 class="unnumbered" id="python-code-2">Python code</h3>
+<div class="code-shell"><div class="code-bar"><span>Python</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a aria-hidden="true" href="#cb6-1" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb6-2"><a aria-hidden="true" href="#cb6-2" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb6-3"><a aria-hidden="true" href="#cb6-3" tabindex="-1"></a>rng<span class="op">=</span>np.random.default_rng(<span class="dv">13</span>)<span class="op">;</span>t<span class="op">=</span>np.linspace(<span class="dv">0</span>,<span class="dv">2</span><span class="op">*</span>np.pi,<span class="dv">80</span>)<span class="op">;</span>a,b<span class="op">=</span><span class="dv">4</span>,<span class="dv">2</span></span>
+<span id="cb6-4"><a aria-hidden="true" href="#cb6-4" tabindex="-1"></a>r<span class="op">=</span><span class="dv">1</span><span class="op">+</span>rng.normal(<span class="dv">0</span>,<span class="fl">0.04</span>,<span class="bu">len</span>(t))<span class="op">;</span>x<span class="op">=</span>a<span class="op">*</span>r<span class="op">*</span>np.cos(t)<span class="op">;</span>y<span class="op">=</span>b<span class="op">*</span>r<span class="op">*</span>np.sin(t)</span>
+<span id="cb6-5"><a aria-hidden="true" href="#cb6-5" tabindex="-1"></a>residual<span class="op">=</span>np.sqrt((x<span class="op">/</span>a)<span class="op">**</span><span class="dv">2</span><span class="op">+</span>(y<span class="op">/</span>b)<span class="op">**</span><span class="dv">2</span>)<span class="op">-</span><span class="dv">1</span></span>
+<span id="cb6-6"><a aria-hidden="true" href="#cb6-6" tabindex="-1"></a>fig,ax<span class="op">=</span>plt.subplots(<span class="dv">1</span>,<span class="dv">2</span>,figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">4</span>))<span class="op">;</span>ax[<span class="dv">0</span>].scatter(x,y,s<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb6-7"><a aria-hidden="true" href="#cb6-7" tabindex="-1"></a>u<span class="op">=</span>np.linspace(<span class="dv">0</span>,<span class="dv">2</span><span class="op">*</span>np.pi,<span class="dv">300</span>)<span class="op">;</span>ax[<span class="dv">0</span>].plot(a<span class="op">*</span>np.cos(u),b<span class="op">*</span>np.sin(u))<span class="op">;</span>ax[<span class="dv">0</span>].set_aspect(<span class="st">"equal"</span>)</span>
+<span id="cb6-8"><a aria-hidden="true" href="#cb6-8" tabindex="-1"></a>ax[<span class="dv">1</span>].scatter(t,residual,s<span class="op">=</span><span class="dv">12</span>)<span class="op">;</span>ax[<span class="dv">1</span>].axhline(<span class="dv">0</span>,linestyle<span class="op">=</span><span class="st">"--"</span>)</span>
+<span id="cb6-9"><a aria-hidden="true" href="#cb6-9" tabindex="-1"></a>ax[<span class="dv">0</span>].set_title(<span class="st">"Simulated observations"</span>)<span class="op">;</span>ax[<span class="dv">1</span>].set_title(<span class="st">"Normalized radial residuals"</span>)</span>
+<span id="cb6-10"><a aria-hidden="true" href="#cb6-10" tabindex="-1"></a>fig.tight_layout()<span class="op">;</span>fig.savefig(<span class="st">"labC_python.png"</span>,dpi<span class="op">=</span><span class="dv">180</span>)<span class="op">;</span>plt.close(fig)</span>
+<span id="cb6-11"><a aria-hidden="true" href="#cb6-11" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Mean residual:"</span>,np.mean(residual),<span class="st">"SD:"</span>,np.std(residual))</span></code></pre></div></div>
+<p><strong>Interpretation.</strong> The data are simulated. Compare
+radial residuals and explain why they are not the same as vertical
+residuals.</p>
+<h2 id="extended-guided-workshops-with-worked-solutions">Extended guided
+workshops with worked solutions</h2>
+<h3 class="unnumbered" id="workshop-1-geometric-imaging-approximation">Workshop 1: geometric
+imaging approximation</h3>
+<p>A simulated cross section is modeled by <span class="math inline">\((x-1)^2/25+(y+2)^2/9=1\)</span>, with coordinates
+in centimeters. Find the center, vertices, foci, and enclosed area.</p>
+<p><strong>Solution.</strong> Center <span class="math inline">\((1,-2)\)</span>; <span class="math inline">\(a=5\)</span>, <span class="math inline">\(b=3\)</span>, <span class="math inline">\(c=\sqrt{25-9}=4\)</span>. Vertices <span class="math inline">\((-4,-2),(6,-2)\)</span>, foci <span class="math inline">\((-3,-2),(5,-2)\)</span>, area <span class="math inline">\(15\pi\,\mathrm{cm}^2\)</span>. The model is
+geometric only; clinical interpretation requires validated
+measurements.</p>
+<h3 class="unnumbered" id="workshop-2-parabolic-reflector-geometry">Workshop 2: parabolic
+reflector geometry</h3>
+<p>A simplified reflector cross section has vertex at the origin and
+focus at <span class="math inline">\((0,2)\)</span> centimeters. Derive
+its equation and determine the width at height <span class="math inline">\(y=8\)</span>.</p>
+<p><strong>Solution.</strong> Here <span class="math inline">\(p=2\)</span>, so <span class="math inline">\(x^2=8y\)</span>. At <span class="math inline">\(y=8\)</span>, <span class="math inline">\(x=\pm8\)</span>, hence the width is 16 cm. Verify
+that each endpoint is 10 cm from the focus and 10 cm from the directrix
+<span class="math inline">\(y=-2\)</span>.</p>
+<h3 class="unnumbered" id="workshop-3-a-hyperbolic-location-model">Workshop 3: a hyperbolic
+location model</h3>
+<p>The curve <span class="math inline">\(x^2/9-y^2/16=1\)</span>
+describes an idealized difference-of-distances locus. Identify vertices,
+foci, and asymptotes.</p>
+<p><strong>Solution.</strong> <span class="math inline">\(a=3\)</span>,
+<span class="math inline">\(b=4\)</span>, <span class="math inline">\(c=5\)</span>. Vertices <span class="math inline">\((\pm3,0)\)</span>, foci <span class="math inline">\((\pm5,0)\)</span>, asymptotes <span class="math inline">\(y=\pm4x/3\)</span>. The difference of distances to
+the foci is <span class="math inline">\(2a=6\)</span> on either
+branch.</p>
+<h3 class="unnumbered" id="workshop-4-moving-sensor-on-an-ellipse">Workshop 4: moving sensor on
+an ellipse</h3>
+<p>A simulated point moves as <span class="math inline">\(x(t)=4\cos(\pi
+t)\)</span>, <span class="math inline">\(y(t)=2\sin(\pi t)\)</span>,
+where <span class="math inline">\(t\)</span> is in seconds. Determine
+its Cartesian path, period, initial position, and location at <span class="math inline">\(t=1/2\)</span>.</p>
+<p><strong>Solution.</strong> <span class="math inline">\(x^2/16+y^2/4=1\)</span>. Period <span class="math inline">\(2\)</span> seconds; initial position <span class="math inline">\((4,0)\)</span>; at <span class="math inline">\(t=1/2\)</span>, position <span class="math inline">\((0,2)\)</span>. The parameterization is
+counterclockwise.</p>
+<h3 class="unnumbered" id="workshop-5-intersection-and-model-choice">Workshop 5: intersection
+and model choice</h3>
+<p>A circle <span class="math inline">\(x^2+y^2=25\)</span> intersects a
+parabola <span class="math inline">\(y=x^2-5\)</span>. Find all
+intersection points.</p>
+<p><strong>Solution.</strong> Substitute <span class="math inline">\(y=x^2-5\)</span>: <span class="math inline">\(x^2+(x^2-5)^2=25\)</span>. Let <span class="math inline">\(u=x^2\)</span> to obtain <span class="math inline">\(u^2-9u=0\)</span>, so <span class="math inline">\(u=0\)</span> or <span class="math inline">\(9\)</span>. Thus <span class="math inline">\((0,-5)\)</span> and <span class="math inline">\((\pm3,4)\)</span>. Verify all three in both
+equations.</p>
+<h2 id="problem-solving-clinic-a-systematic-method">Problem-solving
+clinic: a systematic method</h2>
+<ol type="1">
+<li><p>Identify whether the equation describes a locus, a function, or a
+parameterized path.</p></li>
+<li><p>Normalize units and complete squares carefully.</p></li>
+<li><p>Locate defining features before graphing.</p></li>
+<li><p>Check algebraic solutions in the original equation.</p></li>
+<li><p>State parameter or domain restrictions.</p></li>
+<li><p>Use software to test and visualize, not to replace
+proof.</p></li>
+<li><p>Interpret the model only within its scientific
+assumptions.</p></li>
+</ol>
+<h2 id="guided-practice-studio-building-a-conic-from-geometric-information">Guided
+practice studio: building a conic from geometric information</h2>
+<h3 class="unnumbered" id="activity-a-translating-a-circle">Activity A:
+translating a circle</h3>
+<p>Start with the unit circle <span class="math inline">\(x^2+y^2=1\)</span>. Translate every point three
+units right and two units down. Write the new equation and explain why
+the new coordinates must appear as <span class="math inline">\(x-3\)</span> and <span class="math inline">\(y+2\)</span>. Next scale the radius by four,
+keeping the center fixed. Give four points on the resulting circle and
+check each algebraically.</p>
+<p><strong>Solution and reasoning.</strong> A translated point has
+coordinates <span class="math inline">\((x+3,y-2)\)</span> when <span class="math inline">\((x,y)\)</span> is on the original circle, so the
+new locus is <span class="math inline">\((X-3)^2+(Y+2)^2=1\)</span>.
+Increasing the radius gives <span class="math inline">\((X-3)^2+(Y+2)^2=16\)</span>. The four axis points
+are <span class="math inline">\((7,-2)\)</span>, <span class="math inline">\((-1,-2)\)</span>, <span class="math inline">\((3,2)\)</span>, and <span class="math inline">\((3,-6)\)</span>. Substituting any of them gives
+16. The center changes under translation but not under scaling of the
+radius.</p>
+<h3 class="unnumbered" id="activity-b-choosing-an-ellipse-from-dimensions">Activity B: choosing
+an ellipse from dimensions</h3>
+<p>A diagram shows an ellipse centered at <span class="math inline">\((2,-1)\)</span> with full horizontal axis length
+12 and full vertical axis length 8. Construct its equation, vertices,
+foci, and area. Explain why using 12 and 8 directly in the denominators
+would be incorrect.</p>
+<p><strong>Solution and reasoning.</strong> The semiaxes are <span class="math inline">\(a=6\)</span> and <span class="math inline">\(b=4\)</span>, so <span class="math inline">\((x-2)^2/36+(y+1)^2/16=1\)</span>. The vertices are
+<span class="math inline">\((-4,-1)\)</span> and <span class="math inline">\((8,-1)\)</span>; <span class="math inline">\(c=\sqrt{36-16}=2\sqrt5\)</span>, giving foci <span class="math inline">\((2\pm2\sqrt5,-1)\)</span>. Area is <span class="math inline">\(24\pi\)</span> square units. The denominators are
+squares of semiaxis lengths, not squares of full widths.</p>
+<h3 class="unnumbered" id="activity-c-identifying-a-parabola-from-focus-and-directrix">Activity
+C: identifying a parabola from focus and directrix</h3>
+<p>A point is equidistant from focus <span class="math inline">\((3,4)\)</span> and the horizontal line <span class="math inline">\(y=0\)</span>. Find the parabola’s vertex,
+parameter <span class="math inline">\(p\)</span>, and equation. Check
+the point <span class="math inline">\((7,6)\)</span> and decide whether
+it lies on the curve.</p>
+<p><strong>Solution and reasoning.</strong> The vertex lies halfway
+between focus and directrix: <span class="math inline">\((3,2)\)</span>.
+Thus <span class="math inline">\(p=2\)</span> and <span class="math inline">\((x-3)^2=8(y-2)\)</span>. At <span class="math inline">\((7,6)\)</span> the left side is 16 while the right
+side is 32, so it does not lie on the parabola. The focus-directrix
+definition is a useful independent check.</p>
+<h3 class="unnumbered" id="activity-d-comparing-two-parameterizations">Activity D: comparing
+two parameterizations</h3>
+<p>Compare <span class="math inline">\(x=2\cos t\)</span>, <span class="math inline">\(y=2\sin t\)</span> and <span class="math inline">\(x=2\cos(2t)\)</span>, <span class="math inline">\(y=2\sin(2t)\)</span> on <span class="math inline">\(0\le t\le2\pi\)</span>. Do they trace the same
+geometric set? Do they travel in the same way?</p>
+<p><strong>Solution and reasoning.</strong> Both trace <span class="math inline">\(x^2+y^2=4\)</span>. The first completes one
+counterclockwise revolution and the second completes two. Eliminating
+the parameter gives the same Cartesian equation but loses information
+about how often the curve is traversed.</p>
+<h2 id="visual-reasoning-workshop-sketch-before-plotting">Visual
+reasoning workshop: sketch before plotting</h2>
+<p><strong>Investigation 7: the role of asymptotes.</strong> Draw <span class="math inline">\(x^2/4-y^2/9=1\)</span> by first sketching the
+rectangle with corners <span class="math inline">\((\pm2,\pm3)\)</span>.
+Its diagonals extend along <span class="math inline">\(y=\pm3x/2\)</span>. Mark the vertices <span class="math inline">\((\pm2,0)\)</span> and sketch the two branches
+approaching the diagonals. Check a point with <span class="math inline">\(x=4\)</span> using the equation. Explain why the
+hyperbola does not cross its asymptotes.</p>
+<p><strong>Investigation 8: parameter intervals.</strong> Plot the five
+points generated by <span class="math inline">\(x=3\cos t\)</span>,
+<span class="math inline">\(y=2\sin t\)</span> at <span class="math inline">\(t=0,\pi/2,\pi,3\pi/2,2\pi\)</span>. Connect them
+smoothly, then repeat for <span class="math inline">\(0\le
+t\le\pi\)</span>. Label arrows and distinguish a full ellipse from its
+upper half.</p>
+<p><strong>Investigation 9: model uncertainty.</strong> Sketch ellipses
+with semiaxes <span class="math inline">\((4,3)\)</span>, <span class="math inline">\((4.1,3.1)\)</span>, and <span class="math inline">\((3.9,2.9)\)</span> on common axes. Compute their
+areas and explain why uncertainty in both dimensions can have a larger
+impact on area than uncertainty in either dimension alone.</p>
+<p><strong>Investigation 10: tangents from secants.</strong> For <span class="math inline">\(x=4\cos t\)</span>, <span class="math inline">\(y=2\sin t\)</span>, use <span class="math inline">\(t=\pi/2\pm0.1\)</span> to form a secant line near
+the top of the ellipse. Repeat with <span class="math inline">\(0.01\)</span> and explain why the tangent is
+horizontal at the top. Distinguish this from the vertical tangent at
+<span class="math inline">\((4,0)\)</span>.</p>
+<h2 id="independent-practice-with-worked-checks">Independent practice
+with worked checks</h2>
+<ol type="1">
+<li><p>A circle has diameter endpoints <span class="math inline">\((-3,1)\)</span> and <span class="math inline">\((5,7)\)</span>. Find its center, radius, and
+equation. <strong>Check:</strong> midpoint <span class="math inline">\((1,4)\)</span>, radius <span class="math inline">\(5\)</span>, so <span class="math inline">\((x-1)^2+(y-4)^2=25\)</span>.</p></li>
+<li><p>A parabola has vertex <span class="math inline">\((-2,3)\)</span>
+and directrix <span class="math inline">\(x=1\)</span>. Find its focus
+and equation. <strong>Check:</strong> <span class="math inline">\(p=-3\)</span>, focus <span class="math inline">\((-5,3)\)</span>, and <span class="math inline">\((y-3)^2=-12(x+2)\)</span>.</p></li>
+<li><p>An ellipse has foci <span class="math inline">\((\pm3,0)\)</span>
+and vertices <span class="math inline">\((\pm5,0)\)</span>. Find its
+equation. <strong>Check:</strong> <span class="math inline">\(a=5\)</span>, <span class="math inline">\(c=3\)</span>, <span class="math inline">\(b^2=16\)</span>, giving <span class="math inline">\(x^2/25+y^2/16=1\)</span>.</p></li>
+<li><p>A hyperbola has vertices <span class="math inline">\((0,\pm2)\)</span> and foci <span class="math inline">\((0,\pm\sqrt{13})\)</span>. Find its equation and
+asymptotes. <strong>Check:</strong> <span class="math inline">\(a^2=4\)</span>, <span class="math inline">\(b^2=9\)</span>, so <span class="math inline">\(y^2/4-x^2/9=1\)</span> and <span class="math inline">\(y=\pm(2/3)x\)</span>.</p></li>
+<li><p>A particle follows <span class="math inline">\(x=2+4\cos
+t\)</span>, <span class="math inline">\(y=1+3\sin t\)</span>. Determine
+its location at <span class="math inline">\(t=\pi\)</span> and its
+geometric path. <strong>Check:</strong> <span class="math inline">\((-2,1)\)</span> and <span class="math inline">\((x-2)^2/16+(y-1)^2/9=1\)</span>.</p></li>
+</ol>
+<h2 id="chapter-review-exercises">Chapter review exercises</h2>
+<ol type="1">
+<li><p>Find the center and radius of <span class="math inline">\((x-2)^2+(y+3)^2=49\)</span>.</p></li>
+<li><p>Complete the square in <span class="math inline">\(x^2+y^2+4x-6y-12=0\)</span>.</p></li>
+<li><p>Explain why <span class="math inline">\(x^2+y^2=-1\)</span> has
+no real points.</p></li>
+<li><p>Find the focus and directrix of <span class="math inline">\(x^2=12y\)</span>.</p></li>
+<li><p>Find the focus of <span class="math inline">\((y-2)^2=-16(x+1)\)</span>.</p></li>
+<li><p>Derive <span class="math inline">\(x^2=4py\)</span> from the
+focus-directrix definition.</p></li>
+<li><p>Identify the vertices and foci of <span class="math inline">\(x^2/36+y^2/20=1\)</span>.</p></li>
+<li><p>Find the eccentricity of <span class="math inline">\(x^2/25+y^2/9=1\)</span>.</p></li>
+<li><p>Graph <span class="math inline">\((x-1)^2/4+(y+2)^2/16=1\)</span>.</p></li>
+<li><p>Explain the distinction between semiaxis and full-axis
+length.</p></li>
+<li><p>Find the asymptotes of <span class="math inline">\(x^2/4-y^2/9=1\)</span>.</p></li>
+<li><p>Find the foci of <span class="math inline">\(y^2/16-x^2/9=1\)</span>.</p></li>
+<li><p>Explain why a hyperbola has two branches.</p></li>
+<li><p>Classify <span class="math inline">\(4x^2+9y^2=36\)</span>.</p></li>
+<li><p>Classify <span class="math inline">\(x^2-y^2=0\)</span> and
+describe the degeneracy.</p></li>
+<li><p>Explain the meaning and limitation of <span class="math inline">\(B^2-4AC\)</span>.</p></li>
+<li><p>Complete squares in <span class="math inline">\(9x^2+4y^2-18x+16y-11=0\)</span>.</p></li>
+<li><p>Convert <span class="math inline">\(x=2+3\cos t\)</span>, <span class="math inline">\(y=-1+5\sin t\)</span> to Cartesian form.</p></li>
+<li><p>Eliminate <span class="math inline">\(t\)</span> from <span class="math inline">\(x=1+t\)</span>, <span class="math inline">\(y=2t^2\)</span>, <span class="math inline">\(0\le
+t\le2\)</span>.</p></li>
+<li><p>Find initial point and period of <span class="math inline">\(x=4\cos(2t)\)</span>, <span class="math inline">\(y=4\sin(2t)\)</span>.</p></li>
+<li><p>Describe the orientation of <span class="math inline">\(x=\cos(-t)\)</span>, <span class="math inline">\(y=\sin(-t)\)</span>.</p></li>
+<li><p>Find the position at <span class="math inline">\(t=3\)</span> for
+<span class="math inline">\(x=1+2t\)</span>, <span class="math inline">\(y=5-t\)</span>.</p></li>
+<li><p>Find the speed for <span class="math inline">\(x=3t\)</span>,
+<span class="math inline">\(y=4t\)</span>.</p></li>
+<li><p>Eliminate <span class="math inline">\(t\)</span> from <span class="math inline">\(x=5t\)</span>, <span class="math inline">\(y=3t-t^2\)</span>.</p></li>
+<li><p>Find intersections of <span class="math inline">\(x^2+y^2=10\)</span> and <span class="math inline">\(y=1\)</span>.</p></li>
+<li><p>Find intersections of <span class="math inline">\(y=x^2\)</span>
+and <span class="math inline">\(y=x+2\)</span>.</p></li>
+<li><p>Calculate the area of an ellipse with semiaxes 7 and 3
+cm.</p></li>
+<li><p>Explain why unequal plotting scales distort conics.</p></li>
+<li><p>Distinguish radial residuals from vertical residuals.</p></li>
+<li><p>Explain how parametric equations prepare students for
+derivatives.</p></li>
+</ol>
+<h2 id="calculus-readiness-checkpoint">Calculus-readiness
+checkpoint</h2>
+<p>For <span class="math inline">\(x(t)=4\cos t\)</span> and <span class="math inline">\(y(t)=2\sin t\)</span>, calculate positions at
+<span class="math inline">\(t=\pi/2-h\)</span>, <span class="math inline">\(\pi/2\)</span>, and <span class="math inline">\(\pi/2+h\)</span> for small positive <span class="math inline">\(h\)</span>. Estimate the tangent direction using
+secant vectors. Then compare with <span class="math inline">\(x'(t)=-4\sin t\)</span> and <span class="math inline">\(y'(t)=2\cos t\)</span>. Explain why <span class="math inline">\(dy/dx\)</span> is undefined when <span class="math inline">\(x'(t)=0\)</span>, and distinguish a vertical
+tangent from a nonexistent curve.</p>
+<h2 class="unnumbered" id="looking-ahead">Looking ahead</h2>
+<p>Chapter 14 develops vectors and polar coordinates. Parametric curves
+provide a bridge from geometric loci to vector-valued functions and
+motion in calculus.</p>
+<h2 id="extended-application-elliptical-cross-section">Extended
+application: Elliptical cross section</h2>
+<p>An idealized cross section has horizontal semiaxis 5 cm and vertical
+semiaxis 3 cm. Study its upper boundary. The quantities in this
+investigation are illustrative rather than measured observations.</p>
+<h3 id="formulating-the-mathematical-model">Formulating the mathematical
+model</h3>
+<p>The proposed relationship is <span class="math display">\[y=3\sqrt{1-x^2/25}.\]</span> Before calculating,
+identify the input and output, their units, and the interval on which
+the model is being studied. Distinguish the mathematical domain from the
+practical domain. The numerical study uses inputs from <span class="math inline">\(-5\)</span> to <span class="math inline">\(5\)</span>.</p>
+<blockquote class="example">
+<p><strong>Example 1: Analytical investigation.</strong> Derive the
+upper boundary from the standard ellipse equation. Find the height at
+<span class="math inline">\(x=3\)</span> and the area of the full
+ellipse.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> <span class="math inline">\(x^2/25+y^2/9=1\)</span> gives the stated branch;
+height 2.4 cm and area <span class="math inline">\(15\pi\)</span> square
+cm.</p>
+</blockquote>
+<h3 id="connecting-numerical-and-graphical-representations">Connecting
+numerical and graphical representations</h3>
+<table>
+<caption>Selected predictions from the illustrative model. Values are
+rounded for display.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Horizontal position (cm)</th>
+<th style="text-align: right;">Vertical position (cm)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">-5</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">-2.5</td>
+<td style="text-align: right;">2.598</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2.5</td>
+<td style="text-align: right;">2.598</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+<figure>
+<img alt="Model predictions over the stated investigation interval. The graph represents a mathematical model, not observed data." src="figures/ch13/applied_project.svg" style="width:90.0%"/>
+<figcaption aria-hidden="true">Model predictions over the stated
+investigation interval. The graph represents a mathematical model, not
+observed data.</figcaption>
+</figure>
+<p><strong>Interpretation.</strong> Compare the tabulated values with
+the graph. Identify the intervals over which the output increases or
+decreases, and distinguish a sampled extremum from an exact analytical
+extremum. Explain whether interpolation and extrapolation have the same
+justification in this setting.</p>
+<h3 id="r-implementation">R implementation</h3>
+<p>The following standalone script defines the model, generates
+predictions, and draws a labeled graph. Read the formula before running
+the code. The sampled range is a numerical diagnostic, not a proof of
+the exact range.</p>
+<div class="code-shell"><div class="code-bar"><span>R</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a aria-hidden="true" href="#cb7-1" tabindex="-1"></a><span class="co"># Applied investigation: Elliptical cross section</span></span>
+<span id="cb7-2"><a aria-hidden="true" href="#cb7-2" tabindex="-1"></a><span class="co"># 1. Define the input domain and model</span></span>
+<span id="cb7-3"><a aria-hidden="true" href="#cb7-3" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">5</span>, <span class="at">length.out =</span> <span class="dv">301</span>)</span>
+<span id="cb7-4"><a aria-hidden="true" href="#cb7-4" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">3</span><span class="sc">*</span><span class="fu">sqrt</span>(<span class="fu">pmax</span>(<span class="dv">0</span>,<span class="dv">1</span><span class="sc">-</span>x<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span><span class="dv">25</span>))</span>
+<span id="cb7-5"><a aria-hidden="true" href="#cb7-5" tabindex="-1"></a></span>
+<span id="cb7-6"><a aria-hidden="true" href="#cb7-6" tabindex="-1"></a><span class="co"># 2. Inspect numerical predictions</span></span>
+<span id="cb7-7"><a aria-hidden="true" href="#cb7-7" tabindex="-1"></a>idx <span class="ot">&lt;-</span> <span class="fu">unique</span>(<span class="fu">round</span>(<span class="fu">seq</span>(<span class="dv">1</span>, <span class="fu">length</span>(x), <span class="at">length.out =</span> <span class="dv">5</span>)))</span>
+<span id="cb7-8"><a aria-hidden="true" href="#cb7-8" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">data.frame</span>(<span class="at">input =</span> x[idx], <span class="at">output =</span> y[idx]))</span>
+<span id="cb7-9"><a aria-hidden="true" href="#cb7-9" tabindex="-1"></a></span>
+<span id="cb7-10"><a aria-hidden="true" href="#cb7-10" tabindex="-1"></a><span class="co"># 3. Visualize the model with labeled axes</span></span>
+<span id="cb7-11"><a aria-hidden="true" href="#cb7-11" tabindex="-1"></a><span class="fu">plot</span>(x, y, <span class="at">type =</span> <span class="st">"l"</span>, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">"#176B87"</span>,</span>
+<span id="cb7-12"><a aria-hidden="true" href="#cb7-12" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Horizontal position (cm)"</span>, <span class="at">ylab =</span> <span class="st">"Vertical position (cm)"</span>)</span>
+<span id="cb7-13"><a aria-hidden="true" href="#cb7-13" tabindex="-1"></a><span class="fu">grid</span>()</span>
+<span id="cb7-14"><a aria-hidden="true" href="#cb7-14" tabindex="-1"></a></span>
+<span id="cb7-15"><a aria-hidden="true" href="#cb7-15" tabindex="-1"></a><span class="co"># 4. Check the sampled output range</span></span>
+<span id="cb7-16"><a aria-hidden="true" href="#cb7-16" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">range</span>(y))</span></code></pre></div></div>
+<h3 id="python-implementation">Python implementation</h3>
+<p>Repeat the same investigation using NumPy arrays and Matplotlib.
+Compare the printed predictions with the R output, allowing for
+rounding.</p>
+<div class="code-shell"><div class="code-bar"><span>Python</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a aria-hidden="true" href="#cb8-1" tabindex="-1"></a><span class="co"># Applied investigation: Elliptical cross section</span></span>
+<span id="cb8-2"><a aria-hidden="true" href="#cb8-2" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb8-3"><a aria-hidden="true" href="#cb8-3" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb8-4"><a aria-hidden="true" href="#cb8-4" tabindex="-1"></a></span>
+<span id="cb8-5"><a aria-hidden="true" href="#cb8-5" tabindex="-1"></a><span class="co"># 1. Define the input domain and model</span></span>
+<span id="cb8-6"><a aria-hidden="true" href="#cb8-6" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">301</span>)</span>
+<span id="cb8-7"><a aria-hidden="true" href="#cb8-7" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">3</span><span class="op">*</span>np.sqrt(np.maximum(<span class="dv">0</span>,<span class="dv">1</span><span class="op">-</span>x<span class="op">**</span><span class="dv">2</span><span class="op">/</span><span class="dv">25</span>))</span>
+<span id="cb8-8"><a aria-hidden="true" href="#cb8-8" tabindex="-1"></a></span>
+<span id="cb8-9"><a aria-hidden="true" href="#cb8-9" tabindex="-1"></a><span class="co"># 2. Inspect numerical predictions</span></span>
+<span id="cb8-10"><a aria-hidden="true" href="#cb8-10" tabindex="-1"></a>idx <span class="op">=</span> np.unique(np.linspace(<span class="dv">0</span>, <span class="bu">len</span>(x)<span class="op">-</span><span class="dv">1</span>, <span class="dv">5</span>).<span class="bu">round</span>().astype(<span class="bu">int</span>))</span>
+<span id="cb8-11"><a aria-hidden="true" href="#cb8-11" tabindex="-1"></a><span class="bu">print</span>(np.column_stack((x[idx], y[idx])))</span>
+<span id="cb8-12"><a aria-hidden="true" href="#cb8-12" tabindex="-1"></a></span>
+<span id="cb8-13"><a aria-hidden="true" href="#cb8-13" tabindex="-1"></a><span class="co"># 3. Visualize the model with labeled axes</span></span>
+<span id="cb8-14"><a aria-hidden="true" href="#cb8-14" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="fl">3.6</span>))</span>
+<span id="cb8-15"><a aria-hidden="true" href="#cb8-15" tabindex="-1"></a>ax.plot(x, y, <span class="st">"-"</span>, color<span class="op">=</span><span class="st">"#176B87"</span>, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb8-16"><a aria-hidden="true" href="#cb8-16" tabindex="-1"></a>ax.<span class="bu">set</span>(xlabel<span class="op">=</span><span class="st">"Horizontal position (cm)"</span>, ylabel<span class="op">=</span><span class="st">"Vertical position (cm)"</span>)</span>
+<span id="cb8-17"><a aria-hidden="true" href="#cb8-17" tabindex="-1"></a>ax.grid(alpha<span class="op">=</span><span class="fl">0.22</span>)</span>
+<span id="cb8-18"><a aria-hidden="true" href="#cb8-18" tabindex="-1"></a>ax.spines[[<span class="st">"top"</span>, <span class="st">"right"</span>]].set_visible(<span class="va">False</span>)</span>
+<span id="cb8-19"><a aria-hidden="true" href="#cb8-19" tabindex="-1"></a>fig.tight_layout()</span>
+<span id="cb8-20"><a aria-hidden="true" href="#cb8-20" tabindex="-1"></a>plt.show()</span>
+<span id="cb8-21"><a aria-hidden="true" href="#cb8-21" tabindex="-1"></a></span>
+<span id="cb8-22"><a aria-hidden="true" href="#cb8-22" tabindex="-1"></a><span class="co"># 4. Check the sampled output range</span></span>
+<span id="cb8-23"><a aria-hidden="true" href="#cb8-23" tabindex="-1"></a><span class="bu">print</span>(np.<span class="bu">min</span>(y), np.<span class="bu">max</span>(y))</span></code></pre></div></div>
+<h3 id="guided-practice-checking-the-model">Guided practice: checking
+the model</h3>
+<ol type="1">
+<li><p>Calculate the outputs at the two endpoints by hand. Compare them
+with the numerical table.</p></li>
+<li><p>Select an interior input not listed in the table. Predict the
+output before evaluating it in either language.</p></li>
+<li><p>Explain the meaning of the difference between the two endpoint
+outputs, including units. If appropriate, calculate the average rate of
+change.</p></li>
+<li><p>Identify a physical assumption of the model and describe a
+circumstance in which it would fail.</p></li>
+</ol>
+<h2 id="chapter-project-investigating-elliptical-cross-section">Chapter
+project: investigating Elliptical cross section</h2>
+<p>Prepare a short technical report for a reader who has not studied the
+model. Use the preceding case as a starting point, but develop your own
+investigation rather than merely reproducing the worked example.</p>
+<ol type="1">
+<li><p>State a quantitative question that can be answered using the
+model. Define all variables, units, and restrictions.</p></li>
+<li><p>Modify one meaningful numerical parameter in the formula. Explain
+what the change represents in the original context. Derive the revised
+formula and predict the direction of change before computing.</p></li>
+<li><p>Compare the original and revised models at five common admissible
+inputs. Present a labeled table and explain the largest difference in
+the table.</p></li>
+<li><p>Produce a graph containing both models on the same axes. Use a
+legend and distinguish the curves with line styles or markers. Explain
+the shape and any intersections.</p></li>
+<li><p>Solve your quantitative question algebraically where possible.
+Verify the result using R and Python; report any differences due to
+numerical precision.</p></li>
+<li><p>Discuss at least two limitations. Describe what measurements
+would be needed to assess the model in practice. Do not present
+simulated predictions as empirical evidence.</p></li>
+</ol>
+<h3 class="unnumbered" id="project-deliverables-and-assessment">Project
+deliverables and assessment</h3>
+<p>Submit a two- to three-page report, the two runnable scripts, and the
+labeled figure. The report should stand on its own without requiring the
+reader to inspect the code.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Criterion</th>
+<th style="text-align: right;">Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Mathematical formulation and domain</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Analytical reasoning and verification</td>
+<td style="text-align: right;">25</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Reproducible R and Python
+computations</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Graph and table quality</td>
+<td style="text-align: right;">15</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Interpretation and limitations</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Total</td>
+<td style="text-align: right;">100</td>
+</tr>
+</tbody>
+</table>
+<h2>Companion scripts</h2><p><a download="" href="code/ch13/applied_project.R">applied_project.R</a></p><p><a download="" href="code/ch13/applied_project.py">applied_project.py</a></p><p><a download="" href="code/ch13/labA.R">labA.R</a></p><p><a download="" href="code/ch13/labA.py">labA.py</a></p><p><a download="" href="code/ch13/labB.R">labB.R</a></p><p><a download="" href="code/ch13/labB.py">labB.py</a></p><p><a download="" href="code/ch13/labC.R">labC.R</a></p><p><a download="" href="code/ch13/labC.py">labC.py</a></p><footer><a href="chapter12.html">← Previous</a><a href="chapter14.html">Next →</a></footer><section class="investigation"><h2 id="interactive-investigation">Interactive investigation: Ellipse geometry</h2><div data-investigation="13"><p>Enable JavaScript to explore the model.</p></div><p><strong>Explore and explain:</strong> When is the ellipse a circle? Identify its intercepts.</p></section>
+</main><nav aria-label="On this page" class="chapter-toc" id="TOC" role="doc-toc"><strong>On this page</strong>
+<ul>
+<li><a href="#conic-sections-and-parametric-equations" id="toc-conic-sections-and-parametric-equations">Conic Sections and
+Parametric Equations</a>
+<ul>
+<li><a href="#opening-context-geometry-in-science-and-motion" id="toc-opening-context-geometry-in-science-and-motion">Opening context:
+geometry in science and motion</a></li>
+<li><a href="#learning-outcomes" id="toc-learning-outcomes">Learning
+outcomes</a></li>
+<li><a href="#working-with-r-and-python" id="toc-working-with-r-and-python">Working with R and Python</a></li>
+<li><a href="#coordinate-geometry-and-the-conic-family" id="toc-coordinate-geometry-and-the-conic-family">Coordinate geometry
+and the conic family</a></li>
+<li><a href="#circles-distance-and-completing-the-square" id="toc-circles-distance-and-completing-the-square">Circles: distance
+and completing the square</a></li>
+<li><a href="#parabolas-as-loci-and-quadratic-graphs" id="toc-parabolas-as-loci-and-quadratic-graphs">Parabolas as loci and
+quadratic graphs</a></li>
+<li><a href="#ellipses-constant-sum-of-distances" id="toc-ellipses-constant-sum-of-distances">Ellipses: constant sum of
+distances</a></li>
+<li><a href="#hyperbolas-constant-difference-of-distances" id="toc-hyperbolas-constant-difference-of-distances">Hyperbolas:
+constant difference of distances</a></li>
+<li><a href="#recognizing-conics-and-avoiding-classification-errors" id="toc-recognizing-conics-and-avoiding-classification-errors">Recognizing
+conics and avoiding classification errors</a></li>
+<li><a href="#completing-the-square-in-two-variables" id="toc-completing-the-square-in-two-variables">Completing the square in
+two variables</a></li>
+<li><a href="#parametric-equations-and-orientation" id="toc-parametric-equations-and-orientation">Parametric equations and
+orientation</a></li>
+<li><a href="#parametric-lines-motion-and-velocity" id="toc-parametric-lines-motion-and-velocity">Parametric lines, motion,
+and velocity</a></li>
+<li><a href="#parametric-ellipses-and-circular-motion" id="toc-parametric-ellipses-and-circular-motion">Parametric ellipses and
+circular motion</a></li>
+<li><a href="#projectile-style-paths-as-mathematical-models" id="toc-projectile-style-paths-as-mathematical-models">Projectile-style
+paths as mathematical models</a></li>
+<li><a href="#intersection-problems-and-algebraic-verification" id="toc-intersection-problems-and-algebraic-verification">Intersection
+problems and algebraic verification</a></li>
+<li><a href="#applied-modeling-elliptical-cross-sections" id="toc-applied-modeling-elliptical-cross-sections">Applied modeling:
+elliptical cross sections</a></li>
+<li><a href="#model-selection-residuals-and-measurement-uncertainty" id="toc-model-selection-residuals-and-measurement-uncertainty">Model
+selection, residuals, and measurement uncertainty</a></li>
+<li><a href="#connections-to-calculus-and-future-mathematics" id="toc-connections-to-calculus-and-future-mathematics">Connections to
+calculus and future mathematics</a></li>
+<li><a href="#visual-gallery-comparing-the-conics" id="toc-visual-gallery-comparing-the-conics">Visual gallery: comparing
+the conics</a></li>
+<li><a href="#computational-laboratory-a-graphing-and-classifying-conics" id="toc-computational-laboratory-a-graphing-and-classifying-conics">Computational
+laboratory A: graphing and classifying conics</a>
+<ul>
+<li><a href="#r-code" id="toc-r-code">R code</a></li>
+<li><a href="#python-code" id="toc-python-code">Python code</a></li>
+</ul></li>
+<li><a href="#computational-laboratory-b-parametric-curves-and-orientation" id="toc-computational-laboratory-b-parametric-curves-and-orientation">Computational
+laboratory B: parametric curves and orientation</a>
+<ul>
+<li><a href="#r-code-1" id="toc-r-code-1">R code</a></li>
+<li><a href="#python-code-1" id="toc-python-code-1">Python code</a></li>
+</ul></li>
+<li><a href="#computational-laboratory-c-fitting-an-ellipse-and-examining-residuals" id="toc-computational-laboratory-c-fitting-an-ellipse-and-examining-residuals">Computational
+laboratory C: fitting an ellipse and examining residuals</a>
+<ul>
+<li><a href="#r-code-2" id="toc-r-code-2">R code</a></li>
+<li><a href="#python-code-2" id="toc-python-code-2">Python code</a></li>
+</ul></li>
+<li><a href="#extended-guided-workshops-with-worked-solutions" id="toc-extended-guided-workshops-with-worked-solutions">Extended guided
+workshops with worked solutions</a>
+<ul>
+<li><a href="#workshop-1-geometric-imaging-approximation" id="toc-workshop-1-geometric-imaging-approximation">Workshop 1:
+geometric imaging approximation</a></li>
+<li><a href="#workshop-2-parabolic-reflector-geometry" id="toc-workshop-2-parabolic-reflector-geometry">Workshop 2: parabolic
+reflector geometry</a></li>
+<li><a href="#workshop-3-a-hyperbolic-location-model" id="toc-workshop-3-a-hyperbolic-location-model">Workshop 3: a hyperbolic
+location model</a></li>
+<li><a href="#workshop-4-moving-sensor-on-an-ellipse" id="toc-workshop-4-moving-sensor-on-an-ellipse">Workshop 4: moving
+sensor on an ellipse</a></li>
+<li><a href="#workshop-5-intersection-and-model-choice" id="toc-workshop-5-intersection-and-model-choice">Workshop 5:
+intersection and model choice</a></li>
+</ul></li>
+<li><a href="#problem-solving-clinic-a-systematic-method" id="toc-problem-solving-clinic-a-systematic-method">Problem-solving
+clinic: a systematic method</a></li>
+<li><a href="#guided-practice-studio-building-a-conic-from-geometric-information" id="toc-guided-practice-studio-building-a-conic-from-geometric-information">Guided
+practice studio: building a conic from geometric information</a>
+<ul>
+<li><a href="#activity-a-translating-a-circle" id="toc-activity-a-translating-a-circle">Activity A: translating a
+circle</a></li>
+<li><a href="#activity-b-choosing-an-ellipse-from-dimensions" id="toc-activity-b-choosing-an-ellipse-from-dimensions">Activity B:
+choosing an ellipse from dimensions</a></li>
+<li><a href="#activity-c-identifying-a-parabola-from-focus-and-directrix" id="toc-activity-c-identifying-a-parabola-from-focus-and-directrix">Activity
+C: identifying a parabola from focus and directrix</a></li>
+<li><a href="#activity-d-comparing-two-parameterizations" id="toc-activity-d-comparing-two-parameterizations">Activity D:
+comparing two parameterizations</a></li>
+</ul></li>
+<li><a href="#visual-reasoning-workshop-sketch-before-plotting" id="toc-visual-reasoning-workshop-sketch-before-plotting">Visual
+reasoning workshop: sketch before plotting</a></li>
+<li><a href="#independent-practice-with-worked-checks" id="toc-independent-practice-with-worked-checks">Independent practice
+with worked checks</a></li>
+<li><a href="#chapter-review-exercises" id="toc-chapter-review-exercises">Chapter review exercises</a></li>
+<li><a href="#calculus-readiness-checkpoint" id="toc-calculus-readiness-checkpoint">Calculus-readiness
+checkpoint</a></li>
+<li><a href="#looking-ahead" id="toc-looking-ahead">Looking
+ahead</a></li>
+<li><a href="#extended-application-elliptical-cross-section" id="toc-extended-application-elliptical-cross-section">Extended
+application: Elliptical cross section</a>
+<ul>
+<li><a href="#formulating-the-mathematical-model" id="toc-formulating-the-mathematical-model">Formulating the mathematical
+model</a></li>
+<li><a href="#connecting-numerical-and-graphical-representations" id="toc-connecting-numerical-and-graphical-representations">Connecting
+numerical and graphical representations</a></li>
+<li><a href="#r-implementation" id="toc-r-implementation">R
+implementation</a></li>
+<li><a href="#python-implementation" id="toc-python-implementation">Python implementation</a></li>
+<li><a href="#guided-practice-checking-the-model" id="toc-guided-practice-checking-the-model">Guided practice: checking
+the model</a></li>
+</ul></li>
+<li><a href="#chapter-project-investigating-elliptical-cross-section" id="toc-chapter-project-investigating-elliptical-cross-section">Chapter
+project: investigating Elliptical cross section</a>
+<ul>
+<li><a href="#project-deliverables-and-assessment" id="toc-project-deliverables-and-assessment">Project deliverables and
+assessment</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav></div><script src="investigations.js"></script></body></html>

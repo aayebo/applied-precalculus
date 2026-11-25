@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8"/>
+<meta content="pandoc" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+<title>Angles, Radian
+Measure, and the Unit Circle | Applied Precalculus</title>
+<style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+
+
+<link href="site.css" rel="stylesheet"/><script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script defer="" src="search-index.js"></script><script defer="" src="site.js"></script></head><body><nav class="site-nav" id="book-nav"><strong class="brand">Applied Precalculus</strong><p class="subtitle">Using R and Python</p><input aria-label="Search the book" id="book-search" placeholder="Search the book"/><div aria-live="polite" class="search-results" id="search-results"></div><p class="nav-label">Contents</p><a class="" href="index.html">Preface</a><a class="" href="chapter01.html">1. Real Numbers, Algebraic Expressions, and Mathematical Reasoning</a><a class="" href="chapter02.html">2. Equations, Inequalities, and Applications</a><a class="" href="chapter03.html">3. Coordinate Geometry, Lines, and Systems of Equations</a><a class="" href="chapter04.html">4. Functions, Graphs, and Multiple Representations</a><a class="" href="chapter05.html">5. Transformations, Compositions, and Inverse Functions</a><a class="" href="chapter06.html">6. Polynomial and Rational Functions</a><a class="" href="chapter07.html">7. Exponential and Logarithmic Functions</a><a class="active" href="chapter08.html">8. Angles, Radian Measure, and the Unit Circle</a><a class="" href="chapter09.html">9. Trigonometric Functions and Their Graphs</a><a class="" href="chapter10.html">10. Trigonometric Identities and Equations</a><a class="" href="chapter11.html">11. Applications of Trigonometry and Periodic Models</a><a class="" href="chapter12.html">12. Sequences, Series, and Mathematical Patterns</a><a class="" href="chapter13.html">13. Conic Sections and Parametric Equations</a><a class="" href="chapter14.html">14. Vectors, Polar Coordinates, and Geometric Modeling</a><a class="" href="chapter15.html">15. Rates of Change, Difference Quotients, and Limits</a><a class="" href="chapter16.html">16. Integrated Mathematical Modeling with R and Python</a><a class="" href="programming.html">Getting Started with R and Python</a><a class="" href="resources.html">Computational Resource Guide</a></nav><a class="skip" href="#main-content">Skip to content</a><header class="topbar"><button aria-controls="book-nav" aria-expanded="false" class="menu">Contents</button><span>Applied Precalculus / Online edition</span><span class="spacer"></span><a href="resources.html">Resources</a></header><div class="page-grid"><main id="main-content">
+
+<h1 id="angles-radian-measure-and-the-unit-circle">Angles, Radian
+Measure, and the Unit Circle</h1>
+<h2 class="unnumbered" id="opening-context-measuring-rotation-in-science">Opening context:
+measuring rotation in science</h2>
+<p>A laboratory centrifuge rotates thousands of times per minute, an
+imaging arm sweeps through a sector, and a point on a wheel travels
+along a circular arc. All three situations require a common mathematical
+language for rotation. This chapter builds that language, beginning with
+directed angles and radians and ending with unit-circle coordinates,
+exact trigonometric values, and applied circular-motion models.</p>
+<h2 class="unnumbered" id="learning-outcomes">Learning outcomes</h2>
+<p>After completing this chapter, students should be able to convert
+between degrees and radians; identify coterminal and reference angles;
+calculate arc length and sector area; derive exact unit-circle
+coordinates; evaluate all six trigonometric functions and identify where
+they are undefined; use symmetry and periodicity; model angular and
+tangential speed; and explore these ideas in R and Python.</p>
+<h2 class="unnumbered" id="prerequisite-check">Prerequisite check</h2>
+<p>Review the distance formula, the Pythagorean theorem, similarity of
+triangles, coordinate quadrants, and elementary function notation. In
+particular, the equation <span class="math inline">\(x^2+y^2=r^2\)</span> describes a circle of radius
+<span class="math inline">\(r\)</span> centered at the origin.</p>
+<h2 class="unnumbered" id="how-to-use-the-computational-laboratories">How to use the
+computational laboratories</h2>
+<p>Predict and calculate by hand first. Then run the complete R listing
+and the corresponding Python listing, which are presented sequentially
+rather than side by side. Compare exact and approximate answers and
+interpret units.</p>
+<h2 id="angles-as-rotations-and-directed-angles">Angles as rotations and
+directed angles</h2>
+<p>An angle measures rotation from an initial ray to a terminal ray.
+Counterclockwise rotation is positive and clockwise rotation is
+negative. The same terminal ray can be reached after any integer number
+of full turns: angles differing by <span class="math inline">\(360^\circ
+k\)</span> are coterminal. This distinction matters when an angle
+describes accumulated rotation rather than just position.</p>
+<blockquote class="example">
+<p><strong>Example 1.</strong> A wheel rotates <span class="math inline">\(-450^\circ\)</span>. Find a positive coterminal
+angle and the number of clockwise revolutions.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> Adding <span class="math inline">\(720^\circ\)</span> gives <span class="math inline">\(270^\circ\)</span>. The signed number of
+revolutions is <span class="math inline">\(-450/360=-1.25\)</span>. The
+terminal position alone does not preserve the total rotation.</p>
+</blockquote>
+<h5 id="guided-practice-1.">Guided practice 1.</h5>
+<p>Find two positive and two negative angles coterminal with <span class="math inline">\(135^\circ\)</span>. Explain whether they represent
+identical motions.</p>
+<h5 id="reasoning-check.">Reasoning check.</h5>
+<p>Before using a calculator, predict the quadrant, sign, units, and
+whether the result is exact or approximate. Explain one common mistake a
+student could make here.</p>
+<h2 id="degree-and-radian-measure">Degree and radian measure</h2>
+<p>A radian is the central angle that subtends an arc whose length
+equals the circle radius. One full revolution is <span class="math inline">\(2\pi\)</span> radians, so <span class="math inline">\(180^\circ=\pi\)</span> radians. To convert degrees
+to radians multiply by <span class="math inline">\(\pi/180\)</span>; to
+convert radians to degrees multiply by <span class="math inline">\(180/\pi\)</span>. Radians are dimensionless
+ratios, but explicitly labeling them avoids confusion.</p>
+<blockquote class="example">
+<p><strong>Example 2.</strong> Convert <span class="math inline">\(225^\circ\)</span> to radians and <span class="math inline">\(-5\pi/6\)</span> radians to degrees.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> <span class="math inline">\(225(\pi/180)=5\pi/4\)</span> radians, while <span class="math inline">\((-5\pi/6)(180/\pi)=-150^\circ\)</span>.</p>
+</blockquote>
+<h5 id="guided-practice-2.">Guided practice 2.</h5>
+<p>Convert <span class="math inline">\(72^\circ\)</span>, <span class="math inline">\(-315^\circ\)</span>, and <span class="math inline">\(11\pi/12\)</span> radians. Explain why the radian
+conversion is exact.</p>
+<h5 id="reasoning-check.-1">Reasoning check.</h5>
+<p>Before using a calculator, predict the quadrant, sign, units, and
+whether the result is exact or approximate. Explain one common mistake a
+student could make here.</p>
+<h2 id="arc-length-and-the-geometry-of-radians">Arc length and the
+geometry of radians</h2>
+<p>If a circle of radius <span class="math inline">\(r\)</span> has
+central angle <span class="math inline">\(\theta\)</span> measured in
+radians, the signed arc displacement is <span class="math inline">\(r\theta\)</span> and the physical arc length is
+<span class="math inline">\(s=r|\theta|\)</span>. This formula follows
+from the proportion <span class="math inline">\(s/(2\pi
+r)=|\theta|/(2\pi)\)</span>. It is not correct to insert a degree
+measure directly into <span class="math inline">\(s=r\theta\)</span>.</p>
+<blockquote class="example">
+<p><strong>Example 3.</strong> A pulley of radius <span class="math inline">\(12\)</span> cm rotates through <span class="math inline">\(150^\circ\)</span>. How far does a point on its
+rim travel?</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> Convert <span class="math inline">\(150^\circ=5\pi/6\)</span> rad. Thus <span class="math inline">\(s=12(5\pi/6)=10\pi\approx31.42\)</span> cm.</p>
+</blockquote>
+<h5 id="guided-practice-3.">Guided practice 3.</h5>
+<p>A wheel of radius <span class="math inline">\(0.35\)</span> m turns
+<span class="math inline">\(3.5\)</span> radians. Find the rim
+displacement. Repeat for a clockwise rotation of <span class="math inline">\(-3.5\)</span> radians.</p>
+<h5 id="reasoning-check.-2">Reasoning check.</h5>
+<p>Before using a calculator, predict the quadrant, sign, units, and
+whether the result is exact or approximate. Explain one common mistake a
+student could make here.</p>
+<h2 id="area-of-a-circular-sector">Area of a circular sector</h2>
+<p>A sector occupies the fraction <span class="math inline">\(|\theta|/(2\pi)\)</span> of a full disk.
+Consequently its area is <span class="math inline">\(A=\frac12r^2|\theta|\)</span> for <span class="math inline">\(\theta\)</span> in radians. The area is
+nonnegative even when the directed angle is negative. The relationship
+is geometric, not a new definition of radians.</p>
+<blockquote class="example">
+<p><strong>Example 4.</strong> Find the area of a sector with radius
+<span class="math inline">\(8\)</span> cm and angle <span class="math inline">\(3\pi/4\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> <span class="math inline">\(A=\frac12(8)^2(3\pi/4)=24\pi\approx75.40\)</span>
+cm<span class="math inline">\(^2\)</span>.</p>
+</blockquote>
+<h5 id="guided-practice-4.">Guided practice 4.</h5>
+<p>A sector of radius <span class="math inline">\(6\)</span> cm has area
+<span class="math inline">\(9\pi\)</span> cm<span class="math inline">\(^2\)</span>. Determine its central angle in
+radians and degrees.</p>
+<h5 id="reasoning-check.-3">Reasoning check.</h5>
+<p>Before using a calculator, predict the quadrant, sign, units, and
+whether the result is exact or approximate. Explain one common mistake a
+student could make here.</p>
+<h2 id="standard-position-quadrants-and-reference-angles">Standard
+position, quadrants, and reference angles</h2>
+<p>An angle in standard position starts on the positive horizontal axis.
+Its terminal side may lie in one of four quadrants or on an axis. A
+reference angle is the acute angle between the terminal side and the
+horizontal axis. It is useful for determining signs and exact
+trigonometric values without memorizing separate triangles in every
+quadrant.</p>
+<blockquote class="example">
+<p><strong>Example 5.</strong> Find the reference angle for <span class="math inline">\(210^\circ\)</span> and <span class="math inline">\(-45^\circ\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> <span class="math inline">\(210^\circ\)</span> lies in quadrant III, so its
+reference angle is <span class="math inline">\(210^\circ-180^\circ=30^\circ\)</span>. The angle
+<span class="math inline">\(-45^\circ\)</span> lies in quadrant IV and
+has reference angle <span class="math inline">\(45^\circ\)</span>.</p>
+</blockquote>
+<h5 id="guided-practice-5.">Guided practice 5.</h5>
+<p>Find the quadrant and reference angle for <span class="math inline">\(7\pi/6\)</span>, <span class="math inline">\(5\pi/3\)</span>, and <span class="math inline">\(-2\pi/3\)</span>.</p>
+<h5 id="reasoning-check.-4">Reasoning check.</h5>
+<p>Before using a calculator, predict the quadrant, sign, units, and
+whether the result is exact or approximate. Explain one common mistake a
+student could make here.</p>
+<h2 id="the-unit-circle-and-coordinate-definitions">The unit circle and
+coordinate definitions</h2>
+<p>On the unit circle <span class="math inline">\(x^2+y^2=1\)</span>,
+the point reached by angle <span class="math inline">\(\theta\)</span>
+has coordinates <span class="math inline">\((\cos\theta,\sin\theta)\)</span>. Thus cosine is
+the horizontal coordinate and sine is the vertical coordinate. This
+definition extends the right-triangle ratios beyond acute angles. The
+identity <span class="math inline">\(\cos^2\theta+\sin^2\theta=1\)</span> follows
+immediately from the circle equation.</p>
+<blockquote class="example">
+<p><strong>Example 6.</strong> Find <span class="math inline">\((\cos(2\pi/3),\sin(2\pi/3))\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> The reference angle is <span class="math inline">\(\pi/3\)</span> and the terminal side lies in
+quadrant II, so the point is <span class="math inline">\((-1/2,\sqrt3/2)\)</span>.</p>
+</blockquote>
+<h5 id="guided-practice-6.">Guided practice 6.</h5>
+<p>Find the unit-circle coordinates at <span class="math inline">\(5\pi/4\)</span> and <span class="math inline">\(11\pi/6\)</span>, then verify the Pythagorean
+identity.</p>
+<h5 id="reasoning-check.-5">Reasoning check.</h5>
+<p>Before using a calculator, predict the quadrant, sign, units, and
+whether the result is exact or approximate. Explain one common mistake a
+student could make here.</p>
+<h2 id="special-triangles-and-exact-trigonometric-values">Special
+triangles and exact trigonometric values</h2>
+<p>A <span class="math inline">\(45^\circ\)</span>–<span class="math inline">\(45^\circ\)</span>–<span class="math inline">\(90^\circ\)</span> triangle has side ratios <span class="math inline">\(1:1:\sqrt2\)</span>. A <span class="math inline">\(30^\circ\)</span>–<span class="math inline">\(60^\circ\)</span>–<span class="math inline">\(90^\circ\)</span> triangle has ratios <span class="math inline">\(1:\sqrt3:2\)</span>. Dividing the legs by the
+hypotenuse gives the exact unit-circle coordinates for multiples of
+<span class="math inline">\(\pi/6\)</span> and <span class="math inline">\(\pi/4\)</span>. Exact values communicate structure
+that decimal approximations can hide.</p>
+<blockquote class="example">
+<p><strong>Example 7.</strong> Compute <span class="math inline">\(\sin(5\pi/6)\)</span> and <span class="math inline">\(\cos(7\pi/4)\)</span> exactly.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> The first is in quadrant II with
+reference angle <span class="math inline">\(\pi/6\)</span>, giving <span class="math inline">\(1/2\)</span>. The second is in quadrant IV with
+reference angle <span class="math inline">\(\pi/4\)</span>, giving <span class="math inline">\(\sqrt2/2\)</span>.</p>
+</blockquote>
+<h5 id="guided-practice-7.">Guided practice 7.</h5>
+<p>Evaluate <span class="math inline">\(\sin(4\pi/3)\)</span>, <span class="math inline">\(\cos(3\pi/4)\)</span>, and <span class="math inline">\(\tan(\pi/6)\)</span> exactly.</p>
+<h5 id="reasoning-check.-6">Reasoning check.</h5>
+<p>Before using a calculator, predict the quadrant, sign, units, and
+whether the result is exact or approximate. Explain one common mistake a
+student could make here.</p>
+<h2 id="tangent-and-the-remaining-trigonometric-ratios">Tangent and the
+remaining trigonometric ratios</h2>
+<p>Where <span class="math inline">\(\cos\theta\ne0\)</span>, define
+<span class="math inline">\(\tan\theta=\sin\theta/\cos\theta\)</span>.
+Its reciprocal is cotangent where sine is nonzero; secant and cosecant
+are the reciprocals of cosine and sine, respectively. Undefined values
+are not zero: <span class="math inline">\(\tan(\pi/2)\)</span> is
+undefined because its denominator is zero.</p>
+<blockquote class="example">
+<p><strong>Example 8.</strong> Find <span class="math inline">\(\tan(2\pi/3)\)</span> and state whether <span class="math inline">\(\sec(\pi/2)\)</span> exists.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> <span class="math inline">\(\tan(2\pi/3)=(\sqrt3/2)/(-1/2)=-\sqrt3\)</span>.
+Since <span class="math inline">\(\cos(\pi/2)=0\)</span>, <span class="math inline">\(\sec(\pi/2)\)</span> is undefined.</p>
+</blockquote>
+<h5 id="guided-practice-8.">Guided practice 8.</h5>
+<p>Determine the exact values of <span class="math inline">\(\tan(5\pi/4)\)</span> and <span class="math inline">\(\csc(7\pi/6)\)</span> and identify all denominator
+restrictions.</p>
+<h5 id="reasoning-check.-7">Reasoning check.</h5>
+<p>Before using a calculator, predict the quadrant, sign, units, and
+whether the result is exact or approximate. Explain one common mistake a
+student could make here.</p>
+<h2 id="symmetry-periodicity-and-coterminal-angles">Symmetry,
+periodicity, and coterminal angles</h2>
+<p>A full rotation returns to the same point, so sine and cosine repeat
+after <span class="math inline">\(2\pi\)</span>: <span class="math inline">\(\sin(\theta+2\pi k)=\sin\theta\)</span> and <span class="math inline">\(\cos(\theta+2\pi k)=\cos\theta\)</span>.
+Reflection across the horizontal axis shows that cosine is even and sine
+is odd. Tangent has period <span class="math inline">\(\pi\)</span>
+where defined. These properties reduce large and negative angles to
+manageable ones.</p>
+<blockquote class="example">
+<p><strong>Example 9.</strong> Evaluate <span class="math inline">\(\sin(-11\pi/6)\)</span> without a calculator.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> Adding <span class="math inline">\(2\pi\)</span> gives <span class="math inline">\(\pi/6\)</span>, so <span class="math inline">\(\sin(-11\pi/6)=1/2\)</span>.</p>
+</blockquote>
+<h5 id="guided-practice-9.">Guided practice 9.</h5>
+<p>Simplify <span class="math inline">\(\cos(-7\pi/3)\)</span> and <span class="math inline">\(\tan(13\pi/4)\)</span> using periodicity.</p>
+<h5 id="reasoning-check.-8">Reasoning check.</h5>
+<p>Before using a calculator, predict the quadrant, sign, units, and
+whether the result is exact or approximate. Explain one common mistake a
+student could make here.</p>
+<h2 id="angles-from-coordinates-and-inverse-trigonometry">Angles from
+coordinates and inverse trigonometry</h2>
+<p>If <span class="math inline">\((x,y)\)</span> lies on a circle of
+radius <span class="math inline">\(r&gt;0\)</span>, then <span class="math inline">\(\cos\theta=x/r\)</span> and <span class="math inline">\(\sin\theta=y/r\)</span>. An inverse sine or cosine
+returns a principal angle, not necessarily the angle describing the
+original point’s quadrant. The two-argument arctangent function (called
+<code>atan2</code> in R and Python) uses both coordinates to recover the
+appropriate direction.</p>
+<blockquote class="example">
+<p><strong>Example 10.</strong> A point is <span class="math inline">\((-3,4)\)</span> relative to the origin. Find its
+radius, sine, cosine, and approximate direction.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> <span class="math inline">\(r=5\)</span>, so <span class="math inline">\(\sin\theta=4/5\)</span> and <span class="math inline">\(\cos\theta=-3/5\)</span>. The direction is in
+quadrant II: <span class="math inline">\(\theta\approx126.87^\circ\)</span>.</p>
+</blockquote>
+<h5 id="guided-practice-10.">Guided practice 10.</h5>
+<p>A displacement vector is <span class="math inline">\((5,-12)\)</span>. Determine its radius, sine,
+cosine, and standard-position angle.</p>
+<h5 id="reasoning-check.-9">Reasoning check.</h5>
+<p>Before using a calculator, predict the quadrant, sign, units, and
+whether the result is exact or approximate. Explain one common mistake a
+student could make here.</p>
+<h2 id="angular-and-linear-speed">Angular and linear speed</h2>
+<p>Angular speed is <span class="math inline">\(\omega=\Delta\theta/\Delta t\)</span> in radians
+per unit time. A point at radius <span class="math inline">\(r\)</span>
+has tangential speed <span class="math inline">\(v=r|\omega|\)</span>.
+Revolutions per minute must be converted to radians per second when SI
+units are used. This relationship connects trigonometry to rotating
+machinery, laboratory centrifuges, and motion models.</p>
+<blockquote class="example">
+<p><strong>Example 11.</strong> A rotor turns at 120 revolutions per
+minute. Find its angular speed in rad/s and the speed of a point <span class="math inline">\(0.10\)</span> m from its center.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> <span class="math inline">\(120/60=2\)</span> rev/s, hence <span class="math inline">\(\omega=4\pi\)</span> rad/s and <span class="math inline">\(v=0.10(4\pi)=0.4\pi\approx1.257\)</span> m/s.</p>
+</blockquote>
+<h5 id="guided-practice-11.">Guided practice 11.</h5>
+<p>A disk of radius <span class="math inline">\(0.18\)</span> m spins at
+75 rpm. Find angular and rim speeds, carefully tracking units.</p>
+<h5 id="reasoning-check.-10">Reasoning check.</h5>
+<p>Before using a calculator, predict the quadrant, sign, units, and
+whether the result is exact or approximate. Explain one common mistake a
+student could make here.</p>
+<h2 id="circular-motion-as-a-parametric-model">Circular motion as a
+parametric model</h2>
+<p>For uniform circular motion of radius <span class="math inline">\(r\)</span> and angular speed <span class="math inline">\(\omega\)</span>, position can be written <span class="math inline">\(x(t)=r\cos(\omega t+\phi)\)</span> and <span class="math inline">\(y(t)=r\sin(\omega t+\phi)\)</span>. The phase
+<span class="math inline">\(\phi\)</span> determines the starting
+location. The resulting path is a circle, although each coordinate
+varies periodically in time. This is an important bridge to sinusoidal
+functions and parametric curves.</p>
+<blockquote class="example">
+<p><strong>Example 12.</strong> A point travels on a circle of radius 3
+with <span class="math inline">\(\omega=\pi/2\)</span> rad/s, starting
+at <span class="math inline">\((3,0)\)</span>. Find its position at
+<span class="math inline">\(t=1\)</span> second.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> <span class="math inline">\(x(1)=3\cos(\pi/2)=0\)</span> and <span class="math inline">\(y(1)=3\sin(\pi/2)=3\)</span>, so the point is
+<span class="math inline">\((0,3)\)</span>.</p>
+</blockquote>
+<h5 id="guided-practice-12.">Guided practice 12.</h5>
+<p>Model a point moving clockwise on a circle of radius 2, starting at
+<span class="math inline">\((0,2)\)</span> with angular speed <span class="math inline">\(\pi\)</span> rad/s.</p>
+<h5 id="reasoning-check.-11">Reasoning check.</h5>
+<p>Before using a calculator, predict the quadrant, sign, units, and
+whether the result is exact or approximate. Explain one common mistake a
+student could make here.</p>
+<h2 id="applications-and-model-interpretation">Applications and model
+interpretation</h2>
+<p>A mathematical model must state whether an angle is a rotation, a
+direction, or a measured central angle; whether the radius is constant;
+and whether a signed or unsigned quantity is needed. In a biomedical
+imaging system, a scanning arm may sweep through a sector; in a
+centrifuge, the radial position affects tangential speed. The formulas
+are useful only when the assumptions match the physical situation.</p>
+<blockquote class="example">
+<p><strong>Example 13.</strong> A scanning device sweeps through <span class="math inline">\(110^\circ\)</span> at a fixed radius of 0.4 m.
+Compute arc length and sector area.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> <span class="math inline">\(\theta=11\pi/18\)</span> radians. Then <span class="math inline">\(s=0.4(11\pi/18)\approx0.768\)</span> m and <span class="math inline">\(A=\frac12(0.4)^2(11\pi/18)\approx0.154\)</span>
+m<span class="math inline">\(^2\)</span>.</p>
+</blockquote>
+<h5 id="guided-practice-13.">Guided practice 13.</h5>
+<p>A scanning arm doubles its radius while retaining the same angular
+sweep. Predict and verify the factors by which arc length and sector
+area change.</p>
+<h5 id="reasoning-check.-12">Reasoning check.</h5>
+<p>Before using a calculator, predict the quadrant, sign, units, and
+whether the result is exact or approximate. Explain one common mistake a
+student could make here.</p>
+<h2 id="visual-investigations">Visual investigations</h2>
+<h3 class="unnumbered" id="investigation-1-one-full-turn-and-the-radian-scale">Investigation 1:
+One full turn and the radian scale</h3>
+<figure>
+<img alt="image" src="figures/precompiled/chapter08-01.svg"/>
+<figcaption aria-hidden="true">image</figcaption>
+</figure>
+<p>Trace the circle counterclockwise. Explain why one revolution is
+<span class="math inline">\(2\pi\)</span> radians and why a negative
+angle reverses the direction. Mark <span class="math inline">\(-\pi/2\)</span> and <span class="math inline">\(5\pi/2\)</span> on the same diagram and discuss
+their different accumulated rotations.</p>
+<h3 class="unnumbered" id="investigation-2-arc-length-grows-linearly-in-radius">Investigation
+2: Arc length grows linearly in radius</h3>
+<figure>
+<img alt="image" src="figures/precompiled/chapter08-02.svg"/>
+<figcaption aria-hidden="true">image</figcaption>
+</figure>
+<p>At fixed <span class="math inline">\(\theta=\pi/3\)</span>, compare
+radii <span class="math inline">\(r=1,2,3\)</span>. Build a table of
+<span class="math inline">\(s=r\theta\)</span> and <span class="math inline">\(A=r^2\theta/2\)</span>. Which quantity doubles and
+which quadruples when the radius doubles?</p>
+<h3 class="unnumbered" id="investigation-3-exact-unit-circle-coordinates">Investigation 3:
+Exact unit-circle coordinates</h3>
+<figure>
+<img alt="image" src="figures/precompiled/chapter08-03.svg"/>
+<figcaption aria-hidden="true">image</figcaption>
+</figure>
+<p>Use the <span class="math inline">\(30\)</span>–<span class="math inline">\(60\)</span>–<span class="math inline">\(90\)</span> triangle to derive the coordinates at
+<span class="math inline">\(\pi/3\)</span>. Reflect the point across the
+vertical and horizontal axes to obtain three other exact coordinates.
+Verify <span class="math inline">\(x^2+y^2=1\)</span> in every case.</p>
+<h3 class="unnumbered" id="investigation-4-periodic-motion-and-coordinate-traces">Investigation
+4: Periodic motion and coordinate traces</h3>
+<p>Sketch <span class="math inline">\(x(t)=2\cos t\)</span> and <span class="math inline">\(y(t)=2\sin t\)</span> for <span class="math inline">\(0\le t\le 2\pi\)</span>. On a separate set of axes
+sketch the parametric path <span class="math inline">\((x(t),y(t))\)</span>. Why do two wave-like
+coordinate graphs describe one circular path?</p>
+<h2 id="problem-solving-workshops">Problem-solving workshops</h2>
+<h3 class="unnumbered" id="workshop-a-centrifuge-calculations">Workshop
+A: Centrifuge calculations</h3>
+<p>A rotor spins at 3,000 rpm and a specimen lies 8 cm from the center.
+(a) Convert to revolutions per second. (b) Determine angular speed in
+rad/s. (c) Find tangential speed in m/s. (d) Describe how speed changes
+if the specimen is moved to 12 cm.</p>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> The rotor makes <span class="math inline">\(50\)</span> rev/s, so <span class="math inline">\(\omega=100\pi\)</span> rad/s. At <span class="math inline">\(r=0.08\)</span> m, <span class="math inline">\(v=8\pi\approx25.13\)</span> m/s. At <span class="math inline">\(r=0.12\)</span> m, speed is <span class="math inline">\(12\pi\approx37.70\)</span> m/s, a 50%
+increase.</p>
+</blockquote>
+<h3 class="unnumbered" id="workshop-b-imaging-geometry">Workshop B:
+Imaging geometry</h3>
+<p>A scanning arm of radius 30 cm sweeps through <span class="math inline">\(240^\circ\)</span>. Determine the arc length and
+sector area; state why the sign of the angle does not change the
+physical area.</p>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> The angle is <span class="math inline">\(4\pi/3\)</span> radians. Arc length is <span class="math inline">\(30(4\pi/3)=40\pi\)</span> cm. Sector area is <span class="math inline">\((1/2)(30)^2(4\pi/3)=600\pi\)</span> cm<span class="math inline">\(^2\)</span>. The area is nonnegative.</p>
+</blockquote>
+<h3 class="unnumbered" id="workshop-c-finding-direction-from-coordinates">Workshop C: Finding
+direction from coordinates</h3>
+<p>A robot moves from <span class="math inline">\((2,1)\)</span> to
+<span class="math inline">\((-4,9)\)</span>. Determine its displacement
+vector, length, and counterclockwise direction from the positive
+horizontal axis.</p>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> The displacement is <span class="math inline">\((-6,8)\)</span>, its length is <span class="math inline">\(\sqrt{36+64}=10\)</span>, and the direction is
+<span class="math inline">\(\operatorname{atan2}(8,-6)\approx126.87^\circ\)</span>.</p>
+</blockquote>
+<h2 id="computational-laboratory-a-unit-circle-coordinates-and-exact-angle-checks">Computational
+laboratory A: Unit-circle coordinates and exact-angle checks</h2>
+<p>The code samples <span class="math inline">\(\theta\)</span> around
+the unit circle, checks <span class="math inline">\(\cos^2\theta+\sin^2\theta=1\)</span> numerically,
+and draws the circle. First predict the coordinates for <span class="math inline">\(0\)</span>, <span class="math inline">\(\pi/6\)</span>, <span class="math inline">\(\pi/4\)</span>, <span class="math inline">\(\pi/3\)</span>, and <span class="math inline">\(\pi/2\)</span>.</p>
+<h3 class="unnumbered" id="r-code">R code</h3>
+<div class="code-shell"><div class="code-bar"><span>R</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a aria-hidden="true" href="#cb1-1" tabindex="-1"></a><span class="co"># Chapter 8: Angles, radians, and the unit circle</span></span>
+<span id="cb1-2"><a aria-hidden="true" href="#cb1-2" tabindex="-1"></a><span class="co"># Laboratory A: unit-circle coordinates</span></span>
+<span id="cb1-3"><a aria-hidden="true" href="#cb1-3" tabindex="-1"></a>angles <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>, pi<span class="sc">/</span><span class="dv">6</span>, pi<span class="sc">/</span><span class="dv">4</span>, pi<span class="sc">/</span><span class="dv">3</span>, pi<span class="sc">/</span><span class="dv">2</span>, pi, <span class="dv">3</span><span class="sc">*</span>pi<span class="sc">/</span><span class="dv">2</span>, <span class="dv">2</span><span class="sc">*</span>pi)</span>
+<span id="cb1-4"><a aria-hidden="true" href="#cb1-4" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">theta=</span>angles, <span class="at">x=</span><span class="fu">cos</span>(angles), <span class="at">y=</span><span class="fu">sin</span>(angles))</span>
+<span id="cb1-5"><a aria-hidden="true" href="#cb1-5" tabindex="-1"></a>results<span class="sc">$</span>identity_error <span class="ot">&lt;-</span> results<span class="sc">$</span>x<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> results<span class="sc">$</span>y<span class="sc">^</span><span class="dv">2</span> <span class="sc">-</span> <span class="dv">1</span></span>
+<span id="cb1-6"><a aria-hidden="true" href="#cb1-6" tabindex="-1"></a><span class="fu">print</span>(results)</span>
+<span id="cb1-7"><a aria-hidden="true" href="#cb1-7" tabindex="-1"></a>theta <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">2</span><span class="sc">*</span>pi, <span class="at">length.out=</span><span class="dv">401</span>)</span>
+<span id="cb1-8"><a aria-hidden="true" href="#cb1-8" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">cos</span>(theta), <span class="fu">sin</span>(theta), <span class="at">type=</span><span class="st">"l"</span>, <span class="at">asp=</span><span class="dv">1</span>, <span class="at">xlab=</span><span class="st">"cos(theta)"</span>, <span class="at">ylab=</span><span class="st">"sin(theta)"</span>, <span class="at">main=</span><span class="st">"Unit circle"</span>)</span>
+<span id="cb1-9"><a aria-hidden="true" href="#cb1-9" tabindex="-1"></a><span class="fu">points</span>(results<span class="sc">$</span>x, results<span class="sc">$</span>y, <span class="at">pch=</span><span class="dv">19</span>)</span>
+<span id="cb1-10"><a aria-hidden="true" href="#cb1-10" tabindex="-1"></a></span>
+<span id="cb1-11"><a aria-hidden="true" href="#cb1-11" tabindex="-1"></a><span class="co"># Laboratory B: arc length and sector area</span></span>
+<span id="cb1-12"><a aria-hidden="true" href="#cb1-12" tabindex="-1"></a>radii <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb1-13"><a aria-hidden="true" href="#cb1-13" tabindex="-1"></a>angles_b <span class="ot">&lt;-</span> <span class="fu">c</span>(pi<span class="sc">/</span><span class="dv">6</span>, pi<span class="sc">/</span><span class="dv">3</span>, pi<span class="sc">/</span><span class="dv">2</span>)</span>
+<span id="cb1-14"><a aria-hidden="true" href="#cb1-14" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(<span class="at">radius=</span>radii, <span class="at">theta=</span>angles_b)</span>
+<span id="cb1-15"><a aria-hidden="true" href="#cb1-15" tabindex="-1"></a>model<span class="sc">$</span>arc_length <span class="ot">&lt;-</span> model<span class="sc">$</span>radius <span class="sc">*</span> <span class="fu">abs</span>(model<span class="sc">$</span>theta)</span>
+<span id="cb1-16"><a aria-hidden="true" href="#cb1-16" tabindex="-1"></a>model<span class="sc">$</span>sector_area <span class="ot">&lt;-</span> <span class="fl">0.5</span> <span class="sc">*</span> model<span class="sc">$</span>radius<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> <span class="fu">abs</span>(model<span class="sc">$</span>theta)</span>
+<span id="cb1-17"><a aria-hidden="true" href="#cb1-17" tabindex="-1"></a><span class="fu">print</span>(model)</span>
+<span id="cb1-18"><a aria-hidden="true" href="#cb1-18" tabindex="-1"></a></span>
+<span id="cb1-19"><a aria-hidden="true" href="#cb1-19" tabindex="-1"></a><span class="co"># Laboratory C: circular motion</span></span>
+<span id="cb1-20"><a aria-hidden="true" href="#cb1-20" tabindex="-1"></a>time <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">4</span>, <span class="at">length.out=</span><span class="dv">401</span>)</span>
+<span id="cb1-21"><a aria-hidden="true" href="#cb1-21" tabindex="-1"></a>r <span class="ot">&lt;-</span> <span class="dv">2</span>; omega <span class="ot">&lt;-</span> pi<span class="sc">/</span><span class="dv">2</span>; phase <span class="ot">&lt;-</span> pi<span class="sc">/</span><span class="dv">4</span></span>
+<span id="cb1-22"><a aria-hidden="true" href="#cb1-22" tabindex="-1"></a>x <span class="ot">&lt;-</span> r<span class="sc">*</span><span class="fu">cos</span>(omega<span class="sc">*</span>time <span class="sc">+</span> phase)</span>
+<span id="cb1-23"><a aria-hidden="true" href="#cb1-23" tabindex="-1"></a>y <span class="ot">&lt;-</span> r<span class="sc">*</span><span class="fu">sin</span>(omega<span class="sc">*</span>time <span class="sc">+</span> phase)</span>
+<span id="cb1-24"><a aria-hidden="true" href="#cb1-24" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
+<span id="cb1-25"><a aria-hidden="true" href="#cb1-25" tabindex="-1"></a><span class="fu">plot</span>(time, x, <span class="at">type=</span><span class="st">"l"</span>, <span class="at">ylim=</span><span class="fu">c</span>(<span class="sc">-</span>r,r), <span class="at">xlab=</span><span class="st">"Time (s)"</span>, <span class="at">ylab=</span><span class="st">"x-coordinate"</span>, <span class="at">main=</span><span class="st">"Horizontal coordinate"</span>)</span>
+<span id="cb1-26"><a aria-hidden="true" href="#cb1-26" tabindex="-1"></a><span class="fu">plot</span>(x, y, <span class="at">type=</span><span class="st">"l"</span>, <span class="at">asp=</span><span class="dv">1</span>, <span class="at">xlab=</span><span class="st">"x"</span>, <span class="at">ylab=</span><span class="st">"y"</span>, <span class="at">main=</span><span class="st">"Circular path"</span>)</span>
+<span id="cb1-27"><a aria-hidden="true" href="#cb1-27" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>))</span></code></pre></div></div>
+<h3 class="unnumbered" id="python-code">Python code</h3>
+<div class="code-shell"><div class="code-bar"><span>Python</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" href="#cb2-1" tabindex="-1"></a><span class="co"># Chapter 8: Angles, radians, and the unit circle</span></span>
+<span id="cb2-2"><a aria-hidden="true" href="#cb2-2" tabindex="-1"></a><span class="im">import</span> math</span>
+<span id="cb2-3"><a aria-hidden="true" href="#cb2-3" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-4"><a aria-hidden="true" href="#cb2-4" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-5"><a aria-hidden="true" href="#cb2-5" tabindex="-1"></a></span>
+<span id="cb2-6"><a aria-hidden="true" href="#cb2-6" tabindex="-1"></a><span class="co"># Laboratory A: unit-circle coordinates</span></span>
+<span id="cb2-7"><a aria-hidden="true" href="#cb2-7" tabindex="-1"></a>angles <span class="op">=</span> np.array([<span class="dv">0</span>, math.pi<span class="op">/</span><span class="dv">6</span>, math.pi<span class="op">/</span><span class="dv">4</span>, math.pi<span class="op">/</span><span class="dv">3</span>, math.pi<span class="op">/</span><span class="dv">2</span>, math.pi, <span class="dv">3</span><span class="op">*</span>math.pi<span class="op">/</span><span class="dv">2</span>, <span class="dv">2</span><span class="op">*</span>math.pi])</span>
+<span id="cb2-8"><a aria-hidden="true" href="#cb2-8" tabindex="-1"></a><span class="cf">for</span> angle <span class="kw">in</span> angles:</span>
+<span id="cb2-9"><a aria-hidden="true" href="#cb2-9" tabindex="-1"></a>    x, y <span class="op">=</span> math.cos(angle), math.sin(angle)</span>
+<span id="cb2-10"><a aria-hidden="true" href="#cb2-10" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"theta=</span><span class="sc">{</span>angle<span class="sc">:.5f}</span><span class="ss">, x=</span><span class="sc">{</span>x<span class="sc">:.5f}</span><span class="ss">, y=</span><span class="sc">{</span>y<span class="sc">:.5f}</span><span class="ss">, error=</span><span class="sc">{</span>x<span class="op">*</span>x<span class="op">+</span>y<span class="op">*</span>y<span class="op">-</span><span class="dv">1</span><span class="sc">:.2e}</span><span class="ss">"</span>)</span>
+<span id="cb2-11"><a aria-hidden="true" href="#cb2-11" tabindex="-1"></a>theta <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">2</span><span class="op">*</span>math.pi, <span class="dv">401</span>)</span>
+<span id="cb2-12"><a aria-hidden="true" href="#cb2-12" tabindex="-1"></a>plt.figure()</span>
+<span id="cb2-13"><a aria-hidden="true" href="#cb2-13" tabindex="-1"></a>plt.plot(np.cos(theta), np.sin(theta))</span>
+<span id="cb2-14"><a aria-hidden="true" href="#cb2-14" tabindex="-1"></a>plt.scatter(np.cos(angles), np.sin(angles))</span>
+<span id="cb2-15"><a aria-hidden="true" href="#cb2-15" tabindex="-1"></a>plt.axis(<span class="st">'equal'</span>)<span class="op">;</span> plt.xlabel(<span class="st">'cos(theta)'</span>)<span class="op">;</span> plt.ylabel(<span class="st">'sin(theta)'</span>)</span>
+<span id="cb2-16"><a aria-hidden="true" href="#cb2-16" tabindex="-1"></a>plt.title(<span class="st">'Unit circle'</span>)<span class="op">;</span> plt.tight_layout()<span class="op">;</span> plt.savefig(<span class="st">'unit_circle_python.png'</span>)<span class="op">;</span> plt.close()</span>
+<span id="cb2-17"><a aria-hidden="true" href="#cb2-17" tabindex="-1"></a></span>
+<span id="cb2-18"><a aria-hidden="true" href="#cb2-18" tabindex="-1"></a><span class="co"># Laboratory B: arc length and sector area</span></span>
+<span id="cb2-19"><a aria-hidden="true" href="#cb2-19" tabindex="-1"></a><span class="cf">for</span> radius <span class="kw">in</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]:</span>
+<span id="cb2-20"><a aria-hidden="true" href="#cb2-20" tabindex="-1"></a>    <span class="cf">for</span> angle <span class="kw">in</span> [math.pi<span class="op">/</span><span class="dv">6</span>, math.pi<span class="op">/</span><span class="dv">3</span>, math.pi<span class="op">/</span><span class="dv">2</span>]:</span>
+<span id="cb2-21"><a aria-hidden="true" href="#cb2-21" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"r=</span><span class="sc">{</span>radius<span class="sc">}</span><span class="ss">, theta=</span><span class="sc">{</span>angle<span class="sc">:.4f}</span><span class="ss">, arc=</span><span class="sc">{</span>radius<span class="op">*</span><span class="bu">abs</span>(angle)<span class="sc">:.4f}</span><span class="ss">, area=</span><span class="sc">{</span><span class="fl">0.5</span><span class="op">*</span>radius<span class="op">**</span><span class="dv">2</span><span class="op">*</span><span class="bu">abs</span>(angle)<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
+<span id="cb2-22"><a aria-hidden="true" href="#cb2-22" tabindex="-1"></a></span>
+<span id="cb2-23"><a aria-hidden="true" href="#cb2-23" tabindex="-1"></a><span class="co"># Laboratory C: circular motion</span></span>
+<span id="cb2-24"><a aria-hidden="true" href="#cb2-24" tabindex="-1"></a>time <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">4</span>, <span class="dv">401</span>)</span>
+<span id="cb2-25"><a aria-hidden="true" href="#cb2-25" tabindex="-1"></a>radius, omega, phase <span class="op">=</span> <span class="dv">2</span>, math.pi<span class="op">/</span><span class="dv">2</span>, math.pi<span class="op">/</span><span class="dv">4</span></span>
+<span id="cb2-26"><a aria-hidden="true" href="#cb2-26" tabindex="-1"></a>x <span class="op">=</span> radius<span class="op">*</span>np.cos(omega<span class="op">*</span>time <span class="op">+</span> phase)</span>
+<span id="cb2-27"><a aria-hidden="true" href="#cb2-27" tabindex="-1"></a>y <span class="op">=</span> radius<span class="op">*</span>np.sin(omega<span class="op">*</span>time <span class="op">+</span> phase)</span>
+<span id="cb2-28"><a aria-hidden="true" href="#cb2-28" tabindex="-1"></a>plt.figure()<span class="op">;</span> plt.plot(time, x)<span class="op">;</span> plt.xlabel(<span class="st">'Time (s)'</span>)<span class="op">;</span> plt.ylabel(<span class="st">'x-coordinate'</span>)</span>
+<span id="cb2-29"><a aria-hidden="true" href="#cb2-29" tabindex="-1"></a>plt.title(<span class="st">'Horizontal coordinate'</span>)<span class="op">;</span> plt.tight_layout()<span class="op">;</span> plt.savefig(<span class="st">'circular_coordinate_python.png'</span>)<span class="op">;</span> plt.close()</span>
+<span id="cb2-30"><a aria-hidden="true" href="#cb2-30" tabindex="-1"></a>plt.figure()<span class="op">;</span> plt.plot(x,y)<span class="op">;</span> plt.axis(<span class="st">'equal'</span>)<span class="op">;</span> plt.xlabel(<span class="st">'x'</span>)<span class="op">;</span> plt.ylabel(<span class="st">'y'</span>)</span>
+<span id="cb2-31"><a aria-hidden="true" href="#cb2-31" tabindex="-1"></a>plt.title(<span class="st">'Circular path'</span>)<span class="op">;</span> plt.tight_layout()<span class="op">;</span> plt.savefig(<span class="st">'circular_path_python.png'</span>)<span class="op">;</span> plt.close()</span></code></pre></div></div>
+<h5 id="interpretation.">Interpretation.</h5>
+<p>Why are numerical errors typically close to, but not exactly, zero?
+Why is an exact expression such as <span class="math inline">\(\sqrt3/2\)</span> often preferable to its decimal
+approximation?</p>
+<h2 id="computational-laboratory-b-arc-length-and-sector-area">Computational
+laboratory B: Arc length and sector area</h2>
+<p>Modify the radius and angle in the scripts. Make a table for three
+radii and three angles. Compare the linear dependence of arc length on
+radius with the quadratic dependence of sector area on radius. Use
+radians in every formula.</p>
+<h2 id="computational-laboratory-c-circular-motion">Computational
+laboratory C: Circular motion</h2>
+<p>The scripts generate the coordinate traces and the circular
+trajectory of a moving point. Change the angular speed and phase, and
+predict which properties change: radius, period, starting point, and
+direction.</p>
+<h2 id="extended-guided-practice-reasoning-with-the-unit-circle">Extended
+guided practice: reasoning with the unit circle</h2>
+<h3 class="unnumbered" id="investigation-5-building-a-complete-exact-value-table">Investigation
+5: Building a complete exact-value table</h3>
+<p>Start with the first-quadrant angles <span class="math inline">\(0\)</span>, <span class="math inline">\(\pi/6\)</span>, <span class="math inline">\(\pi/4\)</span>, <span class="math inline">\(\pi/3\)</span>, and <span class="math inline">\(\pi/2\)</span>. Construct a table of sine and
+cosine values using special triangles rather than decimal
+approximations. Then reflect each first-quadrant point into the other
+three quadrants. Complete the table below, recording the signs before
+inserting exact magnitudes.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Angle</th>
+<th style="text-align: center;">Reference angle</th>
+<th style="text-align: center;"><span class="math inline">\(\cos\theta\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\sin\theta\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(2\pi/3\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\pi/3\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\underline{\hspace{1.5cm}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\underline{\hspace{1.5cm}}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(3\pi/4\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\pi/4\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\underline{\hspace{1.5cm}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\underline{\hspace{1.5cm}}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(7\pi/6\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\pi/6\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\underline{\hspace{1.5cm}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\underline{\hspace{1.5cm}}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(5\pi/3\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\pi/3\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\underline{\hspace{1.5cm}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\underline{\hspace{1.5cm}}\)</span></td>
+</tr>
+</tbody>
+</table>
+<h5 id="discuss.">Discuss.</h5>
+<p>Which values are determined by the reference angle, and which by the
+quadrant? Why is the unit-circle approach more general than defining
+sine and cosine only in a right triangle?</p>
+<h3 class="unnumbered" id="investigation-6-radian-approximation-and-the-small-angle-idea">Investigation
+6: Radian approximation and the small-angle idea</h3>
+<p>Consider a unit circle and a small positive central angle <span class="math inline">\(h\)</span>. The chord connecting the two points
+has length <span class="math inline">\(2\sin(h/2)\)</span>, while the
+arc length is <span class="math inline">\(h\)</span>. For small angles,
+the chord and arc are close. Evaluate the following expressions
+numerically for <span class="math inline">\(h=0.5\)</span>, <span class="math inline">\(0.1\)</span>, and <span class="math inline">\(0.01\)</span> radians: <span class="math display">\[\frac{2\sin(h/2)}{h},\qquad \frac{\sin
+h}{h}.\]</span> Describe the trend and explain why angles must be
+expressed in radians. Do not treat numerical agreement as a formal proof
+of a limit.</p>
+<h3 class="unnumbered" id="investigation-7-signed-displacement-versus-distance-traveled">Investigation
+7: Signed displacement versus distance traveled</h3>
+<p>A wheel of radius <span class="math inline">\(0.25\)</span> m turns
+counterclockwise through <span class="math inline">\(3\pi\)</span>
+radians and then clockwise through <span class="math inline">\(\pi\)</span> radians. Find (a) the net angular
+displacement, (b) the total angle swept, (c) the net signed rim
+displacement, and (d) the total distance traveled by a marked point
+along the circumference. Distinguish displacement from distance.</p>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> Net angle is <span class="math inline">\(2\pi\)</span> rad, while total swept angle is
+<span class="math inline">\(4\pi\)</span> rad. Signed arc displacement
+is <span class="math inline">\(0.25(2\pi)=\pi/2\)</span> m, while total
+distance is <span class="math inline">\(0.25(4\pi)=\pi\)</span> m. The
+point returns to its original physical location after a net full
+revolution, so its straight-line displacement vector is zero.</p>
+</blockquote>
+<h2 id="further-worked-examples-and-diagnostic-practice">Further worked
+examples and diagnostic practice</h2>
+<blockquote class="example">
+<p><strong>Example 14: An angle given in mixed units.</strong> A
+mechanical arm rotates <span class="math inline">\(45^\circ\)</span>
+counterclockwise and then <span class="math inline">\(\pi/3\)</span>
+radians clockwise. Determine the net angle in both degrees and
+radians.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> Convert <span class="math inline">\(\pi/3\)</span> rad to <span class="math inline">\(60^\circ\)</span>. Net angle is <span class="math inline">\(45^\circ-60^\circ=-15^\circ\)</span>, or <span class="math inline">\(-\pi/12\)</span> rad. The negative sign means the
+net rotation is clockwise.</p>
+</blockquote>
+<h5 id="try-it.">Try it.</h5>
+<p>Reverse the order of the two rotations. Does the net angle change?
+Does the path taken by the arm necessarily remain the same?</p>
+<blockquote class="example">
+<p><strong>Example 15: Finding an angle from sector area.</strong> A
+sector of radius <span class="math inline">\(15\)</span> cm has area
+<span class="math inline">\(45\pi\)</span> cm<span class="math inline">\(^2\)</span>. Find its central angle, and then
+calculate the arc length.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> Using <span class="math inline">\(45\pi=\frac12(15)^2\theta\)</span>, we obtain
+<span class="math inline">\(\theta=\frac{90\pi}{225}=\frac{2\pi}{5}\)</span>
+rad. Therefore <span class="math inline">\(s=15(2\pi/5)=6\pi\)</span>
+cm. Checking dimensions, area uses cm<span class="math inline">\(^2\)</span> and arc length uses cm.</p>
+</blockquote>
+<h5 id="try-it.-1">Try it.</h5>
+<p>If the radius were doubled while sector area stayed fixed, what would
+happen to the central angle?</p>
+<blockquote class="example">
+<p><strong>Example 16: Exact values from a point on the terminal
+side.</strong> An angle has terminal side passing through <span class="math inline">\((-7,-24)\)</span>. Find all six trigonometric
+functions.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> The radius is <span class="math inline">\(r=\sqrt{(-7)^2+(-24)^2}=25\)</span>. Hence <span class="math inline">\(\sin\theta=-24/25\)</span>, <span class="math inline">\(\cos\theta=-7/25\)</span>, and <span class="math inline">\(\tan\theta=24/7\)</span>. Taking reciprocals gives
+<span class="math inline">\(\csc\theta=-25/24\)</span>, <span class="math inline">\(\sec\theta=-25/7\)</span>, and <span class="math inline">\(\cot\theta=7/24\)</span>. The signs agree with
+quadrant III.</p>
+</blockquote>
+<h5 id="try-it.-2">Try it.</h5>
+<p>Repeat with the point <span class="math inline">\((7,-24)\)</span>
+and compare the signs.</p>
+<blockquote class="example">
+<p><strong>Example 17: Choosing an inverse-trigonometric
+direction.</strong> A displacement has components <span class="math inline">\((-2,-2\sqrt3)\)</span>. Find its direction between
+<span class="math inline">\(0\)</span> and <span class="math inline">\(2\pi\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> The vector is in quadrant III. Its
+reference angle is <span class="math inline">\(\pi/3\)</span> because
+<span class="math inline">\(|y/x|=\sqrt3\)</span>. Thus the direction is
+<span class="math inline">\(\pi+\pi/3=4\pi/3\)</span>. A single-argument
+arctangent alone would return an angle in the wrong quadrant unless
+corrected.</p>
+</blockquote>
+<h5 id="try-it.-3">Try it.</h5>
+<p>Find the direction for <span class="math inline">\((2,-2\sqrt3)\)</span> and explain the
+difference.</p>
+<h2 id="applied-investigation-comparing-two-rotating-systems">Applied
+investigation: comparing two rotating systems</h2>
+<p>Two laboratory rotors have radii <span class="math inline">\(r_1=0.06\)</span> m and <span class="math inline">\(r_2=0.10\)</span> m. The first rotates at 2,400
+rpm and the second at 1,800 rpm.</p>
+<ol type="1">
+<li><p>Convert both rotation rates to radians per second, showing each
+unit conversion.</p></li>
+<li><p>Calculate tangential speeds at the outer edges and identify the
+faster moving point.</p></li>
+<li><p>How long does each rotor take to complete one revolution? State
+your answer in seconds.</p></li>
+<li><p>A point on each rotor starts on the positive horizontal axis.
+Write its <span class="math inline">\((x(t),y(t))\)</span> model
+assuming counterclockwise motion.</p></li>
+<li><p>At <span class="math inline">\(t=0.01\)</span> seconds, calculate
+both positions numerically and explain whether the points have completed
+an integer number of revolutions.</p></li>
+</ol>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> The angular speeds are <span class="math inline">\(80\pi\)</span> rad/s and <span class="math inline">\(60\pi\)</span> rad/s, respectively. Their edge
+speeds are <span class="math inline">\(4.8\pi\approx15.08\)</span> m/s
+and <span class="math inline">\(6\pi\approx18.85\)</span> m/s; the
+larger rotor has greater tangential speed despite its lower rpm. Periods
+are <span class="math inline">\(1/40=0.025\)</span> s and <span class="math inline">\(1/30\approx0.0333\)</span> s. The position models
+are <span class="math inline">\((0.06\cos(80\pi t),0.06\sin(80\pi
+t))\)</span> and <span class="math inline">\((0.10\cos(60\pi
+t),0.10\sin(60\pi t))\)</span>. At <span class="math inline">\(t=0.01\)</span>, the first angle is <span class="math inline">\(0.8\pi\)</span> and the second is <span class="math inline">\(0.6\pi\)</span>; neither represents a full
+revolution.</p>
+</blockquote>
+<h2 id="conceptual-questions-for-discussion">Conceptual questions for
+discussion</h2>
+<ol type="1">
+<li><p>Why does <span class="math inline">\(\sin\theta\)</span> have the
+same sign for all angles in quadrant II, regardless of their
+magnitude?</p></li>
+<li><p>Is <span class="math inline">\(\theta=0\)</span> a reference
+angle? Explain how axis angles differ from quadrant angles.</p></li>
+<li><p>Why does <span class="math inline">\(\tan\theta\)</span> repeat
+after <span class="math inline">\(\pi\)</span> while sine and cosine
+require <span class="math inline">\(2\pi\)</span>?</p></li>
+<li><p>Can a sector have negative area? How should a clockwise rotation
+be handled?</p></li>
+<li><p>What information is lost when a directed angle is reduced to a
+coterminal angle between <span class="math inline">\(0\)</span> and
+<span class="math inline">\(2\pi\)</span>?</p></li>
+<li><p>Why might a model of constant angular speed be inappropriate for
+a real motor as it starts or stops?</p></li>
+</ol>
+<h2 id="chapter-review-exercises">Chapter review exercises</h2>
+<h3 class="unnumbered" id="core-mathematical-skills">Core mathematical
+skills</h3>
+<ol type="1">
+<li><p>Convert <span class="math inline">\(315^\circ\)</span> to
+radians.</p></li>
+<li><p>Convert <span class="math inline">\(-7\pi/12\)</span> to
+degrees.</p></li>
+<li><p>Give three angles coterminal with <span class="math inline">\(-80^\circ\)</span>.</p></li>
+<li><p>Find the reference angle of <span class="math inline">\(11\pi/6\)</span>.</p></li>
+<li><p>Find the reference angle of <span class="math inline">\(-5\pi/4\)</span>.</p></li>
+<li><p>A circle has radius <span class="math inline">\(9\)</span> cm and
+angle <span class="math inline">\(2\pi/5\)</span>. Find the arc
+length.</p></li>
+<li><p>A circle has radius <span class="math inline">\(4\)</span> m and
+sector angle <span class="math inline">\(135^\circ\)</span>. Find its
+area.</p></li>
+<li><p>An arc has length <span class="math inline">\(15\)</span> cm on a
+circle of radius <span class="math inline">\(6\)</span> cm. Find the
+angle in radians.</p></li>
+<li><p>Evaluate <span class="math inline">\(\sin(7\pi/6)\)</span>
+exactly.</p></li>
+<li><p>Evaluate <span class="math inline">\(\cos(5\pi/3)\)</span>
+exactly.</p></li>
+<li><p>Evaluate <span class="math inline">\(\tan(3\pi/4)\)</span>
+exactly.</p></li>
+<li><p>Find <span class="math inline">\(\sec(2\pi/3)\)</span> and state
+the relevant restriction.</p></li>
+<li><p>Explain why <span class="math inline">\(\tan(\pi/2)\)</span> is
+undefined.</p></li>
+<li><p>Find <span class="math inline">\(\sin(-13\pi/6)\)</span> using
+periodicity.</p></li>
+<li><p>Find <span class="math inline">\(\cos(17\pi/4)\)</span> using
+periodicity.</p></li>
+<li><p>Verify <span class="math inline">\(\sin^2(5\pi/6)+\cos^2(5\pi/6)=1\)</span>.</p></li>
+<li><p>Find sine and cosine of an angle passing through <span class="math inline">\((-5,12)\)</span>.</p></li>
+<li><p>Find the quadrant of the point <span class="math inline">\((\cos(4\pi/3),\sin(4\pi/3))\)</span>.</p></li>
+<li><p>Find the principal direction of the vector <span class="math inline">\((-8,-6)\)</span> in degrees between <span class="math inline">\(0\)</span> and <span class="math inline">\(360\)</span>.</p></li>
+<li><p>Explain the difference between <span class="math inline">\(\arctan(y/x)\)</span> and <span class="math inline">\(\operatorname{atan2}(y,x)\)</span>.</p></li>
+<li><p>A wheel rotates <span class="math inline">\(90\)</span> rpm.
+Express its angular speed in rad/s.</p></li>
+<li><p>A point 20 cm from a rotation axis has angular speed <span class="math inline">\(6\)</span> rad/s. Find its tangential
+speed.</p></li>
+<li><p>A wheel has radius <span class="math inline">\(0.5\)</span> m.
+How many revolutions cover a path length of <span class="math inline">\(10\pi\)</span> m without slipping?</p></li>
+<li><p>Write parametric equations for radius <span class="math inline">\(4\)</span>, speed <span class="math inline">\(2\)</span> rad/s, and initial angle <span class="math inline">\(\pi/2\)</span>.</p></li>
+<li><p>Find the period of <span class="math inline">\(x(t)=3\cos(5t)\)</span>.</p></li>
+<li><p>Explain why <span class="math inline">\(s=r\theta\)</span>
+requires radians.</p></li>
+<li><p>Compare arc lengths for radii <span class="math inline">\(r\)</span> and <span class="math inline">\(3r\)</span> at a fixed angle.</p></li>
+<li><p>Compare sector areas for radii <span class="math inline">\(r\)</span> and <span class="math inline">\(3r\)</span> at a fixed angle.</p></li>
+<li><p>A scanning arm of radius 0.6 m sweeps <span class="math inline">\(75^\circ\)</span>. Compute arc length and sector
+area.</p></li>
+<li><p>Explain the calculus significance of the ratio <span class="math inline">\(\sin h/h\)</span> as <span class="math inline">\(h\)</span> approaches zero in radians.</p></li>
+</ol>
+<h2 id="calculus-readiness-checkpoint">Calculus-readiness
+checkpoint</h2>
+<p>Radians become especially important in calculus because the
+fundamental limit <span class="math inline">\(\lim_{h\to0}(\sin
+h)/h=1\)</span> holds when <span class="math inline">\(h\)</span> is
+measured in radians. In later chapters, this result helps explain
+derivatives of sine and cosine. For now, calculate <span class="math inline">\(\sin(h)/h\)</span> for <span class="math inline">\(h=0.5,0.1,0.01\)</span> radians, compare it with
+the same numerical inputs interpreted as degrees, and explain why the
+units matter.</p>
+<h2 id="extended-application-rotating-imaging-platform">Extended
+application: Rotating imaging platform</h2>
+<p>A marker sits 12 cm from the center of a rotating platform. Its angle
+is measured counterclockwise from the positive horizontal axis. The
+quantities in this investigation are illustrative rather than measured
+observations.</p>
+<h3 id="formulating-the-mathematical-model">Formulating the mathematical
+model</h3>
+<p>The proposed relationship is <span class="math display">\[X(\theta)=12\cos\theta.\]</span> Before
+calculating, identify the input and output, their units, and the
+interval on which the model is being studied. Distinguish the
+mathematical domain from the practical domain. The numerical study uses
+inputs from <span class="math inline">\(0\)</span> to <span class="math inline">\(6.28\)</span>.</p>
+<blockquote class="example">
+<p><strong>Example 18: Analytical investigation.</strong> Find the arc
+length at <span class="math inline">\(\theta=\pi/3\)</span> and both
+coordinates. Identify all angles in one revolution where the horizontal
+coordinate is zero.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> Arc length <span class="math inline">\(4\pi\)</span> cm; coordinates <span class="math inline">\((6,6\sqrt3)\)</span> cm. Zeros at <span class="math inline">\(\pi/2\)</span> and <span class="math inline">\(3\pi/2\)</span>.</p>
+</blockquote>
+<h3 id="connecting-numerical-and-graphical-representations">Connecting
+numerical and graphical representations</h3>
+<table>
+<caption>Selected predictions from the illustrative model. Values are
+rounded for display.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Angle (rad)</th>
+<th style="text-align: right;">Horizontal position (cm)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">12</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1.57</td>
+<td style="text-align: right;">-1.241e-12</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3.14</td>
+<td style="text-align: right;">-12</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4.71</td>
+<td style="text-align: right;">3.717e-12</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">6.28</td>
+<td style="text-align: right;">12</td>
+</tr>
+</tbody>
+</table>
+<figure>
+<img alt="Model predictions over the stated investigation interval. The graph represents a mathematical model, not observed data." src="figures/ch08/applied_project.svg" style="width:90.0%"/>
+<figcaption aria-hidden="true">Model predictions over the stated
+investigation interval. The graph represents a mathematical model, not
+observed data.</figcaption>
+</figure>
+<p><strong>Interpretation.</strong> Compare the tabulated values with
+the graph. Identify the intervals over which the output increases or
+decreases, and distinguish a sampled extremum from an exact analytical
+extremum. Explain whether interpolation and extrapolation have the same
+justification in this setting.</p>
+<h3 id="r-implementation">R implementation</h3>
+<p>The following standalone script defines the model, generates
+predictions, and draws a labeled graph. Read the formula before running
+the code. The sampled range is a numerical diagnostic, not a proof of
+the exact range.</p>
+<div class="code-shell"><div class="code-bar"><span>R</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a aria-hidden="true" href="#cb3-1" tabindex="-1"></a><span class="co"># Applied investigation: Rotating imaging platform</span></span>
+<span id="cb3-2"><a aria-hidden="true" href="#cb3-2" tabindex="-1"></a><span class="co"># 1. Define the input domain and model</span></span>
+<span id="cb3-3"><a aria-hidden="true" href="#cb3-3" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="fl">6.28318530718</span>, <span class="at">length.out =</span> <span class="dv">301</span>)</span>
+<span id="cb3-4"><a aria-hidden="true" href="#cb3-4" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">12</span><span class="sc">*</span><span class="fu">cos</span>(x)</span>
+<span id="cb3-5"><a aria-hidden="true" href="#cb3-5" tabindex="-1"></a></span>
+<span id="cb3-6"><a aria-hidden="true" href="#cb3-6" tabindex="-1"></a><span class="co"># 2. Inspect numerical predictions</span></span>
+<span id="cb3-7"><a aria-hidden="true" href="#cb3-7" tabindex="-1"></a>idx <span class="ot">&lt;-</span> <span class="fu">unique</span>(<span class="fu">round</span>(<span class="fu">seq</span>(<span class="dv">1</span>, <span class="fu">length</span>(x), <span class="at">length.out =</span> <span class="dv">5</span>)))</span>
+<span id="cb3-8"><a aria-hidden="true" href="#cb3-8" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">data.frame</span>(<span class="at">input =</span> x[idx], <span class="at">output =</span> y[idx]))</span>
+<span id="cb3-9"><a aria-hidden="true" href="#cb3-9" tabindex="-1"></a></span>
+<span id="cb3-10"><a aria-hidden="true" href="#cb3-10" tabindex="-1"></a><span class="co"># 3. Visualize the model with labeled axes</span></span>
+<span id="cb3-11"><a aria-hidden="true" href="#cb3-11" tabindex="-1"></a><span class="fu">plot</span>(x, y, <span class="at">type =</span> <span class="st">"l"</span>, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">"#176B87"</span>,</span>
+<span id="cb3-12"><a aria-hidden="true" href="#cb3-12" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Angle (rad)"</span>, <span class="at">ylab =</span> <span class="st">"Horizontal position (cm)"</span>)</span>
+<span id="cb3-13"><a aria-hidden="true" href="#cb3-13" tabindex="-1"></a><span class="fu">grid</span>()</span>
+<span id="cb3-14"><a aria-hidden="true" href="#cb3-14" tabindex="-1"></a></span>
+<span id="cb3-15"><a aria-hidden="true" href="#cb3-15" tabindex="-1"></a><span class="co"># 4. Check the sampled output range</span></span>
+<span id="cb3-16"><a aria-hidden="true" href="#cb3-16" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">range</span>(y))</span></code></pre></div></div>
+<h3 id="python-implementation">Python implementation</h3>
+<p>Repeat the same investigation using NumPy arrays and Matplotlib.
+Compare the printed predictions with the R output, allowing for
+rounding.</p>
+<div class="code-shell"><div class="code-bar"><span>Python</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" href="#cb4-1" tabindex="-1"></a><span class="co"># Applied investigation: Rotating imaging platform</span></span>
+<span id="cb4-2"><a aria-hidden="true" href="#cb4-2" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb4-3"><a aria-hidden="true" href="#cb4-3" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb4-4"><a aria-hidden="true" href="#cb4-4" tabindex="-1"></a></span>
+<span id="cb4-5"><a aria-hidden="true" href="#cb4-5" tabindex="-1"></a><span class="co"># 1. Define the input domain and model</span></span>
+<span id="cb4-6"><a aria-hidden="true" href="#cb4-6" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="fl">6.28318530718</span>, <span class="dv">301</span>)</span>
+<span id="cb4-7"><a aria-hidden="true" href="#cb4-7" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">12</span><span class="op">*</span>np.cos(x)</span>
+<span id="cb4-8"><a aria-hidden="true" href="#cb4-8" tabindex="-1"></a></span>
+<span id="cb4-9"><a aria-hidden="true" href="#cb4-9" tabindex="-1"></a><span class="co"># 2. Inspect numerical predictions</span></span>
+<span id="cb4-10"><a aria-hidden="true" href="#cb4-10" tabindex="-1"></a>idx <span class="op">=</span> np.unique(np.linspace(<span class="dv">0</span>, <span class="bu">len</span>(x)<span class="op">-</span><span class="dv">1</span>, <span class="dv">5</span>).<span class="bu">round</span>().astype(<span class="bu">int</span>))</span>
+<span id="cb4-11"><a aria-hidden="true" href="#cb4-11" tabindex="-1"></a><span class="bu">print</span>(np.column_stack((x[idx], y[idx])))</span>
+<span id="cb4-12"><a aria-hidden="true" href="#cb4-12" tabindex="-1"></a></span>
+<span id="cb4-13"><a aria-hidden="true" href="#cb4-13" tabindex="-1"></a><span class="co"># 3. Visualize the model with labeled axes</span></span>
+<span id="cb4-14"><a aria-hidden="true" href="#cb4-14" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="fl">3.6</span>))</span>
+<span id="cb4-15"><a aria-hidden="true" href="#cb4-15" tabindex="-1"></a>ax.plot(x, y, <span class="st">"-"</span>, color<span class="op">=</span><span class="st">"#176B87"</span>, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb4-16"><a aria-hidden="true" href="#cb4-16" tabindex="-1"></a>ax.<span class="bu">set</span>(xlabel<span class="op">=</span><span class="st">"Angle (rad)"</span>, ylabel<span class="op">=</span><span class="st">"Horizontal position (cm)"</span>)</span>
+<span id="cb4-17"><a aria-hidden="true" href="#cb4-17" tabindex="-1"></a>ax.grid(alpha<span class="op">=</span><span class="fl">0.22</span>)</span>
+<span id="cb4-18"><a aria-hidden="true" href="#cb4-18" tabindex="-1"></a>ax.spines[[<span class="st">"top"</span>, <span class="st">"right"</span>]].set_visible(<span class="va">False</span>)</span>
+<span id="cb4-19"><a aria-hidden="true" href="#cb4-19" tabindex="-1"></a>fig.tight_layout()</span>
+<span id="cb4-20"><a aria-hidden="true" href="#cb4-20" tabindex="-1"></a>plt.show()</span>
+<span id="cb4-21"><a aria-hidden="true" href="#cb4-21" tabindex="-1"></a></span>
+<span id="cb4-22"><a aria-hidden="true" href="#cb4-22" tabindex="-1"></a><span class="co"># 4. Check the sampled output range</span></span>
+<span id="cb4-23"><a aria-hidden="true" href="#cb4-23" tabindex="-1"></a><span class="bu">print</span>(np.<span class="bu">min</span>(y), np.<span class="bu">max</span>(y))</span></code></pre></div></div>
+<h3 id="guided-practice-checking-the-model">Guided practice: checking
+the model</h3>
+<ol type="1">
+<li><p>Calculate the outputs at the two endpoints by hand. Compare them
+with the numerical table.</p></li>
+<li><p>Select an interior input not listed in the table. Predict the
+output before evaluating it in either language.</p></li>
+<li><p>Explain the meaning of the difference between the two endpoint
+outputs, including units. If appropriate, calculate the average rate of
+change.</p></li>
+<li><p>Identify a physical assumption of the model and describe a
+circumstance in which it would fail.</p></li>
+</ol>
+<h2 id="chapter-project-investigating-rotating-imaging-platform">Chapter
+project: investigating Rotating imaging platform</h2>
+<p>Prepare a short technical report for a reader who has not studied the
+model. Use the preceding case as a starting point, but develop your own
+investigation rather than merely reproducing the worked example.</p>
+<ol type="1">
+<li><p>State a quantitative question that can be answered using the
+model. Define all variables, units, and restrictions.</p></li>
+<li><p>Modify one meaningful numerical parameter in the formula. Explain
+what the change represents in the original context. Derive the revised
+formula and predict the direction of change before computing.</p></li>
+<li><p>Compare the original and revised models at five common admissible
+inputs. Present a labeled table and explain the largest difference in
+the table.</p></li>
+<li><p>Produce a graph containing both models on the same axes. Use a
+legend and distinguish the curves with line styles or markers. Explain
+the shape and any intersections.</p></li>
+<li><p>Solve your quantitative question algebraically where possible.
+Verify the result using R and Python; report any differences due to
+numerical precision.</p></li>
+<li><p>Discuss at least two limitations. Describe what measurements
+would be needed to assess the model in practice. Do not present
+simulated predictions as empirical evidence.</p></li>
+</ol>
+<h3 class="unnumbered" id="project-deliverables-and-assessment">Project
+deliverables and assessment</h3>
+<p>Submit a two- to three-page report, the two runnable scripts, and the
+labeled figure. The report should stand on its own without requiring the
+reader to inspect the code.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Criterion</th>
+<th style="text-align: right;">Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Mathematical formulation and domain</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Analytical reasoning and verification</td>
+<td style="text-align: right;">25</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Reproducible R and Python
+computations</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Graph and table quality</td>
+<td style="text-align: right;">15</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Interpretation and limitations</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Total</td>
+<td style="text-align: right;">100</td>
+</tr>
+</tbody>
+</table>
+<h2 class="unnumbered" id="chapter-summary">Chapter summary</h2>
+<ul>
+<li><p>One full revolution is <span class="math inline">\(360^\circ=2\pi\)</span> radians.</p></li>
+<li><p>Arc length and sector area are <span class="math inline">\(s=r|\theta|\)</span> and <span class="math inline">\(A=\frac12r^2|\theta|\)</span> for
+radians.</p></li>
+<li><p>Unit-circle coordinates are <span class="math inline">\((\cos\theta,\sin\theta)\)</span> and satisfy <span class="math inline">\(\cos^2\theta+\sin^2\theta=1\)</span>.</p></li>
+<li><p>Reference angles and quadrant signs determine exact trigonometric
+values.</p></li>
+<li><p>Angular and tangential speeds satisfy <span class="math inline">\(v=r|\omega|\)</span>.</p></li>
+<li><p>Uniform circular motion can be modeled parametrically with sine
+and cosine.</p></li>
+</ul>
+<h2>Companion scripts</h2><p><a download="" href="code/ch08/applied_project.R">applied_project.R</a></p><p><a download="" href="code/ch08/applied_project.py">applied_project.py</a></p><p><a download="" href="code/ch08/chapter08_labs.R">chapter08_labs.R</a></p><p><a download="" href="code/ch08/chapter08_labs.py">chapter08_labs.py</a></p><footer><a href="chapter07.html">← Previous</a><a href="chapter09.html">Next →</a></footer><section class="investigation"><h2 id="interactive-investigation">Interactive investigation: Unit circle coordinates</h2><div data-investigation="8"><p>Enable JavaScript to explore the model.</p></div><p><strong>Explore and explain:</strong> Predict the signs of cosine and sine in each quadrant.</p></section>
+</main><nav aria-label="On this page" class="chapter-toc" id="TOC" role="doc-toc"><strong>On this page</strong>
+<ul>
+<li><a href="#angles-radian-measure-and-the-unit-circle" id="toc-angles-radian-measure-and-the-unit-circle">Angles, Radian
+Measure, and the Unit Circle</a>
+<ul>
+<li><a href="#opening-context-measuring-rotation-in-science" id="toc-opening-context-measuring-rotation-in-science">Opening context:
+measuring rotation in science</a></li>
+<li><a href="#learning-outcomes" id="toc-learning-outcomes">Learning
+outcomes</a></li>
+<li><a href="#prerequisite-check" id="toc-prerequisite-check">Prerequisite check</a></li>
+<li><a href="#how-to-use-the-computational-laboratories" id="toc-how-to-use-the-computational-laboratories">How to use the
+computational laboratories</a></li>
+<li><a href="#angles-as-rotations-and-directed-angles" id="toc-angles-as-rotations-and-directed-angles">Angles as rotations and
+directed angles</a></li>
+<li><a href="#degree-and-radian-measure" id="toc-degree-and-radian-measure">Degree and radian measure</a></li>
+<li><a href="#arc-length-and-the-geometry-of-radians" id="toc-arc-length-and-the-geometry-of-radians">Arc length and the
+geometry of radians</a></li>
+<li><a href="#area-of-a-circular-sector" id="toc-area-of-a-circular-sector">Area of a circular sector</a></li>
+<li><a href="#standard-position-quadrants-and-reference-angles" id="toc-standard-position-quadrants-and-reference-angles">Standard
+position, quadrants, and reference angles</a></li>
+<li><a href="#the-unit-circle-and-coordinate-definitions" id="toc-the-unit-circle-and-coordinate-definitions">The unit circle and
+coordinate definitions</a></li>
+<li><a href="#special-triangles-and-exact-trigonometric-values" id="toc-special-triangles-and-exact-trigonometric-values">Special
+triangles and exact trigonometric values</a></li>
+<li><a href="#tangent-and-the-remaining-trigonometric-ratios" id="toc-tangent-and-the-remaining-trigonometric-ratios">Tangent and the
+remaining trigonometric ratios</a></li>
+<li><a href="#symmetry-periodicity-and-coterminal-angles" id="toc-symmetry-periodicity-and-coterminal-angles">Symmetry,
+periodicity, and coterminal angles</a></li>
+<li><a href="#angles-from-coordinates-and-inverse-trigonometry" id="toc-angles-from-coordinates-and-inverse-trigonometry">Angles from
+coordinates and inverse trigonometry</a></li>
+<li><a href="#angular-and-linear-speed" id="toc-angular-and-linear-speed">Angular and linear speed</a></li>
+<li><a href="#circular-motion-as-a-parametric-model" id="toc-circular-motion-as-a-parametric-model">Circular motion as a
+parametric model</a></li>
+<li><a href="#applications-and-model-interpretation" id="toc-applications-and-model-interpretation">Applications and model
+interpretation</a></li>
+<li><a href="#visual-investigations" id="toc-visual-investigations">Visual investigations</a>
+<ul>
+<li><a href="#investigation-1-one-full-turn-and-the-radian-scale" id="toc-investigation-1-one-full-turn-and-the-radian-scale">Investigation
+1: One full turn and the radian scale</a></li>
+<li><a href="#investigation-2-arc-length-grows-linearly-in-radius" id="toc-investigation-2-arc-length-grows-linearly-in-radius">Investigation
+2: Arc length grows linearly in radius</a></li>
+<li><a href="#investigation-3-exact-unit-circle-coordinates" id="toc-investigation-3-exact-unit-circle-coordinates">Investigation 3:
+Exact unit-circle coordinates</a></li>
+<li><a href="#investigation-4-periodic-motion-and-coordinate-traces" id="toc-investigation-4-periodic-motion-and-coordinate-traces">Investigation
+4: Periodic motion and coordinate traces</a></li>
+</ul></li>
+<li><a href="#problem-solving-workshops" id="toc-problem-solving-workshops">Problem-solving workshops</a>
+<ul>
+<li><a href="#workshop-a-centrifuge-calculations" id="toc-workshop-a-centrifuge-calculations">Workshop A: Centrifuge
+calculations</a></li>
+<li><a href="#workshop-b-imaging-geometry" id="toc-workshop-b-imaging-geometry">Workshop B: Imaging
+geometry</a></li>
+<li><a href="#workshop-c-finding-direction-from-coordinates" id="toc-workshop-c-finding-direction-from-coordinates">Workshop C:
+Finding direction from coordinates</a></li>
+</ul></li>
+<li><a href="#computational-laboratory-a-unit-circle-coordinates-and-exact-angle-checks" id="toc-computational-laboratory-a-unit-circle-coordinates-and-exact-angle-checks">Computational
+laboratory A: Unit-circle coordinates and exact-angle checks</a>
+<ul>
+<li><a href="#r-code" id="toc-r-code">R code</a></li>
+<li><a href="#python-code" id="toc-python-code">Python code</a></li>
+</ul></li>
+<li><a href="#computational-laboratory-b-arc-length-and-sector-area" id="toc-computational-laboratory-b-arc-length-and-sector-area">Computational
+laboratory B: Arc length and sector area</a></li>
+<li><a href="#computational-laboratory-c-circular-motion" id="toc-computational-laboratory-c-circular-motion">Computational
+laboratory C: Circular motion</a></li>
+<li><a href="#extended-guided-practice-reasoning-with-the-unit-circle" id="toc-extended-guided-practice-reasoning-with-the-unit-circle">Extended
+guided practice: reasoning with the unit circle</a>
+<ul>
+<li><a href="#investigation-5-building-a-complete-exact-value-table" id="toc-investigation-5-building-a-complete-exact-value-table">Investigation
+5: Building a complete exact-value table</a></li>
+<li><a href="#investigation-6-radian-approximation-and-the-small-angle-idea" id="toc-investigation-6-radian-approximation-and-the-small-angle-idea">Investigation
+6: Radian approximation and the small-angle idea</a></li>
+<li><a href="#investigation-7-signed-displacement-versus-distance-traveled" id="toc-investigation-7-signed-displacement-versus-distance-traveled">Investigation
+7: Signed displacement versus distance traveled</a></li>
+</ul></li>
+<li><a href="#further-worked-examples-and-diagnostic-practice" id="toc-further-worked-examples-and-diagnostic-practice">Further worked
+examples and diagnostic practice</a></li>
+<li><a href="#applied-investigation-comparing-two-rotating-systems" id="toc-applied-investigation-comparing-two-rotating-systems">Applied
+investigation: comparing two rotating systems</a></li>
+<li><a href="#conceptual-questions-for-discussion" id="toc-conceptual-questions-for-discussion">Conceptual questions for
+discussion</a></li>
+<li><a href="#chapter-review-exercises" id="toc-chapter-review-exercises">Chapter review exercises</a>
+<ul>
+<li><a href="#core-mathematical-skills" id="toc-core-mathematical-skills">Core mathematical skills</a></li>
+</ul></li>
+<li><a href="#calculus-readiness-checkpoint" id="toc-calculus-readiness-checkpoint">Calculus-readiness
+checkpoint</a></li>
+<li><a href="#extended-application-rotating-imaging-platform" id="toc-extended-application-rotating-imaging-platform">Extended
+application: Rotating imaging platform</a>
+<ul>
+<li><a href="#formulating-the-mathematical-model" id="toc-formulating-the-mathematical-model">Formulating the mathematical
+model</a></li>
+<li><a href="#connecting-numerical-and-graphical-representations" id="toc-connecting-numerical-and-graphical-representations">Connecting
+numerical and graphical representations</a></li>
+<li><a href="#r-implementation" id="toc-r-implementation">R
+implementation</a></li>
+<li><a href="#python-implementation" id="toc-python-implementation">Python implementation</a></li>
+<li><a href="#guided-practice-checking-the-model" id="toc-guided-practice-checking-the-model">Guided practice: checking
+the model</a></li>
+</ul></li>
+<li><a href="#chapter-project-investigating-rotating-imaging-platform" id="toc-chapter-project-investigating-rotating-imaging-platform">Chapter
+project: investigating Rotating imaging platform</a>
+<ul>
+<li><a href="#project-deliverables-and-assessment" id="toc-project-deliverables-and-assessment">Project deliverables and
+assessment</a></li>
+</ul></li>
+<li><a href="#chapter-summary" id="toc-chapter-summary">Chapter
+summary</a></li>
+</ul></li>
+</ul>
+</nav></div><script src="investigations.js"></script></body></html>

@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8"/>
+<meta content="pandoc" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+<title>Sequences, Series,
+and Mathematical Patterns | Applied Precalculus</title>
+<style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+
+
+<link href="site.css" rel="stylesheet"/><script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script defer="" src="search-index.js"></script><script defer="" src="site.js"></script></head><body><nav class="site-nav" id="book-nav"><strong class="brand">Applied Precalculus</strong><p class="subtitle">Using R and Python</p><input aria-label="Search the book" id="book-search" placeholder="Search the book"/><div aria-live="polite" class="search-results" id="search-results"></div><p class="nav-label">Contents</p><a class="" href="index.html">Preface</a><a class="" href="chapter01.html">1. Real Numbers, Algebraic Expressions, and Mathematical Reasoning</a><a class="" href="chapter02.html">2. Equations, Inequalities, and Applications</a><a class="" href="chapter03.html">3. Coordinate Geometry, Lines, and Systems of Equations</a><a class="" href="chapter04.html">4. Functions, Graphs, and Multiple Representations</a><a class="" href="chapter05.html">5. Transformations, Compositions, and Inverse Functions</a><a class="" href="chapter06.html">6. Polynomial and Rational Functions</a><a class="" href="chapter07.html">7. Exponential and Logarithmic Functions</a><a class="" href="chapter08.html">8. Angles, Radian Measure, and the Unit Circle</a><a class="" href="chapter09.html">9. Trigonometric Functions and Their Graphs</a><a class="" href="chapter10.html">10. Trigonometric Identities and Equations</a><a class="" href="chapter11.html">11. Applications of Trigonometry and Periodic Models</a><a class="active" href="chapter12.html">12. Sequences, Series, and Mathematical Patterns</a><a class="" href="chapter13.html">13. Conic Sections and Parametric Equations</a><a class="" href="chapter14.html">14. Vectors, Polar Coordinates, and Geometric Modeling</a><a class="" href="chapter15.html">15. Rates of Change, Difference Quotients, and Limits</a><a class="" href="chapter16.html">16. Integrated Mathematical Modeling with R and Python</a><a class="" href="programming.html">Getting Started with R and Python</a><a class="" href="resources.html">Computational Resource Guide</a></nav><a class="skip" href="#main-content">Skip to content</a><header class="topbar"><button aria-controls="book-nav" aria-expanded="false" class="menu">Contents</button><span>Applied Precalculus / Online edition</span><span class="spacer"></span><a href="resources.html">Resources</a></header><div class="page-grid"><main id="main-content">
+
+<h1 id="sequences-series-and-mathematical-patterns">Sequences, Series,
+and Mathematical Patterns</h1>
+<h2 class="unnumbered" id="opening-context-repeated-change-in-health-sciences">Opening context:
+repeated change in health sciences</h2>
+<p>A clinic purchases replacement sensors every month, a laboratory
+grows a cell culture in repeated generations, and a public-health
+program tracks vaccinations week by week. Each process generates a
+<em>sequence</em>: an ordered list whose position matters. Adding
+observations produces a <em>series</em>. The central questions are: What
+pattern describes the observations? How can we predict a later term?
+What does the total represent? When is extrapolation defensible?</p>
+<h2 class="unnumbered" id="learning-outcomes">Learning outcomes</h2>
+<p>By the end of the chapter, students should be able to (1) interpret
+sequences as functions on integer domains; (2) distinguish explicit and
+recursive descriptions; (3) derive arithmetic and geometric formulas;
+(4) evaluate finite sums with sigma notation; (5) use geometric sums and
+discuss convergence; (6) analyze compound-growth and repeated-dose
+models; (7) distinguish exact patterns from empirical approximations;
+(8) explore recurrence and sums in R and Python; and (9) connect
+difference quotients and discrete accumulation to calculus.</p>
+<h2 class="unnumbered" id="prerequisite-connections">Prerequisite
+connections</h2>
+<p>Chapter 4 introduced functions and multiple representations; Chapter
+7 developed exponential models. In this chapter the input is usually an
+integer index, and the outputs form a discrete pattern. Unless stated
+otherwise, the first term has index <span class="math inline">\(n=1\)</span>. In computer code we label indices
+explicitly to avoid the common zero-indexing mismatch.</p>
+<h2 class="unnumbered" id="working-with-r-and-python">Working with R and
+Python</h2>
+<p>Every laboratory includes a prediction, a full-width <strong>R
+code</strong> listing, a full-width <strong>Python code</strong>
+listing, and interpretation questions. Execute the two programs
+independently; compare their results with hand calculations.</p>
+<h2 id="sequences-as-functions-on-integer-domains">Sequences as
+functions on integer domains</h2>
+<p>A sequence <span class="math inline">\(\{a_n\}_{n=1}^{\infty}\)</span> is a function
+whose domain is the positive integers. Its values <span class="math inline">\(a_1,a_2,\ldots\)</span> are called terms. The
+order is essential: <span class="math inline">\(2,4,8,16\)</span> is not
+the same sequence as <span class="math inline">\(16,8,4,2\)</span>. A
+finite sequence has a final index; an infinite sequence is defined for
+every positive integer, even though we cannot list all terms.</p>
+<blockquote class="example">
+<p><strong>Example 1.</strong> For <span class="math inline">\(a_n=3n-1\)</span>, the first four terms are <span class="math inline">\(2,5,8,11\)</span>. The term <span class="math inline">\(a_{20}=59\)</span> is found by substitution; it is
+not necessary to write all previous terms.</p>
+</blockquote>
+<p><strong>Guided practice 1.</strong> Evaluate <span class="math inline">\(a_1,a_2,a_5,a_{12}\)</span> for <span class="math inline">\(a_n=n^2-2n\)</span>. Identify whether the first
+four terms are increasing.</p>
+<h5 id="visual-investigation-1-discrete-versus-continuous.">Visual
+investigation 1: discrete versus continuous.</h5>
+<p>Plot <span class="math inline">\(a_n=2n+1\)</span> at <span class="math inline">\(n=1,2,3,4,5\)</span>. Then draw the line <span class="math inline">\(y=2x+1\)</span> on the same axes. The dots belong
+to the sequence; the continuous line is an extension. Explain why a
+value at <span class="math inline">\(x=2.5\)</span> is not a term of the
+original sequence.</p>
+<figure>
+<img alt="image" src="figures/precompiled/chapter12-01.svg"/>
+<figcaption aria-hidden="true">image</figcaption>
+</figure>
+<h2 id="explicit-formulas-tables-and-recursion">Explicit formulas,
+tables, and recursion</h2>
+<p>An <em>explicit formula</em> computes <span class="math inline">\(a_n\)</span> directly from <span class="math inline">\(n\)</span>. A <em>recurrence</em> defines later
+terms using earlier terms and requires an initial condition. For example
+<span class="math inline">\(a_1=4\)</span> and <span class="math inline">\(a_{n+1}=a_n+3\)</span> generates <span class="math inline">\(4,7,10,13,\ldots\)</span>. A recurrence without an
+initial condition does not specify a unique sequence. Tables and graphs
+help identify patterns, but a few observations never prove a rule for
+all indices.</p>
+<blockquote class="example">
+<p><strong>Example 2.</strong> Given <span class="math inline">\(a_1=2\)</span> and <span class="math inline">\(a_{n+1}=2a_n+1\)</span>, successive terms are
+<span class="math inline">\(2,5,11,23\)</span>. Solving <span class="math inline">\(a_{n+1}+1=2(a_n+1)\)</span> suggests <span class="math inline">\(a_n+1=3\cdot2^{n-1}\)</span>, hence <span class="math inline">\(a_n=3\cdot2^{n-1}-1\)</span>. Verify the initial
+condition and recurrence.</p>
+</blockquote>
+<p><strong>Guided practice 2.</strong> Generate five terms from <span class="math inline">\(b_1=10\)</span>, <span class="math inline">\(b_{n+1}=0.8b_n\)</span>. Explain the meaning of
+multiplying by <span class="math inline">\(0.8\)</span> each step.</p>
+<h2 id="arithmetic-sequences-constant-differences">Arithmetic sequences:
+constant differences</h2>
+<p>A sequence is arithmetic when <span class="math inline">\(a_{n+1}-a_n=d\)</span> is constant. Starting at
+<span class="math inline">\(a_1\)</span>, we add <span class="math inline">\(d\)</span> once to obtain <span class="math inline">\(a_2\)</span>, twice to obtain <span class="math inline">\(a_3\)</span>, and <span class="math inline">\(n-1\)</span> times to obtain <span class="math inline">\(a_n\)</span>. Thus <span class="math display">\[\boxed{a_n=a_1+(n-1)d}.\]</span> A negative <span class="math inline">\(d\)</span> gives a decreasing sequence, and <span class="math inline">\(d=0\)</span> gives a constant sequence. Arithmetic
+change is the discrete counterpart of a linear function: every unit
+increase in the index changes the output by the same amount.</p>
+<blockquote class="example">
+<p><strong>Example 3.</strong> A laboratory has <span class="math inline">\(240\)</span> test strips at the start of week 1
+and uses <span class="math inline">\(18\)</span> strips each week. The
+inventory at the start of week <span class="math inline">\(n\)</span> is
+<span class="math inline">\(a_n=240-18(n-1)\)</span>, as long as no new
+stock arrives. At the start of week 8, <span class="math inline">\(a_8=114\)</span>. The mathematical formula becomes
+physically invalid after the stock is exhausted.</p>
+</blockquote>
+<p><strong>Guided practice 3.</strong> An arithmetic sequence has <span class="math inline">\(a_4=17\)</span> and <span class="math inline">\(a_{10}=41\)</span>. Subtract the two equations to
+determine <span class="math inline">\(d\)</span>; then find <span class="math inline">\(a_1\)</span> and <span class="math inline">\(a_{25}\)</span>.</p>
+<h5 id="visual-investigation-2-first-differences.">Visual investigation
+2: first differences.</h5>
+<p>Create a table of <span class="math inline">\(n\)</span>, <span class="math inline">\(a_n\)</span>, and <span class="math inline">\(a_{n+1}-a_n\)</span> for <span class="math inline">\(a_n=12-2n\)</span>. Explain how the constant
+differences appear as a fixed vertical step between consecutive plotted
+points.</p>
+<h2 id="arithmetic-series-accumulating-a-constant-difference">Arithmetic
+series: accumulating a constant difference</h2>
+<p>A series adds terms of a sequence. Write <span class="math inline">\(S_n=a_1+a_2+\cdots+a_n\)</span>. For an arithmetic
+sequence, pairing the first and last terms gives <span class="math inline">\(a_1+a_n\)</span>; the second and next-to-last also
+add to <span class="math inline">\(a_1+a_n\)</span>. Counting <span class="math inline">\(n\)</span> terms and dividing by two yields <span class="math display">\[\boxed{S_n=\frac n2(a_1+a_n)=\frac
+n2\bigl(2a_1+(n-1)d\bigr)}.\]</span> This formula works for odd and even
+<span class="math inline">\(n\)</span>; the pairing argument can be
+formalized by writing the sum forwards and backwards and adding the two
+equations.</p>
+<blockquote class="example">
+<p><strong>Example 4.</strong> A community program enrolls 15 new
+participants in its first week and increases weekly enrollment by 4. In
+12 weeks the weekly enrollment is <span class="math inline">\(15+11(4)=59\)</span>, so total enrollment is <span class="math inline">\(S_{12}=12(15+59)/2=444\)</span> participants,
+assuming no person enrolls twice.</p>
+</blockquote>
+<p><strong>Guided practice 4.</strong> Calculate <span class="math inline">\(5+9+13+\cdots+65\)</span> by first finding the
+number of terms. Verify your result by pairing terms.</p>
+<h2 id="geometric-sequences-constant-ratios">Geometric sequences:
+constant ratios</h2>
+<p>A geometric sequence satisfies <span class="math inline">\(a_{n+1}/a_n=r\)</span> when <span class="math inline">\(a_n\ne0\)</span>. Equivalently <span class="math inline">\(a_{n+1}=ra_n\)</span>, which also defines the
+all-zero case. Repeated multiplication gives <span class="math display">\[\boxed{a_n=a_1r^{n-1}}.\]</span> When <span class="math inline">\(r&gt;1\)</span> and <span class="math inline">\(a_1&gt;0\)</span>, the sequence grows; when <span class="math inline">\(0&lt;r&lt;1\)</span>, it decays; when <span class="math inline">\(r&lt;0\)</span>, signs alternate. The case <span class="math inline">\(r=1\)</span> is constant. For a negative ratio, do
+not infer growth or decay from the sign alone: examine <span class="math inline">\(|r|\)</span>.</p>
+<blockquote class="example">
+<p><strong>Example 5.</strong> A simulated culture begins with 500 cells
+and doubles each generation. Generation <span class="math inline">\(n\)</span> has <span class="math inline">\(a_n=500\cdot2^{n-1}\)</span>. At generation 6, the
+model predicts 16,000 cells. Real cultures cannot double indefinitely
+because nutrients and space are finite.</p>
+</blockquote>
+<p><strong>Guided practice 5.</strong> A concentration is multiplied by
+<span class="math inline">\(0.75\)</span> each hour, starting at <span class="math inline">\(80\)</span> units. Write an explicit formula and
+compute the value after four full hours. Carefully state whether the
+starting time is indexed by <span class="math inline">\(n=0\)</span> or
+<span class="math inline">\(n=1\)</span>.</p>
+<h5 id="visual-investigation-3-ratios-versus-differences.">Visual
+investigation 3: ratios versus differences.</h5>
+<p>Compare <span class="math inline">\(a_n=4+3(n-1)\)</span> with <span class="math inline">\(b_n=4(1.5)^{n-1}\)</span> for <span class="math inline">\(n=1,\ldots,8\)</span>. Calculate consecutive
+differences and ratios. Which measure is constant for each model? When
+do the geometric values overtake the arithmetic values?</p>
+<h2 id="finite-geometric-series-and-their-derivation">Finite geometric
+series and their derivation</h2>
+<p>For <span class="math inline">\(S_n=a_1+a_1r+\cdots+a_1r^{n-1}\)</span>, multiply
+by <span class="math inline">\(r\)</span> and subtract: <span class="math display">\[S_n-rS_n=a_1-a_1r^n.\]</span> Therefore, for
+<span class="math inline">\(r\ne1\)</span>, <span class="math display">\[\boxed{S_n=a_1\frac{1-r^n}{1-r}}.\]</span> For
+<span class="math inline">\(r=1\)</span>, all terms equal <span class="math inline">\(a_1\)</span> and <span class="math inline">\(S_n=na_1\)</span>. The finite-sum formula is valid
+for negative ratios and ratios larger than one; the infinite-sum formula
+discussed later needs additional conditions.</p>
+<blockquote class="example">
+<p><strong>Example 6.</strong> A scholarship fund distributes <span class="math inline">\(1000\)</span> in year 1 and 90% of the previous
+year’s distribution in each of the next four years. The five-year total
+is <span class="math inline">\(1000(1-0.9^5)/(1-0.9)=\$4095.10\)</span>.</p>
+</blockquote>
+<p><strong>Guided practice 6.</strong> Find <span class="math inline">\(3+6+12+24+48+96\)</span> using both direct
+addition and the geometric formula. What changes if the ratio equals
+one?</p>
+<h2 id="sigma-notation-and-index-transformations">Sigma notation and
+index transformations</h2>
+<p>Sigma notation <span class="math inline">\(\sum_{k=m}^{n}f(k)\)</span> means evaluate <span class="math inline">\(f(k)\)</span> at each integer from <span class="math inline">\(m\)</span> through <span class="math inline">\(n\)</span> and add the results. The letter <span class="math inline">\(k\)</span> is a dummy index; replacing it
+consistently with <span class="math inline">\(j\)</span> does not change
+the sum. Useful properties are <span class="math display">\[\sum_{k=1}^n(cu_k+dv_k)=c\sum_{k=1}^n
+u_k+d\sum_{k=1}^n v_k,\quad \sum_{k=1}^n1=n.\]</span> In particular
+<span class="math inline">\(\sum_{k=1}^n k=n(n+1)/2\)</span>. Changing
+the starting index requires changing the summand: <span class="math inline">\(\sum_{k=0}^{4}2^k=\sum_{j=1}^{5}2^{j-1}\)</span>.</p>
+<blockquote class="example">
+<p><strong>Example 7.</strong> Evaluate <span class="math inline">\(\sum_{k=1}^{5}(2k+1)=2(1+2+3+4+5)+5=35\)</span>.
+Checking by listing the terms <span class="math inline">\(3+5+7+9+11\)</span> gives the same result.</p>
+</blockquote>
+<p><strong>Guided practice 7.</strong> Rewrite <span class="math inline">\(7+10+13+16+19\)</span> using sigma notation in two
+different ways, one beginning at index 0 and one at index 1.</p>
+<h2 id="mathematical-induction-proving-a-pattern">Mathematical
+induction: proving a pattern</h2>
+<p>Observing a pattern in the first ten terms is not a proof that it
+holds for every positive integer. Mathematical induction has two parts.
+First verify the base case. Next assume a statement <span class="math inline">\(P(n)\)</span> is true and use that assumption to
+prove <span class="math inline">\(P(n+1)\)</span>. The conclusion then
+holds for every integer from the starting index onward.</p>
+<blockquote class="example">
+<p><strong>Example 8.</strong> Prove <span class="math inline">\(1+2+\cdots+n=n(n+1)/2\)</span>. Base case <span class="math inline">\(n=1\)</span>: both sides equal 1. Assume <span class="math inline">\(\sum_{k=1}^n k=n(n+1)/2\)</span>. Then <span class="math inline">\(\sum_{k=1}^{n+1}k=n(n+1)/2+(n+1)=(n+1)(n+2)/2\)</span>,
+which is the desired formula at <span class="math inline">\(n+1\)</span>.</p>
+</blockquote>
+<p><strong>Guided practice 8.</strong> Prove <span class="math inline">\(\sum_{k=1}^n(2k-1)=n^2\)</span> by induction.
+Identify exactly where the induction hypothesis is used.</p>
+<h2 id="infinite-geometric-series-and-convergence">Infinite geometric
+series and convergence</h2>
+<p>An infinite series is defined by the limit of its partial sums, not
+by performing infinitely many additions at once. If <span class="math inline">\(|r|&lt;1\)</span>, then <span class="math inline">\(r^n\to0\)</span>, so <span class="math display">\[\boxed{\sum_{k=0}^{\infty}ar^k=\frac{a}{1-r}\qquad(|r|&lt;1)}.\]</span>
+If <span class="math inline">\(|r|\ge1\)</span> and <span class="math inline">\(a\ne0\)</span>, the terms do not tend to zero and
+the geometric series does not converge. The special all-zero series
+converges trivially. Convergence is about partial sums approaching a
+finite value, not merely individual terms becoming small.</p>
+<blockquote class="example">
+<p><strong>Example 9.</strong> A patient receives an idealized sequence
+of doses contributing <span class="math inline">\(8,4,2,1,\ldots\)</span> units to a cumulative
+total. The theoretical sum is <span class="math inline">\(8/(1-1/2)=16\)</span> units. This is a sum of
+contributions, not automatically a model for the amount of medication
+present in the body at one time.</p>
+</blockquote>
+<p><strong>Guided practice 9.</strong> Determine whether <span class="math inline">\(\sum_{k=0}^{\infty}5(-0.4)^k\)</span> converges
+and compute its sum. Explain why alternating signs do not prevent
+convergence in this example.</p>
+<h5 id="visual-investigation-4-partial-sums.">Visual investigation 4:
+partial sums.</h5>
+<p>Draw <span class="math inline">\(S_n\)</span> for <span class="math inline">\(a=10\)</span> and <span class="math inline">\(r=0.6\)</span>, with <span class="math inline">\(n=1,\ldots,12\)</span>. Add the horizontal line
+<span class="math inline">\(S=25\)</span>. Why does the graph approach
+but never exceed 25? What changes for <span class="math inline">\(r=-0.6\)</span>?</p>
+<h2 id="recursive-models-with-constant-input">Recursive models with
+constant input</h2>
+<p>Many processes combine retention and repeated input: <span class="math inline">\(a_{n+1}=ra_n+b\)</span>. For <span class="math inline">\(r\ne1\)</span>, an equilibrium <span class="math inline">\(L\)</span> satisfies <span class="math inline">\(L=rL+b\)</span>, hence <span class="math inline">\(L=b/(1-r)\)</span>. Subtracting the equilibrium
+gives <span class="math inline">\(a_{n+1}-L=r(a_n-L)\)</span> and
+therefore <span class="math display">\[\boxed{a_n=L+(a_1-L)r^{n-1}}.\]</span> If <span class="math inline">\(|r|&lt;1\)</span>, the sequence approaches <span class="math inline">\(L\)</span>. If <span class="math inline">\(r=1\)</span>, the recurrence is arithmetic: <span class="math inline">\(a_n=a_1+(n-1)b\)</span>. If <span class="math inline">\(|r|&gt;1\)</span>, deviations from equilibrium
+generally grow rather than shrink.</p>
+<blockquote class="example">
+<p><strong>Example 10.</strong> A simulated medication model retains 70%
+of the previous amount each day and adds 12 mg at the next daily
+measurement: <span class="math inline">\(a_{n+1}=0.7a_n+12\)</span>,
+with <span class="math inline">\(a_1=12\)</span> mg. The equilibrium is
+<span class="math inline">\(L=12/0.3=40\)</span> mg, so <span class="math inline">\(a_n=40-28(0.7)^{n-1}\)</span>. This is a
+simplified discrete model, not a clinical dosing recommendation.</p>
+</blockquote>
+<p><strong>Guided practice 10.</strong> Solve <span class="math inline">\(a_{n+1}=0.8a_n+5\)</span>, <span class="math inline">\(a_1=5\)</span>. Find its equilibrium and its sixth
+term.</p>
+<h2 id="compounding-annuities-and-financial-interpretation">Compounding,
+annuities, and financial interpretation</h2>
+<p>With interest rate <span class="math inline">\(i\)</span> per
+compounding period and initial balance <span class="math inline">\(P\)</span>, a single deposit grows to <span class="math inline">\(P(1+i)^n\)</span> after <span class="math inline">\(n\)</span> periods. If a fixed deposit <span class="math inline">\(D\)</span> is made at the <em>end</em> of each
+period, its future value after <span class="math inline">\(n\)</span>
+deposits is <span class="math display">\[F_n=D\bigl[1+(1+i)+\cdots+(1+i)^{n-1}\bigr]=D\frac{(1+i)^n-1}{i},\quad
+i\ne0.\]</span> For <span class="math inline">\(i=0\)</span>, <span class="math inline">\(F_n=nD\)</span>. Timing matters:
+beginning-of-period deposits earn one additional period of interest.
+Fees, taxes, and varying rates are not included in this idealized
+formula.</p>
+<blockquote class="example">
+<p><strong>Example 11.</strong> A student deposits <span class="math inline">\(50\)</span> at the end of each month for 12 months
+at a hypothetical monthly rate of <span class="math inline">\(0.005\)</span>. The future value is <span class="math inline">\(50((1.005)^{12}-1)/0.005\approx\$616.78\)</span>.
+Total deposits are <span class="math inline">\(\$600\)</span>; the
+difference represents modeled interest.</p>
+</blockquote>
+<p><strong>Guided practice 11.</strong> Derive the future value for
+deposits of <span class="math inline">\(25\)</span> at the beginning of
+each month for six months, with monthly interest rate <span class="math inline">\(0.01\)</span>.</p>
+<h2 id="difference-tables-and-finite-differences">Difference tables and
+finite differences</h2>
+<p>For a sequence <span class="math inline">\(a_n\)</span>, its first
+differences are <span class="math inline">\(\Delta
+a_n=a_{n+1}-a_n\)</span>; second differences are <span class="math inline">\(\Delta^2a_n=\Delta a_{n+1}-\Delta a_n\)</span>. A
+linear formula has constant first differences, and a quadratic formula
+<span class="math inline">\(a_n=An^2+Bn+C\)</span> has constant second
+differences equal to <span class="math inline">\(2A\)</span> when
+indices increase by one. These patterns are useful for recognizing
+candidate formulas, but finite data alone cannot guarantee that a model
+continues indefinitely.</p>
+<blockquote class="example">
+<p><strong>Example 12.</strong> For <span class="math inline">\(a_n=n^2+2n\)</span>, the first five terms are
+<span class="math inline">\(3,8,15,24,35\)</span>. First differences are
+<span class="math inline">\(5,7,9,11\)</span>; second differences are
+<span class="math inline">\(2,2,2\)</span>. This is consistent with a
+quadratic whose leading coefficient is <span class="math inline">\(1\)</span>.</p>
+</blockquote>
+<p><strong>Guided practice 12.</strong> The observed values are <span class="math inline">\(4,9,16,25,36\)</span>. Construct a difference
+table and propose an explicit formula. Give one reason the next value is
+not logically forced by only five observations.</p>
+<h2 id="patterns-in-real-data-modeling-and-limitations">Patterns in real
+data: modeling and limitations</h2>
+<p>Observed sequences contain noise, missed measurements, changing
+conditions, and possible structural breaks. Arithmetic and geometric
+patterns are models, not laws. Compare predictions to data, examine
+residuals <span class="math inline">\(e_n=y_n-\hat y_n\)</span>, and
+state the measurement interval. A ratio of 1.1 per week differs from a
+ratio of 1.1 per month. Predictions far beyond the observed indices are
+extrapolations and should be interpreted cautiously.</p>
+<blockquote class="example">
+<p><strong>Example 13.</strong> Weekly test demand is <span class="math inline">\(100,108,117,126\)</span> units. Ratios are
+approximately <span class="math inline">\(1.080,1.083,1.077\)</span>; an
+8% geometric growth model is plausible as a short-term approximation,
+not an exact identity. Predict week 5 as <span class="math inline">\(100(1.08)^4\approx136\)</span> and compare with
+later observations when available.</p>
+</blockquote>
+<p><strong>Guided practice 13.</strong> A clinic records <span class="math inline">\(40,44,48,53,57\)</span> visits over five weeks.
+Compare arithmetic and geometric descriptions. Which model has the
+clearer interpretation for this short series? What additional evidence
+would you seek?</p>
+<h2 id="from-discrete-change-to-calculus">From discrete change to
+calculus</h2>
+<p>The average change between successive terms is <span class="math inline">\(\Delta a_n=a_{n+1}-a_n\)</span>. For <span class="math inline">\(a_n=f(nh)\)</span> with time step <span class="math inline">\(h\)</span>, the rate per unit time is <span class="math inline">\([f((n+1)h)-f(nh)]/h\)</span>. When <span class="math inline">\(h\)</span> becomes very small, calculus studies
+the limit of this quotient. Likewise, a sum of rectangular contributions
+<span class="math inline">\(\sum f(t_k)\Delta t\)</span> anticipates a
+definite integral. Sequences and finite sums therefore connect the
+discrete and continuous viewpoints.</p>
+<blockquote class="example">
+<p><strong>Example 14.</strong> For <span class="math inline">\(f(t)=t^2\)</span>, the forward difference quotient
+is <span class="math inline">\([(t+h)^2-t^2]/h=2t+h\)</span>. As <span class="math inline">\(h\to0\)</span>, this approaches <span class="math inline">\(2t\)</span>, the derivative of <span class="math inline">\(t^2\)</span>. At a fixed time step <span class="math inline">\(h=1\)</span>, the difference quotient is <span class="math inline">\(2t+1\)</span> rather than <span class="math inline">\(2t\)</span>.</p>
+</blockquote>
+<p><strong>Guided practice 14.</strong> Compute the forward difference
+quotient for <span class="math inline">\(f(t)=3t^2-2t\)</span> and
+identify its limiting expression as <span class="math inline">\(h\to0\)</span>.</p>
+<h5 id="visual-investigation-5-discrete-accumulation.">Visual
+investigation 5: discrete accumulation.</h5>
+<p>For <span class="math inline">\(f(t)=t\)</span> on <span class="math inline">\([0,4]\)</span>, calculate the left-endpoint sums
+using 4 and 8 equal rectangles. Compare each estimate with the triangle
+area <span class="math inline">\(8\)</span>. Explain why finer
+subdivisions improve the approximation.</p>
+<h2 id="deeper-investigation-geometric-patterns-and-the-doubling-time-question">Deeper
+investigation: geometric patterns and the doubling-time question</h2>
+<p>A common scientific question asks how many time steps are required
+for an initially positive quantity to reach a target. If <span class="math inline">\(a_n=a_1r^{n-1}\)</span> with <span class="math inline">\(r&gt;1\)</span>, then <span class="math inline">\(a_n\ge T\)</span> is equivalent to <span class="math inline">\(r^{n-1}\ge T/a_1\)</span>. Because <span class="math inline">\(\ln r&gt;0\)</span>, taking natural logarithms
+preserves the inequality: <span class="math display">\[n\ge
+1+\frac{\ln(T/a_1)}{\ln r}.\]</span> The smallest feasible integer index
+is the ceiling of the right-hand side, subject to <span class="math inline">\(n\ge1\)</span>. If <span class="math inline">\(0&lt;r&lt;1\)</span>, the logarithm of the ratio
+is negative and inequality directions must be handled with care. A
+doubling time measured in steps is <span class="math inline">\(\ln2/\ln
+r\)</span> for <span class="math inline">\(r&gt;1\)</span>; it need not
+be an integer, so observed doubling at discrete measurements may occur
+only after rounding to a later index.</p>
+<blockquote class="example">
+<p><strong>Example 15.</strong> A simulated population starts at 250 and
+grows by 12% each generation. To exceed 500, solve <span class="math inline">\(250(1.12)^{n-1}&gt;500\)</span>. This requires
+<span class="math inline">\(n-1&gt;\ln2/\ln1.12\approx6.12\)</span>, so
+the first qualifying term is <span class="math inline">\(n=8\)</span>.
+At <span class="math inline">\(n=7\)</span> the threshold has not yet
+been crossed.</p>
+</blockquote>
+<p><strong>Guided practice 15.</strong> A culture starts with 600 units
+and grows by 7% per generation. Determine the first term that exceeds
+1000. Explain why a fractional index is not a valid observation
+number.</p>
+<h5 id="visual-investigation-6-threshold-crossing.">Visual investigation
+6: threshold crossing.</h5>
+<p>Plot <span class="math inline">\(600(1.07)^{n-1}\)</span> for <span class="math inline">\(n=1,\ldots,15\)</span>, together with a horizontal
+line at 1000. Mark the first discrete term above the threshold. Compare
+this with the continuous exponential extension and interpret the
+difference.</p>
+<h2 id="deeper-investigation-what-happens-when-the-ratio-is-negative">Deeper
+investigation: what happens when the ratio is negative?</h2>
+<p>Negative ratios are mathematically important even when a direct
+physical interpretation is less obvious. Consider <span class="math inline">\(a_n=10(-0.5)^{n-1}\)</span>. The signs alternate,
+while the absolute values shrink: <span class="math inline">\(10,-5,2.5,-1.25,\ldots\)</span>. Its partial sums
+oscillate around the infinite-series value <span class="math inline">\(10/(1+0.5)=20/3\)</span>. Because <span class="math inline">\(|-0.5|&lt;1\)</span>, the oscillations shrink and
+the series converges. By contrast, for <span class="math inline">\(r=-1\)</span>, the terms alternate between <span class="math inline">\(a\)</span> and <span class="math inline">\(-a\)</span> without approaching zero, so the
+partial sums oscillate without settling.</p>
+<blockquote class="example">
+<p><strong>Example 16.</strong> For <span class="math inline">\(\sum_{k=0}^{\infty}12(-1/3)^k\)</span>, the
+infinite sum is <span class="math inline">\(12/(1+1/3)=9\)</span>. The
+first four partial sums are <span class="math inline">\(12,8,28/3,80/9\)</span>, alternately above and
+below 9. The finite geometric formula verifies each value.</p>
+</blockquote>
+<p><strong>Guided practice 16.</strong> Compute the first six partial
+sums for <span class="math inline">\(\sum_{k=0}^{\infty}8(-1/2)^k\)</span>. Identify
+which partial sums lie above the limit and which lie below.</p>
+<h5 id="visual-investigation-7-alternating-partial-sums.">Visual
+investigation 7: alternating partial sums.</h5>
+<p>Draw the partial sums as dots and the limiting sum as a horizontal
+line. Explain why the error changes sign at each new term and why its
+magnitude decreases geometrically.</p>
+<h2 id="deeper-investigation-comparing-two-competing-models">Deeper
+investigation: comparing two competing models</h2>
+<p>Suppose a program’s weekly demand can be represented either by an
+arithmetic model <span class="math inline">\(A_n=100+8(n-1)\)</span> or
+by a geometric model <span class="math inline">\(G_n=100(1.06)^{n-1}\)</span>. Both begin at 100,
+but their long-run behavior differs. The arithmetic model increases by
+exactly eight units each week; the geometric model increases by 6% of
+its current level. At week 2, the arithmetic prediction is 108 and the
+geometric prediction is 106. At week 10, the arithmetic prediction is
+172, while the geometric prediction is approximately 169.<a class="footnote-ref" href="#fn1" id="fnref1" role="doc-noteref"><sup>1</sup></a> At
+later indices, compounding eventually produces larger increments in the
+geometric model.</p>
+<blockquote class="example">
+<p><strong>Example 17.</strong> To decide which model is more suitable,
+collect additional observations and calculate residuals <span class="math inline">\(e_n=y_n-\widehat y_n\)</span> for both. Compare
+residual patterns and not only the final prediction. If the program has
+a strict capacity limit, neither model is credible indefinitely.</p>
+</blockquote>
+<p><strong>Guided practice 17.</strong> Evaluate both models at weeks 5,
+15, and 25. Find the first week when the geometric model exceeds the
+arithmetic model. Explain how a capacity constraint would change your
+recommendation.</p>
+<h5 id="visual-investigation-8-a-model-crossover.">Visual investigation
+8: a model crossover.</h5>
+<p>Plot both models on the same coordinate system. Annotate their shared
+starting value, their different short-term changes, and their eventual
+crossover. Discuss how a graph can reveal a pattern but cannot establish
+the correctness of an empirical model.</p>
+<h2 id="additional-guided-practice-clinic-selecting-the-right-formula">Additional
+guided-practice clinic: selecting the right formula</h2>
+<p><strong>Problem A: a sum or a term?</strong> A health department
+receives 30 shipments in month 1 and two additional shipments each
+month. Find (i) shipments received in month 12 and (ii) total shipments
+over 12 months. <em>Solution strategy:</em> The first question asks for
+<span class="math inline">\(a_{12}=30+11(2)=52\)</span>; the second asks
+for <span class="math inline">\(S_{12}=12(30+52)/2=492\)</span>. The
+different units of interpretation help distinguish the two answers.</p>
+<p><strong>Problem B: an explicit formula or a recurrence?</strong> A
+system starts at 4 and triples the previous output, then subtracts 2.
+The recurrence is <span class="math inline">\(a_{n+1}=3a_n-2\)</span>,
+<span class="math inline">\(a_1=4\)</span>. The equilibrium is 1, so
+<span class="math inline">\(a_n=1+3(3^{n-1})\)</span>. Check that <span class="math inline">\(a_2=10\)</span> and <span class="math inline">\(a_3=28\)</span>. <em>Follow-up:</em> Explain why
+simply writing <span class="math inline">\(4(3^{n-1})-2\)</span> is
+incorrect.</p>
+<p><strong>Problem C: is the infinite sum allowed?</strong> Compare
+<span class="math inline">\(\sum_{k=0}^{\infty}4(0.9)^k\)</span> and
+<span class="math inline">\(\sum_{k=0}^{\infty}4(1.1)^k\)</span>. The
+first converges to 40; the second diverges because the terms do not
+approach zero. <em>Follow-up:</em> Compute both finite ten-term sums and
+explain why finite sums always exist even when an infinite series
+diverges.</p>
+<p><strong>Problem D: what does the index mean?</strong> A medication
+amount is measured immediately after a dose at time 0 and then once per
+day. If the first amount is 20 mg and 65% remains each day, <span class="math inline">\(M_n=20(0.65)^n\)</span> for <span class="math inline">\(n=0,1,2,\ldots\)</span>. Re-indexing the same data
+at <span class="math inline">\(n=1\)</span> gives <span class="math inline">\(a_n=20(0.65)^{n-1}\)</span>. <em>Follow-up:</em>
+Explain why these formulas describe the same measurements but assign
+different index labels.</p>
+<p><strong>Problem E: interpreting a limiting total.</strong> A program
+spends <span class="math inline">\(500\)</span> in its first phase and
+80% as much in each subsequent phase. The modeled infinite total is
+<span class="math inline">\(500/(1-0.8)=\$2500\)</span>.
+<em>Follow-up:</em> Determine how many phases are needed to reach at
+least 95% of this total, and discuss whether infinitely many phases are
+realistic.</p>
+<h2 id="computational-laboratory-a-arithmetic-and-geometric-patterns">Computational
+laboratory A: arithmetic and geometric patterns</h2>
+<p><strong>Prediction.</strong> An arithmetic and a geometric sequence
+both begin at 4. Which will be larger at term 10 if the arithmetic
+difference is 3 and the geometric ratio is 1.5? Predict before running
+either program.</p>
+<h3 class="unnumbered" id="r-code">R code</h3>
+<div class="code-shell"><div class="code-bar"><span>R</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a aria-hidden="true" href="#cb1-1" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">12</span></span>
+<span id="cb1-2"><a aria-hidden="true" href="#cb1-2" tabindex="-1"></a>arithmetic <span class="ot">&lt;-</span> <span class="dv">4</span> <span class="sc">+</span> <span class="dv">3</span><span class="sc">*</span>(n<span class="dv">-1</span>)</span>
+<span id="cb1-3"><a aria-hidden="true" href="#cb1-3" tabindex="-1"></a>geometric <span class="ot">&lt;-</span> <span class="dv">4</span> <span class="sc">*</span> <span class="fl">1.5</span><span class="sc">^</span>(n<span class="dv">-1</span>)</span>
+<span id="cb1-4"><a aria-hidden="true" href="#cb1-4" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">data.frame</span>(n, arithmetic, geometric))</span>
+<span id="cb1-5"><a aria-hidden="true" href="#cb1-5" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"First overtake:"</span>, n[<span class="fu">which</span>(geometric <span class="sc">&gt;</span> arithmetic)[<span class="dv">1</span>]], <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb1-6"><a aria-hidden="true" href="#cb1-6" tabindex="-1"></a><span class="fu">plot</span>(n, arithmetic, <span class="at">pch=</span><span class="dv">19</span>, <span class="at">col=</span><span class="st">"blue"</span>, <span class="at">ylim=</span><span class="fu">range</span>(<span class="fu">c</span>(arithmetic, geometric)), <span class="at">xlab=</span><span class="st">"Term index"</span>, <span class="at">ylab=</span><span class="st">"Term value"</span>, <span class="at">main=</span><span class="st">"Arithmetic and geometric sequences"</span>)</span>
+<span id="cb1-7"><a aria-hidden="true" href="#cb1-7" tabindex="-1"></a><span class="fu">points</span>(n, geometric, <span class="at">pch=</span><span class="dv">17</span>, <span class="at">col=</span><span class="st">"red"</span>)</span>
+<span id="cb1-8"><a aria-hidden="true" href="#cb1-8" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">"topleft"</span>, <span class="fu">c</span>(<span class="st">"Arithmetic"</span>, <span class="st">"Geometric"</span>), <span class="at">col=</span><span class="fu">c</span>(<span class="st">"blue"</span>,<span class="st">"red"</span>), <span class="at">pch=</span><span class="fu">c</span>(<span class="dv">19</span>,<span class="dv">17</span>))</span></code></pre></div></div>
+<h3 class="unnumbered" id="python-code">Python code</h3>
+<div class="code-shell"><div class="code-bar"><span>Python</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" href="#cb2-1" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-2"><a aria-hidden="true" href="#cb2-2" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-3"><a aria-hidden="true" href="#cb2-3" tabindex="-1"></a>n <span class="op">=</span> np.arange(<span class="dv">1</span>, <span class="dv">13</span>)</span>
+<span id="cb2-4"><a aria-hidden="true" href="#cb2-4" tabindex="-1"></a>arithmetic <span class="op">=</span> <span class="dv">4</span> <span class="op">+</span> <span class="dv">3</span><span class="op">*</span>(n<span class="op">-</span><span class="dv">1</span>)</span>
+<span id="cb2-5"><a aria-hidden="true" href="#cb2-5" tabindex="-1"></a>geometric <span class="op">=</span> <span class="dv">4</span> <span class="op">*</span> <span class="fl">1.5</span><span class="op">**</span>(n<span class="op">-</span><span class="dv">1</span>)</span>
+<span id="cb2-6"><a aria-hidden="true" href="#cb2-6" tabindex="-1"></a><span class="cf">for</span> k, x, y <span class="kw">in</span> <span class="bu">zip</span>(n, arithmetic, geometric):</span>
+<span id="cb2-7"><a aria-hidden="true" href="#cb2-7" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"n=</span><span class="sc">{</span>k<span class="sc">:2d}</span><span class="ss"> arithmetic=</span><span class="sc">{</span>x<span class="sc">:7.2f}</span><span class="ss"> geometric=</span><span class="sc">{</span>y<span class="sc">:9.2f}</span><span class="ss">"</span>)</span>
+<span id="cb2-8"><a aria-hidden="true" href="#cb2-8" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"First overtake:"</span>, n[np.where(geometric <span class="op">&gt;</span> arithmetic)[<span class="dv">0</span>][<span class="dv">0</span>]])</span>
+<span id="cb2-9"><a aria-hidden="true" href="#cb2-9" tabindex="-1"></a>plt.plot(n, arithmetic, <span class="st">"o"</span>, label<span class="op">=</span><span class="st">"Arithmetic"</span>)</span>
+<span id="cb2-10"><a aria-hidden="true" href="#cb2-10" tabindex="-1"></a>plt.plot(n, geometric, <span class="st">"^"</span>, label<span class="op">=</span><span class="st">"Geometric"</span>)</span>
+<span id="cb2-11"><a aria-hidden="true" href="#cb2-11" tabindex="-1"></a>plt.xlabel(<span class="st">"Term index"</span>)<span class="op">;</span> plt.ylabel(<span class="st">"Term value"</span>)<span class="op">;</span> plt.legend()<span class="op">;</span> plt.tight_layout()</span>
+<span id="cb2-12"><a aria-hidden="true" href="#cb2-12" tabindex="-1"></a>plt.savefig(<span class="st">"labA_python.png"</span>, dpi<span class="op">=</span><span class="dv">180</span>)<span class="op">;</span> plt.close()</span></code></pre></div></div>
+<p><strong>Interpretation.</strong> Check term 1, term 2, and term 10 by
+hand. Use the graph to distinguish isolated terms from continuous
+models. Find the first index at which the geometric sequence exceeds the
+arithmetic sequence.</p>
+<h2 id="computational-laboratory-b-partial-sums-and-convergence">Computational
+laboratory B: partial sums and convergence</h2>
+<p><strong>Prediction.</strong> For <span class="math inline">\(a=10\)</span> and <span class="math inline">\(r=0.6\)</span>, the first partial sum is 10 and
+the infinite sum is 25. Predict whether the tenth partial sum is closer
+to 20 or 25.</p>
+<h3 class="unnumbered" id="r-code-1">R code</h3>
+<div class="code-shell"><div class="code-bar"><span>R</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a aria-hidden="true" href="#cb3-1" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">15</span></span>
+<span id="cb3-2"><a aria-hidden="true" href="#cb3-2" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">10</span>; r <span class="ot">&lt;-</span> <span class="fl">0.6</span></span>
+<span id="cb3-3"><a aria-hidden="true" href="#cb3-3" tabindex="-1"></a>terms <span class="ot">&lt;-</span> a<span class="sc">*</span>r<span class="sc">^</span>(n<span class="dv">-1</span>)</span>
+<span id="cb3-4"><a aria-hidden="true" href="#cb3-4" tabindex="-1"></a>partial <span class="ot">&lt;-</span> <span class="fu">cumsum</span>(terms)</span>
+<span id="cb3-5"><a aria-hidden="true" href="#cb3-5" tabindex="-1"></a>formula <span class="ot">&lt;-</span> a<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>r<span class="sc">^</span>n)<span class="sc">/</span>(<span class="dv">1</span><span class="sc">-</span>r)</span>
+<span id="cb3-6"><a aria-hidden="true" href="#cb3-6" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">data.frame</span>(n, partial, formula, <span class="at">error=</span>partial<span class="sc">-</span>formula))</span>
+<span id="cb3-7"><a aria-hidden="true" href="#cb3-7" tabindex="-1"></a><span class="fu">plot</span>(n, partial, <span class="at">type=</span><span class="st">"b"</span>, <span class="at">pch=</span><span class="dv">19</span>, <span class="at">xlab=</span><span class="st">"Number of terms"</span>, <span class="at">ylab=</span><span class="st">"Partial sum"</span>, <span class="at">main=</span><span class="st">"Convergent geometric series"</span>)</span>
+<span id="cb3-8"><a aria-hidden="true" href="#cb3-8" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span>a<span class="sc">/</span>(<span class="dv">1</span><span class="sc">-</span>r), <span class="at">lty=</span><span class="dv">2</span>, <span class="at">col=</span><span class="st">"red"</span>)</span></code></pre></div></div>
+<h3 class="unnumbered" id="python-code-1">Python code</h3>
+<div class="code-shell"><div class="code-bar"><span>Python</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" href="#cb4-1" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb4-2"><a aria-hidden="true" href="#cb4-2" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb4-3"><a aria-hidden="true" href="#cb4-3" tabindex="-1"></a>n <span class="op">=</span> np.arange(<span class="dv">1</span>, <span class="dv">16</span>)</span>
+<span id="cb4-4"><a aria-hidden="true" href="#cb4-4" tabindex="-1"></a>a, r <span class="op">=</span> <span class="fl">10.0</span>, <span class="fl">0.6</span></span>
+<span id="cb4-5"><a aria-hidden="true" href="#cb4-5" tabindex="-1"></a>terms <span class="op">=</span> a<span class="op">*</span>r<span class="op">**</span>(n<span class="op">-</span><span class="dv">1</span>)</span>
+<span id="cb4-6"><a aria-hidden="true" href="#cb4-6" tabindex="-1"></a>partial <span class="op">=</span> np.cumsum(terms)</span>
+<span id="cb4-7"><a aria-hidden="true" href="#cb4-7" tabindex="-1"></a>formula <span class="op">=</span> a<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>r<span class="op">**</span>n)<span class="op">/</span>(<span class="dv">1</span><span class="op">-</span>r)</span>
+<span id="cb4-8"><a aria-hidden="true" href="#cb4-8" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Largest discrepancy:"</span>, np.<span class="bu">max</span>(np.<span class="bu">abs</span>(partial<span class="op">-</span>formula)))</span>
+<span id="cb4-9"><a aria-hidden="true" href="#cb4-9" tabindex="-1"></a><span class="cf">for</span> k, s <span class="kw">in</span> <span class="bu">zip</span>(n, partial): <span class="bu">print</span>(<span class="ss">f"S_</span><span class="sc">{</span>k<span class="sc">}</span><span class="ss"> = </span><span class="sc">{</span>s<span class="sc">:.6f}</span><span class="ss">"</span>)</span>
+<span id="cb4-10"><a aria-hidden="true" href="#cb4-10" tabindex="-1"></a>plt.plot(n, partial, <span class="st">"o-"</span>)<span class="op">;</span> plt.axhline(a<span class="op">/</span>(<span class="dv">1</span><span class="op">-</span>r), linestyle<span class="op">=</span><span class="st">"--"</span>, label<span class="op">=</span><span class="st">"Infinite sum"</span>)</span>
+<span id="cb4-11"><a aria-hidden="true" href="#cb4-11" tabindex="-1"></a>plt.xlabel(<span class="st">"Number of terms"</span>)<span class="op">;</span> plt.ylabel(<span class="st">"Partial sum"</span>)<span class="op">;</span> plt.legend()<span class="op">;</span> plt.tight_layout()</span>
+<span id="cb4-12"><a aria-hidden="true" href="#cb4-12" tabindex="-1"></a>plt.savefig(<span class="st">"labB_python.png"</span>, dpi<span class="op">=</span><span class="dv">180</span>)<span class="op">;</span> plt.close()</span></code></pre></div></div>
+<p><strong>Interpretation.</strong> Compare direct cumulative sums with
+the formula. Explain why <span class="math inline">\(|r|&lt;1\)</span>
+is needed for the infinite sum. Change <span class="math inline">\(r\)</span> to <span class="math inline">\(-0.6\)</span> and describe oscillation around the
+limit.</p>
+<h2 id="computational-laboratory-c-repeated-input-and-model-sensitivity">Computational
+laboratory C: repeated input and model sensitivity</h2>
+<p><strong>Prediction.</strong> Consider <span class="math inline">\(a_{n+1}=ra_n+12\)</span>, <span class="math inline">\(a_1=12\)</span>. Compare the equilibrium when
+<span class="math inline">\(r=0.7\)</span> and when <span class="math inline">\(r=0.85\)</span>. Which system approaches a larger
+long-run amount, and which approaches its equilibrium more slowly?</p>
+<h3 class="unnumbered" id="r-code-2">R code</h3>
+<div class="code-shell"><div class="code-bar"><span>R</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a aria-hidden="true" href="#cb5-1" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">25</span></span>
+<span id="cb5-2"><a aria-hidden="true" href="#cb5-2" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="dv">12</span></span>
+<span id="cb5-3"><a aria-hidden="true" href="#cb5-3" tabindex="-1"></a><span class="fu">plot</span>(<span class="cn">NA</span>, <span class="at">xlim=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">25</span>), <span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">85</span>), <span class="at">xlab=</span><span class="st">"Measurement index"</span>, <span class="at">ylab=</span><span class="st">"Modeled amount (mg)"</span>, <span class="at">main=</span><span class="st">"Retention and repeated input"</span>)</span>
+<span id="cb5-4"><a aria-hidden="true" href="#cb5-4" tabindex="-1"></a><span class="cf">for</span> (r <span class="cf">in</span> <span class="fu">c</span>(<span class="fl">0.7</span>,<span class="fl">0.85</span>)) {</span>
+<span id="cb5-5"><a aria-hidden="true" href="#cb5-5" tabindex="-1"></a>  x <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="fu">length</span>(n)); x[<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="dv">12</span></span>
+<span id="cb5-6"><a aria-hidden="true" href="#cb5-6" tabindex="-1"></a>  <span class="cf">for</span> (k <span class="cf">in</span> <span class="dv">2</span><span class="sc">:</span><span class="fu">length</span>(n)) x[k] <span class="ot">&lt;-</span> r<span class="sc">*</span>x[k<span class="dv">-1</span>]<span class="sc">+</span>b</span>
+<span id="cb5-7"><a aria-hidden="true" href="#cb5-7" tabindex="-1"></a>  equilibrium <span class="ot">&lt;-</span> b<span class="sc">/</span>(<span class="dv">1</span><span class="sc">-</span>r)</span>
+<span id="cb5-8"><a aria-hidden="true" href="#cb5-8" tabindex="-1"></a>  exact <span class="ot">&lt;-</span> equilibrium<span class="sc">+</span>(x[<span class="dv">1</span>]<span class="sc">-</span>equilibrium)<span class="sc">*</span>r<span class="sc">^</span>(n<span class="dv">-1</span>)</span>
+<span id="cb5-9"><a aria-hidden="true" href="#cb5-9" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">data.frame</span>(<span class="at">n=</span>n[<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>], <span class="at">modeled=</span>x[<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>], <span class="at">explicit=</span>exact[<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>]))</span>
+<span id="cb5-10"><a aria-hidden="true" href="#cb5-10" tabindex="-1"></a>  <span class="fu">lines</span>(n,x,<span class="at">type=</span><span class="st">"b"</span>,<span class="at">pch=</span><span class="fu">ifelse</span>(r<span class="sc">==</span><span class="fl">0.7</span>,<span class="dv">19</span>,<span class="dv">17</span>),<span class="at">col=</span><span class="fu">ifelse</span>(r<span class="sc">==</span><span class="fl">0.7</span>,<span class="st">"blue"</span>,<span class="st">"red"</span>))</span>
+<span id="cb5-11"><a aria-hidden="true" href="#cb5-11" tabindex="-1"></a>  <span class="fu">abline</span>(<span class="at">h=</span>equilibrium,<span class="at">lty=</span><span class="dv">2</span>,<span class="at">col=</span><span class="fu">ifelse</span>(r<span class="sc">==</span><span class="fl">0.7</span>,<span class="st">"blue"</span>,<span class="st">"red"</span>))</span>
+<span id="cb5-12"><a aria-hidden="true" href="#cb5-12" tabindex="-1"></a>}</span>
+<span id="cb5-13"><a aria-hidden="true" href="#cb5-13" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">"topleft"</span>,<span class="fu">c</span>(<span class="st">"r=0.70"</span>,<span class="st">"r=0.85"</span>),<span class="at">col=</span><span class="fu">c</span>(<span class="st">"blue"</span>,<span class="st">"red"</span>),<span class="at">pch=</span><span class="fu">c</span>(<span class="dv">19</span>,<span class="dv">17</span>))</span></code></pre></div></div>
+<h3 class="unnumbered" id="python-code-2">Python code</h3>
+<div class="code-shell"><div class="code-bar"><span>Python</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a aria-hidden="true" href="#cb6-1" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb6-2"><a aria-hidden="true" href="#cb6-2" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb6-3"><a aria-hidden="true" href="#cb6-3" tabindex="-1"></a>n <span class="op">=</span> np.arange(<span class="dv">1</span>, <span class="dv">26</span>)</span>
+<span id="cb6-4"><a aria-hidden="true" href="#cb6-4" tabindex="-1"></a>b <span class="op">=</span> <span class="fl">12.0</span></span>
+<span id="cb6-5"><a aria-hidden="true" href="#cb6-5" tabindex="-1"></a><span class="cf">for</span> r <span class="kw">in</span> (<span class="fl">0.7</span>, <span class="fl">0.85</span>):</span>
+<span id="cb6-6"><a aria-hidden="true" href="#cb6-6" tabindex="-1"></a>    x <span class="op">=</span> np.zeros(<span class="bu">len</span>(n))<span class="op">;</span> x[<span class="dv">0</span>] <span class="op">=</span> <span class="dv">12</span></span>
+<span id="cb6-7"><a aria-hidden="true" href="#cb6-7" tabindex="-1"></a>    <span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="bu">len</span>(n)): x[k] <span class="op">=</span> r<span class="op">*</span>x[k<span class="op">-</span><span class="dv">1</span>]<span class="op">+</span>b</span>
+<span id="cb6-8"><a aria-hidden="true" href="#cb6-8" tabindex="-1"></a>    equilibrium <span class="op">=</span> b<span class="op">/</span>(<span class="dv">1</span><span class="op">-</span>r)</span>
+<span id="cb6-9"><a aria-hidden="true" href="#cb6-9" tabindex="-1"></a>    explicit <span class="op">=</span> equilibrium<span class="op">+</span>(x[<span class="dv">0</span>]<span class="op">-</span>equilibrium)<span class="op">*</span>r<span class="op">**</span>(n<span class="op">-</span><span class="dv">1</span>)</span>
+<span id="cb6-10"><a aria-hidden="true" href="#cb6-10" tabindex="-1"></a>    <span class="cf">assert</span> np.allclose(x, explicit)</span>
+<span id="cb6-11"><a aria-hidden="true" href="#cb6-11" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"r=</span><span class="sc">{</span>r<span class="sc">}</span><span class="ss">, equilibrium=</span><span class="sc">{</span>equilibrium<span class="sc">:.2f}</span><span class="ss">, first six=</span><span class="sc">{</span>np<span class="sc">.</span><span class="bu">round</span>(x[:<span class="dv">6</span>],<span class="dv">2</span>)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb6-12"><a aria-hidden="true" href="#cb6-12" tabindex="-1"></a>    plt.plot(n, x, <span class="st">"o-"</span>, label<span class="op">=</span><span class="ss">f"r=</span><span class="sc">{</span>r<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb6-13"><a aria-hidden="true" href="#cb6-13" tabindex="-1"></a>    plt.axhline(equilibrium, linestyle<span class="op">=</span><span class="st">"--"</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb6-14"><a aria-hidden="true" href="#cb6-14" tabindex="-1"></a>plt.xlabel(<span class="st">"Measurement index"</span>)<span class="op">;</span> plt.ylabel(<span class="st">"Modeled amount (mg)"</span>)<span class="op">;</span> plt.legend()<span class="op">;</span> plt.tight_layout()</span>
+<span id="cb6-15"><a aria-hidden="true" href="#cb6-15" tabindex="-1"></a>plt.savefig(<span class="st">"labC_python.png"</span>, dpi<span class="op">=</span><span class="dv">180</span>)<span class="op">;</span> plt.close()</span></code></pre></div></div>
+<p><strong>Interpretation.</strong> Verify <span class="math inline">\(a_2\)</span> manually. Compare the numerical
+recurrence with the closed form. Explain why the model is an
+illustration of repeated input and retention, not a medical treatment
+recommendation.</p>
+<h2 id="extended-guided-workshops">Extended guided workshops</h2>
+<h3 class="unnumbered" id="workshop-1-staffing-and-cumulative-workload">Workshop 1: staffing
+and cumulative workload</h3>
+<p>A health program expects 24 appointments in week 1, with six
+additional appointments each subsequent week for 10 weeks. (a) Explain
+why the weekly appointments form an arithmetic sequence. (b) Find week
+10 demand. (c) Find the cumulative appointments over 10 weeks. (d) If a
+staff member can handle 48 appointments weekly, identify the first week
+when demand exceeds that capacity. <strong>Worked solution.</strong>
+<span class="math inline">\(a_n=24+6(n-1)\)</span>, so <span class="math inline">\(a_{10}=78\)</span>. Total <span class="math inline">\(S_{10}=10(24+78)/2=510\)</span>. Solve <span class="math inline">\(24+6(n-1)&gt;48\)</span>, giving <span class="math inline">\(n&gt;5\)</span>, so the first overloaded week is
+week 6. <strong>Extension.</strong> Discuss why the model may need
+revision when staff availability changes.</p>
+<h3 class="unnumbered" id="workshop-2-culture-growth-and-resource-limits">Workshop 2: culture
+growth and resource limits</h3>
+<p>A simulated cell population begins at 300 and increases by 20% each
+generation. (a) Write <span class="math inline">\(a_n\)</span> with
+<span class="math inline">\(a_1=300\)</span>. (b) Find generation 5. (c)
+Calculate the sum of the first five generation counts, and explain why
+that sum does <em>not</em> equal the population at generation 5.
+<strong>Worked solution.</strong> <span class="math inline">\(a_n=300(1.2)^{n-1}\)</span>; <span class="math inline">\(a_5=300(1.2)^4=622.08\)</span>. The sum is <span class="math inline">\(300((1.2)^5-1)/0.2=2232.48\)</span> cell-count
+observations. Adding repeated snapshots does not measure distinct cells
+or a single-time population. <strong>Extension.</strong> Identify the
+biological limits of sustained exponential growth.</p>
+<h3 class="unnumbered" id="workshop-3-repeated-dose-retention-model">Workshop 3: repeated-dose
+retention model</h3>
+<p>A simplified measurement model has <span class="math inline">\(a_1=10\)</span> mg and <span class="math inline">\(a_{n+1}=0.6a_n+10\)</span>. (a) Find the first
+four terms. (b) Find the equilibrium. (c) Derive the explicit formula.
+(d) Determine when the amount first exceeds 24 mg. <strong>Worked
+solution.</strong> The terms are <span class="math inline">\(10,16,19.6,21.76\)</span>. The equilibrium is
+<span class="math inline">\(10/(1-0.6)=25\)</span> mg. The explicit
+formula is <span class="math inline">\(a_n=25-15(0.6)^{n-1}\)</span>.
+Solve <span class="math inline">\(25-15(0.6)^{n-1}&gt;24\)</span>,
+equivalent to <span class="math inline">\((0.6)^{n-1}&lt;1/15\)</span>.
+Taking logarithms gives <span class="math inline">\(n-1&gt;\ln(1/15)/\ln(0.6)\approx5.30\)</span>;
+hence the first integer is <span class="math inline">\(n=7\)</span>.
+<strong>Extension.</strong> Check the threshold numerically and
+interpret why the equilibrium is never reached exactly from below.</p>
+<h3 class="unnumbered" id="workshop-4-finite-differences-and-a-candidate-model">Workshop 4:
+finite differences and a candidate model</h3>
+<p>A researcher records <span class="math inline">\(7,12,19,28,39\)</span> at equally spaced visits.
+(a) Find first and second differences. (b) Propose a quadratic model
+indexed from <span class="math inline">\(n=1\)</span>. (c) Predict the
+sixth value. (d) Explain why this is an extrapolation rather than a
+proven future outcome. <strong>Worked solution.</strong> First
+differences <span class="math inline">\(5,7,9,11\)</span>; second
+differences <span class="math inline">\(2,2,2\)</span>. Set <span class="math inline">\(a_n=n^2+Bn+C\)</span>. Using <span class="math inline">\(a_1=7\)</span> and <span class="math inline">\(a_2=12\)</span> gives <span class="math inline">\(B=2\)</span>, <span class="math inline">\(C=4\)</span>, so <span class="math inline">\(a_n=n^2+2n+4\)</span> and <span class="math inline">\(a_6=52\)</span>. Many alternative functions can
+match the same five data points.</p>
+<h3 class="unnumbered" id="workshop-5-geometric-sums-and-savings">Workshop 5: geometric sums
+and savings</h3>
+<p>A community organization sets aside <span class="math inline">\(200\)</span> at the end of each quarter for eight
+quarters. Assume a hypothetical quarterly interest rate of 1%. (a)
+Express the final balance as a geometric sum. (b) Calculate the modeled
+future value. (c) Compare with total contributions. (d) Explain the
+effect of deposits at the beginning rather than end of each quarter.
+<strong>Worked solution.</strong> <span class="math inline">\(F=200\sum_{k=0}^{7}(1.01)^k=200((1.01)^8-1)/0.01\approx\$1657.14\)</span>.
+Contributions total <span class="math inline">\(\$1600\)</span>.
+Beginning-of-quarter deposits multiply the future value by <span class="math inline">\(1.01\)</span>. The model assumes a fixed interest
+rate and ignores fees and taxes.</p>
+<h2 id="common-errors-and-diagnostic-questions">Common errors and
+diagnostic questions</h2>
+<ol type="1">
+<li><p>Confusing the index <span class="math inline">\(n\)</span> with
+the term <span class="math inline">\(a_n\)</span>: explain the
+difference using <span class="math inline">\(a_n=2n+1\)</span>.</p></li>
+<li><p>Writing <span class="math inline">\(a_n=a_1+nd\)</span> for an
+arithmetic sequence indexed at <span class="math inline">\(n=1\)</span>:
+identify and correct the off-by-one error.</p></li>
+<li><p>Using <span class="math inline">\(S_n=a_1(1-r^n)/(1-r)\)</span>
+when <span class="math inline">\(r=1\)</span>: explain the special
+case.</p></li>
+<li><p>Applying the infinite geometric sum when <span class="math inline">\(r=1.2\)</span>: explain why it fails.</p></li>
+<li><p>Treating cumulative observations as a single-time measurement:
+give a scientific example.</p></li>
+<li><p>Assuming a visually convincing pattern proves a model:
+distinguish conjecture, proof, and empirical fit.</p></li>
+<li><p>Forgetting deposit timing in an annuity: compare beginning and
+end-of-period contributions.</p></li>
+<li><p>Confusing the equilibrium <span class="math inline">\(L\)</span>
+of a recurrence with its first term: derive <span class="math inline">\(L=b/(1-r)\)</span>.</p></li>
+</ol>
+<h2 id="chapter-review-and-self-assessment">Chapter review and
+self-assessment</h2>
+<p><strong>Instructions.</strong> Show mathematical reasoning and state
+the units and indexing conventions for applied questions.</p>
+<ol type="1">
+<li><p>List the first five terms of <span class="math inline">\(a_n=4n-3\)</span>.</p></li>
+<li><p>Find <span class="math inline">\(a_{12}\)</span> if <span class="math inline">\(a_n=2n^2-1\)</span>.</p></li>
+<li><p>Give an explicit rule for <span class="math inline">\(6,10,14,18,\ldots\)</span>.</p></li>
+<li><p>Find the 25th term of <span class="math inline">\(11,8,5,2,\ldots\)</span>.</p></li>
+<li><p>Find <span class="math inline">\(a_1\)</span> and <span class="math inline">\(d\)</span> when <span class="math inline">\(a_3=15\)</span> and <span class="math inline">\(a_8=35\)</span>.</p></li>
+<li><p>Determine whether <span class="math inline">\(2,6,18,54\)</span>
+is arithmetic, geometric, or neither.</p></li>
+<li><p>Find the eighth term of a geometric sequence with <span class="math inline">\(a_1=5\)</span> and <span class="math inline">\(r=3\)</span>.</p></li>
+<li><p>Find <span class="math inline">\(a_6\)</span> when <span class="math inline">\(a_1=100\)</span> and <span class="math inline">\(r=0.8\)</span>.</p></li>
+<li><p>Write a recurrence for <span class="math inline">\(a_n=7+5(n-1)\)</span>.</p></li>
+<li><p>Generate five terms from <span class="math inline">\(a_1=2\)</span>, <span class="math inline">\(a_{n+1}=3a_n-1\)</span>.</p></li>
+<li><p>Evaluate <span class="math inline">\(\sum_{k=1}^8(2k-1)\)</span>.</p></li>
+<li><p>Evaluate <span class="math inline">\(\sum_{k=0}^5
+3(2)^k\)</span>.</p></li>
+<li><p>Rewrite <span class="math inline">\(4+7+10+13+16\)</span> in
+sigma notation.</p></li>
+<li><p>Find the sum of the first 20 terms of <span class="math inline">\(5,9,13,\ldots\)</span>.</p></li>
+<li><p>Find the sum <span class="math inline">\(12+9+6+\cdots-15\)</span>.</p></li>
+<li><p>Derive the arithmetic series formula by pairing terms.</p></li>
+<li><p>Derive the finite geometric sum formula by subtraction.</p></li>
+<li><p>Evaluate <span class="math inline">\(\sum_{k=0}^{\infty}6(1/3)^k\)</span>.</p></li>
+<li><p>Determine whether <span class="math inline">\(\sum_{k=0}^{\infty}2(-1.1)^k\)</span>
+converges.</p></li>
+<li><p>Find the sum of <span class="math inline">\(\sum_{k=0}^{\infty}5(-0.2)^k\)</span>.</p></li>
+<li><p>Explain the difference between a sequence and its partial
+sums.</p></li>
+<li><p>Prove <span class="math inline">\(1+3+\cdots+(2n-1)=n^2\)</span>
+by induction.</p></li>
+<li><p>Solve <span class="math inline">\(a_{n+1}=0.5a_n+8\)</span> with
+<span class="math inline">\(a_1=8\)</span>.</p></li>
+<li><p>Find the equilibrium of <span class="math inline">\(a_{n+1}=0.9a_n+3\)</span>.</p></li>
+<li><p>Find the future value of six end-of-month deposits of <span class="math inline">\(100\)</span> at 0.5% monthly interest.</p></li>
+<li><p>Construct first and second differences for <span class="math inline">\(2,7,14,23,34\)</span>.</p></li>
+<li><p>Propose a quadratic rule for the preceding data.</p></li>
+<li><p>Explain why five observations cannot prove an infinite
+pattern.</p></li>
+<li><p>Find the forward difference quotient for <span class="math inline">\(f(t)=t^2+3t\)</span>.</p></li>
+<li><p>Explain how a Riemann sum differs from a finite sum of observed
+counts.</p></li>
+</ol>
+<h2 id="calculus-readiness-checkpoint">Calculus-readiness
+checkpoint</h2>
+<p>Explain how <span class="math inline">\(\Delta
+a_n=a_{n+1}-a_n\)</span> parallels a difference quotient. For <span class="math inline">\(f(t)=t^2\)</span>, derive <span class="math inline">\([f(t+h)-f(t)]/h\)</span> and explain what changes
+as <span class="math inline">\(h\to0\)</span>. Draw a picture showing
+four left-endpoint rectangles approximating the area under <span class="math inline">\(f(t)=t\)</span> on <span class="math inline">\([0,4]\)</span>. Why does increasing the number of
+rectangles improve the estimate? Finally, explain how a convergent
+sequence of partial sums can define an infinite series.</p>
+<h2 class="unnumbered" id="looking-ahead">Looking ahead</h2>
+<p>Chapter 13 studies conic sections and parametric equations. Sequences
+provide a natural way to sample points on a curve, while finite
+differences and sums will reappear in the study of change and
+accumulation in calculus.</p>
+<h2 id="extended-application-repeated-sampling-accumulation">Extended
+application: Repeated sampling accumulation</h2>
+<p>A simulated collection process yields 100 units on its first round
+and 80 percent as many units on each subsequent round. The quantities in
+this investigation are illustrative rather than measured
+observations.</p>
+<h3 id="formulating-the-mathematical-model">Formulating the mathematical
+model</h3>
+<p>The proposed relationship is <span class="math display">\[S_n=500(1-0.8^n).\]</span> Before calculating,
+identify the input and output, their units, and the interval on which
+the model is being studied. Distinguish the mathematical domain from the
+practical domain. The numerical study uses inputs from <span class="math inline">\(1\)</span> to <span class="math inline">\(15\)</span>.</p>
+<blockquote class="example">
+<p><strong>Example 18: Analytical investigation.</strong> Derive the
+finite sum and its limiting value. Find the smallest integer <span class="math inline">\(n\)</span> with <span class="math inline">\(S_n\ge450\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> Geometric sum gives the formula and
+limit 500. Since <span class="math inline">\(0.8^n\le0.1\)</span>, <span class="math inline">\(n\ge\ln(0.1)/\ln(0.8)\)</span>, so 11 rounds.</p>
+</blockquote>
+<h3 id="connecting-numerical-and-graphical-representations">Connecting
+numerical and graphical representations</h3>
+<table>
+<caption>Selected predictions from the illustrative model. Values are
+rounded for display.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Completed rounds</th>
+<th style="text-align: right;">Cumulative units</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">100</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">336.2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">416.1</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">457.1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">482.4</td>
+</tr>
+</tbody>
+</table>
+<figure>
+<img alt="Model predictions over the stated investigation interval. The graph represents a mathematical model, not observed data." src="figures/ch12/applied_project.svg" style="width:90.0%"/>
+<figcaption aria-hidden="true">Model predictions over the stated
+investigation interval. The graph represents a mathematical model, not
+observed data.</figcaption>
+</figure>
+<p><strong>Interpretation.</strong> Compare the tabulated values with
+the graph. Identify the intervals over which the output increases or
+decreases, and distinguish a sampled extremum from an exact analytical
+extremum. Explain whether interpolation and extrapolation have the same
+justification in this setting.</p>
+<h3 id="r-implementation">R implementation</h3>
+<p>The following standalone script defines the model, generates
+predictions, and draws a labeled graph. Read the formula before running
+the code. The sampled range is a numerical diagnostic, not a proof of
+the exact range.</p>
+<div class="code-shell"><div class="code-bar"><span>R</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a aria-hidden="true" href="#cb7-1" tabindex="-1"></a><span class="co"># Applied investigation: Repeated sampling accumulation</span></span>
+<span id="cb7-2"><a aria-hidden="true" href="#cb7-2" tabindex="-1"></a><span class="co"># 1. Define the input domain and model</span></span>
+<span id="cb7-3"><a aria-hidden="true" href="#cb7-3" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">15</span></span>
+<span id="cb7-4"><a aria-hidden="true" href="#cb7-4" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">500</span><span class="sc">*</span>(<span class="dv">1</span><span class="fl">-0.8</span><span class="sc">^</span>x)</span>
+<span id="cb7-5"><a aria-hidden="true" href="#cb7-5" tabindex="-1"></a></span>
+<span id="cb7-6"><a aria-hidden="true" href="#cb7-6" tabindex="-1"></a><span class="co"># 2. Inspect numerical predictions</span></span>
+<span id="cb7-7"><a aria-hidden="true" href="#cb7-7" tabindex="-1"></a>idx <span class="ot">&lt;-</span> <span class="fu">unique</span>(<span class="fu">round</span>(<span class="fu">seq</span>(<span class="dv">1</span>, <span class="fu">length</span>(x), <span class="at">length.out =</span> <span class="dv">5</span>)))</span>
+<span id="cb7-8"><a aria-hidden="true" href="#cb7-8" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">data.frame</span>(<span class="at">input =</span> x[idx], <span class="at">output =</span> y[idx]))</span>
+<span id="cb7-9"><a aria-hidden="true" href="#cb7-9" tabindex="-1"></a></span>
+<span id="cb7-10"><a aria-hidden="true" href="#cb7-10" tabindex="-1"></a><span class="co"># 3. Visualize the model with labeled axes</span></span>
+<span id="cb7-11"><a aria-hidden="true" href="#cb7-11" tabindex="-1"></a><span class="fu">plot</span>(x, y, <span class="at">type =</span> <span class="st">"p"</span>, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">"#176B87"</span>,</span>
+<span id="cb7-12"><a aria-hidden="true" href="#cb7-12" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Completed rounds"</span>, <span class="at">ylab =</span> <span class="st">"Cumulative units"</span>)</span>
+<span id="cb7-13"><a aria-hidden="true" href="#cb7-13" tabindex="-1"></a><span class="fu">grid</span>()</span>
+<span id="cb7-14"><a aria-hidden="true" href="#cb7-14" tabindex="-1"></a></span>
+<span id="cb7-15"><a aria-hidden="true" href="#cb7-15" tabindex="-1"></a><span class="co"># 4. Check the sampled output range</span></span>
+<span id="cb7-16"><a aria-hidden="true" href="#cb7-16" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">range</span>(y))</span></code></pre></div></div>
+<h3 id="python-implementation">Python implementation</h3>
+<p>Repeat the same investigation using NumPy arrays and Matplotlib.
+Compare the printed predictions with the R output, allowing for
+rounding.</p>
+<div class="code-shell"><div class="code-bar"><span>Python</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a aria-hidden="true" href="#cb8-1" tabindex="-1"></a><span class="co"># Applied investigation: Repeated sampling accumulation</span></span>
+<span id="cb8-2"><a aria-hidden="true" href="#cb8-2" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb8-3"><a aria-hidden="true" href="#cb8-3" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb8-4"><a aria-hidden="true" href="#cb8-4" tabindex="-1"></a></span>
+<span id="cb8-5"><a aria-hidden="true" href="#cb8-5" tabindex="-1"></a><span class="co"># 1. Define the input domain and model</span></span>
+<span id="cb8-6"><a aria-hidden="true" href="#cb8-6" tabindex="-1"></a>x <span class="op">=</span> np.arange(<span class="dv">1</span>, <span class="dv">16</span>)</span>
+<span id="cb8-7"><a aria-hidden="true" href="#cb8-7" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">500</span><span class="op">*</span>(<span class="dv">1</span><span class="op">-</span><span class="fl">0.8</span><span class="op">**</span>x)</span>
+<span id="cb8-8"><a aria-hidden="true" href="#cb8-8" tabindex="-1"></a></span>
+<span id="cb8-9"><a aria-hidden="true" href="#cb8-9" tabindex="-1"></a><span class="co"># 2. Inspect numerical predictions</span></span>
+<span id="cb8-10"><a aria-hidden="true" href="#cb8-10" tabindex="-1"></a>idx <span class="op">=</span> np.unique(np.linspace(<span class="dv">0</span>, <span class="bu">len</span>(x)<span class="op">-</span><span class="dv">1</span>, <span class="dv">5</span>).<span class="bu">round</span>().astype(<span class="bu">int</span>))</span>
+<span id="cb8-11"><a aria-hidden="true" href="#cb8-11" tabindex="-1"></a><span class="bu">print</span>(np.column_stack((x[idx], y[idx])))</span>
+<span id="cb8-12"><a aria-hidden="true" href="#cb8-12" tabindex="-1"></a></span>
+<span id="cb8-13"><a aria-hidden="true" href="#cb8-13" tabindex="-1"></a><span class="co"># 3. Visualize the model with labeled axes</span></span>
+<span id="cb8-14"><a aria-hidden="true" href="#cb8-14" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="fl">3.6</span>))</span>
+<span id="cb8-15"><a aria-hidden="true" href="#cb8-15" tabindex="-1"></a>ax.plot(x, y, <span class="st">"o"</span>, color<span class="op">=</span><span class="st">"#176B87"</span>, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb8-16"><a aria-hidden="true" href="#cb8-16" tabindex="-1"></a>ax.<span class="bu">set</span>(xlabel<span class="op">=</span><span class="st">"Completed rounds"</span>, ylabel<span class="op">=</span><span class="st">"Cumulative units"</span>)</span>
+<span id="cb8-17"><a aria-hidden="true" href="#cb8-17" tabindex="-1"></a>ax.grid(alpha<span class="op">=</span><span class="fl">0.22</span>)</span>
+<span id="cb8-18"><a aria-hidden="true" href="#cb8-18" tabindex="-1"></a>ax.spines[[<span class="st">"top"</span>, <span class="st">"right"</span>]].set_visible(<span class="va">False</span>)</span>
+<span id="cb8-19"><a aria-hidden="true" href="#cb8-19" tabindex="-1"></a>fig.tight_layout()</span>
+<span id="cb8-20"><a aria-hidden="true" href="#cb8-20" tabindex="-1"></a>plt.show()</span>
+<span id="cb8-21"><a aria-hidden="true" href="#cb8-21" tabindex="-1"></a></span>
+<span id="cb8-22"><a aria-hidden="true" href="#cb8-22" tabindex="-1"></a><span class="co"># 4. Check the sampled output range</span></span>
+<span id="cb8-23"><a aria-hidden="true" href="#cb8-23" tabindex="-1"></a><span class="bu">print</span>(np.<span class="bu">min</span>(y), np.<span class="bu">max</span>(y))</span></code></pre></div></div>
+<h3 id="guided-practice-checking-the-model">Guided practice: checking
+the model</h3>
+<ol type="1">
+<li><p>Calculate the outputs at the two endpoints by hand. Compare them
+with the numerical table.</p></li>
+<li><p>Select an interior input not listed in the table. Predict the
+output before evaluating it in either language.</p></li>
+<li><p>Explain the meaning of the difference between the two endpoint
+outputs, including units. If appropriate, calculate the average rate of
+change.</p></li>
+<li><p>Identify a physical assumption of the model and describe a
+circumstance in which it would fail.</p></li>
+</ol>
+<h2 id="chapter-project-investigating-repeated-sampling-accumulation">Chapter
+project: investigating Repeated sampling accumulation</h2>
+<p>Prepare a short technical report for a reader who has not studied the
+model. Use the preceding case as a starting point, but develop your own
+investigation rather than merely reproducing the worked example.</p>
+<ol type="1">
+<li><p>State a quantitative question that can be answered using the
+model. Define all variables, units, and restrictions.</p></li>
+<li><p>Modify one meaningful numerical parameter in the formula. Explain
+what the change represents in the original context. Derive the revised
+formula and predict the direction of change before computing.</p></li>
+<li><p>Compare the original and revised models at five common admissible
+inputs. Present a labeled table and explain the largest difference in
+the table.</p></li>
+<li><p>Produce a graph containing both models on the same axes. Use a
+legend and distinguish the curves with line styles or markers. Explain
+the shape and any intersections.</p></li>
+<li><p>Solve your quantitative question algebraically where possible.
+Verify the result using R and Python; report any differences due to
+numerical precision.</p></li>
+<li><p>Discuss at least two limitations. Describe what measurements
+would be needed to assess the model in practice. Do not present
+simulated predictions as empirical evidence.</p></li>
+</ol>
+<h3 class="unnumbered" id="project-deliverables-and-assessment">Project
+deliverables and assessment</h3>
+<p>Submit a two- to three-page report, the two runnable scripts, and the
+labeled figure. The report should stand on its own without requiring the
+reader to inspect the code.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Criterion</th>
+<th style="text-align: right;">Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Mathematical formulation and domain</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Analytical reasoning and verification</td>
+<td style="text-align: right;">25</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Reproducible R and Python
+computations</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Graph and table quality</td>
+<td style="text-align: right;">15</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Interpretation and limitations</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Total</td>
+<td style="text-align: right;">100</td>
+</tr>
+</tbody>
+</table>
+<section class="footnotes footnotes-end-of-document" id="footnotes" role="doc-endnotes">
+<hr/>
+<ol>
+<li id="fn1"><p>Numerical approximations should be verified with a
+calculator or the provided scripts.<a class="footnote-back" href="#fnref1" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+<h2>Companion scripts</h2><p><a download="" href="code/ch12/applied_project.R">applied_project.R</a></p><p><a download="" href="code/ch12/applied_project.py">applied_project.py</a></p><p><a download="" href="code/ch12/labA.R">labA.R</a></p><p><a download="" href="code/ch12/labA.py">labA.py</a></p><p><a download="" href="code/ch12/labA_python.png">labA_python.png</a></p><p><a download="" href="code/ch12/labB.R">labB.R</a></p><p><a download="" href="code/ch12/labB.py">labB.py</a></p><p><a download="" href="code/ch12/labB_python.png">labB_python.png</a></p><p><a download="" href="code/ch12/labC.R">labC.R</a></p><p><a download="" href="code/ch12/labC.py">labC.py</a></p><p><a download="" href="code/ch12/labC_python.png">labC_python.png</a></p><footer><a href="chapter11.html">← Previous</a><a href="chapter13.html">Next →</a></footer><section class="investigation"><h2 id="interactive-investigation">Interactive investigation: Geometric sequences</h2><div data-investigation="12"><p>Enable JavaScript to explore the model.</p></div><p><strong>Explore and explain:</strong> Compare convergence for ratios inside and outside the interval (−1,1).</p></section>
+</main><nav aria-label="On this page" class="chapter-toc" id="TOC" role="doc-toc"><strong>On this page</strong>
+<ul>
+<li><a href="#sequences-series-and-mathematical-patterns" id="toc-sequences-series-and-mathematical-patterns">Sequences, Series,
+and Mathematical Patterns</a>
+<ul>
+<li><a href="#opening-context-repeated-change-in-health-sciences" id="toc-opening-context-repeated-change-in-health-sciences">Opening
+context: repeated change in health sciences</a></li>
+<li><a href="#learning-outcomes" id="toc-learning-outcomes">Learning
+outcomes</a></li>
+<li><a href="#prerequisite-connections" id="toc-prerequisite-connections">Prerequisite connections</a></li>
+<li><a href="#working-with-r-and-python" id="toc-working-with-r-and-python">Working with R and Python</a></li>
+<li><a href="#sequences-as-functions-on-integer-domains" id="toc-sequences-as-functions-on-integer-domains">Sequences as
+functions on integer domains</a></li>
+<li><a href="#explicit-formulas-tables-and-recursion" id="toc-explicit-formulas-tables-and-recursion">Explicit formulas,
+tables, and recursion</a></li>
+<li><a href="#arithmetic-sequences-constant-differences" id="toc-arithmetic-sequences-constant-differences">Arithmetic sequences:
+constant differences</a></li>
+<li><a href="#arithmetic-series-accumulating-a-constant-difference" id="toc-arithmetic-series-accumulating-a-constant-difference">Arithmetic
+series: accumulating a constant difference</a></li>
+<li><a href="#geometric-sequences-constant-ratios" id="toc-geometric-sequences-constant-ratios">Geometric sequences:
+constant ratios</a></li>
+<li><a href="#finite-geometric-series-and-their-derivation" id="toc-finite-geometric-series-and-their-derivation">Finite geometric
+series and their derivation</a></li>
+<li><a href="#sigma-notation-and-index-transformations" id="toc-sigma-notation-and-index-transformations">Sigma notation and
+index transformations</a></li>
+<li><a href="#mathematical-induction-proving-a-pattern" id="toc-mathematical-induction-proving-a-pattern">Mathematical
+induction: proving a pattern</a></li>
+<li><a href="#infinite-geometric-series-and-convergence" id="toc-infinite-geometric-series-and-convergence">Infinite geometric
+series and convergence</a></li>
+<li><a href="#recursive-models-with-constant-input" id="toc-recursive-models-with-constant-input">Recursive models with
+constant input</a></li>
+<li><a href="#compounding-annuities-and-financial-interpretation" id="toc-compounding-annuities-and-financial-interpretation">Compounding,
+annuities, and financial interpretation</a></li>
+<li><a href="#difference-tables-and-finite-differences" id="toc-difference-tables-and-finite-differences">Difference tables and
+finite differences</a></li>
+<li><a href="#patterns-in-real-data-modeling-and-limitations" id="toc-patterns-in-real-data-modeling-and-limitations">Patterns in real
+data: modeling and limitations</a></li>
+<li><a href="#from-discrete-change-to-calculus" id="toc-from-discrete-change-to-calculus">From discrete change to
+calculus</a></li>
+<li><a href="#deeper-investigation-geometric-patterns-and-the-doubling-time-question" id="toc-deeper-investigation-geometric-patterns-and-the-doubling-time-question">Deeper
+investigation: geometric patterns and the doubling-time
+question</a></li>
+<li><a href="#deeper-investigation-what-happens-when-the-ratio-is-negative" id="toc-deeper-investigation-what-happens-when-the-ratio-is-negative">Deeper
+investigation: what happens when the ratio is negative?</a></li>
+<li><a href="#deeper-investigation-comparing-two-competing-models" id="toc-deeper-investigation-comparing-two-competing-models">Deeper
+investigation: comparing two competing models</a></li>
+<li><a href="#additional-guided-practice-clinic-selecting-the-right-formula" id="toc-additional-guided-practice-clinic-selecting-the-right-formula">Additional
+guided-practice clinic: selecting the right formula</a></li>
+<li><a href="#computational-laboratory-a-arithmetic-and-geometric-patterns" id="toc-computational-laboratory-a-arithmetic-and-geometric-patterns">Computational
+laboratory A: arithmetic and geometric patterns</a>
+<ul>
+<li><a href="#r-code" id="toc-r-code">R code</a></li>
+<li><a href="#python-code" id="toc-python-code">Python code</a></li>
+</ul></li>
+<li><a href="#computational-laboratory-b-partial-sums-and-convergence" id="toc-computational-laboratory-b-partial-sums-and-convergence">Computational
+laboratory B: partial sums and convergence</a>
+<ul>
+<li><a href="#r-code-1" id="toc-r-code-1">R code</a></li>
+<li><a href="#python-code-1" id="toc-python-code-1">Python code</a></li>
+</ul></li>
+<li><a href="#computational-laboratory-c-repeated-input-and-model-sensitivity" id="toc-computational-laboratory-c-repeated-input-and-model-sensitivity">Computational
+laboratory C: repeated input and model sensitivity</a>
+<ul>
+<li><a href="#r-code-2" id="toc-r-code-2">R code</a></li>
+<li><a href="#python-code-2" id="toc-python-code-2">Python code</a></li>
+</ul></li>
+<li><a href="#extended-guided-workshops" id="toc-extended-guided-workshops">Extended guided workshops</a>
+<ul>
+<li><a href="#workshop-1-staffing-and-cumulative-workload" id="toc-workshop-1-staffing-and-cumulative-workload">Workshop 1:
+staffing and cumulative workload</a></li>
+<li><a href="#workshop-2-culture-growth-and-resource-limits" id="toc-workshop-2-culture-growth-and-resource-limits">Workshop 2:
+culture growth and resource limits</a></li>
+<li><a href="#workshop-3-repeated-dose-retention-model" id="toc-workshop-3-repeated-dose-retention-model">Workshop 3:
+repeated-dose retention model</a></li>
+<li><a href="#workshop-4-finite-differences-and-a-candidate-model" id="toc-workshop-4-finite-differences-and-a-candidate-model">Workshop 4:
+finite differences and a candidate model</a></li>
+<li><a href="#workshop-5-geometric-sums-and-savings" id="toc-workshop-5-geometric-sums-and-savings">Workshop 5: geometric
+sums and savings</a></li>
+</ul></li>
+<li><a href="#common-errors-and-diagnostic-questions" id="toc-common-errors-and-diagnostic-questions">Common errors and
+diagnostic questions</a></li>
+<li><a href="#chapter-review-and-self-assessment" id="toc-chapter-review-and-self-assessment">Chapter review and
+self-assessment</a></li>
+<li><a href="#calculus-readiness-checkpoint" id="toc-calculus-readiness-checkpoint">Calculus-readiness
+checkpoint</a></li>
+<li><a href="#looking-ahead" id="toc-looking-ahead">Looking
+ahead</a></li>
+<li><a href="#extended-application-repeated-sampling-accumulation" id="toc-extended-application-repeated-sampling-accumulation">Extended
+application: Repeated sampling accumulation</a>
+<ul>
+<li><a href="#formulating-the-mathematical-model" id="toc-formulating-the-mathematical-model">Formulating the mathematical
+model</a></li>
+<li><a href="#connecting-numerical-and-graphical-representations" id="toc-connecting-numerical-and-graphical-representations">Connecting
+numerical and graphical representations</a></li>
+<li><a href="#r-implementation" id="toc-r-implementation">R
+implementation</a></li>
+<li><a href="#python-implementation" id="toc-python-implementation">Python implementation</a></li>
+<li><a href="#guided-practice-checking-the-model" id="toc-guided-practice-checking-the-model">Guided practice: checking
+the model</a></li>
+</ul></li>
+<li><a href="#chapter-project-investigating-repeated-sampling-accumulation" id="toc-chapter-project-investigating-repeated-sampling-accumulation">Chapter
+project: investigating Repeated sampling accumulation</a>
+<ul>
+<li><a href="#project-deliverables-and-assessment" id="toc-project-deliverables-and-assessment">Project deliverables and
+assessment</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav></div><script src="investigations.js"></script></body></html>

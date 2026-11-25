@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8"/>
+<meta content="pandoc" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+<title>Applications
+of Trigonometry and Periodic Models | Applied Precalculus</title>
+<style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+
+
+<link href="site.css" rel="stylesheet"/><script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script defer="" src="search-index.js"></script><script defer="" src="site.js"></script></head><body><nav class="site-nav" id="book-nav"><strong class="brand">Applied Precalculus</strong><p class="subtitle">Using R and Python</p><input aria-label="Search the book" id="book-search" placeholder="Search the book"/><div aria-live="polite" class="search-results" id="search-results"></div><p class="nav-label">Contents</p><a class="" href="index.html">Preface</a><a class="" href="chapter01.html">1. Real Numbers, Algebraic Expressions, and Mathematical Reasoning</a><a class="" href="chapter02.html">2. Equations, Inequalities, and Applications</a><a class="" href="chapter03.html">3. Coordinate Geometry, Lines, and Systems of Equations</a><a class="" href="chapter04.html">4. Functions, Graphs, and Multiple Representations</a><a class="" href="chapter05.html">5. Transformations, Compositions, and Inverse Functions</a><a class="" href="chapter06.html">6. Polynomial and Rational Functions</a><a class="" href="chapter07.html">7. Exponential and Logarithmic Functions</a><a class="" href="chapter08.html">8. Angles, Radian Measure, and the Unit Circle</a><a class="" href="chapter09.html">9. Trigonometric Functions and Their Graphs</a><a class="" href="chapter10.html">10. Trigonometric Identities and Equations</a><a class="active" href="chapter11.html">11. Applications of Trigonometry and Periodic Models</a><a class="" href="chapter12.html">12. Sequences, Series, and Mathematical Patterns</a><a class="" href="chapter13.html">13. Conic Sections and Parametric Equations</a><a class="" href="chapter14.html">14. Vectors, Polar Coordinates, and Geometric Modeling</a><a class="" href="chapter15.html">15. Rates of Change, Difference Quotients, and Limits</a><a class="" href="chapter16.html">16. Integrated Mathematical Modeling with R and Python</a><a class="" href="programming.html">Getting Started with R and Python</a><a class="" href="resources.html">Computational Resource Guide</a></nav><a class="skip" href="#main-content">Skip to content</a><header class="topbar"><button aria-controls="book-nav" aria-expanded="false" class="menu">Contents</button><span>Applied Precalculus / Online edition</span><span class="spacer"></span><a href="resources.html">Resources</a></header><div class="page-grid"><main id="main-content">
+
+<h1 id="applications-of-trigonometry-and-periodic-models">Applications
+of Trigonometry and Periodic Models</h1>
+<h2 class="unnumbered" id="opening-context-measuring-what-cannot-be-reached">Opening context:
+measuring what cannot be reached</h2>
+<p>A clinician may infer a distance from imaging angles, a surveyor may
+estimate the width of a river without crossing it, and a researcher may
+model the daily rise and fall of a physiological signal. Trigonometry
+connects measurable angles and lengths to otherwise inaccessible
+quantities. In this chapter we move beyond graphing trigonometric
+functions to selecting, solving, and critically evaluating mathematical
+models.</p>
+<h2 class="unnumbered" id="learning-outcomes">Learning outcomes</h2>
+<p>After completing this chapter, students should be able to: (1) solve
+right and oblique triangles; (2) derive and use the Laws of Sines and
+Cosines; (3) recognize the ambiguous SSA case; (4) compute triangle area
+from two sides and an included angle; (5) model bearings, elevation, and
+navigation; (6) fit and interpret periodic models; (7) interpret units
+and assess uncertainty; and (8) implement equivalent investigations in R
+and Python.</p>
+<h2 class="unnumbered" id="prerequisite-check">Prerequisite check</h2>
+<p>Review exact unit-circle values (Chapter 8), sinusoidal graphs and
+transformations (Chapter 9), and trigonometric identities and equations
+(Chapter 10). Unless explicitly stated otherwise, angles in triangle
+problems are measured in degrees and arguments in computational
+trigonometric functions are converted to radians.</p>
+<h2 class="unnumbered" id="working-with-r-and-python">Working with R and
+Python</h2>
+<p>Each computational laboratory begins with a mathematical prediction
+and presents a complete R listing followed by a complete Python listing.
+The listings are sequential and full width. Numerical results should be
+checked against geometric constraints; software is a tool for
+investigation, not a substitute for mathematical reasoning.</p>
+<h2 id="right-triangle-review-and-choosing-a-ratio">Right-triangle
+review and choosing a ratio</h2>
+<p>For a right triangle with acute angle <span class="math inline">\(\theta\)</span>, the sine is opposite over
+hypotenuse, cosine is adjacent over hypotenuse, and tangent is opposite
+over adjacent. These ratios are independent of the size of a similar
+triangle. Before calculating, sketch the situation, label the known
+angle, and decide which ratio connects the known and unknown lengths.
+Inverse trigonometric functions recover an angle from a ratio, but the
+physical geometry determines which angle is meaningful.</p>
+<blockquote class="example">
+<p><strong>Example 1.</strong> A ramp rises <span class="math inline">\(1.2\)</span> m over a horizontal run of <span class="math inline">\(8.0\)</span> m. Its angle of inclination satisfies
+<span class="math inline">\(\tan\theta=1.2/8.0=0.15\)</span>, hence
+<span class="math inline">\(\theta=\arctan(0.15)\approx8.53^\circ\)</span>.
+The ramp length is <span class="math inline">\(\sqrt{8^2+1.2^2}\approx8.09\)</span> m.</p>
+</blockquote>
+<p><strong>Guided practice 1.</strong> A medical imaging platform rises
+0.9 m over a horizontal run of 6 m. Find its angle and sloped
+length.</p>
+<h5 id="reasoning-checkpoint.">Reasoning checkpoint.</h5>
+<p>State the applicable formula, explain why it applies, show
+intermediate steps, and interpret the result with units and appropriate
+precision.</p>
+<h2 id="angles-of-elevation-and-depression">Angles of elevation and
+depression</h2>
+<p>An angle of elevation is measured upward from a horizontal line of
+sight; an angle of depression is measured downward. Parallel horizontal
+lines imply that an angle of depression from an observer equals the
+corresponding angle of elevation from a target. A correct diagram must
+distinguish the observer height from the height being estimated. For a
+level baseline <span class="math inline">\(d\)</span> and vertical
+height difference <span class="math inline">\(h\)</span>, <span class="math inline">\(\tan\theta=h/d\)</span>.</p>
+<blockquote class="example">
+<p><strong>Example 2.</strong> From a point <span class="math inline">\(30\)</span> m from a building, the angle of
+elevation to its roof is <span class="math inline">\(38^\circ\)</span>.
+If the instrument is <span class="math inline">\(1.5\)</span> m above
+ground, the building height is <span class="math inline">\(H=1.5+30\tan38^\circ\approx24.94\)</span> m.
+Ignoring instrument height would systematically underestimate <span class="math inline">\(H\)</span>.</p>
+</blockquote>
+<p><strong>Guided practice 2.</strong> A technician observes the top of
+a tower at 27 degrees from a station 45 m away. The instrument is 1.7 m
+high. Find tower height.</p>
+<h5 id="reasoning-checkpoint.-1">Reasoning checkpoint.</h5>
+<p>State the applicable formula, explain why it applies, show
+intermediate steps, and interpret the result with units and appropriate
+precision.</p>
+<h2 id="oblique-triangles-and-notation">Oblique triangles and
+notation</h2>
+<p>An oblique triangle has no right angle. Standard notation assigns
+sides <span class="math inline">\(a,b,c\)</span> opposite angles <span class="math inline">\(A,B,C\)</span>, respectively. The interior angles
+sum to <span class="math inline">\(180^\circ\)</span>. The Law of Sines
+is efficient when an opposite side-angle pair is known; the Law of
+Cosines is efficient for SAS or SSS information. A common error is
+matching a side to an adjacent rather than opposite angle.</p>
+<blockquote class="example">
+<p><strong>Example 3.</strong> In triangle <span class="math inline">\(ABC\)</span>, suppose <span class="math inline">\(A=50^\circ\)</span>, <span class="math inline">\(B=65^\circ\)</span>, and <span class="math inline">\(a=12\)</span> cm. Then <span class="math inline">\(C=65^\circ\)</span>. The equal angles <span class="math inline">\(B\)</span> and <span class="math inline">\(C\)</span> imply <span class="math inline">\(b=c\)</span>; the Law of Sines will determine
+their common length.</p>
+</blockquote>
+<p><strong>Guided practice 3.</strong> Draw a triangle with A=42 degrees
+and B=73 degrees; identify C and which sides could be equal.</p>
+<h5 id="reasoning-checkpoint.-2">Reasoning checkpoint.</h5>
+<p>State the applicable formula, explain why it applies, show
+intermediate steps, and interpret the result with units and appropriate
+precision.</p>
+<h2 id="deriving-the-law-of-sines">Deriving the Law of Sines</h2>
+<p>Drop an altitude <span class="math inline">\(h\)</span> from vertex
+<span class="math inline">\(C\)</span> to side <span class="math inline">\(AB\)</span>. When the altitude lies inside the
+triangle, <span class="math inline">\(h=b\sin A=a\sin B\)</span>, giving
+<span class="math inline">\(a/\sin A=b/\sin B\)</span>. Repeating with
+another altitude yields <span class="math display">\[\boxed{\frac{a}{\sin A}=\frac{b}{\sin
+B}=\frac{c}{\sin C}}.\]</span> The same relation remains valid for
+obtuse triangles because <span class="math inline">\(\sin(180^\circ-\theta)=\sin\theta\)</span>. The
+sine law relates opposite pairs, not neighboring ones.</p>
+<blockquote class="example">
+<p><strong>Example 4.</strong> Given <span class="math inline">\(A=50^\circ\)</span>, <span class="math inline">\(B=65^\circ\)</span>, <span class="math inline">\(a=12\)</span> cm, compute <span class="math inline">\(C=65^\circ\)</span> and <span class="math inline">\(b=12\sin65^\circ/\sin50^\circ\approx14.20\)</span>
+cm; similarly <span class="math inline">\(c\approx14.20\)</span> cm.
+Both longer sides oppose larger angles, a useful reasonableness
+check.</p>
+</blockquote>
+<p><strong>Guided practice 4.</strong> Given A=35 degrees, B=75 degrees,
+and a=9 cm, determine C, b, and c.</p>
+<h5 id="reasoning-checkpoint.-3">Reasoning checkpoint.</h5>
+<p>State the applicable formula, explain why it applies, show
+intermediate steps, and interpret the result with units and appropriate
+precision.</p>
+<h2 id="the-ambiguous-ssa-case">The ambiguous SSA case</h2>
+<p>Knowing two sides and an angle opposite one of them (SSA) may yield
+zero, one, or two triangles. If <span class="math inline">\(A\)</span>
+is acute, with known <span class="math inline">\(a\)</span> opposite
+<span class="math inline">\(A\)</span> and known adjacent side <span class="math inline">\(b\)</span>, the altitude is <span class="math inline">\(h=b\sin A\)</span>. When <span class="math inline">\(a&lt;h\)</span>, no triangle exists; when <span class="math inline">\(a=h\)</span>, one right triangle exists; when
+<span class="math inline">\(h&lt;a&lt;b\)</span>, two triangles exist;
+when <span class="math inline">\(a\ge b\)</span>, one triangle exists.
+For an obtuse <span class="math inline">\(A\)</span>, a triangle is
+possible only if <span class="math inline">\(a&gt;b\)</span>. An
+inverse-sine calculation gives a principal acute angle, but its
+supplement may also satisfy the original data.</p>
+<blockquote class="example">
+<p><strong>Example 5.</strong> Let <span class="math inline">\(A=30^\circ\)</span>, <span class="math inline">\(a=7\)</span>, and <span class="math inline">\(b=10\)</span>. Then <span class="math inline">\(h=10\sin30^\circ=5\)</span> and <span class="math inline">\(5&lt;7&lt;10\)</span>, so two triangles exist.
+Since <span class="math inline">\(\sin B=10\sin30^\circ/7=5/7\)</span>,
+<span class="math inline">\(B_1\approx45.58^\circ\)</span> or <span class="math inline">\(B_2\approx134.42^\circ\)</span>. Both give
+positive remaining angles: <span class="math inline">\(C_1\approx104.42^\circ\)</span> and <span class="math inline">\(C_2\approx15.58^\circ\)</span>.</p>
+</blockquote>
+<p><strong>Guided practice 5.</strong> For A=40 degrees, a=6, b=8,
+classify the SSA case and compute all possible B angles.</p>
+<h5 id="reasoning-checkpoint.-4">Reasoning checkpoint.</h5>
+<p>State the applicable formula, explain why it applies, show
+intermediate steps, and interpret the result with units and appropriate
+precision.</p>
+<h2 id="deriving-the-law-of-cosines">Deriving the Law of Cosines</h2>
+<p>Place a triangle in the coordinate plane with <span class="math inline">\(A=(0,0)\)</span>, <span class="math inline">\(B=(c,0)\)</span>, and <span class="math inline">\(C=(b\cos A,b\sin A)\)</span>. The squared distance
+from <span class="math inline">\(B\)</span> to <span class="math inline">\(C\)</span> is <span class="math display">\[a^2=(b\cos A-c)^2+(b\sin A)^2=b^2+c^2-2bc\cos
+A.\]</span> Therefore <span class="math inline">\(\boxed{a^2=b^2+c^2-2bc\cos A}\)</span>. Cyclic
+permutations produce formulas for <span class="math inline">\(b\)</span>
+and <span class="math inline">\(c\)</span>. When <span class="math inline">\(A=90^\circ\)</span>, the cosine term vanishes,
+recovering the Pythagorean theorem.</p>
+<blockquote class="example">
+<p><strong>Example 6.</strong> Two sides of a triangular plot measure
+<span class="math inline">\(8\)</span> m and <span class="math inline">\(11\)</span> m and enclose an angle of <span class="math inline">\(60^\circ\)</span>. The third side satisfies <span class="math inline">\(a^2=8^2+11^2-2(8)(11)\cos60^\circ=97\)</span>, so
+<span class="math inline">\(a=\sqrt{97}\approx9.85\)</span> m.</p>
+</blockquote>
+<p><strong>Guided practice 6.</strong> Find the third side of a triangle
+with b=7, c=13, and A=110 degrees.</p>
+<h5 id="reasoning-checkpoint.-5">Reasoning checkpoint.</h5>
+<p>State the applicable formula, explain why it applies, show
+intermediate steps, and interpret the result with units and appropriate
+precision.</p>
+<h2 id="solving-sss-triangles">Solving SSS triangles</h2>
+<p>When all three side lengths are known, the Law of Cosines recovers an
+angle: <span class="math display">\[\cos
+A=\frac{b^2+c^2-a^2}{2bc}.\]</span> Check the triangle inequalities
+<span class="math inline">\(a+b&gt;c\)</span>, <span class="math inline">\(a+c&gt;b\)</span>, and <span class="math inline">\(b+c&gt;a\)</span> before using inverse cosine. The
+angle opposite the longest side must be the largest. Calculate two
+angles and obtain the third from the angle sum to reduce rounding
+error.</p>
+<blockquote class="example">
+<p><strong>Example 7.</strong> For sides <span class="math inline">\(a=5\)</span>, <span class="math inline">\(b=7\)</span>, and <span class="math inline">\(c=9\)</span>, <span class="math inline">\(\cos
+C=(5^2+7^2-9^2)/(2\cdot5\cdot7)=-0.1\)</span>. Thus <span class="math inline">\(C\approx95.74^\circ\)</span>. The longest side
+<span class="math inline">\(c\)</span> indeed opposes the obtuse
+angle.</p>
+</blockquote>
+<p><strong>Guided practice 7.</strong> Determine whether lengths 4, 6,
+11 can form a triangle. Then find the largest angle for sides 6, 8,
+10.</p>
+<h5 id="reasoning-checkpoint.-6">Reasoning checkpoint.</h5>
+<p>State the applicable formula, explain why it applies, show
+intermediate steps, and interpret the result with units and appropriate
+precision.</p>
+<h2 id="area-from-trigonometry">Area from trigonometry</h2>
+<p>The familiar area formula <span class="math inline">\(K=\tfrac12
+bh\)</span> becomes more useful when the height is not directly
+measured. If sides <span class="math inline">\(b\)</span> and <span class="math inline">\(c\)</span> enclose angle <span class="math inline">\(A\)</span>, the perpendicular height relative to
+<span class="math inline">\(c\)</span> is <span class="math inline">\(b\sin A\)</span>, hence <span class="math display">\[\boxed{K=\tfrac12bc\sin A=\tfrac12ac\sin
+B=\tfrac12ab\sin C}.\]</span> This formula is valid for acute and obtuse
+included angles. Since sine is dimensionless, area units are the square
+of the length units.</p>
+<blockquote class="example">
+<p><strong>Example 8.</strong> Two survey baselines of <span class="math inline">\(40\)</span> m and <span class="math inline">\(55\)</span> m meet at <span class="math inline">\(72^\circ\)</span>. The triangular area is <span class="math inline">\(K=\tfrac12(40)(55)\sin72^\circ\approx1046.16\)</span>
+m<span class="math inline">\(^2\)</span>.</p>
+</blockquote>
+<p><strong>Guided practice 8.</strong> Find the area of a triangular
+field with sides 18 m and 25 m enclosing 125 degrees.</p>
+<h5 id="reasoning-checkpoint.-7">Reasoning checkpoint.</h5>
+<p>State the applicable formula, explain why it applies, show
+intermediate steps, and interpret the result with units and appropriate
+precision.</p>
+<h2 id="bearings-and-navigation">Bearings and navigation</h2>
+<p>A bearing is a direction relative to a reference axis. In many
+navigation contexts, an azimuth is measured clockwise from north: north
+is <span class="math inline">\(0^\circ\)</span>, east is <span class="math inline">\(90^\circ\)</span>, south is <span class="math inline">\(180^\circ\)</span>, and west is <span class="math inline">\(270^\circ\)</span>. For a displacement of
+magnitude <span class="math inline">\(d\)</span> at azimuth <span class="math inline">\(\alpha\)</span>, east and north components are
+<span class="math inline">\(E=d\sin\alpha\)</span> and <span class="math inline">\(N=d\cos\alpha\)</span>. State the convention
+before computing; measuring angles counterclockwise from east produces
+different component formulas.</p>
+<blockquote class="example">
+<p><strong>Example 9.</strong> A research vessel travels <span class="math inline">\(12\)</span> km on azimuth <span class="math inline">\(60^\circ\)</span> and then <span class="math inline">\(8\)</span> km on azimuth <span class="math inline">\(150^\circ\)</span>. Its east displacement is <span class="math inline">\(12\sin60^\circ+8\sin150^\circ\approx14.39\)</span>
+km; north displacement is <span class="math inline">\(12\cos60^\circ+8\cos150^\circ\approx-0.93\)</span>
+km. The resultant distance is approximately <span class="math inline">\(14.42\)</span> km.</p>
+</blockquote>
+<p><strong>Guided practice 9.</strong> A drone travels 5 km at azimuth
+30 degrees and 7 km at azimuth 120 degrees. Find its net east and north
+displacements.</p>
+<h5 id="reasoning-checkpoint.-8">Reasoning checkpoint.</h5>
+<p>State the applicable formula, explain why it applies, show
+intermediate steps, and interpret the result with units and appropriate
+precision.</p>
+<h2 id="triangulation-and-indirect-measurement">Triangulation and
+indirect measurement</h2>
+<p>Triangulation uses a known baseline and two observed directions to
+locate an inaccessible point. Suppose stations <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are <span class="math inline">\(d\)</span> units apart and the measured interior
+angles toward target <span class="math inline">\(T\)</span> are <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>. Then <span class="math inline">\(T=180^\circ-A-B\)</span> and <span class="math display">\[AT=\frac{d\sin B}{\sin T},\qquad BT=\frac{d\sin
+A}{\sin T}.\]</span> Small changes in angles can have large effects when
+<span class="math inline">\(T\)</span> is near zero; nearly collinear
+sight lines make triangulation unstable.</p>
+<blockquote class="example">
+<p><strong>Example 10.</strong> Stations <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are <span class="math inline">\(100\)</span> m apart. The angles to a landmark are
+<span class="math inline">\(A=48^\circ\)</span> and <span class="math inline">\(B=67^\circ\)</span>. Then <span class="math inline">\(T=65^\circ\)</span> and <span class="math inline">\(AT=100\sin67^\circ/\sin65^\circ\approx101.57\)</span>
+m.</p>
+</blockquote>
+<p><strong>Guided practice 10.</strong> A baseline is 80 m with observed
+base angles 55 and 60 degrees. Find both distances to the target.</p>
+<h5 id="reasoning-checkpoint.-9">Reasoning checkpoint.</h5>
+<p>State the applicable formula, explain why it applies, show
+intermediate steps, and interpret the result with units and appropriate
+precision.</p>
+<h2 id="periodic-phenomena-and-model-parameters">Periodic phenomena and
+model parameters</h2>
+<p>A sinusoidal model has the form <span class="math display">\[y(t)=D+A\sin\!\left(\frac{2\pi}{P}(t-h)\right),\]</span>
+where <span class="math inline">\(D\)</span> is the midline, <span class="math inline">\(|A|\)</span> the amplitude, <span class="math inline">\(P&gt;0\)</span> the period, and <span class="math inline">\(h\)</span> a horizontal shift. For a measured
+maximum <span class="math inline">\(M\)</span> and minimum <span class="math inline">\(m\)</span>, estimate <span class="math inline">\(D=(M+m)/2\)</span> and <span class="math inline">\(|A|=(M-m)/2\)</span>. A peak-to-peak interval
+estimates <span class="math inline">\(P\)</span>. The units of <span class="math inline">\(2\pi/P\)</span> are radians per unit time.</p>
+<blockquote class="example">
+<p><strong>Example 11.</strong> A simplified temperature pattern ranges
+from <span class="math inline">\(36.5^\circ\)</span>C to <span class="math inline">\(37.5^\circ\)</span>C over a 24-hour cycle. Its
+midline is <span class="math inline">\(37.0^\circ\)</span>C and
+amplitude is <span class="math inline">\(0.5^\circ\)</span>C. A
+candidate model is <span class="math inline">\(T(t)=37+0.5\sin(2\pi
+t/24)\)</span>, provided <span class="math inline">\(t=0\)</span>
+corresponds to a midline upward crossing.</p>
+</blockquote>
+<p><strong>Guided practice 11.</strong> A periodic measurement varies
+from 62 to 78 units every 12 hours. State its midline, amplitude,
+angular frequency, and one possible sine model.</p>
+<h5 id="reasoning-checkpoint.-10">Reasoning checkpoint.</h5>
+<p>State the applicable formula, explain why it applies, show
+intermediate steps, and interpret the result with units and appropriate
+precision.</p>
+<h2 id="determining-phase-from-data">Determining phase from data</h2>
+<p>A periodic curve cannot be specified by amplitude and period alone.
+The phase determines where maxima, minima, and midline crossings occur.
+For a cosine model with a maximum at <span class="math inline">\(t=t_{\max}\)</span>, a convenient form is <span class="math inline">\(y(t)=D+A\cos[2\pi(t-t_{\max})/P]\)</span> with
+<span class="math inline">\(A&gt;0\)</span>. If the observation starts
+at a minimum, use a negative cosine or shift by half a period. More than
+one algebraic representation can describe the same function.</p>
+<blockquote class="example">
+<p><strong>Example 12.</strong> A laboratory sensor has maximum reading
+<span class="math inline">\(8\)</span> at <span class="math inline">\(t=2\)</span> s, minimum <span class="math inline">\(2\)</span>, and period <span class="math inline">\(10\)</span> s. Then <span class="math inline">\(D=5\)</span>, <span class="math inline">\(A=3\)</span>, and <span class="math inline">\(S(t)=5+3\cos[2\pi(t-2)/10]\)</span>. At <span class="math inline">\(t=2\)</span>, the cosine is <span class="math inline">\(1\)</span>, giving the required maximum.</p>
+</blockquote>
+<p><strong>Guided practice 12.</strong> A respiration model has minimum
+10 at t=3 s, maximum 18, and period 8 s. Write a cosine model.</p>
+<h5 id="reasoning-checkpoint.-11">Reasoning checkpoint.</h5>
+<p>State the applicable formula, explain why it applies, show
+intermediate steps, and interpret the result with units and appropriate
+precision.</p>
+<h2 id="fitting-a-sinusoidal-model-and-checking-residuals">Fitting a
+sinusoidal model and checking residuals</h2>
+<p>A model fitted to data should be judged by its residuals <span class="math inline">\(e_i=y_i-\widehat y_i\)</span>. Random-looking
+residuals of modest magnitude support the model’s descriptive
+usefulness; systematic waves or drifting residuals suggest missing
+structure. The root-mean-square error is <span class="math inline">\(\mathrm{RMSE}=\sqrt{n^{-1}\sum_i e_i^2}\)</span>.
+A small RMSE does not guarantee valid extrapolation. For known period
+<span class="math inline">\(P\)</span>, rewrite <span class="math inline">\(D+A\sin(\omega t+\phi)\)</span> as <span class="math inline">\(D+B\sin(\omega t)+C\cos(\omega t)\)</span>, where
+<span class="math inline">\(\omega=2\pi/P\)</span>. This is linear in
+the coefficients <span class="math inline">\(D,B,C\)</span> and can be
+fitted by least squares.</p>
+<blockquote class="example">
+<p><strong>Example 13.</strong> Suppose a 24-hour cycle is modeled by
+<span class="math inline">\(y(t)=70+6\sin(2\pi t/24)+2\cos(2\pi
+t/24)\)</span>. The amplitude is <span class="math inline">\(\sqrt{6^2+2^2}=\sqrt{40}\approx6.32\)</span>. Its
+phase <span class="math inline">\(\phi=\operatorname{atan2}(2,6)\)</span>, since
+<span class="math inline">\(B=A\cos\phi\)</span> and <span class="math inline">\(C=A\sin\phi\)</span>.</p>
+</blockquote>
+<p><strong>Guided practice 13.</strong> Given B=4 and C=-3 in a harmonic
+model, compute amplitude and phase, and explain the role of atan2.</p>
+<h5 id="reasoning-checkpoint.-12">Reasoning checkpoint.</h5>
+<p>State the applicable formula, explain why it applies, show
+intermediate steps, and interpret the result with units and appropriate
+precision.</p>
+<h2 id="model-limitations-uncertainty-and-units">Model limitations,
+uncertainty, and units</h2>
+<p>A trigonometric formula is an idealization. Physical signals can have
+noise, changing amplitude, drift, irregular cycles, or abrupt events. A
+predicted value should be reported with appropriate units and precision,
+and parameter uncertainty should be acknowledged. When measuring a
+distance <span class="math inline">\(d=h/\tan\theta\)</span>, small
+angular errors are especially influential for shallow angles. Compare
+predictions under plausible alternative measurements rather than
+reporting an implausibly precise answer.</p>
+<blockquote class="example">
+<p><strong>Example 14.</strong> At an elevation angle of <span class="math inline">\(20^\circ\)</span>, a horizontal distance estimate
+for a height difference of <span class="math inline">\(10\)</span> m is
+<span class="math inline">\(d=10/\tan20^\circ\approx27.47\)</span> m. If
+the angle is <span class="math inline">\(19^\circ\)</span> or <span class="math inline">\(21^\circ\)</span>, the estimates are approximately
+<span class="math inline">\(29.04\)</span> m and <span class="math inline">\(26.05\)</span> m. A one-degree error changes the
+inferred distance substantially.</p>
+</blockquote>
+<p><strong>Guided practice 14.</strong> Estimate the distance to a 15
+m-high target using angles of elevation 24, 25, and 26 degrees. Discuss
+sensitivity.</p>
+<h5 id="reasoning-checkpoint.-13">Reasoning checkpoint.</h5>
+<p>State the applicable formula, explain why it applies, show
+intermediate steps, and interpret the result with units and appropriate
+precision.</p>
+<h2 id="preparation-for-calculus-instantaneous-change">Preparation for
+calculus: instantaneous change</h2>
+<p>For <span class="math inline">\(y(t)=D+A\sin(\omega t+\phi)\)</span>,
+the average rate of change over <span class="math inline">\([t,t+h]\)</span> is <span class="math inline">\([y(t+h)-y(t)]/h\)</span>. By the angle-addition
+identity, the numerator can be rearranged into terms involving <span class="math inline">\(\sin(\omega h)\)</span> and <span class="math inline">\(\cos(\omega h)-1\)</span>. Calculus shows that the
+instantaneous rate is <span class="math inline">\(y'(t)=A\omega\cos(\omega t+\phi)\)</span> when
+<span class="math inline">\(t\)</span> is measured in compatible units.
+The derivative is largest in magnitude at midline crossings and zero at
+smooth maxima and minima.</p>
+<blockquote class="example">
+<p><strong>Example 15.</strong> For <span class="math inline">\(y(t)=5+2\sin(\pi t/6)\)</span>, the instantaneous
+rate at <span class="math inline">\(t=0\)</span> is <span class="math inline">\(y'(0)=2(\pi/6)\cos0=\pi/3\)</span> units per
+second. The factor <span class="math inline">\(\pi/6\)</span> is
+essential: omitting it confuses amplitude with rate.</p>
+</blockquote>
+<p><strong>Guided practice 15.</strong> Write the average rate of change
+for y(t)=10+3 cos(pi t/4) over [0,h], and predict the limiting
+value.</p>
+<h5 id="reasoning-checkpoint.-14">Reasoning checkpoint.</h5>
+<p>State the applicable formula, explain why it applies, show
+intermediate steps, and interpret the result with units and appropriate
+precision.</p>
+<h2 id="visual-investigations">Visual investigations</h2>
+<h3 class="unnumbered" id="investigation-1-altitude-and-the-law-of-sines">Investigation 1:
+Altitude and the Law of Sines</h3>
+<p>Draw an oblique triangle with <span class="math inline">\(A=40^\circ\)</span>, <span class="math inline">\(B=65^\circ\)</span>, and baseline <span class="math inline">\(c=8\)</span>. Drop an altitude from <span class="math inline">\(C\)</span> and label the two right triangles.
+Derive the Law of Sines from the two expressions for the altitude.
+Explain how the derivation extends to an obtuse triangle.</p>
+<figure>
+<img alt="image" src="figures/precompiled/chapter11-01.svg"/>
+<figcaption aria-hidden="true">image</figcaption>
+</figure>
+<h3 class="unnumbered" id="investigation-2-two-triangles-from-the-same-ssa-measurements">Investigation
+2: Two triangles from the same SSA measurements</h3>
+<p>Construct a ray making <span class="math inline">\(30^\circ\)</span>
+with a horizontal baseline. Mark a fixed side of length <span class="math inline">\(10\)</span> along the baseline, then draw a circle
+of radius <span class="math inline">\(7\)</span> centered at its
+endpoint. Explain why the circle intersects the ray twice. Compare both
+possible triangles with the numerical calculations in Section 5.</p>
+<h3 class="unnumbered" id="investigation-3-the-cosine-rule-as-a-distance-formula">Investigation
+3: The cosine rule as a distance formula</h3>
+<p>Plot <span class="math inline">\(A=(0,0)\)</span>, <span class="math inline">\(B=(6,0)\)</span>, and <span class="math inline">\(C=(4\cos60^\circ,4\sin60^\circ)\)</span>. Use the
+distance formula to calculate <span class="math inline">\(BC\)</span>
+and compare with the Law of Cosines. Repeat with <span class="math inline">\(A=120^\circ\)</span> and describe the effect of an
+obtuse included angle.</p>
+<h3 class="unnumbered" id="investigation-4-triangulation-and-near-parallel-sight-lines">Investigation
+4: Triangulation and near-parallel sight lines</h3>
+<p>Fix baseline <span class="math inline">\(AB=100\)</span> m. Compare
+target distances when <span class="math inline">\((A,B)=(50^\circ,60^\circ)\)</span> and when <span class="math inline">\((A,B)=(5^\circ,6^\circ)\)</span>. Which
+arrangement is more sensitive to small angular errors? Support your
+conclusion with calculations.</p>
+<h3 class="unnumbered" id="investigation-5-changing-amplitude-period-and-phase">Investigation
+5: Changing amplitude, period, and phase</h3>
+<p>On one set of axes graph <span class="math inline">\(\sin t\)</span>,
+<span class="math inline">\(2\sin t\)</span>, <span class="math inline">\(\sin(2t)\)</span>, and <span class="math inline">\(\sin(t-\pi/3)\)</span> over <span class="math inline">\(0\le t\le4\pi\)</span>. For each curve identify
+amplitude, period, and first positive maximum. Explain why a horizontal
+shift is not the same as a vertical shift.</p>
+<figure>
+<img alt="image" src="figures/precompiled/chapter11-02.svg"/>
+<figcaption aria-hidden="true">image</figcaption>
+</figure>
+<h3 class="unnumbered" id="investigation-6-a-periodic-health-science-measurement">Investigation
+6: A periodic health-science measurement</h3>
+<p>A simulated physiological signal follows <span class="math inline">\(R(t)=16+3\cos[2\pi(t-2)/8]\)</span> cycles per
+minute. Determine its range, period, and first maximum. Construct a
+table at one-second intervals, graph the result, and explain why the
+model should not be used to make clinical decisions without
+validation.</p>
+<h3 class="unnumbered" id="investigation-7-residual-patterns">Investigation 7: Residual
+patterns</h3>
+<p>Generate observations from a sinusoid with a slowly increasing trend.
+Fit a pure sinusoid and plot residuals versus time. Describe the
+pattern. Explain why an apparently good fit can still omit a
+scientifically important process.</p>
+<h2 id="extended-applied-workshops">Extended applied workshops</h2>
+<h3 class="unnumbered" id="workshop-a-indirect-height-measurement">Workshop A: Indirect height
+measurement</h3>
+<p>Two observation stations lie on level ground <span class="math inline">\(35\)</span> m apart. From the farther station the
+angle of elevation to a tower top is <span class="math inline">\(28^\circ\)</span>; from the nearer station it is
+<span class="math inline">\(41^\circ\)</span>. Both instruments are
+<span class="math inline">\(1.6\)</span> m high. Let <span class="math inline">\(x\)</span> be the horizontal distance from the
+nearer station to the tower. (a) Draw and label a diagram. (b) Derive
+<span class="math inline">\(x\tan41^\circ=(x+35)\tan28^\circ\)</span>.
+(c) Solve for <span class="math inline">\(x\)</span> and the tower
+height. (d) Describe how a one-degree angle error might affect the
+result.</p>
+<h3 class="unnumbered" id="workshop-b-navigating-to-a-research-site">Workshop B: Navigating to
+a research site</h3>
+<p>A field team travels <span class="math inline">\(9\)</span> km at
+azimuth <span class="math inline">\(35^\circ\)</span> and then <span class="math inline">\(13\)</span> km at azimuth <span class="math inline">\(125^\circ\)</span>. (a) Calculate east and north
+components. (b) Find straight-line distance from the starting point. (c)
+Determine the return azimuth. (d) Explain why a diagram without an angle
+convention can be misleading.</p>
+<h3 class="unnumbered" id="workshop-c-triangle-ambiguity-in-imaging-geometry">Workshop C:
+Triangle ambiguity in imaging geometry</h3>
+<p>An idealized imaging setup has <span class="math inline">\(A=35^\circ\)</span>, opposite length <span class="math inline">\(a=7\)</span> cm, and adjacent length <span class="math inline">\(b=10\)</span> cm. (a) Compute the altitude. (b)
+Determine whether zero, one, or two triangles are possible. (c) Solve
+for each feasible triangle. (d) Explain why an inverse-sine calculator
+result alone is insufficient.</p>
+<h3 class="unnumbered" id="workshop-d-a-periodic-environmental-sensor">Workshop D: A periodic
+environmental sensor</h3>
+<p>An environmental monitor has a minimum of <span class="math inline">\(12\)</span> units at 3 AM and maximum of <span class="math inline">\(28\)</span> units at 3 PM. Assume a 24-hour cycle.
+(a) Determine amplitude and midline. (b) Write a cosine model using
+hours after midnight. (c) Predict the reading at 9 AM. (d) Identify the
+times at which the model crosses its midline. (e) Discuss why real
+observations may deviate.</p>
+<h3 class="unnumbered" id="workshop-e-harmonic-regression">Workshop E:
+Harmonic regression</h3>
+<p>At times <span class="math inline">\(t=0,3,6,9,12,15,18,21\)</span>
+hours, simulated readings are <span class="math inline">\([72,77,80,76,70,65,64,68]\)</span>. (a) Plot the
+data. (b) Fit <span class="math inline">\(D+B\sin(2\pi t/24)+C\cos(2\pi
+t/24)\)</span>. (c) Report amplitude and phase. (d) Plot residuals and
+calculate RMSE. (e) Explain why a single day of data cannot establish a
+stable long-term biological cycle.</p>
+<h2 id="computational-laboratory-a-solving-triangles-and-checking-ambiguity">Computational
+Laboratory A: Solving triangles and checking ambiguity</h2>
+<p><strong>Before coding.</strong> Predict how many triangles are
+possible for <span class="math inline">\(A=30^\circ\)</span>, <span class="math inline">\(a=7\)</span>, <span class="math inline">\(b=10\)</span>. Explain the altitude test. Run the
+R listing, then the Python listing, and compare both sets of angles.</p>
+<h3 class="unnumbered" id="r-code">R code</h3>
+<div class="code-shell"><div class="code-bar"><span>R</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a aria-hidden="true" href="#cb1-1" tabindex="-1"></a><span class="co"># Laboratory A: the ambiguous SSA case</span></span>
+<span id="cb1-2"><a aria-hidden="true" href="#cb1-2" tabindex="-1"></a>A <span class="ot">&lt;-</span> <span class="dv">30</span> <span class="sc">*</span> pi <span class="sc">/</span> <span class="dv">180</span>; a <span class="ot">&lt;-</span> <span class="dv">7</span>; b <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb1-3"><a aria-hidden="true" href="#cb1-3" tabindex="-1"></a>s <span class="ot">&lt;-</span> b <span class="sc">*</span> <span class="fu">sin</span>(A) <span class="sc">/</span> a</span>
+<span id="cb1-4"><a aria-hidden="true" href="#cb1-4" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">abs</span>(s) <span class="sc">&gt;</span> <span class="dv">1</span>) { <span class="fu">print</span>(<span class="st">"No triangle"</span>) } <span class="cf">else</span> {</span>
+<span id="cb1-5"><a aria-hidden="true" href="#cb1-5" tabindex="-1"></a>  B_candidates <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">asin</span>(s), pi <span class="sc">-</span> <span class="fu">asin</span>(s))</span>
+<span id="cb1-6"><a aria-hidden="true" href="#cb1-6" tabindex="-1"></a>  <span class="cf">for</span> (B <span class="cf">in</span> B_candidates) {</span>
+<span id="cb1-7"><a aria-hidden="true" href="#cb1-7" tabindex="-1"></a>    C <span class="ot">&lt;-</span> pi <span class="sc">-</span> A <span class="sc">-</span> B</span>
+<span id="cb1-8"><a aria-hidden="true" href="#cb1-8" tabindex="-1"></a>    <span class="cf">if</span> (C <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb1-9"><a aria-hidden="true" href="#cb1-9" tabindex="-1"></a>      c_side <span class="ot">&lt;-</span> a <span class="sc">*</span> <span class="fu">sin</span>(C) <span class="sc">/</span> <span class="fu">sin</span>(A)</span>
+<span id="cb1-10"><a aria-hidden="true" href="#cb1-10" tabindex="-1"></a>      <span class="fu">cat</span>(<span class="fu">sprintf</span>(<span class="st">"B=%.2f deg, C=%.2f deg, c=%.3f</span><span class="sc">\n</span><span class="st">"</span>,</span>
+<span id="cb1-11"><a aria-hidden="true" href="#cb1-11" tabindex="-1"></a>                  B<span class="sc">*</span><span class="dv">180</span><span class="sc">/</span>pi, C<span class="sc">*</span><span class="dv">180</span><span class="sc">/</span>pi, c_side))</span>
+<span id="cb1-12"><a aria-hidden="true" href="#cb1-12" tabindex="-1"></a>    }</span>
+<span id="cb1-13"><a aria-hidden="true" href="#cb1-13" tabindex="-1"></a>  }</span>
+<span id="cb1-14"><a aria-hidden="true" href="#cb1-14" tabindex="-1"></a>}</span></code></pre></div></div>
+<h3 class="unnumbered" id="python-code">Python code</h3>
+<div class="code-shell"><div class="code-bar"><span>Python</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" href="#cb2-1" tabindex="-1"></a><span class="co"># Laboratory A: the ambiguous SSA case</span></span>
+<span id="cb2-2"><a aria-hidden="true" href="#cb2-2" tabindex="-1"></a><span class="im">import</span> math</span>
+<span id="cb2-3"><a aria-hidden="true" href="#cb2-3" tabindex="-1"></a>A <span class="op">=</span> math.radians(<span class="dv">30</span>)<span class="op">;</span> a <span class="op">=</span> <span class="dv">7</span><span class="op">;</span> b <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb2-4"><a aria-hidden="true" href="#cb2-4" tabindex="-1"></a>s <span class="op">=</span> b <span class="op">*</span> math.sin(A) <span class="op">/</span> a</span>
+<span id="cb2-5"><a aria-hidden="true" href="#cb2-5" tabindex="-1"></a><span class="cf">if</span> <span class="bu">abs</span>(s) <span class="op">&gt;</span> <span class="dv">1</span>:</span>
+<span id="cb2-6"><a aria-hidden="true" href="#cb2-6" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"No triangle"</span>)</span>
+<span id="cb2-7"><a aria-hidden="true" href="#cb2-7" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb2-8"><a aria-hidden="true" href="#cb2-8" tabindex="-1"></a>    <span class="cf">for</span> B <span class="kw">in</span> (math.asin(s), math.pi <span class="op">-</span> math.asin(s)):</span>
+<span id="cb2-9"><a aria-hidden="true" href="#cb2-9" tabindex="-1"></a>        C <span class="op">=</span> math.pi <span class="op">-</span> A <span class="op">-</span> B</span>
+<span id="cb2-10"><a aria-hidden="true" href="#cb2-10" tabindex="-1"></a>        <span class="cf">if</span> C <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb2-11"><a aria-hidden="true" href="#cb2-11" tabindex="-1"></a>            c_side <span class="op">=</span> a <span class="op">*</span> math.sin(C) <span class="op">/</span> math.sin(A)</span>
+<span id="cb2-12"><a aria-hidden="true" href="#cb2-12" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f"B=</span><span class="sc">{</span>math<span class="sc">.</span>degrees(B)<span class="sc">:.2f}</span><span class="ss"> deg, "</span></span>
+<span id="cb2-13"><a aria-hidden="true" href="#cb2-13" tabindex="-1"></a>                  <span class="ss">f"C=</span><span class="sc">{</span>math<span class="sc">.</span>degrees(C)<span class="sc">:.2f}</span><span class="ss"> deg, c=</span><span class="sc">{</span>c_side<span class="sc">:.3f}</span><span class="ss">"</span>)</span></code></pre></div></div>
+<p><strong>Interpretation.</strong> Why do two values of <span class="math inline">\(B\)</span> satisfy the sine law? How can you
+reject an angle when the sum of interior angles would exceed <span class="math inline">\(180^\circ\)</span>?</p>
+<h2 id="computational-laboratory-b-navigation-and-triangulation">Computational
+Laboratory B: Navigation and triangulation</h2>
+<p><strong>Before coding.</strong> Predict the signs of east and north
+displacement for an azimuth of <span class="math inline">\(150^\circ\)</span>. Compare a component-based
+solution with a triangle-based solution.</p>
+<h3 class="unnumbered" id="r-code-1">R code</h3>
+<div class="code-shell"><div class="code-bar"><span>R</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a aria-hidden="true" href="#cb3-1" tabindex="-1"></a><span class="co"># Laboratory B: navigation and triangulation</span></span>
+<span id="cb3-2"><a aria-hidden="true" href="#cb3-2" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">12</span>, <span class="dv">8</span>); az <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">60</span>, <span class="dv">150</span>) <span class="sc">*</span> pi <span class="sc">/</span> <span class="dv">180</span></span>
+<span id="cb3-3"><a aria-hidden="true" href="#cb3-3" tabindex="-1"></a>east <span class="ot">&lt;-</span> <span class="fu">sum</span>(d <span class="sc">*</span> <span class="fu">sin</span>(az)); north <span class="ot">&lt;-</span> <span class="fu">sum</span>(d <span class="sc">*</span> <span class="fu">cos</span>(az))</span>
+<span id="cb3-4"><a aria-hidden="true" href="#cb3-4" tabindex="-1"></a>distance <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(east<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> north<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb3-5"><a aria-hidden="true" href="#cb3-5" tabindex="-1"></a>azimuth <span class="ot">&lt;-</span> (<span class="fu">atan2</span>(east, north) <span class="sc">*</span> <span class="dv">180</span> <span class="sc">/</span> pi) <span class="sc">%%</span> <span class="dv">360</span></span>
+<span id="cb3-6"><a aria-hidden="true" href="#cb3-6" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">sprintf</span>(<span class="st">"East=%.3f, North=%.3f km</span><span class="sc">\n</span><span class="st">"</span>, east, north))</span>
+<span id="cb3-7"><a aria-hidden="true" href="#cb3-7" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">sprintf</span>(<span class="st">"Distance=%.3f km, azimuth=%.2f deg</span><span class="sc">\n</span><span class="st">"</span>, distance, azimuth))</span>
+<span id="cb3-8"><a aria-hidden="true" href="#cb3-8" tabindex="-1"></a>baseline <span class="ot">&lt;-</span> <span class="dv">100</span>; A <span class="ot">&lt;-</span> <span class="dv">48</span><span class="sc">*</span>pi<span class="sc">/</span><span class="dv">180</span>; B <span class="ot">&lt;-</span> <span class="dv">67</span><span class="sc">*</span>pi<span class="sc">/</span><span class="dv">180</span></span>
+<span id="cb3-9"><a aria-hidden="true" href="#cb3-9" tabindex="-1"></a>T <span class="ot">&lt;-</span> pi<span class="sc">-</span>A<span class="sc">-</span>B</span>
+<span id="cb3-10"><a aria-hidden="true" href="#cb3-10" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">sprintf</span>(<span class="st">"AT=%.3f m, BT=%.3f m</span><span class="sc">\n</span><span class="st">"</span>,</span>
+<span id="cb3-11"><a aria-hidden="true" href="#cb3-11" tabindex="-1"></a> baseline<span class="sc">*</span><span class="fu">sin</span>(B)<span class="sc">/</span><span class="fu">sin</span>(T), baseline<span class="sc">*</span><span class="fu">sin</span>(A)<span class="sc">/</span><span class="fu">sin</span>(T)))</span></code></pre></div></div>
+<h3 class="unnumbered" id="python-code-1">Python code</h3>
+<div class="code-shell"><div class="code-bar"><span>Python</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" href="#cb4-1" tabindex="-1"></a><span class="co"># Laboratory B: navigation and triangulation</span></span>
+<span id="cb4-2"><a aria-hidden="true" href="#cb4-2" tabindex="-1"></a><span class="im">import</span> math</span>
+<span id="cb4-3"><a aria-hidden="true" href="#cb4-3" tabindex="-1"></a>legs <span class="op">=</span> [(<span class="dv">12</span>, <span class="dv">60</span>), (<span class="dv">8</span>, <span class="dv">150</span>)]</span>
+<span id="cb4-4"><a aria-hidden="true" href="#cb4-4" tabindex="-1"></a>east <span class="op">=</span> <span class="bu">sum</span>(d<span class="op">*</span>math.sin(math.radians(az)) <span class="cf">for</span> d,az <span class="kw">in</span> legs)</span>
+<span id="cb4-5"><a aria-hidden="true" href="#cb4-5" tabindex="-1"></a>north <span class="op">=</span> <span class="bu">sum</span>(d<span class="op">*</span>math.cos(math.radians(az)) <span class="cf">for</span> d,az <span class="kw">in</span> legs)</span>
+<span id="cb4-6"><a aria-hidden="true" href="#cb4-6" tabindex="-1"></a>distance <span class="op">=</span> math.hypot(east, north)</span>
+<span id="cb4-7"><a aria-hidden="true" href="#cb4-7" tabindex="-1"></a>azimuth <span class="op">=</span> math.degrees(math.atan2(east, north)) <span class="op">%</span> <span class="dv">360</span></span>
+<span id="cb4-8"><a aria-hidden="true" href="#cb4-8" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"East=</span><span class="sc">{</span>east<span class="sc">:.3f}</span><span class="ss">, North=</span><span class="sc">{</span>north<span class="sc">:.3f}</span><span class="ss"> km"</span>)</span>
+<span id="cb4-9"><a aria-hidden="true" href="#cb4-9" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Distance=</span><span class="sc">{</span>distance<span class="sc">:.3f}</span><span class="ss"> km, azimuth=</span><span class="sc">{</span>azimuth<span class="sc">:.2f}</span><span class="ss"> deg"</span>)</span>
+<span id="cb4-10"><a aria-hidden="true" href="#cb4-10" tabindex="-1"></a>A, B <span class="op">=</span> <span class="bu">map</span>(math.radians, (<span class="dv">48</span>, <span class="dv">67</span>))</span>
+<span id="cb4-11"><a aria-hidden="true" href="#cb4-11" tabindex="-1"></a>T <span class="op">=</span> math.pi<span class="op">-</span>A<span class="op">-</span>B<span class="op">;</span> baseline <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb4-12"><a aria-hidden="true" href="#cb4-12" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"AT=</span><span class="sc">{</span>baseline<span class="op">*</span>math<span class="sc">.</span>sin(B)<span class="op">/</span>math<span class="sc">.</span>sin(T)<span class="sc">:.3f}</span><span class="ss"> m, "</span></span>
+<span id="cb4-13"><a aria-hidden="true" href="#cb4-13" tabindex="-1"></a>      <span class="ss">f"BT=</span><span class="sc">{</span>baseline<span class="op">*</span>math<span class="sc">.</span>sin(A)<span class="op">/</span>math<span class="sc">.</span>sin(T)<span class="sc">:.3f}</span><span class="ss"> m"</span>)</span></code></pre></div></div>
+<p><strong>Interpretation.</strong> Explain how the coordinate
+convention determines the sine and cosine assignments. How would
+uncertainty in bearings affect the final location?</p>
+<h2 id="computational-laboratory-c-fitting-and-evaluating-a-periodic-model">Computational
+Laboratory C: Fitting and evaluating a periodic model</h2>
+<p><strong>Before coding.</strong> For a 24-hour signal, compute angular
+frequency and predict the qualitative shape of a residual plot when the
+observations include a trend.</p>
+<h3 class="unnumbered" id="r-code-2">R code</h3>
+<div class="code-shell"><div class="code-bar"><span>R</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a aria-hidden="true" href="#cb5-1" tabindex="-1"></a><span class="co"># Laboratory C: periodic regression and residuals</span></span>
+<span id="cb5-2"><a aria-hidden="true" href="#cb5-2" tabindex="-1"></a>t <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">23</span>, <span class="at">by=</span><span class="dv">1</span>); omega <span class="ot">&lt;-</span> <span class="dv">2</span><span class="sc">*</span>pi<span class="sc">/</span><span class="dv">24</span></span>
+<span id="cb5-3"><a aria-hidden="true" href="#cb5-3" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">11</span>)</span>
+<span id="cb5-4"><a aria-hidden="true" href="#cb5-4" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">70</span> <span class="sc">+</span> <span class="dv">6</span><span class="sc">*</span><span class="fu">sin</span>(omega<span class="sc">*</span>t) <span class="sc">+</span> <span class="dv">2</span><span class="sc">*</span><span class="fu">cos</span>(omega<span class="sc">*</span>t) <span class="sc">+</span></span>
+<span id="cb5-5"><a aria-hidden="true" href="#cb5-5" tabindex="-1"></a>     <span class="fl">0.12</span><span class="sc">*</span>t <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="fu">length</span>(t), <span class="at">sd=</span><span class="fl">0.5</span>)</span>
+<span id="cb5-6"><a aria-hidden="true" href="#cb5-6" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> <span class="fu">sin</span>(omega<span class="sc">*</span>t) <span class="sc">+</span> <span class="fu">cos</span>(omega<span class="sc">*</span>t))</span>
+<span id="cb5-7"><a aria-hidden="true" href="#cb5-7" tabindex="-1"></a>co <span class="ot">&lt;-</span> <span class="fu">coef</span>(fit); B <span class="ot">&lt;-</span> co[<span class="dv">2</span>]; C <span class="ot">&lt;-</span> co[<span class="dv">3</span>]</span>
+<span id="cb5-8"><a aria-hidden="true" href="#cb5-8" tabindex="-1"></a>amp <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(B<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>C<span class="sc">^</span><span class="dv">2</span>); phase <span class="ot">&lt;-</span> <span class="fu">atan2</span>(C,B)</span>
+<span id="cb5-9"><a aria-hidden="true" href="#cb5-9" tabindex="-1"></a>rmse <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">mean</span>(<span class="fu">residuals</span>(fit)<span class="sc">^</span><span class="dv">2</span>))</span>
+<span id="cb5-10"><a aria-hidden="true" href="#cb5-10" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">sprintf</span>(<span class="st">"Midline=%.3f, amplitude=%.3f, phase=%.3f rad, RMSE=%.3f</span><span class="sc">\n</span><span class="st">"</span>,</span>
+<span id="cb5-11"><a aria-hidden="true" href="#cb5-11" tabindex="-1"></a> co[<span class="dv">1</span>],amp,phase,rmse))</span>
+<span id="cb5-12"><a aria-hidden="true" href="#cb5-12" tabindex="-1"></a><span class="fu">png</span>(<span class="st">"periodic_fit_R.png"</span>,<span class="at">width=</span><span class="dv">900</span>,<span class="at">height=</span><span class="dv">500</span>)</span>
+<span id="cb5-13"><a aria-hidden="true" href="#cb5-13" tabindex="-1"></a><span class="fu">plot</span>(t,y,<span class="at">pch=</span><span class="dv">16</span>,<span class="at">xlab=</span><span class="st">"Time (hours)"</span>,<span class="at">ylab=</span><span class="st">"Sensor reading"</span>)</span>
+<span id="cb5-14"><a aria-hidden="true" href="#cb5-14" tabindex="-1"></a><span class="fu">lines</span>(t,<span class="fu">fitted</span>(fit),<span class="at">col=</span><span class="st">"blue"</span>,<span class="at">lwd=</span><span class="dv">2</span>)</span>
+<span id="cb5-15"><a aria-hidden="true" href="#cb5-15" tabindex="-1"></a><span class="fu">dev.off</span>()</span>
+<span id="cb5-16"><a aria-hidden="true" href="#cb5-16" tabindex="-1"></a><span class="fu">png</span>(<span class="st">"periodic_residuals_R.png"</span>,<span class="at">width=</span><span class="dv">900</span>,<span class="at">height=</span><span class="dv">500</span>)</span>
+<span id="cb5-17"><a aria-hidden="true" href="#cb5-17" tabindex="-1"></a><span class="fu">plot</span>(t,<span class="fu">residuals</span>(fit),<span class="at">pch=</span><span class="dv">16</span>,<span class="at">xlab=</span><span class="st">"Time (hours)"</span>,<span class="at">ylab=</span><span class="st">"Residual"</span>)</span>
+<span id="cb5-18"><a aria-hidden="true" href="#cb5-18" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="dv">0</span>,<span class="at">lty=</span><span class="dv">2</span>)</span>
+<span id="cb5-19"><a aria-hidden="true" href="#cb5-19" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code></pre></div></div>
+<h3 class="unnumbered" id="python-code-2">Python code</h3>
+<div class="code-shell"><div class="code-bar"><span>Python</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a aria-hidden="true" href="#cb6-1" tabindex="-1"></a><span class="co"># Laboratory C: periodic regression and residuals</span></span>
+<span id="cb6-2"><a aria-hidden="true" href="#cb6-2" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb6-3"><a aria-hidden="true" href="#cb6-3" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb6-4"><a aria-hidden="true" href="#cb6-4" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">11</span>)</span>
+<span id="cb6-5"><a aria-hidden="true" href="#cb6-5" tabindex="-1"></a>t <span class="op">=</span> np.arange(<span class="dv">24</span>, dtype<span class="op">=</span><span class="bu">float</span>)<span class="op">;</span> omega <span class="op">=</span> <span class="dv">2</span><span class="op">*</span>np.pi<span class="op">/</span><span class="dv">24</span></span>
+<span id="cb6-6"><a aria-hidden="true" href="#cb6-6" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">70</span> <span class="op">+</span> <span class="dv">6</span><span class="op">*</span>np.sin(omega<span class="op">*</span>t) <span class="op">+</span> <span class="dv">2</span><span class="op">*</span>np.cos(omega<span class="op">*</span>t) <span class="op">+</span> <span class="fl">0.12</span><span class="op">*</span>t</span>
+<span id="cb6-7"><a aria-hidden="true" href="#cb6-7" tabindex="-1"></a>y <span class="op">=</span> y <span class="op">+</span> rng.normal(<span class="dv">0</span>, <span class="fl">0.5</span>, <span class="bu">len</span>(t))</span>
+<span id="cb6-8"><a aria-hidden="true" href="#cb6-8" tabindex="-1"></a>X <span class="op">=</span> np.column_stack((np.ones(<span class="bu">len</span>(t)), np.sin(omega<span class="op">*</span>t), np.cos(omega<span class="op">*</span>t)))</span>
+<span id="cb6-9"><a aria-hidden="true" href="#cb6-9" tabindex="-1"></a>D, B, C <span class="op">=</span> np.linalg.lstsq(X, y, rcond<span class="op">=</span><span class="va">None</span>)[<span class="dv">0</span>]</span>
+<span id="cb6-10"><a aria-hidden="true" href="#cb6-10" tabindex="-1"></a>fitted <span class="op">=</span> X <span class="op">@</span> np.array([D,B,C])<span class="op">;</span> residuals <span class="op">=</span> y<span class="op">-</span>fitted</span>
+<span id="cb6-11"><a aria-hidden="true" href="#cb6-11" tabindex="-1"></a>amp <span class="op">=</span> np.hypot(B,C)<span class="op">;</span> phase <span class="op">=</span> np.arctan2(C,B)</span>
+<span id="cb6-12"><a aria-hidden="true" href="#cb6-12" tabindex="-1"></a>rmse <span class="op">=</span> np.sqrt(np.mean(residuals<span class="op">**</span><span class="dv">2</span>))</span>
+<span id="cb6-13"><a aria-hidden="true" href="#cb6-13" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Midline=</span><span class="sc">{</span>D<span class="sc">:.3f}</span><span class="ss">, amplitude=</span><span class="sc">{</span>amp<span class="sc">:.3f}</span><span class="ss">, "</span></span>
+<span id="cb6-14"><a aria-hidden="true" href="#cb6-14" tabindex="-1"></a>      <span class="ss">f"phase=</span><span class="sc">{</span>phase<span class="sc">:.3f}</span><span class="ss"> rad, RMSE=</span><span class="sc">{</span>rmse<span class="sc">:.3f}</span><span class="ss">"</span>)</span>
+<span id="cb6-15"><a aria-hidden="true" href="#cb6-15" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">4</span>))<span class="op">;</span> plt.scatter(t,y,label<span class="op">=</span><span class="st">"Observed"</span>)</span>
+<span id="cb6-16"><a aria-hidden="true" href="#cb6-16" tabindex="-1"></a>plt.plot(t,fitted,label<span class="op">=</span><span class="st">"Fitted"</span>)<span class="op">;</span> plt.xlabel(<span class="st">"Time (hours)"</span>)</span>
+<span id="cb6-17"><a aria-hidden="true" href="#cb6-17" tabindex="-1"></a>plt.ylabel(<span class="st">"Sensor reading"</span>)<span class="op">;</span> plt.legend()<span class="op">;</span> plt.tight_layout()</span>
+<span id="cb6-18"><a aria-hidden="true" href="#cb6-18" tabindex="-1"></a>plt.savefig(<span class="st">"periodic_fit_python.png"</span>,dpi<span class="op">=</span><span class="dv">160</span>)<span class="op">;</span> plt.close()</span>
+<span id="cb6-19"><a aria-hidden="true" href="#cb6-19" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">4</span>))<span class="op">;</span> plt.scatter(t,residuals)</span>
+<span id="cb6-20"><a aria-hidden="true" href="#cb6-20" tabindex="-1"></a>plt.axhline(<span class="dv">0</span>,ls<span class="op">=</span><span class="st">"--"</span>)<span class="op">;</span> plt.xlabel(<span class="st">"Time (hours)"</span>)</span>
+<span id="cb6-21"><a aria-hidden="true" href="#cb6-21" tabindex="-1"></a>plt.ylabel(<span class="st">"Residual"</span>)<span class="op">;</span> plt.tight_layout()</span>
+<span id="cb6-22"><a aria-hidden="true" href="#cb6-22" tabindex="-1"></a>plt.savefig(<span class="st">"periodic_residuals_python.png"</span>,dpi<span class="op">=</span><span class="dv">160</span>)<span class="op">;</span> plt.close()</span></code></pre></div></div>
+<p><strong>Interpretation.</strong> Compare the fitted amplitude,
+midline, and RMSE. Identify limitations of a one-period fit and explain
+why a smooth-looking curve does not imply a validated clinical
+model.</p>
+<h2 id="a-step-by-step-problem-solving-clinic">A step-by-step
+problem-solving clinic</h2>
+<h3 class="unnumbered" id="case-study-1-selecting-the-correct-triangle-law">Case study 1:
+Selecting the correct triangle law</h3>
+<p>A team measures two sides of a triangular study region as <span class="math inline">\(14\)</span> m and <span class="math inline">\(19\)</span> m, with an included angle of <span class="math inline">\(47^\circ\)</span>. The goal is to determine the
+remaining side and the area. <strong>Step 1: Organize
+information.</strong> The angle is between the known sides, so the data
+are SAS. <strong>Step 2: Choose a method.</strong> The Law of Cosines
+determines the third side, and the sine area formula gives the area
+directly. <strong>Step 3: Set up exact expressions:</strong> <span class="math display">\[a=\sqrt{14^2+19^2-2(14)(19)\cos47^\circ},\qquad
+K=\frac12(14)(19)\sin47^\circ.\]</span> <strong>Step 4: Check.</strong>
+The third side must lie between <span class="math inline">\(19-14=5\)</span> m and <span class="math inline">\(19+14=33\)</span> m. The area must be less than
+<span class="math inline">\(\tfrac12(14)(19)=133\)</span> m<span class="math inline">\(^2\)</span> because <span class="math inline">\(\sin47^\circ&lt;1\)</span>. <strong>Step 5:
+Interpret.</strong> Report the results with units and precision
+consistent with the measurements. <strong>Try it:</strong> Repeat the
+calculations with the included angle increased to <span class="math inline">\(48^\circ\)</span> and compare sensitivity.</p>
+<h3 class="unnumbered" id="case-study-2-a-model-with-a-delayed-maximum">Case study 2: A model
+with a delayed maximum</h3>
+<p>A simulated sensor oscillates between <span class="math inline">\(30\)</span> and <span class="math inline">\(50\)</span> units with a period of <span class="math inline">\(12\)</span> minutes. Its maximum occurs at <span class="math inline">\(t=4\)</span> minutes. <strong>Step 1: Determine
+parameters.</strong> <span class="math inline">\(D=(50+30)/2=40\)</span>, <span class="math inline">\(A=(50-30)/2=10\)</span>, and <span class="math inline">\(\omega=2\pi/12=\pi/6\)</span> radians per minute.
+<strong>Step 2: Align phase.</strong> A cosine reaches its maximum when
+its argument is zero, so <span class="math display">\[S(t)=40+10\cos\left[\frac{\pi}{6}(t-4)\right].\]</span>
+<strong>Step 3: Verify.</strong> <span class="math inline">\(S(4)=50\)</span>; six minutes later, <span class="math inline">\(S(10)=30\)</span>. <strong>Step 4: Solve a
+threshold question.</strong> <span class="math inline">\(S(t)=45\)</span> means <span class="math inline">\(\cos[\pi(t-4)/6]=1/2\)</span>. Thus <span class="math inline">\(\pi(t-4)/6=\pm\pi/3+2k\pi\)</span>, or <span class="math inline">\(t=4\pm2+12k\)</span>. Over <span class="math inline">\([0,12)\)</span> the crossings are <span class="math inline">\(t=2\)</span> and <span class="math inline">\(t=6\)</span> minutes. <strong>Try it:</strong>
+Determine all crossings of the midline over <span class="math inline">\([0,24)\)</span>.</p>
+<h3 class="unnumbered" id="case-study-3-interpreting-uncertainty-rather-than-hiding-it">Case
+study 3: Interpreting uncertainty rather than hiding it</h3>
+<p>A target is observed from a horizontal distance of <span class="math inline">\(25\)</span> m at an elevation angle reported as
+<span class="math inline">\(30^\circ\pm1^\circ\)</span>. The instrument
+is <span class="math inline">\(1.5\)</span> m above the ground. A
+central estimate for height is <span class="math inline">\(H=1.5+25\tan30^\circ\)</span>. To represent the
+stated angular uncertainty, compute <span class="math inline">\(H_{\min}=1.5+25\tan29^\circ\)</span> and <span class="math inline">\(H_{\max}=1.5+25\tan31^\circ\)</span>. Explain why
+the central estimate alone would imply more certainty than the
+measurement supports. <strong>Try it:</strong> Repeat for a distance of
+<span class="math inline">\(50\)</span> m and compare the width of the
+height interval.</p>
+<h2 id="common-errors-and-diagnostic-questions">Common errors and
+diagnostic questions</h2>
+<ol type="1">
+<li><p><strong>Degrees versus radians:</strong> A student evaluates
+<span class="math inline">\(\sin30\)</span> on a calculator set to
+radians and concludes that the Law of Sines is incorrect. Identify the
+error and explain how to prevent it in both R and Python.</p></li>
+<li><p><strong>Mismatched sides and angles:</strong> A student writes
+<span class="math inline">\(a/\sin B=b/\sin A\)</span>. Draw a labeled
+triangle and correct the expression.</p></li>
+<li><p><strong>Lost SSA solution:</strong> A student reports only <span class="math inline">\(B=\arcsin(5/7)\)</span> in the ambiguous-case
+example. Explain the second candidate and the angle-sum check.</p></li>
+<li><p><strong>Unclear bearing convention:</strong> Two students obtain
+different eastward displacements from the same stated angle. Explain how
+defining the zero direction and positive rotation resolves the
+disagreement.</p></li>
+<li><p><strong>Period confused with frequency:</strong> A model has
+<span class="math inline">\(\omega=\pi/4\)</span> rad/s. Explain why its
+period is <span class="math inline">\(8\)</span> seconds rather than
+<span class="math inline">\(4\)</span> seconds.</p></li>
+<li><p><strong>Overinterpreting a fitted curve:</strong> A sinusoidal
+model closely matches 24 simulated measurements. Explain why this does
+not prove that a physiological process is exactly periodic.</p></li>
+</ol>
+<h2 id="chapter-review-and-self-assessment">Chapter review and
+self-assessment</h2>
+<p><strong>Instructions.</strong> Show calculations, draw diagrams where
+appropriate, and give units. Use exact values when possible and round
+measured results appropriately.</p>
+<ol type="1">
+<li><p>A ladder of length 5 m makes an angle of <span class="math inline">\(68^\circ\)</span> with the ground. Find its
+vertical reach.</p></li>
+<li><p>A ramp rises 0.75 m over a run of 9 m. Find its slope
+angle.</p></li>
+<li><p>An observer 40 m from a building measures an elevation angle of
+<span class="math inline">\(33^\circ\)</span> from a height of 1.5 m.
+Estimate building height.</p></li>
+<li><p>In triangle <span class="math inline">\(ABC\)</span>, <span class="math inline">\(A=42^\circ\)</span>, <span class="math inline">\(B=68^\circ\)</span>, and <span class="math inline">\(a=11\)</span>. Find <span class="math inline">\(C,b,c\)</span>.</p></li>
+<li><p>Determine the number of triangles for <span class="math inline">\(A=25^\circ\)</span>, <span class="math inline">\(a=4\)</span>, <span class="math inline">\(b=9\)</span>.</p></li>
+<li><p>Determine the number of triangles for <span class="math inline">\(A=30^\circ\)</span>, <span class="math inline">\(a=6\)</span>, <span class="math inline">\(b=10\)</span>.</p></li>
+<li><p>Solve all possible triangles with <span class="math inline">\(A=40^\circ\)</span>, <span class="math inline">\(a=8\)</span>, <span class="math inline">\(b=10\)</span>.</p></li>
+<li><p>Explain why <span class="math inline">\(\arcsin\)</span> alone
+cannot resolve every SSA triangle.</p></li>
+<li><p>Two sides of length 7 and 12 enclose <span class="math inline">\(55^\circ\)</span>. Find the third side.</p></li>
+<li><p>Find the angle opposite side 13 in a triangle with sides 5, 12,
+13.</p></li>
+<li><p>Determine whether lengths 3, 5, 9 form a triangle.</p></li>
+<li><p>Find the area of a triangle with sides 14 and 18 enclosing <span class="math inline">\(75^\circ\)</span>.</p></li>
+<li><p>Find the area of a triangle with sides 8 and 9 enclosing <span class="math inline">\(120^\circ\)</span>.</p></li>
+<li><p>Derive the Law of Cosines from the distance formula.</p></li>
+<li><p>Explain how the Pythagorean theorem is a special case of the Law
+of Cosines.</p></li>
+<li><p>A ship travels 10 km at azimuth <span class="math inline">\(45^\circ\)</span>. Find its east and north
+components.</p></li>
+<li><p>A drone travels 4 km at <span class="math inline">\(90^\circ\)</span> then 3 km at <span class="math inline">\(180^\circ\)</span>. Find resultant distance and
+azimuth.</p></li>
+<li><p>A survey baseline is 120 m with sight-line angles <span class="math inline">\(52^\circ\)</span> and <span class="math inline">\(61^\circ\)</span>. Find both target
+distances.</p></li>
+<li><p>Explain why nearly parallel sight lines are undesirable for
+triangulation.</p></li>
+<li><p>A periodic signal has maximum 20, minimum 8, and period 6 s. Find
+amplitude, midline, and angular frequency.</p></li>
+<li><p>Write a cosine model with maximum 15 at <span class="math inline">\(t=3\)</span> and minimum 5 at <span class="math inline">\(t=7\)</span>, assuming the maximum and minimum are
+consecutive.</p></li>
+<li><p>For <span class="math inline">\(y=3+2\sin(\pi t/4)\)</span>, find
+range and period.</p></li>
+<li><p>Find the first positive maximum of <span class="math inline">\(y=10+4\cos[\pi(t-2)/6]\)</span>.</p></li>
+<li><p>Convert <span class="math inline">\(D+4\sin(\omega
+t)-3\cos(\omega t)\)</span> to amplitude-phase form.</p></li>
+<li><p>Explain why <span class="math inline">\(\operatorname{atan2}\)</span> is preferable to
+ordinary arctangent for determining phase.</p></li>
+<li><p>Define a residual and RMSE in a periodic model.</p></li>
+<li><p>Describe two residual patterns that suggest model
+misspecification.</p></li>
+<li><p>A model estimates a 10 m height difference using an elevation
+angle of <span class="math inline">\(15^\circ\)</span>. Calculate
+horizontal distance.</p></li>
+<li><p>Recalculate the preceding distance for <span class="math inline">\(14^\circ\)</span> and <span class="math inline">\(16^\circ\)</span>; discuss uncertainty.</p></li>
+<li><p>For <span class="math inline">\(y=2+3\sin(\pi t/5)\)</span>,
+write a difference quotient and predict its derivative at <span class="math inline">\(t=0\)</span>.</p></li>
+</ol>
+<h2 id="calculus-readiness-checkpoint">Calculus-readiness
+checkpoint</h2>
+<p>Explain why radians are the natural units in the derivative of a sine
+function. For <span class="math inline">\(y(t)=D+A\sin(\omega
+t+\phi)\)</span>, identify the units of <span class="math inline">\(A\)</span>, <span class="math inline">\(\omega\)</span>, and <span class="math inline">\(y'(t)\)</span>. Explain geometrically why a
+sinusoid’s rate of change vanishes at its peaks and troughs. Finally,
+describe how the secant-slope idea from Chapter 3 connects to the
+instantaneous rate of change of a periodic model.</p>
+<h2 class="unnumbered" id="looking-ahead">Looking ahead</h2>
+<p>Chapter 12 turns to sequences and series. Periodic signals can be
+sampled at equally spaced times, producing numerical sequences; patterns
+in those samples can reveal both useful structure and misleading
+aliases.</p>
+<h2 id="extended-application-indirect-height-measurement">Extended
+application: Indirect height measurement</h2>
+<p>A surveyor stands 30 meters from a vertical tower on level ground.
+The instrument is 1.5 meters above the ground. The quantities in this
+investigation are illustrative rather than measured observations.</p>
+<h3 id="formulating-the-mathematical-model">Formulating the mathematical
+model</h3>
+<p>The proposed relationship is <span class="math display">\[H(\theta)=1.5+30\tan\theta.\]</span> Before
+calculating, identify the input and output, their units, and the
+interval on which the model is being studied. Distinguish the
+mathematical domain from the practical domain. The numerical study uses
+inputs from <span class="math inline">\(0.1\)</span> to <span class="math inline">\(1.1\)</span>.</p>
+<blockquote class="example">
+<p><strong>Example 16: Analytical investigation.</strong> Find the
+height for <span class="math inline">\(\theta=\pi/4\)</span>. Explain
+why angles close to <span class="math inline">\(\pi/2\)</span> make the
+estimate sensitive.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> Height 31.5 m. Tangent grows
+without bound near <span class="math inline">\(\pi/2\)</span>, so small
+angle errors can cause large height errors.</p>
+</blockquote>
+<h3 id="connecting-numerical-and-graphical-representations">Connecting
+numerical and graphical representations</h3>
+<table>
+<caption>Selected predictions from the illustrative model. Values are
+rounded for display.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Elevation angle (rad)</th>
+<th style="text-align: right;">Tower height (m)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">0.1</td>
+<td style="text-align: right;">4.51</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">0.35</td>
+<td style="text-align: right;">12.45</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">0.6</td>
+<td style="text-align: right;">22.02</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">0.85</td>
+<td style="text-align: right;">35.65</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1.1</td>
+<td style="text-align: right;">60.44</td>
+</tr>
+</tbody>
+</table>
+<figure>
+<img alt="Model predictions over the stated investigation interval. The graph represents a mathematical model, not observed data." src="figures/ch11/applied_project.svg" style="width:90.0%"/>
+<figcaption aria-hidden="true">Model predictions over the stated
+investigation interval. The graph represents a mathematical model, not
+observed data.</figcaption>
+</figure>
+<p><strong>Interpretation.</strong> Compare the tabulated values with
+the graph. Identify the intervals over which the output increases or
+decreases, and distinguish a sampled extremum from an exact analytical
+extremum. Explain whether interpolation and extrapolation have the same
+justification in this setting.</p>
+<h3 id="r-implementation">R implementation</h3>
+<p>The following standalone script defines the model, generates
+predictions, and draws a labeled graph. Read the formula before running
+the code. The sampled range is a numerical diagnostic, not a proof of
+the exact range.</p>
+<div class="code-shell"><div class="code-bar"><span>R</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a aria-hidden="true" href="#cb7-1" tabindex="-1"></a><span class="co"># Applied investigation: Indirect height measurement</span></span>
+<span id="cb7-2"><a aria-hidden="true" href="#cb7-2" tabindex="-1"></a><span class="co"># 1. Define the input domain and model</span></span>
+<span id="cb7-3"><a aria-hidden="true" href="#cb7-3" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fl">0.1</span>, <span class="fl">1.1</span>, <span class="at">length.out =</span> <span class="dv">301</span>)</span>
+<span id="cb7-4"><a aria-hidden="true" href="#cb7-4" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fl">1.5</span><span class="sc">+</span><span class="dv">30</span><span class="sc">*</span><span class="fu">tan</span>(x)</span>
+<span id="cb7-5"><a aria-hidden="true" href="#cb7-5" tabindex="-1"></a></span>
+<span id="cb7-6"><a aria-hidden="true" href="#cb7-6" tabindex="-1"></a><span class="co"># 2. Inspect numerical predictions</span></span>
+<span id="cb7-7"><a aria-hidden="true" href="#cb7-7" tabindex="-1"></a>idx <span class="ot">&lt;-</span> <span class="fu">unique</span>(<span class="fu">round</span>(<span class="fu">seq</span>(<span class="dv">1</span>, <span class="fu">length</span>(x), <span class="at">length.out =</span> <span class="dv">5</span>)))</span>
+<span id="cb7-8"><a aria-hidden="true" href="#cb7-8" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">data.frame</span>(<span class="at">input =</span> x[idx], <span class="at">output =</span> y[idx]))</span>
+<span id="cb7-9"><a aria-hidden="true" href="#cb7-9" tabindex="-1"></a></span>
+<span id="cb7-10"><a aria-hidden="true" href="#cb7-10" tabindex="-1"></a><span class="co"># 3. Visualize the model with labeled axes</span></span>
+<span id="cb7-11"><a aria-hidden="true" href="#cb7-11" tabindex="-1"></a><span class="fu">plot</span>(x, y, <span class="at">type =</span> <span class="st">"l"</span>, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">"#176B87"</span>,</span>
+<span id="cb7-12"><a aria-hidden="true" href="#cb7-12" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Elevation angle (rad)"</span>, <span class="at">ylab =</span> <span class="st">"Tower height (m)"</span>)</span>
+<span id="cb7-13"><a aria-hidden="true" href="#cb7-13" tabindex="-1"></a><span class="fu">grid</span>()</span>
+<span id="cb7-14"><a aria-hidden="true" href="#cb7-14" tabindex="-1"></a></span>
+<span id="cb7-15"><a aria-hidden="true" href="#cb7-15" tabindex="-1"></a><span class="co"># 4. Check the sampled output range</span></span>
+<span id="cb7-16"><a aria-hidden="true" href="#cb7-16" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">range</span>(y))</span></code></pre></div></div>
+<h3 id="python-implementation">Python implementation</h3>
+<p>Repeat the same investigation using NumPy arrays and Matplotlib.
+Compare the printed predictions with the R output, allowing for
+rounding.</p>
+<div class="code-shell"><div class="code-bar"><span>Python</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a aria-hidden="true" href="#cb8-1" tabindex="-1"></a><span class="co"># Applied investigation: Indirect height measurement</span></span>
+<span id="cb8-2"><a aria-hidden="true" href="#cb8-2" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb8-3"><a aria-hidden="true" href="#cb8-3" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb8-4"><a aria-hidden="true" href="#cb8-4" tabindex="-1"></a></span>
+<span id="cb8-5"><a aria-hidden="true" href="#cb8-5" tabindex="-1"></a><span class="co"># 1. Define the input domain and model</span></span>
+<span id="cb8-6"><a aria-hidden="true" href="#cb8-6" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="fl">0.1</span>, <span class="fl">1.1</span>, <span class="dv">301</span>)</span>
+<span id="cb8-7"><a aria-hidden="true" href="#cb8-7" tabindex="-1"></a>y <span class="op">=</span> <span class="fl">1.5</span><span class="op">+</span><span class="dv">30</span><span class="op">*</span>np.tan(x)</span>
+<span id="cb8-8"><a aria-hidden="true" href="#cb8-8" tabindex="-1"></a></span>
+<span id="cb8-9"><a aria-hidden="true" href="#cb8-9" tabindex="-1"></a><span class="co"># 2. Inspect numerical predictions</span></span>
+<span id="cb8-10"><a aria-hidden="true" href="#cb8-10" tabindex="-1"></a>idx <span class="op">=</span> np.unique(np.linspace(<span class="dv">0</span>, <span class="bu">len</span>(x)<span class="op">-</span><span class="dv">1</span>, <span class="dv">5</span>).<span class="bu">round</span>().astype(<span class="bu">int</span>))</span>
+<span id="cb8-11"><a aria-hidden="true" href="#cb8-11" tabindex="-1"></a><span class="bu">print</span>(np.column_stack((x[idx], y[idx])))</span>
+<span id="cb8-12"><a aria-hidden="true" href="#cb8-12" tabindex="-1"></a></span>
+<span id="cb8-13"><a aria-hidden="true" href="#cb8-13" tabindex="-1"></a><span class="co"># 3. Visualize the model with labeled axes</span></span>
+<span id="cb8-14"><a aria-hidden="true" href="#cb8-14" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="fl">3.6</span>))</span>
+<span id="cb8-15"><a aria-hidden="true" href="#cb8-15" tabindex="-1"></a>ax.plot(x, y, <span class="st">"-"</span>, color<span class="op">=</span><span class="st">"#176B87"</span>, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb8-16"><a aria-hidden="true" href="#cb8-16" tabindex="-1"></a>ax.<span class="bu">set</span>(xlabel<span class="op">=</span><span class="st">"Elevation angle (rad)"</span>, ylabel<span class="op">=</span><span class="st">"Tower height (m)"</span>)</span>
+<span id="cb8-17"><a aria-hidden="true" href="#cb8-17" tabindex="-1"></a>ax.grid(alpha<span class="op">=</span><span class="fl">0.22</span>)</span>
+<span id="cb8-18"><a aria-hidden="true" href="#cb8-18" tabindex="-1"></a>ax.spines[[<span class="st">"top"</span>, <span class="st">"right"</span>]].set_visible(<span class="va">False</span>)</span>
+<span id="cb8-19"><a aria-hidden="true" href="#cb8-19" tabindex="-1"></a>fig.tight_layout()</span>
+<span id="cb8-20"><a aria-hidden="true" href="#cb8-20" tabindex="-1"></a>plt.show()</span>
+<span id="cb8-21"><a aria-hidden="true" href="#cb8-21" tabindex="-1"></a></span>
+<span id="cb8-22"><a aria-hidden="true" href="#cb8-22" tabindex="-1"></a><span class="co"># 4. Check the sampled output range</span></span>
+<span id="cb8-23"><a aria-hidden="true" href="#cb8-23" tabindex="-1"></a><span class="bu">print</span>(np.<span class="bu">min</span>(y), np.<span class="bu">max</span>(y))</span></code></pre></div></div>
+<h3 id="guided-practice-checking-the-model">Guided practice: checking
+the model</h3>
+<ol type="1">
+<li><p>Calculate the outputs at the two endpoints by hand. Compare them
+with the numerical table.</p></li>
+<li><p>Select an interior input not listed in the table. Predict the
+output before evaluating it in either language.</p></li>
+<li><p>Explain the meaning of the difference between the two endpoint
+outputs, including units. If appropriate, calculate the average rate of
+change.</p></li>
+<li><p>Identify a physical assumption of the model and describe a
+circumstance in which it would fail.</p></li>
+</ol>
+<h2 id="chapter-project-investigating-indirect-height-measurement">Chapter
+project: investigating Indirect height measurement</h2>
+<p>Prepare a short technical report for a reader who has not studied the
+model. Use the preceding case as a starting point, but develop your own
+investigation rather than merely reproducing the worked example.</p>
+<ol type="1">
+<li><p>State a quantitative question that can be answered using the
+model. Define all variables, units, and restrictions.</p></li>
+<li><p>Modify one meaningful numerical parameter in the formula. Explain
+what the change represents in the original context. Derive the revised
+formula and predict the direction of change before computing.</p></li>
+<li><p>Compare the original and revised models at five common admissible
+inputs. Present a labeled table and explain the largest difference in
+the table.</p></li>
+<li><p>Produce a graph containing both models on the same axes. Use a
+legend and distinguish the curves with line styles or markers. Explain
+the shape and any intersections.</p></li>
+<li><p>Solve your quantitative question algebraically where possible.
+Verify the result using R and Python; report any differences due to
+numerical precision.</p></li>
+<li><p>Discuss at least two limitations. Describe what measurements
+would be needed to assess the model in practice. Do not present
+simulated predictions as empirical evidence.</p></li>
+</ol>
+<h3 class="unnumbered" id="project-deliverables-and-assessment">Project
+deliverables and assessment</h3>
+<p>Submit a two- to three-page report, the two runnable scripts, and the
+labeled figure. The report should stand on its own without requiring the
+reader to inspect the code.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Criterion</th>
+<th style="text-align: right;">Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Mathematical formulation and domain</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Analytical reasoning and verification</td>
+<td style="text-align: right;">25</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Reproducible R and Python
+computations</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Graph and table quality</td>
+<td style="text-align: right;">15</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Interpretation and limitations</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Total</td>
+<td style="text-align: right;">100</td>
+</tr>
+</tbody>
+</table>
+<h2>Companion scripts</h2><p><a download="" href="code/ch11/applied_project.R">applied_project.R</a></p><p><a download="" href="code/ch11/applied_project.py">applied_project.py</a></p><p><a download="" href="code/ch11/labA.R">labA.R</a></p><p><a download="" href="code/ch11/labA.py">labA.py</a></p><p><a download="" href="code/ch11/labB.R">labB.R</a></p><p><a download="" href="code/ch11/labB.py">labB.py</a></p><p><a download="" href="code/ch11/labC.R">labC.R</a></p><p><a download="" href="code/ch11/labC.py">labC.py</a></p><p><a download="" href="code/ch11/periodic_fit_python.png">periodic_fit_python.png</a></p><p><a download="" href="code/ch11/periodic_residuals_python.png">periodic_residuals_python.png</a></p><footer><a href="chapter10.html">← Previous</a><a href="chapter12.html">Next →</a></footer><section class="investigation"><h2 id="interactive-investigation">Interactive investigation: Periodic temperature model</h2><div data-investigation="11"><p>Enable JavaScript to explore the model.</p></div><p><strong>Explore and explain:</strong> Predict the daily maximum, minimum and their times.</p></section>
+</main><nav aria-label="On this page" class="chapter-toc" id="TOC" role="doc-toc"><strong>On this page</strong>
+<ul>
+<li><a href="#applications-of-trigonometry-and-periodic-models" id="toc-applications-of-trigonometry-and-periodic-models">Applications
+of Trigonometry and Periodic Models</a>
+<ul>
+<li><a href="#opening-context-measuring-what-cannot-be-reached" id="toc-opening-context-measuring-what-cannot-be-reached">Opening
+context: measuring what cannot be reached</a></li>
+<li><a href="#learning-outcomes" id="toc-learning-outcomes">Learning
+outcomes</a></li>
+<li><a href="#prerequisite-check" id="toc-prerequisite-check">Prerequisite check</a></li>
+<li><a href="#working-with-r-and-python" id="toc-working-with-r-and-python">Working with R and Python</a></li>
+<li><a href="#right-triangle-review-and-choosing-a-ratio" id="toc-right-triangle-review-and-choosing-a-ratio">Right-triangle
+review and choosing a ratio</a></li>
+<li><a href="#angles-of-elevation-and-depression" id="toc-angles-of-elevation-and-depression">Angles of elevation and
+depression</a></li>
+<li><a href="#oblique-triangles-and-notation" id="toc-oblique-triangles-and-notation">Oblique triangles and
+notation</a></li>
+<li><a href="#deriving-the-law-of-sines" id="toc-deriving-the-law-of-sines">Deriving the Law of Sines</a></li>
+<li><a href="#the-ambiguous-ssa-case" id="toc-the-ambiguous-ssa-case">The ambiguous SSA case</a></li>
+<li><a href="#deriving-the-law-of-cosines" id="toc-deriving-the-law-of-cosines">Deriving the Law of
+Cosines</a></li>
+<li><a href="#solving-sss-triangles" id="toc-solving-sss-triangles">Solving SSS triangles</a></li>
+<li><a href="#area-from-trigonometry" id="toc-area-from-trigonometry">Area from trigonometry</a></li>
+<li><a href="#bearings-and-navigation" id="toc-bearings-and-navigation">Bearings and navigation</a></li>
+<li><a href="#triangulation-and-indirect-measurement" id="toc-triangulation-and-indirect-measurement">Triangulation and
+indirect measurement</a></li>
+<li><a href="#periodic-phenomena-and-model-parameters" id="toc-periodic-phenomena-and-model-parameters">Periodic phenomena and
+model parameters</a></li>
+<li><a href="#determining-phase-from-data" id="toc-determining-phase-from-data">Determining phase from
+data</a></li>
+<li><a href="#fitting-a-sinusoidal-model-and-checking-residuals" id="toc-fitting-a-sinusoidal-model-and-checking-residuals">Fitting a
+sinusoidal model and checking residuals</a></li>
+<li><a href="#model-limitations-uncertainty-and-units" id="toc-model-limitations-uncertainty-and-units">Model limitations,
+uncertainty, and units</a></li>
+<li><a href="#preparation-for-calculus-instantaneous-change" id="toc-preparation-for-calculus-instantaneous-change">Preparation for
+calculus: instantaneous change</a></li>
+<li><a href="#visual-investigations" id="toc-visual-investigations">Visual investigations</a>
+<ul>
+<li><a href="#investigation-1-altitude-and-the-law-of-sines" id="toc-investigation-1-altitude-and-the-law-of-sines">Investigation 1:
+Altitude and the Law of Sines</a></li>
+<li><a href="#investigation-2-two-triangles-from-the-same-ssa-measurements" id="toc-investigation-2-two-triangles-from-the-same-ssa-measurements">Investigation
+2: Two triangles from the same SSA measurements</a></li>
+<li><a href="#investigation-3-the-cosine-rule-as-a-distance-formula" id="toc-investigation-3-the-cosine-rule-as-a-distance-formula">Investigation
+3: The cosine rule as a distance formula</a></li>
+<li><a href="#investigation-4-triangulation-and-near-parallel-sight-lines" id="toc-investigation-4-triangulation-and-near-parallel-sight-lines">Investigation
+4: Triangulation and near-parallel sight lines</a></li>
+<li><a href="#investigation-5-changing-amplitude-period-and-phase" id="toc-investigation-5-changing-amplitude-period-and-phase">Investigation
+5: Changing amplitude, period, and phase</a></li>
+<li><a href="#investigation-6-a-periodic-health-science-measurement" id="toc-investigation-6-a-periodic-health-science-measurement">Investigation
+6: A periodic health-science measurement</a></li>
+<li><a href="#investigation-7-residual-patterns" id="toc-investigation-7-residual-patterns">Investigation 7: Residual
+patterns</a></li>
+</ul></li>
+<li><a href="#extended-applied-workshops" id="toc-extended-applied-workshops">Extended applied workshops</a>
+<ul>
+<li><a href="#workshop-a-indirect-height-measurement" id="toc-workshop-a-indirect-height-measurement">Workshop A: Indirect
+height measurement</a></li>
+<li><a href="#workshop-b-navigating-to-a-research-site" id="toc-workshop-b-navigating-to-a-research-site">Workshop B: Navigating
+to a research site</a></li>
+<li><a href="#workshop-c-triangle-ambiguity-in-imaging-geometry" id="toc-workshop-c-triangle-ambiguity-in-imaging-geometry">Workshop C:
+Triangle ambiguity in imaging geometry</a></li>
+<li><a href="#workshop-d-a-periodic-environmental-sensor" id="toc-workshop-d-a-periodic-environmental-sensor">Workshop D: A
+periodic environmental sensor</a></li>
+<li><a href="#workshop-e-harmonic-regression" id="toc-workshop-e-harmonic-regression">Workshop E: Harmonic
+regression</a></li>
+</ul></li>
+<li><a href="#computational-laboratory-a-solving-triangles-and-checking-ambiguity" id="toc-computational-laboratory-a-solving-triangles-and-checking-ambiguity">Computational
+Laboratory A: Solving triangles and checking ambiguity</a>
+<ul>
+<li><a href="#r-code" id="toc-r-code">R code</a></li>
+<li><a href="#python-code" id="toc-python-code">Python code</a></li>
+</ul></li>
+<li><a href="#computational-laboratory-b-navigation-and-triangulation" id="toc-computational-laboratory-b-navigation-and-triangulation">Computational
+Laboratory B: Navigation and triangulation</a>
+<ul>
+<li><a href="#r-code-1" id="toc-r-code-1">R code</a></li>
+<li><a href="#python-code-1" id="toc-python-code-1">Python code</a></li>
+</ul></li>
+<li><a href="#computational-laboratory-c-fitting-and-evaluating-a-periodic-model" id="toc-computational-laboratory-c-fitting-and-evaluating-a-periodic-model">Computational
+Laboratory C: Fitting and evaluating a periodic model</a>
+<ul>
+<li><a href="#r-code-2" id="toc-r-code-2">R code</a></li>
+<li><a href="#python-code-2" id="toc-python-code-2">Python code</a></li>
+</ul></li>
+<li><a href="#a-step-by-step-problem-solving-clinic" id="toc-a-step-by-step-problem-solving-clinic">A step-by-step
+problem-solving clinic</a>
+<ul>
+<li><a href="#case-study-1-selecting-the-correct-triangle-law" id="toc-case-study-1-selecting-the-correct-triangle-law">Case study 1:
+Selecting the correct triangle law</a></li>
+<li><a href="#case-study-2-a-model-with-a-delayed-maximum" id="toc-case-study-2-a-model-with-a-delayed-maximum">Case study 2: A
+model with a delayed maximum</a></li>
+<li><a href="#case-study-3-interpreting-uncertainty-rather-than-hiding-it" id="toc-case-study-3-interpreting-uncertainty-rather-than-hiding-it">Case
+study 3: Interpreting uncertainty rather than hiding it</a></li>
+</ul></li>
+<li><a href="#common-errors-and-diagnostic-questions" id="toc-common-errors-and-diagnostic-questions">Common errors and
+diagnostic questions</a></li>
+<li><a href="#chapter-review-and-self-assessment" id="toc-chapter-review-and-self-assessment">Chapter review and
+self-assessment</a></li>
+<li><a href="#calculus-readiness-checkpoint" id="toc-calculus-readiness-checkpoint">Calculus-readiness
+checkpoint</a></li>
+<li><a href="#looking-ahead" id="toc-looking-ahead">Looking
+ahead</a></li>
+<li><a href="#extended-application-indirect-height-measurement" id="toc-extended-application-indirect-height-measurement">Extended
+application: Indirect height measurement</a>
+<ul>
+<li><a href="#formulating-the-mathematical-model" id="toc-formulating-the-mathematical-model">Formulating the mathematical
+model</a></li>
+<li><a href="#connecting-numerical-and-graphical-representations" id="toc-connecting-numerical-and-graphical-representations">Connecting
+numerical and graphical representations</a></li>
+<li><a href="#r-implementation" id="toc-r-implementation">R
+implementation</a></li>
+<li><a href="#python-implementation" id="toc-python-implementation">Python implementation</a></li>
+<li><a href="#guided-practice-checking-the-model" id="toc-guided-practice-checking-the-model">Guided practice: checking
+the model</a></li>
+</ul></li>
+<li><a href="#chapter-project-investigating-indirect-height-measurement" id="toc-chapter-project-investigating-indirect-height-measurement">Chapter
+project: investigating Indirect height measurement</a>
+<ul>
+<li><a href="#project-deliverables-and-assessment" id="toc-project-deliverables-and-assessment">Project deliverables and
+assessment</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav></div><script src="investigations.js"></script></body></html>

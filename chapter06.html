@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8"/>
+<meta content="pandoc" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+<title>Polynomial and Rational
+Functions | Applied Precalculus</title>
+<style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+
+
+<link href="site.css" rel="stylesheet"/><script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script defer="" src="search-index.js"></script><script defer="" src="site.js"></script></head><body><nav class="site-nav" id="book-nav"><strong class="brand">Applied Precalculus</strong><p class="subtitle">Using R and Python</p><input aria-label="Search the book" id="book-search" placeholder="Search the book"/><div aria-live="polite" class="search-results" id="search-results"></div><p class="nav-label">Contents</p><a class="" href="index.html">Preface</a><a class="" href="chapter01.html">1. Real Numbers, Algebraic Expressions, and Mathematical Reasoning</a><a class="" href="chapter02.html">2. Equations, Inequalities, and Applications</a><a class="" href="chapter03.html">3. Coordinate Geometry, Lines, and Systems of Equations</a><a class="" href="chapter04.html">4. Functions, Graphs, and Multiple Representations</a><a class="" href="chapter05.html">5. Transformations, Compositions, and Inverse Functions</a><a class="active" href="chapter06.html">6. Polynomial and Rational Functions</a><a class="" href="chapter07.html">7. Exponential and Logarithmic Functions</a><a class="" href="chapter08.html">8. Angles, Radian Measure, and the Unit Circle</a><a class="" href="chapter09.html">9. Trigonometric Functions and Their Graphs</a><a class="" href="chapter10.html">10. Trigonometric Identities and Equations</a><a class="" href="chapter11.html">11. Applications of Trigonometry and Periodic Models</a><a class="" href="chapter12.html">12. Sequences, Series, and Mathematical Patterns</a><a class="" href="chapter13.html">13. Conic Sections and Parametric Equations</a><a class="" href="chapter14.html">14. Vectors, Polar Coordinates, and Geometric Modeling</a><a class="" href="chapter15.html">15. Rates of Change, Difference Quotients, and Limits</a><a class="" href="chapter16.html">16. Integrated Mathematical Modeling with R and Python</a><a class="" href="programming.html">Getting Started with R and Python</a><a class="" href="resources.html">Computational Resource Guide</a></nav><a class="skip" href="#main-content">Skip to content</a><header class="topbar"><button aria-controls="book-nav" aria-expanded="false" class="menu">Contents</button><span>Applied Precalculus / Online edition</span><span class="spacer"></span><a href="resources.html">Resources</a></header><div class="page-grid"><main id="main-content">
+
+<h1 id="polynomial-and-rational-functions">Polynomial and Rational
+Functions</h1>
+<h2 class="unnumbered" id="opening-context-interpreting-nonlinear-response">Opening context:
+interpreting nonlinear response</h2>
+<p>A laboratory response may rise and then fall, or it may increase
+rapidly before leveling off. Polynomials provide flexible curves, while
+rational functions can model saturation and discontinuities. In this
+chapter, algebraic structure, graphical features, and computational
+checks work together. The central questions are: Where is a model zero?
+Where is it defined? How does it behave near a critical input or far
+from the origin? And what does that behavior mean in context?</p>
+<h2 class="unnumbered" id="learning-outcomes">Learning outcomes</h2>
+<p>After completing this chapter, students should be able to classify
+and evaluate polynomials; determine end behavior; factor and solve
+polynomial equations; use synthetic division and the remainder and
+factor theorems; interpret zeros and multiplicities; solve polynomial
+inequalities; determine domains and discontinuities of rational
+functions; locate holes and asymptotes; graph rational models; solve
+rational inequalities; and use R and Python to check algebraic and
+graphical conclusions.</p>
+<h2 class="unnumbered" id="prerequisite-check">Prerequisite check</h2>
+<p>Review factoring, quadratic equations, function domains,
+transformations, and interval notation. Factor <span class="math inline">\(x^2-9\)</span>; solve <span class="math inline">\((x-1)(x+4)=0\)</span>; and state why <span class="math inline">\(1/(x-2)\)</span> is undefined at <span class="math inline">\(x=2\)</span>. Answers: <span class="math inline">\((x-3)(x+3)\)</span>, <span class="math inline">\(x=1,-4\)</span>, and division by zero is
+undefined.</p>
+<h2 class="unnumbered" id="roadmap">Roadmap</h2>
+<p>We begin with polynomial structure and zeros, move from algebraic
+factors to graphs and inequalities, then study rational functions and
+their excluded inputs, holes, asymptotes, and applications. Each step is
+paired with a visual or computational investigation.</p>
+<h2 id="polynomials-structure-and-terminology">Polynomials: structure
+and terminology</h2>
+<p>A polynomial has the form <span class="math inline">\(P(x)=a_nx^n+\cdots+a_1x+a_0\)</span>, where <span class="math inline">\(n\)</span> is a nonnegative integer, <span class="math inline">\(a_n\ne0\)</span>, and the coefficients are real.
+The degree is <span class="math inline">\(n\)</span>, the leading
+coefficient is <span class="math inline">\(a_n\)</span>, and <span class="math inline">\(a_0\)</span> is the constant term. Polynomial
+functions are defined and continuous for every real input. A polynomial
+is not the same as a rational function: <span class="math inline">\(x^{-1}\)</span>, <span class="math inline">\(\sqrt{x}\)</span>, and <span class="math inline">\(1/(x-2)\)</span> are not polynomial terms.</p>
+<blockquote class="example">
+<p><strong>Example 1: Polynomials: structure and terminology.</strong>
+Classify <span class="math inline">\(P(x)=4-3x^2+2x^5\)</span> by degree
+and leading coefficient.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> Rewriting in descending powers
+gives <span class="math inline">\(2x^5-3x^2+4\)</span>. Its degree is
+<span class="math inline">\(5\)</span> and leading coefficient is <span class="math inline">\(2\)</span>.</p>
+</blockquote>
+<h5 id="guided-practice-1.">Guided practice 1.</h5>
+<p>Classify <span class="math inline">\(-7x^4+2x-9\)</span> and explain
+why <span class="math inline">\(x^{1/2}+3\)</span> is not a polynomial.
+Show each algebraic step, check any excluded values, and interpret your
+conclusion.</p>
+<h5 id="visual-investigation.">Visual investigation.</h5>
+<p>Create a small table of values near the relevant intercepts, turning
+points, or domain boundaries. Sketch the behavior before using software,
+then compare the sketch with a graph. Explain one feature the table
+reveals and one feature it cannot establish on its own.</p>
+<h2 id="polynomial-evaluation-and-the-remainder-theorem">Polynomial
+evaluation and the remainder theorem</h2>
+<p>Use substitution or Horner’s method to evaluate a polynomial.
+Dividing <span class="math inline">\(P(x)\)</span> by <span class="math inline">\(x-c\)</span> produces a remainder equal to <span class="math inline">\(P(c)\)</span>; this is the remainder theorem.
+Horner’s method efficiently evaluates a polynomial while avoiding
+repeated powers. For a model, always interpret the input units and the
+units of the predicted output.</p>
+<blockquote class="example">
+<p><strong>Example 2: Polynomial evaluation and the remainder
+theorem.</strong> Evaluate <span class="math inline">\(P(x)=2x^3-3x^2+4x-5\)</span> at <span class="math inline">\(x=2\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> <span class="math inline">\(P(2)=16-12+8-5=7\)</span>. Thus the remainder on
+division by <span class="math inline">\(x-2\)</span> is <span class="math inline">\(7\)</span>.</p>
+</blockquote>
+<h5 id="guided-practice-2.">Guided practice 2.</h5>
+<p>Use the remainder theorem to find the remainder when <span class="math inline">\(x^3-4x+1\)</span> is divided by <span class="math inline">\(x+2\)</span>. Show each algebraic step, check any
+excluded values, and interpret your conclusion.</p>
+<h5 id="visual-investigation.-1">Visual investigation.</h5>
+<p>Create a small table of values near the relevant intercepts, turning
+points, or domain boundaries. Sketch the behavior before using software,
+then compare the sketch with a graph. Explain one feature the table
+reveals and one feature it cannot establish on its own.</p>
+<h2 id="end-behavior-and-leading-term-dominance">End behavior and
+leading-term dominance</h2>
+<p>For sufficiently large positive or negative inputs, the leading term
+<span class="math inline">\(a_nx^n\)</span> dominates lower-degree
+terms. Even-degree polynomials have ends pointing in the same direction;
+odd-degree polynomials have ends pointing in opposite directions. The
+sign of <span class="math inline">\(a_n\)</span> determines whether the
+right end rises or falls. This is a statement about long-run behavior,
+not necessarily the shape near the origin.</p>
+<blockquote class="example">
+<p><strong>Example 3: End behavior and leading-term dominance.</strong>
+Describe both ends of <span class="math inline">\(P(x)=-2x^5+7x^2-1\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> Because the leading term is <span class="math inline">\(-2x^5\)</span>, <span class="math inline">\(P(x)\to+\infty\)</span> as <span class="math inline">\(x\to-\infty\)</span> and <span class="math inline">\(P(x)\to-\infty\)</span> as <span class="math inline">\(x\to+\infty\)</span>.</p>
+</blockquote>
+<h5 id="guided-practice-3.">Guided practice 3.</h5>
+<p>Describe the end behavior of <span class="math inline">\(3x^4-2x^3+1\)</span> and <span class="math inline">\(-x^6+2x\)</span>. Show each algebraic step, check
+any excluded values, and interpret your conclusion.</p>
+<h5 id="visual-investigation.-2">Visual investigation.</h5>
+<p>Create a small table of values near the relevant intercepts, turning
+points, or domain boundaries. Sketch the behavior before using software,
+then compare the sketch with a graph. Explain one feature the table
+reveals and one feature it cannot establish on its own.</p>
+<h2 id="zeros-factors-and-the-zero-product-property">Zeros, factors, and
+the zero-product property</h2>
+<p>A real number <span class="math inline">\(c\)</span> is a zero of
+<span class="math inline">\(P\)</span> exactly when <span class="math inline">\(P(c)=0\)</span>. By the factor theorem, this
+happens exactly when <span class="math inline">\(x-c\)</span> is a
+factor. In a factored polynomial, apply the zero-product property: a
+product is zero if at least one factor is zero. A zero corresponds to an
+<span class="math inline">\(x\)</span>-intercept of the graph. The
+number of distinct real zeros can be less than the degree.</p>
+<blockquote class="example">
+<p><strong>Example 4: Zeros, factors, and the zero-product
+property.</strong> Find the zeros of <span class="math inline">\(P(x)=(x-2)(x+1)(x-4)\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> The zeros are <span class="math inline">\(2,-1,4\)</span>. Each gives an <span class="math inline">\(x\)</span>-intercept <span class="math inline">\((c,0)\)</span>.</p>
+</blockquote>
+<h5 id="guided-practice-4.">Guided practice 4.</h5>
+<p>Find the zeros of <span class="math inline">\(x(x-3)^2(x+5)\)</span>
+and list the distinct intercepts. Show each algebraic step, check any
+excluded values, and interpret your conclusion.</p>
+<h5 id="visual-investigation.-3">Visual investigation.</h5>
+<p>Create a small table of values near the relevant intercepts, turning
+points, or domain boundaries. Sketch the behavior before using software,
+then compare the sketch with a graph. Explain one feature the table
+reveals and one feature it cannot establish on its own.</p>
+<h2 id="multiplicity-and-crossing-versus-touching">Multiplicity and
+crossing versus touching</h2>
+<p>If <span class="math inline">\((x-c)^m\)</span> divides <span class="math inline">\(P\)</span> but <span class="math inline">\((x-c)^{m+1}\)</span> does not, <span class="math inline">\(c\)</span> has multiplicity <span class="math inline">\(m\)</span>. An odd multiplicity generally makes
+the graph cross the horizontal axis; an even multiplicity makes it touch
+and turn. Higher multiplicities often flatten the graph near the
+intercept. Multiplicity counts toward the degree, whereas the number of
+distinct intercepts does not.</p>
+<blockquote class="example">
+<p><strong>Example 5: Multiplicity and crossing versus
+touching.</strong> Describe the graph near each zero of <span class="math inline">\((x+2)^2(x-1)^3\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> At <span class="math inline">\(-2\)</span> (multiplicity <span class="math inline">\(2\)</span>), the graph touches and turns. At <span class="math inline">\(1\)</span> (multiplicity <span class="math inline">\(3\)</span>), it crosses with flattening.</p>
+</blockquote>
+<h5 id="guided-practice-5.">Guided practice 5.</h5>
+<p>Explain how <span class="math inline">\(x^2(x-3)\)</span> behaves
+near each zero. Show each algebraic step, check any excluded values, and
+interpret your conclusion.</p>
+<h5 id="visual-investigation.-4">Visual investigation.</h5>
+<p>Create a small table of values near the relevant intercepts, turning
+points, or domain boundaries. Sketch the behavior before using software,
+then compare the sketch with a graph. Explain one feature the table
+reveals and one feature it cannot establish on its own.</p>
+<h2 id="factoring-and-solving-polynomial-equations">Factoring and
+solving polynomial equations</h2>
+<p>Useful techniques include common factors, grouping, difference of
+squares, perfect-square trinomials, and substitution in quadratic form.
+Always verify a factorization by multiplying it out. Some higher-degree
+equations cannot be solved by elementary factoring; numerical
+approximation and graphing then become useful, but an approximate root
+should not be presented as exact.</p>
+<blockquote class="example">
+<p><strong>Example 6: Factoring and solving polynomial
+equations.</strong> Solve <span class="math inline">\(x^4-5x^2+4=0\)</span> by substitution.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> Let <span class="math inline">\(u=x^2\)</span>. Then <span class="math inline">\((u-1)(u-4)=0\)</span>, so <span class="math inline">\(x^2=1\)</span> or <span class="math inline">\(x^2=4\)</span>. Hence <span class="math inline">\(x=\pm1,\pm2\)</span>.</p>
+</blockquote>
+<h5 id="guided-practice-6.">Guided practice 6.</h5>
+<p>Solve <span class="math inline">\(2x^3-8x=0\)</span> and verify each
+solution. Show each algebraic step, check any excluded values, and
+interpret your conclusion.</p>
+<h5 id="visual-investigation.-5">Visual investigation.</h5>
+<p>Create a small table of values near the relevant intercepts, turning
+points, or domain boundaries. Sketch the behavior before using software,
+then compare the sketch with a graph. Explain one feature the table
+reveals and one feature it cannot establish on its own.</p>
+<h2 id="polynomial-division-and-synthetic-division">Polynomial division
+and synthetic division</h2>
+<p>Long division expresses <span class="math inline">\(P(x)=D(x)Q(x)+R(x)\)</span> with <span class="math inline">\(\deg R&lt;\deg D\)</span>. Synthetic division is a
+streamlined method when the divisor is <span class="math inline">\(x-c\)</span>. It is useful for testing candidate
+zeros and reducing the degree after one factor is known. The quotient
+and remainder must always satisfy the division identity.</p>
+<blockquote class="example">
+<p><strong>Example 7: Polynomial division and synthetic
+division.</strong> Divide <span class="math inline">\(x^3-2x^2-5x+6\)</span> by <span class="math inline">\(x-1\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> Synthetic division with <span class="math inline">\(1\)</span> and coefficients <span class="math inline">\(1,-2,-5,6\)</span> yields quotient <span class="math inline">\(x^2-x-6\)</span> and remainder <span class="math inline">\(0\)</span>. Thus <span class="math inline">\(P(x)=(x-1)(x-3)(x+2)\)</span>.</p>
+</blockquote>
+<h5 id="guided-practice-7.">Guided practice 7.</h5>
+<p>Divide <span class="math inline">\(x^3+2x^2-3x+4\)</span> by <span class="math inline">\(x+1\)</span> and check the remainder. Show each
+algebraic step, check any excluded values, and interpret your
+conclusion.</p>
+<h5 id="visual-investigation.-6">Visual investigation.</h5>
+<p>Create a small table of values near the relevant intercepts, turning
+points, or domain boundaries. Sketch the behavior before using software,
+then compare the sketch with a graph. Explain one feature the table
+reveals and one feature it cannot establish on its own.</p>
+<h2 id="rational-and-complex-zeros">Rational and complex zeros</h2>
+<p>For an integer-coefficient polynomial, any rational zero in lowest
+terms <span class="math inline">\(p/q\)</span> has numerator dividing
+the constant term and denominator dividing the leading coefficient. This
+theorem generates candidates, not guarantees. Complex nonreal zeros
+occur in conjugate pairs when the coefficients are real. A degree-<span class="math inline">\(n\)</span> polynomial has exactly <span class="math inline">\(n\)</span> complex zeros counting multiplicity
+(fundamental theorem of algebra).</p>
+<blockquote class="example">
+<p><strong>Example 8: Rational and complex zeros.</strong> List possible
+rational zeros of <span class="math inline">\(2x^3-3x^2-8x+12\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> Candidates are <span class="math inline">\(\pm1,\pm2,\pm3,\pm4,\pm6,\pm12\)</span> and <span class="math inline">\(\pm\frac12,\pm\frac32\)</span>. Test candidates
+before claiming any are roots.</p>
+</blockquote>
+<h5 id="guided-practice-8.">Guided practice 8.</h5>
+<p>List the possible rational zeros of <span class="math inline">\(3x^3+2x^2-5x-2\)</span>. Show each algebraic step,
+check any excluded values, and interpret your conclusion.</p>
+<h5 id="visual-investigation.-7">Visual investigation.</h5>
+<p>Create a small table of values near the relevant intercepts, turning
+points, or domain boundaries. Sketch the behavior before using software,
+then compare the sketch with a graph. Explain one feature the table
+reveals and one feature it cannot establish on its own.</p>
+<h2 id="polynomial-graphs-and-turning-points">Polynomial graphs and
+turning points</h2>
+<p>A degree-<span class="math inline">\(n\)</span> polynomial has at
+most <span class="math inline">\(n-1\)</span> turning points. To sketch
+a polynomial, identify the degree and leading coefficient, intercepts
+and multiplicities, and selected points between zeros. A graph is
+evidence for a conjecture, but algebra establishes exact intercepts and
+signs. Graphing windows can hide distant roots or turning points.</p>
+<blockquote class="example">
+<p><strong>Example 9: Polynomial graphs and turning points.</strong>
+Sketch <span class="math inline">\(P(x)=(x+1)(x-2)^2\)</span> using its
+zeros and leading term.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> The graph crosses at <span class="math inline">\(-1\)</span>, touches at <span class="math inline">\(2\)</span>, and rises to the right because the
+leading term is <span class="math inline">\(x^3\)</span>. Its left end
+falls.</p>
+</blockquote>
+<h5 id="guided-practice-9.">Guided practice 9.</h5>
+<p>Sketch <span class="math inline">\(-(x+2)(x-1)^2\)</span> and state
+how it differs from the preceding example. Show each algebraic step,
+check any excluded values, and interpret your conclusion.</p>
+<h5 id="visual-investigation.-8">Visual investigation.</h5>
+<p>Create a small table of values near the relevant intercepts, turning
+points, or domain boundaries. Sketch the behavior before using software,
+then compare the sketch with a graph. Explain one feature the table
+reveals and one feature it cannot establish on its own.</p>
+<h2 id="polynomial-inequalities-and-sign-charts">Polynomial inequalities
+and sign charts</h2>
+<p>To solve <span class="math inline">\(P(x)&gt;0\)</span> or <span class="math inline">\(P(x)\le0\)</span>, factor when possible and mark
+all real zeros on a number line. Test the sign on each interval. At a
+zero of odd multiplicity, the sign changes; at a zero of even
+multiplicity, it does not. Include zeros for non-strict inequalities and
+exclude them for strict inequalities.</p>
+<blockquote class="example">
+<p><strong>Example 10: Polynomial inequalities and sign charts.</strong>
+Solve <span class="math inline">\((x+2)(x-1)&gt;0\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> The sign is positive on <span class="math inline">\((-\infty,-2)\)</span> and <span class="math inline">\((1,\infty)\)</span>, so the solution is their
+union.</p>
+</blockquote>
+<h5 id="guided-practice-10.">Guided practice 10.</h5>
+<p>Solve <span class="math inline">\(x(x-2)^2\le0\)</span> with a sign
+chart. Show each algebraic step, check any excluded values, and
+interpret your conclusion.</p>
+<h5 id="visual-investigation.-9">Visual investigation.</h5>
+<p>Create a small table of values near the relevant intercepts, turning
+points, or domain boundaries. Sketch the behavior before using software,
+then compare the sketch with a graph. Explain one feature the table
+reveals and one feature it cannot establish on its own.</p>
+<h2 id="rational-functions-and-domains">Rational functions and
+domains</h2>
+<p>A rational function has the form <span class="math inline">\(R(x)=P(x)/Q(x)\)</span>, where <span class="math inline">\(P,Q\)</span> are polynomials and <span class="math inline">\(Q\not\equiv0\)</span>. Its domain excludes every
+real zero of the original denominator. Even if a factor cancels
+algebraically, the excluded input remains excluded: the simplified
+expression agrees only where the original was defined. Distinguish an
+algebraic simplification from an extension of a function.</p>
+<blockquote class="example">
+<p><strong>Example 11: Rational functions and domains.</strong> Find the
+domain of <span class="math inline">\(R(x)=(x^2-4)/(x^2-x-6)\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> The denominator factors as <span class="math inline">\((x-3)(x+2)\)</span>, so the domain is <span class="math inline">\(\mathbb R\setminus\{-2,3\}\)</span>. Cancellation
+with <span class="math inline">\(x+2\)</span> does not restore <span class="math inline">\(x=-2\)</span>.</p>
+</blockquote>
+<h5 id="guided-practice-11.">Guided practice 11.</h5>
+<p>Find the domain of <span class="math inline">\((x^2-9)/(x^2-5x+6)\)</span>. Show each algebraic
+step, check any excluded values, and interpret your conclusion.</p>
+<h5 id="visual-investigation.-10">Visual investigation.</h5>
+<p>Create a small table of values near the relevant intercepts, turning
+points, or domain boundaries. Sketch the behavior before using software,
+then compare the sketch with a graph. Explain one feature the table
+reveals and one feature it cannot establish on its own.</p>
+<h2 id="holes-and-vertical-asymptotes">Holes and vertical
+asymptotes</h2>
+<p>If a denominator factor cancels with the numerator, the original
+function may have a removable discontinuity, shown as a hole. A
+denominator factor that remains after cancellation typically produces a
+vertical asymptote. To locate a hole, simplify and evaluate the
+simplified expression at the excluded input. To analyze a vertical
+asymptote, examine the signs of factors on either side.</p>
+<blockquote class="example">
+<p><strong>Example 12: Holes and vertical asymptotes.</strong> Analyze
+<span class="math inline">\(R(x)=(x^2-1)/(x-1)\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> For <span class="math inline">\(x\ne1\)</span>, <span class="math inline">\(R(x)=x+1\)</span>. The graph is the line <span class="math inline">\(y=x+1\)</span> with a hole at <span class="math inline">\((1,2)\)</span>, not a vertical asymptote.</p>
+</blockquote>
+<h5 id="guided-practice-12.">Guided practice 12.</h5>
+<p>Identify the hole and vertical asymptote of <span class="math inline">\((x^2-4)/[(x-2)(x-3)]\)</span>. Show each algebraic
+step, check any excluded values, and interpret your conclusion.</p>
+<h5 id="visual-investigation.-11">Visual investigation.</h5>
+<p>Create a small table of values near the relevant intercepts, turning
+points, or domain boundaries. Sketch the behavior before using software,
+then compare the sketch with a graph. Explain one feature the table
+reveals and one feature it cannot establish on its own.</p>
+<h2 id="horizontal-and-slant-asymptotes">Horizontal and slant
+asymptotes</h2>
+<p>Compare the degrees of numerator and denominator. If the numerator
+degree is smaller, the horizontal asymptote is <span class="math inline">\(y=0\)</span>. If degrees are equal, it is the
+ratio of leading coefficients. If the numerator degree is exactly one
+greater, polynomial division gives a slant (oblique) asymptote. A
+horizontal asymptote describes end behavior and can be crossed by the
+graph.</p>
+<blockquote class="example">
+<p><strong>Example 13: Horizontal and slant asymptotes.</strong> Find
+the horizontal asymptote of <span class="math inline">\((3x^2+1)/(2x^2-5)\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> Both degrees are <span class="math inline">\(2\)</span>, so the horizontal asymptote is <span class="math inline">\(y=3/2\)</span>.</p>
+</blockquote>
+<h5 id="guided-practice-13.">Guided practice 13.</h5>
+<p>Find the end-behavior asymptote of <span class="math inline">\((x^2+1)/(x-1)\)</span> using division. Show each
+algebraic step, check any excluded values, and interpret your
+conclusion.</p>
+<h5 id="visual-investigation.-12">Visual investigation.</h5>
+<p>Create a small table of values near the relevant intercepts, turning
+points, or domain boundaries. Sketch the behavior before using software,
+then compare the sketch with a graph. Explain one feature the table
+reveals and one feature it cannot establish on its own.</p>
+<h2 id="graphing-rational-functions-systematically">Graphing rational
+functions systematically</h2>
+<p>Start with the original domain, factor numerator and denominator,
+mark zeros and excluded inputs, classify holes and asymptotes, compute
+intercepts, and use interval sign tests. The behavior on either side of
+a vertical asymptote may differ. Do not draw a continuous curve through
+an excluded input. Confirm with numerical tables close to the
+discontinuities.</p>
+<blockquote class="example">
+<p><strong>Example 14: Graphing rational functions
+systematically.</strong> Sketch <span class="math inline">\(R(x)=(x+1)/(x-2)\)</span> and identify its
+intercepts and asymptotes.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> The <span class="math inline">\(x\)</span>-intercept is <span class="math inline">\(-1\)</span>, the <span class="math inline">\(y\)</span>-intercept is <span class="math inline">\(-1/2\)</span>, the vertical asymptote is <span class="math inline">\(x=2\)</span>, and the horizontal asymptote is
+<span class="math inline">\(y=1\)</span>.</p>
+</blockquote>
+<h5 id="guided-practice-14.">Guided practice 14.</h5>
+<p>Analyze <span class="math inline">\(R(x)=(2x-4)/(x+3)\)</span> using
+a domain, intercept, and asymptote checklist. Show each algebraic step,
+check any excluded values, and interpret your conclusion.</p>
+<h5 id="visual-investigation.-13">Visual investigation.</h5>
+<p>Create a small table of values near the relevant intercepts, turning
+points, or domain boundaries. Sketch the behavior before using software,
+then compare the sketch with a graph. Explain one feature the table
+reveals and one feature it cannot establish on its own.</p>
+<h2 id="rational-inequalities-and-critical-points">Rational inequalities
+and critical points</h2>
+<p>To solve a rational inequality, bring everything to one side and
+identify both zeros of the numerator and zeros of the denominator. Use a
+sign chart on the resulting intervals. Include numerator zeros when the
+inequality permits equality; never include denominator zeros.
+Multiplying an inequality by an expression of unknown sign can reverse
+the inequality, so avoid that shortcut.</p>
+<blockquote class="example">
+<p><strong>Example 15: Rational inequalities and critical
+points.</strong> Solve <span class="math inline">\((x-1)/(x+2)\ge0\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> The critical points are <span class="math inline">\(-2\)</span> (excluded) and <span class="math inline">\(1\)</span> (included). The solution is <span class="math inline">\((-\infty,-2)\cup[1,\infty)\)</span>.</p>
+</blockquote>
+<h5 id="guided-practice-15.">Guided practice 15.</h5>
+<p>Solve <span class="math inline">\((x+3)/(x-2)&lt;0\)</span> and
+explain endpoint exclusions. Show each algebraic step, check any
+excluded values, and interpret your conclusion.</p>
+<h5 id="visual-investigation.-14">Visual investigation.</h5>
+<p>Create a small table of values near the relevant intercepts, turning
+points, or domain boundaries. Sketch the behavior before using software,
+then compare the sketch with a graph. Explain one feature the table
+reveals and one feature it cannot establish on its own.</p>
+<h2 id="applications-response-saturation-and-limits">Applications:
+response, saturation, and limits</h2>
+<p>Polynomial models can approximate a response over a bounded interval;
+rational models can represent saturation. For example <span class="math inline">\(S(c)=120c/(8+c)\)</span> models a response
+approaching <span class="math inline">\(120\)</span> as concentration
+<span class="math inline">\(c\)</span> grows, with <span class="math inline">\(c\ge0\)</span> physically meaningful. The
+mathematical domain excludes <span class="math inline">\(-8\)</span>,
+but the scientific domain is narrower. Interpret asymptotes in the units
+of the model and avoid extrapolating beyond the range supported by
+observations.</p>
+<blockquote class="example">
+<p><strong>Example 16: Applications: response, saturation, and
+limits.</strong> For <span class="math inline">\(S(c)=120c/(8+c)\)</span>, find <span class="math inline">\(S(8)\)</span> and the long-run response.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> <span class="math inline">\(S(8)=60\)</span>. As <span class="math inline">\(c\to\infty\)</span>, <span class="math inline">\(S(c)\to120\)</span>, a horizontal saturation
+level.</p>
+</blockquote>
+<h5 id="guided-practice-16.">Guided practice 16.</h5>
+<p>For <span class="math inline">\(S(c)=90c/(5+c)\)</span>, find the
+half-saturation concentration and explain its meaning. Show each
+algebraic step, check any excluded values, and interpret your
+conclusion.</p>
+<h5 id="visual-investigation.-15">Visual investigation.</h5>
+<p>Create a small table of values near the relevant intercepts, turning
+points, or domain boundaries. Sketch the behavior before using software,
+then compare the sketch with a graph. Explain one feature the table
+reveals and one feature it cannot establish on its own.</p>
+<h2 id="visual-investigation-i-zeros-and-multiplicity">Visual
+investigation I: zeros and multiplicity</h2>
+<figure>
+<img alt="image" src="figures/precompiled/chapter06-01.svg"/>
+<figcaption aria-hidden="true">image</figcaption>
+</figure>
+<p><strong>Investigate.</strong> Identify the zeros and their
+multiplicities. Why does the curve cross at one intercept but touch at
+the other? What changes when the polynomial is multiplied by <span class="math inline">\(-1\)</span>? Estimate the sign of each function on
+the intervals determined by the zeros.</p>
+<h2 id="visual-investigation-ii-holes-versus-asymptotes">Visual
+investigation II: holes versus asymptotes</h2>
+<figure>
+<img alt="image" src="figures/precompiled/chapter06-02.svg"/>
+<figcaption aria-hidden="true">image</figcaption>
+</figure>
+<p><strong>Investigate.</strong> Why is <span class="math inline">\((1,2)\)</span> an excluded point on one graph,
+while <span class="math inline">\(x=2\)</span> is a vertical asymptote
+on the other? Evaluate both expressions at inputs approaching their
+excluded values from the left and right. Explain why cancellation does
+not change the original domain.</p>
+<h2 id="visual-investigation-iii-rational-end-behavior">Visual
+investigation III: rational end behavior</h2>
+<figure>
+<img alt="image" src="figures/precompiled/chapter06-03.svg"/>
+<figcaption aria-hidden="true">image</figcaption>
+</figure>
+<p><strong>Investigate.</strong> Use polynomial division to rewrite the
+rational expression as <span class="math inline">\(3-5/(x+2)\)</span>.
+Predict which side of <span class="math inline">\(y=3\)</span> the curve
+occupies for large positive and negative <span class="math inline">\(x\)</span>. Explain why the horizontal asymptote
+is not a bound on the range.</p>
+<h2 id="extended-workshop-a-polynomial-design-and-sensitivity">Extended
+workshop A: polynomial design and sensitivity</h2>
+<p>A response curve is modeled by <span class="math inline">\(P(t)=-(t-1)(t-5)(t-8)\)</span> for <span class="math inline">\(0\le t\le9\)</span>, where <span class="math inline">\(t\)</span> is hours. (a) Find the three
+zero-response times. (b) Determine the sign of <span class="math inline">\(P\)</span> on each interval. (c) Explain why
+negative predicted responses may indicate the model is unsuitable in
+part of its domain. (d) Compare <span class="math inline">\(P(t)\)</span> with <span class="math inline">\(P(t)+2\)</span> and discuss the effect of a
+baseline adjustment. (e) Use numerical tables to estimate turning
+points, making clear that these are approximations.</p>
+<h5 id="worked-discussion.">Worked discussion.</h5>
+<p>The zeros are <span class="math inline">\(1,5,8\)</span>. The leading
+coefficient is negative, so the graph falls to the right. Sign tests at
+<span class="math inline">\(t=0,3,6,9\)</span> establish the alternating
+signs. A constant baseline adjustment shifts every output up by two
+without changing the input domain, but it generally changes the zeros. A
+mathematical model must be checked against physical constraints.</p>
+<h2 id="extended-workshop-b-rational-calibration-and-physical-domains">Extended
+workshop B: rational calibration and physical domains</h2>
+<p>A response model is <span class="math inline">\(S(c)=100c/(10+c)\)</span>, where <span class="math inline">\(c\ge0\)</span> is concentration in mg/L and <span class="math inline">\(S\)</span> is signal units. (a) Find the
+mathematical domain and the physical domain. (b) Compute <span class="math inline">\(S(0)\)</span>, <span class="math inline">\(S(10)\)</span>, and <span class="math inline">\(S(30)\)</span>. (c) Find the horizontal asymptote
+and interpret it. (d) Solve <span class="math inline">\(S(c)=80\)</span>. (e) Explain why the vertical
+asymptote at <span class="math inline">\(c=-10\)</span> is not
+physically relevant.</p>
+<h5 id="worked-solution.">Worked solution.</h5>
+<p>The mathematical domain is <span class="math inline">\(\mathbb
+R\setminus\{-10\}\)</span>, and the physical domain is <span class="math inline">\([0,\infty)\)</span>. The signals are <span class="math inline">\(0\)</span>, <span class="math inline">\(50\)</span>, and <span class="math inline">\(75\)</span>. The saturation level is <span class="math inline">\(100\)</span>. Solving <span class="math inline">\(100c/(10+c)=80\)</span> gives <span class="math inline">\(100c=800+80c\)</span>, hence <span class="math inline">\(c=40\)</span> mg/L. Negative concentration is not
+part of the intended model.</p>
+<h2 id="extended-workshop-c-comparing-two-models">Extended workshop C:
+comparing two models</h2>
+<p>Consider <span class="math inline">\(P(c)=12c-c^2\)</span> and <span class="math inline">\(R(c)=72c/(6+c)\)</span> for <span class="math inline">\(0\le c\le12\)</span>. (a) Graph both on the same
+axes. (b) Find where <span class="math inline">\(P(c)=0\)</span> and
+where <span class="math inline">\(R(c)=0\)</span>. (c) Compare their
+long-run mathematical behavior outside the stated interval. (d) Explain
+why neither extrapolation is automatically justified by a good fit over
+<span class="math inline">\([0,12]\)</span>. (e) Use a table at <span class="math inline">\(c=0,3,6,9,12\)</span> to compare predicted
+responses.</p>
+<h5 id="worked-discussion.-1">Worked discussion.</h5>
+<p>The polynomial has zeros <span class="math inline">\(0\)</span> and
+<span class="math inline">\(12\)</span>; the rational model has zero
+<span class="math inline">\(0\)</span>. The polynomial eventually
+decreases without bound as <span class="math inline">\(c\to+\infty\)</span>, while the rational model
+approaches <span class="math inline">\(72\)</span>. The models represent
+different scientific assumptions, and neither should be extrapolated
+without evidence.</p>
+<h2 id="computational-laboratory-a-polynomial-zeros-and-multiplicity">Computational
+laboratory A: polynomial zeros and multiplicity</h2>
+<p><strong>Purpose.</strong> Plot a factored polynomial and verify its
+zeros numerically. First predict the crossings and touches from the
+factors.</p>
+<h3 class="unnumbered" id="r-code">R code</h3>
+<div class="code-shell"><div class="code-bar"><span>R</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a aria-hidden="true" href="#cb1-1" tabindex="-1"></a><span class="co"># Chapter 6 computational laboratories - run from top to bottom</span></span>
+<span id="cb1-2"><a aria-hidden="true" href="#cb1-2" tabindex="-1"></a><span class="co"># LAB A: polynomial zeros and multiplicity</span></span>
+<span id="cb1-3"><a aria-hidden="true" href="#cb1-3" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="cf">function</span>(x) (x<span class="sc">+</span><span class="dv">1</span>)<span class="sc">*</span>(x<span class="dv">-2</span>)<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb1-4"><a aria-hidden="true" href="#cb1-4" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">3</span>, <span class="dv">4</span>, <span class="at">length.out=</span><span class="dv">600</span>)</span>
+<span id="cb1-5"><a aria-hidden="true" href="#cb1-5" tabindex="-1"></a><span class="fu">plot</span>(x, <span class="fu">p</span>(x), <span class="at">type=</span><span class="st">"l"</span>, <span class="at">col=</span><span class="st">"blue"</span>, <span class="at">lwd=</span><span class="dv">2</span>,</span>
+<span id="cb1-6"><a aria-hidden="true" href="#cb1-6" tabindex="-1"></a>     <span class="at">xlab=</span><span class="st">"x"</span>, <span class="at">ylab=</span><span class="st">"P(x)"</span>, <span class="at">main=</span><span class="st">"Polynomial zeros and multiplicity"</span>)</span>
+<span id="cb1-7"><a aria-hidden="true" href="#cb1-7" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="dv">0</span>, <span class="at">lty=</span><span class="dv">2</span>)</span>
+<span id="cb1-8"><a aria-hidden="true" href="#cb1-8" tabindex="-1"></a><span class="fu">points</span>(<span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">2</span>), <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>), <span class="at">pch=</span><span class="dv">19</span>, <span class="at">col=</span><span class="st">"red"</span>)</span>
+<span id="cb1-9"><a aria-hidden="true" href="#cb1-9" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">data.frame</span>(<span class="at">zero=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">2</span>), <span class="at">value=</span><span class="fu">p</span>(<span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">2</span>))))</span>
+<span id="cb1-10"><a aria-hidden="true" href="#cb1-10" tabindex="-1"></a></span>
+<span id="cb1-11"><a aria-hidden="true" href="#cb1-11" tabindex="-1"></a><span class="co"># LAB B: rational function and vertical asymptote</span></span>
+<span id="cb1-12"><a aria-hidden="true" href="#cb1-12" tabindex="-1"></a>rfun <span class="ot">&lt;-</span> <span class="cf">function</span>(x) (x<span class="sc">+</span><span class="dv">1</span>)<span class="sc">/</span>(x<span class="dv">-2</span>)</span>
+<span id="cb1-13"><a aria-hidden="true" href="#cb1-13" tabindex="-1"></a>left <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="fl">1.85</span>, <span class="at">length.out=</span><span class="dv">300</span>)</span>
+<span id="cb1-14"><a aria-hidden="true" href="#cb1-14" tabindex="-1"></a>right <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fl">2.15</span>, <span class="dv">7</span>, <span class="at">length.out=</span><span class="dv">300</span>)</span>
+<span id="cb1-15"><a aria-hidden="true" href="#cb1-15" tabindex="-1"></a><span class="fu">plot</span>(left, <span class="fu">rfun</span>(left), <span class="at">type=</span><span class="st">"l"</span>, <span class="at">col=</span><span class="st">"blue"</span>, <span class="at">lwd=</span><span class="dv">2</span>,</span>
+<span id="cb1-16"><a aria-hidden="true" href="#cb1-16" tabindex="-1"></a>     <span class="at">xlim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">5</span>,<span class="dv">7</span>), <span class="at">ylim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">12</span>,<span class="dv">12</span>), <span class="at">xlab=</span><span class="st">"x"</span>, <span class="at">ylab=</span><span class="st">"R(x)"</span>,</span>
+<span id="cb1-17"><a aria-hidden="true" href="#cb1-17" tabindex="-1"></a>     <span class="at">main=</span><span class="st">"Rational function with asymptotes"</span>)</span>
+<span id="cb1-18"><a aria-hidden="true" href="#cb1-18" tabindex="-1"></a><span class="fu">lines</span>(right, <span class="fu">rfun</span>(right), <span class="at">col=</span><span class="st">"blue"</span>, <span class="at">lwd=</span><span class="dv">2</span>)</span>
+<span id="cb1-19"><a aria-hidden="true" href="#cb1-19" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span><span class="dv">2</span>, <span class="at">h=</span><span class="dv">1</span>, <span class="at">col=</span><span class="st">"red"</span>, <span class="at">lty=</span><span class="dv">2</span>)</span>
+<span id="cb1-20"><a aria-hidden="true" href="#cb1-20" tabindex="-1"></a></span>
+<span id="cb1-21"><a aria-hidden="true" href="#cb1-21" tabindex="-1"></a><span class="co"># LAB C: saturation model</span></span>
+<span id="cb1-22"><a aria-hidden="true" href="#cb1-22" tabindex="-1"></a>S <span class="ot">&lt;-</span> <span class="cf">function</span>(c) <span class="dv">100</span><span class="sc">*</span>c<span class="sc">/</span>(<span class="dv">10</span><span class="sc">+</span>c)</span>
+<span id="cb1-23"><a aria-hidden="true" href="#cb1-23" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">100</span>,<span class="at">length.out=</span><span class="dv">300</span>)</span>
+<span id="cb1-24"><a aria-hidden="true" href="#cb1-24" tabindex="-1"></a><span class="fu">plot</span>(c,<span class="fu">S</span>(c),<span class="at">type=</span><span class="st">"l"</span>,<span class="at">lwd=</span><span class="dv">2</span>,<span class="at">col=</span><span class="st">"blue"</span>,<span class="at">xlab=</span><span class="st">"Concentration (mg/L)"</span>,</span>
+<span id="cb1-25"><a aria-hidden="true" href="#cb1-25" tabindex="-1"></a>     <span class="at">ylab=</span><span class="st">"Signal"</span>,<span class="at">main=</span><span class="st">"Saturation response"</span>)</span>
+<span id="cb1-26"><a aria-hidden="true" href="#cb1-26" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="dv">100</span>,<span class="at">col=</span><span class="st">"red"</span>,<span class="at">lty=</span><span class="dv">2</span>)</span>
+<span id="cb1-27"><a aria-hidden="true" href="#cb1-27" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">data.frame</span>(<span class="at">concentration=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">10</span>,<span class="dv">30</span>,<span class="dv">40</span>),<span class="at">signal=</span><span class="fu">S</span>(<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">10</span>,<span class="dv">30</span>,<span class="dv">40</span>))))</span>
+<span id="cb1-28"><a aria-hidden="true" href="#cb1-28" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="fu">abs</span>(<span class="fu">S</span>(<span class="dv">40</span>)<span class="sc">-</span><span class="dv">80</span>)<span class="sc">&lt;</span><span class="fl">1e-10</span>)</span></code></pre></div></div>
+<h3 class="unnumbered" id="python-code">Python code</h3>
+<div class="code-shell"><div class="code-bar"><span>Python</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" href="#cb2-1" tabindex="-1"></a><span class="co"># Chapter 6 computational laboratories - run from top to bottom</span></span>
+<span id="cb2-2"><a aria-hidden="true" href="#cb2-2" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-3"><a aria-hidden="true" href="#cb2-3" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-4"><a aria-hidden="true" href="#cb2-4" tabindex="-1"></a></span>
+<span id="cb2-5"><a aria-hidden="true" href="#cb2-5" tabindex="-1"></a><span class="co"># LAB A: polynomial zeros and multiplicity</span></span>
+<span id="cb2-6"><a aria-hidden="true" href="#cb2-6" tabindex="-1"></a><span class="kw">def</span> P(x): <span class="cf">return</span> (x<span class="op">+</span><span class="dv">1</span>)<span class="op">*</span>(x<span class="op">-</span><span class="dv">2</span>)<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb2-7"><a aria-hidden="true" href="#cb2-7" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">600</span>)</span>
+<span id="cb2-8"><a aria-hidden="true" href="#cb2-8" tabindex="-1"></a>plt.figure()<span class="op">;</span> plt.plot(x,P(x),label<span class="op">=</span><span class="st">"(x+1)(x-2)^2"</span>)</span>
+<span id="cb2-9"><a aria-hidden="true" href="#cb2-9" tabindex="-1"></a>plt.scatter([<span class="op">-</span><span class="dv">1</span>,<span class="dv">2</span>],[<span class="dv">0</span>,<span class="dv">0</span>])<span class="op">;</span> plt.axhline(<span class="dv">0</span>,color<span class="op">=</span><span class="st">"gray"</span>,linestyle<span class="op">=</span><span class="st">"--"</span>)</span>
+<span id="cb2-10"><a aria-hidden="true" href="#cb2-10" tabindex="-1"></a>plt.xlabel(<span class="st">"x"</span>)<span class="op">;</span> plt.ylabel(<span class="st">"P(x)"</span>)<span class="op">;</span> plt.grid(<span class="va">True</span>)<span class="op">;</span> plt.legend()<span class="op">;</span> plt.show()</span>
+<span id="cb2-11"><a aria-hidden="true" href="#cb2-11" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Exact zeros:"</span>,[<span class="op">-</span><span class="dv">1</span>,<span class="dv">2</span>],<span class="st">"Values:"</span>,P(np.array([<span class="op">-</span><span class="dv">1</span>,<span class="dv">2</span>])))</span>
+<span id="cb2-12"><a aria-hidden="true" href="#cb2-12" tabindex="-1"></a></span>
+<span id="cb2-13"><a aria-hidden="true" href="#cb2-13" tabindex="-1"></a><span class="co"># LAB B: rational function and vertical asymptote</span></span>
+<span id="cb2-14"><a aria-hidden="true" href="#cb2-14" tabindex="-1"></a><span class="kw">def</span> R(x): <span class="cf">return</span> (x<span class="op">+</span><span class="dv">1</span>)<span class="op">/</span>(x<span class="op">-</span><span class="dv">2</span>)</span>
+<span id="cb2-15"><a aria-hidden="true" href="#cb2-15" tabindex="-1"></a>left<span class="op">=</span>np.linspace(<span class="op">-</span><span class="dv">5</span>,<span class="fl">1.85</span>,<span class="dv">300</span>)<span class="op">;</span> right<span class="op">=</span>np.linspace(<span class="fl">2.15</span>,<span class="dv">7</span>,<span class="dv">300</span>)</span>
+<span id="cb2-16"><a aria-hidden="true" href="#cb2-16" tabindex="-1"></a>plt.figure()<span class="op">;</span> plt.plot(left,R(left),color<span class="op">=</span><span class="st">"blue"</span>)<span class="op">;</span> plt.plot(right,R(right),color<span class="op">=</span><span class="st">"blue"</span>)</span>
+<span id="cb2-17"><a aria-hidden="true" href="#cb2-17" tabindex="-1"></a>plt.axvline(<span class="dv">2</span>,color<span class="op">=</span><span class="st">"red"</span>,linestyle<span class="op">=</span><span class="st">"--"</span>,label<span class="op">=</span><span class="st">"x=2"</span>)</span>
+<span id="cb2-18"><a aria-hidden="true" href="#cb2-18" tabindex="-1"></a>plt.axhline(<span class="dv">1</span>,color<span class="op">=</span><span class="st">"gray"</span>,linestyle<span class="op">=</span><span class="st">"--"</span>,label<span class="op">=</span><span class="st">"y=1"</span>)</span>
+<span id="cb2-19"><a aria-hidden="true" href="#cb2-19" tabindex="-1"></a>plt.ylim(<span class="op">-</span><span class="dv">12</span>,<span class="dv">12</span>)<span class="op">;</span> plt.xlabel(<span class="st">"x"</span>)<span class="op">;</span> plt.ylabel(<span class="st">"R(x)"</span>)<span class="op">;</span> plt.legend()<span class="op">;</span> plt.grid(<span class="va">True</span>)<span class="op">;</span> plt.show()</span>
+<span id="cb2-20"><a aria-hidden="true" href="#cb2-20" tabindex="-1"></a></span>
+<span id="cb2-21"><a aria-hidden="true" href="#cb2-21" tabindex="-1"></a><span class="co"># LAB C: saturation model</span></span>
+<span id="cb2-22"><a aria-hidden="true" href="#cb2-22" tabindex="-1"></a><span class="kw">def</span> S(c): <span class="cf">return</span> <span class="dv">100</span><span class="op">*</span>c<span class="op">/</span>(<span class="dv">10</span><span class="op">+</span>c)</span>
+<span id="cb2-23"><a aria-hidden="true" href="#cb2-23" tabindex="-1"></a>c<span class="op">=</span>np.linspace(<span class="dv">0</span>,<span class="dv">100</span>,<span class="dv">300</span>)</span>
+<span id="cb2-24"><a aria-hidden="true" href="#cb2-24" tabindex="-1"></a>plt.figure()<span class="op">;</span> plt.plot(c,S(c))<span class="op">;</span> plt.axhline(<span class="dv">100</span>,color<span class="op">=</span><span class="st">"red"</span>,linestyle<span class="op">=</span><span class="st">"--"</span>)</span>
+<span id="cb2-25"><a aria-hidden="true" href="#cb2-25" tabindex="-1"></a>plt.xlabel(<span class="st">"Concentration (mg/L)"</span>)<span class="op">;</span> plt.ylabel(<span class="st">"Signal"</span>)<span class="op">;</span> plt.grid(<span class="va">True</span>)<span class="op">;</span> plt.show()</span>
+<span id="cb2-26"><a aria-hidden="true" href="#cb2-26" tabindex="-1"></a><span class="cf">for</span> value <span class="kw">in</span> [<span class="dv">0</span>,<span class="dv">10</span>,<span class="dv">30</span>,<span class="dv">40</span>]: <span class="bu">print</span>(value, S(value))</span>
+<span id="cb2-27"><a aria-hidden="true" href="#cb2-27" tabindex="-1"></a><span class="cf">assert</span> <span class="bu">abs</span>(S(<span class="dv">40</span>)<span class="op">-</span><span class="dv">80</span>)<span class="op">&lt;</span><span class="fl">1e-10</span></span></code></pre></div></div>
+<h5 id="interpretation-questions.">Interpretation questions.</h5>
+<p>Compare exact factored zeros with numerical output. Explain why a
+numerical grid may fail to land exactly on a zero of even multiplicity.
+What information does a plot reveal about end behavior?</p>
+<h2 id="computational-laboratory-b-rational-discontinuities">Computational
+laboratory B: rational discontinuities</h2>
+<p>The scripts also plot a rational function on two separate intervals
+around its vertical asymptote and draw the asymptote explicitly. Use the
+algebraic domain to explain why the plot must not connect across the
+excluded input. Change the denominator and repeat.</p>
+<h2 id="computational-laboratory-c-applied-saturation">Computational
+laboratory C: applied saturation</h2>
+<p>The scripts evaluate <span class="math inline">\(S(c)=100c/(10+c)\)</span> on <span class="math inline">\(0\le c\le100\)</span>, plot the horizontal
+saturation level, and calculate the concentration that produces <span class="math inline">\(80\)</span> signal units. Explain the distinction
+between a numerical estimate and the exact algebraic solution.</p>
+<h2 id="calculus-readiness-behavior-near-an-excluded-input">Calculus
+readiness: behavior near an excluded input</h2>
+<p>The rational function <span class="math inline">\(R(x)=(x^2-1)/(x-1)\)</span> equals <span class="math inline">\(x+1\)</span> whenever <span class="math inline">\(x\ne1\)</span>, but it is not defined at <span class="math inline">\(x=1\)</span>. A later calculus course asks what
+values <span class="math inline">\(R(x)\)</span> approaches as <span class="math inline">\(x\)</span> gets close to <span class="math inline">\(1\)</span>; this question is different from
+evaluating <span class="math inline">\(R(1)\)</span>. Likewise, a
+horizontal asymptote describes what happens as the input grows without
+bound. These ideas motivate limits and continuity.</p>
+<blockquote class="check">
+<p><strong>Concept check 1.</strong> Explain, in words, the difference
+between <span class="math inline">\(R(1)\)</span> and the value
+approached by <span class="math inline">\(R(x)\)</span> as <span class="math inline">\(x\)</span> approaches <span class="math inline">\(1\)</span> for <span class="math inline">\(R(x)=(x^2-1)/(x-1)\)</span>.</p>
+</blockquote>
+<h2 id="chapter-review-exercises">Chapter review exercises</h2>
+<ol type="1">
+<li><p>Identify the degree and leading coefficient of <span class="math inline">\(5x^6-2x^4+x-7\)</span>.</p></li>
+<li><p>Evaluate <span class="math inline">\(2x^3-5x+1\)</span> at <span class="math inline">\(x=-2\)</span>.</p></li>
+<li><p>State the end behavior of <span class="math inline">\(-3x^4+7x^2\)</span>.</p></li>
+<li><p>State the end behavior of <span class="math inline">\(2x^5-x^2+1\)</span>.</p></li>
+<li><p>Factor <span class="math inline">\(x^3-4x\)</span> and list its
+real zeros.</p></li>
+<li><p>Solve <span class="math inline">\(x^4-10x^2+9=0\)</span>.</p></li>
+<li><p>Identify zeros and multiplicities of <span class="math inline">\((x-1)^2(x+3)^3\)</span>.</p></li>
+<li><p>Sketch <span class="math inline">\(-(x+2)(x-4)^2\)</span> using
+intercepts and end behavior.</p></li>
+<li><p>Find the remainder on division of <span class="math inline">\(x^3-2x+5\)</span> by <span class="math inline">\(x-2\)</span>.</p></li>
+<li><p>Use synthetic division to divide <span class="math inline">\(x^3-4x^2+x+6\)</span> by <span class="math inline">\(x-2\)</span>.</p></li>
+<li><p>List rational-zero candidates for <span class="math inline">\(2x^3+x^2-8x-4\)</span>.</p></li>
+<li><p>Solve <span class="math inline">\((x-2)(x+5)\le0\)</span>.</p></li>
+<li><p>Solve <span class="math inline">\(x(x-1)^2&gt;0\)</span>.</p></li>
+<li><p>Determine the domain of <span class="math inline">\((x^2-4)/(x^2-x-6)\)</span>.</p></li>
+<li><p>Determine whether <span class="math inline">\((x^2-9)/(x-3)\)</span> has a hole or a vertical
+asymptote at <span class="math inline">\(3\)</span>.</p></li>
+<li><p>Find all vertical asymptotes of <span class="math inline">\((x+1)/(x^2-9)\)</span>.</p></li>
+<li><p>Find the horizontal asymptote of <span class="math inline">\((5x^2+3)/(2x^2+1)\)</span>.</p></li>
+<li><p>Find the slant asymptote of <span class="math inline">\((x^2+3x+1)/(x+1)\)</span>.</p></li>
+<li><p>Solve <span class="math inline">\((x-4)/(x+2)\ge0\)</span>.</p></li>
+<li><p>Solve <span class="math inline">\((x+1)/(x-3)&lt;0\)</span>.</p></li>
+<li><p>For <span class="math inline">\(S(c)=80c/(4+c)\)</span>,
+calculate <span class="math inline">\(S(4)\)</span> and the saturation
+level.</p></li>
+<li><p>For <span class="math inline">\(S(c)=120c/(8+c)\)</span>, solve
+<span class="math inline">\(S(c)=90\)</span>.</p></li>
+<li><p>Explain why a graphing window can hide a polynomial
+zero.</p></li>
+<li><p>Explain why canceling factors does not restore excluded
+inputs.</p></li>
+<li><p>Compare a polynomial model and a rational saturation model for
+large inputs.</p></li>
+<li><p>Create an R or Python plot of <span class="math inline">\((x-2)^2(x+1)\)</span> and annotate its
+zeros.</p></li>
+<li><p>Use R or Python to compare <span class="math inline">\((x^2-1)/(x-1)\)</span> and <span class="math inline">\(x+1\)</span> near <span class="math inline">\(x=1\)</span>.</p></li>
+<li><p>Construct a rational model with a hole at <span class="math inline">\(x=2\)</span> and a vertical asymptote at <span class="math inline">\(x=-1\)</span>.</p></li>
+<li><p>Describe an example in which the mathematical domain differs from
+the scientifically meaningful domain.</p></li>
+<li><p>Write a short explanation of how rational functions prepare
+students for the calculus concept of limits.</p></li>
+</ol>
+<h2 id="extended-application-designing-a-rectangular-enclosure">Extended
+application: Designing a rectangular enclosure</h2>
+<p>A laboratory garden has 40 meters of fencing for a rectangle. Let the
+width be variable and use all the fencing. The quantities in this
+investigation are illustrative rather than measured observations.</p>
+<h3 id="formulating-the-mathematical-model">Formulating the mathematical
+model</h3>
+<p>The proposed relationship is <span class="math display">\[A(w)=w(20-w).\]</span> Before calculating,
+identify the input and output, their units, and the interval on which
+the model is being studied. Distinguish the mathematical domain from the
+practical domain. The numerical study uses inputs from <span class="math inline">\(0\)</span> to <span class="math inline">\(20\)</span>.</p>
+<blockquote class="example">
+<p><strong>Example 17: Analytical investigation.</strong> Find the zeros
+and use completing the square to find the largest area. Explain the
+physical domain.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> <span class="math inline">\(A=100-(w-10)^2\)</span>; zeros 0 and 20 are
+degenerate. Maximum 100 square meters at width 10 m.</p>
+</blockquote>
+<h3 id="connecting-numerical-and-graphical-representations">Connecting
+numerical and graphical representations</h3>
+<table>
+<caption>Selected predictions from the illustrative model. Values are
+rounded for display.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Width (m)</th>
+<th style="text-align: right;">Area (square m)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">75</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">100</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">75</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+<figure>
+<img alt="Model predictions over the stated investigation interval. The graph represents a mathematical model, not observed data." src="figures/ch06/applied_project.svg" style="width:90.0%"/>
+<figcaption aria-hidden="true">Model predictions over the stated
+investigation interval. The graph represents a mathematical model, not
+observed data.</figcaption>
+</figure>
+<p><strong>Interpretation.</strong> Compare the tabulated values with
+the graph. Identify the intervals over which the output increases or
+decreases, and distinguish a sampled extremum from an exact analytical
+extremum. Explain whether interpolation and extrapolation have the same
+justification in this setting.</p>
+<h3 id="r-implementation">R implementation</h3>
+<p>The following standalone script defines the model, generates
+predictions, and draws a labeled graph. Read the formula before running
+the code. The sampled range is a numerical diagnostic, not a proof of
+the exact range.</p>
+<div class="code-shell"><div class="code-bar"><span>R</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a aria-hidden="true" href="#cb3-1" tabindex="-1"></a><span class="co"># Applied investigation: Designing a rectangular enclosure</span></span>
+<span id="cb3-2"><a aria-hidden="true" href="#cb3-2" tabindex="-1"></a><span class="co"># 1. Define the input domain and model</span></span>
+<span id="cb3-3"><a aria-hidden="true" href="#cb3-3" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">20</span>, <span class="at">length.out =</span> <span class="dv">301</span>)</span>
+<span id="cb3-4"><a aria-hidden="true" href="#cb3-4" tabindex="-1"></a>y <span class="ot">&lt;-</span> x<span class="sc">*</span>(<span class="dv">20</span><span class="sc">-</span>x)</span>
+<span id="cb3-5"><a aria-hidden="true" href="#cb3-5" tabindex="-1"></a></span>
+<span id="cb3-6"><a aria-hidden="true" href="#cb3-6" tabindex="-1"></a><span class="co"># 2. Inspect numerical predictions</span></span>
+<span id="cb3-7"><a aria-hidden="true" href="#cb3-7" tabindex="-1"></a>idx <span class="ot">&lt;-</span> <span class="fu">unique</span>(<span class="fu">round</span>(<span class="fu">seq</span>(<span class="dv">1</span>, <span class="fu">length</span>(x), <span class="at">length.out =</span> <span class="dv">5</span>)))</span>
+<span id="cb3-8"><a aria-hidden="true" href="#cb3-8" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">data.frame</span>(<span class="at">input =</span> x[idx], <span class="at">output =</span> y[idx]))</span>
+<span id="cb3-9"><a aria-hidden="true" href="#cb3-9" tabindex="-1"></a></span>
+<span id="cb3-10"><a aria-hidden="true" href="#cb3-10" tabindex="-1"></a><span class="co"># 3. Visualize the model with labeled axes</span></span>
+<span id="cb3-11"><a aria-hidden="true" href="#cb3-11" tabindex="-1"></a><span class="fu">plot</span>(x, y, <span class="at">type =</span> <span class="st">"l"</span>, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">"#176B87"</span>,</span>
+<span id="cb3-12"><a aria-hidden="true" href="#cb3-12" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Width (m)"</span>, <span class="at">ylab =</span> <span class="st">"Area (square m)"</span>)</span>
+<span id="cb3-13"><a aria-hidden="true" href="#cb3-13" tabindex="-1"></a><span class="fu">grid</span>()</span>
+<span id="cb3-14"><a aria-hidden="true" href="#cb3-14" tabindex="-1"></a></span>
+<span id="cb3-15"><a aria-hidden="true" href="#cb3-15" tabindex="-1"></a><span class="co"># 4. Check the sampled output range</span></span>
+<span id="cb3-16"><a aria-hidden="true" href="#cb3-16" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">range</span>(y))</span></code></pre></div></div>
+<h3 id="python-implementation">Python implementation</h3>
+<p>Repeat the same investigation using NumPy arrays and Matplotlib.
+Compare the printed predictions with the R output, allowing for
+rounding.</p>
+<div class="code-shell"><div class="code-bar"><span>Python</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" href="#cb4-1" tabindex="-1"></a><span class="co"># Applied investigation: Designing a rectangular enclosure</span></span>
+<span id="cb4-2"><a aria-hidden="true" href="#cb4-2" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb4-3"><a aria-hidden="true" href="#cb4-3" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb4-4"><a aria-hidden="true" href="#cb4-4" tabindex="-1"></a></span>
+<span id="cb4-5"><a aria-hidden="true" href="#cb4-5" tabindex="-1"></a><span class="co"># 1. Define the input domain and model</span></span>
+<span id="cb4-6"><a aria-hidden="true" href="#cb4-6" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">20</span>, <span class="dv">301</span>)</span>
+<span id="cb4-7"><a aria-hidden="true" href="#cb4-7" tabindex="-1"></a>y <span class="op">=</span> x<span class="op">*</span>(<span class="dv">20</span><span class="op">-</span>x)</span>
+<span id="cb4-8"><a aria-hidden="true" href="#cb4-8" tabindex="-1"></a></span>
+<span id="cb4-9"><a aria-hidden="true" href="#cb4-9" tabindex="-1"></a><span class="co"># 2. Inspect numerical predictions</span></span>
+<span id="cb4-10"><a aria-hidden="true" href="#cb4-10" tabindex="-1"></a>idx <span class="op">=</span> np.unique(np.linspace(<span class="dv">0</span>, <span class="bu">len</span>(x)<span class="op">-</span><span class="dv">1</span>, <span class="dv">5</span>).<span class="bu">round</span>().astype(<span class="bu">int</span>))</span>
+<span id="cb4-11"><a aria-hidden="true" href="#cb4-11" tabindex="-1"></a><span class="bu">print</span>(np.column_stack((x[idx], y[idx])))</span>
+<span id="cb4-12"><a aria-hidden="true" href="#cb4-12" tabindex="-1"></a></span>
+<span id="cb4-13"><a aria-hidden="true" href="#cb4-13" tabindex="-1"></a><span class="co"># 3. Visualize the model with labeled axes</span></span>
+<span id="cb4-14"><a aria-hidden="true" href="#cb4-14" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="fl">3.6</span>))</span>
+<span id="cb4-15"><a aria-hidden="true" href="#cb4-15" tabindex="-1"></a>ax.plot(x, y, <span class="st">"-"</span>, color<span class="op">=</span><span class="st">"#176B87"</span>, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb4-16"><a aria-hidden="true" href="#cb4-16" tabindex="-1"></a>ax.<span class="bu">set</span>(xlabel<span class="op">=</span><span class="st">"Width (m)"</span>, ylabel<span class="op">=</span><span class="st">"Area (square m)"</span>)</span>
+<span id="cb4-17"><a aria-hidden="true" href="#cb4-17" tabindex="-1"></a>ax.grid(alpha<span class="op">=</span><span class="fl">0.22</span>)</span>
+<span id="cb4-18"><a aria-hidden="true" href="#cb4-18" tabindex="-1"></a>ax.spines[[<span class="st">"top"</span>, <span class="st">"right"</span>]].set_visible(<span class="va">False</span>)</span>
+<span id="cb4-19"><a aria-hidden="true" href="#cb4-19" tabindex="-1"></a>fig.tight_layout()</span>
+<span id="cb4-20"><a aria-hidden="true" href="#cb4-20" tabindex="-1"></a>plt.show()</span>
+<span id="cb4-21"><a aria-hidden="true" href="#cb4-21" tabindex="-1"></a></span>
+<span id="cb4-22"><a aria-hidden="true" href="#cb4-22" tabindex="-1"></a><span class="co"># 4. Check the sampled output range</span></span>
+<span id="cb4-23"><a aria-hidden="true" href="#cb4-23" tabindex="-1"></a><span class="bu">print</span>(np.<span class="bu">min</span>(y), np.<span class="bu">max</span>(y))</span></code></pre></div></div>
+<h3 id="guided-practice-checking-the-model">Guided practice: checking
+the model</h3>
+<ol type="1">
+<li><p>Calculate the outputs at the two endpoints by hand. Compare them
+with the numerical table.</p></li>
+<li><p>Select an interior input not listed in the table. Predict the
+output before evaluating it in either language.</p></li>
+<li><p>Explain the meaning of the difference between the two endpoint
+outputs, including units. If appropriate, calculate the average rate of
+change.</p></li>
+<li><p>Identify a physical assumption of the model and describe a
+circumstance in which it would fail.</p></li>
+</ol>
+<h2 id="chapter-project-investigating-designing-a-rectangular-enclosure">Chapter
+project: investigating Designing a rectangular enclosure</h2>
+<p>Prepare a short technical report for a reader who has not studied the
+model. Use the preceding case as a starting point, but develop your own
+investigation rather than merely reproducing the worked example.</p>
+<ol type="1">
+<li><p>State a quantitative question that can be answered using the
+model. Define all variables, units, and restrictions.</p></li>
+<li><p>Modify one meaningful numerical parameter in the formula. Explain
+what the change represents in the original context. Derive the revised
+formula and predict the direction of change before computing.</p></li>
+<li><p>Compare the original and revised models at five common admissible
+inputs. Present a labeled table and explain the largest difference in
+the table.</p></li>
+<li><p>Produce a graph containing both models on the same axes. Use a
+legend and distinguish the curves with line styles or markers. Explain
+the shape and any intersections.</p></li>
+<li><p>Solve your quantitative question algebraically where possible.
+Verify the result using R and Python; report any differences due to
+numerical precision.</p></li>
+<li><p>Discuss at least two limitations. Describe what measurements
+would be needed to assess the model in practice. Do not present
+simulated predictions as empirical evidence.</p></li>
+</ol>
+<h3 class="unnumbered" id="project-deliverables-and-assessment">Project
+deliverables and assessment</h3>
+<p>Submit a two- to three-page report, the two runnable scripts, and the
+labeled figure. The report should stand on its own without requiring the
+reader to inspect the code.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Criterion</th>
+<th style="text-align: right;">Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Mathematical formulation and domain</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Analytical reasoning and verification</td>
+<td style="text-align: right;">25</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Reproducible R and Python
+computations</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Graph and table quality</td>
+<td style="text-align: right;">15</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Interpretation and limitations</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Total</td>
+<td style="text-align: right;">100</td>
+</tr>
+</tbody>
+</table>
+<h2 class="unnumbered" id="chapter-summary">Chapter summary</h2>
+<p>Polynomial factors reveal zeros and multiplicities; degree and
+leading coefficient determine end behavior. Rational functions introduce
+excluded inputs, holes, and asymptotes. A complete analysis integrates
+symbolic algebra, numerical checks, graphs, and interpretation in
+context.</p>
+<p><strong>Looking ahead.</strong> Chapter 7 develops exponential and
+logarithmic functions, providing models for growth, decay, and
+multiplicative change.</p>
+<h2>Companion scripts</h2><p><a download="" href="code/ch06/applied_project.R">applied_project.R</a></p><p><a download="" href="code/ch06/applied_project.py">applied_project.py</a></p><p><a download="" href="code/ch06/chapter06_labs.R">chapter06_labs.R</a></p><p><a download="" href="code/ch06/chapter06_labs.py">chapter06_labs.py</a></p><footer><a href="chapter05.html">← Previous</a><a href="chapter07.html">Next →</a></footer><section class="investigation"><h2 id="interactive-investigation">Interactive investigation: Polynomial roots</h2><div data-investigation="6"><p>Enable JavaScript to explore the model.</p></div><p><strong>Explore and explain:</strong> Make two roots coincide. How does the graph behave at a repeated root?</p></section>
+</main><nav aria-label="On this page" class="chapter-toc" id="TOC" role="doc-toc"><strong>On this page</strong>
+<ul>
+<li><a href="#polynomial-and-rational-functions" id="toc-polynomial-and-rational-functions">Polynomial and Rational
+Functions</a>
+<ul>
+<li><a href="#opening-context-interpreting-nonlinear-response" id="toc-opening-context-interpreting-nonlinear-response">Opening
+context: interpreting nonlinear response</a></li>
+<li><a href="#learning-outcomes" id="toc-learning-outcomes">Learning
+outcomes</a></li>
+<li><a href="#prerequisite-check" id="toc-prerequisite-check">Prerequisite check</a></li>
+<li><a href="#roadmap" id="toc-roadmap">Roadmap</a></li>
+<li><a href="#polynomials-structure-and-terminology" id="toc-polynomials-structure-and-terminology">Polynomials: structure
+and terminology</a></li>
+<li><a href="#polynomial-evaluation-and-the-remainder-theorem" id="toc-polynomial-evaluation-and-the-remainder-theorem">Polynomial
+evaluation and the remainder theorem</a></li>
+<li><a href="#end-behavior-and-leading-term-dominance" id="toc-end-behavior-and-leading-term-dominance">End behavior and
+leading-term dominance</a></li>
+<li><a href="#zeros-factors-and-the-zero-product-property" id="toc-zeros-factors-and-the-zero-product-property">Zeros, factors, and
+the zero-product property</a></li>
+<li><a href="#multiplicity-and-crossing-versus-touching" id="toc-multiplicity-and-crossing-versus-touching">Multiplicity and
+crossing versus touching</a></li>
+<li><a href="#factoring-and-solving-polynomial-equations" id="toc-factoring-and-solving-polynomial-equations">Factoring and
+solving polynomial equations</a></li>
+<li><a href="#polynomial-division-and-synthetic-division" id="toc-polynomial-division-and-synthetic-division">Polynomial division
+and synthetic division</a></li>
+<li><a href="#rational-and-complex-zeros" id="toc-rational-and-complex-zeros">Rational and complex zeros</a></li>
+<li><a href="#polynomial-graphs-and-turning-points" id="toc-polynomial-graphs-and-turning-points">Polynomial graphs and
+turning points</a></li>
+<li><a href="#polynomial-inequalities-and-sign-charts" id="toc-polynomial-inequalities-and-sign-charts">Polynomial inequalities
+and sign charts</a></li>
+<li><a href="#rational-functions-and-domains" id="toc-rational-functions-and-domains">Rational functions and
+domains</a></li>
+<li><a href="#holes-and-vertical-asymptotes" id="toc-holes-and-vertical-asymptotes">Holes and vertical
+asymptotes</a></li>
+<li><a href="#horizontal-and-slant-asymptotes" id="toc-horizontal-and-slant-asymptotes">Horizontal and slant
+asymptotes</a></li>
+<li><a href="#graphing-rational-functions-systematically" id="toc-graphing-rational-functions-systematically">Graphing rational
+functions systematically</a></li>
+<li><a href="#rational-inequalities-and-critical-points" id="toc-rational-inequalities-and-critical-points">Rational inequalities
+and critical points</a></li>
+<li><a href="#applications-response-saturation-and-limits" id="toc-applications-response-saturation-and-limits">Applications:
+response, saturation, and limits</a></li>
+<li><a href="#visual-investigation-i-zeros-and-multiplicity" id="toc-visual-investigation-i-zeros-and-multiplicity">Visual
+investigation I: zeros and multiplicity</a></li>
+<li><a href="#visual-investigation-ii-holes-versus-asymptotes" id="toc-visual-investigation-ii-holes-versus-asymptotes">Visual
+investigation II: holes versus asymptotes</a></li>
+<li><a href="#visual-investigation-iii-rational-end-behavior" id="toc-visual-investigation-iii-rational-end-behavior">Visual
+investigation III: rational end behavior</a></li>
+<li><a href="#extended-workshop-a-polynomial-design-and-sensitivity" id="toc-extended-workshop-a-polynomial-design-and-sensitivity">Extended
+workshop A: polynomial design and sensitivity</a></li>
+<li><a href="#extended-workshop-b-rational-calibration-and-physical-domains" id="toc-extended-workshop-b-rational-calibration-and-physical-domains">Extended
+workshop B: rational calibration and physical domains</a></li>
+<li><a href="#extended-workshop-c-comparing-two-models" id="toc-extended-workshop-c-comparing-two-models">Extended workshop C:
+comparing two models</a></li>
+<li><a href="#computational-laboratory-a-polynomial-zeros-and-multiplicity" id="toc-computational-laboratory-a-polynomial-zeros-and-multiplicity">Computational
+laboratory A: polynomial zeros and multiplicity</a>
+<ul>
+<li><a href="#r-code" id="toc-r-code">R code</a></li>
+<li><a href="#python-code" id="toc-python-code">Python code</a></li>
+</ul></li>
+<li><a href="#computational-laboratory-b-rational-discontinuities" id="toc-computational-laboratory-b-rational-discontinuities">Computational
+laboratory B: rational discontinuities</a></li>
+<li><a href="#computational-laboratory-c-applied-saturation" id="toc-computational-laboratory-c-applied-saturation">Computational
+laboratory C: applied saturation</a></li>
+<li><a href="#calculus-readiness-behavior-near-an-excluded-input" id="toc-calculus-readiness-behavior-near-an-excluded-input">Calculus
+readiness: behavior near an excluded input</a></li>
+<li><a href="#chapter-review-exercises" id="toc-chapter-review-exercises">Chapter review exercises</a></li>
+<li><a href="#extended-application-designing-a-rectangular-enclosure" id="toc-extended-application-designing-a-rectangular-enclosure">Extended
+application: Designing a rectangular enclosure</a>
+<ul>
+<li><a href="#formulating-the-mathematical-model" id="toc-formulating-the-mathematical-model">Formulating the mathematical
+model</a></li>
+<li><a href="#connecting-numerical-and-graphical-representations" id="toc-connecting-numerical-and-graphical-representations">Connecting
+numerical and graphical representations</a></li>
+<li><a href="#r-implementation" id="toc-r-implementation">R
+implementation</a></li>
+<li><a href="#python-implementation" id="toc-python-implementation">Python implementation</a></li>
+<li><a href="#guided-practice-checking-the-model" id="toc-guided-practice-checking-the-model">Guided practice: checking
+the model</a></li>
+</ul></li>
+<li><a href="#chapter-project-investigating-designing-a-rectangular-enclosure" id="toc-chapter-project-investigating-designing-a-rectangular-enclosure">Chapter
+project: investigating Designing a rectangular enclosure</a>
+<ul>
+<li><a href="#project-deliverables-and-assessment" id="toc-project-deliverables-and-assessment">Project deliverables and
+assessment</a></li>
+</ul></li>
+<li><a href="#chapter-summary" id="toc-chapter-summary">Chapter
+summary</a></li>
+</ul></li>
+</ul>
+</nav></div><script src="investigations.js"></script></body></html>

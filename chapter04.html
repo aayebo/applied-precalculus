@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8"/>
+<meta content="pandoc" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+<title>Functions,
+Graphs, and Multiple Representations | Applied Precalculus</title>
+<style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+
+
+<link href="site.css" rel="stylesheet"/><script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script defer="" src="search-index.js"></script><script defer="" src="site.js"></script></head><body><nav class="site-nav" id="book-nav"><strong class="brand">Applied Precalculus</strong><p class="subtitle">Using R and Python</p><input aria-label="Search the book" id="book-search" placeholder="Search the book"/><div aria-live="polite" class="search-results" id="search-results"></div><p class="nav-label">Contents</p><a class="" href="index.html">Preface</a><a class="" href="chapter01.html">1. Real Numbers, Algebraic Expressions, and Mathematical Reasoning</a><a class="" href="chapter02.html">2. Equations, Inequalities, and Applications</a><a class="" href="chapter03.html">3. Coordinate Geometry, Lines, and Systems of Equations</a><a class="active" href="chapter04.html">4. Functions, Graphs, and Multiple Representations</a><a class="" href="chapter05.html">5. Transformations, Compositions, and Inverse Functions</a><a class="" href="chapter06.html">6. Polynomial and Rational Functions</a><a class="" href="chapter07.html">7. Exponential and Logarithmic Functions</a><a class="" href="chapter08.html">8. Angles, Radian Measure, and the Unit Circle</a><a class="" href="chapter09.html">9. Trigonometric Functions and Their Graphs</a><a class="" href="chapter10.html">10. Trigonometric Identities and Equations</a><a class="" href="chapter11.html">11. Applications of Trigonometry and Periodic Models</a><a class="" href="chapter12.html">12. Sequences, Series, and Mathematical Patterns</a><a class="" href="chapter13.html">13. Conic Sections and Parametric Equations</a><a class="" href="chapter14.html">14. Vectors, Polar Coordinates, and Geometric Modeling</a><a class="" href="chapter15.html">15. Rates of Change, Difference Quotients, and Limits</a><a class="" href="chapter16.html">16. Integrated Mathematical Modeling with R and Python</a><a class="" href="programming.html">Getting Started with R and Python</a><a class="" href="resources.html">Computational Resource Guide</a></nav><a class="skip" href="#main-content">Skip to content</a><header class="topbar"><button aria-controls="book-nav" aria-expanded="false" class="menu">Contents</button><span>Applied Precalculus / Online edition</span><span class="spacer"></span><a href="resources.html">Resources</a></header><div class="page-grid"><main id="main-content">
+
+<h1 id="functions-graphs-and-multiple-representations">Functions,
+Graphs, and Multiple Representations</h1>
+<h2 class="unnumbered" id="opening-investigation-how-does-a-quantity-change">Opening
+investigation: How does a quantity change?</h2>
+<p>A laboratory records the concentration of a substance at several
+times. A table gives individual observations, a graph reveals overall
+trends, and a formula can provide predictions. Yet all three
+descriptions are useful only if they connect each allowed input to a
+single output. In this chapter, we develop the language of functions,
+study their graphs and rates of change, and learn to move among
+symbolic, numerical, graphical, and verbal representations.</p>
+<h2 class="unnumbered" id="learning-outcomes">Learning outcomes</h2>
+<p>By the end of this chapter, you should be able to (1) determine
+whether a relation is a function; (2) find and interpret domains and
+ranges; (3) evaluate functions and interpret notation; (4) apply the
+vertical-line test; (5) identify zeros, intercepts, signs, and monotonic
+intervals; (6) compute average rates of change; (7) translate between
+tables, equations, graphs, and verbal descriptions; (8) evaluate
+piecewise functions; (9) identify symmetry; and (10) use R and Python to
+investigate functions and models.</p>
+<h2 class="unnumbered" id="prerequisite-diagnostic">Prerequisite
+diagnostic</h2>
+<p>Evaluate <span class="math inline">\(3(2)^2-5\)</span>; solve <span class="math inline">\(2x+3=11\)</span>; determine the slope between
+<span class="math inline">\((1,4)\)</span> and <span class="math inline">\((5,12)\)</span>; and state why <span class="math inline">\(1/(x-2)\)</span> is undefined at <span class="math inline">\(x=2\)</span>. Answers: <span class="math inline">\(7\)</span>, <span class="math inline">\(x=4\)</span>, slope <span class="math inline">\(2\)</span>, and division by zero. Review Chapters
+1–3 as needed.</p>
+<h2 class="unnumbered" id="a-visual-roadmap">A visual roadmap</h2>
+<figure>
+<img alt="image" src="figures/precompiled/chapter04-01.svg"/>
+<figcaption aria-hidden="true">image</figcaption>
+</figure>
+<p>The arrows emphasize that translating representations is an active
+reasoning process: we must preserve units, domain restrictions, and
+meaning.</p>
+<h2 id="functions-as-mathematical-relationships">Functions as
+mathematical relationships</h2>
+<p>A function assigns exactly one output to each allowable input. We
+write <span class="math inline">\(f:D\to\mathbb R\)</span> when <span class="math inline">\(D\)</span> is the domain and <span class="math inline">\(f(x)\)</span> is the output associated with input
+<span class="math inline">\(x\)</span>. A relation may contain several
+ordered pairs with the same first coordinate; it is a function only when
+those pairs all have the same second coordinate. The notation <span class="math inline">\(f(x)\)</span> means the value of the function at
+<span class="math inline">\(x\)</span>, not multiplication of <span class="math inline">\(f\)</span> and <span class="math inline">\(x\)</span>.</p>
+<p><strong>Visual investigation.</strong> Plot <span class="math inline">\((1,2),(2,4),(3,6)\)</span> and compare with <span class="math inline">\((1,2),(1,5),(3,6)\)</span>. Which set represents a
+function? Explain using input-output language.</p>
+<blockquote class="example">
+<p><strong>Example 1: Testing a relation.</strong> Does <span class="math inline">\(\{(-2,4),(0,0),(2,4)\}\)</span> represent a
+function?</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> Yes. Every input occurs with
+exactly one output. Repeated outputs are permitted: both <span class="math inline">\(-2\)</span> and <span class="math inline">\(2\)</span> map to <span class="math inline">\(4\)</span>.</p>
+</blockquote>
+<h5 id="guided-practice-1.">Guided practice 1.</h5>
+<p>Decide whether the pairs <span class="math inline">\((0,1),(1,2),(1,3)\)</span> define a function and
+explain why.</p>
+<h2 id="domain-range-and-restrictions">Domain, range, and
+restrictions</h2>
+<p>The <em>domain</em> consists of all inputs for which a formula or
+contextual model is defined. The <em>range</em> consists of all attained
+outputs. For real-valued algebraic functions, denominators cannot be
+zero and even-indexed radicals require nonnegative radicands. A
+contextual domain may be narrower: time since a treatment begins cannot
+be negative.</p>
+<p>For <span class="math inline">\(f(x)=\sqrt{x-2}/(x-5)\)</span>, we
+require <span class="math inline">\(x-2\ge0\)</span> and <span class="math inline">\(x\ne5\)</span>, giving <span class="math inline">\([2,5)\cup(5,\infty)\)</span>. The range is not
+obtained merely by copying the domain.</p>
+<blockquote class="example">
+<p><strong>Example 2: Two restrictions.</strong> Find the domain of
+<span class="math inline">\(g(x)=\frac{\sqrt{9-x^2}}{x-1}\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> The radicand requires <span class="math inline">\(-3\le x\le3\)</span>; the denominator excludes
+<span class="math inline">\(x=1\)</span>. Thus the domain is <span class="math inline">\([-3,1)\cup(1,3]\)</span>.</p>
+</blockquote>
+<h5 id="guided-practice-2.">Guided practice 2.</h5>
+<p>Find the domain of <span class="math inline">\(h(x)=\sqrt{x+4}/(x-2)\)</span>.</p>
+<h2 id="function-notation-and-evaluation">Function notation and
+evaluation</h2>
+<p>Evaluation means replacing each occurrence of the input variable with
+the specified number or expression. Parentheses are essential: if <span class="math inline">\(f(x)=x^2-3x+1\)</span>, then <span class="math inline">\(f(a+h)=(a+h)^2-3(a+h)+1\)</span>, which expands to
+<span class="math inline">\(a^2+2ah+h^2-3a-3h+1\)</span>. This
+expression is not <span class="math inline">\(f(a)+f(h)\)</span> in
+general.</p>
+<p><strong>Guided investigation.</strong> Evaluate <span class="math inline">\(f(-2)\)</span>, <span class="math inline">\(f(0)\)</span>, and <span class="math inline">\(f(3)\)</span>; then compare <span class="math inline">\(f(1+2)\)</span> with <span class="math inline">\(f(1)+f(2)\)</span>.</p>
+<blockquote class="example">
+<p><strong>Example 3: Input expressions.</strong> If <span class="math inline">\(f(x)=2x^2-x\)</span>, find <span class="math inline">\(f(3)\)</span> and <span class="math inline">\(f(t+1)\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> <span class="math inline">\(f(3)=2(9)-3=15\)</span>. Also <span class="math inline">\(f(t+1)=2(t+1)^2-(t+1)=2t^2+3t+1\)</span>.</p>
+</blockquote>
+<h5 id="guided-practice-3.">Guided practice 3.</h5>
+<p>For <span class="math inline">\(f(x)=x^2-2x\)</span>, expand <span class="math inline">\(f(a+h)\)</span> and simplify.</p>
+<h2 id="graphs-and-the-vertical-line-test">Graphs and the vertical-line
+test</h2>
+<p>The graph of <span class="math inline">\(y=f(x)\)</span> is the set
+of all points <span class="math inline">\((x,f(x))\)</span>. Every
+vertical line intersects a function graph at most once. This
+<em>vertical-line test</em> is a geometric restatement of the
+one-output-per-input definition. It does not test whether a function is
+one-to-one; that later question uses horizontal lines.</p>
+<p><strong>Visual investigation.</strong> Compare <span class="math inline">\(y=x^2\)</span> and <span class="math inline">\(x=y^2\)</span>. For the second relation, <span class="math inline">\(x=4\)</span> corresponds to <span class="math inline">\(y=2\)</span> and <span class="math inline">\(y=-2\)</span>, so it fails the vertical-line
+test.</p>
+<blockquote class="example">
+<p><strong>Example 4: A circle is not a function of <span class="math inline">\(x\)</span>.</strong> Does <span class="math inline">\(x^2+y^2=9\)</span> define <span class="math inline">\(y\)</span> as a function of <span class="math inline">\(x\)</span>?</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> No. At <span class="math inline">\(x=0\)</span>, both <span class="math inline">\(y=3\)</span> and <span class="math inline">\(y=-3\)</span> satisfy the equation. The upper
+semicircle <span class="math inline">\(y=\sqrt{9-x^2}\)</span>, however,
+is a function on <span class="math inline">\([-3,3]\)</span>.</p>
+</blockquote>
+<h5 id="guided-practice-4.">Guided practice 4.</h5>
+<p>Explain why <span class="math inline">\(y^2=x+1\)</span> is not a
+function of <span class="math inline">\(x\)</span> on its full
+relation.</p>
+<h2 id="intercepts-zeros-and-signs">Intercepts, zeros, and signs</h2>
+<p>A <em>zero</em> of <span class="math inline">\(f\)</span> is an input
+<span class="math inline">\(c\)</span> satisfying <span class="math inline">\(f(c)=0\)</span>; its graph meets the horizontal
+axis at <span class="math inline">\((c,0)\)</span>. The vertical
+intercept is <span class="math inline">\((0,f(0))\)</span>, provided
+<span class="math inline">\(0\)</span> belongs to the domain. Zeros need
+not be sign changes: <span class="math inline">\(f(x)=(x-2)^2\)</span>
+touches the axis at <span class="math inline">\(2\)</span> but stays
+nonnegative.</p>
+<p><strong>Visual investigation.</strong> Sketch <span class="math inline">\(x-2\)</span>, <span class="math inline">\((x-2)^2\)</span>, and <span class="math inline">\((x-2)^3\)</span> near <span class="math inline">\(x=2\)</span>. Compare whether each crosses or
+touches the axis.</p>
+<blockquote class="example">
+<p><strong>Example 5: Zeros and signs.</strong> Determine the zeros and
+sign intervals of <span class="math inline">\(f(x)=(x-1)(x+3)\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> Zeros are <span class="math inline">\(-3\)</span> and <span class="math inline">\(1\)</span>. Test <span class="math inline">\(x=-4,0,2\)</span>: the signs are positive,
+negative, positive. Thus <span class="math inline">\(f&gt;0\)</span> on
+<span class="math inline">\((-\infty,-3)\cup(1,\infty)\)</span> and
+<span class="math inline">\(f&lt;0\)</span> on <span class="math inline">\((-3,1)\)</span>.</p>
+</blockquote>
+<h5 id="guided-practice-5.">Guided practice 5.</h5>
+<p>Find the zeros of <span class="math inline">\(x^2-4x\)</span> and
+identify where the function is negative.</p>
+<h2 id="increasing-decreasing-and-constant-behavior">Increasing,
+decreasing, and constant behavior</h2>
+<p>A function is increasing on an interval when larger inputs always
+give larger outputs, and decreasing when larger inputs always give
+smaller outputs. These descriptions refer to intervals, not isolated
+points. For <span class="math inline">\(f(x)=x^2\)</span>, values
+decrease as <span class="math inline">\(x\)</span> moves toward zero
+from the left and increase as <span class="math inline">\(x\)</span>
+moves away from zero on the right. Its minimum value is <span class="math inline">\(0\)</span> at <span class="math inline">\(x=0\)</span>.</p>
+<p><strong>Guided investigation.</strong> Create a table of <span class="math inline">\(x^2\)</span> for <span class="math inline">\(x=-3,-2,\ldots,3\)</span>. Identify the two
+intervals of monotonicity and explain the turning point.</p>
+<blockquote class="example">
+<p><strong>Example 6: Reading a quadratic.</strong> For <span class="math inline">\(q(x)=-(x-2)^2+5\)</span>, identify its maximum and
+increasing/decreasing intervals.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> The vertex is <span class="math inline">\((2,5)\)</span>, giving maximum <span class="math inline">\(5\)</span>. The function increases on <span class="math inline">\((-\infty,2)\)</span> and decreases on <span class="math inline">\((2,\infty)\)</span>.</p>
+</blockquote>
+<h5 id="guided-practice-6.">Guided practice 6.</h5>
+<p>Identify the vertex and intervals of increase/decrease for <span class="math inline">\((x+1)^2-3\)</span>.</p>
+<h2 id="average-rate-of-change">Average rate of change</h2>
+<p>For <span class="math inline">\(a\ne b\)</span>, the average rate of
+change of <span class="math inline">\(f\)</span> from <span class="math inline">\(a\)</span> to <span class="math inline">\(b\)</span> is <span class="math inline">\(\frac{f(b)-f(a)}{b-a}\)</span>. It is the slope of
+the secant line connecting <span class="math inline">\((a,f(a))\)</span>
+and <span class="math inline">\((b,f(b))\)</span>. In applications,
+attach units: if <span class="math inline">\(f(t)\)</span> is
+concentration in mg/L and <span class="math inline">\(t\)</span> is time
+in hours, the rate has units mg/(L hour). Average rate is not
+necessarily the instantaneous rate at either endpoint.</p>
+<p><strong>Visual investigation.</strong> For <span class="math inline">\(f(x)=x^2\)</span>, compare secant slopes over
+<span class="math inline">\([0,2]\)</span>, <span class="math inline">\([1,2]\)</span>, and <span class="math inline">\([1.9,2]\)</span>. What number do they
+approach?</p>
+<blockquote class="example">
+<p><strong>Example 7: Secant slope.</strong> Find the average rate of
+change of <span class="math inline">\(f(x)=x^2+1\)</span> on <span class="math inline">\([1,4]\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> <span class="math inline">\(f(1)=2\)</span>, <span class="math inline">\(f(4)=17\)</span>, so the average rate is <span class="math inline">\((17-2)/(4-1)=5\)</span> output units per input
+unit.</p>
+</blockquote>
+<h5 id="guided-practice-7.">Guided practice 7.</h5>
+<p>Find the average rate of change of <span class="math inline">\(x^2\)</span> over <span class="math inline">\([2,5]\)</span>.</p>
+<h2 id="multiple-representations">Multiple representations</h2>
+<p>A function can be expressed verbally, by a table, as an equation, or
+by a graph. Each representation highlights different information: a
+table shows observed values, an equation supports exact calculation, a
+graph displays trends, and a verbal description supplies meaning and
+units. Translating between representations requires checking that the
+same inputs and outputs are being described.</p>
+<p><strong>Visual investigation.</strong> A sample cools according to
+<span class="math inline">\(T(t)=22+58(0.8)^t\)</span> degrees Celsius.
+Make a table for <span class="math inline">\(t=0,1,2,3,4\)</span>, graph
+the points, and describe the trend in words. Explain why the model
+should not be interpreted as linear.</p>
+<blockquote class="example">
+<p><strong>Example 8: From table to rule.</strong> A table lists <span class="math inline">\((0,7),(1,10),(2,13),(3,16)\)</span>. Suggest a
+rule.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> Outputs increase by <span class="math inline">\(3\)</span> for each unit of input, so <span class="math inline">\(f(x)=3x+7\)</span> matches the data. A finite
+table does not uniquely determine a rule without assumptions about the
+model family.</p>
+</blockquote>
+<h5 id="guided-practice-8.">Guided practice 8.</h5>
+<p>Build a table for <span class="math inline">\(f(x)=4x-1\)</span> at
+<span class="math inline">\(x=0,1,2,3\)</span> and describe its
+graph.</p>
+<h2 id="piecewise-defined-functions">Piecewise-defined functions</h2>
+<p>A piecewise function uses different rules on different portions of
+its domain. The conditions are part of the definition; the correct rule
+must be selected before substitution. Endpoints require particular care:
+<span class="math inline">\(x&lt;2\)</span> excludes <span class="math inline">\(2\)</span>, whereas <span class="math inline">\(x\ge2\)</span> includes it. Piecewise models arise
+in dosing thresholds, billing schedules, and decision rules.</p>
+<p><strong>Visual investigation.</strong> Sketch <span class="math inline">\(f(x)=\begin{cases}x+2,&amp;x&lt;1\\3,&amp;x\ge1\end{cases}\)</span>
+and mark open or closed endpoints.</p>
+<blockquote class="example">
+<p><strong>Example 9: Threshold rule.</strong> Let <span class="math inline">\(p(x)=\begin{cases}2x,&amp;0\le
+x&lt;5\\10+1.5(x-5),&amp;x\ge5.\end{cases}\)</span> Find <span class="math inline">\(p(4)\)</span>, <span class="math inline">\(p(5)\)</span>, and <span class="math inline">\(p(8)\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> <span class="math inline">\(p(4)=8\)</span>, <span class="math inline">\(p(5)=10\)</span>, and <span class="math inline">\(p(8)=10+1.5(3)=14.5\)</span>.</p>
+</blockquote>
+<h5 id="guided-practice-9.">Guided practice 9.</h5>
+<p>Evaluate <span class="math inline">\(f(2)\)</span> for <span class="math inline">\(f(x)=x^2\)</span> when <span class="math inline">\(x&lt;2\)</span> and <span class="math inline">\(f(x)=x+2\)</span> when <span class="math inline">\(x\ge2\)</span>.</p>
+<h2 id="even-odd-and-symmetric-functions">Even, odd, and symmetric
+functions</h2>
+<p>An even function satisfies <span class="math inline">\(f(-x)=f(x)\)</span> and has symmetry about the
+vertical axis. An odd function satisfies <span class="math inline">\(f(-x)=-f(x)\)</span> and has symmetry about the
+origin. The domain must itself be symmetric about zero for either
+property to hold globally. Many functions are neither even nor odd.</p>
+<p><strong>Visual investigation.</strong> Plot <span class="math inline">\(x^2\)</span>, <span class="math inline">\(x^3\)</span>, and <span class="math inline">\(x^2+x\)</span> on symmetric intervals. Predict the
+symmetry algebraically before checking the graph.</p>
+<blockquote class="example">
+<p><strong>Example 10: Algebraic symmetry test.</strong> Classify <span class="math inline">\(f(x)=x^4-2x^2\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> <span class="math inline">\(f(-x)=(-x)^4-2(-x)^2=x^4-2x^2=f(x)\)</span>, so
+<span class="math inline">\(f\)</span> is even.</p>
+</blockquote>
+<h5 id="guided-practice-10.">Guided practice 10.</h5>
+<p>Classify <span class="math inline">\(x^5+x\)</span> as even, odd, or
+neither.</p>
+<h2 id="mathematical-modeling-and-limitations">Mathematical modeling and
+limitations</h2>
+<p>A useful model identifies input, output, units, domain, parameters,
+and assumptions. Fitting an equation to data is only one stage:
+predictions must be interpreted in context and checked for plausibility.
+Interpolation within observed conditions is usually more defensible than
+extrapolation far beyond them. Measurement uncertainty and omitted
+variables may limit conclusions.</p>
+<p><strong>Applied investigation.</strong> A clinic observes heart-rate
+recovery after exercise. Discuss why time is a plausible input and heart
+rate an output, why negative time may be excluded, and why a simple
+linear fit might fail over a long interval.</p>
+<blockquote class="example">
+<p><strong>Example 11: Interpreting a model.</strong> A temperature
+model is <span class="math inline">\(T(t)=37+2e^{-0.5t}\)</span> for
+<span class="math inline">\(t\ge0\)</span>. Find <span class="math inline">\(T(0)\)</span> and describe the long-term
+prediction.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> <span class="math inline">\(T(0)=39^\circ\)</span>C. As <span class="math inline">\(t\)</span> grows, <span class="math inline">\(e^{-0.5t}\)</span> approaches zero, so <span class="math inline">\(T(t)\)</span> approaches <span class="math inline">\(37^\circ\)</span>C. This is a model prediction,
+not a clinical guarantee.</p>
+</blockquote>
+<h5 id="guided-practice-11.">Guided practice 11.</h5>
+<p>For <span class="math inline">\(C(t)=12e^{-0.2t}\)</span>, explain
+the meaning of <span class="math inline">\(C(0)\)</span> and the domain
+<span class="math inline">\(t\ge0\)</span>.</p>
+<h2 id="visual-investigation-comparing-function-families">Visual
+investigation: comparing function families</h2>
+<figure>
+<img alt="image" src="figures/precompiled/chapter04-02.svg"/>
+<figcaption aria-hidden="true">image</figcaption>
+</figure>
+<p><strong>Explore.</strong> Compare intercepts, signs, symmetry, and
+average rate of change. Find the average rate on <span class="math inline">\([0,1]\)</span> and <span class="math inline">\([1,2]\)</span> for each curve. Explain why a
+constant slope distinguishes the line from the other graphs.</p>
+<h2 id="visual-investigation-secants-approaching-a-tangent">Visual
+investigation: secants approaching a tangent</h2>
+<figure>
+<img alt="image" src="figures/precompiled/chapter04-03.svg"/>
+<figcaption aria-hidden="true">image</figcaption>
+</figure>
+<p>The secant through <span class="math inline">\((1,1)\)</span> and
+<span class="math inline">\((2,4)\)</span> has slope <span class="math inline">\(3\)</span>. The dashed line has slope <span class="math inline">\(4\)</span> and touches the parabola at <span class="math inline">\((2,4)\)</span>; calculus will formalize the
+limiting process behind such tangent slopes. For <span class="math inline">\(f(x)=x^2\)</span>, the secant slope from <span class="math inline">\(2\)</span> to <span class="math inline">\(2+h\)</span> is <span class="math inline">\(\frac{(2+h)^2-4}{h}=4+h\)</span> for <span class="math inline">\(h\ne0\)</span>. As <span class="math inline">\(h\)</span> approaches zero, this approaches <span class="math inline">\(4\)</span>.</p>
+<h2 id="computational-laboratory-a-function-tables-and-graphs">Computational
+laboratory A: function tables and graphs</h2>
+<p><strong>Goal.</strong> Compare a linear and quadratic function using
+identical input values. Predict the graph before running either program.
+Execute the R code first, then the Python code separately.</p>
+<h3 class="unnumbered" id="r-code">R code</h3>
+<div class="code-shell"><div class="code-bar"><span>R</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a aria-hidden="true" href="#cb1-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">3</span>, <span class="dv">3</span>, <span class="at">by =</span> <span class="fl">0.5</span>)</span>
+<span id="cb1-2"><a aria-hidden="true" href="#cb1-2" tabindex="-1"></a>linear <span class="ot">&lt;-</span> <span class="dv">2</span><span class="sc">*</span>x <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb1-3"><a aria-hidden="true" href="#cb1-3" tabindex="-1"></a>quadratic <span class="ot">&lt;-</span> x<span class="sc">^</span><span class="dv">2</span> <span class="sc">-</span> <span class="dv">2</span><span class="sc">*</span>x</span>
+<span id="cb1-4"><a aria-hidden="true" href="#cb1-4" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">data.frame</span>(x, linear, quadratic))</span>
+<span id="cb1-5"><a aria-hidden="true" href="#cb1-5" tabindex="-1"></a><span class="fu">plot</span>(x, quadratic, <span class="at">type=</span><span class="st">"l"</span>, <span class="at">lwd=</span><span class="dv">2</span>, <span class="at">col=</span><span class="st">"blue"</span>,</span>
+<span id="cb1-6"><a aria-hidden="true" href="#cb1-6" tabindex="-1"></a>     <span class="at">xlab=</span><span class="st">"Input x"</span>, <span class="at">ylab=</span><span class="st">"Function value"</span>,</span>
+<span id="cb1-7"><a aria-hidden="true" href="#cb1-7" tabindex="-1"></a>     <span class="at">main=</span><span class="st">"Comparing function families"</span>)</span>
+<span id="cb1-8"><a aria-hidden="true" href="#cb1-8" tabindex="-1"></a><span class="fu">lines</span>(x, linear, <span class="at">lwd=</span><span class="dv">2</span>, <span class="at">col=</span><span class="st">"red"</span>)</span>
+<span id="cb1-9"><a aria-hidden="true" href="#cb1-9" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">"topleft"</span>, <span class="at">legend=</span><span class="fu">c</span>(<span class="st">"Quadratic"</span>, <span class="st">"Linear"</span>),</span>
+<span id="cb1-10"><a aria-hidden="true" href="#cb1-10" tabindex="-1"></a>       <span class="at">col=</span><span class="fu">c</span>(<span class="st">"blue"</span>, <span class="st">"red"</span>), <span class="at">lty=</span><span class="dv">1</span>, <span class="at">lwd=</span><span class="dv">2</span>)</span></code></pre></div></div>
+<h3 class="unnumbered" id="python-code">Python code</h3>
+<div class="code-shell"><div class="code-bar"><span>Python</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" href="#cb2-1" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-2"><a aria-hidden="true" href="#cb2-2" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-3"><a aria-hidden="true" href="#cb2-3" tabindex="-1"></a>x <span class="op">=</span> np.arange(<span class="op">-</span><span class="dv">3</span>, <span class="fl">3.01</span>, <span class="fl">0.5</span>)</span>
+<span id="cb2-4"><a aria-hidden="true" href="#cb2-4" tabindex="-1"></a>linear <span class="op">=</span> <span class="dv">2</span><span class="op">*</span>x <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb2-5"><a aria-hidden="true" href="#cb2-5" tabindex="-1"></a>quadratic <span class="op">=</span> x<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> <span class="dv">2</span><span class="op">*</span>x</span>
+<span id="cb2-6"><a aria-hidden="true" href="#cb2-6" tabindex="-1"></a><span class="cf">for</span> a, b, c <span class="kw">in</span> <span class="bu">zip</span>(x, linear, quadratic):</span>
+<span id="cb2-7"><a aria-hidden="true" href="#cb2-7" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>a<span class="sc">:5.1f}</span><span class="ss"> </span><span class="sc">{</span>b<span class="sc">:8.2f}</span><span class="ss"> </span><span class="sc">{</span>c<span class="sc">:10.2f}</span><span class="ss">"</span>)</span>
+<span id="cb2-8"><a aria-hidden="true" href="#cb2-8" tabindex="-1"></a>plt.plot(x, quadratic, label<span class="op">=</span><span class="st">"Quadratic"</span>)</span>
+<span id="cb2-9"><a aria-hidden="true" href="#cb2-9" tabindex="-1"></a>plt.plot(x, linear, label<span class="op">=</span><span class="st">"Linear"</span>)</span>
+<span id="cb2-10"><a aria-hidden="true" href="#cb2-10" tabindex="-1"></a>plt.xlabel(<span class="st">"Input x"</span>)</span>
+<span id="cb2-11"><a aria-hidden="true" href="#cb2-11" tabindex="-1"></a>plt.ylabel(<span class="st">"Function value"</span>)</span>
+<span id="cb2-12"><a aria-hidden="true" href="#cb2-12" tabindex="-1"></a>plt.title(<span class="st">"Comparing function families"</span>)</span>
+<span id="cb2-13"><a aria-hidden="true" href="#cb2-13" tabindex="-1"></a>plt.legend()</span>
+<span id="cb2-14"><a aria-hidden="true" href="#cb2-14" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
+<span id="cb2-15"><a aria-hidden="true" href="#cb2-15" tabindex="-1"></a>plt.show()</span></code></pre></div></div>
+<p><strong>Interpretation.</strong> Where do the graphs intersect? Why
+can a quadratic have two intersections with a line? Solve <span class="math inline">\(x^2-2x=2x+1\)</span> algebraically and compare
+with the graph.</p>
+<h2 id="computational-laboratory-b-domains-and-piecewise-models">Computational
+laboratory B: domains and piecewise models</h2>
+<p><strong>Goal.</strong> Avoid plotting invalid inputs and investigate
+a threshold model.</p>
+<h3 class="unnumbered" id="r-code-1">R code</h3>
+<div class="code-shell"><div class="code-bar"><span>R</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a aria-hidden="true" href="#cb3-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">4</span>, <span class="dv">8</span>, <span class="at">length.out=</span><span class="dv">500</span>)</span>
+<span id="cb3-2"><a aria-hidden="true" href="#cb3-2" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(x <span class="sc">&gt;=</span> <span class="dv">2</span> <span class="sc">&amp;</span> <span class="fu">abs</span>(x<span class="dv">-5</span>) <span class="sc">&gt;</span> <span class="fl">1e-8</span>,</span>
+<span id="cb3-3"><a aria-hidden="true" href="#cb3-3" tabindex="-1"></a>            <span class="fu">sqrt</span>(<span class="fu">pmax</span>(x<span class="dv">-2</span>, <span class="dv">0</span>))<span class="sc">/</span>(x<span class="dv">-5</span>), <span class="cn">NA_real_</span>)</span>
+<span id="cb3-4"><a aria-hidden="true" href="#cb3-4" tabindex="-1"></a><span class="fu">plot</span>(x, y, <span class="at">type=</span><span class="st">"l"</span>, <span class="at">col=</span><span class="st">"blue"</span>, <span class="at">lwd=</span><span class="dv">2</span>,</span>
+<span id="cb3-5"><a aria-hidden="true" href="#cb3-5" tabindex="-1"></a>     <span class="at">xlab=</span><span class="st">"x"</span>, <span class="at">ylab=</span><span class="st">"f(x)"</span>, <span class="at">ylim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">4</span>, <span class="dv">4</span>))</span>
+<span id="cb3-6"><a aria-hidden="true" href="#cb3-6" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span><span class="dv">5</span>, <span class="at">lty=</span><span class="dv">2</span>, <span class="at">col=</span><span class="st">"red"</span>)</span></code></pre></div></div>
+<h3 class="unnumbered" id="python-code-1">Python code</h3>
+<div class="code-shell"><div class="code-bar"><span>Python</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" href="#cb4-1" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb4-2"><a aria-hidden="true" href="#cb4-2" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb4-3"><a aria-hidden="true" href="#cb4-3" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">4</span>, <span class="dv">8</span>, <span class="dv">500</span>)</span>
+<span id="cb4-4"><a aria-hidden="true" href="#cb4-4" tabindex="-1"></a>y <span class="op">=</span> np.full_like(x, np.nan)</span>
+<span id="cb4-5"><a aria-hidden="true" href="#cb4-5" tabindex="-1"></a>valid <span class="op">=</span> (x <span class="op">&gt;=</span> <span class="dv">2</span>) <span class="op">&amp;</span> (np.<span class="bu">abs</span>(x<span class="op">-</span><span class="dv">5</span>) <span class="op">&gt;</span> <span class="fl">1e-8</span>)</span>
+<span id="cb4-6"><a aria-hidden="true" href="#cb4-6" tabindex="-1"></a>y[valid] <span class="op">=</span> np.sqrt(x[valid]<span class="op">-</span><span class="dv">2</span>)<span class="op">/</span>(x[valid]<span class="op">-</span><span class="dv">5</span>)</span>
+<span id="cb4-7"><a aria-hidden="true" href="#cb4-7" tabindex="-1"></a>plt.plot(x, y)</span>
+<span id="cb4-8"><a aria-hidden="true" href="#cb4-8" tabindex="-1"></a>plt.axvline(<span class="dv">5</span>, linestyle<span class="op">=</span><span class="st">"--"</span>)</span>
+<span id="cb4-9"><a aria-hidden="true" href="#cb4-9" tabindex="-1"></a>plt.ylim(<span class="op">-</span><span class="dv">4</span>, <span class="dv">4</span>)</span>
+<span id="cb4-10"><a aria-hidden="true" href="#cb4-10" tabindex="-1"></a>plt.xlabel(<span class="st">"x"</span>)</span>
+<span id="cb4-11"><a aria-hidden="true" href="#cb4-11" tabindex="-1"></a>plt.ylabel(<span class="st">"f(x)"</span>)</span>
+<span id="cb4-12"><a aria-hidden="true" href="#cb4-12" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
+<span id="cb4-13"><a aria-hidden="true" href="#cb4-13" tabindex="-1"></a>plt.show()</span></code></pre></div></div>
+<p><strong>Interpretation.</strong> Explain why the graph begins at
+<span class="math inline">\(x=2\)</span> and has a break at <span class="math inline">\(x=5\)</span>. Explain why the numerical plot
+cannot replace the algebraic domain argument.</p>
+<h2 id="computational-laboratory-c-average-rates-and-calculus-readiness">Computational
+laboratory C: average rates and calculus readiness</h2>
+<p><strong>Goal.</strong> Observe secant slopes as the second point
+approaches the first.</p>
+<h3 class="unnumbered" id="r-code-2">R code</h3>
+<div class="code-shell"><div class="code-bar"><span>R</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a aria-hidden="true" href="#cb5-1" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x) x<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb5-2"><a aria-hidden="true" href="#cb5-2" tabindex="-1"></a>h <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="fl">0.5</span>, <span class="fl">0.1</span>, <span class="fl">0.01</span>, <span class="fl">0.001</span>)</span>
+<span id="cb5-3"><a aria-hidden="true" href="#cb5-3" tabindex="-1"></a>slope <span class="ot">&lt;-</span> (<span class="fu">f</span>(<span class="dv">2</span><span class="sc">+</span>h)<span class="sc">-</span><span class="fu">f</span>(<span class="dv">2</span>))<span class="sc">/</span>h</span>
+<span id="cb5-4"><a aria-hidden="true" href="#cb5-4" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">data.frame</span>(h, slope))</span></code></pre></div></div>
+<h3 class="unnumbered" id="python-code-2">Python code</h3>
+<div class="code-shell"><div class="code-bar"><span>Python</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a aria-hidden="true" href="#cb6-1" tabindex="-1"></a><span class="kw">def</span> f(x):</span>
+<span id="cb6-2"><a aria-hidden="true" href="#cb6-2" tabindex="-1"></a>    <span class="cf">return</span> x<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb6-3"><a aria-hidden="true" href="#cb6-3" tabindex="-1"></a><span class="cf">for</span> h <span class="kw">in</span> [<span class="dv">1</span>, <span class="fl">0.5</span>, <span class="fl">0.1</span>, <span class="fl">0.01</span>, <span class="fl">0.001</span>]:</span>
+<span id="cb6-4"><a aria-hidden="true" href="#cb6-4" tabindex="-1"></a>    slope <span class="op">=</span> (f(<span class="dv">2</span><span class="op">+</span>h)<span class="op">-</span>f(<span class="dv">2</span>))<span class="op">/</span>h</span>
+<span id="cb6-5"><a aria-hidden="true" href="#cb6-5" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"h=</span><span class="sc">{</span>h<span class="sc">:7.3f}</span><span class="ss">; secant slope=</span><span class="sc">{</span>slope<span class="sc">:.5f}</span><span class="ss">"</span>)</span></code></pre></div></div>
+<p><strong>Interpretation.</strong> Predict the limiting slope and prove
+it by simplifying the difference quotient. Why must <span class="math inline">\(h\ne0\)</span> in the original expression?</p>
+<h2 id="extended-guided-workshops">Extended guided workshops</h2>
+<h3 class="unnumbered" id="workshop-1-medication-concentration-and-domain">Workshop 1:
+Medication concentration and domain</h3>
+<p>A model <span class="math inline">\(C(t)=18/(t+2)\)</span> describes
+concentration for <span class="math inline">\(0\le t\le10\)</span>
+hours. Evaluate <span class="math inline">\(C(0),C(2),C(10)\)</span>;
+identify the contextual domain and range; calculate the average rate
+over <span class="math inline">\([0,2]\)</span>; explain why the rate is
+negative.</p>
+<h5 id="reflect.">Reflect.</h5>
+<p>State which representation (table, graph, formula, or words) was most
+useful for each part and why.</p>
+<h3 class="unnumbered" id="workshop-2-temperature-thresholds">Workshop
+2: Temperature thresholds</h3>
+<p>A storage unit has temperature <span class="math inline">\(T(t)=4+3\sin(\pi t/6)\)</span> for <span class="math inline">\(0\le t\le12\)</span>. Determine <span class="math inline">\(T(0),T(3),T(6),T(9)\)</span> and sketch the graph;
+identify the maximum and minimum; explain the role of the time
+domain.</p>
+<h5 id="reflect.-1">Reflect.</h5>
+<p>State which representation (table, graph, formula, or words) was most
+useful for each part and why.</p>
+<h3 class="unnumbered" id="workshop-3-piecewise-transport-costs">Workshop 3: Piecewise
+transport costs</h3>
+<p>A delivery service charges <span class="math inline">\(F(d)=8+2d\)</span> for <span class="math inline">\(0\le d\le5\)</span> and <span class="math inline">\(F(d)=18+1.5(d-5)\)</span> for <span class="math inline">\(d&gt;5\)</span>. Evaluate <span class="math inline">\(F(0),F(5),F(8)\)</span>, draw the graph, and
+discuss whether the model is continuous at <span class="math inline">\(d=5\)</span>.</p>
+<h5 id="reflect.-2">Reflect.</h5>
+<p>State which representation (table, graph, formula, or words) was most
+useful for each part and why.</p>
+<h3 class="unnumbered" id="workshop-4-from-data-to-models">Workshop 4:
+From data to models</h3>
+<p>A study records <span class="math inline">\((t,y)=(0,10),(1,15),(2,22),(3,31)\)</span>.
+Compute first differences and second differences, propose a quadratic
+rule, verify it, and explain why the table alone cannot prove the rule
+is unique.</p>
+<h5 id="reflect.-3">Reflect.</h5>
+<p>State which representation (table, graph, formula, or words) was most
+useful for each part and why.</p>
+<h3 class="unnumbered" id="workshop-5-a-difference-quotient-preview">Workshop 5: A
+difference-quotient preview</h3>
+<p>For <span class="math inline">\(f(x)=3x^2-2x\)</span>, derive <span class="math inline">\([f(a+h)-f(a)]/h\)</span> for <span class="math inline">\(h\ne0\)</span>. Simplify fully and explain what
+happens as <span class="math inline">\(h\)</span> becomes very
+small.</p>
+<h5 id="reflect.-4">Reflect.</h5>
+<p>State which representation (table, graph, formula, or words) was most
+useful for each part and why.</p>
+<h2 id="chapter-review-exercises">Chapter review exercises</h2>
+<p><strong>Instructions.</strong> Show reasoning, label axes and units
+when appropriate, and verify solutions using a second representation
+when possible.</p>
+<ol type="1">
+<li><p>Determine whether <span class="math inline">\(\{(-1,3),(0,3),(2,4)\}\)</span> is a function.
+Explain.</p></li>
+<li><p>Determine whether <span class="math inline">\(\{(-1,3),(-1,4),(2,4)\}\)</span> is a
+function.</p></li>
+<li><p>Find the domain of <span class="math inline">\(\sqrt{2x-6}\)</span>.</p></li>
+<li><p>Find the domain of <span class="math inline">\(1/(x^2-9)\)</span>.</p></li>
+<li><p>Find the domain of <span class="math inline">\(\sqrt{x+1}/(x-4)\)</span>.</p></li>
+<li><p>Find the domain of <span class="math inline">\(\sqrt{16-x^2}\)</span>.</p></li>
+<li><p>For <span class="math inline">\(f(x)=2x^2-3x+1\)</span>, compute
+<span class="math inline">\(f(-2)\)</span> and <span class="math inline">\(f(1/2)\)</span>.</p></li>
+<li><p>For <span class="math inline">\(f(x)=x^2+4x\)</span>, simplify
+<span class="math inline">\(f(a+h)-f(a)\)</span>.</p></li>
+<li><p>Find the zeros and <span class="math inline">\(y\)</span>-intercept of <span class="math inline">\(f(x)=x^2-5x+6\)</span>.</p></li>
+<li><p>Determine the sign intervals of <span class="math inline">\((x-4)(x+2)\)</span>.</p></li>
+<li><p>Explain why <span class="math inline">\(x^2+y^2=16\)</span> does
+not define <span class="math inline">\(y\)</span> as a function of <span class="math inline">\(x\)</span>.</p></li>
+<li><p>Identify the maximum or minimum of <span class="math inline">\(f(x)=(x-3)^2+2\)</span>.</p></li>
+<li><p>Find the average rate of change of <span class="math inline">\(x^2+2x\)</span> on <span class="math inline">\([1,3]\)</span>.</p></li>
+<li><p>Find the average rate of change of <span class="math inline">\(1/x\)</span> on <span class="math inline">\([1,2]\)</span>.</p></li>
+<li><p>Classify <span class="math inline">\(x^6+2\)</span> as even, odd,
+or neither.</p></li>
+<li><p>Classify <span class="math inline">\(x^3-4x\)</span> as even,
+odd, or neither.</p></li>
+<li><p>For <span class="math inline">\(f(x)=\begin{cases}x+1,&amp;x&lt;0\\x^2+1,&amp;x\ge0\end{cases}\)</span>,
+compute <span class="math inline">\(f(-2),f(0),f(3)\)</span>.</p></li>
+<li><p>Construct a table for <span class="math inline">\(y=3x-2\)</span>
+at <span class="math inline">\(x=-2,-1,0,1,2\)</span>.</p></li>
+<li><p>A function has points <span class="math inline">\((0,5),(1,8),(2,11)\)</span>. Suggest a linear rule
+and explain the assumption.</p></li>
+<li><p>For <span class="math inline">\(f(x)=x^2\)</span>, find secant
+slopes on <span class="math inline">\([1,2]\)</span>, <span class="math inline">\([1,1.5]\)</span>, and <span class="math inline">\([1,1.1]\)</span>.</p></li>
+<li><p>A clinic model is <span class="math inline">\(H(t)=70+20e^{-t/3}\)</span> for <span class="math inline">\(t\ge0\)</span>. Interpret <span class="math inline">\(H(0)\)</span> and the long-term
+prediction.</p></li>
+<li><p>Explain the difference between the domain of a formula and the
+contextual domain of a model.</p></li>
+<li><p>Give an example of a function that has two different inputs with
+the same output.</p></li>
+<li><p>Give an example of a relation that fails the vertical-line
+test.</p></li>
+<li><p>Explain why a table of five observations cannot establish a
+unique formula.</p></li>
+<li><p>For <span class="math inline">\(g(x)=\sqrt{x-1}\)</span>,
+determine the domain and range.</p></li>
+<li><p>For <span class="math inline">\(f(x)=|x-2|\)</span>, identify the
+minimum and intervals of decrease/increase.</p></li>
+<li><p>For <span class="math inline">\(f(x)=2x+3\)</span>, show
+algebraically that the average rate of change is always <span class="math inline">\(2\)</span>.</p></li>
+<li><p>Describe a plausible real-world situation modeled by a piecewise
+function.</p></li>
+<li><p>Write a short explanation of how a secant slope leads toward the
+derivative concept.</p></li>
+</ol>
+<h2 id="calculus-readiness-checkpoint">Calculus-readiness
+checkpoint</h2>
+<ol type="1">
+<li><p>Simplify <span class="math inline">\(\frac{(x+h)^2-x^2}{h}\)</span> for <span class="math inline">\(h\ne0\)</span> and explain why direct substitution
+<span class="math inline">\(h=0\)</span> is initially invalid.</p></li>
+<li><p>A position model is <span class="math inline">\(s(t)=t^2+3t\)</span>. Find its average velocity
+from <span class="math inline">\(t=1\)</span> to <span class="math inline">\(t=3\)</span>.</p></li>
+<li><p>Describe the difference between average rate of change over an
+interval and instantaneous rate of change at one input.</p></li>
+<li><p>Sketch a function with a jump at <span class="math inline">\(x=2\)</span>. Explain why a graph can communicate
+information that a table might miss.</p></li>
+<li><p>Explain why understanding domain restrictions matters before
+studying limits and derivatives.</p></li>
+</ol>
+<h2 id="further-investigations-and-mathematical-reasoning">Further
+investigations and mathematical reasoning</h2>
+<p>These investigations extend the chapter beyond routine substitution.
+They are suitable for collaborative classroom work, written homework, or
+computational follow-up.</p>
+<h3 class="unnumbered" id="extended-investigation-1-input-output-reasoning-and-common-misconceptions">Extended
+investigation 1: Input-output reasoning and common misconceptions</h3>
+<p>For each relation, explain whether the rule is single-valued, whether
+two inputs can share an output, and whether the stated domain changes
+the conclusion: (a) <span class="math inline">\(y=|x|\)</span> on all
+real numbers; (b) <span class="math inline">\(y=\pm\sqrt{x}\)</span> for
+<span class="math inline">\(x\ge0\)</span>; (c) <span class="math inline">\(y=1/x\)</span> for <span class="math inline">\(x\ne0\)</span>; (d) <span class="math inline">\(y=\sqrt{x^2}\)</span> for all real <span class="math inline">\(x\)</span>. In case (d), note that <span class="math inline">\(\sqrt{x^2}=|x|\)</span>, not always <span class="math inline">\(x\)</span>. Construct a table for <span class="math inline">\(x=-2,-1,0,1,2\)</span> and compare the two
+formulas.</p>
+<p><strong>Reasoning prompt.</strong> A student says that <span class="math inline">\(f(2)=f(-2)\)</span> proves that <span class="math inline">\(f\)</span> is not a function. Explain the error by
+referring to the definition. Write your explanation as if addressing a
+classmate.</p>
+<h5 id="write-and-explain.">Write and explain.</h5>
+<p>Record your calculations, a sketch or table where appropriate, and a
+two- to three-sentence interpretation. Compare the strengths and
+limitations of the representations you used.</p>
+<h3 class="unnumbered" id="extended-investigation-2-domains-from-combined-operations">Extended
+investigation 2: Domains from combined operations</h3>
+<p>Consider <span class="math inline">\(f(x)=\sqrt{6-x}\)</span> and
+<span class="math inline">\(g(x)=1/(x+2)\)</span>. Find the domains of
+<span class="math inline">\(f+g\)</span>, <span class="math inline">\(fg\)</span>, and <span class="math inline">\(f/g\)</span>. Explain why the domain of <span class="math inline">\(f/g\)</span> must also exclude inputs at which
+<span class="math inline">\(g(x)=0\)</span>. For these particular
+formulas, <span class="math inline">\(g(x)\)</span> never equals zero on
+its domain, so all three combined expressions have domain <span class="math inline">\((-\infty,-2)\cup(-2,6]\)</span>.</p>
+<p><strong>Extension.</strong> Replace <span class="math inline">\(g(x)\)</span> with <span class="math inline">\(h(x)=x-1\)</span> and find the domain of <span class="math inline">\(f/h\)</span>. Contrast the excluded input <span class="math inline">\(x=1\)</span> with the square-root endpoint <span class="math inline">\(x=6\)</span>.</p>
+<h5 id="write-and-explain.-1">Write and explain.</h5>
+<p>Record your calculations, a sketch or table where appropriate, and a
+two- to three-sentence interpretation. Compare the strengths and
+limitations of the representations you used.</p>
+<h3 class="unnumbered" id="extended-investigation-3-recovering-a-formula-from-a-graph">Extended
+investigation 3: Recovering a formula from a graph</h3>
+<p>A line crosses the vertical axis at <span class="math inline">\((0,4)\)</span> and passes through <span class="math inline">\((3,10)\)</span>. Use the slope formula to derive
+<span class="math inline">\(f(x)=2x+4\)</span>. Then identify the zero,
+calculate <span class="math inline">\(f(5)\)</span>, and interpret the
+line as a possible calibration equation with appropriate units.</p>
+<p>A parabola has vertex <span class="math inline">\((1,-4)\)</span> and
+passes through <span class="math inline">\((3,4)\)</span>. Use vertex
+form <span class="math inline">\(g(x)=a(x-1)^2-4\)</span> to find <span class="math inline">\(a\)</span>. Since <span class="math inline">\(4=4a-4\)</span>, we obtain <span class="math inline">\(a=2\)</span>. Verify that <span class="math inline">\(g(x)=2(x-1)^2-4\)</span> has the stated vertex and
+point. Discuss how a graph provides structural clues but may not supply
+exact coordinates when drawn by hand.</p>
+<h5 id="write-and-explain.-2">Write and explain.</h5>
+<p>Record your calculations, a sketch or table where appropriate, and a
+two- to three-sentence interpretation. Compare the strengths and
+limitations of the representations you used.</p>
+<h3 class="unnumbered" id="extended-investigation-4-average-rates-in-a-changing-process">Extended
+investigation 4: Average rates in a changing process</h3>
+<p>Suppose the distance traveled by a vehicle is <span class="math inline">\(s(t)=5t^2\)</span> meters for <span class="math inline">\(0\le t\le4\)</span> seconds. Find average velocity
+on <span class="math inline">\([0,1]\)</span>, <span class="math inline">\([1,2]\)</span>, <span class="math inline">\([2,3]\)</span>, and <span class="math inline">\([3,4]\)</span>. The results are <span class="math inline">\(5,15,25,35\)</span> m/s. Explain why a single
+constant-slope line would not describe the entire motion.</p>
+<p><strong>Investigation.</strong> Plot the four secant lines or draw
+their rise/run triangles. Describe the pattern in the slopes. Then
+compute the slope from <span class="math inline">\(t=2\)</span> to <span class="math inline">\(t=2+h\)</span> and simplify to <span class="math inline">\(20+5h\)</span>. This expression suggests a
+limiting slope of <span class="math inline">\(20\)</span> m/s as <span class="math inline">\(h\)</span> approaches zero, preparing the way for
+the derivative.</p>
+<h5 id="write-and-explain.-3">Write and explain.</h5>
+<p>Record your calculations, a sketch or table where appropriate, and a
+two- to three-sentence interpretation. Compare the strengths and
+limitations of the representations you used.</p>
+<h3 class="unnumbered" id="extended-investigation-5-graphical-resolution-and-numerical-sampling">Extended
+investigation 5: Graphical resolution and numerical sampling</h3>
+<p>A computer plot is made by evaluating a function at a finite
+collection of input values and joining the resulting points. For a
+rapidly oscillating function or a function with a narrow discontinuity,
+a coarse grid can conceal important behavior. Compare sampling <span class="math inline">\(f(x)=\sin(10x)\)</span> on <span class="math inline">\([0,2\pi]\)</span> at 10 equally spaced points and
+at 500 points. Explain why a visually smooth line drawn through too few
+samples may misrepresent the underlying function.</p>
+<p><strong>Discussion.</strong> How could you detect a possible hole or
+asymptote by checking the symbolic formula, rather than relying solely
+on plotting? What would happen if the graphing software automatically
+connected points on opposite sides of an undefined input?</p>
+<h5 id="write-and-explain.-4">Write and explain.</h5>
+<p>Record your calculations, a sketch or table where appropriate, and a
+two- to three-sentence interpretation. Compare the strengths and
+limitations of the representations you used.</p>
+<h3 class="unnumbered" id="extended-investigation-6-interpreting-a-real-data-table">Extended
+investigation 6: Interpreting a real data table</h3>
+<p>A health-science team records the following illustrative values for a
+recovery index after an intervention: at 0, 1, 2, 3, and 4 hours, the
+index is 82, 75, 70, 67, and 65. Construct a labeled table and
+scatterplot. Calculate the successive hourly changes and explain why a
+linear model may be a poor long-term description.</p>
+<p><strong>Modeling questions.</strong> Is the input continuous even
+though measurements were taken only at whole hours? Does the observed
+table establish that the index will eventually reach zero? What
+additional evidence would you want before using the model for
+patient-level decisions? Explain why the values should be treated as
+illustrative rather than clinical recommendations.</p>
+<h5 id="write-and-explain.-5">Write and explain.</h5>
+<p>Record your calculations, a sketch or table where appropriate, and a
+two- to three-sentence interpretation. Compare the strengths and
+limitations of the representations you used.</p>
+<h3 class="unnumbered" id="extended-investigation-7-comparing-exact-and-approximate-answers">Extended
+investigation 7: Comparing exact and approximate answers</h3>
+<p>The zeros of <span class="math inline">\(f(x)=x^2-2\)</span> are
+exactly <span class="math inline">\(\pm\sqrt2\)</span>, whereas a
+numerical plot may suggest approximately <span class="math inline">\(\pm1.414\)</span>. Verify by substitution that the
+exact answers satisfy the equation. Explain why rounding a root before
+substitution can create a small residual.</p>
+<p><strong>Investigation.</strong> Estimate the positive root using the
+table <span class="math inline">\(x=1.4,1.41,1.414,1.415,1.42\)</span>.
+Compute <span class="math inline">\(x^2-2\)</span> for each. Use the
+sign change to bracket the root, and explain how this idea relates to
+the bisection method introduced in Chapter 2.</p>
+<h5 id="write-and-explain.-6">Write and explain.</h5>
+<p>Record your calculations, a sketch or table where appropriate, and a
+two- to three-sentence interpretation. Compare the strengths and
+limitations of the representations you used.</p>
+<h3 class="unnumbered" id="extended-investigation-8-piecewise-endpoints-and-continuity-intuition">Extended
+investigation 8: Piecewise endpoints and continuity intuition</h3>
+<p>Compare <span class="math inline">\(f(x)=\begin{cases}2x+1,&amp;x&lt;2\\5,&amp;x\ge2\end{cases}\)</span>
+and <span class="math inline">\(g(x)=\begin{cases}2x+1,&amp;x&lt;2\\6,&amp;x\ge2\end{cases}\)</span>.
+Evaluate each at <span class="math inline">\(x=2\)</span>, and compute
+the value approached from inputs just below <span class="math inline">\(2\)</span>. In the first model, both sides meet at
+height <span class="math inline">\(5\)</span>; in the second, the rule
+jumps from a value near <span class="math inline">\(5\)</span> to <span class="math inline">\(6\)</span>.</p>
+<p><strong>Visual investigation.</strong> Draw open and filled circles
+at the endpoints and explain their meanings. State, without formal limit
+notation, what it means for a graph to be unbroken at an input.</p>
+<h5 id="write-and-explain.-7">Write and explain.</h5>
+<p>Record your calculations, a sketch or table where appropriate, and a
+two- to three-sentence interpretation. Compare the strengths and
+limitations of the representations you used.</p>
+<h3 class="unnumbered" id="extended-investigation-9-parameter-sensitivity-in-function-models">Extended
+investigation 9: Parameter sensitivity in function models</h3>
+<p>Consider the family <span class="math inline">\(f_a(x)=ax^2+1\)</span> for <span class="math inline">\(a=-2,-1,0,1,2\)</span>. Sketch all five graphs on
+the same axes. Describe the effects of the sign and magnitude of <span class="math inline">\(a\)</span>. For <span class="math inline">\(a=0\)</span>, the model becomes constant; for
+positive <span class="math inline">\(a\)</span>, the vertex is a
+minimum; for negative <span class="math inline">\(a\)</span>, it is a
+maximum.</p>
+<p><strong>Applied reflection.</strong> Parameters are not always
+measured without error. If <span class="math inline">\(a\)</span> is
+estimated from data, how might uncertainty in <span class="math inline">\(a\)</span> affect predictions at large <span class="math inline">\(|x|\)</span>? Compare the impact at <span class="math inline">\(x=1\)</span> and <span class="math inline">\(x=10\)</span> by calculating the difference
+between models with <span class="math inline">\(a=1\)</span> and <span class="math inline">\(a=1.1\)</span>.</p>
+<h5 id="write-and-explain.-8">Write and explain.</h5>
+<p>Record your calculations, a sketch or table where appropriate, and a
+two- to three-sentence interpretation. Compare the strengths and
+limitations of the representations you used.</p>
+<h2 id="guided-practice-checks-and-explanations">Guided-practice checks
+and explanations</h2>
+<ol type="1">
+<li><p>The repeated input <span class="math inline">\(1\)</span> has two
+different outputs, <span class="math inline">\(2\)</span> and <span class="math inline">\(3\)</span>, so the relation is not a function. The
+failure concerns repeated inputs, not repeated outputs.</p></li>
+<li><p>Require <span class="math inline">\(x+4\ge0\)</span> and <span class="math inline">\(x\ne2\)</span>. Thus <span class="math inline">\([-4,2)\cup(2,\infty)\)</span>.</p></li>
+<li><p><span class="math inline">\(f(a+h)=(a+h)^2-2(a+h)=a^2+2ah+h^2-2a-2h\)</span>.
+Expanding first prevents common substitution errors.</p></li>
+<li><p>At any <span class="math inline">\(x&gt;-1\)</span>, the relation
+gives two values <span class="math inline">\(y=\pm\sqrt{x+1}\)</span>,
+so it is not single-valued. Restricting to <span class="math inline">\(y\ge0\)</span> gives a function.</p></li>
+<li><p><span class="math inline">\(x^2-4x=x(x-4)\)</span> vanishes at
+<span class="math inline">\(0\)</span> and <span class="math inline">\(4\)</span> and is negative for <span class="math inline">\(0&lt;x&lt;4\)</span>.</p></li>
+<li><p>The vertex is <span class="math inline">\((-1,-3)\)</span>; the
+parabola decreases on <span class="math inline">\((-\infty,-1)\)</span>
+and increases on <span class="math inline">\((-1,\infty)\)</span>.</p></li>
+<li><p><span class="math inline">\([f(5)-f(2)]/(5-2)=(25-4)/3=7\)</span>.</p></li>
+<li><p>The table values are <span class="math inline">\(-1,3,7,11\)</span>; the graph is a line with slope
+<span class="math inline">\(4\)</span> and intercept <span class="math inline">\(-1\)</span>.</p></li>
+<li><p>The input <span class="math inline">\(2\)</span> belongs to the
+second branch, so <span class="math inline">\(f(2)=2+2=4\)</span>.</p></li>
+<li><p><span class="math inline">\(f(-x)=(-x)^5+(-x)=-(x^5+x)\)</span>,
+so the function is odd.</p></li>
+<li><p><span class="math inline">\(C(0)=12\)</span> is the initial
+concentration in the model’s units; <span class="math inline">\(t\ge0\)</span> excludes times before the chosen
+starting event.</p></li>
+</ol>
+<h5 id="self-assessment.">Self-assessment.</h5>
+<p>Identify any errors you made in the original practice set. For each,
+write whether the cause was an algebraic manipulation, a domain
+restriction, a graph-reading issue, or a conceptual misunderstanding.
+Correct the reasoning rather than merely copying the numerical
+answer.</p>
+<h2 id="cumulative-application-interpreting-a-function-from-four-viewpoints">Cumulative
+application: interpreting a function from four viewpoints</h2>
+<p>A laboratory device is calibrated with the illustrative model <span class="math inline">\(S(c)=2c+5\)</span> for concentrations <span class="math inline">\(0\le c\le12\)</span> mg/L, where <span class="math inline">\(S\)</span> is a signal in arbitrary instrument
+units. Work through the following stages before consulting software.</p>
+<ol type="1">
+<li><p><strong>Verbal:</strong> Explain what the input, output, slope,
+and intercept mean. Distinguish the physical interpretation of a signal
+intercept from a concentration intercept.</p></li>
+<li><p><strong>Tabular:</strong> Construct a table for <span class="math inline">\(c=0,2,4,6,8,10,12\)</span> and identify the
+constant change in signal per 2 mg/L.</p></li>
+<li><p><strong>Graphical:</strong> Plot the ordered pairs and draw the
+line segment over the stated domain. Label both axes with units. Mark
+the endpoints as included.</p></li>
+<li><p><strong>Symbolic:</strong> Solve <span class="math inline">\(S(c)=17\)</span> and interpret the solution. Find
+the average rate of change from <span class="math inline">\(c=2\)</span>
+to <span class="math inline">\(c=8\)</span>.</p></li>
+<li><p><strong>Critical reasoning:</strong> A student uses the formula
+to predict the signal at <span class="math inline">\(c=50\)</span>.
+Explain why the arithmetic is possible but the scientific interpretation
+is uncertain.</p></li>
+<li><p><strong>Computational:</strong> Reproduce the graph using either
+R or Python. Compare your plot with the hand-drawn graph, and verify
+that the code respects the restricted domain.</p></li>
+</ol>
+<h5 id="solution-outline.">Solution outline.</h5>
+<p>The slope is <span class="math inline">\(2\)</span> signal units per
+mg/L and the intercept is <span class="math inline">\(5\)</span> signal
+units at zero concentration. The requested signal <span class="math inline">\(17\)</span> occurs at <span class="math inline">\(c=6\)</span> mg/L. The average rate over <span class="math inline">\([2,8]\)</span> is <span class="math inline">\(2\)</span> signal units per mg/L. A prediction at
+<span class="math inline">\(c=50\)</span> is extrapolation outside the
+calibration interval, so it needs independent validation.</p>
+<h2 id="extended-application-water-tank-monitoring">Extended
+application: Water tank monitoring</h2>
+<p>A tank initially contains 20 liters. It fills at 4 liters per minute
+until it reaches 60 liters, then stays at that level. The quantities in
+this investigation are illustrative rather than measured
+observations.</p>
+<h3 id="formulating-the-mathematical-model">Formulating the mathematical
+model</h3>
+<p>The proposed relationship is <span class="math display">\[V(t)=\min(20+4t,60).\]</span> Before calculating,
+identify the input and output, their units, and the interval on which
+the model is being studied. Distinguish the mathematical domain from the
+practical domain. The numerical study uses inputs from <span class="math inline">\(0\)</span> to <span class="math inline">\(20\)</span>.</p>
+<blockquote class="example">
+<p><strong>Example 12: Analytical investigation.</strong> Write the
+piecewise formula and find the average rate on <span class="math inline">\([5,15]\)</span>. Identify the range.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> The transition is at 10 min. The
+rate is <span class="math inline">\((60-40)/10=2\)</span> L/min; range
+is <span class="math inline">\([20,60]\)</span>.</p>
+</blockquote>
+<h3 id="connecting-numerical-and-graphical-representations">Connecting
+numerical and graphical representations</h3>
+<table>
+<caption>Selected predictions from the illustrative model. Values are
+rounded for display.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Time (min)</th>
+<th style="text-align: right;">Volume (L)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">40</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">60</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">60</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">60</td>
+</tr>
+</tbody>
+</table>
+<figure>
+<img alt="Model predictions over the stated investigation interval. The graph represents a mathematical model, not observed data." src="figures/ch04/applied_project.svg" style="width:90.0%"/>
+<figcaption aria-hidden="true">Model predictions over the stated
+investigation interval. The graph represents a mathematical model, not
+observed data.</figcaption>
+</figure>
+<p><strong>Interpretation.</strong> Compare the tabulated values with
+the graph. Identify the intervals over which the output increases or
+decreases, and distinguish a sampled extremum from an exact analytical
+extremum. Explain whether interpolation and extrapolation have the same
+justification in this setting.</p>
+<h3 id="r-implementation">R implementation</h3>
+<p>The following standalone script defines the model, generates
+predictions, and draws a labeled graph. Read the formula before running
+the code. The sampled range is a numerical diagnostic, not a proof of
+the exact range.</p>
+<div class="code-shell"><div class="code-bar"><span>R</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a aria-hidden="true" href="#cb7-1" tabindex="-1"></a><span class="co"># Applied investigation: Water tank monitoring</span></span>
+<span id="cb7-2"><a aria-hidden="true" href="#cb7-2" tabindex="-1"></a><span class="co"># 1. Define the input domain and model</span></span>
+<span id="cb7-3"><a aria-hidden="true" href="#cb7-3" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">20</span>, <span class="at">length.out =</span> <span class="dv">301</span>)</span>
+<span id="cb7-4"><a aria-hidden="true" href="#cb7-4" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">pmin</span>(<span class="dv">20</span><span class="sc">+</span><span class="dv">4</span><span class="sc">*</span>x,<span class="dv">60</span>)</span>
+<span id="cb7-5"><a aria-hidden="true" href="#cb7-5" tabindex="-1"></a></span>
+<span id="cb7-6"><a aria-hidden="true" href="#cb7-6" tabindex="-1"></a><span class="co"># 2. Inspect numerical predictions</span></span>
+<span id="cb7-7"><a aria-hidden="true" href="#cb7-7" tabindex="-1"></a>idx <span class="ot">&lt;-</span> <span class="fu">unique</span>(<span class="fu">round</span>(<span class="fu">seq</span>(<span class="dv">1</span>, <span class="fu">length</span>(x), <span class="at">length.out =</span> <span class="dv">5</span>)))</span>
+<span id="cb7-8"><a aria-hidden="true" href="#cb7-8" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">data.frame</span>(<span class="at">input =</span> x[idx], <span class="at">output =</span> y[idx]))</span>
+<span id="cb7-9"><a aria-hidden="true" href="#cb7-9" tabindex="-1"></a></span>
+<span id="cb7-10"><a aria-hidden="true" href="#cb7-10" tabindex="-1"></a><span class="co"># 3. Visualize the model with labeled axes</span></span>
+<span id="cb7-11"><a aria-hidden="true" href="#cb7-11" tabindex="-1"></a><span class="fu">plot</span>(x, y, <span class="at">type =</span> <span class="st">"l"</span>, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">"#176B87"</span>,</span>
+<span id="cb7-12"><a aria-hidden="true" href="#cb7-12" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Time (min)"</span>, <span class="at">ylab =</span> <span class="st">"Volume (L)"</span>)</span>
+<span id="cb7-13"><a aria-hidden="true" href="#cb7-13" tabindex="-1"></a><span class="fu">grid</span>()</span>
+<span id="cb7-14"><a aria-hidden="true" href="#cb7-14" tabindex="-1"></a></span>
+<span id="cb7-15"><a aria-hidden="true" href="#cb7-15" tabindex="-1"></a><span class="co"># 4. Check the sampled output range</span></span>
+<span id="cb7-16"><a aria-hidden="true" href="#cb7-16" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">range</span>(y))</span></code></pre></div></div>
+<h3 id="python-implementation">Python implementation</h3>
+<p>Repeat the same investigation using NumPy arrays and Matplotlib.
+Compare the printed predictions with the R output, allowing for
+rounding.</p>
+<div class="code-shell"><div class="code-bar"><span>Python</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a aria-hidden="true" href="#cb8-1" tabindex="-1"></a><span class="co"># Applied investigation: Water tank monitoring</span></span>
+<span id="cb8-2"><a aria-hidden="true" href="#cb8-2" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb8-3"><a aria-hidden="true" href="#cb8-3" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb8-4"><a aria-hidden="true" href="#cb8-4" tabindex="-1"></a></span>
+<span id="cb8-5"><a aria-hidden="true" href="#cb8-5" tabindex="-1"></a><span class="co"># 1. Define the input domain and model</span></span>
+<span id="cb8-6"><a aria-hidden="true" href="#cb8-6" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">20</span>, <span class="dv">301</span>)</span>
+<span id="cb8-7"><a aria-hidden="true" href="#cb8-7" tabindex="-1"></a>y <span class="op">=</span> np.minimum(<span class="dv">20</span><span class="op">+</span><span class="dv">4</span><span class="op">*</span>x,<span class="dv">60</span>)</span>
+<span id="cb8-8"><a aria-hidden="true" href="#cb8-8" tabindex="-1"></a></span>
+<span id="cb8-9"><a aria-hidden="true" href="#cb8-9" tabindex="-1"></a><span class="co"># 2. Inspect numerical predictions</span></span>
+<span id="cb8-10"><a aria-hidden="true" href="#cb8-10" tabindex="-1"></a>idx <span class="op">=</span> np.unique(np.linspace(<span class="dv">0</span>, <span class="bu">len</span>(x)<span class="op">-</span><span class="dv">1</span>, <span class="dv">5</span>).<span class="bu">round</span>().astype(<span class="bu">int</span>))</span>
+<span id="cb8-11"><a aria-hidden="true" href="#cb8-11" tabindex="-1"></a><span class="bu">print</span>(np.column_stack((x[idx], y[idx])))</span>
+<span id="cb8-12"><a aria-hidden="true" href="#cb8-12" tabindex="-1"></a></span>
+<span id="cb8-13"><a aria-hidden="true" href="#cb8-13" tabindex="-1"></a><span class="co"># 3. Visualize the model with labeled axes</span></span>
+<span id="cb8-14"><a aria-hidden="true" href="#cb8-14" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="fl">3.6</span>))</span>
+<span id="cb8-15"><a aria-hidden="true" href="#cb8-15" tabindex="-1"></a>ax.plot(x, y, <span class="st">"-"</span>, color<span class="op">=</span><span class="st">"#176B87"</span>, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb8-16"><a aria-hidden="true" href="#cb8-16" tabindex="-1"></a>ax.<span class="bu">set</span>(xlabel<span class="op">=</span><span class="st">"Time (min)"</span>, ylabel<span class="op">=</span><span class="st">"Volume (L)"</span>)</span>
+<span id="cb8-17"><a aria-hidden="true" href="#cb8-17" tabindex="-1"></a>ax.grid(alpha<span class="op">=</span><span class="fl">0.22</span>)</span>
+<span id="cb8-18"><a aria-hidden="true" href="#cb8-18" tabindex="-1"></a>ax.spines[[<span class="st">"top"</span>, <span class="st">"right"</span>]].set_visible(<span class="va">False</span>)</span>
+<span id="cb8-19"><a aria-hidden="true" href="#cb8-19" tabindex="-1"></a>fig.tight_layout()</span>
+<span id="cb8-20"><a aria-hidden="true" href="#cb8-20" tabindex="-1"></a>plt.show()</span>
+<span id="cb8-21"><a aria-hidden="true" href="#cb8-21" tabindex="-1"></a></span>
+<span id="cb8-22"><a aria-hidden="true" href="#cb8-22" tabindex="-1"></a><span class="co"># 4. Check the sampled output range</span></span>
+<span id="cb8-23"><a aria-hidden="true" href="#cb8-23" tabindex="-1"></a><span class="bu">print</span>(np.<span class="bu">min</span>(y), np.<span class="bu">max</span>(y))</span></code></pre></div></div>
+<h3 id="guided-practice-checking-the-model">Guided practice: checking
+the model</h3>
+<ol type="1">
+<li><p>Calculate the outputs at the two endpoints by hand. Compare them
+with the numerical table.</p></li>
+<li><p>Select an interior input not listed in the table. Predict the
+output before evaluating it in either language.</p></li>
+<li><p>Explain the meaning of the difference between the two endpoint
+outputs, including units. If appropriate, calculate the average rate of
+change.</p></li>
+<li><p>Identify a physical assumption of the model and describe a
+circumstance in which it would fail.</p></li>
+</ol>
+<h2 id="chapter-project-investigating-water-tank-monitoring">Chapter
+project: investigating Water tank monitoring</h2>
+<p>Prepare a short technical report for a reader who has not studied the
+model. Use the preceding case as a starting point, but develop your own
+investigation rather than merely reproducing the worked example.</p>
+<ol type="1">
+<li><p>State a quantitative question that can be answered using the
+model. Define all variables, units, and restrictions.</p></li>
+<li><p>Modify one meaningful numerical parameter in the formula. Explain
+what the change represents in the original context. Derive the revised
+formula and predict the direction of change before computing.</p></li>
+<li><p>Compare the original and revised models at five common admissible
+inputs. Present a labeled table and explain the largest difference in
+the table.</p></li>
+<li><p>Produce a graph containing both models on the same axes. Use a
+legend and distinguish the curves with line styles or markers. Explain
+the shape and any intersections.</p></li>
+<li><p>Solve your quantitative question algebraically where possible.
+Verify the result using R and Python; report any differences due to
+numerical precision.</p></li>
+<li><p>Discuss at least two limitations. Describe what measurements
+would be needed to assess the model in practice. Do not present
+simulated predictions as empirical evidence.</p></li>
+</ol>
+<h3 class="unnumbered" id="project-deliverables-and-assessment">Project
+deliverables and assessment</h3>
+<p>Submit a two- to three-page report, the two runnable scripts, and the
+labeled figure. The report should stand on its own without requiring the
+reader to inspect the code.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Criterion</th>
+<th style="text-align: right;">Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Mathematical formulation and domain</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Analytical reasoning and verification</td>
+<td style="text-align: right;">25</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Reproducible R and Python
+computations</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Graph and table quality</td>
+<td style="text-align: right;">15</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Interpretation and limitations</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Total</td>
+<td style="text-align: right;">100</td>
+</tr>
+</tbody>
+</table>
+<h2 class="unnumbered" id="chapter-summary">Chapter summary</h2>
+<p>A function assigns one output to each input in its domain. Its
+equation, table, graph, and verbal description are complementary
+representations. Domain and range, intercepts, signs, symmetry,
+monotonicity, and piecewise behavior describe different aspects of the
+same relationship. Average rate of change measures secant slope and
+provides the conceptual bridge to differential calculus. R and Python
+support exploration, but mathematical justification remains
+essential.</p>
+<h2>Companion scripts</h2><p><a download="" href="code/ch04/applied_project.R">applied_project.R</a></p><p><a download="" href="code/ch04/applied_project.py">applied_project.py</a></p><p><a download="" href="code/ch04/chapter04_labs.R">chapter04_labs.R</a></p><p><a download="" href="code/ch04/chapter04_labs.py">chapter04_labs.py</a></p><footer><a href="chapter03.html">← Previous</a><a href="chapter05.html">Next →</a></footer><section class="investigation"><h2 id="interactive-investigation">Interactive investigation: Function representations</h2><div data-investigation="4"><p>Enable JavaScript to explore the model.</p></div><p><strong>Explore and explain:</strong> Predict the range and evaluate the function at x = 2.</p></section>
+</main><nav aria-label="On this page" class="chapter-toc" id="TOC" role="doc-toc"><strong>On this page</strong>
+<ul>
+<li><a href="#functions-graphs-and-multiple-representations" id="toc-functions-graphs-and-multiple-representations">Functions,
+Graphs, and Multiple Representations</a>
+<ul>
+<li><a href="#opening-investigation-how-does-a-quantity-change" id="toc-opening-investigation-how-does-a-quantity-change">Opening
+investigation: How does a quantity change?</a></li>
+<li><a href="#learning-outcomes" id="toc-learning-outcomes">Learning
+outcomes</a></li>
+<li><a href="#prerequisite-diagnostic" id="toc-prerequisite-diagnostic">Prerequisite diagnostic</a></li>
+<li><a href="#a-visual-roadmap" id="toc-a-visual-roadmap">A visual
+roadmap</a></li>
+<li><a href="#functions-as-mathematical-relationships" id="toc-functions-as-mathematical-relationships">Functions as
+mathematical relationships</a></li>
+<li><a href="#domain-range-and-restrictions" id="toc-domain-range-and-restrictions">Domain, range, and
+restrictions</a></li>
+<li><a href="#function-notation-and-evaluation" id="toc-function-notation-and-evaluation">Function notation and
+evaluation</a></li>
+<li><a href="#graphs-and-the-vertical-line-test" id="toc-graphs-and-the-vertical-line-test">Graphs and the vertical-line
+test</a></li>
+<li><a href="#intercepts-zeros-and-signs" id="toc-intercepts-zeros-and-signs">Intercepts, zeros, and
+signs</a></li>
+<li><a href="#increasing-decreasing-and-constant-behavior" id="toc-increasing-decreasing-and-constant-behavior">Increasing,
+decreasing, and constant behavior</a></li>
+<li><a href="#average-rate-of-change" id="toc-average-rate-of-change">Average rate of change</a></li>
+<li><a href="#multiple-representations" id="toc-multiple-representations">Multiple representations</a></li>
+<li><a href="#piecewise-defined-functions" id="toc-piecewise-defined-functions">Piecewise-defined
+functions</a></li>
+<li><a href="#even-odd-and-symmetric-functions" id="toc-even-odd-and-symmetric-functions">Even, odd, and symmetric
+functions</a></li>
+<li><a href="#mathematical-modeling-and-limitations" id="toc-mathematical-modeling-and-limitations">Mathematical modeling and
+limitations</a></li>
+<li><a href="#visual-investigation-comparing-function-families" id="toc-visual-investigation-comparing-function-families">Visual
+investigation: comparing function families</a></li>
+<li><a href="#visual-investigation-secants-approaching-a-tangent" id="toc-visual-investigation-secants-approaching-a-tangent">Visual
+investigation: secants approaching a tangent</a></li>
+<li><a href="#computational-laboratory-a-function-tables-and-graphs" id="toc-computational-laboratory-a-function-tables-and-graphs">Computational
+laboratory A: function tables and graphs</a>
+<ul>
+<li><a href="#r-code" id="toc-r-code">R code</a></li>
+<li><a href="#python-code" id="toc-python-code">Python code</a></li>
+</ul></li>
+<li><a href="#computational-laboratory-b-domains-and-piecewise-models" id="toc-computational-laboratory-b-domains-and-piecewise-models">Computational
+laboratory B: domains and piecewise models</a>
+<ul>
+<li><a href="#r-code-1" id="toc-r-code-1">R code</a></li>
+<li><a href="#python-code-1" id="toc-python-code-1">Python code</a></li>
+</ul></li>
+<li><a href="#computational-laboratory-c-average-rates-and-calculus-readiness" id="toc-computational-laboratory-c-average-rates-and-calculus-readiness">Computational
+laboratory C: average rates and calculus readiness</a>
+<ul>
+<li><a href="#r-code-2" id="toc-r-code-2">R code</a></li>
+<li><a href="#python-code-2" id="toc-python-code-2">Python code</a></li>
+</ul></li>
+<li><a href="#extended-guided-workshops" id="toc-extended-guided-workshops">Extended guided workshops</a>
+<ul>
+<li><a href="#workshop-1-medication-concentration-and-domain" id="toc-workshop-1-medication-concentration-and-domain">Workshop 1:
+Medication concentration and domain</a></li>
+<li><a href="#workshop-2-temperature-thresholds" id="toc-workshop-2-temperature-thresholds">Workshop 2: Temperature
+thresholds</a></li>
+<li><a href="#workshop-3-piecewise-transport-costs" id="toc-workshop-3-piecewise-transport-costs">Workshop 3: Piecewise
+transport costs</a></li>
+<li><a href="#workshop-4-from-data-to-models" id="toc-workshop-4-from-data-to-models">Workshop 4: From data to
+models</a></li>
+<li><a href="#workshop-5-a-difference-quotient-preview" id="toc-workshop-5-a-difference-quotient-preview">Workshop 5: A
+difference-quotient preview</a></li>
+</ul></li>
+<li><a href="#chapter-review-exercises" id="toc-chapter-review-exercises">Chapter review exercises</a></li>
+<li><a href="#calculus-readiness-checkpoint" id="toc-calculus-readiness-checkpoint">Calculus-readiness
+checkpoint</a></li>
+<li><a href="#further-investigations-and-mathematical-reasoning" id="toc-further-investigations-and-mathematical-reasoning">Further
+investigations and mathematical reasoning</a>
+<ul>
+<li><a href="#extended-investigation-1-input-output-reasoning-and-common-misconceptions" id="toc-extended-investigation-1-input-output-reasoning-and-common-misconceptions">Extended
+investigation 1: Input-output reasoning and common
+misconceptions</a></li>
+<li><a href="#extended-investigation-2-domains-from-combined-operations" id="toc-extended-investigation-2-domains-from-combined-operations">Extended
+investigation 2: Domains from combined operations</a></li>
+<li><a href="#extended-investigation-3-recovering-a-formula-from-a-graph" id="toc-extended-investigation-3-recovering-a-formula-from-a-graph">Extended
+investigation 3: Recovering a formula from a graph</a></li>
+<li><a href="#extended-investigation-4-average-rates-in-a-changing-process" id="toc-extended-investigation-4-average-rates-in-a-changing-process">Extended
+investigation 4: Average rates in a changing process</a></li>
+<li><a href="#extended-investigation-5-graphical-resolution-and-numerical-sampling" id="toc-extended-investigation-5-graphical-resolution-and-numerical-sampling">Extended
+investigation 5: Graphical resolution and numerical sampling</a></li>
+<li><a href="#extended-investigation-6-interpreting-a-real-data-table" id="toc-extended-investigation-6-interpreting-a-real-data-table">Extended
+investigation 6: Interpreting a real data table</a></li>
+<li><a href="#extended-investigation-7-comparing-exact-and-approximate-answers" id="toc-extended-investigation-7-comparing-exact-and-approximate-answers">Extended
+investigation 7: Comparing exact and approximate answers</a></li>
+<li><a href="#extended-investigation-8-piecewise-endpoints-and-continuity-intuition" id="toc-extended-investigation-8-piecewise-endpoints-and-continuity-intuition">Extended
+investigation 8: Piecewise endpoints and continuity intuition</a></li>
+<li><a href="#extended-investigation-9-parameter-sensitivity-in-function-models" id="toc-extended-investigation-9-parameter-sensitivity-in-function-models">Extended
+investigation 9: Parameter sensitivity in function models</a></li>
+</ul></li>
+<li><a href="#guided-practice-checks-and-explanations" id="toc-guided-practice-checks-and-explanations">Guided-practice checks
+and explanations</a></li>
+<li><a href="#cumulative-application-interpreting-a-function-from-four-viewpoints" id="toc-cumulative-application-interpreting-a-function-from-four-viewpoints">Cumulative
+application: interpreting a function from four viewpoints</a></li>
+<li><a href="#extended-application-water-tank-monitoring" id="toc-extended-application-water-tank-monitoring">Extended
+application: Water tank monitoring</a>
+<ul>
+<li><a href="#formulating-the-mathematical-model" id="toc-formulating-the-mathematical-model">Formulating the mathematical
+model</a></li>
+<li><a href="#connecting-numerical-and-graphical-representations" id="toc-connecting-numerical-and-graphical-representations">Connecting
+numerical and graphical representations</a></li>
+<li><a href="#r-implementation" id="toc-r-implementation">R
+implementation</a></li>
+<li><a href="#python-implementation" id="toc-python-implementation">Python implementation</a></li>
+<li><a href="#guided-practice-checking-the-model" id="toc-guided-practice-checking-the-model">Guided practice: checking
+the model</a></li>
+</ul></li>
+<li><a href="#chapter-project-investigating-water-tank-monitoring" id="toc-chapter-project-investigating-water-tank-monitoring">Chapter
+project: investigating Water tank monitoring</a>
+<ul>
+<li><a href="#project-deliverables-and-assessment" id="toc-project-deliverables-and-assessment">Project deliverables and
+assessment</a></li>
+</ul></li>
+<li><a href="#chapter-summary" id="toc-chapter-summary">Chapter
+summary</a></li>
+</ul></li>
+</ul>
+</nav></div><script src="investigations.js"></script></body></html>

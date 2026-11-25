@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8"/>
+<meta content="pandoc" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+<title>Getting Started with R and Python | Applied Precalculus</title>
+<style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+
+
+<link href="site.css" rel="stylesheet"/><script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script defer="" src="search-index.js"></script><script defer="" src="site.js"></script></head><body><nav class="site-nav" id="book-nav"><strong class="brand">Applied Precalculus</strong><p class="subtitle">Using R and Python</p><input aria-label="Search the book" id="book-search" placeholder="Search the book"/><div aria-live="polite" class="search-results" id="search-results"></div><p class="nav-label">Contents</p><a class="" href="index.html">Preface</a><a class="" href="chapter01.html">1. Real Numbers, Algebraic Expressions, and Mathematical Reasoning</a><a class="" href="chapter02.html">2. Equations, Inequalities, and Applications</a><a class="" href="chapter03.html">3. Coordinate Geometry, Lines, and Systems of Equations</a><a class="" href="chapter04.html">4. Functions, Graphs, and Multiple Representations</a><a class="" href="chapter05.html">5. Transformations, Compositions, and Inverse Functions</a><a class="" href="chapter06.html">6. Polynomial and Rational Functions</a><a class="" href="chapter07.html">7. Exponential and Logarithmic Functions</a><a class="" href="chapter08.html">8. Angles, Radian Measure, and the Unit Circle</a><a class="" href="chapter09.html">9. Trigonometric Functions and Their Graphs</a><a class="" href="chapter10.html">10. Trigonometric Identities and Equations</a><a class="" href="chapter11.html">11. Applications of Trigonometry and Periodic Models</a><a class="" href="chapter12.html">12. Sequences, Series, and Mathematical Patterns</a><a class="" href="chapter13.html">13. Conic Sections and Parametric Equations</a><a class="" href="chapter14.html">14. Vectors, Polar Coordinates, and Geometric Modeling</a><a class="" href="chapter15.html">15. Rates of Change, Difference Quotients, and Limits</a><a class="" href="chapter16.html">16. Integrated Mathematical Modeling with R and Python</a><a class="active" href="programming.html">Getting Started with R and Python</a><a class="" href="resources.html">Computational Resource Guide</a></nav><a class="skip" href="#main-content">Skip to content</a><header class="topbar"><button aria-controls="book-nav" aria-expanded="false" class="menu">Contents</button><span>Applied Precalculus / Online edition</span><span class="spacer"></span><a href="resources.html">Resources</a></header><div class="page-grid"><main id="main-content">
+
+<h1 id="app:programming">Getting Started with R and Python</h1>
+<p><strong>Purpose.</strong> This appendix is a practical,
+beginner-friendly reference for the computational activities throughout
+this book. You do not need previous programming experience. The goal is
+to understand the mathematics first, then use a small amount of code to
+calculate, visualize, check, and explain your results. The two sections
+cover the same essential skills so that you can work in either language
+or compare both.</p>
+<h2 id="app:r">Getting Started with R</h2>
+<h3 class="unnumbered" id="a.1-what-is-r-and-what-do-i-need">A.1 What is
+R, and what do I need?</h3>
+<p>R is a free programming language designed for numerical analysis,
+statistics, and graphics. <strong>R</strong> is the language;
+<strong>RStudio</strong> is an optional development environment that
+makes it easier to edit and run R scripts. Install R from <a class="uri" href="https://cran.r-project.org/">https://cran.r-project.org/</a>, then optionally install
+RStudio Desktop from <a class="uri" href="https://posit.co/download/rstudio-desktop/">https://posit.co/download/rstudio-desktop/</a>. Follow your
+operating system’s installation instructions. In RStudio, you can type
+short commands in the <em>Console</em>, but save reusable code in a
+script (<code>File &gt; New File &gt; R Script</code>). Save a script
+with the extension <code>.R</code>. Select a line or lines and use the
+Run command, or use <code>Source</code> to run the entire script. For a
+first exercise, type:</p>
+<div class="code-shell"><div class="code-bar"><span>R</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a aria-hidden="true" href="#cb1-1" tabindex="-1"></a><span class="dv">2</span> <span class="sc">+</span> <span class="dv">3</span></span>
+<span id="cb1-2"><a aria-hidden="true" href="#cb1-2" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="dv">49</span>)</span>
+<span id="cb1-3"><a aria-hidden="true" href="#cb1-3" tabindex="-1"></a>pi</span></code></pre></div></div>
+<p>You should obtain 5, 7, and an approximation to <span class="math inline">\(\pi\)</span>. If an error appears, read the
+message carefully: R is case-sensitive, so <code>Sqrt(49)</code> is not
+the same as <code>sqrt(49)</code>.</p>
+<h3 class="unnumbered" id="a.2-arithmetic-variables-and-comments">A.2
+Arithmetic, variables, and comments</h3>
+<p>R uses <code>+</code>, <code>-</code>, <code>*</code>,
+<code>/</code>, and <code>^</code> for addition, subtraction,
+multiplication, division, and powers. Parentheses control the order of
+operations. Assign a value with <code>&lt;-</code>; a <code>#</code>
+starts a comment that R ignores.</p>
+<div class="code-shell"><div class="code-bar"><span>R</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a aria-hidden="true" href="#cb2-1" tabindex="-1"></a><span class="co"># A circle with radius 4 centimeters</span></span>
+<span id="cb2-2"><a aria-hidden="true" href="#cb2-2" tabindex="-1"></a>radius <span class="ot">&lt;-</span> <span class="dv">4</span></span>
+<span id="cb2-3"><a aria-hidden="true" href="#cb2-3" tabindex="-1"></a>area <span class="ot">&lt;-</span> pi <span class="sc">*</span> radius<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb2-4"><a aria-hidden="true" href="#cb2-4" tabindex="-1"></a>circumference <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> pi <span class="sc">*</span> radius</span>
+<span id="cb2-5"><a aria-hidden="true" href="#cb2-5" tabindex="-1"></a><span class="fu">print</span>(area)</span>
+<span id="cb2-6"><a aria-hidden="true" href="#cb2-6" tabindex="-1"></a><span class="fu">print</span>(circumference)</span></code></pre></div></div>
+<p><strong>Interpretation.</strong> The calculated area is measured in
+square centimeters, whereas circumference is measured in centimeters.
+Code returns numbers, but you must supply and check the units.
+<strong>Try it:</strong> change the radius to 6. Predict the factor by
+which the area changes before running the code. <em>Answer:</em> <span class="math inline">\((6/4)^2=2.25\)</span>.</p>
+<h3 class="unnumbered" id="a.3-vectors-sequences-and-tables">A.3
+Vectors, sequences, and tables</h3>
+<p>A <em>vector</em> stores several values of the same basic type. Use
+<code>c()</code> to combine values, <code>seq()</code> to create a
+sequence, and <code>data.frame()</code> to assemble a table. R’s vector
+indices begin at 1.</p>
+<div class="code-shell"><div class="code-bar"><span>R</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a aria-hidden="true" href="#cb3-1" tabindex="-1"></a>t <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)</span>
+<span id="cb3-2"><a aria-hidden="true" href="#cb3-2" tabindex="-1"></a>concentration <span class="ot">&lt;-</span> <span class="dv">80</span> <span class="sc">*</span> (<span class="fl">0.75</span>)<span class="sc">^</span>t</span>
+<span id="cb3-3"><a aria-hidden="true" href="#cb3-3" tabindex="-1"></a>measurements <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">time_hours =</span> t,</span>
+<span id="cb3-4"><a aria-hidden="true" href="#cb3-4" tabindex="-1"></a>                           <span class="at">concentration =</span> concentration)</span>
+<span id="cb3-5"><a aria-hidden="true" href="#cb3-5" tabindex="-1"></a><span class="fu">print</span>(measurements)</span>
+<span id="cb3-6"><a aria-hidden="true" href="#cb3-6" tabindex="-1"></a><span class="fu">print</span>(concentration[<span class="dv">1</span>]) <span class="co"># first observation</span></span></code></pre></div></div>
+<p>The concentration is modeled by <span class="math inline">\(C(t)=80(0.75)^t\)</span>. This is a
+<em>hypothetical</em> example. The multiplier 0.75 means that 75% of the
+previous amount remains after each hour. <strong>Try it:</strong>
+replace <code>t</code> with <code>seq(0, 8, by = 0.5)</code> and observe
+how the table changes.</p>
+<h3 class="unnumbered" id="a.4-functions-and-function-evaluation">A.4
+Functions and function evaluation</h3>
+<p>A function takes an input and returns an output. Mathematical
+notation <span class="math inline">\(f(x)=x^2-4x+3\)</span> corresponds
+to the following R definition:</p>
+<div class="code-shell"><div class="code-bar"><span>R</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a aria-hidden="true" href="#cb4-1" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb4-2"><a aria-hidden="true" href="#cb4-2" tabindex="-1"></a>  x<span class="sc">^</span><span class="dv">2</span> <span class="sc">-</span> <span class="dv">4</span><span class="sc">*</span>x <span class="sc">+</span> <span class="dv">3</span></span>
+<span id="cb4-3"><a aria-hidden="true" href="#cb4-3" tabindex="-1"></a>}</span>
+<span id="cb4-4"><a aria-hidden="true" href="#cb4-4" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">f</span>(<span class="dv">2</span>))</span>
+<span id="cb4-5"><a aria-hidden="true" href="#cb4-5" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">5</span>, <span class="at">by =</span> <span class="fl">0.5</span>)</span>
+<span id="cb4-6"><a aria-hidden="true" href="#cb4-6" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">data.frame</span>(<span class="at">x =</span> x, <span class="at">f_x =</span> <span class="fu">f</span>(x)))</span></code></pre></div></div>
+<p>R automatically applies arithmetic operations to each element of a
+numeric vector. Note that multiplication must be written explicitly as
+<code>4*x</code>. <strong>Check by hand:</strong> <span class="math inline">\(f(2)=4-8+3=-1\)</span>.</p>
+<h3 class="unnumbered" id="a.5-plotting-a-function">A.5 Plotting a
+function</h3>
+<p>The following example uses <em>base R</em>, so no extra package is
+required. Always include axis labels, appropriate units, and a
+descriptive title.</p>
+<div class="code-shell"><div class="code-bar"><span>R</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a aria-hidden="true" href="#cb5-1" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x) x<span class="sc">^</span><span class="dv">2</span> <span class="sc">-</span> <span class="dv">4</span><span class="sc">*</span>x <span class="sc">+</span> <span class="dv">3</span></span>
+<span id="cb5-2"><a aria-hidden="true" href="#cb5-2" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">5</span>, <span class="at">length.out =</span> <span class="dv">301</span>)</span>
+<span id="cb5-3"><a aria-hidden="true" href="#cb5-3" tabindex="-1"></a><span class="fu">plot</span>(x, <span class="fu">f</span>(x), <span class="at">type =</span> <span class="st">"l"</span>, <span class="at">lwd =</span> <span class="dv">2</span>,</span>
+<span id="cb5-4"><a aria-hidden="true" href="#cb5-4" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"x"</span>, <span class="at">ylab =</span> <span class="st">"f(x)"</span>,</span>
+<span id="cb5-5"><a aria-hidden="true" href="#cb5-5" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Quadratic function"</span>)</span>
+<span id="cb5-6"><a aria-hidden="true" href="#cb5-6" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="dv">0</span>, <span class="at">v =</span> <span class="dv">0</span>, <span class="at">col =</span> <span class="st">"gray70"</span>)</span>
+<span id="cb5-7"><a aria-hidden="true" href="#cb5-7" tabindex="-1"></a><span class="fu">points</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>), <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>), <span class="at">pch =</span> <span class="dv">19</span>)</span></code></pre></div></div>
+<p>The graph crosses the horizontal axis at <span class="math inline">\(x=1\)</span> and <span class="math inline">\(x=3\)</span>, consistent with <span class="math inline">\(f(x)=(x-1)(x-3)\)</span>. A plotted curve is
+evidence to explore; algebra verifies the exact zeros. <strong>Figure
+quality checklist:</strong> readable axes, correct units, sufficient
+sampling resolution, visible important features, and a caption that
+explains the mathematical takeaway.</p>
+<h3 class="unnumbered" id="a.6-trigonometry-and-radians">A.6
+Trigonometry and radians</h3>
+<p>R’s <code>sin()</code>, <code>cos()</code>, and <code>tan()</code>
+functions expect angles in <em>radians</em>. Convert degrees using <span class="math inline">\(\theta_{\mathrm{rad}}=\theta_{\mathrm{deg}}\pi/180\)</span>.</p>
+<div class="code-shell"><div class="code-bar"><span>R</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a aria-hidden="true" href="#cb6-1" tabindex="-1"></a>angle_deg <span class="ot">&lt;-</span> <span class="dv">30</span></span>
+<span id="cb6-2"><a aria-hidden="true" href="#cb6-2" tabindex="-1"></a>angle_rad <span class="ot">&lt;-</span> angle_deg <span class="sc">*</span> pi <span class="sc">/</span> <span class="dv">180</span></span>
+<span id="cb6-3"><a aria-hidden="true" href="#cb6-3" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">sin</span>(angle_rad)) <span class="co"># 0.5</span></span>
+<span id="cb6-4"><a aria-hidden="true" href="#cb6-4" tabindex="-1"></a>angles <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">2</span><span class="sc">*</span>pi, <span class="at">length.out =</span> <span class="dv">401</span>)</span>
+<span id="cb6-5"><a aria-hidden="true" href="#cb6-5" tabindex="-1"></a><span class="fu">plot</span>(angles, <span class="fu">sin</span>(angles), <span class="at">type =</span> <span class="st">"l"</span>,</span>
+<span id="cb6-6"><a aria-hidden="true" href="#cb6-6" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Angle (radians)"</span>, <span class="at">ylab =</span> <span class="st">"sin(angle)"</span>,</span>
+<span id="cb6-7"><a aria-hidden="true" href="#cb6-7" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"One complete sine cycle"</span>)</span></code></pre></div></div>
+<p>A common mistake is to type <code>sin(30)</code> and assume that R
+interprets 30 degrees. It does not.</p>
+<h3 class="unnumbered" id="a.7-solving-equations-numerically">A.7
+Solving equations numerically</h3>
+<p>Use algebra whenever possible, then use numerical methods to check or
+approximate solutions. The <code>uniroot()</code> function finds a zero
+within an interval whose endpoints have opposite signs (for a continuous
+function).</p>
+<div class="code-shell"><div class="code-bar"><span>R</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a aria-hidden="true" href="#cb7-1" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="cf">function</span>(x) x<span class="sc">^</span><span class="dv">3</span> <span class="sc">-</span> x <span class="sc">-</span> <span class="dv">2</span></span>
+<span id="cb7-2"><a aria-hidden="true" href="#cb7-2" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">g</span>(<span class="dv">1</span>))</span>
+<span id="cb7-3"><a aria-hidden="true" href="#cb7-3" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">g</span>(<span class="dv">2</span>))</span>
+<span id="cb7-4"><a aria-hidden="true" href="#cb7-4" tabindex="-1"></a>root <span class="ot">&lt;-</span> <span class="fu">uniroot</span>(g, <span class="at">interval =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))<span class="sc">$</span>root</span>
+<span id="cb7-5"><a aria-hidden="true" href="#cb7-5" tabindex="-1"></a><span class="fu">print</span>(root)</span>
+<span id="cb7-6"><a aria-hidden="true" href="#cb7-6" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">g</span>(root))</span></code></pre></div></div>
+<p>The numerical root is approximately 1.52138. The final residual <span class="math inline">\(g(\text{root})\)</span> should be close to zero. A
+small residual is useful but is not, by itself, a proof of
+uniqueness.</p>
+<h3 class="unnumbered" id="a.8-data-basic-model-fitting-and-residuals">A.8 Data, basic model
+fitting, and residuals</h3>
+<p>A residual is <em>observed minus predicted</em>. In this example we
+fit a straight line to illustrative calibration measurements.</p>
+<div class="code-shell"><div class="code-bar"><span>R</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a aria-hidden="true" href="#cb8-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)</span>
+<span id="cb8-2"><a aria-hidden="true" href="#cb8-2" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">1.1</span>, <span class="fl">2.9</span>, <span class="fl">5.2</span>, <span class="fl">7.0</span>, <span class="fl">9.1</span>)</span>
+<span id="cb8-3"><a aria-hidden="true" href="#cb8-3" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> x)</span>
+<span id="cb8-4"><a aria-hidden="true" href="#cb8-4" tabindex="-1"></a>predicted <span class="ot">&lt;-</span> <span class="fu">predict</span>(fit)</span>
+<span id="cb8-5"><a aria-hidden="true" href="#cb8-5" tabindex="-1"></a>residual <span class="ot">&lt;-</span> y <span class="sc">-</span> predicted</span>
+<span id="cb8-6"><a aria-hidden="true" href="#cb8-6" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">data.frame</span>(x, y, predicted, residual))</span>
+<span id="cb8-7"><a aria-hidden="true" href="#cb8-7" tabindex="-1"></a><span class="fu">plot</span>(x, y, <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">xlab =</span> <span class="st">"Input (units)"</span>,</span>
+<span id="cb8-8"><a aria-hidden="true" href="#cb8-8" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"Response (units)"</span>, <span class="at">main =</span> <span class="st">"Calibration"</span>)</span>
+<span id="cb8-9"><a aria-hidden="true" href="#cb8-9" tabindex="-1"></a><span class="fu">abline</span>(fit, <span class="at">lwd =</span> <span class="dv">2</span>)</span></code></pre></div></div>
+<p>The fitted line summarizes the relationship; it does not guarantee
+that the model is appropriate outside the observed input range. Ask
+whether residuals show a pattern, whether units make sense, and whether
+extrapolation is justified.</p>
+<h3 class="unnumbered" id="a.9-common-errors-and-good-habits">A.9 Common
+errors and good habits</h3>
+<ul>
+<li><p><strong>Missing multiplication:</strong> write <code>2*x</code>,
+not <code>2x</code>.</p></li>
+<li><p><strong>Case sensitivity:</strong> <code>Radius</code> and
+<code>radius</code> are different names.</p></li>
+<li><p><strong>Mismatched vector lengths:</strong> check the lengths of
+quantities combined in a table.</p></li>
+<li><p><strong>Domain restrictions:</strong> <code>sqrt(-1)</code> and
+<code>log(0)</code> do not yield ordinary real-valued results.</p></li>
+<li><p><strong>Reproducibility:</strong> keep scripts, record units and
+assumptions, and add comments explaining the mathematical goal.</p></li>
+</ul>
+<p><strong>R practice task.</strong> Create a table and graph of <span class="math inline">\(h(t)=120(0.8)^t\)</span> for <span class="math inline">\(t=0,1,\ldots,10\)</span>. Find the first integer
+<span class="math inline">\(t\)</span> for which <span class="math inline">\(h(t)&lt;30\)</span>. Check the result
+algebraically using logarithms. <em>Check:</em> <span class="math inline">\(t=7\)</span>.</p>
+<h2 id="app:python">Getting Started with Python</h2>
+<h3 class="unnumbered" id="b.1-what-is-python-and-what-do-i-need">B.1
+What is Python, and what do I need?</h3>
+<p>Python is a general-purpose programming language widely used in
+science, engineering, and data analysis. Download Python from <a class="uri" href="https://www.python.org/downloads/">https://www.python.org/downloads/</a>. You may work in a
+Python editor or notebook (for example, IDLE, VS Code, or Jupyter). For
+this textbook, a basic editor that can run <code>.py</code> files is
+sufficient. Some later laboratories use the <code>numpy</code> and
+<code>matplotlib</code> libraries; install them from a terminal with
+<code>python -m pip install numpy matplotlib</code>. On systems where
+the Python command is <code>python3</code>, use
+<code>python3 -m pip install numpy matplotlib</code> instead.
+Installation steps can vary by operating system.</p>
+<div class="code-shell"><div class="code-bar"><span>Python</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a aria-hidden="true" href="#cb9-1" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">2</span> <span class="op">+</span> <span class="dv">3</span>)</span>
+<span id="cb9-2"><a aria-hidden="true" href="#cb9-2" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">49</span><span class="op">**</span><span class="fl">0.5</span>)</span></code></pre></div></div>
+<p>You should see 5 and 7.0. Python uses <code>**</code> for powers, not
+<code>^</code>. A <code>#</code> begins a comment. Save reusable scripts
+with the extension <code>.py</code>.</p>
+<h3 class="unnumbered" id="b.2-arithmetic-variables-and-the-math-library">B.2 Arithmetic,
+variables, and the math library</h3>
+<div class="code-shell"><div class="code-bar"><span>Python</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a aria-hidden="true" href="#cb10-1" tabindex="-1"></a><span class="im">import</span> math</span>
+<span id="cb10-2"><a aria-hidden="true" href="#cb10-2" tabindex="-1"></a><span class="co"># A circle with radius 4 centimeters</span></span>
+<span id="cb10-3"><a aria-hidden="true" href="#cb10-3" tabindex="-1"></a>radius <span class="op">=</span> <span class="dv">4</span></span>
+<span id="cb10-4"><a aria-hidden="true" href="#cb10-4" tabindex="-1"></a>area <span class="op">=</span> math.pi <span class="op">*</span> radius<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb10-5"><a aria-hidden="true" href="#cb10-5" tabindex="-1"></a>circumference <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> math.pi <span class="op">*</span> radius</span>
+<span id="cb10-6"><a aria-hidden="true" href="#cb10-6" tabindex="-1"></a><span class="bu">print</span>(area)</span>
+<span id="cb10-7"><a aria-hidden="true" href="#cb10-7" tabindex="-1"></a><span class="bu">print</span>(circumference)</span></code></pre></div></div>
+<p><code>import math</code> makes functions and constants such as
+<code>math.sqrt</code>, <code>math.log</code>, and <code>math.pi</code>
+available. Python uses <code>=</code> for assignment; use
+<code>==</code> to test equality. <strong>Try it:</strong> change the
+radius to 6 and compare the areas, then explain why the ratio is
+2.25.</p>
+<h3 class="unnumbered" id="b.3-lists-loops-and-tables">B.3 Lists, loops,
+and tables</h3>
+<p>A list holds multiple values. Python indices begin at 0. A
+<code>for</code> loop can repeat a calculation; the indented lines form
+the loop body.</p>
+<div class="code-shell"><div class="code-bar"><span>Python</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a aria-hidden="true" href="#cb11-1" tabindex="-1"></a>times <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]</span>
+<span id="cb11-2"><a aria-hidden="true" href="#cb11-2" tabindex="-1"></a>concentrations <span class="op">=</span> [<span class="dv">80</span> <span class="op">*</span> (<span class="fl">0.75</span><span class="op">**</span>t) <span class="cf">for</span> t <span class="kw">in</span> times]</span>
+<span id="cb11-3"><a aria-hidden="true" href="#cb11-3" tabindex="-1"></a><span class="cf">for</span> t, c <span class="kw">in</span> <span class="bu">zip</span>(times, concentrations):</span>
+<span id="cb11-4"><a aria-hidden="true" href="#cb11-4" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"time=</span><span class="sc">{</span>t<span class="sc">}</span><span class="ss"> h, concentration=</span><span class="sc">{</span>c<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb11-5"><a aria-hidden="true" href="#cb11-5" tabindex="-1"></a><span class="bu">print</span>(concentrations[<span class="dv">0</span>]) <span class="co"># first observation</span></span></code></pre></div></div>
+<p>This computes the same hypothetical model <span class="math inline">\(C(t)=80(0.75)^t\)</span> used in the R section. A
+list comprehension such as <code>[expression for t in times]</code>
+creates a new list from repeated calculations. <strong>Try it:</strong>
+use <code>range(9)</code> to produce times from 0 through 8.</p>
+<h3 class="unnumbered" id="b.4-functions-and-evaluation">B.4 Functions
+and evaluation</h3>
+<p>Python functions are defined using <code>def</code>; indentation is
+required. The <code>return</code> statement supplies the function’s
+output.</p>
+<div class="code-shell"><div class="code-bar"><span>Python</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb12"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a aria-hidden="true" href="#cb12-1" tabindex="-1"></a><span class="kw">def</span> f(x):</span>
+<span id="cb12-2"><a aria-hidden="true" href="#cb12-2" tabindex="-1"></a>    <span class="cf">return</span> x<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> <span class="dv">4</span><span class="op">*</span>x <span class="op">+</span> <span class="dv">3</span></span>
+<span id="cb12-3"><a aria-hidden="true" href="#cb12-3" tabindex="-1"></a></span>
+<span id="cb12-4"><a aria-hidden="true" href="#cb12-4" tabindex="-1"></a><span class="bu">print</span>(f(<span class="dv">2</span>))</span>
+<span id="cb12-5"><a aria-hidden="true" href="#cb12-5" tabindex="-1"></a><span class="cf">for</span> x <span class="kw">in</span> [<span class="op">-</span><span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]:</span>
+<span id="cb12-6"><a aria-hidden="true" href="#cb12-6" tabindex="-1"></a>    <span class="bu">print</span>(x, f(x))</span></code></pre></div></div>
+<p>Check by hand that <span class="math inline">\(f(2)=-1\)</span> and
+factor <span class="math inline">\(f(x)\)</span> to find its zeros. In
+contrast with R, applying a function written for a single number to an
+ordinary Python list requires a loop or comprehension.</p>
+<h3 class="unnumbered" id="b.5-arrays-and-plotting-with-numpy-and-matplotlib">B.5 Arrays and
+plotting with NumPy and Matplotlib</h3>
+<p>NumPy arrays support elementwise mathematical calculations.
+Matplotlib produces graphs. The following complete script plots the same
+quadratic as the R example.</p>
+<div class="code-shell"><div class="code-bar"><span>Python</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a aria-hidden="true" href="#cb13-1" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb13-2"><a aria-hidden="true" href="#cb13-2" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb13-3"><a aria-hidden="true" href="#cb13-3" tabindex="-1"></a></span>
+<span id="cb13-4"><a aria-hidden="true" href="#cb13-4" tabindex="-1"></a><span class="kw">def</span> f(x):</span>
+<span id="cb13-5"><a aria-hidden="true" href="#cb13-5" tabindex="-1"></a>    <span class="cf">return</span> x<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> <span class="dv">4</span><span class="op">*</span>x <span class="op">+</span> <span class="dv">3</span></span>
+<span id="cb13-6"><a aria-hidden="true" href="#cb13-6" tabindex="-1"></a></span>
+<span id="cb13-7"><a aria-hidden="true" href="#cb13-7" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">301</span>)</span>
+<span id="cb13-8"><a aria-hidden="true" href="#cb13-8" tabindex="-1"></a>plt.plot(x, f(x), linewidth<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="st">"f(x)"</span>)</span>
+<span id="cb13-9"><a aria-hidden="true" href="#cb13-9" tabindex="-1"></a>plt.scatter([<span class="dv">1</span>, <span class="dv">3</span>], [<span class="dv">0</span>, <span class="dv">0</span>], label<span class="op">=</span><span class="st">"Zeros"</span>)</span>
+<span id="cb13-10"><a aria-hidden="true" href="#cb13-10" tabindex="-1"></a>plt.axhline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">"gray"</span>, linewidth<span class="op">=</span><span class="fl">0.7</span>)</span>
+<span id="cb13-11"><a aria-hidden="true" href="#cb13-11" tabindex="-1"></a>plt.xlabel(<span class="st">"x"</span>)</span>
+<span id="cb13-12"><a aria-hidden="true" href="#cb13-12" tabindex="-1"></a>plt.ylabel(<span class="st">"f(x)"</span>)</span>
+<span id="cb13-13"><a aria-hidden="true" href="#cb13-13" tabindex="-1"></a>plt.title(<span class="st">"Quadratic function"</span>)</span>
+<span id="cb13-14"><a aria-hidden="true" href="#cb13-14" tabindex="-1"></a>plt.legend()</span>
+<span id="cb13-15"><a aria-hidden="true" href="#cb13-15" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb13-16"><a aria-hidden="true" href="#cb13-16" tabindex="-1"></a>plt.show()</span></code></pre></div></div>
+<p><code>np.linspace(-1,5,301)</code> produces 301 equally spaced inputs
+from <span class="math inline">\(-1\)</span> to 5. The
+<code>show()</code> call displays the figure in a standard Python
+script. To save a publication-quality image, call
+<code>plt.savefig("quadratic.png", dpi=300)</code> <em>before</em>
+<code>plt.show()</code>.</p>
+<h3 class="unnumbered" id="b.6-trigonometry-and-radians">B.6
+Trigonometry and radians</h3>
+<p>Python’s <code>math.sin()</code> and NumPy’s <code>np.sin()</code>
+both expect radians.</p>
+<div class="code-shell"><div class="code-bar"><span>Python</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb14"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a aria-hidden="true" href="#cb14-1" tabindex="-1"></a><span class="im">import</span> math</span>
+<span id="cb14-2"><a aria-hidden="true" href="#cb14-2" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb14-3"><a aria-hidden="true" href="#cb14-3" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb14-4"><a aria-hidden="true" href="#cb14-4" tabindex="-1"></a></span>
+<span id="cb14-5"><a aria-hidden="true" href="#cb14-5" tabindex="-1"></a>angle_deg <span class="op">=</span> <span class="dv">30</span></span>
+<span id="cb14-6"><a aria-hidden="true" href="#cb14-6" tabindex="-1"></a>angle_rad <span class="op">=</span> math.radians(angle_deg)</span>
+<span id="cb14-7"><a aria-hidden="true" href="#cb14-7" tabindex="-1"></a><span class="bu">print</span>(math.sin(angle_rad)) <span class="co"># approximately 0.5</span></span>
+<span id="cb14-8"><a aria-hidden="true" href="#cb14-8" tabindex="-1"></a>angles <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">2</span><span class="op">*</span>np.pi, <span class="dv">401</span>)</span>
+<span id="cb14-9"><a aria-hidden="true" href="#cb14-9" tabindex="-1"></a>plt.plot(angles, np.sin(angles))</span>
+<span id="cb14-10"><a aria-hidden="true" href="#cb14-10" tabindex="-1"></a>plt.xlabel(<span class="st">"Angle (radians)"</span>)</span>
+<span id="cb14-11"><a aria-hidden="true" href="#cb14-11" tabindex="-1"></a>plt.ylabel(<span class="st">"sin(angle)"</span>)</span>
+<span id="cb14-12"><a aria-hidden="true" href="#cb14-12" tabindex="-1"></a>plt.title(<span class="st">"One complete sine cycle"</span>)</span>
+<span id="cb14-13"><a aria-hidden="true" href="#cb14-13" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb14-14"><a aria-hidden="true" href="#cb14-14" tabindex="-1"></a>plt.show()</span></code></pre></div></div>
+<p>The conversion <code>math.radians(30)</code> is equivalent to <span class="math inline">\(30\pi/180\)</span>. Never assume a trigonometric
+function uses degrees.</p>
+<h3 class="unnumbered" id="b.7-numerical-solutions-without-extra-packages">B.7 Numerical
+solutions without extra packages</h3>
+<p>Bisection is a reliable way to approximate a root of a continuous
+function when a sign change is known. It repeatedly halves an interval
+containing the root.</p>
+<div class="code-shell"><div class="code-bar"><span>Python</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a aria-hidden="true" href="#cb15-1" tabindex="-1"></a><span class="kw">def</span> g(x):</span>
+<span id="cb15-2"><a aria-hidden="true" href="#cb15-2" tabindex="-1"></a>    <span class="cf">return</span> x<span class="op">**</span><span class="dv">3</span> <span class="op">-</span> x <span class="op">-</span> <span class="dv">2</span></span>
+<span id="cb15-3"><a aria-hidden="true" href="#cb15-3" tabindex="-1"></a></span>
+<span id="cb15-4"><a aria-hidden="true" href="#cb15-4" tabindex="-1"></a>a, b <span class="op">=</span> <span class="fl">1.0</span>, <span class="fl">2.0</span></span>
+<span id="cb15-5"><a aria-hidden="true" href="#cb15-5" tabindex="-1"></a><span class="cf">assert</span> g(a) <span class="op">*</span> g(b) <span class="op">&lt;</span> <span class="dv">0</span></span>
+<span id="cb15-6"><a aria-hidden="true" href="#cb15-6" tabindex="-1"></a><span class="cf">for</span> step <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">40</span>):</span>
+<span id="cb15-7"><a aria-hidden="true" href="#cb15-7" tabindex="-1"></a>    mid <span class="op">=</span> (a <span class="op">+</span> b) <span class="op">/</span> <span class="dv">2</span></span>
+<span id="cb15-8"><a aria-hidden="true" href="#cb15-8" tabindex="-1"></a>    <span class="cf">if</span> g(a) <span class="op">*</span> g(mid) <span class="op">&lt;=</span> <span class="dv">0</span>:</span>
+<span id="cb15-9"><a aria-hidden="true" href="#cb15-9" tabindex="-1"></a>        b <span class="op">=</span> mid</span>
+<span id="cb15-10"><a aria-hidden="true" href="#cb15-10" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb15-11"><a aria-hidden="true" href="#cb15-11" tabindex="-1"></a>        a <span class="op">=</span> mid</span>
+<span id="cb15-12"><a aria-hidden="true" href="#cb15-12" tabindex="-1"></a>root <span class="op">=</span> (a <span class="op">+</span> b) <span class="op">/</span> <span class="dv">2</span></span>
+<span id="cb15-13"><a aria-hidden="true" href="#cb15-13" tabindex="-1"></a><span class="bu">print</span>(root)</span>
+<span id="cb15-14"><a aria-hidden="true" href="#cb15-14" tabindex="-1"></a><span class="bu">print</span>(g(root))</span></code></pre></div></div>
+<p>The root is approximately 1.52138. The loop is an implementation of
+the mathematical interval-halving procedure; it does not replace
+understanding why the sign-change condition matters.</p>
+<h3 class="unnumbered" id="b.8-data-linear-models-and-residuals">B.8
+Data, linear models, and residuals</h3>
+<p>The following example uses NumPy to fit a straight line to the same
+illustrative calibration data used in R.</p>
+<div class="code-shell"><div class="code-bar"><span>Python</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb16"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a aria-hidden="true" href="#cb16-1" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb16-2"><a aria-hidden="true" href="#cb16-2" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb16-3"><a aria-hidden="true" href="#cb16-3" tabindex="-1"></a></span>
+<span id="cb16-4"><a aria-hidden="true" href="#cb16-4" tabindex="-1"></a>x <span class="op">=</span> np.array([<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>], dtype<span class="op">=</span><span class="bu">float</span>)</span>
+<span id="cb16-5"><a aria-hidden="true" href="#cb16-5" tabindex="-1"></a>y <span class="op">=</span> np.array([<span class="fl">1.1</span>, <span class="fl">2.9</span>, <span class="fl">5.2</span>, <span class="fl">7.0</span>, <span class="fl">9.1</span>])</span>
+<span id="cb16-6"><a aria-hidden="true" href="#cb16-6" tabindex="-1"></a>slope, intercept <span class="op">=</span> np.polyfit(x, y, <span class="dv">1</span>)</span>
+<span id="cb16-7"><a aria-hidden="true" href="#cb16-7" tabindex="-1"></a>predicted <span class="op">=</span> slope<span class="op">*</span>x <span class="op">+</span> intercept</span>
+<span id="cb16-8"><a aria-hidden="true" href="#cb16-8" tabindex="-1"></a>residuals <span class="op">=</span> y <span class="op">-</span> predicted</span>
+<span id="cb16-9"><a aria-hidden="true" href="#cb16-9" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"slope:"</span>, slope, <span class="st">"intercept:"</span>, intercept)</span>
+<span id="cb16-10"><a aria-hidden="true" href="#cb16-10" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"residuals:"</span>, residuals)</span>
+<span id="cb16-11"><a aria-hidden="true" href="#cb16-11" tabindex="-1"></a>plt.scatter(x, y, label<span class="op">=</span><span class="st">"Observed"</span>)</span>
+<span id="cb16-12"><a aria-hidden="true" href="#cb16-12" tabindex="-1"></a>plt.plot(x, predicted, label<span class="op">=</span><span class="st">"Fitted line"</span>)</span>
+<span id="cb16-13"><a aria-hidden="true" href="#cb16-13" tabindex="-1"></a>plt.xlabel(<span class="st">"Input (units)"</span>)</span>
+<span id="cb16-14"><a aria-hidden="true" href="#cb16-14" tabindex="-1"></a>plt.ylabel(<span class="st">"Response (units)"</span>)</span>
+<span id="cb16-15"><a aria-hidden="true" href="#cb16-15" tabindex="-1"></a>plt.legend()</span>
+<span id="cb16-16"><a aria-hidden="true" href="#cb16-16" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb16-17"><a aria-hidden="true" href="#cb16-17" tabindex="-1"></a>plt.show()</span></code></pre></div></div>
+<p>Compare the slope and intercept with those obtained from
+<code>lm(y   x)</code> in R. Small differences caused by rounding are
+expected, but both programs should fit the same least-squares line.</p>
+<h3 class="unnumbered" id="b.9-common-errors-and-good-habits">B.9 Common
+errors and good habits</h3>
+<ul>
+<li><p><strong>Powers:</strong> use <code>x**2</code>, not
+<code>x2̂</code>.</p></li>
+<li><p><strong>Indentation:</strong> align statements inside
+<code>for</code> loops and <code>def</code> blocks
+consistently.</p></li>
+<li><p><strong>Missing imports:</strong> <code>np</code> and
+<code>plt</code> are available only after the corresponding
+<code>import</code> statements.</p></li>
+<li><p><strong>Lists versus arrays:</strong> <code>[1,2,3] * 2</code>
+repeats a list; <code>np.array([1,2,3]) * 2</code> doubles each
+entry.</p></li>
+<li><p><strong>Domains:</strong> verify that square roots and logarithms
+are evaluated on appropriate real-valued inputs.</p></li>
+<li><p><strong>Reproducibility:</strong> include comments, document
+units, use meaningful variable names, and save both scripts and
+figures.</p></li>
+</ul>
+<p><strong>Python practice task.</strong> Create a table and graph of
+<span class="math inline">\(h(t)=120(0.8)^t\)</span> for <span class="math inline">\(t=0,1,\ldots,10\)</span>. Find the first integer
+<span class="math inline">\(t\)</span> for which <span class="math inline">\(h(t)&lt;30\)</span> and verify the result
+algebraically. <em>Check:</em> <span class="math inline">\(t=7\)</span>.</p>
+<h3 class="unnumbered" id="b.10-moving-between-r-and-python">B.10 Moving
+between R and Python</h3>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Task</th>
+<th style="text-align: left;">R</th>
+<th style="text-align: left;">Python</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Assign a variable</td>
+<td style="text-align: left;"><code>x &lt;- 3</code></td>
+<td style="text-align: left;"><code>x = 3</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Power</td>
+<td style="text-align: left;"><code>x2̂</code></td>
+<td style="text-align: left;"><code>x**2</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Square root</td>
+<td style="text-align: left;"><code>sqrt(x)</code></td>
+<td style="text-align: left;"><code>math.sqrt(x)</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Natural logarithm</td>
+<td style="text-align: left;"><code>log(x)</code></td>
+<td style="text-align: left;"><code>math.log(x)</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Create values</td>
+<td style="text-align: left;"><code>c(1,2,3)</code></td>
+<td style="text-align: left;"><code>[1,2,3]</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Sequence</td>
+<td style="text-align: left;"><code>seq(0,1,by=.1)</code></td>
+<td style="text-align: left;"><code>np.linspace(0,1,11)</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">First item</td>
+<td style="text-align: left;"><code>x[1]</code></td>
+<td style="text-align: left;"><code>x[0]</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Display output</td>
+<td style="text-align: left;"><code>print(x)</code></td>
+<td style="text-align: left;"><code>print(x)</code></td>
+</tr>
+</tbody>
+</table>
+<h3 class="unnumbered" id="b.11-a-repeatable-workflow-for-every-laboratory">B.11 A repeatable
+workflow for every laboratory</h3>
+<ol type="1">
+<li><p><strong>State the mathematical question.</strong> Identify the
+unknown quantity, assumptions, domain, and units.</p></li>
+<li><p><strong>Predict before computing.</strong> Estimate a value,
+graph shape, or direction of change by hand.</p></li>
+<li><p><strong>Run the complete code.</strong> Use the chapter’s
+<code>code/chXX/</code> script or type the listing carefully.</p></li>
+<li><p><strong>Inspect output critically.</strong> Check axes, units,
+numerical precision, restrictions, and possible errors.</p></li>
+<li><p><strong>Verify independently.</strong> Substitute an answer into
+the original expression or compare with an algebraic result.</p></li>
+<li><p><strong>Interpret in words.</strong> State what the result means
+in context and where the model may fail.</p></li>
+</ol>
+<p><strong>Final reminder.</strong> Code is a tool for mathematical
+exploration. A convincing mathematical explanation identifies the
+relevant properties, shows the reasoning, and interprets the result; a
+screenshot or numerical answer alone is not enough.</p>
+<footer><a href="chapter16.html">← Previous</a><a href="resources.html">Next →</a></footer></main><nav aria-label="On this page" class="chapter-toc" id="TOC" role="doc-toc"><strong>On this page</strong>
+<ul>
+<li><a href="#app:programming" id="toc-app:programming">Getting Started
+with R and Python</a>
+<ul>
+<li><a href="#app:r" id="toc-app:r">Getting Started with R</a>
+<ul>
+<li><a href="#a.1-what-is-r-and-what-do-i-need" id="toc-a.1-what-is-r-and-what-do-i-need">A.1 What is R, and what do I
+need?</a></li>
+<li><a href="#a.2-arithmetic-variables-and-comments" id="toc-a.2-arithmetic-variables-and-comments">A.2 Arithmetic,
+variables, and comments</a></li>
+<li><a href="#a.3-vectors-sequences-and-tables" id="toc-a.3-vectors-sequences-and-tables">A.3 Vectors, sequences, and
+tables</a></li>
+<li><a href="#a.4-functions-and-function-evaluation" id="toc-a.4-functions-and-function-evaluation">A.4 Functions and
+function evaluation</a></li>
+<li><a href="#a.5-plotting-a-function" id="toc-a.5-plotting-a-function">A.5 Plotting a function</a></li>
+<li><a href="#a.6-trigonometry-and-radians" id="toc-a.6-trigonometry-and-radians">A.6 Trigonometry and
+radians</a></li>
+<li><a href="#a.7-solving-equations-numerically" id="toc-a.7-solving-equations-numerically">A.7 Solving equations
+numerically</a></li>
+<li><a href="#a.8-data-basic-model-fitting-and-residuals" id="toc-a.8-data-basic-model-fitting-and-residuals">A.8 Data, basic
+model fitting, and residuals</a></li>
+<li><a href="#a.9-common-errors-and-good-habits" id="toc-a.9-common-errors-and-good-habits">A.9 Common errors and good
+habits</a></li>
+</ul></li>
+<li><a href="#app:python" id="toc-app:python">Getting Started with
+Python</a>
+<ul>
+<li><a href="#b.1-what-is-python-and-what-do-i-need" id="toc-b.1-what-is-python-and-what-do-i-need">B.1 What is Python, and
+what do I need?</a></li>
+<li><a href="#b.2-arithmetic-variables-and-the-math-library" id="toc-b.2-arithmetic-variables-and-the-math-library">B.2 Arithmetic,
+variables, and the math library</a></li>
+<li><a href="#b.3-lists-loops-and-tables" id="toc-b.3-lists-loops-and-tables">B.3 Lists, loops, and
+tables</a></li>
+<li><a href="#b.4-functions-and-evaluation" id="toc-b.4-functions-and-evaluation">B.4 Functions and
+evaluation</a></li>
+<li><a href="#b.5-arrays-and-plotting-with-numpy-and-matplotlib" id="toc-b.5-arrays-and-plotting-with-numpy-and-matplotlib">B.5 Arrays
+and plotting with NumPy and Matplotlib</a></li>
+<li><a href="#b.6-trigonometry-and-radians" id="toc-b.6-trigonometry-and-radians">B.6 Trigonometry and
+radians</a></li>
+<li><a href="#b.7-numerical-solutions-without-extra-packages" id="toc-b.7-numerical-solutions-without-extra-packages">B.7 Numerical
+solutions without extra packages</a></li>
+<li><a href="#b.8-data-linear-models-and-residuals" id="toc-b.8-data-linear-models-and-residuals">B.8 Data, linear models,
+and residuals</a></li>
+<li><a href="#b.9-common-errors-and-good-habits" id="toc-b.9-common-errors-and-good-habits">B.9 Common errors and good
+habits</a></li>
+<li><a href="#b.10-moving-between-r-and-python" id="toc-b.10-moving-between-r-and-python">B.10 Moving between R and
+Python</a></li>
+<li><a href="#b.11-a-repeatable-workflow-for-every-laboratory" id="toc-b.11-a-repeatable-workflow-for-every-laboratory">B.11 A
+repeatable workflow for every laboratory</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav></div></body></html>

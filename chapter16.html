@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8"/>
+<meta content="pandoc" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+<title>Integrated
+Mathematical Modeling with R and Python | Applied Precalculus</title>
+<style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+
+
+<link href="site.css" rel="stylesheet"/><script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script defer="" src="search-index.js"></script><script defer="" src="site.js"></script></head><body><nav class="site-nav" id="book-nav"><strong class="brand">Applied Precalculus</strong><p class="subtitle">Using R and Python</p><input aria-label="Search the book" id="book-search" placeholder="Search the book"/><div aria-live="polite" class="search-results" id="search-results"></div><p class="nav-label">Contents</p><a class="" href="index.html">Preface</a><a class="" href="chapter01.html">1. Real Numbers, Algebraic Expressions, and Mathematical Reasoning</a><a class="" href="chapter02.html">2. Equations, Inequalities, and Applications</a><a class="" href="chapter03.html">3. Coordinate Geometry, Lines, and Systems of Equations</a><a class="" href="chapter04.html">4. Functions, Graphs, and Multiple Representations</a><a class="" href="chapter05.html">5. Transformations, Compositions, and Inverse Functions</a><a class="" href="chapter06.html">6. Polynomial and Rational Functions</a><a class="" href="chapter07.html">7. Exponential and Logarithmic Functions</a><a class="" href="chapter08.html">8. Angles, Radian Measure, and the Unit Circle</a><a class="" href="chapter09.html">9. Trigonometric Functions and Their Graphs</a><a class="" href="chapter10.html">10. Trigonometric Identities and Equations</a><a class="" href="chapter11.html">11. Applications of Trigonometry and Periodic Models</a><a class="" href="chapter12.html">12. Sequences, Series, and Mathematical Patterns</a><a class="" href="chapter13.html">13. Conic Sections and Parametric Equations</a><a class="" href="chapter14.html">14. Vectors, Polar Coordinates, and Geometric Modeling</a><a class="" href="chapter15.html">15. Rates of Change, Difference Quotients, and Limits</a><a class="active" href="chapter16.html">16. Integrated Mathematical Modeling with R and Python</a><a class="" href="programming.html">Getting Started with R and Python</a><a class="" href="resources.html">Computational Resource Guide</a></nav><a class="skip" href="#main-content">Skip to content</a><header class="topbar"><button aria-controls="book-nav" aria-expanded="false" class="menu">Contents</button><span>Applied Precalculus / Online edition</span><span class="spacer"></span><a href="resources.html">Resources</a></header><div class="page-grid"><main id="main-content">
+
+<h1 id="integrated-mathematical-modeling-with-r-and-python">Integrated
+Mathematical Modeling with R and Python</h1>
+<h2 class="unnumbered" id="opening-context-mathematics-as-a-connected-toolkit">Opening context:
+mathematics as a connected toolkit</h2>
+<p>In the preceding chapters, algebra, functions, geometry,
+trigonometry, sequences, and limits were developed as distinct topics.
+Real applications seldom announce which chapter they belong to. Instead,
+a mathematical modeler identifies a question, selects variables and
+units, proposes a relationship, estimates parameters, tests assumptions,
+and communicates a decision. This capstone chapter combines the major
+tools of precalculus through reproducible investigations in R and
+Python. All numerical datasets in this chapter are <em>synthetic
+teaching examples</em>, not clinical evidence.</p>
+<h2 class="unnumbered" id="learning-outcomes">Learning outcomes</h2>
+<p>By the end of this chapter, students should be able to: formulate a
+measurable question; distinguish observations from assumptions; select
+among linear, quadratic, exponential, periodic, and piecewise models;
+estimate and interpret parameters; examine residuals and prediction
+errors; assess model domain and limitations; compare models with
+meaningful criteria; conduct sensitivity analyses; interpret average
+rates of change and finite differences; reproduce an analysis in R and
+Python; and write a defensible modeling conclusion.</p>
+<h2 class="unnumbered" id="how-to-use-this-chapter">How to use this
+chapter</h2>
+<p>Work the mathematics by hand before running software. Every
+laboratory gives <strong>R first</strong>, followed by
+<strong>Python</strong> in a separate full-width listing. Run the
+standalone files in the <code>code/ch16/</code> directory to reproduce
+the plots in <code>figures/ch16/</code>. The projects intentionally
+require interpretation as well as calculation.</p>
+<h2 id="the-mathematical-modeling-cycle">The mathematical modeling
+cycle</h2>
+<p>A useful modeling workflow has seven stages: (1) articulate the
+question; (2) define inputs, outputs, and units; (3) examine the data or
+geometric situation; (4) propose a model and identify assumptions; (5)
+determine parameters; (6) validate and revise; and (7) communicate
+conclusions and limitations. Modeling is iterative: an implausible
+prediction or patterned residual often sends us back to the assumptions.
+<strong>Worked example.</strong> A simulated laboratory instrument
+reports signal <span class="math inline">\(S\)</span> at concentration
+<span class="math inline">\(c\)</span>. A first model is <span class="math inline">\(S(c)=a+bc\)</span>. Here <span class="math inline">\(a\)</span> is the baseline signal, <span class="math inline">\(b\)</span> is the change in signal per
+concentration unit, and <span class="math inline">\(c\)</span> must be
+restricted to the calibrated range. A numerical value of <span class="math inline">\(b\)</span> without its units is incomplete.
+<strong>Guided practice.</strong> Identify input, output, parameters,
+units, and one limitation for a model <span class="math inline">\(H(t)=70+5\sin(2\pi t/24)\)</span>, where <span class="math inline">\(t\)</span> is measured in hours and <span class="math inline">\(H\)</span> in beats/minute.</p>
+<h5 id="visual-investigation.">Visual investigation.</h5>
+<p>Draw a flow diagram connecting the seven stages. Mark two feedback
+arrows: one from residual analysis to model selection and another from
+interpretation to the original question. Explain why a fitted curve is
+not automatically a valid scientific explanation.</p>
+<h2 id="units-domains-and-dimensional-consistency">Units, domains, and
+dimensional consistency</h2>
+<p>Units constrain valid equations. A sum requires compatible units; an
+exponential argument must be dimensionless. In <span class="math inline">\(C(t)=C_0e^{-kt}\)</span>, <span class="math inline">\(k\)</span> has units of inverse time. In <span class="math inline">\(d(t)=v_0t+\tfrac12at^2\)</span>, both terms have
+distance units. A model domain is the set of inputs for which the
+mathematics is defined <em>and</em> the scientific interpretation is
+meaningful.</p>
+<h5 id="worked-example.">Worked example.</h5>
+<p>A concentration is modeled by <span class="math inline">\(C(t)=18e^{-0.2t}\)</span> mg/L with <span class="math inline">\(t\)</span> in hours. Explain why the coefficient
+<span class="math inline">\(0.2\)</span> must have units h<span class="math inline">\(^{-1}\)</span>. Calculate <span class="math inline">\(C(5)=18e^{-1}\approx6.62\)</span> mg/L.</p>
+<h5 id="guided-practice.">Guided practice.</h5>
+<p>A model <span class="math inline">\(P(t)=400(1.08)^t\)</span> uses
+years. What units does <span class="math inline">\(t\)</span> have, and
+why is a prediction for <span class="math inline">\(t=-100\)</span>
+unlikely to be meaningful?</p>
+<h2 id="tables-graphs-and-initial-pattern-recognition">Tables, graphs,
+and initial pattern recognition</h2>
+<p>A scatterplot is a diagnostic, not a proof. Approximately equal first
+differences suggest a linear pattern; nearly constant ratios suggest
+geometric or exponential behavior; regularly repeating peaks suggest
+periodic behavior. Real measurements rarely follow any pattern exactly.
+Plotting observations before fitting helps identify outliers,
+thresholds, and plausible ranges.</p>
+<h5 id="worked-example.-1">Worked example.</h5>
+<p>For <span class="math inline">\(t=0,1,2,3\)</span>, observations
+<span class="math inline">\(y=4,7,10,13\)</span> have successive
+differences <span class="math inline">\(3,3,3\)</span>. The linear rule
+<span class="math inline">\(y=4+3t\)</span> reproduces every value.</p>
+<h5 id="guided-practice.-1">Guided practice.</h5>
+<p>Classify the patterns <span class="math inline">\(5,10,20,40\)</span>
+and <span class="math inline">\(2,6,12,20\)</span> using ratios and
+first differences. Does either pattern uniquely determine a real-world
+mechanism?</p>
+<h5 id="visual-investigation.-1">Visual investigation.</h5>
+<p>Sketch or graph the model from the worked example. Label axes and
+units, indicate its meaningful domain, and predict the effect of
+changing one parameter before calculating new values. Write two
+observations supported by the graph and one claim the graph alone cannot
+establish.</p>
+<h2 id="linear-calibration-and-inverse-prediction">Linear calibration
+and inverse prediction</h2>
+<p>For a line <span class="math inline">\(S=a+bc\)</span>, two exact
+calibration points determine <span class="math inline">\(b=(S_2-S_1)/(c_2-c_1)\)</span> and <span class="math inline">\(a=S_1-bc_1\)</span>. If <span class="math inline">\(b\ne0\)</span>, inverse prediction gives <span class="math inline">\(c=(S-a)/b\)</span>. With noisy data, least squares
+minimizes <span class="math inline">\(\sum_i[S_i-(a+bc_i)]^2\)</span>.
+Predictions outside the observed concentration interval are
+extrapolations and require extra caution.</p>
+<h5 id="worked-example.-2">Worked example.</h5>
+<p>Signals 2.1 and 8.1 correspond to concentrations 0 and 3. Thus <span class="math inline">\(b=2\)</span> signal units/(mg/L) and <span class="math inline">\(a=2.1\)</span>. A signal of 6.1 corresponds to
+<span class="math inline">\((6.1-2.1)/2=2\)</span> mg/L.</p>
+<h5 id="guided-practice.-2">Guided practice.</h5>
+<p>Using <span class="math inline">\(S=1.5+0.8c\)</span>, estimate <span class="math inline">\(c\)</span> for <span class="math inline">\(S=5.1\)</span>; state the units and whether the
+inverse is defined when <span class="math inline">\(b=0\)</span>.</p>
+<h2 id="quadratic-models-and-constrained-optimization">Quadratic models
+and constrained optimization</h2>
+<p>Quadratic models <span class="math inline">\(q(x)=ax^2+bx+c\)</span>
+describe curvature and may possess an interior optimum. Completing the
+square gives <span class="math inline">\(q(x)=a(x+b/(2a))^2+c-b^2/(4a)\)</span>, so the
+vertex occurs at <span class="math inline">\(x=-b/(2a)\)</span> for
+<span class="math inline">\(a\ne0\)</span>. In applications, verify that
+this input lies in the feasible domain; otherwise a boundary may give
+the relevant optimum.</p>
+<h5 id="worked-example.-3">Worked example.</h5>
+<p>For <span class="math inline">\(q(x)=-2x^2+12x+5\)</span> on <span class="math inline">\(0\le x\le5\)</span>, the vertex occurs at <span class="math inline">\(x=3\)</span> and <span class="math inline">\(q(3)=23\)</span>. Both endpoints give smaller
+outputs (<span class="math inline">\(5\)</span> and <span class="math inline">\(15\)</span>).</p>
+<h5 id="guided-practice.-3">Guided practice.</h5>
+<p>For <span class="math inline">\(q(x)=-x^2+8x\)</span> on <span class="math inline">\(0\le x\le3\)</span>, find the vertex and the
+maximum on the actual domain.</p>
+<h5 id="visual-investigation.-2">Visual investigation.</h5>
+<p>Sketch or graph the model from the worked example. Label axes and
+units, indicate its meaningful domain, and predict the effect of
+changing one parameter before calculating new values. Write two
+observations supported by the graph and one claim the graph alone cannot
+establish.</p>
+<h2 id="exponential-change-half-life-and-doubling-time">Exponential
+change, half-life, and doubling time</h2>
+<p>For constant proportional change, <span class="math inline">\(Y(t)=Y_0e^{kt}\)</span>. If <span class="math inline">\(k&lt;0\)</span>, the half-life is <span class="math inline">\(\ln2/|k|\)</span>; if <span class="math inline">\(k&gt;0\)</span>, doubling time is <span class="math inline">\(\ln2/k\)</span>. A model based on <span class="math inline">\(Y_0r^t\)</span> can be rewritten with <span class="math inline">\(k=\ln r\)</span>. Distinguish additive change (a
+fixed increment per time step) from multiplicative change (a fixed
+proportion per time step).</p>
+<h5 id="worked-example.-4">Worked example.</h5>
+<p>For <span class="math inline">\(C(t)=20e^{-0.35t}\)</span>, the
+half-life is <span class="math inline">\(\ln2/0.35\approx1.98\)</span>
+hours. This is a mathematical decay model, not a recommendation for
+medication timing.</p>
+<h5 id="guided-practice.-4">Guided practice.</h5>
+<p>A simulated quantity doubles every 6 days. Find <span class="math inline">\(k\)</span> in <span class="math inline">\(Y(t)=Y_0e^{kt}\)</span> and calculate <span class="math inline">\(Y(12)/Y_0\)</span>.</p>
+<h2 id="periodic-models-and-phase-interpretation">Periodic models and
+phase interpretation</h2>
+<p>A periodic model <span class="math inline">\(y(t)=M+A\sin(\omega(t-\tau))\)</span> has midline
+<span class="math inline">\(M\)</span>, amplitude <span class="math inline">\(|A|\)</span>, angular frequency <span class="math inline">\(|\omega|\)</span>, period <span class="math inline">\(T=2\pi/|\omega|\)</span>, and horizontal shift
+<span class="math inline">\(\tau\)</span> when <span class="math inline">\(A&gt;0\)</span> and <span class="math inline">\(\omega&gt;0\)</span>. Interpret all parameters in
+context. A period inferred from short or irregular data may be
+unstable.</p>
+<h5 id="worked-example.-5">Worked example.</h5>
+<p>For <span class="math inline">\(y(t)=70+8\sin(2\pi(t-3)/24)\)</span>,
+the midline is 70, amplitude is 8, and period is 24 hours. At <span class="math inline">\(t=3\)</span>, the model crosses its midline
+upward.</p>
+<h5 id="guided-practice.-5">Guided practice.</h5>
+<p>Write a cosine model with midline 12, amplitude 4, period 8 hours,
+and a maximum at <span class="math inline">\(t=0\)</span>.</p>
+<h5 id="visual-investigation.-3">Visual investigation.</h5>
+<p>Sketch or graph the model from the worked example. Label axes and
+units, indicate its meaningful domain, and predict the effect of
+changing one parameter before calculating new values. Write two
+observations supported by the graph and one claim the graph alone cannot
+establish.</p>
+<h2 id="piecewise-models-and-thresholds">Piecewise models and
+thresholds</h2>
+<p>Piecewise functions represent systems whose rules change at
+thresholds. A well-constructed model specifies each interval, endpoint
+convention, and whether the outputs match at transitions.
+Discontinuities may represent actual jumps or artifacts of a simplified
+description. A continuous piecewise function need not have matching
+slopes at a threshold.</p>
+<h5 id="worked-example.-6">Worked example.</h5>
+<p>Let <span class="math inline">\(f(t)=2t+1\)</span> for <span class="math inline">\(0\le t&lt;3\)</span> and <span class="math inline">\(f(t)=t+4\)</span> for <span class="math inline">\(t\ge3\)</span>. Both rules approach 7 at <span class="math inline">\(t=3\)</span>, so the model is continuous
+there.</p>
+<h5 id="guided-practice.-6">Guided practice.</h5>
+<p>Find <span class="math inline">\(a\)</span> so <span class="math inline">\(g(t)=3t+2\)</span> for <span class="math inline">\(t&lt;2\)</span> and <span class="math inline">\(g(t)=at+4\)</span> for <span class="math inline">\(t\ge2\)</span> is continuous at <span class="math inline">\(2\)</span>.</p>
+<h2 id="geometric-and-vector-models">Geometric and vector models</h2>
+<p>A displacement vector <span class="math inline">\(\mathbf v=\langle
+v_x,v_y\rangle\)</span> has magnitude <span class="math inline">\(\|\mathbf v\|=\sqrt{v_x^2+v_y^2}\)</span>. Its
+direction may be represented by an angle using <span class="math inline">\(\operatorname{atan2}(v_y,v_x)\)</span>, which
+accounts for the quadrant. The dot product <span class="math inline">\(\mathbf u\cdot\mathbf v\)</span> describes
+alignment; the projection of <span class="math inline">\(\mathbf
+u\)</span> onto nonzero <span class="math inline">\(\mathbf v\)</span>
+is <span class="math inline">\((\mathbf u\cdot\mathbf v/\|\mathbf
+v\|^2)\mathbf v\)</span>.</p>
+<h5 id="worked-example.-7">Worked example.</h5>
+<p>A displacement of <span class="math inline">\(\langle3,4\rangle\)</span> km has length 5 km. The
+unit direction vector is <span class="math inline">\(\langle3/5,4/5\rangle\)</span>.</p>
+<h5 id="guided-practice.-7">Guided practice.</h5>
+<p>A sensor moves 6 m east and 8 m north. Find its net displacement
+magnitude and direction north of east.</p>
+<h5 id="visual-investigation.-4">Visual investigation.</h5>
+<p>Sketch or graph the model from the worked example. Label axes and
+units, indicate its meaningful domain, and predict the effect of
+changing one parameter before calculating new values. Write two
+observations supported by the graph and one claim the graph alone cannot
+establish.</p>
+<h2 id="parametric-trajectories-and-elimination">Parametric trajectories
+and elimination</h2>
+<p>Parametric equations <span class="math inline">\(x=x(t)\)</span> and
+<span class="math inline">\(y=y(t)\)</span> describe a curve and its
+traversal. Eliminating <span class="math inline">\(t\)</span> can reveal
+the Cartesian curve but may lose direction or parameter restrictions.
+For <span class="math inline">\(x(t)=r\cos t\)</span>, <span class="math inline">\(y(t)=r\sin t\)</span>, the path is a circle; the
+parameter determines its direction and speed of traversal.</p>
+<h5 id="worked-example.-8">Worked example.</h5>
+<p>For <span class="math inline">\(x(t)=2t\)</span> and <span class="math inline">\(y(t)=t^2\)</span> with <span class="math inline">\(t\ge0\)</span>, eliminating <span class="math inline">\(t\)</span> gives <span class="math inline">\(y=x^2/4\)</span> with <span class="math inline">\(x\ge0\)</span>. The restriction matters.</p>
+<h5 id="guided-practice.-8">Guided practice.</h5>
+<p>Eliminate <span class="math inline">\(t\)</span> from <span class="math inline">\(x(t)=3\cos t\)</span>, <span class="math inline">\(y(t)=2\sin t\)</span> and describe the resulting
+curve.</p>
+<h2 id="sequences-accumulation-and-discrete-change">Sequences,
+accumulation, and discrete change</h2>
+<p>A discrete process can be represented by a recurrence <span class="math inline">\(x_{n+1}=rx_n+b\)</span>. The increment <span class="math inline">\(x_{n+1}-x_n\)</span> is a finite difference.
+Cumulative totals are sums, and a geometric accumulation has a closed
+form when <span class="math inline">\(r\ne1\)</span>. These ideas
+foreshadow integration and differential equations, but the discrete
+model is not itself a continuous-time differential equation.</p>
+<h5 id="worked-example.-9">Worked example.</h5>
+<p>For <span class="math inline">\(x_{n+1}=0.8x_n+5\)</span>, an
+equilibrium satisfies <span class="math inline">\(x=0.8x+5\)</span>,
+giving <span class="math inline">\(x=25\)</span>. Starting from <span class="math inline">\(x_0=0\)</span>, the first three terms are <span class="math inline">\(0,5,9\)</span>.</p>
+<h5 id="guided-practice.-9">Guided practice.</h5>
+<p>For <span class="math inline">\(x_{n+1}=0.9x_n+2\)</span>, calculate
+the equilibrium and the first four values when <span class="math inline">\(x_0=10\)</span>.</p>
+<h5 id="visual-investigation.-5">Visual investigation.</h5>
+<p>Sketch or graph the model from the worked example. Label axes and
+units, indicate its meaningful domain, and predict the effect of
+changing one parameter before calculating new values. Write two
+observations supported by the graph and one claim the graph alone cannot
+establish.</p>
+<h2 id="residuals-and-measures-of-fit">Residuals and measures of
+fit</h2>
+<p>A residual is <span class="math inline">\(e_i=y_i-\widehat
+y_i\)</span>. Plot residuals against time or fitted values to detect
+curvature, systematic drift, changing variability, or outliers. Mean
+absolute error is <span class="math inline">\(\mathrm{MAE}=n^{-1}\sum_i|e_i|\)</span> and root
+mean squared error is <span class="math inline">\(\mathrm{RMSE}=\sqrt{n^{-1}\sum_i e_i^2}\)</span>.
+RMSE weights large errors more heavily. Neither metric alone establishes
+causal validity.</p>
+<h5 id="worked-example.-10">Worked example.</h5>
+<p>For observations <span class="math inline">\(4,6,8\)</span> and
+predictions <span class="math inline">\(5,5,8\)</span>, residuals are
+<span class="math inline">\(-1,1,0\)</span>, MAE is <span class="math inline">\(2/3\)</span>, and RMSE is <span class="math inline">\(\sqrt{2/3}\approx0.816\)</span>.</p>
+<h5 id="guided-practice.-10">Guided practice.</h5>
+<p>Compute MAE and RMSE for residuals <span class="math inline">\(2,-2,1,-1\)</span>. Which is larger, and why?</p>
+<h2 id="training-validation-and-overfitting">Training, validation, and
+overfitting</h2>
+<p>A model can match observed data closely yet predict new observations
+poorly. Use separate fitting and validation data where possible. Compare
+errors on held-out observations, not just on the points used to estimate
+parameters. More parameters increase flexibility but may capture random
+noise rather than a stable pattern. For small synthetic datasets,
+describe the split and its limitations explicitly.</p>
+<h5 id="worked-example.-11">Worked example.</h5>
+<p>A degree-4 polynomial passes through five calibration observations
+exactly. Its training residuals are zero, but this does not imply
+accurate prediction between or beyond those points.</p>
+<h5 id="guided-practice.-11">Guided practice.</h5>
+<p>Explain why a model with lower training RMSE might still be less
+suitable than a simpler model for future predictions.</p>
+<h5 id="visual-investigation.-6">Visual investigation.</h5>
+<p>Sketch or graph the model from the worked example. Label axes and
+units, indicate its meaningful domain, and predict the effect of
+changing one parameter before calculating new values. Write two
+observations supported by the graph and one claim the graph alone cannot
+establish.</p>
+<h2 id="sensitivity-and-uncertainty">Sensitivity and uncertainty</h2>
+<p>Sensitivity measures how a prediction changes when inputs or
+parameters vary. For <span class="math inline">\(Y=ab\)</span>, small
+relative perturbations approximately add: <span class="math inline">\(\Delta Y/Y\approx\Delta a/a+\Delta b/b\)</span>
+when changes are small. A scenario analysis recalculates predictions
+under plausible parameter values; it is not automatically a statistical
+confidence interval. State whether uncertainty concerns measurement,
+parameters, or model structure.</p>
+<h5 id="worked-example.-12">Worked example.</h5>
+<p>For <span class="math inline">\(C(t)=20e^{-kt}\)</span> at <span class="math inline">\(t=4\)</span>, predictions are approximately <span class="math inline">\(9.0\)</span> when <span class="math inline">\(k=0.20\)</span> and <span class="math inline">\(7.4\)</span> when <span class="math inline">\(k=0.25\)</span>. The predicted concentration is
+sensitive to the decay constant.</p>
+<h5 id="guided-practice.-12">Guided practice.</h5>
+<p>Calculate <span class="math inline">\(C(5)\)</span> for <span class="math inline">\(C(t)=10e^{-kt}\)</span> at <span class="math inline">\(k=0.1,0.15,0.2\)</span>. Explain the trend.</p>
+<h2 id="average-rates-and-the-calculus-bridge">Average rates and the
+calculus bridge</h2>
+<p>The average rate of change on <span class="math inline">\([a,b]\)</span> is <span class="math inline">\([f(b)-f(a)]/(b-a)\)</span>. The difference
+quotient <span class="math inline">\([f(a+h)-f(a)]/h\)</span> approaches
+the instantaneous rate when its limit exists. Numerical secants connect
+directly to derivative ideas, while finite sums connect to accumulation.
+A smooth fitted curve does not make numerical derivatives immune to
+measurement noise.</p>
+<h5 id="worked-example.-13">Worked example.</h5>
+<p>For <span class="math inline">\(f(t)=t^2+2t\)</span>, <span class="math inline">\([f(a+h)-f(a)]/h=2a+h+2\)</span>. As <span class="math inline">\(h\to0\)</span>, the limiting rate is <span class="math inline">\(2a+2\)</span>. At <span class="math inline">\(a=3\)</span>, it equals 8 output units per input
+unit.</p>
+<h5 id="guided-practice.-13">Guided practice.</h5>
+<p>Find the difference quotient for <span class="math inline">\(f(t)=3t^2-t\)</span> and use it to estimate the
+instantaneous rate at <span class="math inline">\(t=2\)</span>.</p>
+<h5 id="visual-investigation.-7">Visual investigation.</h5>
+<p>Sketch or graph the model from the worked example. Label axes and
+units, indicate its meaningful domain, and predict the effect of
+changing one parameter before calculating new values. Write two
+observations supported by the graph and one claim the graph alone cannot
+establish.</p>
+<h2 id="communicating-a-mathematical-model">Communicating a mathematical
+model</h2>
+<p>A responsible modeling report contains the question, data provenance,
+variables and units, model equation, parameter interpretation, fit
+diagnostics, range of applicability, limitations, and a conclusion
+answering the original question. Distinguish measured data, modeled
+predictions, and hypothetical scenarios. Avoid causal language when the
+analysis supports only association or pattern description.</p>
+<h5 id="worked-example.-14">Worked example.</h5>
+<p>A report should not merely say “the model fits well.” Instead: “On
+the six simulated calibration observations, the fitted linear model has
+RMSE 0.12 signal units; predictions should be limited to the observed
+concentration range until independently validated.</p>
+<h5 id="guided-practice.-14">Guided practice.</h5>
+<p>Write a three-sentence conclusion for a periodic model that predicts
+a 24-hour cycle but has increasing residuals toward the end of the
+observation window.</p>
+<h2 id="a-reproducible-analysis-workflow">A reproducible analysis
+workflow</h2>
+<p>Each laboratory follows the same protocol: state a question, inspect
+observations, derive or select a model, execute code, interpret outputs,
+examine limitations, and record an answer in mathematical language. The
+code files provided with this chapter are self-contained and use only
+base R or common Python scientific packages (NumPy and Matplotlib).</p>
+<h2 id="computational-laboratory-a-calibration-and-residual-diagnostics">Computational
+Laboratory A: Calibration and residual diagnostics</h2>
+<p><strong>Question.</strong> Can a linear model describe simulated
+signal measurements across a calibration range? Use concentrations <span class="math inline">\(c=(0,1,2,3,4,5)\)</span> mg/L and signals <span class="math inline">\(S=(1.2,3.0,5.1,6.9,9.2,10.8)\)</span> arbitrary
+units. Estimate the least-squares slope and intercept; plot observations
+and fitted line; calculate residuals and RMSE. Interpret the intercept
+and slope, and explain why predictions beyond 5 mg/L require
+caution.</p>
+<h3 class="unnumbered" id="r-code">R code</h3>
+<div class="code-shell"><div class="code-bar"><span>R</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a aria-hidden="true" href="#cb1-1" tabindex="-1"></a><span class="co"># Laboratory A: linear calibration and residuals</span></span>
+<span id="cb1-2"><a aria-hidden="true" href="#cb1-2" tabindex="-1"></a>concentration <span class="ot">&lt;-</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">5</span></span>
+<span id="cb1-3"><a aria-hidden="true" href="#cb1-3" tabindex="-1"></a>signal <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">1.2</span>, <span class="fl">3.0</span>, <span class="fl">5.1</span>, <span class="fl">6.9</span>, <span class="fl">9.2</span>, <span class="fl">10.8</span>)</span>
+<span id="cb1-4"><a aria-hidden="true" href="#cb1-4" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(signal <span class="sc">~</span> concentration)</span>
+<span id="cb1-5"><a aria-hidden="true" href="#cb1-5" tabindex="-1"></a>prediction <span class="ot">&lt;-</span> <span class="fu">predict</span>(fit)</span>
+<span id="cb1-6"><a aria-hidden="true" href="#cb1-6" tabindex="-1"></a>residual <span class="ot">&lt;-</span> signal <span class="sc">-</span> prediction</span>
+<span id="cb1-7"><a aria-hidden="true" href="#cb1-7" tabindex="-1"></a>rmse <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">mean</span>(residual<span class="sc">^</span><span class="dv">2</span>))</span>
+<span id="cb1-8"><a aria-hidden="true" href="#cb1-8" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">coef</span>(fit)); <span class="fu">print</span>(rmse)</span>
+<span id="cb1-9"><a aria-hidden="true" href="#cb1-9" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
+<span id="cb1-10"><a aria-hidden="true" href="#cb1-10" tabindex="-1"></a><span class="fu">plot</span>(concentration, signal, <span class="at">xlab=</span><span class="st">"Concentration (mg/L)"</span>, <span class="at">ylab=</span><span class="st">"Signal (units)"</span>)</span>
+<span id="cb1-11"><a aria-hidden="true" href="#cb1-11" tabindex="-1"></a><span class="fu">abline</span>(fit, <span class="at">col=</span><span class="st">"blue"</span>)</span>
+<span id="cb1-12"><a aria-hidden="true" href="#cb1-12" tabindex="-1"></a><span class="fu">plot</span>(concentration, residual, <span class="at">xlab=</span><span class="st">"Concentration (mg/L)"</span>, <span class="at">ylab=</span><span class="st">"Residual"</span>)</span>
+<span id="cb1-13"><a aria-hidden="true" href="#cb1-13" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="dv">0</span>, <span class="at">lty=</span><span class="dv">2</span>)</span>
+<span id="cb1-14"><a aria-hidden="true" href="#cb1-14" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>))</span></code></pre></div></div>
+<h3 class="unnumbered" id="python-code">Python code</h3>
+<div class="code-shell"><div class="code-bar"><span>Python</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" href="#cb2-1" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-2"><a aria-hidden="true" href="#cb2-2" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-3"><a aria-hidden="true" href="#cb2-3" tabindex="-1"></a>c <span class="op">=</span> np.arange(<span class="dv">6</span>, dtype<span class="op">=</span><span class="bu">float</span>)</span>
+<span id="cb2-4"><a aria-hidden="true" href="#cb2-4" tabindex="-1"></a>y <span class="op">=</span> np.array([<span class="fl">1.2</span>,<span class="fl">3.0</span>,<span class="fl">5.1</span>,<span class="fl">6.9</span>,<span class="fl">9.2</span>,<span class="fl">10.8</span>])</span>
+<span id="cb2-5"><a aria-hidden="true" href="#cb2-5" tabindex="-1"></a>b, a <span class="op">=</span> np.polyfit(c,y,<span class="dv">1</span>)</span>
+<span id="cb2-6"><a aria-hidden="true" href="#cb2-6" tabindex="-1"></a>pred <span class="op">=</span> a<span class="op">+</span>b<span class="op">*</span>c</span>
+<span id="cb2-7"><a aria-hidden="true" href="#cb2-7" tabindex="-1"></a>res <span class="op">=</span> y<span class="op">-</span>pred</span>
+<span id="cb2-8"><a aria-hidden="true" href="#cb2-8" tabindex="-1"></a>rmse <span class="op">=</span> np.sqrt(np.mean(res<span class="op">**</span><span class="dv">2</span>))</span>
+<span id="cb2-9"><a aria-hidden="true" href="#cb2-9" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Intercept=</span><span class="sc">{</span>a<span class="sc">:.4f}</span><span class="ss">; slope=</span><span class="sc">{</span>b<span class="sc">:.4f}</span><span class="ss">; RMSE=</span><span class="sc">{</span>rmse<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
+<span id="cb2-10"><a aria-hidden="true" href="#cb2-10" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">2</span>,figsize<span class="op">=</span>(<span class="dv">9</span>,<span class="fl">3.5</span>))</span>
+<span id="cb2-11"><a aria-hidden="true" href="#cb2-11" tabindex="-1"></a>axes[<span class="dv">0</span>].scatter(c,y,label<span class="op">=</span><span class="st">"Observations"</span>)</span>
+<span id="cb2-12"><a aria-hidden="true" href="#cb2-12" tabindex="-1"></a>axes[<span class="dv">0</span>].plot(c,pred,label<span class="op">=</span><span class="st">"Linear fit"</span>)</span>
+<span id="cb2-13"><a aria-hidden="true" href="#cb2-13" tabindex="-1"></a>axes[<span class="dv">0</span>].<span class="bu">set</span>(xlabel<span class="op">=</span><span class="st">"Concentration (mg/L)"</span>,ylabel<span class="op">=</span><span class="st">"Signal (units)"</span>)</span>
+<span id="cb2-14"><a aria-hidden="true" href="#cb2-14" tabindex="-1"></a>axes[<span class="dv">0</span>].legend()</span>
+<span id="cb2-15"><a aria-hidden="true" href="#cb2-15" tabindex="-1"></a>axes[<span class="dv">1</span>].scatter(c,res)</span>
+<span id="cb2-16"><a aria-hidden="true" href="#cb2-16" tabindex="-1"></a>axes[<span class="dv">1</span>].axhline(<span class="dv">0</span>,linestyle<span class="op">=</span><span class="st">"--"</span>,color<span class="op">=</span><span class="st">"gray"</span>)</span>
+<span id="cb2-17"><a aria-hidden="true" href="#cb2-17" tabindex="-1"></a>axes[<span class="dv">1</span>].<span class="bu">set</span>(xlabel<span class="op">=</span><span class="st">"Concentration (mg/L)"</span>,ylabel<span class="op">=</span><span class="st">"Residual (units)"</span>)</span>
+<span id="cb2-18"><a aria-hidden="true" href="#cb2-18" tabindex="-1"></a>fig.tight_layout()</span>
+<span id="cb2-19"><a aria-hidden="true" href="#cb2-19" tabindex="-1"></a>fig.savefig(<span class="st">"figures/labA_python.png"</span>,dpi<span class="op">=</span><span class="dv">170</span>)</span>
+<span id="cb2-20"><a aria-hidden="true" href="#cb2-20" tabindex="-1"></a>plt.close(fig)</span></code></pre></div></div>
+<figure>
+<img alt="Simulated calibration observations and fitted line, with residual diagnostics (Python output)." src="figures/ch16/labA_python.png" style="width:80.0%"/>
+<figcaption aria-hidden="true">Simulated calibration observations and
+fitted line, with residual diagnostics (Python output).</figcaption>
+</figure>
+<p><strong>Interpretation prompts.</strong> (1) What is the unit of the
+fitted slope? (2) Is the intercept scientifically meaningful? (3) Are
+residuals distributed without a clear pattern? (4) How would one
+unusually large residual change RMSE?</p>
+<h2 id="computational-laboratory-b-exponential-versus-linear-models">Computational
+Laboratory B: Exponential versus linear models</h2>
+<p><strong>Question.</strong> Which simple model better describes a
+simulated decreasing measurement? At times <span class="math inline">\(t=(0,1,2,3,4,5)\)</span> hours, let <span class="math inline">\(y=(19.8,15.0,11.7,8.7,6.8,5.2)\)</span> units. Fit
+a linear model <span class="math inline">\(y=a+bt\)</span> and an
+exponential model <span class="math inline">\(y=Ae^{kt}\)</span> using a
+least-squares line on <span class="math inline">\(\log y\)</span>.
+Compare predictions and RMSE on the <em>original</em> measurement scale.
+Explain why this is a descriptive comparison rather than a clinical
+recommendation.</p>
+<h3 class="unnumbered" id="r-code-1">R code</h3>
+<div class="code-shell"><div class="code-bar"><span>R</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a aria-hidden="true" href="#cb3-1" tabindex="-1"></a><span class="co"># Laboratory B: compare linear and exponential models</span></span>
+<span id="cb3-2"><a aria-hidden="true" href="#cb3-2" tabindex="-1"></a>time <span class="ot">&lt;-</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">5</span></span>
+<span id="cb3-3"><a aria-hidden="true" href="#cb3-3" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">19.8</span>,<span class="fl">15.0</span>,<span class="fl">11.7</span>,<span class="fl">8.7</span>,<span class="fl">6.8</span>,<span class="fl">5.2</span>)</span>
+<span id="cb3-4"><a aria-hidden="true" href="#cb3-4" tabindex="-1"></a>linear_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> time)</span>
+<span id="cb3-5"><a aria-hidden="true" href="#cb3-5" tabindex="-1"></a>exp_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="fu">log</span>(y) <span class="sc">~</span> time)</span>
+<span id="cb3-6"><a aria-hidden="true" href="#cb3-6" tabindex="-1"></a>linear_pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(linear_fit)</span>
+<span id="cb3-7"><a aria-hidden="true" href="#cb3-7" tabindex="-1"></a>exp_pred <span class="ot">&lt;-</span> <span class="fu">exp</span>(<span class="fu">predict</span>(exp_fit))</span>
+<span id="cb3-8"><a aria-hidden="true" href="#cb3-8" tabindex="-1"></a>rmse <span class="ot">&lt;-</span> <span class="cf">function</span>(actual, predicted) <span class="fu">sqrt</span>(<span class="fu">mean</span>((actual<span class="sc">-</span>predicted)<span class="sc">^</span><span class="dv">2</span>))</span>
+<span id="cb3-9"><a aria-hidden="true" href="#cb3-9" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">c</span>(<span class="at">linear=</span><span class="fu">rmse</span>(y,linear_pred), <span class="at">exponential=</span><span class="fu">rmse</span>(y,exp_pred)))</span>
+<span id="cb3-10"><a aria-hidden="true" href="#cb3-10" tabindex="-1"></a><span class="fu">plot</span>(time,y,<span class="at">xlab=</span><span class="st">"Time (hours)"</span>,<span class="at">ylab=</span><span class="st">"Measurement (units)"</span>)</span>
+<span id="cb3-11"><a aria-hidden="true" href="#cb3-11" tabindex="-1"></a><span class="fu">lines</span>(time,linear_pred,<span class="at">col=</span><span class="st">"blue"</span>)</span>
+<span id="cb3-12"><a aria-hidden="true" href="#cb3-12" tabindex="-1"></a><span class="fu">lines</span>(time,exp_pred,<span class="at">col=</span><span class="st">"red"</span>)</span>
+<span id="cb3-13"><a aria-hidden="true" href="#cb3-13" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">"topright"</span>,<span class="at">legend=</span><span class="fu">c</span>(<span class="st">"Linear"</span>,<span class="st">"Exponential"</span>),<span class="at">col=</span><span class="fu">c</span>(<span class="st">"blue"</span>,<span class="st">"red"</span>),<span class="at">lty=</span><span class="dv">1</span>)</span></code></pre></div></div>
+<h3 class="unnumbered" id="python-code-1">Python code</h3>
+<div class="code-shell"><div class="code-bar"><span>Python</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" href="#cb4-1" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb4-2"><a aria-hidden="true" href="#cb4-2" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb4-3"><a aria-hidden="true" href="#cb4-3" tabindex="-1"></a>t <span class="op">=</span> np.arange(<span class="dv">6</span>,dtype<span class="op">=</span><span class="bu">float</span>)</span>
+<span id="cb4-4"><a aria-hidden="true" href="#cb4-4" tabindex="-1"></a>y <span class="op">=</span> np.array([<span class="fl">19.8</span>,<span class="fl">15.0</span>,<span class="fl">11.7</span>,<span class="fl">8.7</span>,<span class="fl">6.8</span>,<span class="fl">5.2</span>])</span>
+<span id="cb4-5"><a aria-hidden="true" href="#cb4-5" tabindex="-1"></a>b, a <span class="op">=</span> np.polyfit(t,y,<span class="dv">1</span>)</span>
+<span id="cb4-6"><a aria-hidden="true" href="#cb4-6" tabindex="-1"></a>k, logA <span class="op">=</span> np.polyfit(t,np.log(y),<span class="dv">1</span>)</span>
+<span id="cb4-7"><a aria-hidden="true" href="#cb4-7" tabindex="-1"></a>linear <span class="op">=</span> a<span class="op">+</span>b<span class="op">*</span>t</span>
+<span id="cb4-8"><a aria-hidden="true" href="#cb4-8" tabindex="-1"></a>expo <span class="op">=</span> np.exp(logA<span class="op">+</span>k<span class="op">*</span>t)</span>
+<span id="cb4-9"><a aria-hidden="true" href="#cb4-9" tabindex="-1"></a>rmse <span class="op">=</span> <span class="kw">lambda</span> z: np.sqrt(np.mean((y<span class="op">-</span>z)<span class="op">**</span><span class="dv">2</span>))</span>
+<span id="cb4-10"><a aria-hidden="true" href="#cb4-10" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Linear RMSE=</span><span class="sc">{</span>rmse(linear)<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
+<span id="cb4-11"><a aria-hidden="true" href="#cb4-11" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Exponential A=</span><span class="sc">{</span>np<span class="sc">.</span>exp(logA)<span class="sc">:.4f}</span><span class="ss">, k=</span><span class="sc">{</span>k<span class="sc">:.4f}</span><span class="ss">, RMSE=</span><span class="sc">{</span>rmse(expo)<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
+<span id="cb4-12"><a aria-hidden="true" href="#cb4-12" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">7</span>,<span class="dv">4</span>))</span>
+<span id="cb4-13"><a aria-hidden="true" href="#cb4-13" tabindex="-1"></a>plt.scatter(t,y,label<span class="op">=</span><span class="st">"Observations"</span>)</span>
+<span id="cb4-14"><a aria-hidden="true" href="#cb4-14" tabindex="-1"></a>plt.plot(t,linear,label<span class="op">=</span><span class="st">"Linear fit"</span>)</span>
+<span id="cb4-15"><a aria-hidden="true" href="#cb4-15" tabindex="-1"></a>plt.plot(t,expo,label<span class="op">=</span><span class="st">"Exponential fit"</span>)</span>
+<span id="cb4-16"><a aria-hidden="true" href="#cb4-16" tabindex="-1"></a>plt.xlabel(<span class="st">"Time (hours)"</span>)</span>
+<span id="cb4-17"><a aria-hidden="true" href="#cb4-17" tabindex="-1"></a>plt.ylabel(<span class="st">"Measurement (units)"</span>)</span>
+<span id="cb4-18"><a aria-hidden="true" href="#cb4-18" tabindex="-1"></a>plt.legend()</span>
+<span id="cb4-19"><a aria-hidden="true" href="#cb4-19" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb4-20"><a aria-hidden="true" href="#cb4-20" tabindex="-1"></a>plt.savefig(<span class="st">"figures/labB_python.png"</span>,dpi<span class="op">=</span><span class="dv">170</span>)</span>
+<span id="cb4-21"><a aria-hidden="true" href="#cb4-21" tabindex="-1"></a>plt.close()</span></code></pre></div></div>
+<figure>
+<img alt="Simulated decreasing measurements with linear and exponential fits." src="figures/ch16/labB_python.png" style="width:80.0%"/>
+<figcaption aria-hidden="true">Simulated decreasing measurements with
+linear and exponential fits.</figcaption>
+</figure>
+<p><strong>Interpretation prompts.</strong> (1) Why must all <span class="math inline">\(y\)</span> values be positive to fit the
+log-transformed model? (2) Why compare RMSE on the original scale? (3)
+What changes if the final observation is removed? (4) How might
+measurement error alter the preferred model?</p>
+<h2 id="computational-laboratory-c-periodic-signals-and-sensitivity">Computational
+Laboratory C: Periodic signals and sensitivity</h2>
+<p><strong>Question.</strong> A simulated sensor follows <span class="math inline">\(y(t)=70+8\sin(2\pi(t-3)/24)\)</span> with small
+deterministic measurement perturbations. Plot the observations and the
+proposed curve, calculate residuals, and compare predicted values when
+the period is 22, 24, or 26 hours. Discuss why an assumed period should
+be validated using observations over multiple cycles.</p>
+<h3 class="unnumbered" id="r-code-2">R code</h3>
+<div class="code-shell"><div class="code-bar"><span>R</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a aria-hidden="true" href="#cb5-1" tabindex="-1"></a><span class="co"># Laboratory C: periodic model sensitivity</span></span>
+<span id="cb5-2"><a aria-hidden="true" href="#cb5-2" tabindex="-1"></a>time <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">48</span>,<span class="at">by=</span><span class="dv">3</span>)</span>
+<span id="cb5-3"><a aria-hidden="true" href="#cb5-3" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">70</span><span class="sc">+</span><span class="dv">8</span><span class="sc">*</span><span class="fu">sin</span>(<span class="dv">2</span><span class="sc">*</span>pi<span class="sc">*</span>(time<span class="dv">-3</span>)<span class="sc">/</span><span class="dv">24</span>)<span class="sc">+</span><span class="fl">0.7</span><span class="sc">*</span><span class="fu">cos</span>(<span class="fl">0.8</span><span class="sc">*</span>time)</span>
+<span id="cb5-4"><a aria-hidden="true" href="#cb5-4" tabindex="-1"></a>nominal <span class="ot">&lt;-</span> <span class="dv">70</span><span class="sc">+</span><span class="dv">8</span><span class="sc">*</span><span class="fu">sin</span>(<span class="dv">2</span><span class="sc">*</span>pi<span class="sc">*</span>(time<span class="dv">-3</span>)<span class="sc">/</span><span class="dv">24</span>)</span>
+<span id="cb5-5"><a aria-hidden="true" href="#cb5-5" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">sqrt</span>(<span class="fu">mean</span>((y<span class="sc">-</span>nominal)<span class="sc">^</span><span class="dv">2</span>)))</span>
+<span id="cb5-6"><a aria-hidden="true" href="#cb5-6" tabindex="-1"></a><span class="fu">plot</span>(time,y,<span class="at">xlab=</span><span class="st">"Time (hours)"</span>,<span class="at">ylab=</span><span class="st">"Signal (units)"</span>,<span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">60</span>,<span class="dv">80</span>))</span>
+<span id="cb5-7"><a aria-hidden="true" href="#cb5-7" tabindex="-1"></a>dense <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">48</span>,<span class="at">length.out=</span><span class="dv">400</span>)</span>
+<span id="cb5-8"><a aria-hidden="true" href="#cb5-8" tabindex="-1"></a><span class="cf">for</span> (period <span class="cf">in</span> <span class="fu">c</span>(<span class="dv">22</span>,<span class="dv">24</span>,<span class="dv">26</span>)) {</span>
+<span id="cb5-9"><a aria-hidden="true" href="#cb5-9" tabindex="-1"></a>  <span class="fu">lines</span>(dense,<span class="dv">70</span><span class="sc">+</span><span class="dv">8</span><span class="sc">*</span><span class="fu">sin</span>(<span class="dv">2</span><span class="sc">*</span>pi<span class="sc">*</span>(dense<span class="dv">-3</span>)<span class="sc">/</span>period),<span class="at">lty=</span><span class="fu">which</span>(<span class="fu">c</span>(<span class="dv">22</span>,<span class="dv">24</span>,<span class="dv">26</span>)<span class="sc">==</span>period))</span>
+<span id="cb5-10"><a aria-hidden="true" href="#cb5-10" tabindex="-1"></a>}</span>
+<span id="cb5-11"><a aria-hidden="true" href="#cb5-11" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">"topright"</span>,<span class="at">legend=</span><span class="fu">c</span>(<span class="st">"22 h"</span>,<span class="st">"24 h"</span>,<span class="st">"26 h"</span>),<span class="at">lty=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>)</span></code></pre></div></div>
+<h3 class="unnumbered" id="python-code-2">Python code</h3>
+<div class="code-shell"><div class="code-bar"><span>Python</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a aria-hidden="true" href="#cb6-1" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb6-2"><a aria-hidden="true" href="#cb6-2" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb6-3"><a aria-hidden="true" href="#cb6-3" tabindex="-1"></a>t <span class="op">=</span> np.arange(<span class="dv">0</span>,<span class="dv">49</span>,<span class="dv">3</span>,dtype<span class="op">=</span><span class="bu">float</span>)</span>
+<span id="cb6-4"><a aria-hidden="true" href="#cb6-4" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">70</span><span class="op">+</span><span class="dv">8</span><span class="op">*</span>np.sin(<span class="dv">2</span><span class="op">*</span>np.pi<span class="op">*</span>(t<span class="op">-</span><span class="dv">3</span>)<span class="op">/</span><span class="dv">24</span>)<span class="op">+</span><span class="fl">0.7</span><span class="op">*</span>np.cos(<span class="fl">0.8</span><span class="op">*</span>t)</span>
+<span id="cb6-5"><a aria-hidden="true" href="#cb6-5" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">7</span>,<span class="dv">4</span>))</span>
+<span id="cb6-6"><a aria-hidden="true" href="#cb6-6" tabindex="-1"></a>plt.scatter(t,y,label<span class="op">=</span><span class="st">"Synthetic observations"</span>)</span>
+<span id="cb6-7"><a aria-hidden="true" href="#cb6-7" tabindex="-1"></a><span class="cf">for</span> period <span class="kw">in</span> [<span class="dv">22</span>,<span class="dv">24</span>,<span class="dv">26</span>]:</span>
+<span id="cb6-8"><a aria-hidden="true" href="#cb6-8" tabindex="-1"></a>    dense <span class="op">=</span> np.linspace(<span class="dv">0</span>,<span class="dv">48</span>,<span class="dv">400</span>)</span>
+<span id="cb6-9"><a aria-hidden="true" href="#cb6-9" tabindex="-1"></a>    model <span class="op">=</span> <span class="dv">70</span><span class="op">+</span><span class="dv">8</span><span class="op">*</span>np.sin(<span class="dv">2</span><span class="op">*</span>np.pi<span class="op">*</span>(dense<span class="op">-</span><span class="dv">3</span>)<span class="op">/</span>period)</span>
+<span id="cb6-10"><a aria-hidden="true" href="#cb6-10" tabindex="-1"></a>    plt.plot(dense,model,label<span class="op">=</span><span class="ss">f"Period </span><span class="sc">{</span>period<span class="sc">}</span><span class="ss"> h"</span>)</span>
+<span id="cb6-11"><a aria-hidden="true" href="#cb6-11" tabindex="-1"></a>res <span class="op">=</span> y<span class="op">-</span>(<span class="dv">70</span><span class="op">+</span><span class="dv">8</span><span class="op">*</span>np.sin(<span class="dv">2</span><span class="op">*</span>np.pi<span class="op">*</span>(t<span class="op">-</span><span class="dv">3</span>)<span class="op">/</span><span class="dv">24</span>))</span>
+<span id="cb6-12"><a aria-hidden="true" href="#cb6-12" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Nominal-period RMSE=</span><span class="sc">{</span>np<span class="sc">.</span>sqrt(np.mean(res<span class="op">**</span><span class="dv">2</span>))<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
+<span id="cb6-13"><a aria-hidden="true" href="#cb6-13" tabindex="-1"></a>plt.xlabel(<span class="st">"Time (hours)"</span>)</span>
+<span id="cb6-14"><a aria-hidden="true" href="#cb6-14" tabindex="-1"></a>plt.ylabel(<span class="st">"Signal (units)"</span>)</span>
+<span id="cb6-15"><a aria-hidden="true" href="#cb6-15" tabindex="-1"></a>plt.legend()</span>
+<span id="cb6-16"><a aria-hidden="true" href="#cb6-16" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb6-17"><a aria-hidden="true" href="#cb6-17" tabindex="-1"></a>plt.savefig(<span class="st">"figures/labC_python.png"</span>,dpi<span class="op">=</span><span class="dv">170</span>)</span>
+<span id="cb6-18"><a aria-hidden="true" href="#cb6-18" tabindex="-1"></a>plt.close()</span></code></pre></div></div>
+<figure>
+<img alt="Simulated periodic sensor data and sensitivity to the assumed period." src="figures/ch16/labC_python.png" style="width:80.0%"/>
+<figcaption aria-hidden="true">Simulated periodic sensor data and
+sensitivity to the assumed period.</figcaption>
+</figure>
+<p><strong>Interpretation prompts.</strong> (1) State the amplitude,
+midline, and nominal period. (2) Identify where the curves differ most.
+(3) Explain the difference between deterministic perturbations and
+random sampling uncertainty.</p>
+<h2 id="integrated-applied-workshops">Integrated applied workshops</h2>
+<h3 id="project-1-laboratory-calibration-and-inverse-estimation">Project
+1: Laboratory calibration and inverse estimation</h3>
+<p>A simulated instrument records concentration (mg/L) and signal
+(units): <span class="math inline">\((0,1.0),(1,2.9),(2,5.2),(3,6.8),(4,9.1),(5,11.0)\)</span>.
+(a) Plot the points. (b) Derive a two-point calibration equation using
+the first and last observations. (c) Fit a least-squares line using
+software. (d) Estimate concentration when the signal is 7.5. (e)
+Calculate residuals and RMSE for both models. (f) Explain why the
+inverse estimate should be restricted to the calibrated range. (g) Refit
+after changing the final signal from 11.0 to 12.0 and compare the
+inverse estimate.</p>
+<p><strong>Guided reasoning.</strong> First compute the two-point slope
+<span class="math inline">\((11-1)/5=2\)</span> and intercept 1; then
+calculate the two-point inverse <span class="math inline">\((7.5-1)/2=3.25\)</span> mg/L. Next use software
+for the least-squares fit and explain any difference.</p>
+<p><strong>Extension.</strong> Explain why a calibration equation does
+not establish that the instrument is accurate without independent
+reference measurements.</p>
+<h3 id="project-2-repeated-measurements-and-decay">Project 2: Repeated
+measurements and decay</h3>
+<p>A hypothetical concentration is modeled as <span class="math inline">\(C(t)=24e^{-0.28t}\)</span> mg/L. (a) Calculate
+<span class="math inline">\(C(0),C(2),C(4),C(6)\)</span>. (b) Find the
+half-life algebraically. (c) Find when the model first reaches 5 mg/L.
+(d) Compute average rates on <span class="math inline">\([0,2]\)</span>
+and <span class="math inline">\([4,6]\)</span>. (e) Evaluate predictions
+for <span class="math inline">\(k=0.25,0.28,0.31\)</span> at <span class="math inline">\(t=6\)</span>. (f) Explain why the model cannot by
+itself determine safe dosing or clinical decisions.</p>
+<p><strong>Guided reasoning.</strong> Solving <span class="math inline">\(24e^{-0.28t}=5\)</span> gives <span class="math inline">\(t=\ln(24/5)/0.28\approx5.60\)</span> hours. The
+half-life is <span class="math inline">\(\ln2/0.28\approx2.48\)</span>
+hours.</p>
+<p><strong>Extension.</strong> Contrast a continuous exponential model
+with a recurrence <span class="math inline">\(C_{n+1}=rC_n\)</span>
+measured once per hour.</p>
+<h3 id="project-3-a-periodic-environmental-or-physiological-signal">Project
+3: A periodic environmental or physiological signal</h3>
+<p>Consider <span class="math inline">\(H(t)=68+7\cos(2\pi(t-2)/24)\)</span>, where <span class="math inline">\(t\)</span> is hours. (a) Identify midline,
+amplitude, period, and phase shift. (b) Determine the maximum and
+minimum predicted values and when they occur in one day. (c) Solve <span class="math inline">\(H(t)=68\)</span> on <span class="math inline">\(0\le t&lt;24\)</span>. (d) Plot the function and
+label extrema. (e) Compare it with <span class="math inline">\(68+7\cos(2\pi(t-2)/22)\)</span>. (f) Discuss why a
+single-day observation may be insufficient to establish a 24-hour
+rhythm.</p>
+<p><strong>Guided reasoning.</strong> The maximum is 75 at <span class="math inline">\(t=2\)</span>; the minimum is 61 at <span class="math inline">\(t=14\)</span>. Midline crossings occur when the
+cosine is zero.</p>
+<p><strong>Extension.</strong> Propose a residual diagnostic that could
+reveal an incorrect period.</p>
+<h3 id="project-4-geometry-navigation-and-measurement">Project 4:
+Geometry, navigation, and measurement</h3>
+<p>A mobile sensor moves from <span class="math inline">\((0,0)\)</span>
+to <span class="math inline">\((6,8)\)</span> meters and then to <span class="math inline">\((10,5)\)</span> meters. (a) Find both displacement
+vectors. (b) Find the total path length and net displacement magnitude.
+(c) Determine the direction of the net displacement. (d) Give a
+parametric equation for each straight segment. (e) Explain why path
+length and displacement differ. (f) If each recorded coordinate can vary
+by <span class="math inline">\(\pm0.2\)</span> m, examine at least four
+endpoint scenarios.</p>
+<p><strong>Guided reasoning.</strong> The first segment has length 10 m
+and the second has length 5 m; total path length is 15 m. Net
+displacement is <span class="math inline">\(\langle10,5\rangle\)</span>
+m, with magnitude <span class="math inline">\(\sqrt{125}\approx11.18\)</span> m.</p>
+<p><strong>Extension.</strong> Sketch a path with the same endpoints but
+a different total distance.</p>
+<h3 id="project-5-discrete-accumulation-and-calculus-readiness">Project
+5: Discrete accumulation and calculus readiness</h3>
+<p>A simplified inventory follows <span class="math inline">\(I_{n+1}=0.85I_n+12\)</span> with <span class="math inline">\(I_0=20\)</span>. (a) Compute <span class="math inline">\(I_1\)</span> through <span class="math inline">\(I_6\)</span>. (b) Find the equilibrium. (c)
+Explain whether the values move toward or away from equilibrium. (d)
+Derive <span class="math inline">\(I_n=80+(20-80)(0.85)^n\)</span>. (e)
+Calculate the accumulated total <span class="math inline">\(\sum_{n=0}^{5}I_n\)</span>. (f) Compare the finite
+differences <span class="math inline">\(I_{n+1}-I_n\)</span> with the
+derivative of the continuous interpolation <span class="math inline">\(I(t)=80-60(0.85)^t\)</span>.</p>
+<p><strong>Guided reasoning.</strong> At equilibrium, <span class="math inline">\(I=0.85I+12\)</span>, so <span class="math inline">\(I=80\)</span>. Subtract 80 from the recurrence to
+reveal a geometric pattern.</p>
+<p><strong>Extension.</strong> Explain why a discrete difference is not
+identical to an instantaneous derivative.</p>
+<h2 id="problem-solving-clinic-choosing-a-model">Problem-solving clinic:
+choosing a model</h2>
+<p><strong>Scenario A.</strong> Data show nearly equal increases over
+equal time intervals. Begin with a linear model, then inspect residuals
+for curvature.</p>
+<p><strong>Scenario B.</strong> Positive data have nearly constant
+ratios. Begin with an exponential model; compare errors on the original
+scale.</p>
+<p><strong>Scenario C.</strong> Measurements repeat with approximately
+regular peaks. Explore a periodic model and check whether the estimated
+period remains stable across cycles.</p>
+<p><strong>Scenario D.</strong> The process changes rules after a
+threshold. Use a piecewise model and explicitly check continuity and
+units at the transition.</p>
+<p><strong>Scenario E.</strong> Position is recorded as horizontal and
+vertical coordinates. Use vectors or parametric equations; distinguish
+trajectory from displacement.</p>
+<p><strong>Guided studio.</strong> For each scenario, sketch a plausible
+graph, write a candidate equation, identify at least two parameters, and
+name one diagnostic that might reveal model failure.</p>
+<h2 id="chapter-review-exercises">Chapter review exercises</h2>
+<p><strong>Foundations and representation.</strong></p>
+<ol type="1">
+<li><p>Identify the input, output, and units for <span class="math inline">\(S(c)=1.2+2.1c\)</span>.</p></li>
+<li><p>Explain why <span class="math inline">\(e^{-kt}\)</span> requires
+a dimensionless exponent.</p></li>
+<li><p>Classify <span class="math inline">\(3,7,11,15,\ldots\)</span> as
+an arithmetic or geometric sequence.</p></li>
+<li><p>Classify <span class="math inline">\(2,6,18,54,\ldots\)</span>
+and write an explicit rule.</p></li>
+<li><p>Find the slope and intercept through <span class="math inline">\((1,4)\)</span> and <span class="math inline">\((5,12)\)</span>.</p></li>
+<li><p>Invert <span class="math inline">\(y=3+0.5x\)</span> and state
+any parameter restriction.</p></li>
+<li><p>Find the vertex of <span class="math inline">\(q(x)=-x^2+6x+2\)</span>.</p></li>
+<li><p>Find the maximum of that quadratic on <span class="math inline">\(0\le x\le2\)</span>.</p></li>
+<li><p>Calculate the half-life for <span class="math inline">\(C(t)=10e^{-0.4t}\)</span>.</p></li>
+<li><p>Find the doubling time for <span class="math inline">\(P(t)=100e^{0.12t}\)</span>.</p></li>
+<li><p>Identify amplitude and period of <span class="math inline">\(4+3\sin(\pi t/6)\)</span>.</p></li>
+<li><p>Construct a cosine function with amplitude 5 and period
+10.</p></li>
+<li><p>Find <span class="math inline">\(a\)</span> to make a two-piece
+function <span class="math inline">\(2x+1\)</span> for <span class="math inline">\(x&lt;3\)</span> and <span class="math inline">\(ax-2\)</span> for <span class="math inline">\(x\ge3\)</span> continuous.</p></li>
+<li><p>Compute <span class="math inline">\(\|\langle-5,12\rangle\|\)</span>.</p></li>
+<li><p>Compute <span class="math inline">\(\langle2,3\rangle\cdot\langle4,-1\rangle\)</span>.</p></li>
+<li><p>Eliminate <span class="math inline">\(t\)</span> from <span class="math inline">\(x=2t\)</span>, <span class="math inline">\(y=3t+1\)</span>.</p></li>
+<li><p>Find the equilibrium of <span class="math inline">\(x_{n+1}=0.75x_n+10\)</span>.</p></li>
+<li><p>Calculate the first four values when <span class="math inline">\(x_0=0\)</span> for the preceding
+recurrence.</p></li>
+<li><p>Compute MAE for residuals <span class="math inline">\(-2,0,1,3\)</span>.</p></li>
+<li><p>Compute RMSE for the same residuals.</p></li>
+<li><p>Explain why low training error does not guarantee predictive
+accuracy.</p></li>
+<li><p>Describe two limitations of extrapolating a calibration
+curve.</p></li>
+<li><p>Calculate the average rate of change of <span class="math inline">\(f(t)=t^2\)</span> on <span class="math inline">\([1,4]\)</span>.</p></li>
+<li><p>Simplify the difference quotient for <span class="math inline">\(f(t)=2t^2+t\)</span>.</p></li>
+<li><p>Find the limiting rate at <span class="math inline">\(t=3\)</span> from the preceding quotient.</p></li>
+<li><p>Explain why a periodic model based on one cycle may be
+unreliable.</p></li>
+<li><p>Compare the interpretations of a slope and an exponential decay
+constant.</p></li>
+<li><p>Distinguish a residual from a measurement error.</p></li>
+<li><p>Explain why scenario ranges are not necessarily confidence
+intervals.</p></li>
+<li><p>Explain the difference between total path length and net
+displacement.</p></li>
+<li><p>For <span class="math inline">\(y=20e^{-0.2t}\)</span>, solve for
+the time at which <span class="math inline">\(y=8\)</span>.</p></li>
+<li><p>Find <span class="math inline">\(\sum_{n=0}^{4}2(1.5)^n\)</span>.</p></li>
+<li><p>Give one example of a physical domain restriction not required by
+algebra.</p></li>
+<li><p>Propose a diagnostic for an incorrectly specified quadratic
+model.</p></li>
+<li><p>Write a short model conclusion that reports a parameter, units,
+and a limitation.</p></li>
+<li><p>Explain why a more complicated polynomial can fit training data
+yet predict poorly.</p></li>
+<li><p>Calculate the magnitude of <span class="math inline">\(\langle6,8\rangle\)</span> and its unit
+direction.</p></li>
+<li><p>Find the mean of the outputs <span class="math inline">\(4,7,9,12\)</span> and describe its units.</p></li>
+<li><p>For <span class="math inline">\(f(t)=|t-2|\)</span>, explain why
+the instantaneous rate fails at <span class="math inline">\(t=2\)</span>.</p></li>
+<li><p>Outline a seven-step modeling workflow for a new
+dataset.</p></li>
+</ol>
+<h2 id="calculus-readiness-checkpoint">Calculus-readiness
+checkpoint</h2>
+<ol type="1">
+<li><p>For <span class="math inline">\(f(x)=x^2+4x\)</span>, simplify
+<span class="math inline">\([f(a+h)-f(a)]/h\)</span> for <span class="math inline">\(h\ne0\)</span>, then determine its limit as <span class="math inline">\(h\to0\)</span>.</p></li>
+<li><p>For <span class="math inline">\(C(t)=12e^{-0.3t}\)</span>,
+compare the average rate over <span class="math inline">\([0,2]\)</span>
+with the limiting instantaneous rate at <span class="math inline">\(t=0\)</span>. Explain the difference in
+words.</p></li>
+<li><p>Explain how a sum of small rectangular contributions can
+approximate total accumulation. Why does using narrower intervals often
+improve an approximation for a smooth function?</p></li>
+<li><p>A parametric trajectory is <span class="math inline">\(x(t)=t\)</span>, <span class="math inline">\(y(t)=t^2\)</span>. Estimate the tangent slope at
+<span class="math inline">\(t=2\)</span> using secants. Compare your
+result with the Cartesian curve.</p></li>
+<li><p>Identify which ideas in this chapter prepare you for derivatives,
+definite integrals, and multivariable geometry.</p></li>
+</ol>
+<h2 id="extended-application-comparing-two-growth-models">Extended
+application: Comparing two growth models</h2>
+<p>Two candidate models predict a synthetic culture count: a linear
+model <span class="math inline">\(100+20t\)</span> and an exponential
+model <span class="math inline">\(100(1.2)^t\)</span>. The quantities in
+this investigation are illustrative rather than measured
+observations.</p>
+<h3 id="formulating-the-mathematical-model">Formulating the mathematical
+model</h3>
+<p>The proposed relationship is <span class="math display">\[D(t)=100(1.2)^t-(100+20t).\]</span> Before
+calculating, identify the input and output, their units, and the
+interval on which the model is being studied. Distinguish the
+mathematical domain from the practical domain. The numerical study uses
+inputs from <span class="math inline">\(0\)</span> to <span class="math inline">\(10\)</span>.</p>
+<blockquote class="example">
+<p><strong>Example 1: Analytical investigation.</strong> Compare
+predictions at times 0, 1 and 5. Explain why agreement at two times does
+not establish equivalence or validate either model.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> Differences at 0 and 1 are zero; at
+5 the exponential predicts 248.832 versus 200, a difference of 48.832.
+Independent observations are needed.</p>
+</blockquote>
+<h3 id="connecting-numerical-and-graphical-representations">Connecting
+numerical and graphical representations</h3>
+<table>
+<caption>Selected predictions from the illustrative model. Values are
+rounded for display.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Time (h)</th>
+<th style="text-align: right;">Prediction difference</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2.5</td>
+<td style="text-align: right;">7.744</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">48.83</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">7.5</td>
+<td style="text-align: right;">142.5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">319.2</td>
+</tr>
+</tbody>
+</table>
+<figure>
+<img alt="Model predictions over the stated investigation interval. The graph represents a mathematical model, not observed data." src="figures/ch16/applied_project.svg" style="width:90.0%"/>
+<figcaption aria-hidden="true">Model predictions over the stated
+investigation interval. The graph represents a mathematical model, not
+observed data.</figcaption>
+</figure>
+<p><strong>Interpretation.</strong> Compare the tabulated values with
+the graph. Identify the intervals over which the output increases or
+decreases, and distinguish a sampled extremum from an exact analytical
+extremum. Explain whether interpolation and extrapolation have the same
+justification in this setting.</p>
+<h3 id="r-implementation">R implementation</h3>
+<p>The following standalone script defines the model, generates
+predictions, and draws a labeled graph. Read the formula before running
+the code. The sampled range is a numerical diagnostic, not a proof of
+the exact range.</p>
+<div class="code-shell"><div class="code-bar"><span>R</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a aria-hidden="true" href="#cb7-1" tabindex="-1"></a><span class="co"># Applied investigation: Comparing two growth models</span></span>
+<span id="cb7-2"><a aria-hidden="true" href="#cb7-2" tabindex="-1"></a><span class="co"># 1. Define the input domain and model</span></span>
+<span id="cb7-3"><a aria-hidden="true" href="#cb7-3" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">10</span>, <span class="at">length.out =</span> <span class="dv">301</span>)</span>
+<span id="cb7-4"><a aria-hidden="true" href="#cb7-4" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">100</span><span class="sc">*</span><span class="fl">1.2</span><span class="sc">^</span>x<span class="sc">-</span>(<span class="dv">100</span><span class="sc">+</span><span class="dv">20</span><span class="sc">*</span>x)</span>
+<span id="cb7-5"><a aria-hidden="true" href="#cb7-5" tabindex="-1"></a></span>
+<span id="cb7-6"><a aria-hidden="true" href="#cb7-6" tabindex="-1"></a><span class="co"># 2. Inspect numerical predictions</span></span>
+<span id="cb7-7"><a aria-hidden="true" href="#cb7-7" tabindex="-1"></a>idx <span class="ot">&lt;-</span> <span class="fu">unique</span>(<span class="fu">round</span>(<span class="fu">seq</span>(<span class="dv">1</span>, <span class="fu">length</span>(x), <span class="at">length.out =</span> <span class="dv">5</span>)))</span>
+<span id="cb7-8"><a aria-hidden="true" href="#cb7-8" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">data.frame</span>(<span class="at">input =</span> x[idx], <span class="at">output =</span> y[idx]))</span>
+<span id="cb7-9"><a aria-hidden="true" href="#cb7-9" tabindex="-1"></a></span>
+<span id="cb7-10"><a aria-hidden="true" href="#cb7-10" tabindex="-1"></a><span class="co"># 3. Visualize the model with labeled axes</span></span>
+<span id="cb7-11"><a aria-hidden="true" href="#cb7-11" tabindex="-1"></a><span class="fu">plot</span>(x, y, <span class="at">type =</span> <span class="st">"l"</span>, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">"#176B87"</span>,</span>
+<span id="cb7-12"><a aria-hidden="true" href="#cb7-12" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Time (h)"</span>, <span class="at">ylab =</span> <span class="st">"Prediction difference"</span>)</span>
+<span id="cb7-13"><a aria-hidden="true" href="#cb7-13" tabindex="-1"></a><span class="fu">grid</span>()</span>
+<span id="cb7-14"><a aria-hidden="true" href="#cb7-14" tabindex="-1"></a></span>
+<span id="cb7-15"><a aria-hidden="true" href="#cb7-15" tabindex="-1"></a><span class="co"># 4. Check the sampled output range</span></span>
+<span id="cb7-16"><a aria-hidden="true" href="#cb7-16" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">range</span>(y))</span></code></pre></div></div>
+<h3 id="python-implementation">Python implementation</h3>
+<p>Repeat the same investigation using NumPy arrays and Matplotlib.
+Compare the printed predictions with the R output, allowing for
+rounding.</p>
+<div class="code-shell"><div class="code-bar"><span>Python</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a aria-hidden="true" href="#cb8-1" tabindex="-1"></a><span class="co"># Applied investigation: Comparing two growth models</span></span>
+<span id="cb8-2"><a aria-hidden="true" href="#cb8-2" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb8-3"><a aria-hidden="true" href="#cb8-3" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb8-4"><a aria-hidden="true" href="#cb8-4" tabindex="-1"></a></span>
+<span id="cb8-5"><a aria-hidden="true" href="#cb8-5" tabindex="-1"></a><span class="co"># 1. Define the input domain and model</span></span>
+<span id="cb8-6"><a aria-hidden="true" href="#cb8-6" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">301</span>)</span>
+<span id="cb8-7"><a aria-hidden="true" href="#cb8-7" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">100</span><span class="op">*</span><span class="fl">1.2</span><span class="op">**</span>x<span class="op">-</span>(<span class="dv">100</span><span class="op">+</span><span class="dv">20</span><span class="op">*</span>x)</span>
+<span id="cb8-8"><a aria-hidden="true" href="#cb8-8" tabindex="-1"></a></span>
+<span id="cb8-9"><a aria-hidden="true" href="#cb8-9" tabindex="-1"></a><span class="co"># 2. Inspect numerical predictions</span></span>
+<span id="cb8-10"><a aria-hidden="true" href="#cb8-10" tabindex="-1"></a>idx <span class="op">=</span> np.unique(np.linspace(<span class="dv">0</span>, <span class="bu">len</span>(x)<span class="op">-</span><span class="dv">1</span>, <span class="dv">5</span>).<span class="bu">round</span>().astype(<span class="bu">int</span>))</span>
+<span id="cb8-11"><a aria-hidden="true" href="#cb8-11" tabindex="-1"></a><span class="bu">print</span>(np.column_stack((x[idx], y[idx])))</span>
+<span id="cb8-12"><a aria-hidden="true" href="#cb8-12" tabindex="-1"></a></span>
+<span id="cb8-13"><a aria-hidden="true" href="#cb8-13" tabindex="-1"></a><span class="co"># 3. Visualize the model with labeled axes</span></span>
+<span id="cb8-14"><a aria-hidden="true" href="#cb8-14" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="fl">3.6</span>))</span>
+<span id="cb8-15"><a aria-hidden="true" href="#cb8-15" tabindex="-1"></a>ax.plot(x, y, <span class="st">"-"</span>, color<span class="op">=</span><span class="st">"#176B87"</span>, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb8-16"><a aria-hidden="true" href="#cb8-16" tabindex="-1"></a>ax.<span class="bu">set</span>(xlabel<span class="op">=</span><span class="st">"Time (h)"</span>, ylabel<span class="op">=</span><span class="st">"Prediction difference"</span>)</span>
+<span id="cb8-17"><a aria-hidden="true" href="#cb8-17" tabindex="-1"></a>ax.grid(alpha<span class="op">=</span><span class="fl">0.22</span>)</span>
+<span id="cb8-18"><a aria-hidden="true" href="#cb8-18" tabindex="-1"></a>ax.spines[[<span class="st">"top"</span>, <span class="st">"right"</span>]].set_visible(<span class="va">False</span>)</span>
+<span id="cb8-19"><a aria-hidden="true" href="#cb8-19" tabindex="-1"></a>fig.tight_layout()</span>
+<span id="cb8-20"><a aria-hidden="true" href="#cb8-20" tabindex="-1"></a>plt.show()</span>
+<span id="cb8-21"><a aria-hidden="true" href="#cb8-21" tabindex="-1"></a></span>
+<span id="cb8-22"><a aria-hidden="true" href="#cb8-22" tabindex="-1"></a><span class="co"># 4. Check the sampled output range</span></span>
+<span id="cb8-23"><a aria-hidden="true" href="#cb8-23" tabindex="-1"></a><span class="bu">print</span>(np.<span class="bu">min</span>(y), np.<span class="bu">max</span>(y))</span></code></pre></div></div>
+<h3 id="guided-practice-checking-the-model">Guided practice: checking
+the model</h3>
+<ol type="1">
+<li><p>Calculate the outputs at the two endpoints by hand. Compare them
+with the numerical table.</p></li>
+<li><p>Select an interior input not listed in the table. Predict the
+output before evaluating it in either language.</p></li>
+<li><p>Explain the meaning of the difference between the two endpoint
+outputs, including units. If appropriate, calculate the average rate of
+change.</p></li>
+<li><p>Identify a physical assumption of the model and describe a
+circumstance in which it would fail.</p></li>
+</ol>
+<h2 id="chapter-project-investigating-comparing-two-growth-models">Chapter
+project: investigating Comparing two growth models</h2>
+<p>Prepare a short technical report for a reader who has not studied the
+model. Use the preceding case as a starting point, but develop your own
+investigation rather than merely reproducing the worked example.</p>
+<ol type="1">
+<li><p>State a quantitative question that can be answered using the
+model. Define all variables, units, and restrictions.</p></li>
+<li><p>Modify one meaningful numerical parameter in the formula. Explain
+what the change represents in the original context. Derive the revised
+formula and predict the direction of change before computing.</p></li>
+<li><p>Compare the original and revised models at five common admissible
+inputs. Present a labeled table and explain the largest difference in
+the table.</p></li>
+<li><p>Produce a graph containing both models on the same axes. Use a
+legend and distinguish the curves with line styles or markers. Explain
+the shape and any intersections.</p></li>
+<li><p>Solve your quantitative question algebraically where possible.
+Verify the result using R and Python; report any differences due to
+numerical precision.</p></li>
+<li><p>Discuss at least two limitations. Describe what measurements
+would be needed to assess the model in practice. Do not present
+simulated predictions as empirical evidence.</p></li>
+</ol>
+<h3 class="unnumbered" id="project-deliverables-and-assessment">Project
+deliverables and assessment</h3>
+<p>Submit a two- to three-page report, the two runnable scripts, and the
+labeled figure. The report should stand on its own without requiring the
+reader to inspect the code.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Criterion</th>
+<th style="text-align: right;">Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Mathematical formulation and domain</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Analytical reasoning and verification</td>
+<td style="text-align: right;">25</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Reproducible R and Python
+computations</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Graph and table quality</td>
+<td style="text-align: right;">15</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Interpretation and limitations</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Total</td>
+<td style="text-align: right;">100</td>
+</tr>
+</tbody>
+</table>
+<h2 class="unnumbered" id="chapter-summary">Chapter summary</h2>
+<p>A defensible model connects mathematics with a clearly stated
+question. Algebra establishes relationships, graphs expose structure,
+computation estimates parameters, residuals challenge assumptions, and
+sensitivity analysis tests stability. The transition to calculus arises
+naturally when average changes become instantaneous rates and discrete
+sums approximate continuous accumulation. The most important habit is
+not choosing the most elaborate formula: it is explaining what the model
+means, where it works, and where it may fail.</p>
+<h2>Companion scripts</h2><p><a download="" href="code/ch16/applied_project.R">applied_project.R</a></p><p><a download="" href="code/ch16/applied_project.py">applied_project.py</a></p><p><a download="" href="code/ch16/labA.R">labA.R</a></p><p><a download="" href="code/ch16/labA.py">labA.py</a></p><p><a download="" href="code/ch16/labB.R">labB.R</a></p><p><a download="" href="code/ch16/labB.py">labB.py</a></p><p><a download="" href="code/ch16/labC.R">labC.R</a></p><p><a download="" href="code/ch16/labC.py">labC.py</a></p><footer><a href="chapter15.html">← Previous</a><a href="programming.html">Next →</a></footer><section class="investigation"><h2 id="interactive-investigation">Interactive investigation: Comparing growth models</h2><div data-investigation="16"><p>Enable JavaScript to explore the model.</p></div><p><strong>Explore and explain:</strong> Compare predictions at early and late times. Discuss which model is appropriate for a real dataset.</p></section>
+</main><nav aria-label="On this page" class="chapter-toc" id="TOC" role="doc-toc"><strong>On this page</strong>
+<ul>
+<li><a href="#integrated-mathematical-modeling-with-r-and-python" id="toc-integrated-mathematical-modeling-with-r-and-python">Integrated
+Mathematical Modeling with R and Python</a>
+<ul>
+<li><a href="#opening-context-mathematics-as-a-connected-toolkit" id="toc-opening-context-mathematics-as-a-connected-toolkit">Opening
+context: mathematics as a connected toolkit</a></li>
+<li><a href="#learning-outcomes" id="toc-learning-outcomes">Learning
+outcomes</a></li>
+<li><a href="#how-to-use-this-chapter" id="toc-how-to-use-this-chapter">How to use this chapter</a></li>
+<li><a href="#the-mathematical-modeling-cycle" id="toc-the-mathematical-modeling-cycle">The mathematical modeling
+cycle</a></li>
+<li><a href="#units-domains-and-dimensional-consistency" id="toc-units-domains-and-dimensional-consistency">Units, domains, and
+dimensional consistency</a></li>
+<li><a href="#tables-graphs-and-initial-pattern-recognition" id="toc-tables-graphs-and-initial-pattern-recognition">Tables, graphs,
+and initial pattern recognition</a></li>
+<li><a href="#linear-calibration-and-inverse-prediction" id="toc-linear-calibration-and-inverse-prediction">Linear calibration
+and inverse prediction</a></li>
+<li><a href="#quadratic-models-and-constrained-optimization" id="toc-quadratic-models-and-constrained-optimization">Quadratic models
+and constrained optimization</a></li>
+<li><a href="#exponential-change-half-life-and-doubling-time" id="toc-exponential-change-half-life-and-doubling-time">Exponential
+change, half-life, and doubling time</a></li>
+<li><a href="#periodic-models-and-phase-interpretation" id="toc-periodic-models-and-phase-interpretation">Periodic models and
+phase interpretation</a></li>
+<li><a href="#piecewise-models-and-thresholds" id="toc-piecewise-models-and-thresholds">Piecewise models and
+thresholds</a></li>
+<li><a href="#geometric-and-vector-models" id="toc-geometric-and-vector-models">Geometric and vector
+models</a></li>
+<li><a href="#parametric-trajectories-and-elimination" id="toc-parametric-trajectories-and-elimination">Parametric trajectories
+and elimination</a></li>
+<li><a href="#sequences-accumulation-and-discrete-change" id="toc-sequences-accumulation-and-discrete-change">Sequences,
+accumulation, and discrete change</a></li>
+<li><a href="#residuals-and-measures-of-fit" id="toc-residuals-and-measures-of-fit">Residuals and measures of
+fit</a></li>
+<li><a href="#training-validation-and-overfitting" id="toc-training-validation-and-overfitting">Training, validation, and
+overfitting</a></li>
+<li><a href="#sensitivity-and-uncertainty" id="toc-sensitivity-and-uncertainty">Sensitivity and
+uncertainty</a></li>
+<li><a href="#average-rates-and-the-calculus-bridge" id="toc-average-rates-and-the-calculus-bridge">Average rates and the
+calculus bridge</a></li>
+<li><a href="#communicating-a-mathematical-model" id="toc-communicating-a-mathematical-model">Communicating a mathematical
+model</a></li>
+<li><a href="#a-reproducible-analysis-workflow" id="toc-a-reproducible-analysis-workflow">A reproducible analysis
+workflow</a></li>
+<li><a href="#computational-laboratory-a-calibration-and-residual-diagnostics" id="toc-computational-laboratory-a-calibration-and-residual-diagnostics">Computational
+Laboratory A: Calibration and residual diagnostics</a>
+<ul>
+<li><a href="#r-code" id="toc-r-code">R code</a></li>
+<li><a href="#python-code" id="toc-python-code">Python code</a></li>
+</ul></li>
+<li><a href="#computational-laboratory-b-exponential-versus-linear-models" id="toc-computational-laboratory-b-exponential-versus-linear-models">Computational
+Laboratory B: Exponential versus linear models</a>
+<ul>
+<li><a href="#r-code-1" id="toc-r-code-1">R code</a></li>
+<li><a href="#python-code-1" id="toc-python-code-1">Python code</a></li>
+</ul></li>
+<li><a href="#computational-laboratory-c-periodic-signals-and-sensitivity" id="toc-computational-laboratory-c-periodic-signals-and-sensitivity">Computational
+Laboratory C: Periodic signals and sensitivity</a>
+<ul>
+<li><a href="#r-code-2" id="toc-r-code-2">R code</a></li>
+<li><a href="#python-code-2" id="toc-python-code-2">Python code</a></li>
+</ul></li>
+<li><a href="#integrated-applied-workshops" id="toc-integrated-applied-workshops">Integrated applied workshops</a>
+<ul>
+<li><a href="#project-1-laboratory-calibration-and-inverse-estimation" id="toc-project-1-laboratory-calibration-and-inverse-estimation">Project
+1: Laboratory calibration and inverse estimation</a></li>
+<li><a href="#project-2-repeated-measurements-and-decay" id="toc-project-2-repeated-measurements-and-decay">Project 2: Repeated
+measurements and decay</a></li>
+<li><a href="#project-3-a-periodic-environmental-or-physiological-signal" id="toc-project-3-a-periodic-environmental-or-physiological-signal">Project
+3: A periodic environmental or physiological signal</a></li>
+<li><a href="#project-4-geometry-navigation-and-measurement" id="toc-project-4-geometry-navigation-and-measurement">Project 4:
+Geometry, navigation, and measurement</a></li>
+<li><a href="#project-5-discrete-accumulation-and-calculus-readiness" id="toc-project-5-discrete-accumulation-and-calculus-readiness">Project
+5: Discrete accumulation and calculus readiness</a></li>
+</ul></li>
+<li><a href="#problem-solving-clinic-choosing-a-model" id="toc-problem-solving-clinic-choosing-a-model">Problem-solving clinic:
+choosing a model</a></li>
+<li><a href="#chapter-review-exercises" id="toc-chapter-review-exercises">Chapter review exercises</a></li>
+<li><a href="#calculus-readiness-checkpoint" id="toc-calculus-readiness-checkpoint">Calculus-readiness
+checkpoint</a></li>
+<li><a href="#extended-application-comparing-two-growth-models" id="toc-extended-application-comparing-two-growth-models">Extended
+application: Comparing two growth models</a>
+<ul>
+<li><a href="#formulating-the-mathematical-model" id="toc-formulating-the-mathematical-model">Formulating the mathematical
+model</a></li>
+<li><a href="#connecting-numerical-and-graphical-representations" id="toc-connecting-numerical-and-graphical-representations">Connecting
+numerical and graphical representations</a></li>
+<li><a href="#r-implementation" id="toc-r-implementation">R
+implementation</a></li>
+<li><a href="#python-implementation" id="toc-python-implementation">Python implementation</a></li>
+<li><a href="#guided-practice-checking-the-model" id="toc-guided-practice-checking-the-model">Guided practice: checking
+the model</a></li>
+</ul></li>
+<li><a href="#chapter-project-investigating-comparing-two-growth-models" id="toc-chapter-project-investigating-comparing-two-growth-models">Chapter
+project: investigating Comparing two growth models</a>
+<ul>
+<li><a href="#project-deliverables-and-assessment" id="toc-project-deliverables-and-assessment">Project deliverables and
+assessment</a></li>
+</ul></li>
+<li><a href="#chapter-summary" id="toc-chapter-summary">Chapter
+summary</a></li>
+</ul></li>
+</ul>
+</nav></div><script src="investigations.js"></script></body></html>

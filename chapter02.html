@@ -1,0 +1,1349 @@
+<!DOCTYPE html>
+
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8"/>
+<meta content="pandoc" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+<title>Equations,
+Inequalities, and Applications | Applied Precalculus</title>
+<style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+
+
+<link href="site.css" rel="stylesheet"/><script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script defer="" src="search-index.js"></script><script defer="" src="site.js"></script></head><body><nav class="site-nav" id="book-nav"><strong class="brand">Applied Precalculus</strong><p class="subtitle">Using R and Python</p><input aria-label="Search the book" id="book-search" placeholder="Search the book"/><div aria-live="polite" class="search-results" id="search-results"></div><p class="nav-label">Contents</p><a class="" href="index.html">Preface</a><a class="" href="chapter01.html">1. Real Numbers, Algebraic Expressions, and Mathematical Reasoning</a><a class="active" href="chapter02.html">2. Equations, Inequalities, and Applications</a><a class="" href="chapter03.html">3. Coordinate Geometry, Lines, and Systems of Equations</a><a class="" href="chapter04.html">4. Functions, Graphs, and Multiple Representations</a><a class="" href="chapter05.html">5. Transformations, Compositions, and Inverse Functions</a><a class="" href="chapter06.html">6. Polynomial and Rational Functions</a><a class="" href="chapter07.html">7. Exponential and Logarithmic Functions</a><a class="" href="chapter08.html">8. Angles, Radian Measure, and the Unit Circle</a><a class="" href="chapter09.html">9. Trigonometric Functions and Their Graphs</a><a class="" href="chapter10.html">10. Trigonometric Identities and Equations</a><a class="" href="chapter11.html">11. Applications of Trigonometry and Periodic Models</a><a class="" href="chapter12.html">12. Sequences, Series, and Mathematical Patterns</a><a class="" href="chapter13.html">13. Conic Sections and Parametric Equations</a><a class="" href="chapter14.html">14. Vectors, Polar Coordinates, and Geometric Modeling</a><a class="" href="chapter15.html">15. Rates of Change, Difference Quotients, and Limits</a><a class="" href="chapter16.html">16. Integrated Mathematical Modeling with R and Python</a><a class="" href="programming.html">Getting Started with R and Python</a><a class="" href="resources.html">Computational Resource Guide</a></nav><a class="skip" href="#main-content">Skip to content</a><header class="topbar"><button aria-controls="book-nav" aria-expanded="false" class="menu">Contents</button><span>Applied Precalculus / Online edition</span><span class="spacer"></span><a href="resources.html">Resources</a></header><div class="page-grid"><main id="main-content">
+
+<h1 id="equations-inequalities-and-applications">Equations,
+Inequalities, and Applications</h1>
+<h2 class="unnumbered" id="opening-investigation-when-is-a-measurement-acceptable">Opening
+investigation: When is a measurement acceptable?</h2>
+<p>A clinical laboratory reports a target concentration of <span class="math inline">\(50\)</span> units per milliliter and allows a
+tolerance of <span class="math inline">\(4\)</span> units per
+milliliter. The acceptable measurements satisfy <span class="math inline">\(|c-50|\leq4\)</span>. Before solving, sketch a
+number line and identify which values you expect to be included. Then
+translate the absolute-value statement into two ordinary inequalities.
+This single example anticipates a central theme of the chapter: an
+equation describes exact agreement, whereas an inequality describes a
+range of possibilities.</p>
+<h2 class="unnumbered" id="learning-outcomes">Learning outcomes</h2>
+<p>By the end of this chapter, students should be able to (1) solve and
+verify linear equations; (2) solve quadratic equations by factoring,
+square roots, completing the square, and the quadratic formula; (3)
+identify excluded values and check proposed solutions of rational and
+radical equations; (4) solve and graph linear, compound, quadratic,
+rational, and absolute-value inequalities; (5) build and interpret
+equations and constraints from applied situations; and (6) use R and
+Python to visualize and numerically verify results without mistaking
+numerical evidence for proof.</p>
+<h2 class="unnumbered" id="prerequisite-diagnostic">Prerequisite
+diagnostic</h2>
+<p>Without technology, simplify <span class="math inline">\(3(2x-1)-2(x+4)\)</span>; factor <span class="math inline">\(x^2-9\)</span>; determine the sign of <span class="math inline">\(-3(2-5)\)</span>; and describe <span class="math inline">\(|x-7|\)</span> as a distance. Answers: <span class="math inline">\(4x-11\)</span>, <span class="math inline">\((x-3)(x+3)\)</span>, positive, and the distance
+from <span class="math inline">\(x\)</span> to <span class="math inline">\(7\)</span>. Review Chapter 1 if any of these ideas
+remain uncertain.</p>
+<h2 id="equations-as-statements-of-equality">Equations as statements of
+equality</h2>
+<p>An <em>equation</em> asserts that two expressions have equal values.
+Solving means finding all values in the stated domain for which the
+assertion is true. An equation may have one solution, several solutions,
+no solutions, or infinitely many solutions. The distinction between a
+solution and an algebraic manipulation is important: every final
+candidate should be substituted into the <em>original</em> equation.</p>
+<h3 id="equivalent-transformations">Equivalent transformations</h3>
+<p>Adding the same real number to both sides, subtracting the same
+expression, and multiplying or dividing both sides by the same
+<em>nonzero</em> number preserve equality. Multiplication by an
+expression that could equal zero requires caution. Squaring both sides
+can introduce extraneous candidates, while dividing by a variable
+expression can discard legitimate solutions if that expression might
+vanish.</p>
+<blockquote class="example">
+<p><strong>Example 1: A linear equation with parentheses.</strong> Solve
+<span class="math inline">\(3(2x-5)-2(x+1)=11\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> Distribute: <span class="math inline">\(6x-15-2x-2=11\)</span>. Combine like terms: <span class="math inline">\(4x-17=11\)</span>. Add <span class="math inline">\(17\)</span>: <span class="math inline">\(4x=28\)</span>. Divide by <span class="math inline">\(4\)</span>: <span class="math inline">\(x=7\)</span>. Check: <span class="math inline">\(3(14-5)-2(8)=27-16=11\)</span>. Thus <span class="math inline">\(\boxed{x=7}\)</span>.</p>
+</blockquote>
+<blockquote class="example">
+<p><strong>Example 2: An identity and a contradiction.</strong> Compare
+<span class="math inline">\(2(x+3)=2x+6\)</span> and <span class="math inline">\(2(x+3)=2x+7\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> The first simplifies to <span class="math inline">\(2x+6=2x+6\)</span>, true for every real <span class="math inline">\(x\)</span>; its solution set is <span class="math inline">\(\mathbb R\)</span>. The second becomes <span class="math inline">\(6=7\)</span>, which is false for every <span class="math inline">\(x\)</span>; its solution set is <span class="math inline">\(\varnothing\)</span>. Neither should be reported
+as “<span class="math inline">\(x=0\)</span>.”</p>
+</blockquote>
+<h5 id="guided-practice-1.">Guided practice 1.</h5>
+<p>Solve <span class="math inline">\(5-2(3x-4)=19\)</span>, and verify
+by substitution. Then classify <span class="math inline">\(4(x-2)=4x-8\)</span> as conditional, identity, or
+contradiction. <em>Check:</em> <span class="math inline">\(x=-1\)</span>; identity.</p>
+<h2 id="modeling-with-linear-equations">Modeling with linear
+equations</h2>
+<p>The most difficult step in many applications is not algebra but
+choosing a variable and translating words into quantities. A robust
+modeling routine is: define the unknown with units; write a
+relationship; solve; check units and assumptions; and interpret the
+result in context. Never interpret a negative mathematical answer as
+physically meaningful without examining the model.</p>
+<blockquote class="example">
+<p><strong>Example 3: Mixture concentration.</strong> A solution
+contains <span class="math inline">\(12\)</span> mg of a substance in
+<span class="math inline">\(80\)</span> mL. How much pure water must be
+added to reduce the concentration to <span class="math inline">\(0.10\)</span> mg/mL?</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> Let <span class="math inline">\(w\)</span> be milliliters of added water. The
+amount of substance remains <span class="math inline">\(12\)</span> mg
+and the final volume is <span class="math inline">\(80+w\)</span> mL.
+Hence <span class="math inline">\(12/(80+w)=0.10\)</span>. Multiply:
+<span class="math inline">\(12=8+0.10w\)</span>, so <span class="math inline">\(w=40\)</span> mL. The final concentration is <span class="math inline">\(12/120=0.10\)</span> mg/mL.</p>
+</blockquote>
+<h5 id="guided-practice-2.">Guided practice 2.</h5>
+<p>A facility charges a fixed fee of 18 dollars plus 7 dollars per hour.
+If the bill is 74 dollars, how many hours were used? <em>Check:</em>
+<span class="math inline">\(8\)</span> hours.</p>
+<h2 id="quadratic-equations-and-their-structure">Quadratic equations and
+their structure</h2>
+<p>A quadratic equation has the form <span class="math inline">\(ax^2+bx+c=0\)</span> with <span class="math inline">\(a\ne0\)</span>. Its graph is a parabola. The zeros
+of the quadratic expression correspond to the <span class="math inline">\(x\)</span>-intercepts of the graph, when real
+zeros exist. Different solving methods expose different features of the
+same mathematical object.</p>
+<h3 id="the-zero-product-principle-and-factoring">The zero-product
+principle and factoring</h3>
+<p>If <span class="math inline">\(AB=0\)</span> for real numbers <span class="math inline">\(A,B\)</span>, then <span class="math inline">\(A=0\)</span> or <span class="math inline">\(B=0\)</span>. Therefore factoring is effective
+when the quadratic splits into manageable factors.</p>
+<blockquote class="example">
+<p><strong>Example 4: Factoring.</strong> Solve <span class="math inline">\(2x^2-5x-3=0\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> Factor <span class="math inline">\((2x+1)(x-3)=0\)</span>. Hence <span class="math inline">\(2x+1=0\)</span> or <span class="math inline">\(x-3=0\)</span>, giving <span class="math inline">\(\boxed{x=-\tfrac12,\ 3}\)</span>. Verify: at <span class="math inline">\(3\)</span>, <span class="math inline">\(18-15-3=0\)</span>; at <span class="math inline">\(-1/2\)</span>, <span class="math inline">\(1/2+5/2-3=0\)</span>.</p>
+</blockquote>
+<h3 id="square-roots-and-completing-the-square">Square roots and
+completing the square</h3>
+<p>For <span class="math inline">\((x-h)^2=k\)</span>, real solutions
+exist only when <span class="math inline">\(k\ge0\)</span>, and are
+<span class="math inline">\(x=h\pm\sqrt{k}\)</span>. Completing the
+square rewrites a quadratic to make this structure visible. The identity
+<span class="math inline">\(x^2+px=(x+p/2)^2-(p/2)^2\)</span> is the key
+step.</p>
+<blockquote class="example">
+<p><strong>Example 5: Completing the square.</strong> Solve <span class="math inline">\(x^2+6x-7=0\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> Move the constant: <span class="math inline">\(x^2+6x=7\)</span>. Add <span class="math inline">\(9\)</span> to both sides: <span class="math inline">\((x+3)^2=16\)</span>. Therefore <span class="math inline">\(x+3=\pm4\)</span>, so <span class="math inline">\(\boxed{x=1,-7}\)</span>. The vertex form is also
+<span class="math inline">\(y=(x+3)^2-16\)</span>, showing a vertex at
+<span class="math inline">\((-3,-16)\)</span>.</p>
+</blockquote>
+<h3 id="deriving-the-quadratic-formula">Deriving the quadratic
+formula</h3>
+<p>Starting with <span class="math inline">\(ax^2+bx+c=0\)</span>,
+divide by <span class="math inline">\(a\)</span> and move the constant:
+<span class="math display">\[x^2+\frac ba x=-\frac ca.\]</span> Add
+<span class="math inline">\((b/2a)^2\)</span> to both sides and factor:
+<span class="math display">\[\left(x+\frac{b}{2a}\right)^2=\frac{b^2-4ac}{4a^2}.\]</span>
+Taking square roots and isolating <span class="math inline">\(x\)</span>
+gives <span class="math display">\[\boxed{x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}}.\]</span>
+The discriminant <span class="math inline">\(D=b^2-4ac\)</span>
+determines the number of distinct real roots: two when <span class="math inline">\(D&gt;0\)</span>, one repeated root when <span class="math inline">\(D=0\)</span>, and no real roots when <span class="math inline">\(D&lt;0\)</span>. In the last case the roots are
+complex, a topic that may be introduced later.</p>
+<blockquote class="example">
+<p><strong>Example 6: Discriminant and interpretation.</strong> Solve
+<span class="math inline">\(3x^2-4x-2=0\)</span> exactly and
+approximately.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> <span class="math inline">\(D=(-4)^2-4(3)(-2)=40\)</span>. Thus <span class="math inline">\(x=(4\pm\sqrt{40})/6=(2\pm\sqrt{10})/3\)</span>.
+Since <span class="math inline">\(\sqrt{10}\approx3.1623\)</span>, the
+roots are approximately <span class="math inline">\(1.7208\)</span> and
+<span class="math inline">\(-0.3874\)</span>. Both are real because
+<span class="math inline">\(D&gt;0\)</span>.</p>
+</blockquote>
+<h5 id="guided-practice-3.">Guided practice 3.</h5>
+<p>Solve <span class="math inline">\(x^2-8x+12=0\)</span> by factoring
+and completing the square. Then classify the real roots of <span class="math inline">\(x^2+4x+5=0\)</span>. <em>Check:</em> <span class="math inline">\(2,6\)</span>; no real roots.</p>
+<h2 id="visual-investigation-i-quadratic-roots-and-the-discriminant">Visual
+investigation I: quadratic roots and the discriminant</h2>
+<p>Consider the family <span class="math inline">\(y=x^2-4x+c\)</span>.
+Complete the square to obtain <span class="math inline">\(y=(x-2)^2+(c-4)\)</span>. The vertex always has
+horizontal coordinate <span class="math inline">\(2\)</span>; changing
+<span class="math inline">\(c\)</span> moves the parabola vertically.
+When <span class="math inline">\(c&lt;4\)</span> the curve crosses the
+horizontal axis twice; when <span class="math inline">\(c=4\)</span> it
+touches once; and when <span class="math inline">\(c&gt;4\)</span> it
+does not cross. Explain how this matches <span class="math inline">\(D=16-4c\)</span>.</p>
+<figure>
+<img alt="image" src="figures/precompiled/chapter02-01.svg"/>
+<figcaption aria-hidden="true">image</figcaption>
+</figure>
+<h5 id="investigate.">Investigate.</h5>
+<p>(a) Predict the number of real roots before graphing <span class="math inline">\(x^2-4x+3=0\)</span>. (b) Explain why the vertex
+alone determines the root count for this family. (c) Describe one
+limitation of using a graph to determine exact roots.</p>
+<h2 id="rational-equations-domain-first">Rational equations: domain
+first</h2>
+<p>A rational equation contains a variable in a denominator. Every
+denominator must be nonzero. Determine excluded values <em>before</em>
+multiplying by a common denominator; otherwise the algebra may hide a
+forbidden candidate.</p>
+<blockquote class="example">
+<p><strong>Example 7: A rational equation.</strong> Solve <span class="math inline">\(\frac{2}{x-1}+\frac{1}{x+1}=\frac{3}{x^2-1}\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> The domain excludes <span class="math inline">\(x=1\)</span> and <span class="math inline">\(x=-1\)</span>. Multiply both sides by <span class="math inline">\((x-1)(x+1)\)</span>, valid on the stated domain:
+<span class="math inline">\(2(x+1)+(x-1)=3\)</span>. Thus <span class="math inline">\(3x+1=3\)</span>, giving <span class="math inline">\(x=2/3\)</span>. It is not excluded. Substitution
+confirms the equality, so the solution set is <span class="math inline">\(\{2/3\}\)</span>.</p>
+</blockquote>
+<blockquote class="example">
+<p><strong>Example 8: A false candidate after clearing
+denominators.</strong> Solve <span class="math inline">\(\frac{x}{x-2}=\frac{2}{x-2}\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> The domain excludes <span class="math inline">\(x=2\)</span>. Multiplication by <span class="math inline">\(x-2\)</span> gives <span class="math inline">\(x=2\)</span>, but this is forbidden in the
+original equation. Therefore there are <em>no solutions</em>.</p>
+</blockquote>
+<h5 id="guided-practice-4.">Guided practice 4.</h5>
+<p>Solve <span class="math inline">\(\frac{1}{x}+\frac{1}{x+2}=\frac34\)</span>,
+stating restrictions first. <em>Check:</em> <span class="math inline">\(x=2\)</span> or <span class="math inline">\(x=-4/3\)</span>.</p>
+<h2 id="radical-equations-and-extraneous-solutions">Radical equations
+and extraneous solutions</h2>
+<p>An even root requires a nonnegative radicand in the real number
+system. Isolate the radical before squaring; then substitute every
+candidate into the original equation. Squaring is not reversible without
+additional sign information: <span class="math inline">\(a=b\)</span>
+implies <span class="math inline">\(a^2=b^2\)</span>, but the converse
+is false.</p>
+<blockquote class="example">
+<p><strong>Example 9: A radical equation.</strong> Solve <span class="math inline">\(\sqrt{x+5}=x-1\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> Because the square root is
+nonnegative, we require <span class="math inline">\(x-1\ge0\)</span>.
+Square: <span class="math inline">\(x+5=(x-1)^2=x^2-2x+1\)</span>. Hence
+<span class="math inline">\(x^2-3x-4=0\)</span>, so <span class="math inline">\((x-4)(x+1)=0\)</span>. Candidates are <span class="math inline">\(4\)</span> and <span class="math inline">\(-1\)</span>. Check: at <span class="math inline">\(4\)</span>, <span class="math inline">\(\sqrt9=3=4-1\)</span>; at <span class="math inline">\(-1\)</span>, <span class="math inline">\(\sqrt4=2\ne-2\)</span>. Therefore <span class="math inline">\(\boxed{x=4}\)</span>.</p>
+</blockquote>
+<h5 id="guided-practice-5.">Guided practice 5.</h5>
+<p>Solve <span class="math inline">\(\sqrt{2x+3}=x\)</span> and check
+all candidates. <em>Check:</em> <span class="math inline">\(x=3\)</span>
+only.</p>
+<h2 id="linear-inequalities-and-interval-notation">Linear inequalities
+and interval notation</h2>
+<p>Solving inequalities resembles solving equations, except multiplying
+or dividing by a negative number reverses the comparison. For example,
+<span class="math inline">\(-2x&lt;6\)</span> becomes <span class="math inline">\(x&gt;-3\)</span>. Open endpoints represent strict
+inequalities; filled endpoints represent inclusive inequalities.</p>
+<blockquote class="example">
+<p><strong>Example 10: A linear inequality.</strong> Solve <span class="math inline">\(4-3(2x-1)\le13\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> <span class="math inline">\(4-6x+3\le13\)</span>, so <span class="math inline">\(-6x\le6\)</span>. Dividing by <span class="math inline">\(-6\)</span> reverses the sign: <span class="math inline">\(x\ge-1\)</span>. Interval notation is <span class="math inline">\([-1,\infty)\)</span>.</p>
+</blockquote>
+<h2 id="compound-inequalities-and-absolute-value-constraints">Compound
+inequalities and absolute-value constraints</h2>
+<p>An “and” compound inequality represents an intersection; an “or”
+statement represents a union. The statement <span class="math inline">\(|x-a|\le r\)</span> describes all points within
+distance <span class="math inline">\(r\)</span> of <span class="math inline">\(a\)</span>, so <span class="math inline">\(a-r\le
+x\le a+r\)</span> for <span class="math inline">\(r\ge0\)</span>. By
+contrast, <span class="math inline">\(|x-a|&gt;r\)</span> describes
+points outside that interval.</p>
+<blockquote class="example">
+<p><strong>Example 11: Measurement tolerance.</strong> A sample should
+have mass <span class="math inline">\(25.0\pm0.6\)</span> g. Write and
+solve a tolerance inequality.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> Let <span class="math inline">\(m\)</span> be the measured mass in grams. The
+condition is <span class="math inline">\(|m-25.0|\le0.6\)</span>,
+equivalent to <span class="math inline">\(-0.6\le m-25.0\le0.6\)</span>.
+Adding <span class="math inline">\(25.0\)</span> gives <span class="math inline">\(\boxed{24.4\le m\le25.6}\)</span>. Both endpoints
+are accepted.</p>
+</blockquote>
+<figure>
+<img alt="image" src="figures/precompiled/chapter02-02.svg"/>
+<figcaption aria-hidden="true">image</figcaption>
+</figure>
+<h5 id="guided-practice-6.">Guided practice 6.</h5>
+<p>Solve <span class="math inline">\(|2x-5|&lt;7\)</span> and write the
+answer in interval notation. <em>Check:</em> <span class="math inline">\((-1,6)\)</span>.</p>
+<h2 id="quadratic-inequalities-a-sign-chart-method">Quadratic
+inequalities: a sign-chart method</h2>
+<p>A quadratic inequality asks where a parabola lies above or below the
+horizontal axis. Factor when possible, identify critical values, divide
+the real line into intervals, and test the sign in each interval.
+Remember that the zeros are included only for non-strict
+inequalities.</p>
+<blockquote class="example">
+<p><strong>Example 12: Quadratic inequality.</strong> Solve <span class="math inline">\(x^2-x-6\le0\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> Factor <span class="math inline">\((x-3)(x+2)\le0\)</span>. Critical values are <span class="math inline">\(-2\)</span> and <span class="math inline">\(3\)</span>. On <span class="math inline">\((-\infty,-2)\)</span> both factors are negative,
+so their product is positive. On <span class="math inline">\((-2,3)\)</span> the factors have opposite signs,
+so the product is negative. On <span class="math inline">\((3,\infty)\)</span> both are positive. Include the
+zeros: <span class="math inline">\(\boxed{[-2,3]}\)</span>.</p>
+</blockquote>
+<figure>
+<img alt="image" src="figures/precompiled/chapter02-03.svg"/>
+<figcaption aria-hidden="true">image</figcaption>
+</figure>
+<h5 id="guided-practice-7.">Guided practice 7.</h5>
+<p>Solve <span class="math inline">\(x^2+2x-8&gt;0\)</span>. Explain why
+the interval between the roots is not part of the solution.
+<em>Check:</em> <span class="math inline">\((-\infty,-4)\cup(2,\infty)\)</span>.</p>
+<h2 id="rational-inequalities-and-sign-charts">Rational inequalities and
+sign charts</h2>
+<p>A rational inequality requires attention to both numerator zeros and
+denominator zeros. Numerator zeros may be included when equality is
+allowed; denominator zeros are <em>always excluded</em>. A sign chart
+tracks changes across all critical values.</p>
+<blockquote class="example">
+<p><strong>Example 13: A rational inequality.</strong> Solve <span class="math inline">\(\frac{x-2}{x+1}\ge0\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> Critical values are <span class="math inline">\(x=2\)</span> (zero) and <span class="math inline">\(x=-1\)</span> (undefined). Test <span class="math inline">\(x=-2\)</span>: <span class="math inline">\((-4)/(-1)&gt;0\)</span>. Test <span class="math inline">\(x=0\)</span>: <span class="math inline">\((-2)/(1)&lt;0\)</span>. Test <span class="math inline">\(x=3\)</span>: <span class="math inline">\((1)/(4)&gt;0\)</span>. Include <span class="math inline">\(2\)</span> because the inequality permits zero;
+exclude <span class="math inline">\(-1\)</span> because division by zero
+is undefined. Hence <span class="math inline">\(\boxed{(-\infty,-1)\cup[2,\infty)}\)</span>.</p>
+</blockquote>
+<h5 id="guided-practice-8.">Guided practice 8.</h5>
+<p>Solve <span class="math inline">\((x+3)/(x-4)&lt;0\)</span>.
+<em>Check:</em> <span class="math inline">\((-3,4)\)</span>.</p>
+<h2 id="visual-investigation-ii-intersection-not-just-algebra">Visual
+investigation II: intersection, not just algebra</h2>
+<p>An equation <span class="math inline">\(f(x)=g(x)\)</span> asks where
+two graphs intersect. An inequality <span class="math inline">\(f(x)&lt;g(x)\)</span> asks where the first graph
+lies below the second. For <span class="math inline">\(x^2-4=2x\)</span>, move all terms to one side:
+<span class="math inline">\(x^2-2x-4=0\)</span>, with exact
+intersections <span class="math inline">\(x=1\pm\sqrt5\)</span>. Sketch
+<span class="math inline">\(y=x^2-4\)</span> and <span class="math inline">\(y=2x\)</span>; explain graphically why <span class="math inline">\(x^2-4&lt;2x\)</span> holds between the
+intersections.</p>
+<figure>
+<img alt="image" src="figures/precompiled/chapter02-04.svg"/>
+<figcaption aria-hidden="true">image</figcaption>
+</figure>
+<h2 id="applied-modeling-case-study-a-feasible-operating-window">Applied
+modeling case study: a feasible operating window</h2>
+<p>Suppose a simplified engineering model gives a temperature response
+<span class="math inline">\(T(t)=20+8t-t^2\)</span> in degrees Celsius,
+where <span class="math inline">\(t\)</span> is hours after a process
+begins and <span class="math inline">\(0\le t\le8\)</span>. An operating
+protocol requires <span class="math inline">\(T(t)\ge32\)</span>.</p>
+<blockquote class="example">
+<p><strong>Example 14: Determine the acceptable operating
+times.</strong> Find the times during which the model satisfies the
+protocol.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> Solve <span class="math inline">\(20+8t-t^2\ge32\)</span>, or <span class="math inline">\(t^2-8t+12\le0\)</span> after multiplying by <span class="math inline">\(-1\)</span> and reversing the inequality. Factor
+<span class="math inline">\((t-2)(t-6)\le0\)</span>. The inequality
+holds for <span class="math inline">\(2\le t\le6\)</span>. Intersecting
+with the model domain <span class="math inline">\([0,8]\)</span> does
+not change the result. The process is predicted to satisfy the protocol
+from hour <span class="math inline">\(2\)</span> through hour <span class="math inline">\(6\)</span>, inclusive. This is a mathematical
+model, not a clinical treatment recommendation.</p>
+</blockquote>
+<h5 id="model-critique.">Model critique.</h5>
+<p>What changes if the requirement becomes <span class="math inline">\(T(t)&gt;32\)</span>? Why is it inappropriate to
+extend the formula to <span class="math inline">\(t=100\)</span> without
+evidence? Which assumptions would need empirical validation?</p>
+<h2 id="numerical-methods-and-graphical-verification">Numerical methods
+and graphical verification</h2>
+<p>Some equations have no convenient closed-form solution. A numerical
+method can approximate a root by repeatedly narrowing an interval where
+a continuous function changes sign. The <em>bisection method</em> begins
+with <span class="math inline">\(f(a)f(b)&lt;0\)</span> and evaluates
+the midpoint <span class="math inline">\(m=(a+b)/2\)</span>. It retains
+the half-interval where the sign change occurs. A sign change plus
+continuity guarantees a root, but a plot alone does not establish that a
+displayed intersection is exact. Numerical methods should report
+precision and verify the residual <span class="math inline">\(|f(x)|\)</span>.</p>
+<blockquote class="example">
+<p><strong>Example 15: One bisection iteration.</strong> For <span class="math inline">\(f(x)=x^3-x-1\)</span>, check the interval <span class="math inline">\([1,2]\)</span> and take one bisection step.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> <span class="math inline">\(f(1)=-1\)</span> and <span class="math inline">\(f(2)=5\)</span>, so there is a sign change. The
+midpoint is <span class="math inline">\(1.5\)</span> and <span class="math inline">\(f(1.5)=3.375-1.5-1=0.875&gt;0\)</span>. The sign
+change is therefore on <span class="math inline">\([1,1.5]\)</span>.
+Further iterations narrow the interval.</p>
+</blockquote>
+<h2 id="computational-laboratory-a-quadratic-equations-and-root-verification">Computational
+laboratory A: quadratic equations and root verification</h2>
+<p><strong>Purpose.</strong> Compare algebraic solutions with numerical
+approximations and a graph. <strong>Predict first:</strong> Find the
+discriminant and estimate the roots of <span class="math inline">\(3x^2-4x-2=0\)</span> before running either script.
+Both languages use the same coefficients and plotting range. Run the R
+listing first; then run the Python listing. Compare the printed values
+and explain why numerical agreement does not replace the quadratic
+formula derivation.</p>
+<h3 class="unnumbered" id="r-code">R code</h3>
+<div class="code-shell"><div class="code-bar"><span>R</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a aria-hidden="true" href="#cb1-1" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">3</span>; b <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">4</span>; c0 <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">2</span></span>
+<span id="cb1-2"><a aria-hidden="true" href="#cb1-2" tabindex="-1"></a>D <span class="ot">&lt;-</span> b<span class="sc">^</span><span class="dv">2</span> <span class="sc">-</span> <span class="dv">4</span><span class="sc">*</span>a<span class="sc">*</span>c0</span>
+<span id="cb1-3"><a aria-hidden="true" href="#cb1-3" tabindex="-1"></a>roots <span class="ot">&lt;-</span> <span class="fu">c</span>((<span class="sc">-</span>b <span class="sc">-</span> <span class="fu">sqrt</span>(D))<span class="sc">/</span>(<span class="dv">2</span><span class="sc">*</span>a),</span>
+<span id="cb1-4"><a aria-hidden="true" href="#cb1-4" tabindex="-1"></a>           (<span class="sc">-</span>b <span class="sc">+</span> <span class="fu">sqrt</span>(D))<span class="sc">/</span>(<span class="dv">2</span><span class="sc">*</span>a))</span>
+<span id="cb1-5"><a aria-hidden="true" href="#cb1-5" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x) a<span class="sc">*</span>x<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> b<span class="sc">*</span>x <span class="sc">+</span> c0</span>
+<span id="cb1-6"><a aria-hidden="true" href="#cb1-6" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">data.frame</span>(<span class="at">root=</span>roots, <span class="at">residual=</span><span class="fu">f</span>(roots)))</span>
+<span id="cb1-7"><a aria-hidden="true" href="#cb1-7" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="fl">1.5</span>, <span class="dv">3</span>, <span class="at">length.out=</span><span class="dv">400</span>)</span>
+<span id="cb1-8"><a aria-hidden="true" href="#cb1-8" tabindex="-1"></a><span class="fu">plot</span>(x, <span class="fu">f</span>(x), <span class="at">type=</span><span class="st">"l"</span>, <span class="at">lwd=</span><span class="dv">2</span>, <span class="at">col=</span><span class="st">"steelblue"</span>,</span>
+<span id="cb1-9"><a aria-hidden="true" href="#cb1-9" tabindex="-1"></a>     <span class="at">xlab=</span><span class="st">"x"</span>, <span class="at">ylab=</span><span class="st">"3x^2 - 4x - 2"</span>)</span>
+<span id="cb1-10"><a aria-hidden="true" href="#cb1-10" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="dv">0</span>, <span class="at">lty=</span><span class="dv">2</span>)</span>
+<span id="cb1-11"><a aria-hidden="true" href="#cb1-11" tabindex="-1"></a><span class="fu">points</span>(roots, <span class="fu">f</span>(roots), <span class="at">pch=</span><span class="dv">19</span>, <span class="at">col=</span><span class="st">"firebrick"</span>)</span></code></pre></div></div>
+<h3 class="unnumbered" id="python-code">Python code</h3>
+<div class="code-shell"><div class="code-bar"><span>Python</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" href="#cb2-1" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-2"><a aria-hidden="true" href="#cb2-2" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-3"><a aria-hidden="true" href="#cb2-3" tabindex="-1"></a>a, b, c0 <span class="op">=</span> <span class="dv">3</span>, <span class="op">-</span><span class="dv">4</span>, <span class="op">-</span><span class="dv">2</span></span>
+<span id="cb2-4"><a aria-hidden="true" href="#cb2-4" tabindex="-1"></a>D <span class="op">=</span> b<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> <span class="dv">4</span><span class="op">*</span>a<span class="op">*</span>c0</span>
+<span id="cb2-5"><a aria-hidden="true" href="#cb2-5" tabindex="-1"></a>roots <span class="op">=</span> np.array([(<span class="op">-</span>b <span class="op">-</span> np.sqrt(D))<span class="op">/</span>(<span class="dv">2</span><span class="op">*</span>a),</span>
+<span id="cb2-6"><a aria-hidden="true" href="#cb2-6" tabindex="-1"></a>                  (<span class="op">-</span>b <span class="op">+</span> np.sqrt(D))<span class="op">/</span>(<span class="dv">2</span><span class="op">*</span>a)])</span>
+<span id="cb2-7"><a aria-hidden="true" href="#cb2-7" tabindex="-1"></a><span class="kw">def</span> f(x):</span>
+<span id="cb2-8"><a aria-hidden="true" href="#cb2-8" tabindex="-1"></a>    <span class="cf">return</span> a<span class="op">*</span>x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> b<span class="op">*</span>x <span class="op">+</span> c0</span>
+<span id="cb2-9"><a aria-hidden="true" href="#cb2-9" tabindex="-1"></a><span class="cf">for</span> root <span class="kw">in</span> roots:</span>
+<span id="cb2-10"><a aria-hidden="true" href="#cb2-10" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"root=</span><span class="sc">{</span>root<span class="sc">:.6f}</span><span class="ss">, residual=</span><span class="sc">{</span>f(root)<span class="sc">:.2e}</span><span class="ss">"</span>)</span>
+<span id="cb2-11"><a aria-hidden="true" href="#cb2-11" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="fl">1.5</span>, <span class="dv">3</span>, <span class="dv">400</span>)</span>
+<span id="cb2-12"><a aria-hidden="true" href="#cb2-12" tabindex="-1"></a>plt.plot(x, f(x), linewidth<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb2-13"><a aria-hidden="true" href="#cb2-13" tabindex="-1"></a>plt.axhline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">"black"</span>, linestyle<span class="op">=</span><span class="st">"--"</span>)</span>
+<span id="cb2-14"><a aria-hidden="true" href="#cb2-14" tabindex="-1"></a>plt.scatter(roots, f(roots))</span>
+<span id="cb2-15"><a aria-hidden="true" href="#cb2-15" tabindex="-1"></a>plt.xlabel(<span class="st">"x"</span>)<span class="op">;</span> plt.ylabel(<span class="st">"3x^2 - 4x - 2"</span>)</span>
+<span id="cb2-16"><a aria-hidden="true" href="#cb2-16" tabindex="-1"></a>plt.tight_layout()<span class="op">;</span> plt.show()</span></code></pre></div></div>
+<h5 id="interpretation.">Interpretation.</h5>
+<p>Which quantities are exact algebraic expressions, and which are
+floating-point approximations? Why may the computed residual be close
+to, but not exactly, zero?</p>
+<h2 id="computational-laboratory-b-inequalities-and-feasible-regions">Computational
+laboratory B: inequalities and feasible regions</h2>
+<p><strong>Purpose.</strong> Visualize the solution to <span class="math inline">\((t-2)(t-6)\le0\)</span> on the domain <span class="math inline">\(0\le t\le8\)</span>. Predict the interval first.
+The scripts shade the feasible region and mark the boundary times.</p>
+<h3 class="unnumbered" id="r-code-1">R code</h3>
+<div class="code-shell"><div class="code-bar"><span>R</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a aria-hidden="true" href="#cb3-1" tabindex="-1"></a>t <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">8</span>, <span class="at">length.out=</span><span class="dv">401</span>)</span>
+<span id="cb3-2"><a aria-hidden="true" href="#cb3-2" tabindex="-1"></a>g <span class="ot">&lt;-</span> (t <span class="sc">-</span> <span class="dv">2</span>)<span class="sc">*</span>(t <span class="sc">-</span> <span class="dv">6</span>)</span>
+<span id="cb3-3"><a aria-hidden="true" href="#cb3-3" tabindex="-1"></a><span class="fu">plot</span>(t, g, <span class="at">type=</span><span class="st">"l"</span>, <span class="at">lwd=</span><span class="dv">2</span>, <span class="at">col=</span><span class="st">"steelblue"</span>,</span>
+<span id="cb3-4"><a aria-hidden="true" href="#cb3-4" tabindex="-1"></a>     <span class="at">xlab=</span><span class="st">"Time (hours)"</span>, <span class="at">ylab=</span><span class="st">"(t - 2)(t - 6)"</span>)</span>
+<span id="cb3-5"><a aria-hidden="true" href="#cb3-5" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="dv">0</span>, <span class="at">lty=</span><span class="dv">2</span>)</span>
+<span id="cb3-6"><a aria-hidden="true" href="#cb3-6" tabindex="-1"></a>idx <span class="ot">&lt;-</span> <span class="fu">which</span>(g <span class="sc">&lt;=</span> <span class="dv">0</span>)</span>
+<span id="cb3-7"><a aria-hidden="true" href="#cb3-7" tabindex="-1"></a><span class="fu">points</span>(t[idx], g[idx], <span class="at">pch=</span><span class="dv">16</span>, <span class="at">cex=</span><span class="fl">0.35</span>,</span>
+<span id="cb3-8"><a aria-hidden="true" href="#cb3-8" tabindex="-1"></a>       <span class="at">col=</span><span class="st">"darkgreen"</span>)</span>
+<span id="cb3-9"><a aria-hidden="true" href="#cb3-9" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">6</span>), <span class="at">lty=</span><span class="dv">3</span>)</span>
+<span id="cb3-10"><a aria-hidden="true" href="#cb3-10" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">range</span>(t[idx]))</span></code></pre></div></div>
+<h3 class="unnumbered" id="python-code-1">Python code</h3>
+<div class="code-shell"><div class="code-bar"><span>Python</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" href="#cb4-1" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb4-2"><a aria-hidden="true" href="#cb4-2" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb4-3"><a aria-hidden="true" href="#cb4-3" tabindex="-1"></a>t <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">8</span>, <span class="dv">401</span>)</span>
+<span id="cb4-4"><a aria-hidden="true" href="#cb4-4" tabindex="-1"></a>g <span class="op">=</span> (t <span class="op">-</span> <span class="dv">2</span>)<span class="op">*</span>(t <span class="op">-</span> <span class="dv">6</span>)</span>
+<span id="cb4-5"><a aria-hidden="true" href="#cb4-5" tabindex="-1"></a>mask <span class="op">=</span> g <span class="op">&lt;=</span> <span class="dv">0</span></span>
+<span id="cb4-6"><a aria-hidden="true" href="#cb4-6" tabindex="-1"></a>plt.plot(t, g, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb4-7"><a aria-hidden="true" href="#cb4-7" tabindex="-1"></a>plt.axhline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">"black"</span>, linestyle<span class="op">=</span><span class="st">"--"</span>)</span>
+<span id="cb4-8"><a aria-hidden="true" href="#cb4-8" tabindex="-1"></a>plt.scatter(t[mask], g[mask], s<span class="op">=</span><span class="dv">5</span>)</span>
+<span id="cb4-9"><a aria-hidden="true" href="#cb4-9" tabindex="-1"></a><span class="cf">for</span> boundary <span class="kw">in</span> (<span class="dv">2</span>, <span class="dv">6</span>):</span>
+<span id="cb4-10"><a aria-hidden="true" href="#cb4-10" tabindex="-1"></a>    plt.axvline(boundary, linestyle<span class="op">=</span><span class="st">":"</span>)</span>
+<span id="cb4-11"><a aria-hidden="true" href="#cb4-11" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"grid approximation:"</span>, t[mask].<span class="bu">min</span>(), t[mask].<span class="bu">max</span>())</span>
+<span id="cb4-12"><a aria-hidden="true" href="#cb4-12" tabindex="-1"></a>plt.xlabel(<span class="st">"Time (hours)"</span>)</span>
+<span id="cb4-13"><a aria-hidden="true" href="#cb4-13" tabindex="-1"></a>plt.ylabel(<span class="st">"(t - 2)(t - 6)"</span>)</span>
+<span id="cb4-14"><a aria-hidden="true" href="#cb4-14" tabindex="-1"></a>plt.tight_layout()<span class="op">;</span> plt.show()</span></code></pre></div></div>
+<h5 id="interpretation.-1">Interpretation.</h5>
+<p>A grid approximates a feasible set but does not prove that the
+endpoints are exactly <span class="math inline">\(2\)</span> and <span class="math inline">\(6\)</span>. Explain why factoring does.</p>
+<h2 id="computational-laboratory-c-bisection-and-a-non-polynomial-root">Computational
+laboratory C: bisection and a non-polynomial root</h2>
+<p><strong>Purpose.</strong> Approximate a solution of <span class="math inline">\(x^3-x-1=0\)</span> on <span class="math inline">\([1,2]\)</span> using 25 iterations. Compare the
+residual and final interval width. Both implementations use the same
+bisection logic.</p>
+<h3 class="unnumbered" id="r-code-2">R code</h3>
+<div class="code-shell"><div class="code-bar"><span>R</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a aria-hidden="true" href="#cb5-1" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x) x<span class="sc">^</span><span class="dv">3</span> <span class="sc">-</span> x <span class="sc">-</span> <span class="dv">1</span></span>
+<span id="cb5-2"><a aria-hidden="true" href="#cb5-2" tabindex="-1"></a>left <span class="ot">&lt;-</span> <span class="dv">1</span>; right <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb5-3"><a aria-hidden="true" href="#cb5-3" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="fu">f</span>(left)<span class="sc">*</span><span class="fu">f</span>(right) <span class="sc">&lt;</span> <span class="dv">0</span>)</span>
+<span id="cb5-4"><a aria-hidden="true" href="#cb5-4" tabindex="-1"></a><span class="cf">for</span> (k <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">25</span>) {</span>
+<span id="cb5-5"><a aria-hidden="true" href="#cb5-5" tabindex="-1"></a>  mid <span class="ot">&lt;-</span> (left <span class="sc">+</span> right)<span class="sc">/</span><span class="dv">2</span></span>
+<span id="cb5-6"><a aria-hidden="true" href="#cb5-6" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">f</span>(left)<span class="sc">*</span><span class="fu">f</span>(mid) <span class="sc">&lt;=</span> <span class="dv">0</span>) right <span class="ot">&lt;-</span> mid</span>
+<span id="cb5-7"><a aria-hidden="true" href="#cb5-7" tabindex="-1"></a>  <span class="cf">else</span> left <span class="ot">&lt;-</span> mid</span>
+<span id="cb5-8"><a aria-hidden="true" href="#cb5-8" tabindex="-1"></a>}</span>
+<span id="cb5-9"><a aria-hidden="true" href="#cb5-9" tabindex="-1"></a>root <span class="ot">&lt;-</span> (left <span class="sc">+</span> right)<span class="sc">/</span><span class="dv">2</span></span>
+<span id="cb5-10"><a aria-hidden="true" href="#cb5-10" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"root ="</span>, root, <span class="st">"residual ="</span>, <span class="fu">f</span>(root),</span>
+<span id="cb5-11"><a aria-hidden="true" href="#cb5-11" tabindex="-1"></a>    <span class="st">"width ="</span>, right<span class="sc">-</span>left, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code></pre></div></div>
+<h3 class="unnumbered" id="python-code-2">Python code</h3>
+<div class="code-shell"><div class="code-bar"><span>Python</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a aria-hidden="true" href="#cb6-1" tabindex="-1"></a><span class="kw">def</span> f(x):</span>
+<span id="cb6-2"><a aria-hidden="true" href="#cb6-2" tabindex="-1"></a>    <span class="cf">return</span> x<span class="op">**</span><span class="dv">3</span> <span class="op">-</span> x <span class="op">-</span> <span class="dv">1</span></span>
+<span id="cb6-3"><a aria-hidden="true" href="#cb6-3" tabindex="-1"></a>left, right <span class="op">=</span> <span class="fl">1.0</span>, <span class="fl">2.0</span></span>
+<span id="cb6-4"><a aria-hidden="true" href="#cb6-4" tabindex="-1"></a><span class="cf">assert</span> f(left)<span class="op">*</span>f(right) <span class="op">&lt;</span> <span class="dv">0</span></span>
+<span id="cb6-5"><a aria-hidden="true" href="#cb6-5" tabindex="-1"></a><span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">25</span>):</span>
+<span id="cb6-6"><a aria-hidden="true" href="#cb6-6" tabindex="-1"></a>    mid <span class="op">=</span> (left <span class="op">+</span> right)<span class="op">/</span><span class="dv">2</span></span>
+<span id="cb6-7"><a aria-hidden="true" href="#cb6-7" tabindex="-1"></a>    <span class="cf">if</span> f(left)<span class="op">*</span>f(mid) <span class="op">&lt;=</span> <span class="dv">0</span>:</span>
+<span id="cb6-8"><a aria-hidden="true" href="#cb6-8" tabindex="-1"></a>        right <span class="op">=</span> mid</span>
+<span id="cb6-9"><a aria-hidden="true" href="#cb6-9" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb6-10"><a aria-hidden="true" href="#cb6-10" tabindex="-1"></a>        left <span class="op">=</span> mid</span>
+<span id="cb6-11"><a aria-hidden="true" href="#cb6-11" tabindex="-1"></a>root <span class="op">=</span> (left <span class="op">+</span> right)<span class="op">/</span><span class="dv">2</span></span>
+<span id="cb6-12"><a aria-hidden="true" href="#cb6-12" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"root ="</span>, root, <span class="st">"residual ="</span>, f(root),</span>
+<span id="cb6-13"><a aria-hidden="true" href="#cb6-13" tabindex="-1"></a>      <span class="st">"width ="</span>, right<span class="op">-</span>left)</span></code></pre></div></div>
+<h5 id="interpretation.-2">Interpretation.</h5>
+<p>Why does the interval width halve each iteration? State the
+continuity assumption used to justify a root between the endpoints.</p>
+<h2 id="guided-practice-workshop-explain-solve-verify">Guided practice
+workshop: explain, solve, verify</h2>
+<ol type="1">
+<li><p>Solve <span class="math inline">\(7(2x-1)=3x+26\)</span>. Write a
+check in the original equation.</p></li>
+<li><p>Solve <span class="math inline">\(2x^2+7x+3=0\)</span> by
+factoring and verify using the quadratic formula.</p></li>
+<li><p>Solve <span class="math inline">\(\sqrt{x+10}=x-2\)</span> and
+reject any extraneous candidates.</p></li>
+<li><p>Solve <span class="math inline">\(\frac{x+1}{x-3}\le0\)</span>
+using a sign chart; identify the excluded value.</p></li>
+<li><p>A storage system requires <span class="math inline">\(|V-120|\le8\)</span> liters. Express the allowable
+volumes as an interval and explain the endpoints.</p></li>
+<li><p>A model <span class="math inline">\(h(t)=-t^2+6t+7\)</span> is
+defined for <span class="math inline">\(t\ge0\)</span>. Find when <span class="math inline">\(h(t)\ge12\)</span> and discuss whether all
+algebraic solutions are in the physical domain.</p></li>
+</ol>
+<h2 id="common-misconceptions-and-mathematical-habits">Common
+misconceptions and mathematical habits</h2>
+<ol type="1">
+<li><p><strong>Dividing an inequality by a negative without reversing
+its direction.</strong> Test a simple value to detect the
+error.</p></li>
+<li><p><strong>Treating every candidate from a squared equation as
+valid.</strong> Always check the original radical equation.</p></li>
+<li><p><strong>Including a denominator zero in a rational
+solution.</strong> Record exclusions before solving.</p></li>
+<li><p><strong>Assuming every quadratic factors over the
+integers.</strong> Use completing the square or the quadratic formula
+when needed.</p></li>
+<li><p><strong>Confusing exact and approximate answers.</strong> <span class="math inline">\(1+\sqrt5\)</span> is exact; <span class="math inline">\(3.236\)</span> is approximate.</p></li>
+<li><p><strong>Ignoring model domains.</strong> A negative time or
+concentration may be mathematically possible but physically
+inadmissible.</p></li>
+</ol>
+<h2 id="chapter-summary-and-formula-reference">Chapter summary and
+formula reference</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Concept</th>
+<th style="text-align: left;">Essential result</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Linear equation</td>
+<td style="text-align: left;">Apply reversible operations and check</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Quadratic formula</td>
+<td style="text-align: left;"><span class="math inline">\(x=(-b\pm\sqrt{b^2-4ac})/(2a)\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Discriminant</td>
+<td style="text-align: left;"><span class="math inline">\(D=b^2-4ac\)</span> determines real-root count</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Absolute-value tolerance</td>
+<td style="text-align: left;"><span class="math inline">\(|x-a|\le r\iff
+a-r\le x\le a+r\)</span> for <span class="math inline">\(r\ge0\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Rational expressions</td>
+<td style="text-align: left;">Denominator zeros are excluded</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Radical equations</td>
+<td style="text-align: left;">Check candidates after squaring</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Inequalities</td>
+<td style="text-align: left;">Reverse the sign when multiplying or
+dividing by a negative</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Sign chart</td>
+<td style="text-align: left;">Test intervals divided by zeros and
+undefined points</td>
+</tr>
+</tbody>
+</table>
+<h2 id="calculus-connection-equations-behind-rates-and-optimization">Calculus
+connection: equations behind rates and optimization</h2>
+<p>In calculus, derivatives lead to equations such as <span class="math inline">\(f'(x)=0\)</span> and inequalities such as
+<span class="math inline">\(f'(x)&gt;0\)</span>. The algebraic
+skills in this chapter determine where a model increases, decreases, or
+reaches candidate extrema. Solving <span class="math inline">\(x^2-6x+8=0\)</span> now prepares students to solve
+derivative equations later. Rational expressions and domain exclusions
+become especially important when studying continuity and limits.
+Numerical root finding is a bridge to computational calculus, but
+symbolic reasoning remains essential.</p>
+<h2 id="extended-investigation-iii-how-a-quadratic-model-changes">Extended
+investigation III: how a quadratic model changes</h2>
+<p>Consider the family of models <span class="math inline">\(P(q)=-q^2+12q-k\)</span>, where <span class="math inline">\(q\)</span> is a nonnegative quantity and <span class="math inline">\(k\)</span> is a fixed cost. A zero of <span class="math inline">\(P\)</span> is a break-even quantity. The axis of
+symmetry is always <span class="math inline">\(q=6\)</span>, but the
+maximum value depends on <span class="math inline">\(k\)</span>.
+Complete the square: <span class="math display">\[P(q)=-(q-6)^2+36-k.\]</span> This form gives the
+vertex <span class="math inline">\((6,36-k)\)</span> without graphing.
+If <span class="math inline">\(k&lt;36\)</span>, the model has two
+distinct real break-even quantities; if <span class="math inline">\(k=36\)</span>, one repeated break-even quantity;
+if <span class="math inline">\(k&gt;36\)</span>, no real break-even
+quantity. A mathematical root outside the physically permitted domain
+<span class="math inline">\(q\ge0\)</span> must not be interpreted as a
+feasible operating quantity.</p>
+<blockquote class="example">
+<p><strong>Example 16: Break-even analysis.</strong> Let <span class="math inline">\(k=20\)</span>. Determine the break-even quantities
+and the quantities producing nonnegative profit.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> Set <span class="math inline">\(-q^2+12q-20=0\)</span>, or <span class="math inline">\(q^2-12q+20=0\)</span>. Factoring gives <span class="math inline">\((q-2)(q-10)=0\)</span>, so break-even occurs at
+<span class="math inline">\(q=2\)</span> and <span class="math inline">\(q=10\)</span>. Since the parabola opens downward,
+<span class="math inline">\(P(q)\ge0\)</span> precisely on <span class="math inline">\([2,10]\)</span>. The maximum profit is <span class="math inline">\(36-20=16\)</span> at <span class="math inline">\(q=6\)</span>. The units of profit depend on the
+model’s definition.</p>
+</blockquote>
+<h5 id="investigate-and-explain.">Investigate and explain.</h5>
+<p>Replace <span class="math inline">\(k=20\)</span> with <span class="math inline">\(k=36\)</span> and <span class="math inline">\(k=40\)</span>. For each case, find the
+discriminant, identify the vertex, and explain whether nonnegative
+profit is possible. Discuss how a change in fixed cost shifts the graph
+without changing its axis of symmetry.</p>
+<h3 class="unnumbered" id="guided-practice-a-different-family">Guided
+practice: a different family</h3>
+<p>For <span class="math inline">\(H(t)=-2t^2+16t+c\)</span>, complete
+the square and determine the value of <span class="math inline">\(c\)</span> for which the graph just touches the
+horizontal axis. Then explain how the number of real roots changes as
+<span class="math inline">\(c\)</span> increases. <em>Check:</em> <span class="math inline">\(H(t)=-2(t-4)^2+32+c\)</span>; tangency occurs when
+<span class="math inline">\(c=-32\)</span>.</p>
+<h2 id="extended-investigation-iv-the-logic-of-solution-sets">Extended
+investigation IV: the logic of solution sets</h2>
+<p>A useful way to understand equations is to view each transformation
+as a statement about solution sets. Let <span class="math inline">\(S(E)\)</span> denote the set of real values
+satisfying equation <span class="math inline">\(E\)</span>. An
+<em>equivalent transformation</em> produces an equation <span class="math inline">\(E_2\)</span> for which <span class="math inline">\(S(E_1)=S(E_2)\)</span>. A one-way transformation
+may only guarantee <span class="math inline">\(S(E_1)\subseteq
+S(E_2)\)</span>.</p>
+<blockquote class="example">
+<p><strong>Example 17: Why squaring can enlarge the solution
+set.</strong> Compare <span class="math inline">\(\sqrt{x+1}=x-1\)</span> with <span class="math inline">\(x+1=(x-1)^2\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> The squared equation becomes <span class="math inline">\(x^2-3x=0\)</span>, giving candidates <span class="math inline">\(x=0\)</span> and <span class="math inline">\(x=3\)</span>. In the original equation, <span class="math inline">\(x=0\)</span> would require <span class="math inline">\(1=-1\)</span>, which is false. The original
+equation has only <span class="math inline">\(x=3\)</span>. Thus the
+squared equation has a larger solution set than the original
+equation.</p>
+</blockquote>
+<blockquote class="example">
+<p><strong>Example 18: Why dividing can shrink the solution
+set.</strong> Compare <span class="math inline">\(x(x-4)=0\)</span> with
+<span class="math inline">\(x-4=0\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> The original equation has solutions
+<span class="math inline">\(0\)</span> and <span class="math inline">\(4\)</span>. Dividing by <span class="math inline">\(x\)</span> assumes <span class="math inline">\(x\ne0\)</span> and removes a legitimate solution.
+The transformed equation retains only <span class="math inline">\(4\)</span>.</p>
+</blockquote>
+<h5 id="guided-practice.">Guided practice.</h5>
+<p>For each transformation, classify it as always reversible, reversible
+under a stated restriction, or potentially non-reversible: (a) add <span class="math inline">\(5\)</span> to both sides; (b) multiply both sides
+by <span class="math inline">\(x-2\)</span>; (c) take the square root of
+both sides; (d) divide both sides by <span class="math inline">\(-3\)</span>; (e) square both sides. Give a
+counterexample whenever reversibility fails.</p>
+<h5 id="reflection.">Reflection.</h5>
+<p>Why is a numerical check in the original equation more informative
+than checking a transformed equation? Why does a finite list of
+successful numerical checks not prove an identity for all real
+numbers?</p>
+<h2 id="extended-investigation-v-constraints-and-feasible-decisions">Extended
+investigation V: constraints and feasible decisions</h2>
+<p>A mathematical model often includes several simultaneous
+restrictions. The <em>feasible set</em> is the intersection of all
+constraints. For example, a laboratory process might require both <span class="math inline">\(20\le t\le45\)</span> and <span class="math inline">\(|t-32|\le8\)</span>. The second condition becomes
+<span class="math inline">\(24\le t\le40\)</span>, so the feasible set
+is <span class="math inline">\([24,40]\)</span>. An additional strict
+requirement <span class="math inline">\(t&gt;30\)</span> changes the
+feasible set to <span class="math inline">\((30,40]\)</span>.</p>
+<blockquote class="example">
+<p><strong>Example 19: Intersection of three constraints.</strong> A
+measurement <span class="math inline">\(m\)</span> must satisfy <span class="math inline">\(m\ge12\)</span>, <span class="math inline">\(m&lt;20\)</span>, and <span class="math inline">\(|m-15|\le3\)</span>. Find the feasible set.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> The absolute-value condition
+becomes <span class="math inline">\(12\le m\le18\)</span>. Intersecting
+with <span class="math inline">\([12,\infty)\)</span> and <span class="math inline">\((-\infty,20)\)</span> leaves <span class="math inline">\(\boxed{[12,18]}\)</span>. The endpoint <span class="math inline">\(18\)</span> is permitted because all three
+constraints allow it.</p>
+</blockquote>
+<figure>
+<img alt="image" src="figures/precompiled/chapter02-05.svg"/>
+<figcaption aria-hidden="true">image</figcaption>
+</figure>
+<h5 id="guided-practice.-1">Guided practice.</h5>
+<p>Solve the simultaneous constraints <span class="math inline">\(|x-10|&lt;4\)</span>, <span class="math inline">\(x\ge8\)</span>, and <span class="math inline">\(x\le13\)</span>. <em>Check:</em> <span class="math inline">\([8,13]\)</span>.</p>
+<h5 id="modeling-challenge.">Modeling challenge.</h5>
+<p>A storage tank must contain between <span class="math inline">\(60\)</span> and <span class="math inline">\(100\)</span> liters, inclusive. A sensor flags a
+warning if its reading differs from <span class="math inline">\(80\)</span> liters by more than <span class="math inline">\(12\)</span> liters. Write a compound condition
+describing volumes that satisfy the capacity restriction but trigger a
+warning. Explain whether the warning boundaries are included.</p>
+<h2 id="extended-investigation-vi-parameter-sensitivity-and-root-stability">Extended
+investigation VI: parameter sensitivity and root stability</h2>
+<p>A model is often fitted using measured coefficients rather than exact
+constants. Consider <span class="math inline">\(x^2-6x+c=0\)</span>. Its
+roots, when real, are <span class="math inline">\(x=3\pm\sqrt{9-c}\)</span>. Near <span class="math inline">\(c=9\)</span>, even a small change in <span class="math inline">\(c\)</span> can cause a noticeable change in the
+roots or remove the real roots entirely. This is one reason why
+numerical root finding and uncertainty analysis matter in
+applications.</p>
+<blockquote class="example">
+<p><strong>Example 20: A small parameter change.</strong> Compare the
+roots when <span class="math inline">\(c=8.99\)</span>, <span class="math inline">\(c=9\)</span>, and <span class="math inline">\(c=9.01\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> For <span class="math inline">\(c=8.99\)</span>, the roots are <span class="math inline">\(3\pm\sqrt{0.01}=2.9\)</span> and <span class="math inline">\(3.1\)</span>. For <span class="math inline">\(c=9\)</span>, there is a repeated root at <span class="math inline">\(3\)</span>. For <span class="math inline">\(c=9.01\)</span>, <span class="math inline">\(9-c=-0.01\)</span>, so there are no real roots.
+The model changes continuously in its coefficients, but the number of
+real solutions can change at the discriminant threshold.</p>
+</blockquote>
+<h5 id="guided-practice.-2">Guided practice.</h5>
+<p>Consider <span class="math inline">\(x^2-10x+c=0\)</span>. Find the
+critical value of <span class="math inline">\(c\)</span> at which two
+distinct real roots merge. Determine the roots for <span class="math inline">\(c=24\)</span> and explain the result graphically.
+<em>Check:</em> critical <span class="math inline">\(c=25\)</span>;
+roots <span class="math inline">\(4\)</span> and <span class="math inline">\(6\)</span> when <span class="math inline">\(c=24\)</span>.</p>
+<h5 id="discussion.">Discussion.</h5>
+<p>In an experimental context, why should a root close to a
+repeated-root threshold be interpreted cautiously? What information
+about measurement error would help you judge the reliability of a
+predicted solution?</p>
+<h2 id="extended-investigation-vii-an-integrated-algebra-to-calculus-bridge">Extended
+investigation VII: an integrated algebra-to-calculus bridge</h2>
+<p>Suppose a model gives <span class="math inline">\(s(t)=t^2+2t\)</span> for position in arbitrary
+units, with <span class="math inline">\(t\ge0\)</span>. The average rate
+of change from <span class="math inline">\(t=2\)</span> to <span class="math inline">\(t=2+h\)</span> is <span class="math display">\[\frac{s(2+h)-s(2)}{h},\qquad h\ne0.\]</span>
+Compute <span class="math inline">\(s(2)=8\)</span> and <span class="math inline">\(s(2+h)=(2+h)^2+2(2+h)=8+6h+h^2\)</span>. Thus
+<span class="math display">\[\frac{s(2+h)-s(2)}h=\frac{6h+h^2}{h}=6+h,\qquad
+h\ne0.\]</span> The expression <span class="math inline">\(6+h\)</span>
+is defined at <span class="math inline">\(h=0\)</span>, but the original
+quotient is not. Later, calculus will investigate the value approached
+as <span class="math inline">\(h\)</span> becomes arbitrarily small. For
+now, the important precalculus skills are expansion, factoring,
+cancellation with a domain restriction, and numerical evaluation.</p>
+<blockquote class="example">
+<p><strong>Example 21: Numerical exploration.</strong> Evaluate the
+simplified quotient for <span class="math inline">\(h=1,0.1,0.01,-0.1\)</span>, and <span class="math inline">\(-0.01\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> The values are <span class="math inline">\(7\)</span>, <span class="math inline">\(6.1\)</span>, <span class="math inline">\(6.01\)</span>, <span class="math inline">\(5.9\)</span>, and <span class="math inline">\(5.99\)</span>. They suggest that the average rate
+approaches <span class="math inline">\(6\)</span> as <span class="math inline">\(h\)</span> approaches zero, although the original
+quotient remains undefined at <span class="math inline">\(h=0\)</span>.</p>
+</blockquote>
+<h5 id="guided-practice.-3">Guided practice.</h5>
+<p>For <span class="math inline">\(s(t)=3t^2-t\)</span>, simplify <span class="math inline">\([s(1+h)-s(1)]/h\)</span> for <span class="math inline">\(h\ne0\)</span>. Then evaluate it at <span class="math inline">\(h=0.1\)</span> and <span class="math inline">\(h=-0.1\)</span>. <em>Check:</em> <span class="math inline">\(5+3h\)</span>; <span class="math inline">\(5.3\)</span> and <span class="math inline">\(4.7\)</span>.</p>
+<h5 id="looking-ahead.">Looking ahead.</h5>
+<p>This is a preview, not a replacement for the formal definition of the
+derivative. In the single-variable calculus volume, the limiting
+behavior of such quotients will become the foundation of
+differentiation.</p>
+<h2 id="chapter-exercises">Chapter exercises</h2>
+<p><strong>Instructions.</strong> Show algebraic reasoning, identify
+domain restrictions, and verify candidate solutions. Graph or use
+technology only where requested. The following exercises progress from
+fluency to modeling and explanation.</p>
+<h3 class="unnumbered" id="linear-equations-and-modeling">Linear
+equations and modeling</h3>
+<ol type="1">
+<li><p>Solve or classify: <span class="math inline">\(4(3x-2)=5x+13\)</span>.</p></li>
+<li><p>Solve or classify: <span class="math inline">\(\frac{x-2}{3}+\frac{x+1}{2}=5\)</span>.</p></li>
+<li><p>Solve or classify: <span class="math inline">\(2(x-3)+7=2x+1\)</span>.</p></li>
+<li><p>Solve or classify: <span class="math inline">\(5(x-1)=5x+2\)</span>.</p></li>
+<li><p>Solve or classify: <span class="math inline">\(0.15(200+x)=42\)</span>.</p></li>
+</ol>
+<h3 class="unnumbered" id="quadratic-equations">Quadratic equations</h3>
+<ol type="1">
+<li><p>Solve or classify: <span class="math inline">\(x^2-9x+20=0\)</span>.</p></li>
+<li><p>Solve or classify: <span class="math inline">\(2x^2+x-6=0\)</span>.</p></li>
+<li><p>Solve or classify: <span class="math inline">\((x-3)^2=11\)</span>.</p></li>
+<li><p>Solve or classify: <span class="math inline">\(x^2+2x+7=0\)</span>.</p></li>
+<li><p>Solve or classify: <span class="math inline">\(3x^2-5x-1=0\)</span>.</p></li>
+</ol>
+<h3 class="unnumbered" id="rational-and-radical-equations">Rational and
+radical equations</h3>
+<ol type="1">
+<li><p>Solve or classify: <span class="math inline">\(\frac{3}{x-2}=1\)</span>.</p></li>
+<li><p>Solve or classify: <span class="math inline">\(\frac{x+1}{x-1}=2\)</span>.</p></li>
+<li><p>Solve or classify: <span class="math inline">\(\sqrt{x+6}=x\)</span>.</p></li>
+<li><p>Solve or classify: <span class="math inline">\(\sqrt{3x+4}=x+2\)</span>.</p></li>
+<li><p>Solve or classify: <span class="math inline">\(\frac{x-4}{x-4}=0\)</span>.</p></li>
+</ol>
+<h3 class="unnumbered" id="inequalities">Inequalities</h3>
+<ol type="1">
+<li><p>Solve or classify: <span class="math inline">\(3-5x\ge18\)</span>.</p></li>
+<li><p>Solve or classify: <span class="math inline">\(|x+2|\le5\)</span>.</p></li>
+<li><p>Solve or classify: <span class="math inline">\(|3x-1|&gt;8\)</span>.</p></li>
+<li><p>Solve or classify: <span class="math inline">\((x-1)(x+5)&lt;0\)</span>.</p></li>
+<li><p>Solve or classify: <span class="math inline">\(\frac{x-1}{x+2}&gt;0\)</span>.</p></li>
+</ol>
+<h3 class="unnumbered" id="applied-and-conceptual-problems">Applied and
+conceptual problems</h3>
+<ol type="1">
+<li><p>A laboratory measurement must remain within <span class="math inline">\(2.5\)</span> units of a target of <span class="math inline">\(36\)</span>. Write an absolute-value inequality
+and solve it. Identify whether endpoints are allowed.</p></li>
+<li><p>A simplified revenue model is <span class="math inline">\(R(q)=40q-q^2\)</span>, with <span class="math inline">\(0\le q\le40\)</span>. Determine all quantities for
+which revenue is at least <span class="math inline">\(300\)</span>.</p></li>
+<li><p>A rectangular enclosure has width <span class="math inline">\(w\)</span> and length <span class="math inline">\(w+5\)</span> meters. Its area is <span class="math inline">\(84\)</span> square meters. Form a quadratic
+equation, solve it, and reject any physically invalid
+candidate.</p></li>
+<li><p>A medication stock solution contains <span class="math inline">\(30\)</span> mg in <span class="math inline">\(100\)</span> mL. How much water must be added to
+obtain a concentration of <span class="math inline">\(0.20\)</span>
+mg/mL? Explain why the total amount of medication is unchanged.</p></li>
+<li><p>Explain in words why multiplying an inequality by <span class="math inline">\(-1\)</span> reverses its direction. Give a
+numerical example.</p></li>
+<li><p>Construct a radical equation for which squaring introduces an
+extraneous candidate. Solve and explain the failure.</p></li>
+<li><p>Find an equation with exactly two distinct real roots, one
+repeated real root, and no real roots by varying only the constant in
+<span class="math inline">\(x^2-6x+c=0\)</span>.</p></li>
+<li><p>Determine where <span class="math inline">\(x^2-4x-5\)</span> is
+positive, negative, or zero, and represent the results
+graphically.</p></li>
+<li><p>Explain why the solutions of <span class="math inline">\((x-1)/(x-1)=1\)</span> do not include <span class="math inline">\(x=1\)</span> even though the simplified equation
+is <span class="math inline">\(1=1\)</span>.</p></li>
+<li><p>Use either language to graph <span class="math inline">\(y=x^2-2x-8\)</span> and identify approximate
+roots. Then derive the exact roots algebraically and compare.</p></li>
+</ol>
+<h2 id="calculus-readiness-checkpoint">Calculus-readiness
+checkpoint</h2>
+<ol type="1">
+<li><p>Simplify the difference quotient <span class="math inline">\(\frac{(x+h)^2-x^2}{h}\)</span> for <span class="math inline">\(h\ne0\)</span>. Explain why the original quotient
+is undefined at <span class="math inline">\(h=0\)</span>.</p></li>
+<li><p>Solve <span class="math inline">\(2x^2-8x=0\)</span> and explain
+how the roots could become critical points in a later calculus
+course.</p></li>
+<li><p>Determine the domain of <span class="math inline">\(\frac{1}{x^2-9}\)</span> and solve <span class="math inline">\(\frac{1}{x^2-9}&gt;0\)</span>.</p></li>
+<li><p>Explain the distinction between an exact root, a graphical
+estimate, and a numerical approximation.</p></li>
+<li><p>A model has feasible times determined by <span class="math inline">\(t^2-10t+21\le0\)</span>. Find the interval and
+explain why endpoint inclusion matters.</p></li>
+</ol>
+<h2 class="unnumbered" id="looking-ahead-to-chapter-3">Looking ahead to
+Chapter 3</h2>
+<p>Equations describe where relationships agree; inequalities describe
+where constraints are met. In Chapter 3, coordinate geometry, slopes,
+and systems of equations will make these relationships visual and
+prepare students to interpret rates of change.</p>
+<h2 id="extended-application-equipment-operating-window">Extended
+application: Equipment operating window</h2>
+<p>A sensor has a simplified response that peaks at setting 5. A
+technician requires a response of at least 12 units. The quantities in
+this investigation are illustrative rather than measured
+observations.</p>
+<h3 id="formulating-the-mathematical-model">Formulating the mathematical
+model</h3>
+<p>The proposed relationship is <span class="math display">\[R(x)=16-(x-5)^2.\]</span> Before calculating,
+identify the input and output, their units, and the interval on which
+the model is being studied. Distinguish the mathematical domain from the
+practical domain. The numerical study uses inputs from <span class="math inline">\(0\)</span> to <span class="math inline">\(10\)</span>.</p>
+<blockquote class="example">
+<p><strong>Example 22: Analytical investigation.</strong> Solve <span class="math inline">\(R(x)\ge12\)</span> exactly. Explain the role of
+the endpoints and check the setting 8.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> <span class="math inline">\((x-5)^2\le4\)</span>, hence <span class="math inline">\(3\le x\le7\)</span>. Both endpoints qualify; <span class="math inline">\(R(8)=7\)</span> does not.</p>
+</blockquote>
+<h3 id="connecting-numerical-and-graphical-representations">Connecting
+numerical and graphical representations</h3>
+<table>
+<caption>Selected predictions from the illustrative model. Values are
+rounded for display.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Setting</th>
+<th style="text-align: right;">Response</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">-9</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2.5</td>
+<td style="text-align: right;">9.75</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">16</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">7.5</td>
+<td style="text-align: right;">9.75</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">-9</td>
+</tr>
+</tbody>
+</table>
+<figure>
+<img alt="Model predictions over the stated investigation interval. The graph represents a mathematical model, not observed data." src="figures/ch02/applied_project.svg" style="width:90.0%"/>
+<figcaption aria-hidden="true">Model predictions over the stated
+investigation interval. The graph represents a mathematical model, not
+observed data.</figcaption>
+</figure>
+<p><strong>Interpretation.</strong> Compare the tabulated values with
+the graph. Identify the intervals over which the output increases or
+decreases, and distinguish a sampled extremum from an exact analytical
+extremum. Explain whether interpolation and extrapolation have the same
+justification in this setting.</p>
+<h3 id="r-implementation">R implementation</h3>
+<p>The following standalone script defines the model, generates
+predictions, and draws a labeled graph. Read the formula before running
+the code. The sampled range is a numerical diagnostic, not a proof of
+the exact range.</p>
+<div class="code-shell"><div class="code-bar"><span>R</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a aria-hidden="true" href="#cb7-1" tabindex="-1"></a><span class="co"># Applied investigation: Equipment operating window</span></span>
+<span id="cb7-2"><a aria-hidden="true" href="#cb7-2" tabindex="-1"></a><span class="co"># 1. Define the input domain and model</span></span>
+<span id="cb7-3"><a aria-hidden="true" href="#cb7-3" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">10</span>, <span class="at">length.out =</span> <span class="dv">301</span>)</span>
+<span id="cb7-4"><a aria-hidden="true" href="#cb7-4" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">16</span><span class="sc">-</span>(x<span class="dv">-5</span>)<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb7-5"><a aria-hidden="true" href="#cb7-5" tabindex="-1"></a></span>
+<span id="cb7-6"><a aria-hidden="true" href="#cb7-6" tabindex="-1"></a><span class="co"># 2. Inspect numerical predictions</span></span>
+<span id="cb7-7"><a aria-hidden="true" href="#cb7-7" tabindex="-1"></a>idx <span class="ot">&lt;-</span> <span class="fu">unique</span>(<span class="fu">round</span>(<span class="fu">seq</span>(<span class="dv">1</span>, <span class="fu">length</span>(x), <span class="at">length.out =</span> <span class="dv">5</span>)))</span>
+<span id="cb7-8"><a aria-hidden="true" href="#cb7-8" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">data.frame</span>(<span class="at">input =</span> x[idx], <span class="at">output =</span> y[idx]))</span>
+<span id="cb7-9"><a aria-hidden="true" href="#cb7-9" tabindex="-1"></a></span>
+<span id="cb7-10"><a aria-hidden="true" href="#cb7-10" tabindex="-1"></a><span class="co"># 3. Visualize the model with labeled axes</span></span>
+<span id="cb7-11"><a aria-hidden="true" href="#cb7-11" tabindex="-1"></a><span class="fu">plot</span>(x, y, <span class="at">type =</span> <span class="st">"l"</span>, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">"#176B87"</span>,</span>
+<span id="cb7-12"><a aria-hidden="true" href="#cb7-12" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Setting"</span>, <span class="at">ylab =</span> <span class="st">"Response"</span>)</span>
+<span id="cb7-13"><a aria-hidden="true" href="#cb7-13" tabindex="-1"></a><span class="fu">grid</span>()</span>
+<span id="cb7-14"><a aria-hidden="true" href="#cb7-14" tabindex="-1"></a></span>
+<span id="cb7-15"><a aria-hidden="true" href="#cb7-15" tabindex="-1"></a><span class="co"># 4. Check the sampled output range</span></span>
+<span id="cb7-16"><a aria-hidden="true" href="#cb7-16" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">range</span>(y))</span></code></pre></div></div>
+<h3 id="python-implementation">Python implementation</h3>
+<p>Repeat the same investigation using NumPy arrays and Matplotlib.
+Compare the printed predictions with the R output, allowing for
+rounding.</p>
+<div class="code-shell"><div class="code-bar"><span>Python</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a aria-hidden="true" href="#cb8-1" tabindex="-1"></a><span class="co"># Applied investigation: Equipment operating window</span></span>
+<span id="cb8-2"><a aria-hidden="true" href="#cb8-2" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb8-3"><a aria-hidden="true" href="#cb8-3" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb8-4"><a aria-hidden="true" href="#cb8-4" tabindex="-1"></a></span>
+<span id="cb8-5"><a aria-hidden="true" href="#cb8-5" tabindex="-1"></a><span class="co"># 1. Define the input domain and model</span></span>
+<span id="cb8-6"><a aria-hidden="true" href="#cb8-6" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">301</span>)</span>
+<span id="cb8-7"><a aria-hidden="true" href="#cb8-7" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">16</span><span class="op">-</span>(x<span class="op">-</span><span class="dv">5</span>)<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb8-8"><a aria-hidden="true" href="#cb8-8" tabindex="-1"></a></span>
+<span id="cb8-9"><a aria-hidden="true" href="#cb8-9" tabindex="-1"></a><span class="co"># 2. Inspect numerical predictions</span></span>
+<span id="cb8-10"><a aria-hidden="true" href="#cb8-10" tabindex="-1"></a>idx <span class="op">=</span> np.unique(np.linspace(<span class="dv">0</span>, <span class="bu">len</span>(x)<span class="op">-</span><span class="dv">1</span>, <span class="dv">5</span>).<span class="bu">round</span>().astype(<span class="bu">int</span>))</span>
+<span id="cb8-11"><a aria-hidden="true" href="#cb8-11" tabindex="-1"></a><span class="bu">print</span>(np.column_stack((x[idx], y[idx])))</span>
+<span id="cb8-12"><a aria-hidden="true" href="#cb8-12" tabindex="-1"></a></span>
+<span id="cb8-13"><a aria-hidden="true" href="#cb8-13" tabindex="-1"></a><span class="co"># 3. Visualize the model with labeled axes</span></span>
+<span id="cb8-14"><a aria-hidden="true" href="#cb8-14" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="fl">3.6</span>))</span>
+<span id="cb8-15"><a aria-hidden="true" href="#cb8-15" tabindex="-1"></a>ax.plot(x, y, <span class="st">"-"</span>, color<span class="op">=</span><span class="st">"#176B87"</span>, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb8-16"><a aria-hidden="true" href="#cb8-16" tabindex="-1"></a>ax.<span class="bu">set</span>(xlabel<span class="op">=</span><span class="st">"Setting"</span>, ylabel<span class="op">=</span><span class="st">"Response"</span>)</span>
+<span id="cb8-17"><a aria-hidden="true" href="#cb8-17" tabindex="-1"></a>ax.grid(alpha<span class="op">=</span><span class="fl">0.22</span>)</span>
+<span id="cb8-18"><a aria-hidden="true" href="#cb8-18" tabindex="-1"></a>ax.spines[[<span class="st">"top"</span>, <span class="st">"right"</span>]].set_visible(<span class="va">False</span>)</span>
+<span id="cb8-19"><a aria-hidden="true" href="#cb8-19" tabindex="-1"></a>fig.tight_layout()</span>
+<span id="cb8-20"><a aria-hidden="true" href="#cb8-20" tabindex="-1"></a>plt.show()</span>
+<span id="cb8-21"><a aria-hidden="true" href="#cb8-21" tabindex="-1"></a></span>
+<span id="cb8-22"><a aria-hidden="true" href="#cb8-22" tabindex="-1"></a><span class="co"># 4. Check the sampled output range</span></span>
+<span id="cb8-23"><a aria-hidden="true" href="#cb8-23" tabindex="-1"></a><span class="bu">print</span>(np.<span class="bu">min</span>(y), np.<span class="bu">max</span>(y))</span></code></pre></div></div>
+<h3 id="guided-practice-checking-the-model">Guided practice: checking
+the model</h3>
+<ol type="1">
+<li><p>Calculate the outputs at the two endpoints by hand. Compare them
+with the numerical table.</p></li>
+<li><p>Select an interior input not listed in the table. Predict the
+output before evaluating it in either language.</p></li>
+<li><p>Explain the meaning of the difference between the two endpoint
+outputs, including units. If appropriate, calculate the average rate of
+change.</p></li>
+<li><p>Identify a physical assumption of the model and describe a
+circumstance in which it would fail.</p></li>
+</ol>
+<h2 id="chapter-project-investigating-equipment-operating-window">Chapter
+project: investigating Equipment operating window</h2>
+<p>Prepare a short technical report for a reader who has not studied the
+model. Use the preceding case as a starting point, but develop your own
+investigation rather than merely reproducing the worked example.</p>
+<ol type="1">
+<li><p>State a quantitative question that can be answered using the
+model. Define all variables, units, and restrictions.</p></li>
+<li><p>Modify one meaningful numerical parameter in the formula. Explain
+what the change represents in the original context. Derive the revised
+formula and predict the direction of change before computing.</p></li>
+<li><p>Compare the original and revised models at five common admissible
+inputs. Present a labeled table and explain the largest difference in
+the table.</p></li>
+<li><p>Produce a graph containing both models on the same axes. Use a
+legend and distinguish the curves with line styles or markers. Explain
+the shape and any intersections.</p></li>
+<li><p>Solve your quantitative question algebraically where possible.
+Verify the result using R and Python; report any differences due to
+numerical precision.</p></li>
+<li><p>Discuss at least two limitations. Describe what measurements
+would be needed to assess the model in practice. Do not present
+simulated predictions as empirical evidence.</p></li>
+</ol>
+<h3 class="unnumbered" id="project-deliverables-and-assessment">Project
+deliverables and assessment</h3>
+<p>Submit a two- to three-page report, the two runnable scripts, and the
+labeled figure. The report should stand on its own without requiring the
+reader to inspect the code.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Criterion</th>
+<th style="text-align: right;">Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Mathematical formulation and domain</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Analytical reasoning and verification</td>
+<td style="text-align: right;">25</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Reproducible R and Python
+computations</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Graph and table quality</td>
+<td style="text-align: right;">15</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Interpretation and limitations</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Total</td>
+<td style="text-align: right;">100</td>
+</tr>
+</tbody>
+</table>
+<h2>Companion scripts</h2><p><a download="" href="code/ch02/applied_project.R">applied_project.R</a></p><p><a download="" href="code/ch02/applied_project.py">applied_project.py</a></p><p><a download="" href="code/ch02/chapter02_labs.R">chapter02_labs.R</a></p><p><a download="" href="code/ch02/chapter02_labs.py">chapter02_labs.py</a></p><footer><a href="chapter01.html">← Previous</a><a href="chapter03.html">Next →</a></footer><section class="investigation"><h2 id="interactive-investigation">Interactive investigation: Linear inequalities</h2><div data-investigation="2"><p>Enable JavaScript to explore the model.</p></div><p><strong>Explore and explain:</strong> Identify where the first curve is above the second. What changes when the slope is negative?</p></section>
+</main><nav aria-label="On this page" class="chapter-toc" id="TOC" role="doc-toc"><strong>On this page</strong>
+<ul>
+<li><a href="#equations-inequalities-and-applications" id="toc-equations-inequalities-and-applications">Equations,
+Inequalities, and Applications</a>
+<ul>
+<li><a href="#opening-investigation-when-is-a-measurement-acceptable" id="toc-opening-investigation-when-is-a-measurement-acceptable">Opening
+investigation: When is a measurement acceptable?</a></li>
+<li><a href="#learning-outcomes" id="toc-learning-outcomes">Learning
+outcomes</a></li>
+<li><a href="#prerequisite-diagnostic" id="toc-prerequisite-diagnostic">Prerequisite diagnostic</a></li>
+<li><a href="#equations-as-statements-of-equality" id="toc-equations-as-statements-of-equality">Equations as statements of
+equality</a>
+<ul>
+<li><a href="#equivalent-transformations" id="toc-equivalent-transformations">Equivalent transformations</a></li>
+</ul></li>
+<li><a href="#modeling-with-linear-equations" id="toc-modeling-with-linear-equations">Modeling with linear
+equations</a></li>
+<li><a href="#quadratic-equations-and-their-structure" id="toc-quadratic-equations-and-their-structure">Quadratic equations and
+their structure</a>
+<ul>
+<li><a href="#the-zero-product-principle-and-factoring" id="toc-the-zero-product-principle-and-factoring">The zero-product
+principle and factoring</a></li>
+<li><a href="#square-roots-and-completing-the-square" id="toc-square-roots-and-completing-the-square">Square roots and
+completing the square</a></li>
+<li><a href="#deriving-the-quadratic-formula" id="toc-deriving-the-quadratic-formula">Deriving the quadratic
+formula</a></li>
+</ul></li>
+<li><a href="#visual-investigation-i-quadratic-roots-and-the-discriminant" id="toc-visual-investigation-i-quadratic-roots-and-the-discriminant">Visual
+investigation I: quadratic roots and the discriminant</a></li>
+<li><a href="#rational-equations-domain-first" id="toc-rational-equations-domain-first">Rational equations: domain
+first</a></li>
+<li><a href="#radical-equations-and-extraneous-solutions" id="toc-radical-equations-and-extraneous-solutions">Radical equations
+and extraneous solutions</a></li>
+<li><a href="#linear-inequalities-and-interval-notation" id="toc-linear-inequalities-and-interval-notation">Linear inequalities
+and interval notation</a></li>
+<li><a href="#compound-inequalities-and-absolute-value-constraints" id="toc-compound-inequalities-and-absolute-value-constraints">Compound
+inequalities and absolute-value constraints</a></li>
+<li><a href="#quadratic-inequalities-a-sign-chart-method" id="toc-quadratic-inequalities-a-sign-chart-method">Quadratic
+inequalities: a sign-chart method</a></li>
+<li><a href="#rational-inequalities-and-sign-charts" id="toc-rational-inequalities-and-sign-charts">Rational inequalities and
+sign charts</a></li>
+<li><a href="#visual-investigation-ii-intersection-not-just-algebra" id="toc-visual-investigation-ii-intersection-not-just-algebra">Visual
+investigation II: intersection, not just algebra</a></li>
+<li><a href="#applied-modeling-case-study-a-feasible-operating-window" id="toc-applied-modeling-case-study-a-feasible-operating-window">Applied
+modeling case study: a feasible operating window</a></li>
+<li><a href="#numerical-methods-and-graphical-verification" id="toc-numerical-methods-and-graphical-verification">Numerical methods
+and graphical verification</a></li>
+<li><a href="#computational-laboratory-a-quadratic-equations-and-root-verification" id="toc-computational-laboratory-a-quadratic-equations-and-root-verification">Computational
+laboratory A: quadratic equations and root verification</a>
+<ul>
+<li><a href="#r-code" id="toc-r-code">R code</a></li>
+<li><a href="#python-code" id="toc-python-code">Python code</a></li>
+</ul></li>
+<li><a href="#computational-laboratory-b-inequalities-and-feasible-regions" id="toc-computational-laboratory-b-inequalities-and-feasible-regions">Computational
+laboratory B: inequalities and feasible regions</a>
+<ul>
+<li><a href="#r-code-1" id="toc-r-code-1">R code</a></li>
+<li><a href="#python-code-1" id="toc-python-code-1">Python code</a></li>
+</ul></li>
+<li><a href="#computational-laboratory-c-bisection-and-a-non-polynomial-root" id="toc-computational-laboratory-c-bisection-and-a-non-polynomial-root">Computational
+laboratory C: bisection and a non-polynomial root</a>
+<ul>
+<li><a href="#r-code-2" id="toc-r-code-2">R code</a></li>
+<li><a href="#python-code-2" id="toc-python-code-2">Python code</a></li>
+</ul></li>
+<li><a href="#guided-practice-workshop-explain-solve-verify" id="toc-guided-practice-workshop-explain-solve-verify">Guided practice
+workshop: explain, solve, verify</a></li>
+<li><a href="#common-misconceptions-and-mathematical-habits" id="toc-common-misconceptions-and-mathematical-habits">Common
+misconceptions and mathematical habits</a></li>
+<li><a href="#chapter-summary-and-formula-reference" id="toc-chapter-summary-and-formula-reference">Chapter summary and
+formula reference</a></li>
+<li><a href="#calculus-connection-equations-behind-rates-and-optimization" id="toc-calculus-connection-equations-behind-rates-and-optimization">Calculus
+connection: equations behind rates and optimization</a></li>
+<li><a href="#extended-investigation-iii-how-a-quadratic-model-changes" id="toc-extended-investigation-iii-how-a-quadratic-model-changes">Extended
+investigation III: how a quadratic model changes</a>
+<ul>
+<li><a href="#guided-practice-a-different-family" id="toc-guided-practice-a-different-family">Guided practice: a different
+family</a></li>
+</ul></li>
+<li><a href="#extended-investigation-iv-the-logic-of-solution-sets" id="toc-extended-investigation-iv-the-logic-of-solution-sets">Extended
+investigation IV: the logic of solution sets</a></li>
+<li><a href="#extended-investigation-v-constraints-and-feasible-decisions" id="toc-extended-investigation-v-constraints-and-feasible-decisions">Extended
+investigation V: constraints and feasible decisions</a></li>
+<li><a href="#extended-investigation-vi-parameter-sensitivity-and-root-stability" id="toc-extended-investigation-vi-parameter-sensitivity-and-root-stability">Extended
+investigation VI: parameter sensitivity and root stability</a></li>
+<li><a href="#extended-investigation-vii-an-integrated-algebra-to-calculus-bridge" id="toc-extended-investigation-vii-an-integrated-algebra-to-calculus-bridge">Extended
+investigation VII: an integrated algebra-to-calculus bridge</a></li>
+<li><a href="#chapter-exercises" id="toc-chapter-exercises">Chapter
+exercises</a>
+<ul>
+<li><a href="#linear-equations-and-modeling" id="toc-linear-equations-and-modeling">Linear equations and
+modeling</a></li>
+<li><a href="#quadratic-equations" id="toc-quadratic-equations">Quadratic equations</a></li>
+<li><a href="#rational-and-radical-equations" id="toc-rational-and-radical-equations">Rational and radical
+equations</a></li>
+<li><a href="#inequalities" id="toc-inequalities">Inequalities</a></li>
+<li><a href="#applied-and-conceptual-problems" id="toc-applied-and-conceptual-problems">Applied and conceptual
+problems</a></li>
+</ul></li>
+<li><a href="#calculus-readiness-checkpoint" id="toc-calculus-readiness-checkpoint">Calculus-readiness
+checkpoint</a></li>
+<li><a href="#looking-ahead-to-chapter-3" id="toc-looking-ahead-to-chapter-3">Looking ahead to Chapter 3</a></li>
+<li><a href="#extended-application-equipment-operating-window" id="toc-extended-application-equipment-operating-window">Extended
+application: Equipment operating window</a>
+<ul>
+<li><a href="#formulating-the-mathematical-model" id="toc-formulating-the-mathematical-model">Formulating the mathematical
+model</a></li>
+<li><a href="#connecting-numerical-and-graphical-representations" id="toc-connecting-numerical-and-graphical-representations">Connecting
+numerical and graphical representations</a></li>
+<li><a href="#r-implementation" id="toc-r-implementation">R
+implementation</a></li>
+<li><a href="#python-implementation" id="toc-python-implementation">Python implementation</a></li>
+<li><a href="#guided-practice-checking-the-model" id="toc-guided-practice-checking-the-model">Guided practice: checking
+the model</a></li>
+</ul></li>
+<li><a href="#chapter-project-investigating-equipment-operating-window" id="toc-chapter-project-investigating-equipment-operating-window">Chapter
+project: investigating Equipment operating window</a>
+<ul>
+<li><a href="#project-deliverables-and-assessment" id="toc-project-deliverables-and-assessment">Project deliverables and
+assessment</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav></div><script src="investigations.js"></script></body></html>

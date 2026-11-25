@@ -1,0 +1,1274 @@
+<!DOCTYPE html>
+
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8"/>
+<meta content="pandoc" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+<title>Exponential and
+Logarithmic Functions | Applied Precalculus</title>
+<style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+
+
+<link href="site.css" rel="stylesheet"/><script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script defer="" src="search-index.js"></script><script defer="" src="site.js"></script></head><body><nav class="site-nav" id="book-nav"><strong class="brand">Applied Precalculus</strong><p class="subtitle">Using R and Python</p><input aria-label="Search the book" id="book-search" placeholder="Search the book"/><div aria-live="polite" class="search-results" id="search-results"></div><p class="nav-label">Contents</p><a class="" href="index.html">Preface</a><a class="" href="chapter01.html">1. Real Numbers, Algebraic Expressions, and Mathematical Reasoning</a><a class="" href="chapter02.html">2. Equations, Inequalities, and Applications</a><a class="" href="chapter03.html">3. Coordinate Geometry, Lines, and Systems of Equations</a><a class="" href="chapter04.html">4. Functions, Graphs, and Multiple Representations</a><a class="" href="chapter05.html">5. Transformations, Compositions, and Inverse Functions</a><a class="" href="chapter06.html">6. Polynomial and Rational Functions</a><a class="active" href="chapter07.html">7. Exponential and Logarithmic Functions</a><a class="" href="chapter08.html">8. Angles, Radian Measure, and the Unit Circle</a><a class="" href="chapter09.html">9. Trigonometric Functions and Their Graphs</a><a class="" href="chapter10.html">10. Trigonometric Identities and Equations</a><a class="" href="chapter11.html">11. Applications of Trigonometry and Periodic Models</a><a class="" href="chapter12.html">12. Sequences, Series, and Mathematical Patterns</a><a class="" href="chapter13.html">13. Conic Sections and Parametric Equations</a><a class="" href="chapter14.html">14. Vectors, Polar Coordinates, and Geometric Modeling</a><a class="" href="chapter15.html">15. Rates of Change, Difference Quotients, and Limits</a><a class="" href="chapter16.html">16. Integrated Mathematical Modeling with R and Python</a><a class="" href="programming.html">Getting Started with R and Python</a><a class="" href="resources.html">Computational Resource Guide</a></nav><a class="skip" href="#main-content">Skip to content</a><header class="topbar"><button aria-controls="book-nav" aria-expanded="false" class="menu">Contents</button><span>Applied Precalculus / Online edition</span><span class="spacer"></span><a href="resources.html">Resources</a></header><div class="page-grid"><main id="main-content">
+
+<h1 id="exponential-and-logarithmic-functions">Exponential and
+Logarithmic Functions</h1>
+<h2 class="unnumbered" id="opening-context-change-that-depends-on-the-current-amount">Opening
+context: change that depends on the current amount</h2>
+<p>A medicine may be eliminated from the bloodstream at a rate
+proportional to how much remains. A bacterial culture may increase by a
+nearly constant percentage over equal time intervals. Neither process is
+well described by a line over a long interval. Exponential models
+capture repeated multiplication; logarithms answer the inverse question:
+<em>how long until a target is reached?</em> We will connect formulas,
+tables, graphs, units, and computational experiments.</p>
+<h2 class="unnumbered" id="learning-outcomes">Learning outcomes</h2>
+<p>By the end of this chapter you should be able to distinguish additive
+from multiplicative change; evaluate and graph exponential functions;
+identify growth and decay factors; solve exponential equations;
+interpret the natural exponential function; define logarithms as
+inverses; apply logarithm laws with appropriate domain restrictions;
+solve logarithmic equations and reject extraneous answers; build and
+critique growth, decay, and saturation models; interpret doubling times
+and half-lives; and use R and Python to verify predictions.</p>
+<h2 class="unnumbered" id="prerequisite-check">Prerequisite check</h2>
+<p>Review exponent rules, function composition, inverses, domains, and
+the meaning of a percent. For example, a 12% increase multiplies a
+quantity by <span class="math inline">\(1.12\)</span>, whereas a 12%
+decrease multiplies it by <span class="math inline">\(0.88\)</span>. The
+inverse of <span class="math inline">\(f(x)=3x+2\)</span> is <span class="math inline">\(f^{-1}(x)=(x-2)/3\)</span>. Explain why <span class="math inline">\(\sqrt{x}\)</span> is real only for <span class="math inline">\(x\ge0\)</span>.</p>
+<h2 class="unnumbered" id="chapter-roadmap">Chapter roadmap</h2>
+<p>We begin with repeated percentage change, develop exponential
+functions and their inverses, learn to solve equations analytically, and
+end with models in which assumptions and units matter. Each
+computational laboratory presents the complete R code first and the
+corresponding Python code second.</p>
+<h2 id="repeated-multiplication-versus-repeated-addition">Repeated
+multiplication versus repeated addition</h2>
+<p>A linear sequence adds the same amount at every step; an exponential
+sequence multiplies by the same positive factor. If a quantity starts at
+<span class="math inline">\(A_0\)</span> and grows by a fraction <span class="math inline">\(r\)</span> each period, then <span class="math inline">\(A_n=A_0(1+r)^n\)</span>. A decrease of fraction
+<span class="math inline">\(d\)</span> uses <span class="math inline">\(A_n=A_0(1-d)^n\)</span>. The percentage applies to
+the <em>current</em> amount, not the original amount. A negative base is
+not suitable for a continuous real-input exponential model.</p>
+<blockquote class="example">
+<p><strong>Example 1: Repeated multiplication versus repeated
+addition.</strong> A culture begins with 200 cells and grows 25% per
+hour. Find the predicted population after three hours.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> <span class="math inline">\(A(3)=200(1.25)^3=390.625\)</span>. The fractional
+prediction is a model expectation, not a literal count of partial
+cells.</p>
+</blockquote>
+<h5 id="guided-practice-1.">Guided practice 1.</h5>
+<p>An initial measurement is 800 units and decreases by 15% each day.
+Write a model and compute the value after four days.</p>
+<h5 id="think-sketch-verify.">Think, sketch, verify.</h5>
+<p>Before using software, predict the direction of change, important
+intercepts or asymptotes, and whether the result is physically
+meaningful. Then use a table or graph to test your prediction.</p>
+<h2 id="exponential-functions-and-their-domains">Exponential functions
+and their domains</h2>
+<p>For <span class="math inline">\(a&gt;0\)</span>, <span class="math inline">\(a\ne1\)</span>, the function <span class="math inline">\(f(x)=a^x\)</span> is defined for every real <span class="math inline">\(x\)</span>, takes only positive values, and passes
+through <span class="math inline">\((0,1)\)</span>. When <span class="math inline">\(a&gt;1\)</span>, it is increasing; when <span class="math inline">\(0&lt;a&lt;1\)</span>, it is decreasing. Its
+horizontal asymptote is <span class="math inline">\(y=0\)</span>.
+Negative exponents mean reciprocals: <span class="math inline">\(a^{-x}=1/a^x\)</span>. The restriction <span class="math inline">\(a&gt;0\)</span> allows a consistent real-valued
+definition for irrational exponents.</p>
+<blockquote class="example">
+<p><strong>Example 2: Exponential functions and their domains.</strong>
+Compare <span class="math inline">\(2^x\)</span> and <span class="math inline">\((1/2)^x\)</span> at <span class="math inline">\(x=-2,0,2\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> For <span class="math inline">\(2^x\)</span> the values are <span class="math inline">\(1/4,1,4\)</span>; for <span class="math inline">\((1/2)^x\)</span> they are <span class="math inline">\(4,1,1/4\)</span>. Both are positive, and both pass
+through <span class="math inline">\((0,1)\)</span>.</p>
+</blockquote>
+<h5 id="guided-practice-2.">Guided practice 2.</h5>
+<p>Explain the difference between <span class="math inline">\(3^{-2}\)</span> and <span class="math inline">\((-3)^2\)</span>. State why <span class="math inline">\((-3)^x\)</span> is not a real-valued exponential
+function for every real <span class="math inline">\(x\)</span>.</p>
+<h5 id="think-sketch-verify.-1">Think, sketch, verify.</h5>
+<p>Before using software, predict the direction of change, important
+intercepts or asymptotes, and whether the result is physically
+meaningful. Then use a table or graph to test your prediction.</p>
+<h2 id="transformations-of-exponential-graphs">Transformations of
+exponential graphs</h2>
+<p>The graph <span class="math inline">\(g(x)=A a^{x-h}+k\)</span> is a
+shifted and scaled exponential graph. <span class="math inline">\(h\)</span> shifts horizontally, <span class="math inline">\(k\)</span> shifts vertically, and <span class="math inline">\(A\)</span> scales or reflects the vertical
+displacement. The horizontal asymptote is <span class="math inline">\(y=k\)</span>. If <span class="math inline">\(A&gt;0\)</span>, the range is <span class="math inline">\((k,\infty)\)</span>; if <span class="math inline">\(A&lt;0\)</span>, the range is <span class="math inline">\((-\infty,k)\)</span>. A horizontal translation
+inside the exponent must be read with care.</p>
+<blockquote class="example">
+<p><strong>Example 3: Transformations of exponential graphs.</strong>
+Identify the asymptote and range of <span class="math inline">\(g(x)=3\cdot2^{x-1}-4\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> The graph of <span class="math inline">\(2^x\)</span> moves right one unit, stretches
+vertically by 3, and moves down four units. Its asymptote is <span class="math inline">\(y=-4\)</span> and its range is <span class="math inline">\((-4,\infty)\)</span>.</p>
+</blockquote>
+<h5 id="guided-practice-3.">Guided practice 3.</h5>
+<p>Sketch <span class="math inline">\(-2(1/3)^{x+1}+5\)</span>, labeling
+its horizontal asymptote and one convenient point.</p>
+<h5 id="think-sketch-verify.-2">Think, sketch, verify.</h5>
+<p>Before using software, predict the direction of change, important
+intercepts or asymptotes, and whether the result is physically
+meaningful. Then use a table or graph to test your prediction.</p>
+<h2 id="the-natural-exponential-function">The natural exponential
+function</h2>
+<p>The constant <span class="math inline">\(e\approx2.71828\)</span>
+arises naturally from continuous compounding and many continuous-change
+processes. The function <span class="math inline">\(e^x\)</span> has the
+same positive-domain and increasing properties as other growth
+exponentials. We write <span class="math inline">\(A(t)=A_0e^{kt}\)</span>, where <span class="math inline">\(k\)</span> is the continuous growth rate per unit
+time. Positive <span class="math inline">\(k\)</span> indicates growth;
+negative <span class="math inline">\(k\)</span> indicates decay. The
+units of <span class="math inline">\(k\)</span> are reciprocal time
+units.</p>
+<blockquote class="example">
+<p><strong>Example 4: The natural exponential function.</strong> A
+substance has initial mass 50 mg and follows <span class="math inline">\(M(t)=50e^{-0.2t}\)</span>, where <span class="math inline">\(t\)</span> is in hours. Find the predicted mass
+after 5 hours.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> <span class="math inline">\(M(5)=50e^{-1}\approx18.39\)</span> mg. The
+negative exponent reflects decay, and the result retains mass units.</p>
+</blockquote>
+<h5 id="guided-practice-4.">Guided practice 4.</h5>
+<p>For <span class="math inline">\(N(t)=120e^{0.08t}\)</span>, evaluate
+<span class="math inline">\(N(10)\)</span> and explain the units of
+<span class="math inline">\(0.08\)</span> when <span class="math inline">\(t\)</span> is measured in days.</p>
+<h5 id="think-sketch-verify.-3">Think, sketch, verify.</h5>
+<p>Before using software, predict the direction of change, important
+intercepts or asymptotes, and whether the result is physically
+meaningful. Then use a table or graph to test your prediction.</p>
+<h2 id="compound-interest-and-compounding-frequency">Compound interest
+and compounding frequency</h2>
+<p>If principal <span class="math inline">\(P\)</span> earns nominal
+annual rate <span class="math inline">\(r\)</span> compounded <span class="math inline">\(n\)</span> times per year, then <span class="math inline">\(A(t)=P(1+r/n)^{nt}\)</span>. Continuous
+compounding yields <span class="math inline">\(A(t)=Pe^{rt}\)</span>.
+The nominal annual rate is not necessarily the effective annual
+percentage yield: the latter is <span class="math inline">\((1+r/n)^n-1\)</span>. Financial models illustrate
+exponentials, although real investments may involve fees, taxes, and
+variable returns.</p>
+<blockquote class="example">
+<p><strong>Example 5: Compound interest and compounding
+frequency.</strong> Compare one year of 6% nominal interest on <span class="math inline">\(\$1{,}000\)</span> compounded monthly with
+continuous compounding.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> Monthly: <span class="math inline">\(1000(1+0.06/12)^{12}\approx1061.68\)</span>.
+Continuous: <span class="math inline">\(1000e^{0.06}\approx1061.84\)</span>. The
+difference is small but nonzero.</p>
+</blockquote>
+<h5 id="guided-practice-5.">Guided practice 5.</h5>
+<p>Calculate the effective annual rate for a nominal 8% compounded
+quarterly.</p>
+<h5 id="think-sketch-verify.-4">Think, sketch, verify.</h5>
+<p>Before using software, predict the direction of change, important
+intercepts or asymptotes, and whether the result is physically
+meaningful. Then use a table or graph to test your prediction.</p>
+<h2 id="logarithms-as-inverse-functions">Logarithms as inverse
+functions</h2>
+<p>For <span class="math inline">\(a&gt;0\)</span> and <span class="math inline">\(a\ne1\)</span>, <span class="math inline">\(\log_a(x)=y\)</span> means exactly <span class="math inline">\(a^y=x\)</span>. The logarithm is defined only for
+<span class="math inline">\(x&gt;0\)</span> and can return any real
+value. The graph of <span class="math inline">\(\log_a x\)</span> is the
+reflection of <span class="math inline">\(a^x\)</span> across <span class="math inline">\(y=x\)</span>; its vertical asymptote is <span class="math inline">\(x=0\)</span>. The inverse identities are <span class="math inline">\(a^{\log_a x}=x\)</span> for <span class="math inline">\(x&gt;0\)</span> and <span class="math inline">\(\log_a(a^x)=x\)</span> for all real <span class="math inline">\(x\)</span>.</p>
+<blockquote class="example">
+<p><strong>Example 6: Logarithms as inverse functions.</strong> Evaluate
+<span class="math inline">\(\log_2(32)\)</span> and <span class="math inline">\(\log_3(1/9)\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> Since <span class="math inline">\(2^5=32\)</span>, <span class="math inline">\(\log_2(32)=5\)</span>. Since <span class="math inline">\(3^{-2}=1/9\)</span>, <span class="math inline">\(\log_3(1/9)=-2\)</span>.</p>
+</blockquote>
+<h5 id="guided-practice-6.">Guided practice 6.</h5>
+<p>Rewrite <span class="math inline">\(\log_5(125)=3\)</span>
+exponentially and evaluate <span class="math inline">\(\log_{10}(0.001)\)</span>.</p>
+<h5 id="think-sketch-verify.-5">Think, sketch, verify.</h5>
+<p>Before using software, predict the direction of change, important
+intercepts or asymptotes, and whether the result is physically
+meaningful. Then use a table or graph to test your prediction.</p>
+<h2 id="common-logarithms-natural-logarithms-and-change-of-base">Common
+logarithms, natural logarithms, and change of base</h2>
+<p>The common logarithm is <span class="math inline">\(\log
+x=\log_{10}x\)</span> and the natural logarithm is <span class="math inline">\(\ln x=\log_e x\)</span>. Calculators and software
+usually provide both. For any valid bases, <span class="math inline">\(\log_a x=\ln x/\ln a\)</span>. This is the
+change-of-base formula. Logarithmic axes can reveal multiplicative
+patterns, but a straight line on a semilog plot does not prove the model
+is scientifically appropriate.</p>
+<blockquote class="example">
+<p><strong>Example 7: Common logarithms, natural logarithms, and change
+of base.</strong> Approximate <span class="math inline">\(\log_2(7)\)</span> using natural logarithms.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> <span class="math inline">\(\log_2(7)=\ln7/\ln2\approx2.8074\)</span>. Because
+<span class="math inline">\(2^2&lt;7&lt;2^3\)</span>, the result should
+lie between 2 and 3.</p>
+</blockquote>
+<h5 id="guided-practice-7.">Guided practice 7.</h5>
+<p>Approximate <span class="math inline">\(\log_3(20)\)</span> to three
+decimals and bound the answer between consecutive integers.</p>
+<h5 id="think-sketch-verify.-6">Think, sketch, verify.</h5>
+<p>Before using software, predict the direction of change, important
+intercepts or asymptotes, and whether the result is physically
+meaningful. Then use a table or graph to test your prediction.</p>
+<h2 id="logarithm-laws-and-their-limitations">Logarithm laws and their
+limitations</h2>
+<p>For positive <span class="math inline">\(u,v\)</span> and valid base
+<span class="math inline">\(a\)</span>, <span class="math inline">\(\log_a(uv)=\log_a u+\log_a v\)</span>, <span class="math inline">\(\log_a(u/v)=\log_a u-\log_a v\)</span>, and <span class="math inline">\(\log_a(u^r)=r\log_a u\)</span> when the
+expressions are defined. There is <em>no</em> rule <span class="math inline">\(\log(u+v)=\log u+\log v\)</span>. When expanding
+logarithms of algebraic expressions, retain the original domain: for
+instance, <span class="math inline">\(\ln(x^2)\)</span> is defined for
+<span class="math inline">\(x\ne0\)</span>, and equals <span class="math inline">\(2\ln|x|\)</span>, not <span class="math inline">\(2\ln x\)</span> for all nonzero real <span class="math inline">\(x\)</span>.</p>
+<blockquote class="example">
+<p><strong>Example 8: Logarithm laws and their limitations.</strong>
+Expand <span class="math inline">\(\ln(5x^2/y)\)</span> for <span class="math inline">\(x\ne0\)</span> and <span class="math inline">\(y&gt;0\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> <span class="math inline">\(\ln(5x^2/y)=\ln5+2\ln|x|-\ln y\)</span>. The
+absolute value is essential for negative <span class="math inline">\(x\)</span>.</p>
+</blockquote>
+<h5 id="guided-practice-8.">Guided practice 8.</h5>
+<p>Condense <span class="math inline">\(2\ln x-\ln(x+1)\)</span> into
+one logarithm and state the domain.</p>
+<h5 id="think-sketch-verify.-7">Think, sketch, verify.</h5>
+<p>Before using software, predict the direction of change, important
+intercepts or asymptotes, and whether the result is physically
+meaningful. Then use a table or graph to test your prediction.</p>
+<h2 id="solving-exponential-equations">Solving exponential
+equations</h2>
+<p>When both sides can be expressed using the same positive base, equate
+exponents. Otherwise isolate the exponential term and take a logarithm.
+Keep units in the interpretation, and verify numerically. For <span class="math inline">\(A_0e^{kt}=T\)</span>, the time is <span class="math inline">\(t=\ln(T/A_0)/k\)</span>, provided <span class="math inline">\(A_0,T&gt;0\)</span> and <span class="math inline">\(k\ne0\)</span>. The sign of the resulting time
+should make sense in context.</p>
+<blockquote class="example">
+<p><strong>Example 9: Solving exponential equations.</strong> Solve
+<span class="math inline">\(3e^{0.4t}=12\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> Divide by 3 to obtain <span class="math inline">\(e^{0.4t}=4\)</span>. Take natural logs: <span class="math inline">\(0.4t=\ln4\)</span>, so <span class="math inline">\(t=\ln4/0.4\approx3.466\)</span>.</p>
+</blockquote>
+<h5 id="guided-practice-9.">Guided practice 9.</h5>
+<p>Solve <span class="math inline">\(250(0.8)^t=100\)</span> using
+logarithms, and check your answer by substitution.</p>
+<h5 id="think-sketch-verify.-8">Think, sketch, verify.</h5>
+<p>Before using software, predict the direction of change, important
+intercepts or asymptotes, and whether the result is physically
+meaningful. Then use a table or graph to test your prediction.</p>
+<h2 id="solving-logarithmic-equations">Solving logarithmic
+equations</h2>
+<p>Every logarithmic argument must be positive. Solve by combining
+logarithms when appropriate, converting to exponential form, and
+checking candidates in the <em>original</em> equation. Algebraic
+manipulation may produce extraneous roots. For example, <span class="math inline">\(\ln(x-1)+\ln(x+1)\)</span> requires <span class="math inline">\(x&gt;1\)</span>, even though the product <span class="math inline">\(x^2-1\)</span> is positive also when <span class="math inline">\(x&lt;-1\)</span>.</p>
+<blockquote class="example">
+<p><strong>Example 10: Solving logarithmic equations.</strong> Solve
+<span class="math inline">\(\ln(x-1)+\ln(x+1)=\ln8\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> The original domain requires <span class="math inline">\(x&gt;1\)</span>. Combining gives <span class="math inline">\(\ln(x^2-1)=\ln8\)</span>, so <span class="math inline">\(x^2=9\)</span>. Candidates are <span class="math inline">\(\pm3\)</span>, but only <span class="math inline">\(x=3\)</span> satisfies the domain and original
+equation.</p>
+</blockquote>
+<h5 id="guided-practice-10.">Guided practice 10.</h5>
+<p>Solve <span class="math inline">\(\log_2(x-2)=3\)</span> and state
+the domain before solving.</p>
+<h5 id="think-sketch-verify.-9">Think, sketch, verify.</h5>
+<p>Before using software, predict the direction of change, important
+intercepts or asymptotes, and whether the result is physically
+meaningful. Then use a table or graph to test your prediction.</p>
+<h2 id="doubling-time-and-half-life">Doubling time and half-life</h2>
+<p>For <span class="math inline">\(A(t)=A_0e^{kt}\)</span> with <span class="math inline">\(k&gt;0\)</span>, the doubling time is <span class="math inline">\(T_d=\ln2/k\)</span>. For <span class="math inline">\(k&lt;0\)</span>, the half-life is <span class="math inline">\(T_{1/2}=\ln2/|k|\)</span>. These times do not
+depend on the starting amount when the constant-rate exponential model
+applies. A half-life does not imply the amount becomes exactly zero
+after finitely many half-lives.</p>
+<blockquote class="example">
+<p><strong>Example 11: Doubling time and half-life.</strong> A
+medication concentration follows <span class="math inline">\(C(t)=24e^{-0.1733t}\)</span> mg/L. Estimate the
+half-life.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> <span class="math inline">\(T_{1/2}=\ln2/0.1733\approx4.00\)</span> hours.
+After about four hours the predicted concentration is 12 mg/L, assuming
+the model applies.</p>
+</blockquote>
+<h5 id="guided-practice-11.">Guided practice 11.</h5>
+<p>A culture grows as <span class="math inline">\(N(t)=500e^{0.12t}\)</span> with <span class="math inline">\(t\)</span> in hours. Compute its doubling
+time.</p>
+<h5 id="think-sketch-verify.-10">Think, sketch, verify.</h5>
+<p>Before using software, predict the direction of change, important
+intercepts or asymptotes, and whether the result is physically
+meaningful. Then use a table or graph to test your prediction.</p>
+<h2 id="fitting-an-exponential-model-from-two-observations">Fitting an
+exponential model from two observations</h2>
+<p>Suppose <span class="math inline">\(A(t)=A_0e^{kt}\)</span> and
+measurements <span class="math inline">\(A(t_1),A(t_2)\)</span> are
+positive. Taking a ratio gives <span class="math inline">\(A(t_2)/A(t_1)=e^{k(t_2-t_1)}\)</span>, so <span class="math inline">\(k=\ln[A(t_2)/A(t_1)]/(t_2-t_1)\)</span>. Then
+<span class="math inline">\(A_0=A(t_1)e^{-kt_1}\)</span>. Two
+observations determine a curve under the exponential assumption; they do
+not establish that the process is truly exponential.</p>
+<blockquote class="example">
+<p><strong>Example 12: Fitting an exponential model from two
+observations.</strong> A measured concentration is 40 mg/L at 0 hours
+and 10 mg/L at 6 hours. Find an exponential model.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> <span class="math inline">\(k=\ln(10/40)/6=\ln(1/4)/6\approx-0.2310\)</span>
+per hour. Thus <span class="math inline">\(C(t)=40e^{-0.2310t}\)</span>
+mg/L, with half-life about 3 hours.</p>
+</blockquote>
+<h5 id="guided-practice-12.">Guided practice 12.</h5>
+<p>A population rises from 300 to 450 in five days. Estimate <span class="math inline">\(k\)</span> and write a continuous-growth
+model.</p>
+<h5 id="think-sketch-verify.-11">Think, sketch, verify.</h5>
+<p>Before using software, predict the direction of change, important
+intercepts or asymptotes, and whether the result is physically
+meaningful. Then use a table or graph to test your prediction.</p>
+<h2 id="logarithmic-scales-and-scientific-measurements">Logarithmic
+scales and scientific measurements</h2>
+<p>Logarithmic scales compress wide ranges by recording powers or
+ratios. The pH scale is <span class="math inline">\(\mathrm{pH}=-\log_{10}([H^+]/(1\
+\mathrm{mol/L}))\)</span>, treating the concentration ratio as
+dimensionless in an introductory approximation. A one-unit pH decrease
+corresponds to ten times the hydrogen-ion concentration. In chemistry,
+activity rather than raw concentration is required for precise pH, so
+the simple formula is an instructional model.</p>
+<blockquote class="example">
+<p><strong>Example 13: Logarithmic scales and scientific
+measurements.</strong> Compare hydrogen-ion concentrations at pH 5 and
+pH 7 under the introductory concentration approximation.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> At pH 5, <span class="math inline">\([H^+]\approx10^{-5}\)</span> mol/L; at pH 7, <span class="math inline">\([H^+]\approx10^{-7}\)</span> mol/L. The first is
+100 times the second.</p>
+</blockquote>
+<h5 id="guided-practice-13.">Guided practice 13.</h5>
+<p>Under the same approximation, determine the pH of a solution with
+<span class="math inline">\([H^+]=2\times10^{-4}\)</span> mol/L.</p>
+<h5 id="think-sketch-verify.-12">Think, sketch, verify.</h5>
+<p>Before using software, predict the direction of change, important
+intercepts or asymptotes, and whether the result is physically
+meaningful. Then use a table or graph to test your prediction.</p>
+<h2 id="model-interpretation-assumptions-and-limitations">Model
+interpretation, assumptions, and limitations</h2>
+<p>Exponential growth cannot continue indefinitely in most biological
+settings because resources, competition, treatment changes, and other
+constraints intervene. An exponential decline may fail when a drug
+follows multiple compartments or nonlinear clearance. Check residual
+patterns, measurement uncertainty, time units, and whether predictions
+extrapolate beyond the observed interval. A model is a conditional
+description, not a guarantee.</p>
+<blockquote class="example">
+<p><strong>Example 14: Model interpretation, assumptions, and
+limitations.</strong> A model predicts that a culture doubles every two
+hours from 100 cells. What does it predict after 24 hours, and why
+should we be cautious?</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> The prediction is <span class="math inline">\(100\cdot2^{12}=409{,}600\)</span> cells. It
+assumes an unchanged doubling time over 12 cycles; limited nutrients and
+space may invalidate this assumption.</p>
+</blockquote>
+<h5 id="guided-practice-14.">Guided practice 14.</h5>
+<p>Explain why a drug-decay model fitted over 0–8 hours may not reliably
+predict concentrations after 10 days.</p>
+<h5 id="think-sketch-verify.-13">Think, sketch, verify.</h5>
+<p>Before using software, predict the direction of change, important
+intercepts or asymptotes, and whether the result is physically
+meaningful. Then use a table or graph to test your prediction.</p>
+<h2 id="visual-investigation-i-linear-versus-exponential-change">Visual
+investigation I: linear versus exponential change</h2>
+<p>Consider <span class="math inline">\(L(t)=100+20t\)</span> and <span class="math inline">\(E(t)=100(1.2)^t\)</span>. Both start at 100, but
+the first adds 20 each step and the second adds 20% of its current
+amount. Complete the table, sketch both curves, and explain why the two
+models agree at <span class="math inline">\(t=0\)</span> and <span class="math inline">\(t=1\)</span> but diverge thereafter.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(t\)</span></th>
+<th style="text-align: right;">0</th>
+<th style="text-align: right;">1</th>
+<th style="text-align: right;">2</th>
+<th style="text-align: right;">3</th>
+<th style="text-align: right;">4</th>
+<th style="text-align: right;">5</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(L(t)\)</span></td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">120</td>
+<td style="text-align: right;">140</td>
+<td style="text-align: right;">160</td>
+<td style="text-align: right;">180</td>
+<td style="text-align: right;">200</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(E(t)\)</span></td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">120</td>
+<td style="text-align: right;">144</td>
+<td style="text-align: right;">172.8</td>
+<td style="text-align: right;">207.36</td>
+<td style="text-align: right;">248.832</td>
+</tr>
+</tbody>
+</table>
+<figure>
+<img alt="image" src="figures/precompiled/chapter07-01.svg"/>
+<figcaption aria-hidden="true">image</figcaption>
+</figure>
+<h5 id="investigation-prompts.">Investigation prompts.</h5>
+<p>Which model has constant first differences? Which has constant
+successive ratios? At what time does the exponential prediction first
+exceed the linear prediction by at least 20 units? Estimate from the
+graph, then verify numerically.</p>
+<h2 id="visual-investigation-ii-growth-decay-and-horizontal-asymptotes">Visual
+investigation II: growth, decay, and horizontal asymptotes</h2>
+<p>The graphs of <span class="math inline">\(2^x\)</span>, <span class="math inline">\((1/2)^x\)</span>, and <span class="math inline">\(2^x-3\)</span> show how the base and vertical
+shift affect monotonicity, range, and asymptotes. Record the <span class="math inline">\(y\)</span>-intercept and range of each curve.
+Describe what happens as <span class="math inline">\(x\to-\infty\)</span> and <span class="math inline">\(x\to+\infty\)</span>.</p>
+<figure>
+<img alt="image" src="figures/precompiled/chapter07-02.svg"/>
+<figcaption aria-hidden="true">image</figcaption>
+</figure>
+<h2 id="visual-investigation-iii-inverse-graphs">Visual investigation
+III: inverse graphs</h2>
+<p>Plot <span class="math inline">\(y=2^x\)</span>, <span class="math inline">\(y=\log_2 x\)</span>, and <span class="math inline">\(y=x\)</span>. The first two are reflections across
+the diagonal. Make a table of matching points: <span class="math inline">\((0,1)\)</span> on the exponential becomes <span class="math inline">\((1,0)\)</span> on the logarithm; <span class="math inline">\((3,8)\)</span> becomes <span class="math inline">\((8,3)\)</span>. Why does the logarithm have a
+vertical rather than horizontal asymptote?</p>
+<figure>
+<img alt="image" src="figures/precompiled/chapter07-03.svg"/>
+<figcaption aria-hidden="true">image</figcaption>
+</figure>
+<h2 id="visual-investigation-iv-interpreting-a-semilog-plot">Visual
+investigation IV: interpreting a semilog plot</h2>
+<p>Suppose <span class="math inline">\(C(t)=50e^{-0.25t}\)</span>.
+Taking natural logs gives <span class="math inline">\(\ln
+C(t)=\ln50-0.25t\)</span>. Therefore a plot of <span class="math inline">\(\ln C\)</span> against <span class="math inline">\(t\)</span> is a line with slope <span class="math inline">\(-0.25\)</span>. Calculate concentrations at <span class="math inline">\(t=0,2,4,6,8\)</span>; graph both <span class="math inline">\(C(t)\)</span> and <span class="math inline">\(\ln
+C(t)\)</span>; then explain how the slope of the transformed plot
+relates to the original model. <em>Do not take a logarithm of a
+nonpositive measurement.</em></p>
+<h2 id="extended-workshop-a-medication-elimination">Extended workshop A:
+medication elimination</h2>
+<p>A hypothetical medication has concentration <span class="math inline">\(C(t)=32e^{-0.18t}\)</span> mg/L, with time in
+hours. (a) Find <span class="math inline">\(C(0)\)</span> and <span class="math inline">\(C(6)\)</span>. (b) Determine the half-life. (c)
+Find when the model first predicts <span class="math inline">\(C(t)=5\)</span> mg/L. (d) Interpret the units and
+discuss why a single exponential may not describe all patients.<br/>
+<strong>Worked solution.</strong> <span class="math inline">\(C(0)=32\)</span> mg/L; <span class="math inline">\(C(6)=32e^{-1.08}\approx10.87\)</span> mg/L. The
+half-life is <span class="math inline">\(\ln2/0.18\approx3.85\)</span>
+hours. Solving <span class="math inline">\(32e^{-0.18t}=5\)</span> gives
+<span class="math inline">\(t=\ln(32/5)/0.18\approx10.31\)</span> hours.
+This is a mathematical prediction, not medical dosing advice.</p>
+<h2 id="extended-workshop-b-microbial-growth-and-model-breakdown">Extended
+workshop B: microbial growth and model breakdown</h2>
+<p>A culture starts at 250 cells and is observed to reach 400 cells
+after three hours. Assume exponential growth for the exercise. (a)
+Estimate <span class="math inline">\(k\)</span>. (b) Predict the amount
+at six hours. (c) Find doubling time. (d) Explain why extrapolation to a
+month is unreasonable.<br/>
+<strong>Worked solution.</strong> <span class="math inline">\(k=\ln(400/250)/3\approx0.1567\)</span> per hour.
+The six-hour prediction is <span class="math inline">\(250e^{6k}=250(1.6)^2=640\)</span> cells. Doubling
+time is <span class="math inline">\(\ln2/k\approx4.42\)</span> hours.
+Nutrient limits and changing growth phases can invalidate the long-term
+model.</p>
+<h2 id="extended-workshop-c-logarithmic-interpretation">Extended
+workshop C: logarithmic interpretation</h2>
+<p>Under the introductory concentration-based pH approximation, compare
+solutions with <span class="math inline">\([H^+]=10^{-3}\)</span> mol/L
+and <span class="math inline">\([H^+]=10^{-5}\)</span> mol/L. Compute
+pH, concentration ratio, and the effect of a tenfold dilution of the
+first solution (assuming the simple concentration model remains
+applicable).<br/>
+<strong>Worked solution.</strong> Their pH values are 3 and 5; the first
+has 100 times the hydrogen-ion concentration of the second. A tenfold
+dilution changes <span class="math inline">\(10^{-3}\)</span> to <span class="math inline">\(10^{-4}\)</span> mol/L, corresponding to pH 4
+under the stated approximation.</p>
+<h2 id="computational-laboratory-a-exponential-growth-and-decay">Computational
+laboratory A: exponential growth and decay</h2>
+<p><strong>Purpose.</strong> Compare linear and exponential
+trajectories, generate a graph, and interpret the difference between
+fixed increments and fixed percentages. Run the R listing first, then
+the Python listing. Both scripts are standalone and require no input
+files.</p>
+<h3 class="unnumbered" id="r-code">R code</h3>
+<div class="code-shell"><div class="code-bar"><span>R</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a aria-hidden="true" href="#cb1-1" tabindex="-1"></a><span class="co"># LAB A: Linear and exponential change</span></span>
+<span id="cb1-2"><a aria-hidden="true" href="#cb1-2" tabindex="-1"></a>period <span class="ot">&lt;-</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">10</span></span>
+<span id="cb1-3"><a aria-hidden="true" href="#cb1-3" tabindex="-1"></a>linear <span class="ot">&lt;-</span> <span class="dv">100</span> <span class="sc">+</span> <span class="dv">20</span> <span class="sc">*</span> period</span>
+<span id="cb1-4"><a aria-hidden="true" href="#cb1-4" tabindex="-1"></a>exponential <span class="ot">&lt;-</span> <span class="dv">100</span> <span class="sc">*</span> <span class="fl">1.2</span><span class="sc">^</span>period</span>
+<span id="cb1-5"><a aria-hidden="true" href="#cb1-5" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(period, linear, exponential)</span>
+<span id="cb1-6"><a aria-hidden="true" href="#cb1-6" tabindex="-1"></a><span class="fu">print</span>(results)</span>
+<span id="cb1-7"><a aria-hidden="true" href="#cb1-7" tabindex="-1"></a><span class="fu">plot</span>(period, exponential, <span class="at">type =</span> <span class="st">"b"</span>, <span class="at">col =</span> <span class="st">"blue"</span>, <span class="at">pch =</span> <span class="dv">19</span>,</span>
+<span id="cb1-8"><a aria-hidden="true" href="#cb1-8" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Period"</span>, <span class="at">ylab =</span> <span class="st">"Amount"</span>, <span class="at">main =</span> <span class="st">"Change models"</span>)</span>
+<span id="cb1-9"><a aria-hidden="true" href="#cb1-9" tabindex="-1"></a><span class="fu">lines</span>(period, linear, <span class="at">type =</span> <span class="st">"b"</span>, <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">pch =</span> <span class="dv">17</span>)</span>
+<span id="cb1-10"><a aria-hidden="true" href="#cb1-10" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">"topleft"</span>, <span class="at">legend =</span> <span class="fu">c</span>(<span class="st">"Exponential"</span>, <span class="st">"Linear"</span>),</span>
+<span id="cb1-11"><a aria-hidden="true" href="#cb1-11" tabindex="-1"></a>       <span class="at">col =</span> <span class="fu">c</span>(<span class="st">"blue"</span>, <span class="st">"red"</span>), <span class="at">lty =</span> <span class="dv">1</span>, <span class="at">pch =</span> <span class="fu">c</span>(<span class="dv">19</span>, <span class="dv">17</span>))</span>
+<span id="cb1-12"><a aria-hidden="true" href="#cb1-12" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"At t=5:"</span>, exponential[<span class="dv">6</span>], <span class="st">"versus"</span>, linear[<span class="dv">6</span>], <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb1-13"><a aria-hidden="true" href="#cb1-13" tabindex="-1"></a><span class="co"># End laboratory A</span></span>
+<span id="cb1-14"><a aria-hidden="true" href="#cb1-14" tabindex="-1"></a></span>
+<span id="cb1-15"><a aria-hidden="true" href="#cb1-15" tabindex="-1"></a><span class="co"># LAB B: Half-life and inverse calculation</span></span></code></pre></div></div>
+<h3 class="unnumbered" id="python-code">Python code</h3>
+<div class="code-shell"><div class="code-bar"><span>Python</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" href="#cb2-1" tabindex="-1"></a><span class="co"># LAB A: Linear and exponential change</span></span>
+<span id="cb2-2"><a aria-hidden="true" href="#cb2-2" tabindex="-1"></a><span class="im">import</span> math</span>
+<span id="cb2-3"><a aria-hidden="true" href="#cb2-3" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-4"><a aria-hidden="true" href="#cb2-4" tabindex="-1"></a>period <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">11</span>))</span>
+<span id="cb2-5"><a aria-hidden="true" href="#cb2-5" tabindex="-1"></a>linear <span class="op">=</span> [<span class="dv">100</span> <span class="op">+</span> <span class="dv">20</span> <span class="op">*</span> t <span class="cf">for</span> t <span class="kw">in</span> period]</span>
+<span id="cb2-6"><a aria-hidden="true" href="#cb2-6" tabindex="-1"></a>exponential <span class="op">=</span> [<span class="dv">100</span> <span class="op">*</span> <span class="fl">1.2</span><span class="op">**</span>t <span class="cf">for</span> t <span class="kw">in</span> period]</span>
+<span id="cb2-7"><a aria-hidden="true" href="#cb2-7" tabindex="-1"></a><span class="cf">for</span> t, l, e <span class="kw">in</span> <span class="bu">zip</span>(period, linear, exponential):</span>
+<span id="cb2-8"><a aria-hidden="true" href="#cb2-8" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"t=</span><span class="sc">{</span>t<span class="sc">:2d}</span><span class="ss">: linear=</span><span class="sc">{</span>l<span class="sc">:.2f}</span><span class="ss">, exponential=</span><span class="sc">{</span>e<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb2-9"><a aria-hidden="true" href="#cb2-9" tabindex="-1"></a>plt.figure()</span>
+<span id="cb2-10"><a aria-hidden="true" href="#cb2-10" tabindex="-1"></a>plt.plot(period, exponential, <span class="st">"o-"</span>, label<span class="op">=</span><span class="st">"Exponential"</span>)</span>
+<span id="cb2-11"><a aria-hidden="true" href="#cb2-11" tabindex="-1"></a>plt.plot(period, linear, <span class="st">"s-"</span>, label<span class="op">=</span><span class="st">"Linear"</span>)</span>
+<span id="cb2-12"><a aria-hidden="true" href="#cb2-12" tabindex="-1"></a>plt.xlabel(<span class="st">"Period"</span>)</span>
+<span id="cb2-13"><a aria-hidden="true" href="#cb2-13" tabindex="-1"></a>plt.ylabel(<span class="st">"Amount"</span>)</span>
+<span id="cb2-14"><a aria-hidden="true" href="#cb2-14" tabindex="-1"></a>plt.title(<span class="st">"Change models"</span>)</span>
+<span id="cb2-15"><a aria-hidden="true" href="#cb2-15" tabindex="-1"></a>plt.legend()</span>
+<span id="cb2-16"><a aria-hidden="true" href="#cb2-16" tabindex="-1"></a>plt.savefig(<span class="st">"chapter07_models.png"</span>, dpi<span class="op">=</span><span class="dv">180</span>)</span>
+<span id="cb2-17"><a aria-hidden="true" href="#cb2-17" tabindex="-1"></a>plt.close()</span></code></pre></div></div>
+<h5 id="interpretation.">Interpretation.</h5>
+<p>Which model is larger at <span class="math inline">\(t=5\)</span>?
+What changes if the growth rate is reduced from 20% to 5%?</p>
+<h2 id="computational-laboratory-b-half-life-and-inverse-calculations">Computational
+laboratory B: half-life and inverse calculations</h2>
+<p><strong>Purpose.</strong> Use logarithms to determine the time
+required to cross a target concentration, and check by substituting into
+the original model.</p>
+<h3 class="unnumbered" id="r-code-1">R code</h3>
+<div class="code-shell"><div class="code-bar"><span>R</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a aria-hidden="true" href="#cb3-1" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="fl">0.18</span></span>
+<span id="cb3-2"><a aria-hidden="true" href="#cb3-2" tabindex="-1"></a>target <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb3-3"><a aria-hidden="true" href="#cb3-3" tabindex="-1"></a>half_life <span class="ot">&lt;-</span> <span class="fu">log</span>(<span class="dv">2</span>) <span class="sc">/</span> k</span>
+<span id="cb3-4"><a aria-hidden="true" href="#cb3-4" tabindex="-1"></a>time_to_target <span class="ot">&lt;-</span> <span class="fu">log</span>(C0 <span class="sc">/</span> target) <span class="sc">/</span> k</span>
+<span id="cb3-5"><a aria-hidden="true" href="#cb3-5" tabindex="-1"></a>check <span class="ot">&lt;-</span> C0 <span class="sc">*</span> <span class="fu">exp</span>(<span class="sc">-</span>k <span class="sc">*</span> time_to_target)</span>
+<span id="cb3-6"><a aria-hidden="true" href="#cb3-6" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">c</span>(<span class="at">half_life =</span> half_life, <span class="at">time_to_target =</span> time_to_target,</span>
+<span id="cb3-7"><a aria-hidden="true" href="#cb3-7" tabindex="-1"></a>        <span class="at">checked_concentration =</span> check))</span>
+<span id="cb3-8"><a aria-hidden="true" href="#cb3-8" tabindex="-1"></a><span class="co"># End laboratory B</span></span>
+<span id="cb3-9"><a aria-hidden="true" href="#cb3-9" tabindex="-1"></a></span>
+<span id="cb3-10"><a aria-hidden="true" href="#cb3-10" tabindex="-1"></a><span class="co"># LAB C: Log-linear fitting and residual inspection</span></span></code></pre></div></div>
+<h3 class="unnumbered" id="python-code-1">Python code</h3>
+<div class="code-shell"><div class="code-bar"><span>Python</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" href="#cb4-1" tabindex="-1"></a></span>
+<span id="cb4-2"><a aria-hidden="true" href="#cb4-2" tabindex="-1"></a><span class="co"># LAB B: Half-life and inverse calculation</span></span>
+<span id="cb4-3"><a aria-hidden="true" href="#cb4-3" tabindex="-1"></a>C0 <span class="op">=</span> <span class="dv">32</span></span>
+<span id="cb4-4"><a aria-hidden="true" href="#cb4-4" tabindex="-1"></a>k <span class="op">=</span> <span class="fl">0.18</span></span>
+<span id="cb4-5"><a aria-hidden="true" href="#cb4-5" tabindex="-1"></a>target <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb4-6"><a aria-hidden="true" href="#cb4-6" tabindex="-1"></a>half_life <span class="op">=</span> math.log(<span class="dv">2</span>) <span class="op">/</span> k</span>
+<span id="cb4-7"><a aria-hidden="true" href="#cb4-7" tabindex="-1"></a>time_to_target <span class="op">=</span> math.log(C0 <span class="op">/</span> target) <span class="op">/</span> k</span>
+<span id="cb4-8"><a aria-hidden="true" href="#cb4-8" tabindex="-1"></a>check <span class="op">=</span> C0 <span class="op">*</span> math.exp(<span class="op">-</span>k <span class="op">*</span> time_to_target)</span>
+<span id="cb4-9"><a aria-hidden="true" href="#cb4-9" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Half-life:"</span>, <span class="bu">round</span>(half_life, <span class="dv">4</span>))</span>
+<span id="cb4-10"><a aria-hidden="true" href="#cb4-10" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Time to target:"</span>, <span class="bu">round</span>(time_to_target, <span class="dv">4</span>))</span></code></pre></div></div>
+<h5 id="interpretation.-1">Interpretation.</h5>
+<p>Explain why the logarithm of the ratio <span class="math inline">\(C_0/C_{\rm target}\)</span> is dimensionless.</p>
+<h2 id="computational-laboratory-c-fitting-a-model-and-checking-residuals">Computational
+laboratory C: fitting a model and checking residuals</h2>
+<p><strong>Purpose.</strong> Estimate an exponential model from
+observations, visualize measured versus predicted values, and inspect
+residuals. This is an exploratory fit, not a claim of causal
+mechanism.</p>
+<h3 class="unnumbered" id="r-code-2">R code</h3>
+<div class="code-shell"><div class="code-bar"><span>R</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a aria-hidden="true" href="#cb5-1" tabindex="-1"></a>measured <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">40</span>, <span class="dv">26</span>, <span class="dv">17</span>, <span class="fl">10.8</span>, <span class="fl">7.4</span>)</span>
+<span id="cb5-2"><a aria-hidden="true" href="#cb5-2" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="fu">log</span>(measured) <span class="sc">~</span> time)</span>
+<span id="cb5-3"><a aria-hidden="true" href="#cb5-3" tabindex="-1"></a>intercept <span class="ot">&lt;-</span> <span class="fu">coef</span>(fit)[<span class="dv">1</span>]</span>
+<span id="cb5-4"><a aria-hidden="true" href="#cb5-4" tabindex="-1"></a>rate <span class="ot">&lt;-</span> <span class="fu">coef</span>(fit)[<span class="dv">2</span>]</span>
+<span id="cb5-5"><a aria-hidden="true" href="#cb5-5" tabindex="-1"></a>predicted <span class="ot">&lt;-</span> <span class="fu">exp</span>(<span class="fu">predict</span>(fit))</span>
+<span id="cb5-6"><a aria-hidden="true" href="#cb5-6" tabindex="-1"></a>residual <span class="ot">&lt;-</span> measured <span class="sc">-</span> predicted</span>
+<span id="cb5-7"><a aria-hidden="true" href="#cb5-7" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">data.frame</span>(time, measured, predicted, residual))</span>
+<span id="cb5-8"><a aria-hidden="true" href="#cb5-8" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Estimated A0:"</span>, <span class="fu">exp</span>(intercept), <span class="st">"rate:"</span>, rate, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb5-9"><a aria-hidden="true" href="#cb5-9" tabindex="-1"></a><span class="fu">plot</span>(time, measured, <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">xlab =</span> <span class="st">"Time (hours)"</span>,</span>
+<span id="cb5-10"><a aria-hidden="true" href="#cb5-10" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"Concentration (mg/L)"</span>, <span class="at">main =</span> <span class="st">"Exponential fit"</span>)</span>
+<span id="cb5-11"><a aria-hidden="true" href="#cb5-11" tabindex="-1"></a><span class="fu">lines</span>(time, predicted, <span class="at">col =</span> <span class="st">"blue"</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span>
+<span id="cb5-12"><a aria-hidden="true" href="#cb5-12" tabindex="-1"></a><span class="fu">plot</span>(time, residual, <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">xlab =</span> <span class="st">"Time (hours)"</span>,</span>
+<span id="cb5-13"><a aria-hidden="true" href="#cb5-13" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"Observed - predicted"</span>, <span class="at">main =</span> <span class="st">"Residuals"</span>)</span>
+<span id="cb5-14"><a aria-hidden="true" href="#cb5-14" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="dv">0</span>, <span class="at">lty =</span> <span class="dv">2</span>)</span>
+<span id="cb5-15"><a aria-hidden="true" href="#cb5-15" tabindex="-1"></a><span class="co"># End laboratory C</span></span></code></pre></div></div>
+<h3 class="unnumbered" id="python-code-2">Python code</h3>
+<div class="code-shell"><div class="code-bar"><span>Python</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a aria-hidden="true" href="#cb6-1" tabindex="-1"></a><span class="co"># End laboratory B</span></span>
+<span id="cb6-2"><a aria-hidden="true" href="#cb6-2" tabindex="-1"></a></span>
+<span id="cb6-3"><a aria-hidden="true" href="#cb6-3" tabindex="-1"></a><span class="co"># LAB C: Log-linear fitting and residual inspection</span></span>
+<span id="cb6-4"><a aria-hidden="true" href="#cb6-4" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb6-5"><a aria-hidden="true" href="#cb6-5" tabindex="-1"></a>time <span class="op">=</span> np.array([<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>], dtype<span class="op">=</span><span class="bu">float</span>)</span>
+<span id="cb6-6"><a aria-hidden="true" href="#cb6-6" tabindex="-1"></a>measured <span class="op">=</span> np.array([<span class="dv">40</span>, <span class="dv">26</span>, <span class="dv">17</span>, <span class="fl">10.8</span>, <span class="fl">7.4</span>], dtype<span class="op">=</span><span class="bu">float</span>)</span>
+<span id="cb6-7"><a aria-hidden="true" href="#cb6-7" tabindex="-1"></a>rate, intercept <span class="op">=</span> np.polyfit(time, np.log(measured), <span class="dv">1</span>)</span>
+<span id="cb6-8"><a aria-hidden="true" href="#cb6-8" tabindex="-1"></a>predicted <span class="op">=</span> np.exp(intercept <span class="op">+</span> rate <span class="op">*</span> time)</span>
+<span id="cb6-9"><a aria-hidden="true" href="#cb6-9" tabindex="-1"></a>residual <span class="op">=</span> measured <span class="op">-</span> predicted</span>
+<span id="cb6-10"><a aria-hidden="true" href="#cb6-10" tabindex="-1"></a><span class="cf">for</span> t, observed, fitted, error <span class="kw">in</span> <span class="bu">zip</span>(time, measured, predicted, residual):</span>
+<span id="cb6-11"><a aria-hidden="true" href="#cb6-11" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>t<span class="sc">:.0f}</span><span class="ss">: observed=</span><span class="sc">{</span>observed<span class="sc">:.2f}</span><span class="ss">, predicted=</span><span class="sc">{</span>fitted<span class="sc">:.2f}</span><span class="ss">, residual=</span><span class="sc">{</span>error<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb6-12"><a aria-hidden="true" href="#cb6-12" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Estimated A0:"</span>, <span class="bu">round</span>(math.exp(intercept), <span class="dv">4</span>), <span class="st">"rate:"</span>, <span class="bu">round</span>(rate, <span class="dv">4</span>))</span>
+<span id="cb6-13"><a aria-hidden="true" href="#cb6-13" tabindex="-1"></a>plt.figure()</span>
+<span id="cb6-14"><a aria-hidden="true" href="#cb6-14" tabindex="-1"></a>plt.plot(time, measured, <span class="st">"o"</span>, label<span class="op">=</span><span class="st">"Observed"</span>)</span>
+<span id="cb6-15"><a aria-hidden="true" href="#cb6-15" tabindex="-1"></a>plt.plot(time, predicted, <span class="st">"-"</span>, label<span class="op">=</span><span class="st">"Fitted"</span>)</span>
+<span id="cb6-16"><a aria-hidden="true" href="#cb6-16" tabindex="-1"></a>plt.xlabel(<span class="st">"Time (hours)"</span>)</span>
+<span id="cb6-17"><a aria-hidden="true" href="#cb6-17" tabindex="-1"></a>plt.ylabel(<span class="st">"Concentration (mg/L)"</span>)</span>
+<span id="cb6-18"><a aria-hidden="true" href="#cb6-18" tabindex="-1"></a>plt.legend()</span></code></pre></div></div>
+<h5 id="interpretation.-2">Interpretation.</h5>
+<p>A fitted straight line in log-space corresponds to multiplicative
+errors on the original scale. What pattern in residuals might make you
+question the model?</p>
+<h2 id="calculus-readiness-instantaneous-change">Calculus readiness:
+instantaneous change</h2>
+<p>For <span class="math inline">\(A(t)=A_0e^{kt}\)</span>, the average
+rate of change over <span class="math inline">\([t,t+h]\)</span> is
+<span class="math inline">\([A(t+h)-A(t)]/h=A_0e^{kt}(e^{kh}-1)/h\)</span>. As
+<span class="math inline">\(h\)</span> approaches zero, this expression
+approaches <span class="math inline">\(kA(t)\)</span>; calculus will
+establish this limit rigorously. For a decay model <span class="math inline">\(k&lt;0\)</span>, the instantaneous rate is
+negative and its magnitude decreases as the amount declines. Compare
+average rates using <span class="math inline">\(h=1,0.1,0.01\)</span>
+and predict the limiting value.</p>
+<h2 id="guided-problem-solving-clinic-choosing-the-right-method">Guided
+problem-solving clinic: choosing the right method</h2>
+<h3 class="unnumbered" id="case-1-identifying-a-model-from-a-table">Case
+1: Identifying a model from a table</h3>
+<p>Consider the observations <span class="math inline">\(100,130,169,219.7\)</span> at times <span class="math inline">\(0,1,2,3\)</span>. Subtract successive entries and
+compare the differences: <span class="math inline">\(30,39,50.7\)</span>
+are not constant. Now divide successive entries: each ratio is <span class="math inline">\(1.3\)</span>. Thus <span class="math inline">\(A(t)=100(1.3)^t\)</span> is an exact model for the
+table. Explain why the data alone do not guarantee the same rate in
+future periods.</p>
+<h5 id="your-turn.">Your turn.</h5>
+<p>A second sequence is <span class="math inline">\(500,425,361.25,307.0625\)</span>. Determine the
+common ratio and write a model. Estimate the first period at which the
+value falls below 200.</p>
+<h3 class="unnumbered" id="case-2-an-exponential-equation-with-a-baseline">Case 2: An
+exponential equation with a baseline</h3>
+<p>Suppose a response is modeled by <span class="math inline">\(R(t)=8+40e^{-0.3t}\)</span>. Find the time when
+<span class="math inline">\(R(t)=18\)</span>. First subtract the
+baseline: <span class="math inline">\(10=40e^{-0.3t}\)</span>. Divide by
+40: <span class="math inline">\(1/4=e^{-0.3t}\)</span>. Take logarithms:
+<span class="math inline">\(-0.3t=\ln(1/4)\)</span>. Therefore <span class="math inline">\(t=\ln4/0.3\approx4.62\)</span>. The response
+approaches 8 but never reaches 8 at finite time.</p>
+<h5 id="your-turn.-1">Your turn.</h5>
+<p>Solve <span class="math inline">\(5+25e^{-0.4t}=10\)</span>. Why
+would setting <span class="math inline">\(25e^{-0.4t}=10\)</span> be
+incorrect?</p>
+<h3 class="unnumbered" id="case-3-checking-a-logarithmic-solution">Case
+3: Checking a logarithmic solution</h3>
+<p>Solve <span class="math inline">\(\log_3(x+1)+\log_3(x-1)=2\)</span>.
+The original domain is <span class="math inline">\(x&gt;1\)</span>.
+Combine logs: <span class="math inline">\(\log_3(x^2-1)=2\)</span>.
+Convert: <span class="math inline">\(x^2-1=9\)</span>, so <span class="math inline">\(x=\pm\sqrt{10}\)</span>. Only <span class="math inline">\(x=\sqrt{10}\)</span> is in the original domain.
+Substituting confirms that <span class="math inline">\((x+1)(x-1)=9\)</span>.</p>
+<h5 id="your-turn.-2">Your turn.</h5>
+<p>Solve <span class="math inline">\(\ln(x-2)+\ln x=\ln15\)</span> with
+a complete domain check.</p>
+<h3 class="unnumbered" id="case-4-model-parameters-from-a-half-life">Case 4: Model parameters
+from a half-life</h3>
+<p>Suppose a tracer has a half-life of 9 hours and an initial amount of
+75 units. The factor after <span class="math inline">\(t\)</span> hours
+is <span class="math inline">\(2^{-t/9}\)</span>, so <span class="math inline">\(A(t)=75\cdot2^{-t/9}=75e^{-(\ln2/9)t}\)</span>.
+Both forms describe the same model. At 18 hours, two half-lives have
+elapsed and the predicted amount is <span class="math inline">\(75/4=18.75\)</span> units.</p>
+<h5 id="your-turn.-3">Your turn.</h5>
+<p>Write a model for an initial 120 mg with half-life 6 hours. Find the
+predicted amount after 15 hours and the time required to reach 10
+mg.</p>
+<h2 id="further-visual-investigation-parameter-sensitivity">Further
+visual investigation: parameter sensitivity</h2>
+<p>Compare <span class="math inline">\(C_1(t)=30e^{-0.1t}\)</span>,
+<span class="math inline">\(C_2(t)=30e^{-0.2t}\)</span>, and <span class="math inline">\(C_3(t)=30e^{-0.4t}\)</span> for <span class="math inline">\(0\le t\le15\)</span>. All share an initial value
+of 30, but their rates and half-lives differ. Before plotting, rank
+their concentrations at <span class="math inline">\(t=10\)</span> and
+their half-lives. After plotting, explain why a steeper early decline
+corresponds to a shorter half-life.</p>
+<figure>
+<img alt="image" src="figures/precompiled/chapter07-04.svg"/>
+<figcaption aria-hidden="true">image</figcaption>
+</figure>
+<h5 id="interpretation-prompts.">Interpretation prompts.</h5>
+<p>Explain what happens to the predicted concentration as <span class="math inline">\(t\to\infty\)</span>. Why is the model’s zero
+asymptote not a statement that the drug is measurable forever? How might
+a detection threshold affect the practical interpretation?</p>
+<h2 id="chapter-review-exercises">Chapter review exercises</h2>
+<ol type="1">
+<li><p>A quantity grows by 7% per month from 400. Write a model and find
+the value after eight months.</p></li>
+<li><p>A quantity declines by 9% per week from 900. Find the value after
+six weeks.</p></li>
+<li><p>Distinguish <span class="math inline">\(200+15t\)</span> from
+<span class="math inline">\(200(1.15)^t\)</span> using successive
+differences and ratios.</p></li>
+<li><p>Find the domain, range, intercept, and asymptote of <span class="math inline">\(f(x)=4^x\)</span>.</p></li>
+<li><p>Find the domain, range, and asymptote of <span class="math inline">\(g(x)=2\cdot3^{x+1}-5\)</span>.</p></li>
+<li><p>Explain why <span class="math inline">\((-2)^x\)</span> is not a
+real-valued exponential function on all of <span class="math inline">\(\mathbb R\)</span>.</p></li>
+<li><p>Evaluate <span class="math inline">\(\log_4 64\)</span>, <span class="math inline">\(\log_2(1/16)\)</span>, and <span class="math inline">\(\ln(e^{-3})\)</span>.</p></li>
+<li><p>Convert <span class="math inline">\(\log_7(49)=2\)</span> to
+exponential form.</p></li>
+<li><p>Compute <span class="math inline">\(\log_5(12)\)</span> using
+change of base.</p></li>
+<li><p>Expand <span class="math inline">\(\ln(3x^2/y)\)</span> with a
+mathematically correct domain statement.</p></li>
+<li><p>Condense <span class="math inline">\(\ln x+2\ln(x+2)\)</span>
+into one logarithm and give its domain.</p></li>
+<li><p>Explain with a numerical counterexample why <span class="math inline">\(\ln(a+b)\ne\ln a+\ln b\)</span> in
+general.</p></li>
+<li><p>Solve <span class="math inline">\(2^{x+1}=32\)</span>
+exactly.</p></li>
+<li><p>Solve <span class="math inline">\(7e^{0.3t}=20\)</span> and
+verify numerically.</p></li>
+<li><p>Solve <span class="math inline">\(100(0.85)^t=35\)</span> for
+<span class="math inline">\(t\)</span>.</p></li>
+<li><p>Solve <span class="math inline">\(\ln(x-4)=2\)</span> and check
+the domain.</p></li>
+<li><p>Solve <span class="math inline">\(\ln(x-1)+\ln(x+2)=\ln10\)</span> and reject
+invalid candidates.</p></li>
+<li><p>Determine the half-life for <span class="math inline">\(C(t)=60e^{-0.14t}\)</span>.</p></li>
+<li><p>Determine the doubling time for <span class="math inline">\(N(t)=120e^{0.06t}\)</span>.</p></li>
+<li><p>Find the exponential model through <span class="math inline">\((0,80)\)</span> and <span class="math inline">\((4,20)\)</span>.</p></li>
+<li><p>A culture grows from 600 to 750 in two hours. Estimate its
+continuous rate.</p></li>
+<li><p>Compute the amount after five years on <span class="math inline">\(\$2{,}000\)</span> at 4% compounded
+quarterly.</p></li>
+<li><p>Compare annual and continuous compounding at a nominal 5%
+rate.</p></li>
+<li><p>Under the simplified concentration-based pH formula, find pH when
+<span class="math inline">\([H^+]=4\times10^{-6}\)</span>
+mol/L.</p></li>
+<li><p>Two solutions differ by 3 pH units. What is their hydrogen-ion
+concentration ratio under the approximation?</p></li>
+<li><p>Interpret the slope and intercept of <span class="math inline">\(\ln C(t)=3.5-0.2t\)</span>.</p></li>
+<li><p>Make a table and graph comparing <span class="math inline">\(500+30t\)</span> and <span class="math inline">\(500(1.06)^t\)</span> for <span class="math inline">\(0\le t\le10\)</span>.</p></li>
+<li><p>Write R or Python code to compute a decay-model half-life and
+verify the half-value.</p></li>
+<li><p>Fit a two-point exponential model to observations <span class="math inline">\((0,30)\)</span> and <span class="math inline">\((6,12)\)</span>; explain a limitation.</p></li>
+<li><p>For <span class="math inline">\(A(t)=40e^{-0.1t}\)</span>,
+compute average rates on <span class="math inline">\([2,3]\)</span>,
+<span class="math inline">\([2,2.1]\)</span>, and <span class="math inline">\([2,2.01]\)</span>; predict the instantaneous rate
+at <span class="math inline">\(t=2\)</span>.</p></li>
+</ol>
+<h2 id="extended-application-decay-of-a-fluorescent-signal">Extended
+application: Decay of a fluorescent signal</h2>
+<p>A synthetic fluorescent signal starts at 80 units and retains 75
+percent of its intensity every hour. The quantities in this
+investigation are illustrative rather than measured observations.</p>
+<h3 id="formulating-the-mathematical-model">Formulating the mathematical
+model</h3>
+<p>The proposed relationship is <span class="math display">\[I(t)=80(0.75)^t.\]</span> Before calculating,
+identify the input and output, their units, and the interval on which
+the model is being studied. Distinguish the mathematical domain from the
+practical domain. The numerical study uses inputs from <span class="math inline">\(0\)</span> to <span class="math inline">\(12\)</span>.</p>
+<blockquote class="example">
+<p><strong>Example 15: Analytical investigation.</strong> Derive the
+half-life and the time at which intensity reaches 10 units. Explain why
+the model never reaches zero.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> <span class="math inline">\(t_{1/2}=\ln(0.5)/\ln(0.75)\)</span> and <span class="math inline">\(t_{10}=\ln(1/8)/\ln(0.75)\)</span>. Positive
+exponential factors never vanish.</p>
+</blockquote>
+<h3 id="connecting-numerical-and-graphical-representations">Connecting
+numerical and graphical representations</h3>
+<table>
+<caption>Selected predictions from the illustrative model. Values are
+rounded for display.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Time (h)</th>
+<th style="text-align: right;">Intensity</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">80</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">33.75</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">14.24</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">6.007</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">2.534</td>
+</tr>
+</tbody>
+</table>
+<figure>
+<img alt="Model predictions over the stated investigation interval. The graph represents a mathematical model, not observed data." src="figures/ch07/applied_project.svg" style="width:90.0%"/>
+<figcaption aria-hidden="true">Model predictions over the stated
+investigation interval. The graph represents a mathematical model, not
+observed data.</figcaption>
+</figure>
+<p><strong>Interpretation.</strong> Compare the tabulated values with
+the graph. Identify the intervals over which the output increases or
+decreases, and distinguish a sampled extremum from an exact analytical
+extremum. Explain whether interpolation and extrapolation have the same
+justification in this setting.</p>
+<h3 id="r-implementation">R implementation</h3>
+<p>The following standalone script defines the model, generates
+predictions, and draws a labeled graph. Read the formula before running
+the code. The sampled range is a numerical diagnostic, not a proof of
+the exact range.</p>
+<div class="code-shell"><div class="code-bar"><span>R</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a aria-hidden="true" href="#cb7-1" tabindex="-1"></a><span class="co"># Applied investigation: Decay of a fluorescent signal</span></span>
+<span id="cb7-2"><a aria-hidden="true" href="#cb7-2" tabindex="-1"></a><span class="co"># 1. Define the input domain and model</span></span>
+<span id="cb7-3"><a aria-hidden="true" href="#cb7-3" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">12</span>, <span class="at">length.out =</span> <span class="dv">301</span>)</span>
+<span id="cb7-4"><a aria-hidden="true" href="#cb7-4" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">80</span><span class="sc">*</span><span class="fl">0.75</span><span class="sc">^</span>x</span>
+<span id="cb7-5"><a aria-hidden="true" href="#cb7-5" tabindex="-1"></a></span>
+<span id="cb7-6"><a aria-hidden="true" href="#cb7-6" tabindex="-1"></a><span class="co"># 2. Inspect numerical predictions</span></span>
+<span id="cb7-7"><a aria-hidden="true" href="#cb7-7" tabindex="-1"></a>idx <span class="ot">&lt;-</span> <span class="fu">unique</span>(<span class="fu">round</span>(<span class="fu">seq</span>(<span class="dv">1</span>, <span class="fu">length</span>(x), <span class="at">length.out =</span> <span class="dv">5</span>)))</span>
+<span id="cb7-8"><a aria-hidden="true" href="#cb7-8" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">data.frame</span>(<span class="at">input =</span> x[idx], <span class="at">output =</span> y[idx]))</span>
+<span id="cb7-9"><a aria-hidden="true" href="#cb7-9" tabindex="-1"></a></span>
+<span id="cb7-10"><a aria-hidden="true" href="#cb7-10" tabindex="-1"></a><span class="co"># 3. Visualize the model with labeled axes</span></span>
+<span id="cb7-11"><a aria-hidden="true" href="#cb7-11" tabindex="-1"></a><span class="fu">plot</span>(x, y, <span class="at">type =</span> <span class="st">"l"</span>, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">"#176B87"</span>,</span>
+<span id="cb7-12"><a aria-hidden="true" href="#cb7-12" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Time (h)"</span>, <span class="at">ylab =</span> <span class="st">"Intensity"</span>)</span>
+<span id="cb7-13"><a aria-hidden="true" href="#cb7-13" tabindex="-1"></a><span class="fu">grid</span>()</span>
+<span id="cb7-14"><a aria-hidden="true" href="#cb7-14" tabindex="-1"></a></span>
+<span id="cb7-15"><a aria-hidden="true" href="#cb7-15" tabindex="-1"></a><span class="co"># 4. Check the sampled output range</span></span>
+<span id="cb7-16"><a aria-hidden="true" href="#cb7-16" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">range</span>(y))</span></code></pre></div></div>
+<h3 id="python-implementation">Python implementation</h3>
+<p>Repeat the same investigation using NumPy arrays and Matplotlib.
+Compare the printed predictions with the R output, allowing for
+rounding.</p>
+<div class="code-shell"><div class="code-bar"><span>Python</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a aria-hidden="true" href="#cb8-1" tabindex="-1"></a><span class="co"># Applied investigation: Decay of a fluorescent signal</span></span>
+<span id="cb8-2"><a aria-hidden="true" href="#cb8-2" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb8-3"><a aria-hidden="true" href="#cb8-3" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb8-4"><a aria-hidden="true" href="#cb8-4" tabindex="-1"></a></span>
+<span id="cb8-5"><a aria-hidden="true" href="#cb8-5" tabindex="-1"></a><span class="co"># 1. Define the input domain and model</span></span>
+<span id="cb8-6"><a aria-hidden="true" href="#cb8-6" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">12</span>, <span class="dv">301</span>)</span>
+<span id="cb8-7"><a aria-hidden="true" href="#cb8-7" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">80</span><span class="op">*</span><span class="fl">0.75</span><span class="op">**</span>x</span>
+<span id="cb8-8"><a aria-hidden="true" href="#cb8-8" tabindex="-1"></a></span>
+<span id="cb8-9"><a aria-hidden="true" href="#cb8-9" tabindex="-1"></a><span class="co"># 2. Inspect numerical predictions</span></span>
+<span id="cb8-10"><a aria-hidden="true" href="#cb8-10" tabindex="-1"></a>idx <span class="op">=</span> np.unique(np.linspace(<span class="dv">0</span>, <span class="bu">len</span>(x)<span class="op">-</span><span class="dv">1</span>, <span class="dv">5</span>).<span class="bu">round</span>().astype(<span class="bu">int</span>))</span>
+<span id="cb8-11"><a aria-hidden="true" href="#cb8-11" tabindex="-1"></a><span class="bu">print</span>(np.column_stack((x[idx], y[idx])))</span>
+<span id="cb8-12"><a aria-hidden="true" href="#cb8-12" tabindex="-1"></a></span>
+<span id="cb8-13"><a aria-hidden="true" href="#cb8-13" tabindex="-1"></a><span class="co"># 3. Visualize the model with labeled axes</span></span>
+<span id="cb8-14"><a aria-hidden="true" href="#cb8-14" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="fl">3.6</span>))</span>
+<span id="cb8-15"><a aria-hidden="true" href="#cb8-15" tabindex="-1"></a>ax.plot(x, y, <span class="st">"-"</span>, color<span class="op">=</span><span class="st">"#176B87"</span>, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb8-16"><a aria-hidden="true" href="#cb8-16" tabindex="-1"></a>ax.<span class="bu">set</span>(xlabel<span class="op">=</span><span class="st">"Time (h)"</span>, ylabel<span class="op">=</span><span class="st">"Intensity"</span>)</span>
+<span id="cb8-17"><a aria-hidden="true" href="#cb8-17" tabindex="-1"></a>ax.grid(alpha<span class="op">=</span><span class="fl">0.22</span>)</span>
+<span id="cb8-18"><a aria-hidden="true" href="#cb8-18" tabindex="-1"></a>ax.spines[[<span class="st">"top"</span>, <span class="st">"right"</span>]].set_visible(<span class="va">False</span>)</span>
+<span id="cb8-19"><a aria-hidden="true" href="#cb8-19" tabindex="-1"></a>fig.tight_layout()</span>
+<span id="cb8-20"><a aria-hidden="true" href="#cb8-20" tabindex="-1"></a>plt.show()</span>
+<span id="cb8-21"><a aria-hidden="true" href="#cb8-21" tabindex="-1"></a></span>
+<span id="cb8-22"><a aria-hidden="true" href="#cb8-22" tabindex="-1"></a><span class="co"># 4. Check the sampled output range</span></span>
+<span id="cb8-23"><a aria-hidden="true" href="#cb8-23" tabindex="-1"></a><span class="bu">print</span>(np.<span class="bu">min</span>(y), np.<span class="bu">max</span>(y))</span></code></pre></div></div>
+<h3 id="guided-practice-checking-the-model">Guided practice: checking
+the model</h3>
+<ol type="1">
+<li><p>Calculate the outputs at the two endpoints by hand. Compare them
+with the numerical table.</p></li>
+<li><p>Select an interior input not listed in the table. Predict the
+output before evaluating it in either language.</p></li>
+<li><p>Explain the meaning of the difference between the two endpoint
+outputs, including units. If appropriate, calculate the average rate of
+change.</p></li>
+<li><p>Identify a physical assumption of the model and describe a
+circumstance in which it would fail.</p></li>
+</ol>
+<h2 id="chapter-project-investigating-decay-of-a-fluorescent-signal">Chapter
+project: investigating Decay of a fluorescent signal</h2>
+<p>Prepare a short technical report for a reader who has not studied the
+model. Use the preceding case as a starting point, but develop your own
+investigation rather than merely reproducing the worked example.</p>
+<ol type="1">
+<li><p>State a quantitative question that can be answered using the
+model. Define all variables, units, and restrictions.</p></li>
+<li><p>Modify one meaningful numerical parameter in the formula. Explain
+what the change represents in the original context. Derive the revised
+formula and predict the direction of change before computing.</p></li>
+<li><p>Compare the original and revised models at five common admissible
+inputs. Present a labeled table and explain the largest difference in
+the table.</p></li>
+<li><p>Produce a graph containing both models on the same axes. Use a
+legend and distinguish the curves with line styles or markers. Explain
+the shape and any intersections.</p></li>
+<li><p>Solve your quantitative question algebraically where possible.
+Verify the result using R and Python; report any differences due to
+numerical precision.</p></li>
+<li><p>Discuss at least two limitations. Describe what measurements
+would be needed to assess the model in practice. Do not present
+simulated predictions as empirical evidence.</p></li>
+</ol>
+<h3 class="unnumbered" id="project-deliverables-and-assessment">Project
+deliverables and assessment</h3>
+<p>Submit a two- to three-page report, the two runnable scripts, and the
+labeled figure. The report should stand on its own without requiring the
+reader to inspect the code.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Criterion</th>
+<th style="text-align: right;">Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Mathematical formulation and domain</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Analytical reasoning and verification</td>
+<td style="text-align: right;">25</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Reproducible R and Python
+computations</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Graph and table quality</td>
+<td style="text-align: right;">15</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Interpretation and limitations</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Total</td>
+<td style="text-align: right;">100</td>
+</tr>
+</tbody>
+</table>
+<h2 class="unnumbered" id="chapter-summary">Chapter summary</h2>
+<p>Exponential models describe constant proportional change, while
+logarithms reverse exponentiation and solve time-to-threshold questions.
+Domains, positive arguments, units, and model assumptions are essential.
+Graphs, tables, and computation provide checks, but do not replace
+mathematical explanation or validation against observations.</p>
+<h2 class="unnumbered" id="looking-ahead">Looking ahead</h2>
+<p>The next chapter uses radian measure and the unit circle to develop
+periodic phenomena. The habits practiced here—matching formulas to
+graphs, identifying domains, interpreting parameters, and checking
+assumptions—remain central throughout trigonometry and calculus.</p>
+<h2>Companion scripts</h2><p><a download="" href="code/ch07/applied_project.R">applied_project.R</a></p><p><a download="" href="code/ch07/applied_project.py">applied_project.py</a></p><p><a download="" href="code/ch07/chapter07_labs.R">chapter07_labs.R</a></p><p><a download="" href="code/ch07/chapter07_labs.py">chapter07_labs.py</a></p><footer><a href="chapter06.html">← Previous</a><a href="chapter08.html">Next →</a></footer><section class="investigation"><h2 id="interactive-investigation">Interactive investigation: Exponential growth and decay</h2><div data-investigation="7"><p>Enable JavaScript to explore the model.</p></div><p><strong>Explore and explain:</strong> Compare doubling and halving times for opposite rates.</p></section>
+</main><nav aria-label="On this page" class="chapter-toc" id="TOC" role="doc-toc"><strong>On this page</strong>
+<ul>
+<li><a href="#exponential-and-logarithmic-functions" id="toc-exponential-and-logarithmic-functions">Exponential and
+Logarithmic Functions</a>
+<ul>
+<li><a href="#opening-context-change-that-depends-on-the-current-amount" id="toc-opening-context-change-that-depends-on-the-current-amount">Opening
+context: change that depends on the current amount</a></li>
+<li><a href="#learning-outcomes" id="toc-learning-outcomes">Learning
+outcomes</a></li>
+<li><a href="#prerequisite-check" id="toc-prerequisite-check">Prerequisite check</a></li>
+<li><a href="#chapter-roadmap" id="toc-chapter-roadmap">Chapter
+roadmap</a></li>
+<li><a href="#repeated-multiplication-versus-repeated-addition" id="toc-repeated-multiplication-versus-repeated-addition">Repeated
+multiplication versus repeated addition</a></li>
+<li><a href="#exponential-functions-and-their-domains" id="toc-exponential-functions-and-their-domains">Exponential functions
+and their domains</a></li>
+<li><a href="#transformations-of-exponential-graphs" id="toc-transformations-of-exponential-graphs">Transformations of
+exponential graphs</a></li>
+<li><a href="#the-natural-exponential-function" id="toc-the-natural-exponential-function">The natural exponential
+function</a></li>
+<li><a href="#compound-interest-and-compounding-frequency" id="toc-compound-interest-and-compounding-frequency">Compound interest
+and compounding frequency</a></li>
+<li><a href="#logarithms-as-inverse-functions" id="toc-logarithms-as-inverse-functions">Logarithms as inverse
+functions</a></li>
+<li><a href="#common-logarithms-natural-logarithms-and-change-of-base" id="toc-common-logarithms-natural-logarithms-and-change-of-base">Common
+logarithms, natural logarithms, and change of base</a></li>
+<li><a href="#logarithm-laws-and-their-limitations" id="toc-logarithm-laws-and-their-limitations">Logarithm laws and their
+limitations</a></li>
+<li><a href="#solving-exponential-equations" id="toc-solving-exponential-equations">Solving exponential
+equations</a></li>
+<li><a href="#solving-logarithmic-equations" id="toc-solving-logarithmic-equations">Solving logarithmic
+equations</a></li>
+<li><a href="#doubling-time-and-half-life" id="toc-doubling-time-and-half-life">Doubling time and
+half-life</a></li>
+<li><a href="#fitting-an-exponential-model-from-two-observations" id="toc-fitting-an-exponential-model-from-two-observations">Fitting an
+exponential model from two observations</a></li>
+<li><a href="#logarithmic-scales-and-scientific-measurements" id="toc-logarithmic-scales-and-scientific-measurements">Logarithmic
+scales and scientific measurements</a></li>
+<li><a href="#model-interpretation-assumptions-and-limitations" id="toc-model-interpretation-assumptions-and-limitations">Model
+interpretation, assumptions, and limitations</a></li>
+<li><a href="#visual-investigation-i-linear-versus-exponential-change" id="toc-visual-investigation-i-linear-versus-exponential-change">Visual
+investigation I: linear versus exponential change</a></li>
+<li><a href="#visual-investigation-ii-growth-decay-and-horizontal-asymptotes" id="toc-visual-investigation-ii-growth-decay-and-horizontal-asymptotes">Visual
+investigation II: growth, decay, and horizontal asymptotes</a></li>
+<li><a href="#visual-investigation-iii-inverse-graphs" id="toc-visual-investigation-iii-inverse-graphs">Visual investigation
+III: inverse graphs</a></li>
+<li><a href="#visual-investigation-iv-interpreting-a-semilog-plot" id="toc-visual-investigation-iv-interpreting-a-semilog-plot">Visual
+investigation IV: interpreting a semilog plot</a></li>
+<li><a href="#extended-workshop-a-medication-elimination" id="toc-extended-workshop-a-medication-elimination">Extended workshop A:
+medication elimination</a></li>
+<li><a href="#extended-workshop-b-microbial-growth-and-model-breakdown" id="toc-extended-workshop-b-microbial-growth-and-model-breakdown">Extended
+workshop B: microbial growth and model breakdown</a></li>
+<li><a href="#extended-workshop-c-logarithmic-interpretation" id="toc-extended-workshop-c-logarithmic-interpretation">Extended
+workshop C: logarithmic interpretation</a></li>
+<li><a href="#computational-laboratory-a-exponential-growth-and-decay" id="toc-computational-laboratory-a-exponential-growth-and-decay">Computational
+laboratory A: exponential growth and decay</a>
+<ul>
+<li><a href="#r-code" id="toc-r-code">R code</a></li>
+<li><a href="#python-code" id="toc-python-code">Python code</a></li>
+</ul></li>
+<li><a href="#computational-laboratory-b-half-life-and-inverse-calculations" id="toc-computational-laboratory-b-half-life-and-inverse-calculations">Computational
+laboratory B: half-life and inverse calculations</a>
+<ul>
+<li><a href="#r-code-1" id="toc-r-code-1">R code</a></li>
+<li><a href="#python-code-1" id="toc-python-code-1">Python code</a></li>
+</ul></li>
+<li><a href="#computational-laboratory-c-fitting-a-model-and-checking-residuals" id="toc-computational-laboratory-c-fitting-a-model-and-checking-residuals">Computational
+laboratory C: fitting a model and checking residuals</a>
+<ul>
+<li><a href="#r-code-2" id="toc-r-code-2">R code</a></li>
+<li><a href="#python-code-2" id="toc-python-code-2">Python code</a></li>
+</ul></li>
+<li><a href="#calculus-readiness-instantaneous-change" id="toc-calculus-readiness-instantaneous-change">Calculus readiness:
+instantaneous change</a></li>
+<li><a href="#guided-problem-solving-clinic-choosing-the-right-method" id="toc-guided-problem-solving-clinic-choosing-the-right-method">Guided
+problem-solving clinic: choosing the right method</a>
+<ul>
+<li><a href="#case-1-identifying-a-model-from-a-table" id="toc-case-1-identifying-a-model-from-a-table">Case 1: Identifying a
+model from a table</a></li>
+<li><a href="#case-2-an-exponential-equation-with-a-baseline" id="toc-case-2-an-exponential-equation-with-a-baseline">Case 2: An
+exponential equation with a baseline</a></li>
+<li><a href="#case-3-checking-a-logarithmic-solution" id="toc-case-3-checking-a-logarithmic-solution">Case 3: Checking a
+logarithmic solution</a></li>
+<li><a href="#case-4-model-parameters-from-a-half-life" id="toc-case-4-model-parameters-from-a-half-life">Case 4: Model
+parameters from a half-life</a></li>
+</ul></li>
+<li><a href="#further-visual-investigation-parameter-sensitivity" id="toc-further-visual-investigation-parameter-sensitivity">Further
+visual investigation: parameter sensitivity</a></li>
+<li><a href="#chapter-review-exercises" id="toc-chapter-review-exercises">Chapter review exercises</a></li>
+<li><a href="#extended-application-decay-of-a-fluorescent-signal" id="toc-extended-application-decay-of-a-fluorescent-signal">Extended
+application: Decay of a fluorescent signal</a>
+<ul>
+<li><a href="#formulating-the-mathematical-model" id="toc-formulating-the-mathematical-model">Formulating the mathematical
+model</a></li>
+<li><a href="#connecting-numerical-and-graphical-representations" id="toc-connecting-numerical-and-graphical-representations">Connecting
+numerical and graphical representations</a></li>
+<li><a href="#r-implementation" id="toc-r-implementation">R
+implementation</a></li>
+<li><a href="#python-implementation" id="toc-python-implementation">Python implementation</a></li>
+<li><a href="#guided-practice-checking-the-model" id="toc-guided-practice-checking-the-model">Guided practice: checking
+the model</a></li>
+</ul></li>
+<li><a href="#chapter-project-investigating-decay-of-a-fluorescent-signal" id="toc-chapter-project-investigating-decay-of-a-fluorescent-signal">Chapter
+project: investigating Decay of a fluorescent signal</a>
+<ul>
+<li><a href="#project-deliverables-and-assessment" id="toc-project-deliverables-and-assessment">Project deliverables and
+assessment</a></li>
+</ul></li>
+<li><a href="#chapter-summary" id="toc-chapter-summary">Chapter
+summary</a></li>
+<li><a href="#looking-ahead" id="toc-looking-ahead">Looking
+ahead</a></li>
+</ul></li>
+</ul>
+</nav></div><script src="investigations.js"></script></body></html>

@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8"/>
+<meta content="pandoc" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+<title>Vectors, Polar
+Coordinates, and Geometric Modeling | Applied Precalculus</title>
+<style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+
+
+<link href="site.css" rel="stylesheet"/><script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script defer="" src="search-index.js"></script><script defer="" src="site.js"></script></head><body><nav class="site-nav" id="book-nav"><strong class="brand">Applied Precalculus</strong><p class="subtitle">Using R and Python</p><input aria-label="Search the book" id="book-search" placeholder="Search the book"/><div aria-live="polite" class="search-results" id="search-results"></div><p class="nav-label">Contents</p><a class="" href="index.html">Preface</a><a class="" href="chapter01.html">1. Real Numbers, Algebraic Expressions, and Mathematical Reasoning</a><a class="" href="chapter02.html">2. Equations, Inequalities, and Applications</a><a class="" href="chapter03.html">3. Coordinate Geometry, Lines, and Systems of Equations</a><a class="" href="chapter04.html">4. Functions, Graphs, and Multiple Representations</a><a class="" href="chapter05.html">5. Transformations, Compositions, and Inverse Functions</a><a class="" href="chapter06.html">6. Polynomial and Rational Functions</a><a class="" href="chapter07.html">7. Exponential and Logarithmic Functions</a><a class="" href="chapter08.html">8. Angles, Radian Measure, and the Unit Circle</a><a class="" href="chapter09.html">9. Trigonometric Functions and Their Graphs</a><a class="" href="chapter10.html">10. Trigonometric Identities and Equations</a><a class="" href="chapter11.html">11. Applications of Trigonometry and Periodic Models</a><a class="" href="chapter12.html">12. Sequences, Series, and Mathematical Patterns</a><a class="" href="chapter13.html">13. Conic Sections and Parametric Equations</a><a class="active" href="chapter14.html">14. Vectors, Polar Coordinates, and Geometric Modeling</a><a class="" href="chapter15.html">15. Rates of Change, Difference Quotients, and Limits</a><a class="" href="chapter16.html">16. Integrated Mathematical Modeling with R and Python</a><a class="" href="programming.html">Getting Started with R and Python</a><a class="" href="resources.html">Computational Resource Guide</a></nav><a class="skip" href="#main-content">Skip to content</a><header class="topbar"><button aria-controls="book-nav" aria-expanded="false" class="menu">Contents</button><span>Applied Precalculus / Online edition</span><span class="spacer"></span><a href="resources.html">Resources</a></header><div class="page-grid"><main id="main-content">
+
+<h1 id="vectors-polar-coordinates-and-geometric-modeling">Vectors, Polar
+Coordinates, and Geometric Modeling</h1>
+<h2 class="unnumbered" id="opening-context-directions-matter">Opening
+context: directions matter</h2>
+<p>A displacement of five meters is not a complete description of motion
+unless its direction is also specified. Likewise, the location of a
+sensor relative to a rotating device is often more naturally described
+by a distance and angle than by two rectangular coordinates. Vectors and
+polar coordinates provide complementary languages for representing
+geometric quantities. This chapter builds on coordinate geometry
+(Chapter 3), functions (Chapters 4–5), trigonometry (Chapters 8–11), and
+parametric curves (Chapter 13). Its central goal is to connect exact
+mathematical reasoning with graphical and numerical exploration.</p>
+<h2 class="unnumbered" id="learning-outcomes">Learning outcomes</h2>
+<p>By the end of the chapter, students should be able to (1) represent
+and interpret vectors in component and magnitude–direction forms; (2)
+compute vector sums, differences, scalar multiples, magnitudes, and unit
+vectors; (3) use dot products to calculate angles and projections; (4)
+solve elementary force and displacement models; (5) convert between
+Cartesian and polar coordinates while attending to quadrants and
+nonuniqueness; (6) sketch basic polar curves and identify their
+symmetries; (7) use polar coordinates to describe motion; and (8)
+implement and interpret corresponding R and Python investigations.</p>
+<h2 class="unnumbered" id="how-to-use-the-computational-laboratories">How to use the
+computational laboratories</h2>
+<p>Each laboratory begins with a mathematical prediction, followed by
+<strong>R code</strong> and then <strong>Python code</strong>, in
+separate full-width listings. Students should complete the analytical
+work first, execute one language at a time, and compare results. All
+angles passed to trigonometric functions in the code are measured in
+radians.</p>
+<h2 id="directed-segments-and-vector-notation">Directed segments and
+vector notation</h2>
+<p>A <em>scalar</em> has magnitude but no direction; a <em>vector</em>
+has both magnitude and direction. Write <span class="math inline">\(\mathbf v=\langle a,b\rangle\)</span> for the
+displacement <span class="math inline">\(a\)</span> units horizontally
+and <span class="math inline">\(b\)</span> units vertically. The vector
+from <span class="math inline">\(P(x_1,y_1)\)</span> to <span class="math inline">\(Q(x_2,y_2)\)</span> is <span class="math inline">\(\overrightarrow{PQ}=\langle
+x_2-x_1,y_2-y_1\rangle\)</span>. Two arrows at different locations
+represent the same free vector when their components agree. This is
+distinct from identifying a vector with a particular point.</p>
+<p><strong>Worked example.</strong> From <span class="math inline">\(P(-2,3)\)</span> to <span class="math inline">\(Q(4,-1)\)</span>, the displacement is <span class="math inline">\(\langle6,-4\rangle\)</span>. Starting instead at
+<span class="math inline">\((1,2)\)</span>, the same displacement ends
+at <span class="math inline">\((7,-2)\)</span>.</p>
+<p><strong>Guided practice.</strong> Find <span class="math inline">\(\overrightarrow{AB}\)</span> for <span class="math inline">\(A(3,-5)\)</span> and <span class="math inline">\(B(-1,2)\)</span>; then draw a translated copy
+starting at the origin.</p>
+<h2 id="vector-addition-subtraction-and-scalar-multiplication">Vector
+addition, subtraction, and scalar multiplication</h2>
+<p>For <span class="math inline">\(\mathbf u=\langle
+u_1,u_2\rangle\)</span> and <span class="math inline">\(\mathbf
+v=\langle v_1,v_2\rangle\)</span>, define <span class="math inline">\(\mathbf u+\mathbf v=\langle
+u_1+v_1,u_2+v_2\rangle\)</span> and <span class="math inline">\(c\mathbf
+u=\langle cu_1,cu_2\rangle\)</span>. Subtraction is addition of the
+opposite vector. The head-to-tail and parallelogram constructions
+explain why componentwise addition describes consecutive displacements.
+The vector <span class="math inline">\(\mathbf0=\langle0,0\rangle\)</span> has zero
+magnitude and no defined direction.</p>
+<p><strong>Worked example.</strong> If <span class="math inline">\(\mathbf u=\langle3,-2\rangle\)</span> and <span class="math inline">\(\mathbf v=\langle-1,5\rangle\)</span>, then <span class="math inline">\(2\mathbf u-\mathbf
+v=\langle7,-9\rangle\)</span>.</p>
+<p><strong>Guided practice.</strong> Calculate <span class="math inline">\(3\mathbf u+2\mathbf v\)</span> and sketch the
+corresponding resultant. Explain why multiplying by a negative scalar
+reverses direction.</p>
+<h5 id="visual-investigation-1.">Visual investigation 1.</h5>
+<p><strong>Visual investigation: tip-to-tail addition.</strong> Draw
+<span class="math inline">\(\mathbf u=\langle3,1\rangle\)</span> and
+<span class="math inline">\(\mathbf v=\langle-1,2\rangle\)</span> on
+squared paper. First place both tails at the origin; then translate
+<span class="math inline">\(\mathbf v\)</span> to start at the tip of
+<span class="math inline">\(\mathbf u\)</span>. Draw the resultant from
+the origin. Repeat the construction in reverse order. Explain
+geometrically why <span class="math inline">\(\mathbf u+\mathbf
+v=\mathbf v+\mathbf u\)</span>.</p>
+<p><strong>Reflection.</strong> Record a numerical prediction, a
+geometric explanation, and a method for checking your conclusion.</p>
+<h2 id="magnitude-distance-and-unit-vectors">Magnitude, distance, and
+unit vectors</h2>
+<p>The magnitude of <span class="math inline">\(\mathbf v=\langle
+a,b\rangle\)</span> follows from the Pythagorean theorem: <span class="math inline">\(\|\mathbf v\|=\sqrt{a^2+b^2}\)</span>. For <span class="math inline">\(\mathbf v\ne\mathbf0\)</span>, the vector <span class="math inline">\(\widehat{\mathbf v}=\mathbf v/\|\mathbf
+v\|\)</span> has length one and the same direction. The distance formula
+is therefore the magnitude of a displacement vector. Distinguish a unit
+vector (dimensionless direction) from a physical displacement carrying
+units.</p>
+<p><strong>Worked example.</strong> For <span class="math inline">\(\mathbf v=\langle-6,8\rangle\)</span>, <span class="math inline">\(\|\mathbf v\|=10\)</span> and <span class="math inline">\(\widehat{\mathbf
+v}=\langle-3/5,4/5\rangle\)</span>. Verify <span class="math inline">\(9/25+16/25=1\)</span>.</p>
+<p><strong>Guided practice.</strong> Normalize <span class="math inline">\(\langle5,12\rangle\)</span> and explain why <span class="math inline">\(\mathbf0\)</span> cannot be normalized.</p>
+<h2 id="direction-angles-and-trigonometric-components">Direction angles
+and trigonometric components</h2>
+<p>If a nonzero vector has magnitude <span class="math inline">\(r\)</span> and direction angle <span class="math inline">\(\theta\)</span> measured counterclockwise from the
+positive <span class="math inline">\(x\)</span> axis, then <span class="math inline">\(\mathbf v=\langle
+r\cos\theta,r\sin\theta\rangle\)</span>. Conversely <span class="math inline">\(r=\sqrt{a^2+b^2}\)</span> and <span class="math inline">\(\theta\)</span> must be chosen in the correct
+quadrant. The expression <span class="math inline">\(\arctan(b/a)\)</span> alone can lose quadrant
+information; numerical software often provides an <code>atan2</code>
+function.</p>
+<p><strong>Worked example.</strong> A 20-newton force acting at <span class="math inline">\(150^\circ\)</span> has components <span class="math inline">\(\langle20\cos150^\circ,20\sin150^\circ\rangle=\langle-10\sqrt3,10\rangle\)</span>
+newtons.</p>
+<p><strong>Guided practice.</strong> Express a 12-meter displacement at
+<span class="math inline">\(240^\circ\)</span> in exact component
+form.</p>
+<h5 id="visual-investigation-2.">Visual investigation 2.</h5>
+<p><strong>Visual investigation: rotating a fixed-length
+vector.</strong> Sketch arrows of length 4 at angles <span class="math inline">\(0,\pi/6,\pi/2,\pi,3\pi/2\)</span>. Complete a
+table of their horizontal and vertical components. Explain why the
+endpoints form a circle and identify the maximum and minimum possible
+<span class="math inline">\(x\)</span> components.</p>
+<p><strong>Reflection.</strong> Record a numerical prediction, a
+geometric explanation, and a method for checking your conclusion.</p>
+<h2 id="the-dot-product-and-the-angle-between-vectors">The dot product
+and the angle between vectors</h2>
+<p>The dot product is <span class="math inline">\(\mathbf u\cdot\mathbf
+v=u_1v_1+u_2v_2\)</span>. Geometry gives the equivalent identity <span class="math inline">\(\mathbf u\cdot\mathbf v=\|\mathbf u\|\|\mathbf
+v\|\cos\theta\)</span> for nonzero vectors, where <span class="math inline">\(0\le\theta\le\pi\)</span>. One derivation expands
+<span class="math inline">\(\|\mathbf u-\mathbf v\|^2\)</span> by
+components and compares with the law of cosines. Thus <span class="math inline">\(\cos\theta=(\mathbf u\cdot\mathbf v)/(\|\mathbf
+u\|\|\mathbf v\|)\)</span>; the denominator must be nonzero.</p>
+<p><strong>Worked example.</strong> <span class="math inline">\(\langle1,2\rangle\cdot\langle2,-1\rangle=0\)</span>.
+Since both are nonzero, the vectors are perpendicular.</p>
+<p><strong>Guided practice.</strong> Compute the angle between <span class="math inline">\(\langle1,0\rangle\)</span> and <span class="math inline">\(\langle1,1\rangle\)</span> exactly.</p>
+<h2 id="orthogonality-projection-and-component-along-a-direction">Orthogonality,
+projection, and component along a direction</h2>
+<p>Two nonzero vectors are perpendicular exactly when their dot product
+is zero. The scalar component of <span class="math inline">\(\mathbf
+u\)</span> along <span class="math inline">\(\mathbf v\)</span> is <span class="math inline">\((\mathbf u\cdot\mathbf v)/\|\mathbf v\|\)</span>.
+The vector projection is <span class="math inline">\(\operatorname{proj}_{\mathbf v}\mathbf u=((\mathbf
+u\cdot\mathbf v)/\|\mathbf v\|^2)\mathbf v\)</span>, provided <span class="math inline">\(\mathbf v\ne\mathbf0\)</span>. The remainder <span class="math inline">\(\mathbf u-\operatorname{proj}_{\mathbf v}\mathbf
+u\)</span> is perpendicular to <span class="math inline">\(\mathbf
+v\)</span>.</p>
+<p><strong>Worked example.</strong> Project <span class="math inline">\(\mathbf u=\langle3,4\rangle\)</span> onto <span class="math inline">\(\mathbf v=\langle1,0\rangle\)</span>. The result
+is <span class="math inline">\(\langle3,0\rangle\)</span>, leaving <span class="math inline">\(\langle0,4\rangle\)</span> perpendicular to the
+horizontal axis.</p>
+<p><strong>Guided practice.</strong> Project <span class="math inline">\(\langle4,2\rangle\)</span> onto <span class="math inline">\(\langle1,1\rangle\)</span> and verify the
+orthogonality of the residual.</p>
+<h5 id="visual-investigation-3.">Visual investigation 3.</h5>
+<p><strong>Visual investigation: projection geometry.</strong> Draw
+<span class="math inline">\(\mathbf u=\langle4,3\rangle\)</span> and
+<span class="math inline">\(\mathbf v=\langle2,1\rangle\)</span> from
+the origin. Drop a perpendicular from the tip of <span class="math inline">\(\mathbf u\)</span> to the line spanned by <span class="math inline">\(\mathbf v\)</span>. Compute the projected vector
+and residual and compare the diagram with the dot-product formulas.</p>
+<p><strong>Reflection.</strong> Record a numerical prediction, a
+geometric explanation, and a method for checking your conclusion.</p>
+<h2 id="applied-vectors-resultant-forces-and-navigation">Applied
+vectors: resultant forces and navigation</h2>
+<p>A simplified planar force balance uses vector addition. If a force of
+magnitude <span class="math inline">\(F_1\)</span> acts at angle <span class="math inline">\(\theta_1\)</span> and another of magnitude <span class="math inline">\(F_2\)</span> acts at <span class="math inline">\(\theta_2\)</span>, their resultant is <span class="math inline">\(\langle
+F_1\cos\theta_1+F_2\cos\theta_2,F_1\sin\theta_1+F_2\sin\theta_2\rangle\)</span>.
+An equilibrium force is the negative of this resultant. A force model
+must identify its reference axes and units. Navigation uses the same
+mathematics, although bearings are commonly measured clockwise from
+north rather than counterclockwise from east.</p>
+<p><strong>Worked example.</strong> Forces <span class="math inline">\(\langle8,0\rangle\)</span> N and <span class="math inline">\(\langle0,6\rangle\)</span> N produce a resultant
+of magnitude <span class="math inline">\(10\)</span> N, at angle <span class="math inline">\(\arctan(6/8)\)</span> above the positive
+horizontal axis.</p>
+<p><strong>Guided practice.</strong> Two displacements are 3 km east and
+4 km north. Find the resultant and a return displacement.</p>
+<h2 id="polar-coordinates-and-nonunique-representations">Polar
+coordinates and nonunique representations</h2>
+<p>A polar coordinate pair <span class="math inline">\((r,\theta)\)</span> represents a point a signed
+radial distance <span class="math inline">\(r\)</span> along the
+direction <span class="math inline">\(\theta\)</span>. For <span class="math inline">\(r\ge0\)</span>, this is the usual
+distance-and-angle description. Polar coordinates are not unique: <span class="math inline">\((r,\theta)\)</span> and <span class="math inline">\((r,\theta+2\pi k)\)</span> describe the same
+point; <span class="math inline">\((r,\theta)\)</span> and <span class="math inline">\((-r,\theta+\pi)\)</span> also describe the same
+point. At the origin the angle is arbitrary. These subtleties matter
+when solving equations and interpreting plots.</p>
+<p><strong>Worked example.</strong> <span class="math inline">\((3,\pi/6)\)</span> and <span class="math inline">\((-3,7\pi/6)\)</span> represent the same point.
+Both convert to <span class="math inline">\((3\sqrt3/2,3/2)\)</span>.</p>
+<p><strong>Guided practice.</strong> Give three distinct polar
+descriptions of the Cartesian point <span class="math inline">\((-2,0)\)</span>.</p>
+<h5 id="visual-investigation-4.">Visual investigation 4.</h5>
+<p><strong>Visual investigation: many names for one point.</strong> Plot
+<span class="math inline">\((2,\pi/3)\)</span>, <span class="math inline">\((2,7\pi/3)\)</span>, and <span class="math inline">\((-2,4\pi/3)\)</span>. Show that they coincide.
+Then mark <span class="math inline">\((0,\theta)\)</span> for three
+distinct angles and explain the special role of the origin.</p>
+<p><strong>Reflection.</strong> Record a numerical prediction, a
+geometric explanation, and a method for checking your conclusion.</p>
+<h2 id="converting-between-cartesian-and-polar-coordinates">Converting
+between Cartesian and polar coordinates</h2>
+<p>The conversion formulas are <span class="math inline">\(x=r\cos\theta\)</span>, <span class="math inline">\(y=r\sin\theta\)</span>, and <span class="math inline">\(r^2=x^2+y^2\)</span>. For the standard choice
+<span class="math inline">\(r\ge0\)</span>, set <span class="math inline">\(r=\sqrt{x^2+y^2}\)</span> and choose <span class="math inline">\(\theta\)</span> from the signs of <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>. When <span class="math inline">\(x\ne0\)</span>, <span class="math inline">\(\tan\theta=y/x\)</span>, but this ratio does not
+uniquely identify the quadrant.</p>
+<p><strong>Worked example.</strong> Cartesian <span class="math inline">\((-3,3)\)</span> gives <span class="math inline">\(r=3\sqrt2\)</span> and <span class="math inline">\(\theta=3\pi/4\)</span> in <span class="math inline">\([0,2\pi)\)</span>. Conversely <span class="math inline">\((4,5\pi/6)\)</span> gives <span class="math inline">\((-2\sqrt3,2)\)</span>.</p>
+<p><strong>Guided practice.</strong> Convert <span class="math inline">\((0,-5)\)</span> to polar form with <span class="math inline">\(0\le\theta&lt;2\pi\)</span>; convert <span class="math inline">\((6,-\pi/3)\)</span> to Cartesian form.</p>
+<h2 id="polar-equations-and-elementary-graphs">Polar equations and
+elementary graphs</h2>
+<p>In polar coordinates, <span class="math inline">\(r=c\)</span> with
+<span class="math inline">\(c&gt;0\)</span> describes a circle centered
+at the origin; <span class="math inline">\(\theta=\alpha\)</span>
+describes a line through the origin when negative radii are allowed.
+Equations <span class="math inline">\(r=2a\cos\theta\)</span> and <span class="math inline">\(r=2a\sin\theta\)</span> convert to <span class="math inline">\((x-a)^2+y^2=a^2\)</span> and <span class="math inline">\(x^2+(y-a)^2=a^2\)</span>. Graphs of <span class="math inline">\(r=f(\theta)\)</span> should be built from an angle
+table, sign analysis, and symmetry, rather than treating <span class="math inline">\(r\)</span> as a Cartesian vertical coordinate.</p>
+<p><strong>Worked example.</strong> For <span class="math inline">\(r=4\cos\theta\)</span>, multiply by <span class="math inline">\(r\)</span>: <span class="math inline">\(r^2=4r\cos\theta\)</span>, hence <span class="math inline">\(x^2+y^2=4x\)</span> and <span class="math inline">\((x-2)^2+y^2=4\)</span>.</p>
+<p><strong>Guided practice.</strong> Convert <span class="math inline">\(r=6\sin\theta\)</span> to Cartesian form and
+identify its center and radius.</p>
+<h5 id="visual-investigation-5.">Visual investigation 5.</h5>
+<p><strong>Visual investigation: Cartesian and polar
+descriptions.</strong> Draw the circle <span class="math inline">\((x-2)^2+y^2=4\)</span> and superimpose rays from
+the origin at angles <span class="math inline">\(0,\pi/6,\pi/3,\pi/2\)</span>. Use the polar
+equation <span class="math inline">\(r=4\cos\theta\)</span> to locate
+intersections and explain what happens when <span class="math inline">\(\cos\theta&lt;0\)</span>.</p>
+<p><strong>Reflection.</strong> Record a numerical prediction, a
+geometric explanation, and a method for checking your conclusion.</p>
+<h2 id="rose-curves-limacons-and-spirals">Rose curves, limacons, and
+spirals</h2>
+<p>The family <span class="math inline">\(r=a\cos(n\theta)\)</span> or
+<span class="math inline">\(r=a\sin(n\theta)\)</span> produces rose
+curves: for integer <span class="math inline">\(n&gt;0\)</span>, odd
+<span class="math inline">\(n\)</span> yields <span class="math inline">\(n\)</span> petals and even <span class="math inline">\(n\)</span> yields <span class="math inline">\(2n\)</span> petals over a full tracing interval.
+Limacons <span class="math inline">\(r=a+b\cos\theta\)</span> exhibit
+different shapes depending on <span class="math inline">\(|a/b|\)</span>, including inner loops when <span class="math inline">\(0&lt;|a|&lt;|b|\)</span>. The Archimedean spiral
+<span class="math inline">\(r=a+b\theta\)</span> (for a specified angle
+interval) increases radial distance linearly with angle. Negative values
+of <span class="math inline">\(r\)</span> are plotted in the opposite
+direction.</p>
+<p><strong>Worked example.</strong> <span class="math inline">\(r=2\cos(3\theta)\)</span> has three petals of
+maximum radial length 2. At <span class="math inline">\(\theta=0\)</span>, <span class="math inline">\(r=2\)</span>; at <span class="math inline">\(\theta=\pi/6\)</span>, <span class="math inline">\(r=0\)</span>.</p>
+<p><strong>Guided practice.</strong> Predict the number of petals for
+<span class="math inline">\(r=3\sin(4\theta)\)</span> and locate three
+angles where <span class="math inline">\(r=0\)</span>.</p>
+<h2 id="polar-symmetry-and-graphing-cautions">Polar symmetry and
+graphing cautions</h2>
+<p>A polar equation may be symmetric about the polar axis, the vertical
+axis, or the pole. Common algebraic checks include replacing <span class="math inline">\(\theta\)</span> by <span class="math inline">\(-\theta\)</span>, <span class="math inline">\(\theta\)</span> by <span class="math inline">\(\pi-\theta\)</span>, and <span class="math inline">\(r\)</span> by <span class="math inline">\(-r\)</span> (or <span class="math inline">\(\theta\)</span> by <span class="math inline">\(\theta+\pi\)</span>), respectively. A failed test
+does not by itself prove a graph lacks symmetry because polar
+representations are nonunique. Numerical plots also depend on sampling
+density: a coarse angle grid can miss narrow loops or crossings.</p>
+<p><strong>Worked example.</strong> Since <span class="math inline">\(\cos(-\theta)=\cos\theta\)</span>, the curve <span class="math inline">\(r=2+\cos\theta\)</span> is symmetric about the
+polar axis.</p>
+<p><strong>Guided practice.</strong> Explain why a graph of <span class="math inline">\(r=\sin(2\theta)\)</span> requires careful
+treatment of negative radii.</p>
+<h5 id="visual-investigation-6.">Visual investigation 6.</h5>
+<p><strong>Visual investigation: symmetry and sampling.</strong> Sketch
+<span class="math inline">\(r=2\cos(3\theta)\)</span> using a table with
+increments <span class="math inline">\(\pi/12\)</span>. Then repeat
+using only increments <span class="math inline">\(\pi/3\)</span>. Which
+features disappear from the coarse plot? Explain why graphing technology
+cannot replace mathematical analysis.</p>
+<p><strong>Reflection.</strong> Record a numerical prediction, a
+geometric explanation, and a method for checking your conclusion.</p>
+<h2 id="polar-motion-and-connections-to-parametric-curves">Polar motion
+and connections to parametric curves</h2>
+<p>A polar path <span class="math inline">\(r=r(t)\)</span>, <span class="math inline">\(\theta=\theta(t)\)</span> becomes the Cartesian
+parametric path <span class="math inline">\(x(t)=r(t)\cos\theta(t)\)</span> and <span class="math inline">\(y(t)=r(t)\sin\theta(t)\)</span>. For constant
+radius and increasing angle, the point travels on a circle; when radius
+changes, it may trace a spiral. The parameter <span class="math inline">\(t\)</span> can represent time, but it need not.
+The geometric path alone does not specify speed or timing.</p>
+<p><strong>Worked example.</strong> <span class="math inline">\(r(t)=2\)</span>, <span class="math inline">\(\theta(t)=\pi t\)</span> traces a circle of radius
+2, counterclockwise, completing one revolution every 2 time units.</p>
+<p><strong>Guided practice.</strong> For <span class="math inline">\(r(t)=t\)</span>, <span class="math inline">\(\theta(t)=2\pi t\)</span> on <span class="math inline">\(0\le t\le2\)</span>, find the Cartesian position
+at <span class="math inline">\(t=0,1/2,1,2\)</span>.</p>
+<h2 id="vector-modeling-and-measurement-uncertainty">Vector modeling and
+measurement uncertainty</h2>
+<p>A mathematical model should identify which quantities are measured,
+the coordinate system, the units, and the assumptions. For example,
+displacement components estimated with error may change the resultant
+magnitude and direction. If <span class="math inline">\(\mathbf
+v=\langle a,b\rangle\)</span>, a small component perturbation <span class="math inline">\(\langle\delta a,\delta b\rangle\)</span> changes
+the magnitude by at most <span class="math inline">\(\sqrt{(\delta
+a)^2+(\delta b)^2}\)</span>, by the reverse triangle inequality. This
+provides a useful error bound without calculus.</p>
+<p><strong>Worked example.</strong> If a displacement estimate is <span class="math inline">\(\langle3,4\rangle\)</span> m and the total vector
+error is at most 0.2 m, its true magnitude lies between 4.8 and 5.2
+m.</p>
+<p><strong>Guided practice.</strong> Explain why angle uncertainty can
+be large for vectors whose magnitudes are near zero.</p>
+<h5 id="visual-investigation-7.">Visual investigation 7.</h5>
+<p><strong>Visual investigation: error and direction.</strong> Draw
+vectors <span class="math inline">\(\langle3,4\rangle\)</span>, <span class="math inline">\(\langle3.2,4\rangle\)</span>, and <span class="math inline">\(\langle3,4.2\rangle\)</span>. Estimate how their
+lengths and angles differ. Repeat with a very short vector <span class="math inline">\(\langle0.05,0.05\rangle\)</span> and comparable
+component errors; discuss the difference in stability.</p>
+<p><strong>Reflection.</strong> Record a numerical prediction, a
+geometric explanation, and a method for checking your conclusion.</p>
+<h2 id="calculus-readiness-tangent-directions-and-changing-vectors">Calculus
+readiness: tangent directions and changing vectors</h2>
+<p>In calculus, a vector-valued position <span class="math inline">\(\mathbf r(t)=\langle x(t),y(t)\rangle\)</span> has
+instantaneous velocity <span class="math inline">\(\mathbf
+r'(t)=\langle x'(t),y'(t)\rangle\)</span>. Before
+differentiating, estimate velocity by the secant vector <span class="math inline">\([\mathbf r(t+h)-\mathbf r(t)]/h\)</span>. For a
+circular path <span class="math inline">\(\mathbf r(t)=\langle R\cos
+t,R\sin t\rangle\)</span>, the secant approaches a tangent direction as
+<span class="math inline">\(h\to0\)</span>. The radius vector and
+tangent vector are perpendicular, foreshadowing dot-product arguments in
+calculus.</p>
+<p><strong>Worked example.</strong> At <span class="math inline">\(t=0\)</span>, compare <span class="math inline">\(\mathbf r(0)=\langle R,0\rangle\)</span> with
+<span class="math inline">\(\mathbf r(h)=\langle R\cos h,R\sin
+h\rangle\)</span> for small positive <span class="math inline">\(h\)</span>; the displacement points approximately
+upward.</p>
+<p><strong>Guided practice.</strong> Use <span class="math inline">\(h=0.1\)</span> and <span class="math inline">\(h=0.01\)</span> to estimate the tangent direction
+for <span class="math inline">\(R=3\)</span> at <span class="math inline">\(t=0\)</span>.</p>
+<h2 id="visual-gallery-vectors-and-polar-curves">Visual gallery: vectors
+and polar curves</h2>
+<figure>
+<img alt="image" src="figures/precompiled/chapter14-01.svg"/>
+<figcaption aria-hidden="true">image</figcaption>
+</figure>
+<figure>
+<img alt="image" src="figures/precompiled/chapter14-02.svg"/>
+<figcaption aria-hidden="true">image</figcaption>
+</figure>
+<p>The second graph is the three-petal rose <span class="math inline">\(r=2\cos(3\theta)\)</span>. Its Cartesian
+parameterization is <span class="math inline">\(x=r\cos\theta\)</span>,
+<span class="math inline">\(y=r\sin\theta\)</span>.</p>
+<h2 id="computational-laboratory-a-vectors-magnitudes-and-projections">Computational
+laboratory A: vectors, magnitudes, and projections</h2>
+<p><strong>Prediction.</strong> For <span class="math inline">\(\mathbf
+u=\langle4,3\rangle\)</span> and <span class="math inline">\(\mathbf
+v=\langle2,1\rangle\)</span>, estimate the angle between the vectors and
+the length of the projection of <span class="math inline">\(\mathbf
+u\)</span> onto <span class="math inline">\(\mathbf v\)</span>.</p>
+<h3 class="unnumbered" id="r-code">R code</h3>
+<div class="code-shell"><div class="code-bar"><span>R</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a aria-hidden="true" href="#cb1-1" tabindex="-1"></a><span class="co"># Laboratory A: vectors and projections</span></span>
+<span id="cb1-2"><a aria-hidden="true" href="#cb1-2" tabindex="-1"></a>u <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">3</span>)</span>
+<span id="cb1-3"><a aria-hidden="true" href="#cb1-3" tabindex="-1"></a>v <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">1</span>)</span>
+<span id="cb1-4"><a aria-hidden="true" href="#cb1-4" tabindex="-1"></a>dot <span class="ot">&lt;-</span> <span class="fu">sum</span>(u <span class="sc">*</span> v)</span>
+<span id="cb1-5"><a aria-hidden="true" href="#cb1-5" tabindex="-1"></a>angle <span class="ot">&lt;-</span> <span class="fu">acos</span>(dot <span class="sc">/</span> (<span class="fu">sqrt</span>(<span class="fu">sum</span>(u<span class="sc">^</span><span class="dv">2</span>)) <span class="sc">*</span> <span class="fu">sqrt</span>(<span class="fu">sum</span>(v<span class="sc">^</span><span class="dv">2</span>))))</span>
+<span id="cb1-6"><a aria-hidden="true" href="#cb1-6" tabindex="-1"></a>projection <span class="ot">&lt;-</span> dot <span class="sc">/</span> <span class="fu">sum</span>(v<span class="sc">^</span><span class="dv">2</span>) <span class="sc">*</span> v</span>
+<span id="cb1-7"><a aria-hidden="true" href="#cb1-7" tabindex="-1"></a>residual <span class="ot">&lt;-</span> u <span class="sc">-</span> projection</span>
+<span id="cb1-8"><a aria-hidden="true" href="#cb1-8" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">list</span>(<span class="at">angle_degrees=</span>angle<span class="sc">*</span><span class="dv">180</span><span class="sc">/</span>pi, <span class="at">projection=</span>projection, <span class="at">residual=</span>residual, <span class="at">orthogonality=</span><span class="fu">sum</span>(residual<span class="sc">*</span>v)))</span>
+<span id="cb1-9"><a aria-hidden="true" href="#cb1-9" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">c</span>(<span class="dv">0</span>,u[<span class="dv">1</span>],v[<span class="dv">1</span>],projection[<span class="dv">1</span>]), <span class="fu">c</span>(<span class="dv">0</span>,u[<span class="dv">2</span>],v[<span class="dv">2</span>],projection[<span class="dv">2</span>]), <span class="at">type=</span><span class="st">"n"</span>, <span class="at">xlim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">5</span>), <span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">4</span>), <span class="at">asp=</span><span class="dv">1</span>, <span class="at">xlab=</span><span class="st">"x"</span>, <span class="at">ylab=</span><span class="st">"y"</span>, <span class="at">main=</span><span class="st">"Vectors and projection"</span>)</span>
+<span id="cb1-10"><a aria-hidden="true" href="#cb1-10" tabindex="-1"></a><span class="fu">arrows</span>(<span class="dv">0</span>,<span class="dv">0</span>,u[<span class="dv">1</span>],u[<span class="dv">2</span>],<span class="at">col=</span><span class="st">"blue"</span>,<span class="at">lwd=</span><span class="dv">2</span>); <span class="fu">arrows</span>(<span class="dv">0</span>,<span class="dv">0</span>,v[<span class="dv">1</span>],v[<span class="dv">2</span>],<span class="at">col=</span><span class="st">"red"</span>,<span class="at">lwd=</span><span class="dv">2</span>); <span class="fu">arrows</span>(<span class="dv">0</span>,<span class="dv">0</span>,projection[<span class="dv">1</span>],projection[<span class="dv">2</span>],<span class="at">col=</span><span class="st">"darkgreen"</span>,<span class="at">lwd=</span><span class="dv">2</span>)</span></code></pre></div></div>
+<h3 class="unnumbered" id="python-code">Python code</h3>
+<div class="code-shell"><div class="code-bar"><span>Python</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" href="#cb2-1" tabindex="-1"></a><span class="co"># Laboratory A: vectors and projections</span></span>
+<span id="cb2-2"><a aria-hidden="true" href="#cb2-2" tabindex="-1"></a><span class="im">import</span> math</span>
+<span id="cb2-3"><a aria-hidden="true" href="#cb2-3" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-4"><a aria-hidden="true" href="#cb2-4" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-5"><a aria-hidden="true" href="#cb2-5" tabindex="-1"></a>u <span class="op">=</span> np.array([<span class="fl">4.</span>, <span class="fl">3.</span>])<span class="op">;</span> v <span class="op">=</span> np.array([<span class="fl">2.</span>, <span class="fl">1.</span>])</span>
+<span id="cb2-6"><a aria-hidden="true" href="#cb2-6" tabindex="-1"></a>dot <span class="op">=</span> <span class="bu">float</span>(np.dot(u, v))</span>
+<span id="cb2-7"><a aria-hidden="true" href="#cb2-7" tabindex="-1"></a>angle <span class="op">=</span> math.degrees(math.acos(dot<span class="op">/</span>(np.linalg.norm(u)<span class="op">*</span>np.linalg.norm(v))))</span>
+<span id="cb2-8"><a aria-hidden="true" href="#cb2-8" tabindex="-1"></a>projection <span class="op">=</span> dot<span class="op">/</span>np.dot(v,v)<span class="op">*</span>v</span>
+<span id="cb2-9"><a aria-hidden="true" href="#cb2-9" tabindex="-1"></a>residual <span class="op">=</span> u<span class="op">-</span>projection</span>
+<span id="cb2-10"><a aria-hidden="true" href="#cb2-10" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Angle (degrees):'</span>, angle, <span class="st">'Projection:'</span>, projection, <span class="st">'Residual:'</span>, residual)</span>
+<span id="cb2-11"><a aria-hidden="true" href="#cb2-11" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Residual dot v:'</span>, np.dot(residual,v))</span>
+<span id="cb2-12"><a aria-hidden="true" href="#cb2-12" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
+<span id="cb2-13"><a aria-hidden="true" href="#cb2-13" tabindex="-1"></a><span class="cf">for</span> vec, color, name <span class="kw">in</span> [(u,<span class="st">'blue'</span>,<span class="st">'u'</span>),(v,<span class="st">'red'</span>,<span class="st">'v'</span>),(projection,<span class="st">'green'</span>,<span class="st">'projection'</span>)]:</span>
+<span id="cb2-14"><a aria-hidden="true" href="#cb2-14" tabindex="-1"></a>    ax.arrow(<span class="dv">0</span>,<span class="dv">0</span>,<span class="op">*</span>vec,head_width<span class="op">=</span><span class="fl">.13</span>,length_includes_head<span class="op">=</span><span class="va">True</span>,color<span class="op">=</span>color,label<span class="op">=</span>name)</span>
+<span id="cb2-15"><a aria-hidden="true" href="#cb2-15" tabindex="-1"></a>ax.<span class="bu">set</span>(xlim<span class="op">=</span>(<span class="dv">0</span>,<span class="dv">5</span>),ylim<span class="op">=</span>(<span class="dv">0</span>,<span class="dv">4</span>),xlabel<span class="op">=</span><span class="st">'x'</span>,ylabel<span class="op">=</span><span class="st">'y'</span>,title<span class="op">=</span><span class="st">'Vectors and projection'</span>)</span>
+<span id="cb2-16"><a aria-hidden="true" href="#cb2-16" tabindex="-1"></a>ax.set_aspect(<span class="st">'equal'</span>)<span class="op">;</span> ax.grid(<span class="va">True</span>)<span class="op">;</span> ax.legend()<span class="op">;</span> fig.savefig(<span class="st">'figures/labA_python.png'</span>,dpi<span class="op">=</span><span class="dv">180</span>,bbox_inches<span class="op">=</span><span class="st">'tight'</span>)</span></code></pre></div></div>
+<p><strong>Interpretation.</strong> Compare exact and numerical values;
+verify the residual is perpendicular to <span class="math inline">\(\mathbf v\)</span>. What happens if the reference
+vector is zero?</p>
+<h2 id="computational-laboratory-b-polar-curves-and-coordinate-conversion">Computational
+laboratory B: polar curves and coordinate conversion</h2>
+<p><strong>Prediction.</strong> Sketch <span class="math inline">\(r=2\cos(3\theta)\)</span> and <span class="math inline">\(r=1+2\cos\theta\)</span> before running either
+script. Predict the number of petals and whether an inner loop
+occurs.</p>
+<h3 class="unnumbered" id="r-code-1">R code</h3>
+<div class="code-shell"><div class="code-bar"><span>R</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a aria-hidden="true" href="#cb3-1" tabindex="-1"></a><span class="co"># Laboratory B: polar curves</span></span>
+<span id="cb3-2"><a aria-hidden="true" href="#cb3-2" tabindex="-1"></a>theta <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">2</span><span class="sc">*</span>pi, <span class="at">length.out=</span><span class="dv">1500</span>)</span>
+<span id="cb3-3"><a aria-hidden="true" href="#cb3-3" tabindex="-1"></a>r1 <span class="ot">&lt;-</span> <span class="dv">2</span><span class="sc">*</span><span class="fu">cos</span>(<span class="dv">3</span><span class="sc">*</span>theta); r2 <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">+</span><span class="dv">2</span><span class="sc">*</span><span class="fu">cos</span>(theta)</span>
+<span id="cb3-4"><a aria-hidden="true" href="#cb3-4" tabindex="-1"></a>x1 <span class="ot">&lt;-</span> r1<span class="sc">*</span><span class="fu">cos</span>(theta); y1 <span class="ot">&lt;-</span> r1<span class="sc">*</span><span class="fu">sin</span>(theta)</span>
+<span id="cb3-5"><a aria-hidden="true" href="#cb3-5" tabindex="-1"></a>x2 <span class="ot">&lt;-</span> r2<span class="sc">*</span><span class="fu">cos</span>(theta); y2 <span class="ot">&lt;-</span> r2<span class="sc">*</span><span class="fu">sin</span>(theta)</span>
+<span id="cb3-6"><a aria-hidden="true" href="#cb3-6" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
+<span id="cb3-7"><a aria-hidden="true" href="#cb3-7" tabindex="-1"></a><span class="fu">plot</span>(x1,y1,<span class="at">type=</span><span class="st">"l"</span>,<span class="at">asp=</span><span class="dv">1</span>,<span class="at">col=</span><span class="st">"blue"</span>,<span class="at">xlab=</span><span class="st">"x"</span>,<span class="at">ylab=</span><span class="st">"y"</span>,<span class="at">main=</span><span class="st">"Three-petal rose"</span>)</span>
+<span id="cb3-8"><a aria-hidden="true" href="#cb3-8" tabindex="-1"></a><span class="fu">plot</span>(x2,y2,<span class="at">type=</span><span class="st">"l"</span>,<span class="at">asp=</span><span class="dv">1</span>,<span class="at">col=</span><span class="st">"red"</span>,<span class="at">xlab=</span><span class="st">"x"</span>,<span class="at">ylab=</span><span class="st">"y"</span>,<span class="at">main=</span><span class="st">"Limacon with inner loop"</span>)</span>
+<span id="cb3-9"><a aria-hidden="true" href="#cb3-9" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>))</span></code></pre></div></div>
+<h3 class="unnumbered" id="python-code-1">Python code</h3>
+<div class="code-shell"><div class="code-bar"><span>Python</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" href="#cb4-1" tabindex="-1"></a><span class="co"># Laboratory B: polar curves</span></span>
+<span id="cb4-2"><a aria-hidden="true" href="#cb4-2" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb4-3"><a aria-hidden="true" href="#cb4-3" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb4-4"><a aria-hidden="true" href="#cb4-4" tabindex="-1"></a>theta <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">2</span><span class="op">*</span>np.pi, <span class="dv">1500</span>)</span>
+<span id="cb4-5"><a aria-hidden="true" href="#cb4-5" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">2</span>,figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">4</span>))</span>
+<span id="cb4-6"><a aria-hidden="true" href="#cb4-6" tabindex="-1"></a><span class="cf">for</span> ax, r, title <span class="kw">in</span> [(axes[<span class="dv">0</span>],<span class="dv">2</span><span class="op">*</span>np.cos(<span class="dv">3</span><span class="op">*</span>theta),<span class="st">'Three-petal rose'</span>),(axes[<span class="dv">1</span>],<span class="dv">1</span><span class="op">+</span><span class="dv">2</span><span class="op">*</span>np.cos(theta),<span class="st">'Limacon with inner loop'</span>)]:</span>
+<span id="cb4-7"><a aria-hidden="true" href="#cb4-7" tabindex="-1"></a>    ax.plot(r<span class="op">*</span>np.cos(theta),r<span class="op">*</span>np.sin(theta))</span>
+<span id="cb4-8"><a aria-hidden="true" href="#cb4-8" tabindex="-1"></a>    ax.set_aspect(<span class="st">'equal'</span>)<span class="op">;</span> ax.set_title(title)<span class="op">;</span> ax.set_xlabel(<span class="st">'x'</span>)<span class="op">;</span> ax.set_ylabel(<span class="st">'y'</span>)<span class="op">;</span> ax.grid(<span class="va">True</span>)</span>
+<span id="cb4-9"><a aria-hidden="true" href="#cb4-9" tabindex="-1"></a>fig.tight_layout()<span class="op">;</span> fig.savefig(<span class="st">'figures/labB_python.png'</span>,dpi<span class="op">=</span><span class="dv">180</span>,bbox_inches<span class="op">=</span><span class="st">'tight'</span>)</span></code></pre></div></div>
+<p><strong>Interpretation.</strong> Explain how negative radial values
+are converted to Cartesian coordinates. Compare coarse and fine angular
+sampling.</p>
+<h2 id="computational-laboratory-c-displacement-modeling-and-uncertainty">Computational
+laboratory C: displacement modeling and uncertainty</h2>
+<p><strong>Prediction.</strong> A nominal displacement is <span class="math inline">\(\langle3,4\rangle\)</span> meters. If each
+component can vary by <span class="math inline">\(\pm0.2\)</span> m,
+estimate the range of possible resultant lengths.</p>
+<h3 class="unnumbered" id="r-code-2">R code</h3>
+<div class="code-shell"><div class="code-bar"><span>R</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a aria-hidden="true" href="#cb5-1" tabindex="-1"></a><span class="co"># Laboratory C: component uncertainty, reproducible simulation</span></span>
+<span id="cb5-2"><a aria-hidden="true" href="#cb5-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">14</span>)</span>
+<span id="cb5-3"><a aria-hidden="true" href="#cb5-3" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">2000</span></span>
+<span id="cb5-4"><a aria-hidden="true" href="#cb5-4" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">runif</span>(n,<span class="fl">2.8</span>,<span class="fl">3.2</span>); y <span class="ot">&lt;-</span> <span class="fu">runif</span>(n,<span class="fl">3.8</span>,<span class="fl">4.2</span>)</span>
+<span id="cb5-5"><a aria-hidden="true" href="#cb5-5" tabindex="-1"></a>magnitude <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(x<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>y<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb5-6"><a aria-hidden="true" href="#cb5-6" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Nominal magnitude:"</span>,<span class="dv">5</span>,<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb5-7"><a aria-hidden="true" href="#cb5-7" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Simulated min/max:"</span>,<span class="fu">range</span>(magnitude),<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb5-8"><a aria-hidden="true" href="#cb5-8" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Componentwise theoretical bounds:"</span>,<span class="fu">sqrt</span>(<span class="fl">2.8</span><span class="sc">^</span><span class="dv">2</span><span class="fl">+3.8</span><span class="sc">^</span><span class="dv">2</span>),<span class="fu">sqrt</span>(<span class="fl">3.2</span><span class="sc">^</span><span class="dv">2</span><span class="fl">+4.2</span><span class="sc">^</span><span class="dv">2</span>),<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb5-9"><a aria-hidden="true" href="#cb5-9" tabindex="-1"></a><span class="fu">plot</span>(x,y,<span class="at">asp=</span><span class="dv">1</span>,<span class="at">pch=</span><span class="dv">16</span>,<span class="at">cex=</span>.<span class="dv">25</span>,<span class="at">col=</span><span class="st">"gray50"</span>,<span class="at">xlab=</span><span class="st">"Horizontal displacement (m)"</span>,<span class="at">ylab=</span><span class="st">"Vertical displacement (m)"</span>,<span class="at">main=</span><span class="st">"Component uncertainty"</span>)</span>
+<span id="cb5-10"><a aria-hidden="true" href="#cb5-10" tabindex="-1"></a><span class="fu">points</span>(<span class="dv">3</span>,<span class="dv">4</span>,<span class="at">col=</span><span class="st">"red"</span>,<span class="at">pch=</span><span class="dv">19</span>,<span class="at">cex=</span><span class="fl">1.3</span>)</span></code></pre></div></div>
+<h3 class="unnumbered" id="python-code-2">Python code</h3>
+<div class="code-shell"><div class="code-bar"><span>Python</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a aria-hidden="true" href="#cb6-1" tabindex="-1"></a><span class="co"># Laboratory C: component uncertainty, reproducible simulation</span></span>
+<span id="cb6-2"><a aria-hidden="true" href="#cb6-2" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb6-3"><a aria-hidden="true" href="#cb6-3" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb6-4"><a aria-hidden="true" href="#cb6-4" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">14</span>)</span>
+<span id="cb6-5"><a aria-hidden="true" href="#cb6-5" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">2000</span></span>
+<span id="cb6-6"><a aria-hidden="true" href="#cb6-6" tabindex="-1"></a>x <span class="op">=</span> rng.uniform(<span class="fl">2.8</span>,<span class="fl">3.2</span>,n)<span class="op">;</span> y <span class="op">=</span> rng.uniform(<span class="fl">3.8</span>,<span class="fl">4.2</span>,n)</span>
+<span id="cb6-7"><a aria-hidden="true" href="#cb6-7" tabindex="-1"></a>magnitude <span class="op">=</span> np.hypot(x,y)</span>
+<span id="cb6-8"><a aria-hidden="true" href="#cb6-8" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Nominal magnitude:'</span>,<span class="dv">5</span>)</span>
+<span id="cb6-9"><a aria-hidden="true" href="#cb6-9" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Simulated min/max:'</span>,magnitude.<span class="bu">min</span>(),magnitude.<span class="bu">max</span>())</span>
+<span id="cb6-10"><a aria-hidden="true" href="#cb6-10" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Componentwise theoretical bounds:'</span>,np.hypot(<span class="fl">2.8</span>,<span class="fl">3.8</span>),np.hypot(<span class="fl">3.2</span>,<span class="fl">4.2</span>))</span>
+<span id="cb6-11"><a aria-hidden="true" href="#cb6-11" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
+<span id="cb6-12"><a aria-hidden="true" href="#cb6-12" tabindex="-1"></a>ax.scatter(x,y,s<span class="op">=</span><span class="dv">4</span>,alpha<span class="op">=</span><span class="fl">.35</span>)<span class="op">;</span> ax.scatter([<span class="dv">3</span>],[<span class="dv">4</span>],s<span class="op">=</span><span class="dv">55</span>)</span>
+<span id="cb6-13"><a aria-hidden="true" href="#cb6-13" tabindex="-1"></a>ax.<span class="bu">set</span>(xlabel<span class="op">=</span><span class="st">'Horizontal displacement (m)'</span>,ylabel<span class="op">=</span><span class="st">'Vertical displacement (m)'</span>,title<span class="op">=</span><span class="st">'Component uncertainty'</span>)</span>
+<span id="cb6-14"><a aria-hidden="true" href="#cb6-14" tabindex="-1"></a>ax.set_aspect(<span class="st">'equal'</span>)<span class="op">;</span> ax.grid(<span class="va">True</span>)<span class="op">;</span> fig.savefig(<span class="st">'figures/labC_python.png'</span>,dpi<span class="op">=</span><span class="dv">180</span>,bbox_inches<span class="op">=</span><span class="st">'tight'</span>)</span></code></pre></div></div>
+<p><strong>Interpretation.</strong> Distinguish the componentwise
+uncertainty model from a bound on total vector error. State whether the
+simulation proves a universal bound.</p>
+<h2 id="extended-applied-workshops-with-worked-solutions">Extended
+applied workshops with worked solutions</h2>
+<h3 class="unnumbered" id="workshop-1-patient-transport-displacement">Workshop 1: Patient
+transport displacement</h3>
+<p>A hospital transporter moves a cart 40 m east and then 30 m north.
+Find the net displacement, its magnitude, and its direction from
+east.</p>
+<p><strong>Solution.</strong> <span class="math inline">\(\mathbf
+d=\langle40,30\rangle\)</span> m; <span class="math inline">\(\|\mathbf
+d\|=50\)</span> m; <span class="math inline">\(\theta=\tan^{-1}(3/4)\approx36.87^\circ\)</span>
+north of east. The distance traveled is 70 m, which differs from the
+displacement magnitude.</p>
+<h3 class="unnumbered" id="workshop-2-resultant-force">Workshop 2:
+Resultant force</h3>
+<p>Two idealized planar forces are <span class="math inline">\(12\)</span> N east and <span class="math inline">\(5\)</span> N south. Find the resultant and the
+balancing force.</p>
+<p><strong>Solution.</strong> <span class="math inline">\(\mathbf
+F=\langle12,-5\rangle\)</span> N; magnitude <span class="math inline">\(13\)</span> N and direction approximately <span class="math inline">\(22.62^\circ\)</span> south of east. The balancing
+force is <span class="math inline">\(\langle-12,5\rangle\)</span> N.</p>
+<h3 class="unnumbered" id="workshop-3-sensor-alignment-and-projection">Workshop 3: Sensor
+alignment and projection</h3>
+<p>A sensor reads <span class="math inline">\(\mathbf
+s=\langle6,2\rangle\)</span> units, while its reference direction is
+<span class="math inline">\(\mathbf d=\langle3,4\rangle\)</span>. Find
+the component of the reading along the reference and the projected
+vector.</p>
+<p><strong>Solution.</strong> <span class="math inline">\(\mathbf
+s\cdot\mathbf d=26\)</span>, <span class="math inline">\(\|\mathbf
+d\|=5\)</span>, so the scalar component is <span class="math inline">\(26/5=5.2\)</span>. The projection is <span class="math inline">\((26/25)\langle3,4\rangle=\langle78/25,104/25\rangle\)</span>.</p>
+<h3 class="unnumbered" id="workshop-4-circular-scanning-geometry">Workshop 4: Circular scanning
+geometry</h3>
+<p>An idealized rotating instrument traces points at radius 8 cm and
+angle <span class="math inline">\(\theta\)</span> from a fixed
+horizontal axis. Find the Cartesian coordinates at <span class="math inline">\(\theta=\pi/3\)</span>, and the angle of the point
+<span class="math inline">\((-4,4\sqrt3)\)</span> cm.</p>
+<p><strong>Solution.</strong> At <span class="math inline">\(\pi/3\)</span>, <span class="math inline">\((x,y)=(4,4\sqrt3)\)</span> cm. The point <span class="math inline">\((-4,4\sqrt3)\)</span> has radius 8 cm and
+principal angle <span class="math inline">\(2\pi/3\)</span>.</p>
+<h3 class="unnumbered" id="workshop-5-polar-curve-interpretation">Workshop 5: Polar curve
+interpretation</h3>
+<p>A simplified geometric path has polar equation <span class="math inline">\(r=4\cos\theta\)</span>. Identify its Cartesian
+locus and explain why the graph is not a circle centered at the
+origin.</p>
+<p><strong>Solution.</strong> Multiply by <span class="math inline">\(r\)</span> to obtain <span class="math inline">\(x^2+y^2=4x\)</span>, or <span class="math inline">\((x-2)^2+y^2=4\)</span>. The circle has center
+<span class="math inline">\((2,0)\)</span> and radius 2; it passes
+through the pole.</p>
+<h2 id="problem-solving-clinic-selecting-the-right-representation">Problem-solving
+clinic: selecting the right representation</h2>
+<ol type="1">
+<li><p>Sketch the situation and state the coordinate axes, positive
+directions, and units.</p></li>
+<li><p>Decide whether components, magnitude–direction form, or polar
+coordinates are most informative.</p></li>
+<li><p>Convert angles to radians before using trigonometric software
+functions.</p></li>
+<li><p>Use exact expressions when possible; round only after
+interpreting the result.</p></li>
+<li><p>Check whether a computed angle is in the correct
+quadrant.</p></li>
+<li><p>Distinguish a geometric path from a time-dependent motion
+model.</p></li>
+<li><p>Check domain restrictions and special cases such as zero vectors
+and the pole.</p></li>
+<li><p>Compare analytic answers with numerical and graphical
+evidence.</p></li>
+</ol>
+<h2 id="guided-practice-studio">Guided practice studio</h2>
+<h3 class="unnumbered" id="activity-a-reconstructing-a-vector">Activity
+A: reconstructing a vector</h3>
+<p>A vector has magnitude 10 and direction <span class="math inline">\(\theta\)</span> with <span class="math inline">\(\cos\theta=-3/5\)</span> and <span class="math inline">\(\sin\theta=4/5\)</span>. Find its components,
+identify its quadrant, and find a unit vector in the opposite
+direction.</p>
+<p><strong>Solution.</strong> <span class="math inline">\(\mathbf
+v=\langle-6,8\rangle\)</span>, quadrant II, opposite unit vector <span class="math inline">\(\langle3/5,-4/5\rangle\)</span>.</p>
+<h3 class="unnumbered" id="activity-b-orthogonal-decomposition">Activity
+B: orthogonal decomposition</h3>
+<p>Decompose <span class="math inline">\(\mathbf
+u=\langle5,1\rangle\)</span> into a component parallel to <span class="math inline">\(\mathbf v=\langle1,1\rangle\)</span> and a
+perpendicular remainder.</p>
+<p><strong>Solution.</strong> The projection is <span class="math inline">\((6/2)\langle1,1\rangle=\langle3,3\rangle\)</span>;
+remainder <span class="math inline">\(\langle2,-2\rangle\)</span> has
+dot product zero with <span class="math inline">\(\mathbf
+v\)</span>.</p>
+<h3 class="unnumbered" id="activity-c-two-polar-representations">Activity C: two polar
+representations</h3>
+<p>Find Cartesian coordinates for <span class="math inline">\((r,\theta)=(-4,\pi/6)\)</span> and give an
+equivalent polar representation with nonnegative radius.</p>
+<p><strong>Solution.</strong> <span class="math inline">\((x,y)=(-2\sqrt3,-2)\)</span>, equivalent to <span class="math inline">\((4,7\pi/6)\)</span>.</p>
+<h3 class="unnumbered" id="activity-d-identifying-a-polar-circle">Activity D: identifying a
+polar circle</h3>
+<p>Show that <span class="math inline">\(r=6\sin\theta\)</span> is a
+circle and determine its center, radius, and intercepts.</p>
+<p><strong>Solution.</strong> <span class="math inline">\(r^2=6r\sin\theta\)</span> implies <span class="math inline">\(x^2+y^2=6y\)</span>, so <span class="math inline">\(x^2+(y-3)^2=9\)</span>. The circle meets the <span class="math inline">\(y\)</span> axis at <span class="math inline">\((0,0)\)</span> and <span class="math inline">\((0,6)\)</span> and touches the <span class="math inline">\(x\)</span> axis at the origin.</p>
+<h2 id="independent-practice-with-worked-checks">Independent practice
+with worked checks</h2>
+<ol type="1">
+<li><p>Compute <span class="math inline">\(\langle2,-3\rangle+\langle-5,7\rangle\)</span>.
+<strong>Check:</strong> <span class="math inline">\(\langle-3,4\rangle\)</span>.</p></li>
+<li><p>Find the magnitude of <span class="math inline">\(\langle8,15\rangle\)</span>.
+<strong>Check:</strong> <span class="math inline">\(17\)</span>.</p></li>
+<li><p>Normalize <span class="math inline">\(\langle-3,4\rangle\)</span>.
+<strong>Check:</strong> <span class="math inline">\(\langle-3/5,4/5\rangle\)</span>.</p></li>
+<li><p>Evaluate <span class="math inline">\(\langle2,5\rangle\cdot\langle3,-1\rangle\)</span>.
+<strong>Check:</strong> <span class="math inline">\(1\)</span>.</p></li>
+<li><p>Convert <span class="math inline">\((2,\pi/2)\)</span> from polar
+to Cartesian. <strong>Check:</strong> <span class="math inline">\((0,2)\)</span>.</p></li>
+<li><p>Convert <span class="math inline">\((-1,-\sqrt3)\)</span> to
+polar form with <span class="math inline">\(r&gt;0\)</span> and <span class="math inline">\(0\le\theta&lt;2\pi\)</span>.
+<strong>Check:</strong> <span class="math inline">\((2,4\pi/3)\)</span>.</p></li>
+<li><p>Convert <span class="math inline">\(r=2\cos\theta\)</span> to
+Cartesian form. <strong>Check:</strong> <span class="math inline">\((x-1)^2+y^2=1\)</span>.</p></li>
+<li><p>Determine whether <span class="math inline">\(\langle1,3\rangle\)</span> and <span class="math inline">\(\langle3,-1\rangle\)</span> are perpendicular.
+<strong>Check:</strong> yes, dot product zero.</p></li>
+</ol>
+<h2 id="deeper-investigation-deriving-the-dot-product-formula">Deeper
+investigation: deriving the dot-product formula</h2>
+<p>The formula <span class="math inline">\(\mathbf u\cdot\mathbf
+v=\|\mathbf u\|\|\mathbf v\|\cos\theta\)</span> is not an arbitrary
+computational rule. To understand why it works, start with the triangle
+formed by <span class="math inline">\(\mathbf u\)</span>, <span class="math inline">\(\mathbf v\)</span>, and <span class="math inline">\(\mathbf u-\mathbf v\)</span>. The law of cosines
+gives <span class="math display">\[\|\mathbf u-\mathbf v\|^2=\|\mathbf
+u\|^2+\|\mathbf v\|^2-2\|\mathbf u\|\|\mathbf v\|\cos\theta.\]</span> On
+the other hand, expand the left side component by component: <span class="math display">\[\begin{aligned}
+\|\mathbf u-\mathbf
+v\|^2&amp;=(u_1-v_1)^2+(u_2-v_2)^2\\&amp;=u_1^2+u_2^2+v_1^2+v_2^2-2(u_1v_1+u_2v_2).
+\end{aligned}\]</span> Comparing the two expressions and canceling
+common terms yields the geometric formula. This derivation also explains
+why the dot product is positive for acute angles, zero for right angles,
+and negative for obtuse angles.</p>
+<p><strong>Guided derivation.</strong> Take <span class="math inline">\(\mathbf u=\langle2,1\rangle\)</span> and <span class="math inline">\(\mathbf v=\langle-1,2\rangle\)</span>. Compute all
+three squared side lengths, use the law of cosines, and show that <span class="math inline">\(\theta=\pi/2\)</span>.</p>
+<p><strong>Concept check.</strong> Can two vectors have a negative dot
+product even when all four component magnitudes are positive? Explain
+the distinction between component magnitudes and signed components.</p>
+<h2 id="deeper-investigation-building-a-polar-graph-by-hand">Deeper
+investigation: building a polar graph by hand</h2>
+<p>Consider the polar curve <span class="math inline">\(r=1+2\cos\theta\)</span>. To graph it accurately,
+start with a table rather than a memorized picture. At <span class="math inline">\(\theta=0\)</span>, <span class="math inline">\(r=3\)</span>; at <span class="math inline">\(\theta=\pi/2\)</span>, <span class="math inline">\(r=1\)</span>; at <span class="math inline">\(\theta=\pi\)</span>, <span class="math inline">\(r=-1\)</span>; at <span class="math inline">\(\theta=3\pi/2\)</span>, <span class="math inline">\(r=1\)</span>. A negative radius at <span class="math inline">\(\theta=\pi\)</span> means plotting one unit in the
+opposite direction, namely at <span class="math inline">\((1,0)\)</span>. The curve passes through the pole
+when <span class="math inline">\(1+2\cos\theta=0\)</span>, or <span class="math inline">\(\theta=2\pi/3,4\pi/3\)</span>. Between these
+angles, the radius is negative, and the curve traces an inner loop.</p>
+<p><strong>Guided practice, step 1.</strong> Evaluate <span class="math inline">\(r\)</span> at <span class="math inline">\(\theta=\pi/3,2\pi/3,5\pi/6,\pi,7\pi/6,4\pi/3,5\pi/3\)</span>.
+Record each point as <span class="math inline">\((r,\theta)\)</span> and
+convert it to Cartesian coordinates.</p>
+<p><strong>Guided practice, step 2.</strong> Sketch the points and
+connect them in increasing order of <span class="math inline">\(\theta\)</span>. Use symmetry about the polar axis
+to check your sketch. Label the crossings at the pole and the inner
+loop.</p>
+<p><strong>Guided practice, step 3.</strong> Compare this curve with
+<span class="math inline">\(r=2+\cos\theta\)</span>. Explain why the
+second curve does not have an inner loop. Your explanation should use
+the minimum possible radius, not just the appearance of a graph.</p>
+<h2 id="additional-practice-representations-and-reasoning">Additional
+practice: representations and reasoning</h2>
+<h3 class="unnumbered" id="exercise-set-a-vector-interpretation">Exercise set A: vector
+interpretation</h3>
+<ol type="1">
+<li><p>Two students describe the same motion: one says “8 meters
+northeast,” while another gives the vector <span class="math inline">\(\langle4\sqrt2,4\sqrt2\rangle\)</span> meters.
+Explain why these descriptions agree.</p></li>
+<li><p>A vector has components <span class="math inline">\(\langle-8,-6\rangle\)</span>. Compute its
+magnitude, identify its quadrant, and give a direction angle in
+degrees.</p></li>
+<li><p>A wind vector <span class="math inline">\(\langle3,-4\rangle\)</span> m/s acts on an object
+moving at <span class="math inline">\(\langle7,2\rangle\)</span> m/s
+relative to still air. Under a simple additive-velocity model, find the
+resulting velocity and speed.</p></li>
+<li><p>Explain why the scalar projection of <span class="math inline">\(\mathbf u\)</span> onto <span class="math inline">\(\mathbf v\)</span> can be negative even though the
+magnitude of the vector projection is nonnegative.</p></li>
+</ol>
+<h3 class="unnumbered" id="exercise-set-b-polar-reasoning">Exercise set
+B: polar reasoning</h3>
+<ol type="1">
+<li><p>Compare <span class="math inline">\((2,\pi/4)\)</span>, <span class="math inline">\((-2,5\pi/4)\)</span>, and <span class="math inline">\((2,9\pi/4)\)</span>. Are they the same point?
+Verify using Cartesian coordinates.</p></li>
+<li><p>Convert <span class="math inline">\(x^2+y^2=8y\)</span> to a
+polar equation and identify the curve’s center and radius.</p></li>
+<li><p>A sensor rotates through one full revolution at fixed radius
+<span class="math inline">\(r=5\)</span> cm. Write its position as a
+function of angle, then as a function of time if the angular speed is
+<span class="math inline">\(\pi/3\)</span> radians per second.</p></li>
+<li><p>Explain why <span class="math inline">\(r=\theta\)</span> and
+<span class="math inline">\(r=\theta+2\pi\)</span> are not the same
+polar graph even though angles differing by <span class="math inline">\(2\pi\)</span> point in the same
+direction.</p></li>
+</ol>
+<h3 class="unnumbered" id="reflection-and-synthesis">Reflection and
+synthesis</h3>
+<p>Write a paragraph explaining when you would prefer (a) rectangular
+vector components, (b) magnitude–direction form, and (c) polar
+coordinates. Give one scientific or geometric example for each choice.
+Include a statement about units and the limitations of a mathematical
+model.</p>
+<h2 id="chapter-review-exercises">Chapter review exercises</h2>
+<p>For each problem, show the mathematical steps, label units where
+applicable, and check whether a graphical interpretation agrees with the
+algebra.</p>
+<ol type="1">
+<li><p>Find <span class="math inline">\(\overrightarrow{PQ}\)</span> for
+<span class="math inline">\(P(-4,2)\)</span> and <span class="math inline">\(Q(3,-5)\)</span>.</p></li>
+<li><p>Compute <span class="math inline">\(2\langle1,-4\rangle-3\langle-2,5\rangle\)</span>.</p></li>
+<li><p>Find the length of <span class="math inline">\(\langle-7,24\rangle\)</span>.</p></li>
+<li><p>Find a unit vector parallel to <span class="math inline">\(\langle8,-6\rangle\)</span>.</p></li>
+<li><p>Find the endpoint of a vector <span class="math inline">\(\langle-5,9\rangle\)</span> starting at <span class="math inline">\((4,-2)\)</span>.</p></li>
+<li><p>Express a vector of magnitude 16 and direction <span class="math inline">\(\pi/6\)</span> in components.</p></li>
+<li><p>Find the direction angle of <span class="math inline">\(\langle-1,1\rangle\)</span> in <span class="math inline">\([0,2\pi)\)</span>.</p></li>
+<li><p>Find the angle between <span class="math inline">\(\langle1,0\rangle\)</span> and <span class="math inline">\(\langle-1,1\rangle\)</span>.</p></li>
+<li><p>Find <span class="math inline">\(\langle2,-1\rangle\cdot\langle-3,4\rangle\)</span>.</p></li>
+<li><p>Determine whether <span class="math inline">\(\langle3,2\rangle\)</span> and <span class="math inline">\(\langle-4,6\rangle\)</span> are
+orthogonal.</p></li>
+<li><p>Project <span class="math inline">\(\langle4,0\rangle\)</span>
+onto <span class="math inline">\(\langle1,1\rangle\)</span>.</p></li>
+<li><p>Decompose <span class="math inline">\(\langle1,5\rangle\)</span>
+into parts parallel and perpendicular to <span class="math inline">\(\langle0,1\rangle\)</span>.</p></li>
+<li><p>Add forces of 5 N east and 12 N north; find the
+magnitude.</p></li>
+<li><p>Find the balancing force for <span class="math inline">\(\langle-3,7\rangle\)</span> N.</p></li>
+<li><p>Convert polar <span class="math inline">\((5,\pi/3)\)</span> to
+Cartesian coordinates.</p></li>
+<li><p>Convert polar <span class="math inline">\((-2,\pi/2)\)</span> to
+Cartesian coordinates.</p></li>
+<li><p>Convert Cartesian <span class="math inline">\((3,-3)\)</span> to
+polar form with <span class="math inline">\(r\ge0\)</span>.</p></li>
+<li><p>Give two polar descriptions of <span class="math inline">\((-4,0)\)</span>.</p></li>
+<li><p>Explain why the polar angle at the origin is not unique.</p></li>
+<li><p>Convert <span class="math inline">\(r=8\cos\theta\)</span> to a
+Cartesian equation.</p></li>
+<li><p>Convert <span class="math inline">\(r=4\sin\theta\)</span> to a
+Cartesian equation.</p></li>
+<li><p>Sketch <span class="math inline">\(r=3\)</span> and identify its
+Cartesian equation.</p></li>
+<li><p>Predict the number of petals of <span class="math inline">\(r=\cos(5\theta)\)</span>.</p></li>
+<li><p>Predict the number of petals of <span class="math inline">\(r=2\sin(4\theta)\)</span>.</p></li>
+<li><p>Find three zeros of <span class="math inline">\(r=2\cos(3\theta)\)</span> on <span class="math inline">\([0,2\pi)\)</span>.</p></li>
+<li><p>Describe the symmetry of <span class="math inline">\(r=2+\cos\theta\)</span>.</p></li>
+<li><p>Convert <span class="math inline">\(r(t)=2\)</span>, <span class="math inline">\(\theta(t)=t\)</span> to Cartesian parametric
+equations.</p></li>
+<li><p>Find the location of <span class="math inline">\(r(t)=t\)</span>,
+<span class="math inline">\(\theta(t)=\pi t\)</span> at <span class="math inline">\(t=1\)</span>.</p></li>
+<li><p>Explain the difference between distance traveled and net
+displacement.</p></li>
+<li><p>Explain why <span class="math inline">\(\tan^{-1}(y/x)\)</span>
+may give an incorrect quadrant.</p></li>
+<li><p>Estimate the secant velocity of <span class="math inline">\(\mathbf r(t)=\langle\cos t,\sin t\rangle\)</span>
+at <span class="math inline">\(t=0\)</span> using <span class="math inline">\(h=0.1\)</span>.</p></li>
+<li><p>Explain why <span class="math inline">\(\operatorname{proj}_{\mathbf0}\mathbf u\)</span>
+is undefined.</p></li>
+<li><p>Find the range of possible magnitudes when <span class="math inline">\(\|\mathbf v\|=5\)</span> and the total vector
+error is at most 0.3.</p></li>
+<li><p>Write a short modeling critique of a constant-speed circular
+motion assumption.</p></li>
+<li><p>Compare a polar graph sampled at 12 angles and at 360 angles;
+describe possible numerical artifacts.</p></li>
+</ol>
+<h2 id="calculus-readiness-checkpoint">Calculus-readiness
+checkpoint</h2>
+<ol type="1">
+<li><p>For <span class="math inline">\(\mathbf r(t)=\langle2\cos t,2\sin
+t\rangle\)</span>, compute <span class="math inline">\([\mathbf
+r(h)-\mathbf r(0)]/h\)</span> for <span class="math inline">\(h=0.1\)</span> and <span class="math inline">\(h=0.01\)</span>; identify the limiting
+direction.</p></li>
+<li><p>Explain how the dot product can test whether a proposed velocity
+vector is tangent to a circle.</p></li>
+<li><p>A polar path is <span class="math inline">\(r=1+\theta\)</span>
+for <span class="math inline">\(0\le\theta\le\pi\)</span>. Write
+Cartesian parametric equations and discuss how the radial distance
+changes.</p></li>
+<li><p>State one question about a vector-valued motion model that cannot
+be answered from the geometric path alone.</p></li>
+</ol>
+<h2 class="unnumbered" id="looking-ahead">Looking ahead</h2>
+<p>Chapter 15 introduces rates of change, difference quotients, and
+limits. The vector and polar representations developed here will
+reappear in differential and multivariable calculus, where positions
+become functions of time and tangent directions become derivatives.</p>
+<h2 id="extended-application-directional-motion">Extended application:
+Directional motion</h2>
+<p>A mobile robot travels 10 meters at a heading measured
+counterclockwise from the positive horizontal axis. The quantities in
+this investigation are illustrative rather than measured
+observations.</p>
+<h3 id="formulating-the-mathematical-model">Formulating the mathematical
+model</h3>
+<p>The proposed relationship is <span class="math display">\[Y(\theta)=10\sin\theta.\]</span> Before
+calculating, identify the input and output, their units, and the
+interval on which the model is being studied. Distinguish the
+mathematical domain from the practical domain. The numerical study uses
+inputs from <span class="math inline">\(0\)</span> to <span class="math inline">\(6.28\)</span>.</p>
+<blockquote class="example">
+<p><strong>Example 1: Analytical investigation.</strong> Find both
+displacement components at <span class="math inline">\(\pi/6\)</span>
+and verify the magnitude. Find headings with vertical displacement 5
+m.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> Components <span class="math inline">\((5\sqrt3,5)\)</span>; magnitude 10. Headings <span class="math inline">\(\pi/6\)</span> and <span class="math inline">\(5\pi/6\)</span> modulo <span class="math inline">\(2\pi\)</span>.</p>
+</blockquote>
+<h3 id="connecting-numerical-and-graphical-representations">Connecting
+numerical and graphical representations</h3>
+<table>
+<caption>Selected predictions from the illustrative model. Values are
+rounded for display.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Heading (rad)</th>
+<th style="text-align: right;">Vertical displacement (m)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1.57</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3.14</td>
+<td style="text-align: right;">-2.068e-12</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4.71</td>
+<td style="text-align: right;">-10</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">6.28</td>
+<td style="text-align: right;">4.136e-12</td>
+</tr>
+</tbody>
+</table>
+<figure>
+<img alt="Model predictions over the stated investigation interval. The graph represents a mathematical model, not observed data." src="figures/ch14/applied_project.svg" style="width:90.0%"/>
+<figcaption aria-hidden="true">Model predictions over the stated
+investigation interval. The graph represents a mathematical model, not
+observed data.</figcaption>
+</figure>
+<p><strong>Interpretation.</strong> Compare the tabulated values with
+the graph. Identify the intervals over which the output increases or
+decreases, and distinguish a sampled extremum from an exact analytical
+extremum. Explain whether interpolation and extrapolation have the same
+justification in this setting.</p>
+<h3 id="r-implementation">R implementation</h3>
+<p>The following standalone script defines the model, generates
+predictions, and draws a labeled graph. Read the formula before running
+the code. The sampled range is a numerical diagnostic, not a proof of
+the exact range.</p>
+<div class="code-shell"><div class="code-bar"><span>R</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a aria-hidden="true" href="#cb7-1" tabindex="-1"></a><span class="co"># Applied investigation: Directional motion</span></span>
+<span id="cb7-2"><a aria-hidden="true" href="#cb7-2" tabindex="-1"></a><span class="co"># 1. Define the input domain and model</span></span>
+<span id="cb7-3"><a aria-hidden="true" href="#cb7-3" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="fl">6.28318530718</span>, <span class="at">length.out =</span> <span class="dv">301</span>)</span>
+<span id="cb7-4"><a aria-hidden="true" href="#cb7-4" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">10</span><span class="sc">*</span><span class="fu">sin</span>(x)</span>
+<span id="cb7-5"><a aria-hidden="true" href="#cb7-5" tabindex="-1"></a></span>
+<span id="cb7-6"><a aria-hidden="true" href="#cb7-6" tabindex="-1"></a><span class="co"># 2. Inspect numerical predictions</span></span>
+<span id="cb7-7"><a aria-hidden="true" href="#cb7-7" tabindex="-1"></a>idx <span class="ot">&lt;-</span> <span class="fu">unique</span>(<span class="fu">round</span>(<span class="fu">seq</span>(<span class="dv">1</span>, <span class="fu">length</span>(x), <span class="at">length.out =</span> <span class="dv">5</span>)))</span>
+<span id="cb7-8"><a aria-hidden="true" href="#cb7-8" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">data.frame</span>(<span class="at">input =</span> x[idx], <span class="at">output =</span> y[idx]))</span>
+<span id="cb7-9"><a aria-hidden="true" href="#cb7-9" tabindex="-1"></a></span>
+<span id="cb7-10"><a aria-hidden="true" href="#cb7-10" tabindex="-1"></a><span class="co"># 3. Visualize the model with labeled axes</span></span>
+<span id="cb7-11"><a aria-hidden="true" href="#cb7-11" tabindex="-1"></a><span class="fu">plot</span>(x, y, <span class="at">type =</span> <span class="st">"l"</span>, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">"#176B87"</span>,</span>
+<span id="cb7-12"><a aria-hidden="true" href="#cb7-12" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Heading (rad)"</span>, <span class="at">ylab =</span> <span class="st">"Vertical displacement (m)"</span>)</span>
+<span id="cb7-13"><a aria-hidden="true" href="#cb7-13" tabindex="-1"></a><span class="fu">grid</span>()</span>
+<span id="cb7-14"><a aria-hidden="true" href="#cb7-14" tabindex="-1"></a></span>
+<span id="cb7-15"><a aria-hidden="true" href="#cb7-15" tabindex="-1"></a><span class="co"># 4. Check the sampled output range</span></span>
+<span id="cb7-16"><a aria-hidden="true" href="#cb7-16" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">range</span>(y))</span></code></pre></div></div>
+<h3 id="python-implementation">Python implementation</h3>
+<p>Repeat the same investigation using NumPy arrays and Matplotlib.
+Compare the printed predictions with the R output, allowing for
+rounding.</p>
+<div class="code-shell"><div class="code-bar"><span>Python</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a aria-hidden="true" href="#cb8-1" tabindex="-1"></a><span class="co"># Applied investigation: Directional motion</span></span>
+<span id="cb8-2"><a aria-hidden="true" href="#cb8-2" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb8-3"><a aria-hidden="true" href="#cb8-3" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb8-4"><a aria-hidden="true" href="#cb8-4" tabindex="-1"></a></span>
+<span id="cb8-5"><a aria-hidden="true" href="#cb8-5" tabindex="-1"></a><span class="co"># 1. Define the input domain and model</span></span>
+<span id="cb8-6"><a aria-hidden="true" href="#cb8-6" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="fl">6.28318530718</span>, <span class="dv">301</span>)</span>
+<span id="cb8-7"><a aria-hidden="true" href="#cb8-7" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">10</span><span class="op">*</span>np.sin(x)</span>
+<span id="cb8-8"><a aria-hidden="true" href="#cb8-8" tabindex="-1"></a></span>
+<span id="cb8-9"><a aria-hidden="true" href="#cb8-9" tabindex="-1"></a><span class="co"># 2. Inspect numerical predictions</span></span>
+<span id="cb8-10"><a aria-hidden="true" href="#cb8-10" tabindex="-1"></a>idx <span class="op">=</span> np.unique(np.linspace(<span class="dv">0</span>, <span class="bu">len</span>(x)<span class="op">-</span><span class="dv">1</span>, <span class="dv">5</span>).<span class="bu">round</span>().astype(<span class="bu">int</span>))</span>
+<span id="cb8-11"><a aria-hidden="true" href="#cb8-11" tabindex="-1"></a><span class="bu">print</span>(np.column_stack((x[idx], y[idx])))</span>
+<span id="cb8-12"><a aria-hidden="true" href="#cb8-12" tabindex="-1"></a></span>
+<span id="cb8-13"><a aria-hidden="true" href="#cb8-13" tabindex="-1"></a><span class="co"># 3. Visualize the model with labeled axes</span></span>
+<span id="cb8-14"><a aria-hidden="true" href="#cb8-14" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="fl">3.6</span>))</span>
+<span id="cb8-15"><a aria-hidden="true" href="#cb8-15" tabindex="-1"></a>ax.plot(x, y, <span class="st">"-"</span>, color<span class="op">=</span><span class="st">"#176B87"</span>, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb8-16"><a aria-hidden="true" href="#cb8-16" tabindex="-1"></a>ax.<span class="bu">set</span>(xlabel<span class="op">=</span><span class="st">"Heading (rad)"</span>, ylabel<span class="op">=</span><span class="st">"Vertical displacement (m)"</span>)</span>
+<span id="cb8-17"><a aria-hidden="true" href="#cb8-17" tabindex="-1"></a>ax.grid(alpha<span class="op">=</span><span class="fl">0.22</span>)</span>
+<span id="cb8-18"><a aria-hidden="true" href="#cb8-18" tabindex="-1"></a>ax.spines[[<span class="st">"top"</span>, <span class="st">"right"</span>]].set_visible(<span class="va">False</span>)</span>
+<span id="cb8-19"><a aria-hidden="true" href="#cb8-19" tabindex="-1"></a>fig.tight_layout()</span>
+<span id="cb8-20"><a aria-hidden="true" href="#cb8-20" tabindex="-1"></a>plt.show()</span>
+<span id="cb8-21"><a aria-hidden="true" href="#cb8-21" tabindex="-1"></a></span>
+<span id="cb8-22"><a aria-hidden="true" href="#cb8-22" tabindex="-1"></a><span class="co"># 4. Check the sampled output range</span></span>
+<span id="cb8-23"><a aria-hidden="true" href="#cb8-23" tabindex="-1"></a><span class="bu">print</span>(np.<span class="bu">min</span>(y), np.<span class="bu">max</span>(y))</span></code></pre></div></div>
+<h3 id="guided-practice-checking-the-model">Guided practice: checking
+the model</h3>
+<ol type="1">
+<li><p>Calculate the outputs at the two endpoints by hand. Compare them
+with the numerical table.</p></li>
+<li><p>Select an interior input not listed in the table. Predict the
+output before evaluating it in either language.</p></li>
+<li><p>Explain the meaning of the difference between the two endpoint
+outputs, including units. If appropriate, calculate the average rate of
+change.</p></li>
+<li><p>Identify a physical assumption of the model and describe a
+circumstance in which it would fail.</p></li>
+</ol>
+<h2 id="chapter-project-investigating-directional-motion">Chapter
+project: investigating Directional motion</h2>
+<p>Prepare a short technical report for a reader who has not studied the
+model. Use the preceding case as a starting point, but develop your own
+investigation rather than merely reproducing the worked example.</p>
+<ol type="1">
+<li><p>State a quantitative question that can be answered using the
+model. Define all variables, units, and restrictions.</p></li>
+<li><p>Modify one meaningful numerical parameter in the formula. Explain
+what the change represents in the original context. Derive the revised
+formula and predict the direction of change before computing.</p></li>
+<li><p>Compare the original and revised models at five common admissible
+inputs. Present a labeled table and explain the largest difference in
+the table.</p></li>
+<li><p>Produce a graph containing both models on the same axes. Use a
+legend and distinguish the curves with line styles or markers. Explain
+the shape and any intersections.</p></li>
+<li><p>Solve your quantitative question algebraically where possible.
+Verify the result using R and Python; report any differences due to
+numerical precision.</p></li>
+<li><p>Discuss at least two limitations. Describe what measurements
+would be needed to assess the model in practice. Do not present
+simulated predictions as empirical evidence.</p></li>
+</ol>
+<h3 class="unnumbered" id="project-deliverables-and-assessment">Project
+deliverables and assessment</h3>
+<p>Submit a two- to three-page report, the two runnable scripts, and the
+labeled figure. The report should stand on its own without requiring the
+reader to inspect the code.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Criterion</th>
+<th style="text-align: right;">Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Mathematical formulation and domain</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Analytical reasoning and verification</td>
+<td style="text-align: right;">25</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Reproducible R and Python
+computations</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Graph and table quality</td>
+<td style="text-align: right;">15</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Interpretation and limitations</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Total</td>
+<td style="text-align: right;">100</td>
+</tr>
+</tbody>
+</table>
+<h2>Companion scripts</h2><p><a download="" href="code/ch14/applied_project.R">applied_project.R</a></p><p><a download="" href="code/ch14/applied_project.py">applied_project.py</a></p><p><a download="" href="code/ch14/labA.R">labA.R</a></p><p><a download="" href="code/ch14/labA.py">labA.py</a></p><p><a download="" href="code/ch14/labB.R">labB.R</a></p><p><a download="" href="code/ch14/labB.py">labB.py</a></p><p><a download="" href="code/ch14/labC.R">labC.R</a></p><p><a download="" href="code/ch14/labC.py">labC.py</a></p><footer><a href="chapter13.html">← Previous</a><a href="chapter15.html">Next →</a></footer><section class="investigation"><h2 id="interactive-investigation">Interactive investigation: Vector components</h2><div data-investigation="14"><p>Enable JavaScript to explore the model.</p></div><p><strong>Explore and explain:</strong> Calculate the magnitude and direction; explain the zero vector.</p></section>
+</main><nav aria-label="On this page" class="chapter-toc" id="TOC" role="doc-toc"><strong>On this page</strong>
+<ul>
+<li><a href="#vectors-polar-coordinates-and-geometric-modeling" id="toc-vectors-polar-coordinates-and-geometric-modeling">Vectors, Polar
+Coordinates, and Geometric Modeling</a>
+<ul>
+<li><a href="#opening-context-directions-matter" id="toc-opening-context-directions-matter">Opening context: directions
+matter</a></li>
+<li><a href="#learning-outcomes" id="toc-learning-outcomes">Learning
+outcomes</a></li>
+<li><a href="#how-to-use-the-computational-laboratories" id="toc-how-to-use-the-computational-laboratories">How to use the
+computational laboratories</a></li>
+<li><a href="#directed-segments-and-vector-notation" id="toc-directed-segments-and-vector-notation">Directed segments and
+vector notation</a></li>
+<li><a href="#vector-addition-subtraction-and-scalar-multiplication" id="toc-vector-addition-subtraction-and-scalar-multiplication">Vector
+addition, subtraction, and scalar multiplication</a></li>
+<li><a href="#magnitude-distance-and-unit-vectors" id="toc-magnitude-distance-and-unit-vectors">Magnitude, distance, and
+unit vectors</a></li>
+<li><a href="#direction-angles-and-trigonometric-components" id="toc-direction-angles-and-trigonometric-components">Direction angles
+and trigonometric components</a></li>
+<li><a href="#the-dot-product-and-the-angle-between-vectors" id="toc-the-dot-product-and-the-angle-between-vectors">The dot product
+and the angle between vectors</a></li>
+<li><a href="#orthogonality-projection-and-component-along-a-direction" id="toc-orthogonality-projection-and-component-along-a-direction">Orthogonality,
+projection, and component along a direction</a></li>
+<li><a href="#applied-vectors-resultant-forces-and-navigation" id="toc-applied-vectors-resultant-forces-and-navigation">Applied
+vectors: resultant forces and navigation</a></li>
+<li><a href="#polar-coordinates-and-nonunique-representations" id="toc-polar-coordinates-and-nonunique-representations">Polar
+coordinates and nonunique representations</a></li>
+<li><a href="#converting-between-cartesian-and-polar-coordinates" id="toc-converting-between-cartesian-and-polar-coordinates">Converting
+between Cartesian and polar coordinates</a></li>
+<li><a href="#polar-equations-and-elementary-graphs" id="toc-polar-equations-and-elementary-graphs">Polar equations and
+elementary graphs</a></li>
+<li><a href="#rose-curves-limacons-and-spirals" id="toc-rose-curves-limacons-and-spirals">Rose curves, limacons, and
+spirals</a></li>
+<li><a href="#polar-symmetry-and-graphing-cautions" id="toc-polar-symmetry-and-graphing-cautions">Polar symmetry and
+graphing cautions</a></li>
+<li><a href="#polar-motion-and-connections-to-parametric-curves" id="toc-polar-motion-and-connections-to-parametric-curves">Polar motion
+and connections to parametric curves</a></li>
+<li><a href="#vector-modeling-and-measurement-uncertainty" id="toc-vector-modeling-and-measurement-uncertainty">Vector modeling and
+measurement uncertainty</a></li>
+<li><a href="#calculus-readiness-tangent-directions-and-changing-vectors" id="toc-calculus-readiness-tangent-directions-and-changing-vectors">Calculus
+readiness: tangent directions and changing vectors</a></li>
+<li><a href="#visual-gallery-vectors-and-polar-curves" id="toc-visual-gallery-vectors-and-polar-curves">Visual gallery: vectors
+and polar curves</a></li>
+<li><a href="#computational-laboratory-a-vectors-magnitudes-and-projections" id="toc-computational-laboratory-a-vectors-magnitudes-and-projections">Computational
+laboratory A: vectors, magnitudes, and projections</a>
+<ul>
+<li><a href="#r-code" id="toc-r-code">R code</a></li>
+<li><a href="#python-code" id="toc-python-code">Python code</a></li>
+</ul></li>
+<li><a href="#computational-laboratory-b-polar-curves-and-coordinate-conversion" id="toc-computational-laboratory-b-polar-curves-and-coordinate-conversion">Computational
+laboratory B: polar curves and coordinate conversion</a>
+<ul>
+<li><a href="#r-code-1" id="toc-r-code-1">R code</a></li>
+<li><a href="#python-code-1" id="toc-python-code-1">Python code</a></li>
+</ul></li>
+<li><a href="#computational-laboratory-c-displacement-modeling-and-uncertainty" id="toc-computational-laboratory-c-displacement-modeling-and-uncertainty">Computational
+laboratory C: displacement modeling and uncertainty</a>
+<ul>
+<li><a href="#r-code-2" id="toc-r-code-2">R code</a></li>
+<li><a href="#python-code-2" id="toc-python-code-2">Python code</a></li>
+</ul></li>
+<li><a href="#extended-applied-workshops-with-worked-solutions" id="toc-extended-applied-workshops-with-worked-solutions">Extended
+applied workshops with worked solutions</a>
+<ul>
+<li><a href="#workshop-1-patient-transport-displacement" id="toc-workshop-1-patient-transport-displacement">Workshop 1: Patient
+transport displacement</a></li>
+<li><a href="#workshop-2-resultant-force" id="toc-workshop-2-resultant-force">Workshop 2: Resultant force</a></li>
+<li><a href="#workshop-3-sensor-alignment-and-projection" id="toc-workshop-3-sensor-alignment-and-projection">Workshop 3: Sensor
+alignment and projection</a></li>
+<li><a href="#workshop-4-circular-scanning-geometry" id="toc-workshop-4-circular-scanning-geometry">Workshop 4: Circular
+scanning geometry</a></li>
+<li><a href="#workshop-5-polar-curve-interpretation" id="toc-workshop-5-polar-curve-interpretation">Workshop 5: Polar curve
+interpretation</a></li>
+</ul></li>
+<li><a href="#problem-solving-clinic-selecting-the-right-representation" id="toc-problem-solving-clinic-selecting-the-right-representation">Problem-solving
+clinic: selecting the right representation</a></li>
+<li><a href="#guided-practice-studio" id="toc-guided-practice-studio">Guided practice studio</a>
+<ul>
+<li><a href="#activity-a-reconstructing-a-vector" id="toc-activity-a-reconstructing-a-vector">Activity A: reconstructing a
+vector</a></li>
+<li><a href="#activity-b-orthogonal-decomposition" id="toc-activity-b-orthogonal-decomposition">Activity B: orthogonal
+decomposition</a></li>
+<li><a href="#activity-c-two-polar-representations" id="toc-activity-c-two-polar-representations">Activity C: two polar
+representations</a></li>
+<li><a href="#activity-d-identifying-a-polar-circle" id="toc-activity-d-identifying-a-polar-circle">Activity D: identifying a
+polar circle</a></li>
+</ul></li>
+<li><a href="#independent-practice-with-worked-checks" id="toc-independent-practice-with-worked-checks">Independent practice
+with worked checks</a></li>
+<li><a href="#deeper-investigation-deriving-the-dot-product-formula" id="toc-deeper-investigation-deriving-the-dot-product-formula">Deeper
+investigation: deriving the dot-product formula</a></li>
+<li><a href="#deeper-investigation-building-a-polar-graph-by-hand" id="toc-deeper-investigation-building-a-polar-graph-by-hand">Deeper
+investigation: building a polar graph by hand</a></li>
+<li><a href="#additional-practice-representations-and-reasoning" id="toc-additional-practice-representations-and-reasoning">Additional
+practice: representations and reasoning</a>
+<ul>
+<li><a href="#exercise-set-a-vector-interpretation" id="toc-exercise-set-a-vector-interpretation">Exercise set A: vector
+interpretation</a></li>
+<li><a href="#exercise-set-b-polar-reasoning" id="toc-exercise-set-b-polar-reasoning">Exercise set B: polar
+reasoning</a></li>
+<li><a href="#reflection-and-synthesis" id="toc-reflection-and-synthesis">Reflection and synthesis</a></li>
+</ul></li>
+<li><a href="#chapter-review-exercises" id="toc-chapter-review-exercises">Chapter review exercises</a></li>
+<li><a href="#calculus-readiness-checkpoint" id="toc-calculus-readiness-checkpoint">Calculus-readiness
+checkpoint</a></li>
+<li><a href="#looking-ahead" id="toc-looking-ahead">Looking
+ahead</a></li>
+<li><a href="#extended-application-directional-motion" id="toc-extended-application-directional-motion">Extended application:
+Directional motion</a>
+<ul>
+<li><a href="#formulating-the-mathematical-model" id="toc-formulating-the-mathematical-model">Formulating the mathematical
+model</a></li>
+<li><a href="#connecting-numerical-and-graphical-representations" id="toc-connecting-numerical-and-graphical-representations">Connecting
+numerical and graphical representations</a></li>
+<li><a href="#r-implementation" id="toc-r-implementation">R
+implementation</a></li>
+<li><a href="#python-implementation" id="toc-python-implementation">Python implementation</a></li>
+<li><a href="#guided-practice-checking-the-model" id="toc-guided-practice-checking-the-model">Guided practice: checking
+the model</a></li>
+</ul></li>
+<li><a href="#chapter-project-investigating-directional-motion" id="toc-chapter-project-investigating-directional-motion">Chapter
+project: investigating Directional motion</a>
+<ul>
+<li><a href="#project-deliverables-and-assessment" id="toc-project-deliverables-and-assessment">Project deliverables and
+assessment</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav></div><script src="investigations.js"></script></body></html>

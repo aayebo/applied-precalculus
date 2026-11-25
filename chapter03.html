@@ -1,0 +1,1360 @@
+<!DOCTYPE html>
+
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8"/>
+<meta content="pandoc" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+<title>Coordinate
+Geometry, Lines, and Systems of Equations | Applied Precalculus</title>
+<style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+
+
+<link href="site.css" rel="stylesheet"/><script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script defer="" src="search-index.js"></script><script defer="" src="site.js"></script></head><body><nav class="site-nav" id="book-nav"><strong class="brand">Applied Precalculus</strong><p class="subtitle">Using R and Python</p><input aria-label="Search the book" id="book-search" placeholder="Search the book"/><div aria-live="polite" class="search-results" id="search-results"></div><p class="nav-label">Contents</p><a class="" href="index.html">Preface</a><a class="" href="chapter01.html">1. Real Numbers, Algebraic Expressions, and Mathematical Reasoning</a><a class="" href="chapter02.html">2. Equations, Inequalities, and Applications</a><a class="active" href="chapter03.html">3. Coordinate Geometry, Lines, and Systems of Equations</a><a class="" href="chapter04.html">4. Functions, Graphs, and Multiple Representations</a><a class="" href="chapter05.html">5. Transformations, Compositions, and Inverse Functions</a><a class="" href="chapter06.html">6. Polynomial and Rational Functions</a><a class="" href="chapter07.html">7. Exponential and Logarithmic Functions</a><a class="" href="chapter08.html">8. Angles, Radian Measure, and the Unit Circle</a><a class="" href="chapter09.html">9. Trigonometric Functions and Their Graphs</a><a class="" href="chapter10.html">10. Trigonometric Identities and Equations</a><a class="" href="chapter11.html">11. Applications of Trigonometry and Periodic Models</a><a class="" href="chapter12.html">12. Sequences, Series, and Mathematical Patterns</a><a class="" href="chapter13.html">13. Conic Sections and Parametric Equations</a><a class="" href="chapter14.html">14. Vectors, Polar Coordinates, and Geometric Modeling</a><a class="" href="chapter15.html">15. Rates of Change, Difference Quotients, and Limits</a><a class="" href="chapter16.html">16. Integrated Mathematical Modeling with R and Python</a><a class="" href="programming.html">Getting Started with R and Python</a><a class="" href="resources.html">Computational Resource Guide</a></nav><a class="skip" href="#main-content">Skip to content</a><header class="topbar"><button aria-controls="book-nav" aria-expanded="false" class="menu">Contents</button><span>Applied Precalculus / Online edition</span><span class="spacer"></span><a href="resources.html">Resources</a></header><div class="page-grid"><main id="main-content">
+
+<h1 id="coordinate-geometry-lines-and-systems-of-equations">Coordinate
+Geometry, Lines, and Systems of Equations</h1>
+<h2 class="unnumbered" id="opening-investigation-what-does-a-calibration-line-tell-us">Opening
+investigation: What does a calibration line tell us?</h2>
+<p>A laboratory instrument reports signal intensity <span class="math inline">\(S\)</span> for a sample with concentration <span class="math inline">\(c\)</span> (mg/L). Two reference standards give
+<span class="math inline">\((c,S)=(2,9)\)</span> and <span class="math inline">\((8,27)\)</span>. Plot the two points on axes,
+label units, and draw the line through them. What does the rise in
+signal per unit concentration mean? What signal would you expect at
+<span class="math inline">\(c=5\)</span>? Would the same model
+necessarily remain reliable at <span class="math inline">\(c=100\)</span>? This investigation introduces
+coordinates, slope, linear models, and the importance of checking the
+domain of an applied model.</p>
+<h2 class="unnumbered" id="learning-outcomes">Learning outcomes</h2>
+<p>After this chapter, you should be able to: (1) locate points and
+interpret coordinates with units; (2) calculate and interpret distance
+and midpoint; (3) determine slope and equations of lines in multiple
+forms; (4) distinguish parallel and perpendicular lines; (5) model and
+interpret linear relationships; (6) solve systems graphically,
+algebraically, and using matrices; (7) distinguish unique, inconsistent,
+and dependent systems; (8) use R and Python for plotting and
+verification; and (9) connect secant slopes to the derivative concept
+introduced in calculus.</p>
+<h2 class="unnumbered" id="prerequisite-diagnostic">Prerequisite
+diagnostic</h2>
+<p>Solve <span class="math inline">\(3x-7=11\)</span>; simplify <span class="math inline">\(\frac{12-4}{6-2}\)</span>; and solve <span class="math inline">\(x+y=7\)</span> for <span class="math inline">\(y\)</span>. Answers: <span class="math inline">\(x=6\)</span>, <span class="math inline">\(2\)</span>, and <span class="math inline">\(y=7-x\)</span>. Review Chapter 2 if solving
+equations or manipulating fractions is difficult.</p>
+<h2 id="the-cartesian-coordinate-plane">The Cartesian coordinate
+plane</h2>
+<p>The Cartesian plane is formed by a horizontal <span class="math inline">\(x\)</span>-axis and vertical <span class="math inline">\(y\)</span>-axis meeting at the origin <span class="math inline">\((0,0)\)</span>. A point <span class="math inline">\((x,y)\)</span> is an <em>ordered pair</em>: the
+first coordinate specifies horizontal position and the second vertical
+position. Units and scale matter in applications. For example, <span class="math inline">\((3,15)\)</span> may mean 3 hours and 15 milligrams
+per liter; swapping coordinates changes the meaning.</p>
+<figure>
+<img alt="image" src="figures/precompiled/chapter03-01.svg"/>
+<figcaption aria-hidden="true">image</figcaption>
+</figure>
+<h5 id="visual-investigation-1.">Visual investigation 1.</h5>
+<p>For each labeled point, identify its quadrant. Reflect <span class="math inline">\(A\)</span> across each axis and predict the new
+coordinates. Explain why points on axes belong to no quadrant.</p>
+<blockquote class="example">
+<p><strong>Example 1: Coordinate interpretation.</strong> A measurement
+is represented by <span class="math inline">\((4,18)\)</span>, with time
+in minutes horizontally and temperature in degrees Celsius vertically.
+Interpret the point and explain why <span class="math inline">\((18,4)\)</span> describes a different
+observation.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> At 4 minutes, the recorded
+temperature is <span class="math inline">\(18^\circ\)</span>C. The
+reversed pair instead represents 18 minutes and <span class="math inline">\(4^\circ\)</span>C. The ordered pair is not
+interchangeable.</p>
+</blockquote>
+<h5 id="guided-practice-1.">Guided practice 1.</h5>
+<p>Plot <span class="math inline">\(P(-4,1)\)</span>, <span class="math inline">\(Q(0,-3)\)</span>, and <span class="math inline">\(R(2,0)\)</span>. Which points lie on an axis?
+Reflect <span class="math inline">\(P\)</span> in the <span class="math inline">\(y\)</span>-axis. <em>Check:</em> <span class="math inline">\(Q,R\)</span>; reflected point <span class="math inline">\((4,1)\)</span>.</p>
+<h2 id="distance-between-two-points">Distance between two points</h2>
+<p>Horizontal and vertical displacements from <span class="math inline">\(P(x_1,y_1)\)</span> to <span class="math inline">\(Q(x_2,y_2)\)</span> are <span class="math inline">\(\Delta x=x_2-x_1\)</span> and <span class="math inline">\(\Delta y=y_2-y_1\)</span>. The Pythagorean theorem
+applied to the right triangle formed by these displacements gives <span class="math display">\[\boxed{d(P,Q)=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}.}\]</span>
+Squaring the displacements ensures the distance is independent of
+direction. The distance formula assumes both axes use compatible
+physical units and equal geometric scaling.</p>
+<figure>
+<img alt="image" src="figures/precompiled/chapter03-02.svg"/>
+<figcaption aria-hidden="true">image</figcaption>
+</figure>
+<blockquote class="example">
+<p><strong>Example 2: Distance and units.</strong> Find the distance
+from <span class="math inline">\((-2,5)\)</span> to <span class="math inline">\((4,-3)\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> <span class="math inline">\(\Delta
+x=4-(-2)=6\)</span> and <span class="math inline">\(\Delta
+y=-3-5=-8\)</span>. Thus <span class="math inline">\(d=\sqrt{6^2+(-8)^2}=\sqrt{100}=10\)</span>
+coordinate units. Reversing the points changes the signs of both
+displacements but not the distance.</p>
+</blockquote>
+<h5 id="guided-practice-2.">Guided practice 2.</h5>
+<p>Find the distance between <span class="math inline">\((1,-1)\)</span>
+and <span class="math inline">\((7,7)\)</span>. <em>Check:</em> <span class="math inline">\(10\)</span> units.</p>
+<h2 id="midpoints-partitions-and-geometric-averages">Midpoints,
+partitions, and geometric averages</h2>
+<p>The midpoint of a segment is the point halfway between its endpoints.
+Average the horizontal coordinates and vertical coordinates separately:
+<span class="math display">\[\boxed{M=\left(\frac{x_1+x_2}{2},\frac{y_1+y_2}{2}\right).}\]</span>
+This formula is a coordinate-wise average, not the average of distances
+to the origin. More generally, the point a fraction <span class="math inline">\(t\)</span> of the way from <span class="math inline">\(P\)</span> to <span class="math inline">\(Q\)</span> is <span class="math inline">\(P+t(Q-P)\)</span>, or <span class="math display">\[(x,y)=\bigl(x_1+t(x_2-x_1),\;y_1+t(y_2-y_1)\bigr),\quad
+0\le t\le1.\]</span> This representation anticipates parametric curves
+and vectors.</p>
+<blockquote class="example">
+<p><strong>Example 3: Midpoint and weighted position.</strong> Find the
+midpoint of <span class="math inline">\(A(-4,6)\)</span> and <span class="math inline">\(B(8,-2)\)</span> and the point one-quarter of the
+way from <span class="math inline">\(A\)</span> to <span class="math inline">\(B\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> The midpoint is <span class="math inline">\((({-4+8})/2,(6-2)/2)=(2,2)\)</span>. For <span class="math inline">\(t=1/4\)</span>, <span class="math inline">\(A+\frac14(B-A)=(-4,6)+\frac14(12,-8)=(-1,4)\)</span>.</p>
+</blockquote>
+<h5 id="guided-practice-3.">Guided practice 3.</h5>
+<p>Find the midpoint of <span class="math inline">\((3,9)\)</span> and
+<span class="math inline">\((11,-1)\)</span>. <em>Check:</em> <span class="math inline">\((7,4)\)</span>.</p>
+<h2 id="slope-as-a-rate-of-change">Slope as a rate of change</h2>
+<p>For distinct points with <span class="math inline">\(x_2\ne
+x_1\)</span>, the slope of the line through them is <span class="math display">\[\boxed{m=\frac{y_2-y_1}{x_2-x_1}=\frac{\Delta
+y}{\Delta x}.}\]</span> Slope compares the change in the response
+variable with the change in the explanatory variable. It has units of
+“vertical units per horizontal unit.” Positive slope means the line
+rises as <span class="math inline">\(x\)</span> increases; negative
+slope means it falls; zero slope is horizontal. A vertical line has
+undefined slope because its horizontal change is zero.</p>
+<figure>
+<img alt="image" src="figures/precompiled/chapter03-03.svg"/>
+<figcaption aria-hidden="true">image</figcaption>
+</figure>
+<blockquote class="example">
+<p><strong>Example 4: Interpreting a laboratory slope.</strong>
+Standards <span class="math inline">\((2,9)\)</span> and <span class="math inline">\((8,27)\)</span> have concentration in mg/L and
+signal in instrument units. Compute the slope and interpret it.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> <span class="math inline">\(m=(27-9)/(8-2)=18/6=3\)</span> signal units per
+mg/L. Within the calibration range, a 1 mg/L increase in concentration
+corresponds to a predicted increase of 3 signal units. The slope is not
+“3 mg/L”; its units are a ratio.</p>
+</blockquote>
+<h5 id="visual-investigation-2.">Visual investigation 2.</h5>
+<p>Draw two triangles of different sizes along the same nonvertical
+line. Compute rise/run for each and explain why the ratios agree. Then
+sketch a vertical line and explain why rise/run cannot be evaluated
+there.</p>
+<h5 id="guided-practice-4.">Guided practice 4.</h5>
+<p>Find and interpret the slope through <span class="math inline">\((1,12)\)</span> and <span class="math inline">\((5,28)\)</span> when <span class="math inline">\(x\)</span> is days and <span class="math inline">\(y\)</span> is milligrams. <em>Check:</em> <span class="math inline">\(4\)</span> mg/day.</p>
+<h2 id="equations-of-lines-three-useful-forms">Equations of lines: three
+useful forms</h2>
+<p>A line can be represented in several algebraically equivalent ways,
+each emphasizing different information.</p>
+<h3 id="slope-intercept-form">Slope-intercept form</h3>
+<p><span class="math display">\[\boxed{y=mx+b.}\]</span> Here <span class="math inline">\(m\)</span> is the slope and <span class="math inline">\(b\)</span> is the vertical intercept <span class="math inline">\((0,b)\)</span>. The intercept is the model’s
+prediction at <span class="math inline">\(x=0\)</span>; it may be
+physically meaningful, meaningless, or outside the observed range.</p>
+<h3 id="point-slope-form">Point-slope form</h3>
+<p><span class="math display">\[\boxed{y-y_1=m(x-x_1).}\]</span> This
+form follows directly from the definition of slope and is particularly
+useful when a slope and one point are known.</p>
+<h3 id="standard-form-and-special-lines">Standard form and special
+lines</h3>
+<p>Standard form is <span class="math inline">\(Ax+By=C\)</span>,
+usually with integer coefficients. Horizontal lines are <span class="math inline">\(y=k\)</span>; vertical lines are <span class="math inline">\(x=h\)</span>. A vertical line cannot be written as
+<span class="math inline">\(y=mx+b\)</span>.</p>
+<blockquote class="example">
+<p><strong>Example 5: Equation from two points.</strong> Find the
+equation through <span class="math inline">\((2,5)\)</span> and <span class="math inline">\((6,13)\)</span> in point-slope, slope-intercept,
+and standard forms.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> The slope is <span class="math inline">\((13-5)/(6-2)=2\)</span>. Point-slope form: <span class="math inline">\(y-5=2(x-2)\)</span>. Expand: <span class="math inline">\(y=2x+1\)</span>. Rearranging: <span class="math inline">\(2x-y=-1\)</span>. Substituting <span class="math inline">\((6,13)\)</span> gives <span class="math inline">\(13=12+1\)</span>, confirming the equation.</p>
+</blockquote>
+<blockquote class="example">
+<p><strong>Example 6: Equation with undefined slope.</strong> Find the
+line through <span class="math inline">\((3,-2)\)</span> and <span class="math inline">\((3,7)\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> Both points have <span class="math inline">\(x=3\)</span>, so the line is <span class="math inline">\(x=3\)</span>. Its slope is undefined; attempting
+to divide by <span class="math inline">\(3-3=0\)</span> is invalid.</p>
+</blockquote>
+<h5 id="guided-practice-5.">Guided practice 5.</h5>
+<p>Find the line through <span class="math inline">\((-1,4)\)</span>
+with slope <span class="math inline">\(-3\)</span>. <em>Check:</em>
+<span class="math inline">\(y=-3x+1\)</span>.</p>
+<h2 id="intercepts-and-graphical-interpretation">Intercepts and
+graphical interpretation</h2>
+<p>An <span class="math inline">\(x\)</span>-intercept is a point on the
+horizontal axis, so its <span class="math inline">\(y\)</span>-coordinate is zero. A <span class="math inline">\(y\)</span>-intercept is on the vertical axis, so
+its <span class="math inline">\(x\)</span>-coordinate is zero. To find
+the intercepts of <span class="math inline">\(3x+2y=12\)</span>, set
+<span class="math inline">\(y=0\)</span> to obtain <span class="math inline">\((4,0)\)</span>, and set <span class="math inline">\(x=0\)</span> to obtain <span class="math inline">\((0,6)\)</span>. The intercepts provide a fast
+graphing method, but do not by themselves justify extrapolating a model
+beyond its data.</p>
+<blockquote class="example">
+<p><strong>Example 7: Intercepts in a budget model.</strong> A program
+has a budget of <span class="math inline">\(240\)</span> dollars. Kits
+cost <span class="math inline">\(12\)</span> dollars and brochures cost
+<span class="math inline">\(3\)</span> dollars. Interpret <span class="math inline">\(12k+3b=240\)</span> in the first quadrant.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> The intercepts are <span class="math inline">\((20,0)\)</span> and <span class="math inline">\((0,80)\)</span>. The first represents 20 kits and
+no brochures; the second represents no kits and 80 brochures. Feasible
+quantities also require <span class="math inline">\(k,b\ge0\)</span>
+and, if purchases must be whole, integer values.</p>
+</blockquote>
+<h5 id="guided-practice-6.">Guided practice 6.</h5>
+<p>Find both intercepts of <span class="math inline">\(4x-5y=20\)</span>. <em>Check:</em> <span class="math inline">\((5,0)\)</span> and <span class="math inline">\((0,-4)\)</span>.</p>
+<h2 id="parallel-and-perpendicular-lines">Parallel and perpendicular
+lines</h2>
+<p>Two distinct nonvertical lines are parallel precisely when their
+slopes are equal. Two nonvertical lines with nonzero slopes are
+perpendicular precisely when <span class="math inline">\(m_1m_2=-1\)</span>, so their slopes are negative
+reciprocals. A horizontal line is perpendicular to a vertical line. Be
+careful: the negative reciprocal of <span class="math inline">\(2/3\)</span> is <span class="math inline">\(-3/2\)</span>, not <span class="math inline">\(-2/3\)</span>.</p>
+<blockquote class="example">
+<p><strong>Example 8: Parallel and perpendicular through a
+point.</strong> Find lines through <span class="math inline">\((2,-1)\)</span> parallel and perpendicular to
+<span class="math inline">\(3x-2y=8\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> Rewrite the given line as <span class="math inline">\(y=\frac32x-4\)</span>, so <span class="math inline">\(m=3/2\)</span>. The parallel line is <span class="math inline">\(y+1=\frac32(x-2)\)</span>, or <span class="math inline">\(y=\frac32x-4\)</span>. In this case <span class="math inline">\((2,-1)\)</span> lies on the original line, so it
+is the same line rather than a distinct parallel line. The perpendicular
+line has slope <span class="math inline">\(-2/3\)</span>: <span class="math inline">\(y+1=-\frac23(x-2)\)</span>, or <span class="math inline">\(y=-\frac23x+\frac13\)</span>.</p>
+</blockquote>
+<h5 id="concept-check.">Concept check.</h5>
+<p>Why is it important to distinguish “same line” from “distinct
+parallel lines”? Draw an example.</p>
+<h5 id="guided-practice-7.">Guided practice 7.</h5>
+<p>Find a line through <span class="math inline">\((0,4)\)</span>
+perpendicular to <span class="math inline">\(y=\frac14x+2\)</span>.
+<em>Check:</em> <span class="math inline">\(y=-4x+4\)</span>.</p>
+<h2 id="building-and-evaluating-linear-models">Building and evaluating
+linear models</h2>
+<p>A linear model <span class="math inline">\(y=mx+b\)</span> assumes a
+constant rate of change over its intended domain. The intercept
+represents the predicted baseline, and the slope represents the change
+in response per unit change in predictor. A model can fit two observed
+points exactly but still be inappropriate outside the observation range
+or when the real process is nonlinear.</p>
+<blockquote class="example">
+<p><strong>Example 9: Calibration curve.</strong> Using <span class="math inline">\((c,S)=(2,9)\)</span> and <span class="math inline">\((8,27)\)</span>, construct the calibration
+equation, predict signal at <span class="math inline">\(c=5\)</span>,
+and estimate concentration when <span class="math inline">\(S=21\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> Slope is <span class="math inline">\(m=3\)</span>. Use <span class="math inline">\((2,9)\)</span>: <span class="math inline">\(9=3(2)+b\)</span>, so <span class="math inline">\(b=3\)</span>. The calibration equation is <span class="math inline">\(S=3c+3\)</span>. At <span class="math inline">\(c=5\)</span>, <span class="math inline">\(S=18\)</span>. For <span class="math inline">\(S=21\)</span>, solve <span class="math inline">\(21=3c+3\)</span> to obtain <span class="math inline">\(c=6\)</span> mg/L. Both predictions are within the
+observed concentration range <span class="math inline">\([2,8]\)</span>,
+so they are interpolations.</p>
+</blockquote>
+<h5 id="visual-investigation-3-interpolation-and-extrapolation.">Visual
+investigation 3: interpolation and extrapolation.</h5>
+<p>Plot the calibration points and fitted line for <span class="math inline">\(0\le c\le12\)</span>. Shade or label the observed
+interval <span class="math inline">\([2,8]\)</span>. Compare predictions
+at <span class="math inline">\(c=5\)</span> and <span class="math inline">\(c=11\)</span>. Why does the second require
+stronger assumptions?</p>
+<h5 id="guided-practice-8.">Guided practice 8.</h5>
+<p>A reading changes from <span class="math inline">\(14\)</span> to
+<span class="math inline">\(26\)</span> between times <span class="math inline">\(t=1\)</span> and <span class="math inline">\(t=4\)</span>. Find a linear model and predict the
+reading at <span class="math inline">\(t=3\)</span>. <em>Check:</em>
+<span class="math inline">\(y=4t+10\)</span>; <span class="math inline">\(22\)</span>.</p>
+<h2 id="systems-of-two-linear-equations">Systems of two linear
+equations</h2>
+<p>A system asks for values satisfying two or more equations
+simultaneously. Geometrically, a solution is an intersection of lines.
+Two nonparallel lines intersect once (unique solution); distinct
+parallel lines never intersect (no solution); coincident lines have
+infinitely many solutions.</p>
+<h3 id="substitution-method">Substitution method</h3>
+<p>Solve one equation for one variable and substitute into the other.
+This is especially convenient when one coefficient is <span class="math inline">\(1\)</span> or <span class="math inline">\(-1\)</span>.</p>
+<blockquote class="example">
+<p><strong>Example 10: Substitution.</strong> Solve <span class="math inline">\(x+y=7\)</span> and <span class="math inline">\(2x-y=2\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> From the first equation, <span class="math inline">\(y=7-x\)</span>. Substitute: <span class="math inline">\(2x-(7-x)=2\)</span>, so <span class="math inline">\(3x=9\)</span> and <span class="math inline">\(x=3\)</span>. Then <span class="math inline">\(y=4\)</span>. Check: <span class="math inline">\(3+4=7\)</span> and <span class="math inline">\(2(3)-4=2\)</span>. Thus <span class="math inline">\((3,4)\)</span> is the unique solution.</p>
+</blockquote>
+<h3 id="elimination-method">Elimination method</h3>
+<p>Add suitable multiples of the equations so one variable cancels.
+Multiplying an entire equation by a nonzero constant preserves its
+solution set.</p>
+<blockquote class="example">
+<p><strong>Example 11: Elimination.</strong> Solve <span class="math inline">\(2x+3y=13\)</span> and <span class="math inline">\(4x-y=5\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> Multiply the second equation by
+<span class="math inline">\(3\)</span>: <span class="math inline">\(12x-3y=15\)</span>. Add to the first: <span class="math inline">\(14x=28\)</span>, so <span class="math inline">\(x=2\)</span>. Then <span class="math inline">\(4(2)-y=5\)</span> gives <span class="math inline">\(y=3\)</span>. Verify <span class="math inline">\(2(2)+3(3)=13\)</span>.</p>
+</blockquote>
+<h5 id="guided-practice-9.">Guided practice 9.</h5>
+<p>Solve <span class="math inline">\(3x+y=11\)</span> and <span class="math inline">\(x-y=1\)</span> using both methods. <em>Check:</em>
+<span class="math inline">\((3,2)\)</span>.</p>
+<h2 id="visual-investigation-4-the-geometry-of-solution-counts">Visual
+investigation 4: the geometry of solution counts</h2>
+<figure>
+<img alt="image" src="figures/precompiled/chapter03-04.svg"/>
+<figcaption aria-hidden="true">image</figcaption>
+</figure>
+<p>The blue and orange lines meet at <span class="math inline">\((2,3)\)</span>. The blue and dashed green lines
+have equal slopes but different intercepts; they never meet. A second
+equation obtained by multiplying <span class="math inline">\(x+y=5\)</span> by <span class="math inline">\(2\)</span> would describe exactly the same blue
+line. Use these three cases to explain why algebra can end in a
+numerical answer, a contradiction such as <span class="math inline">\(0=2\)</span>, or an identity such as <span class="math inline">\(0=0\)</span>.</p>
+<h2 id="dependent-and-inconsistent-systems">Dependent and inconsistent
+systems</h2>
+<blockquote class="example">
+<p><strong>Example 12: No solution.</strong> Solve <span class="math inline">\(2x-4y=6\)</span> and <span class="math inline">\(x-2y=5\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> Doubling the second equation gives
+<span class="math inline">\(2x-4y=10\)</span>, contradicting <span class="math inline">\(2x-4y=6\)</span>. The lines are parallel and
+distinct, so the system is inconsistent and has no solution.</p>
+</blockquote>
+<blockquote class="example">
+<p><strong>Example 13: Infinitely many solutions.</strong> Solve <span class="math inline">\(2x+4y=8\)</span> and <span class="math inline">\(x+2y=4\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> The first equation is twice the
+second. They represent the same line. Every pair satisfying <span class="math inline">\(x+2y=4\)</span> is a solution; for example, <span class="math inline">\((x,y)=(4-2t,t)\)</span> for any real <span class="math inline">\(t\)</span>.</p>
+</blockquote>
+<h5 id="guided-practice-10.">Guided practice 10.</h5>
+<p>Classify <span class="math inline">\(3x+6y=12\)</span> and <span class="math inline">\(x+2y=4\)</span>; then classify <span class="math inline">\(3x+6y=12\)</span> and <span class="math inline">\(x+2y=5\)</span>. <em>Check:</em> infinitely many;
+none.</p>
+<h2 id="matrices-and-determinants-a-first-look">Matrices and
+determinants: a first look</h2>
+<p>A two-variable system can be written <span class="math inline">\(A\mathbf{x}=\mathbf{b}\)</span>, where <span class="math display">\[A=\begin{pmatrix}a&amp;b\\c&amp;d\end{pmatrix},\quad
+\mathbf{x}=\begin{pmatrix}x\\y\end{pmatrix},\quad\mathbf{b}=\begin{pmatrix}e\\f\end{pmatrix}.\]</span>
+The determinant <span class="math inline">\(\det(A)=ad-bc\)</span> helps
+classify the system. If <span class="math inline">\(ad-bc\ne0\)</span>,
+the coefficient matrix is invertible and there is exactly one solution.
+If <span class="math inline">\(ad-bc=0\)</span>, there may be no
+solution or infinitely many; additional consistency checks are required.
+For a nonsingular <span class="math inline">\(2\times2\)</span> system,
+Cramer’s rule gives <span class="math display">\[x=\frac{ed-bf}{ad-bc},\qquad
+y=\frac{af-ec}{ad-bc}.\]</span></p>
+<blockquote class="example">
+<p><strong>Example 14: Determinant check.</strong> For <span class="math inline">\(2x+3y=13\)</span>, <span class="math inline">\(4x-y=5\)</span>, calculate the determinant and
+verify the solution.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> <span class="math inline">\(A=\left(\begin{smallmatrix}2&amp;3\\4&amp;-1\end{smallmatrix}\right)\)</span>,
+so <span class="math inline">\(\det(A)=2(-1)-3(4)=-14\ne0\)</span>. Then
+<span class="math inline">\(x=(13(-1)-3(5))/(-14)=2\)</span>, and <span class="math inline">\(y=(2(5)-13(4))/(-14)=3\)</span>.</p>
+</blockquote>
+<h5 id="guided-practice-11.">Guided practice 11.</h5>
+<p>Calculate the determinant for <span class="math inline">\(x+2y=5\)</span>, <span class="math inline">\(2x+4y=10\)</span>. Does a zero determinant alone
+tell you whether the system is inconsistent? <em>Check:</em> determinant
+zero; no.</p>
+<h2 id="applied-case-study-two-test-calibration-and-mixture-design">Applied
+case study: two-test calibration and mixture design</h2>
+<p>Suppose a laboratory prepares a mixture using two stock solutions.
+Stock A contains <span class="math inline">\(4\)</span> mg of a compound
+per mL and Stock B contains <span class="math inline">\(10\)</span> mg
+per mL. A final mixture must have total volume <span class="math inline">\(20\)</span> mL and contain <span class="math inline">\(140\)</span> mg of the compound. Let <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> denote the volumes in mL.</p>
+<blockquote class="example">
+<p><strong>Example 15: Mixture design as a system.</strong> Determine
+the required amounts of stocks A and B.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> Total volume gives <span class="math inline">\(a+b=20\)</span>. Total compound mass gives <span class="math inline">\(4a+10b=140\)</span>. Substitute <span class="math inline">\(a=20-b\)</span>: <span class="math inline">\(4(20-b)+10b=140\)</span>, so <span class="math inline">\(80+6b=140\)</span> and <span class="math inline">\(b=10\)</span> mL. Hence <span class="math inline">\(a=10\)</span> mL. Check: total volume <span class="math inline">\(20\)</span> mL and compound mass <span class="math inline">\(4(10)+10(10)=140\)</span> mg. Both amounts are
+nonnegative, as required.</p>
+</blockquote>
+<h5 id="visual-investigation-5-feasibility.">Visual investigation 5:
+feasibility.</h5>
+<p>Graph <span class="math inline">\(a+b=20\)</span> and <span class="math inline">\(4a+10b=140\)</span> in the first quadrant. Mark
+their intersection. What would a negative solution mean physically? How
+would the intersection move if the required mass were changed to 160
+mg?</p>
+<h2 id="computational-laboratory-a-plotting-points-and-lines">Computational
+laboratory A: plotting points and lines</h2>
+<p>The first laboratory compares a hand-derived calibration line with
+its computational graph. Execute the R code, then execute the Python
+code separately. Both produce the same mathematical model; programming
+syntax differs, but the interpretation should not.</p>
+<h3 class="unnumbered" id="r-code">R code</h3>
+<div class="code-shell"><div class="code-bar"><span>R</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a aria-hidden="true" href="#cb1-1" tabindex="-1"></a>concentration <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">8</span>)</span>
+<span id="cb1-2"><a aria-hidden="true" href="#cb1-2" tabindex="-1"></a>signal <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">9</span>, <span class="dv">27</span>)</span>
+<span id="cb1-3"><a aria-hidden="true" href="#cb1-3" tabindex="-1"></a>slope <span class="ot">&lt;-</span> <span class="fu">diff</span>(signal) <span class="sc">/</span> <span class="fu">diff</span>(concentration)</span>
+<span id="cb1-4"><a aria-hidden="true" href="#cb1-4" tabindex="-1"></a>intercept <span class="ot">&lt;-</span> signal[<span class="dv">1</span>] <span class="sc">-</span> slope <span class="sc">*</span> concentration[<span class="dv">1</span>]</span>
+<span id="cb1-5"><a aria-hidden="true" href="#cb1-5" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Slope:"</span>, slope, <span class="st">"Intercept:"</span>, intercept, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb1-6"><a aria-hidden="true" href="#cb1-6" tabindex="-1"></a><span class="fu">plot</span>(concentration, signal, <span class="at">pch=</span><span class="dv">19</span>, <span class="at">xlim=</span><span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">12</span>),</span>
+<span id="cb1-7"><a aria-hidden="true" href="#cb1-7" tabindex="-1"></a>     <span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">40</span>), <span class="at">xlab=</span><span class="st">"Concentration (mg/L)"</span>,</span>
+<span id="cb1-8"><a aria-hidden="true" href="#cb1-8" tabindex="-1"></a>     <span class="at">ylab=</span><span class="st">"Signal (units)"</span>, <span class="at">main=</span><span class="st">"Calibration line"</span>)</span>
+<span id="cb1-9"><a aria-hidden="true" href="#cb1-9" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">a=</span>intercept, <span class="at">b=</span>slope, <span class="at">col=</span><span class="st">"blue"</span>, <span class="at">lwd=</span><span class="dv">2</span>)</span>
+<span id="cb1-10"><a aria-hidden="true" href="#cb1-10" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">8</span>), <span class="at">lty=</span><span class="dv">3</span>, <span class="at">col=</span><span class="st">"gray"</span>)</span>
+<span id="cb1-11"><a aria-hidden="true" href="#cb1-11" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Signal at 5 mg/L:"</span>, slope<span class="sc">*</span><span class="dv">5</span><span class="sc">+</span>intercept, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code></pre></div></div>
+<h3 class="unnumbered" id="python-code">Python code</h3>
+<div class="code-shell"><div class="code-bar"><span>Python</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" href="#cb2-1" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-2"><a aria-hidden="true" href="#cb2-2" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-3"><a aria-hidden="true" href="#cb2-3" tabindex="-1"></a>c <span class="op">=</span> np.array([<span class="fl">2.0</span>, <span class="fl">8.0</span>])</span>
+<span id="cb2-4"><a aria-hidden="true" href="#cb2-4" tabindex="-1"></a>s <span class="op">=</span> np.array([<span class="fl">9.0</span>, <span class="fl">27.0</span>])</span>
+<span id="cb2-5"><a aria-hidden="true" href="#cb2-5" tabindex="-1"></a>m <span class="op">=</span> (s[<span class="dv">1</span>]<span class="op">-</span>s[<span class="dv">0</span>])<span class="op">/</span>(c[<span class="dv">1</span>]<span class="op">-</span>c[<span class="dv">0</span>])</span>
+<span id="cb2-6"><a aria-hidden="true" href="#cb2-6" tabindex="-1"></a>b <span class="op">=</span> s[<span class="dv">0</span>]<span class="op">-</span>m<span class="op">*</span>c[<span class="dv">0</span>]</span>
+<span id="cb2-7"><a aria-hidden="true" href="#cb2-7" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Slope:"</span>, m, <span class="st">"Intercept:"</span>, b)</span>
+<span id="cb2-8"><a aria-hidden="true" href="#cb2-8" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">12</span>, <span class="dv">200</span>)</span>
+<span id="cb2-9"><a aria-hidden="true" href="#cb2-9" tabindex="-1"></a>plt.scatter(c, s, color<span class="op">=</span><span class="st">"black"</span>, label<span class="op">=</span><span class="st">"Standards"</span>)</span>
+<span id="cb2-10"><a aria-hidden="true" href="#cb2-10" tabindex="-1"></a>plt.plot(x, m<span class="op">*</span>x<span class="op">+</span>b, label<span class="op">=</span><span class="st">"Calibration model"</span>)</span>
+<span id="cb2-11"><a aria-hidden="true" href="#cb2-11" tabindex="-1"></a>plt.axvline(<span class="dv">2</span>, ls<span class="op">=</span><span class="st">"--"</span>, color<span class="op">=</span><span class="st">"gray"</span>)</span>
+<span id="cb2-12"><a aria-hidden="true" href="#cb2-12" tabindex="-1"></a>plt.axvline(<span class="dv">8</span>, ls<span class="op">=</span><span class="st">"--"</span>, color<span class="op">=</span><span class="st">"gray"</span>)</span>
+<span id="cb2-13"><a aria-hidden="true" href="#cb2-13" tabindex="-1"></a>plt.xlabel(<span class="st">"Concentration (mg/L)"</span>)</span>
+<span id="cb2-14"><a aria-hidden="true" href="#cb2-14" tabindex="-1"></a>plt.ylabel(<span class="st">"Signal (units)"</span>)</span>
+<span id="cb2-15"><a aria-hidden="true" href="#cb2-15" tabindex="-1"></a>plt.legend()<span class="op">;</span> plt.tight_layout()<span class="op">;</span> plt.show()</span>
+<span id="cb2-16"><a aria-hidden="true" href="#cb2-16" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Signal at 5 mg/L:"</span>, m<span class="op">*</span><span class="dv">5</span><span class="op">+</span>b)</span></code></pre></div></div>
+<h5 id="interpretation-questions.">Interpretation questions.</h5>
+<p>What are the units of slope? Which concentrations are interpolations?
+What mathematical information is lost if axis labels and units are
+omitted?</p>
+<h2 id="computational-laboratory-b-solving-and-verifying-systems">Computational
+laboratory B: solving and verifying systems</h2>
+<p>This laboratory uses matrix operations to solve a two-equation system
+and checks the residual <span class="math inline">\(A\mathbf{x}-\mathbf{b}\)</span>. A residual close
+to zero provides a numerical verification, not a substitute for
+explaining the model.</p>
+<h3 class="unnumbered" id="r-code-1">R code</h3>
+<div class="code-shell"><div class="code-bar"><span>R</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a aria-hidden="true" href="#cb3-1" tabindex="-1"></a>A <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">1</span>,<span class="dv">10</span>), <span class="at">nrow=</span><span class="dv">2</span>, <span class="at">byrow=</span><span class="cn">TRUE</span>)</span>
+<span id="cb3-2"><a aria-hidden="true" href="#cb3-2" tabindex="-1"></a>rhs <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">20</span>, <span class="dv">140</span>)</span>
+<span id="cb3-3"><a aria-hidden="true" href="#cb3-3" tabindex="-1"></a>solution <span class="ot">&lt;-</span> <span class="fu">solve</span>(A, rhs)</span>
+<span id="cb3-4"><a aria-hidden="true" href="#cb3-4" tabindex="-1"></a><span class="fu">print</span>(solution)</span>
+<span id="cb3-5"><a aria-hidden="true" href="#cb3-5" tabindex="-1"></a><span class="fu">print</span>(A <span class="sc">%*%</span> solution <span class="sc">-</span> rhs)</span>
+<span id="cb3-6"><a aria-hidden="true" href="#cb3-6" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Determinant:"</span>, <span class="fu">det</span>(A), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code></pre></div></div>
+<h3 class="unnumbered" id="python-code-1">Python code</h3>
+<div class="code-shell"><div class="code-bar"><span>Python</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" href="#cb4-1" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb4-2"><a aria-hidden="true" href="#cb4-2" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="fl">1.0</span>,<span class="fl">1.0</span>],[<span class="fl">4.0</span>,<span class="fl">10.0</span>]])</span>
+<span id="cb4-3"><a aria-hidden="true" href="#cb4-3" tabindex="-1"></a>rhs <span class="op">=</span> np.array([<span class="fl">20.0</span>,<span class="fl">140.0</span>])</span>
+<span id="cb4-4"><a aria-hidden="true" href="#cb4-4" tabindex="-1"></a>solution <span class="op">=</span> np.linalg.solve(A, rhs)</span>
+<span id="cb4-5"><a aria-hidden="true" href="#cb4-5" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Solution:"</span>, solution)</span>
+<span id="cb4-6"><a aria-hidden="true" href="#cb4-6" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Residual:"</span>, A <span class="op">@</span> solution <span class="op">-</span> rhs)</span>
+<span id="cb4-7"><a aria-hidden="true" href="#cb4-7" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Determinant:"</span>, np.linalg.det(A))</span></code></pre></div></div>
+<h5 id="interpretation-questions.-1">Interpretation questions.</h5>
+<p>Explain why the two solution coordinates are volumes. What does a
+residual of zero mean? Change the target mass to 160 mg and interpret
+the new result.</p>
+<h2 id="computational-laboratory-c-slopes-approaching-a-tangent">Computational
+laboratory C: slopes approaching a tangent</h2>
+<p>For the curve <span class="math inline">\(y=x^2\)</span>, calculate
+the slope of the secant line through <span class="math inline">\((2,4)\)</span> and <span class="math inline">\((2+h,(2+h)^2)\)</span>: <span class="math display">\[m_h=\frac{(2+h)^2-4}{h}=4+h,\qquad
+h\ne0.\]</span> As <span class="math inline">\(h\)</span> approaches
+zero, these slopes approach <span class="math inline">\(4\)</span>. This
+is a preview of the derivative, which formalizes instantaneous rate of
+change.</p>
+<h3 class="unnumbered" id="r-code-2">R code</h3>
+<div class="code-shell"><div class="code-bar"><span>R</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a aria-hidden="true" href="#cb5-1" tabindex="-1"></a>h <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="fl">0.5</span>, <span class="fl">0.1</span>, <span class="fl">0.01</span>, <span class="sc">-</span><span class="fl">0.01</span>, <span class="sc">-</span><span class="fl">0.1</span>)</span>
+<span id="cb5-2"><a aria-hidden="true" href="#cb5-2" tabindex="-1"></a>secant <span class="ot">&lt;-</span> ((<span class="dv">2</span><span class="sc">+</span>h)<span class="sc">^</span><span class="dv">2</span> <span class="sc">-</span> <span class="dv">4</span>)<span class="sc">/</span>h</span>
+<span id="cb5-3"><a aria-hidden="true" href="#cb5-3" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">data.frame</span>(<span class="at">h=</span>h, <span class="at">secant_slope=</span>secant))</span>
+<span id="cb5-4"><a aria-hidden="true" href="#cb5-4" tabindex="-1"></a><span class="fu">plot</span>(h, secant, <span class="at">pch=</span><span class="dv">19</span>, <span class="at">xlab=</span><span class="st">"h"</span>, <span class="at">ylab=</span><span class="st">"Secant slope"</span>)</span>
+<span id="cb5-5"><a aria-hidden="true" href="#cb5-5" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="dv">4</span>, <span class="at">col=</span><span class="st">"blue"</span>, <span class="at">lty=</span><span class="dv">2</span>)</span></code></pre></div></div>
+<h3 class="unnumbered" id="python-code-2">Python code</h3>
+<div class="code-shell"><div class="code-bar"><span>Python</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a aria-hidden="true" href="#cb6-1" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb6-2"><a aria-hidden="true" href="#cb6-2" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb6-3"><a aria-hidden="true" href="#cb6-3" tabindex="-1"></a>h <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="fl">0.5</span>, <span class="fl">0.1</span>, <span class="fl">0.01</span>, <span class="op">-</span><span class="fl">0.01</span>, <span class="op">-</span><span class="fl">0.1</span>])</span>
+<span id="cb6-4"><a aria-hidden="true" href="#cb6-4" tabindex="-1"></a>slopes <span class="op">=</span> ((<span class="dv">2</span><span class="op">+</span>h)<span class="op">**</span><span class="dv">2</span><span class="op">-</span><span class="dv">4</span>)<span class="op">/</span>h</span>
+<span id="cb6-5"><a aria-hidden="true" href="#cb6-5" tabindex="-1"></a><span class="cf">for</span> step, slope <span class="kw">in</span> <span class="bu">zip</span>(h, slopes):</span>
+<span id="cb6-6"><a aria-hidden="true" href="#cb6-6" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"h=</span><span class="sc">{</span>step<span class="sc">:7.3f}</span><span class="ss">, secant slope=</span><span class="sc">{</span>slope<span class="sc">:7.3f}</span><span class="ss">"</span>)</span>
+<span id="cb6-7"><a aria-hidden="true" href="#cb6-7" tabindex="-1"></a>plt.scatter(h, slopes)</span>
+<span id="cb6-8"><a aria-hidden="true" href="#cb6-8" tabindex="-1"></a>plt.axhline(<span class="dv">4</span>, linestyle<span class="op">=</span><span class="st">"--"</span>, color<span class="op">=</span><span class="st">"black"</span>)</span>
+<span id="cb6-9"><a aria-hidden="true" href="#cb6-9" tabindex="-1"></a>plt.xlabel(<span class="st">"h"</span>)<span class="op">;</span> plt.ylabel(<span class="st">"Secant slope"</span>)</span>
+<span id="cb6-10"><a aria-hidden="true" href="#cb6-10" tabindex="-1"></a>plt.tight_layout()<span class="op">;</span> plt.show()</span></code></pre></div></div>
+<h5 id="interpretation-questions.-2">Interpretation questions.</h5>
+<p>Why must <span class="math inline">\(h\ne0\)</span> in the secant
+formula? Why can the limiting slope nevertheless be <span class="math inline">\(4\)</span>? Compare the algebraic simplification
+with the numerical output.</p>
+<h2 id="guided-practice-workshop-five-integrated-problems">Guided
+practice workshop: five integrated problems</h2>
+<ol type="1">
+<li><p><strong>Geometry.</strong> Points <span class="math inline">\(A(-2,1)\)</span> and <span class="math inline">\(B(4,9)\)</span> represent two locations on a
+scaled map. Find distance, midpoint, and the slope of <span class="math inline">\(AB\)</span>. <em>Check:</em> <span class="math inline">\(10\)</span>, <span class="math inline">\((1,5)\)</span>, and <span class="math inline">\(4/3\)</span>.</p></li>
+<li><p><strong>Model building.</strong> A quantity changes from 6 units
+to 21 units as time changes from 2 to 7 minutes. Derive the linear
+equation and predict the value at time 5. <em>Check:</em> <span class="math inline">\(y=3t\)</span> and <span class="math inline">\(15\)</span>.</p></li>
+<li><p><strong>Line relationships.</strong> Find a line through <span class="math inline">\((1,2)\)</span> perpendicular to <span class="math inline">\(y=-2x+3\)</span>. <em>Check:</em> <span class="math inline">\(y=\frac12x+\frac32\)</span>.</p></li>
+<li><p><strong>System classification.</strong> Determine whether <span class="math inline">\(x-3y=2\)</span> and <span class="math inline">\(2x-6y=4\)</span> have zero, one, or infinitely
+many solutions. Explain graphically. <em>Check:</em> infinitely
+many.</p></li>
+<li><p><strong>Mixtures.</strong> Two solutions have concentrations 2
+mg/mL and 8 mg/mL. Find volumes totaling 30 mL that contain 150 mg.
+<em>Check:</em> 15 mL of each.</p></li>
+</ol>
+<h2 id="common-misconceptions-and-mathematical-habits">Common
+misconceptions and mathematical habits</h2>
+<ol type="1">
+<li><p><strong>Confusing coordinates and displacements.</strong> A point
+gives location; differences of coordinates give changes.</p></li>
+<li><p><strong>Ignoring units in slope.</strong> Always report response
+units per predictor unit.</p></li>
+<li><p><strong>Using the slope formula for vertical lines.</strong>
+Division by zero is undefined; the correct equation is <span class="math inline">\(x=k\)</span>.</p></li>
+<li><p><strong>Assuming all systems have one solution.</strong> Compare
+slopes and intercepts, or use elimination, before concluding.</p></li>
+<li><p><strong>Confusing a zero determinant with no solution.</strong>
+Zero determinant means the unique-solution test fails; consistency must
+still be checked.</p></li>
+<li><p><strong>Overinterpreting extrapolation.</strong> A straight-line
+fit through two points does not guarantee linearity outside the observed
+range.</p></li>
+</ol>
+<h2 id="chapter-summary-and-formula-reference">Chapter summary and
+formula reference</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Quantity</th>
+<th style="text-align: left;">Formula or principle</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Distance</td>
+<td style="text-align: left;"><span class="math inline">\(\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Midpoint</td>
+<td style="text-align: left;"><span class="math inline">\(((x_1+x_2)/2,(y_1+y_2)/2)\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Slope</td>
+<td style="text-align: left;"><span class="math inline">\((y_2-y_1)/(x_2-x_1)\)</span> when <span class="math inline">\(x_2\ne x_1\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Point-slope line</td>
+<td style="text-align: left;"><span class="math inline">\(y-y_1=m(x-x_1)\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Slope-intercept line</td>
+<td style="text-align: left;"><span class="math inline">\(y=mx+b\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Parallel lines</td>
+<td style="text-align: left;">Equal slopes (or both vertical)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Perpendicular lines</td>
+<td style="text-align: left;"><span class="math inline">\(m_1m_2=-1\)</span> when both slopes are defined
+and nonzero</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Two-by-two determinant</td>
+<td style="text-align: left;"><span class="math inline">\(ad-bc\)</span></td>
+</tr>
+</tbody>
+</table>
+<h2 id="calculus-connection-secants-tangents-and-local-change">Calculus
+connection: secants, tangents, and local change</h2>
+<p>A straight line has the same slope between every pair of points. A
+curved graph generally does not. Calculus studies the limit of secant
+slopes as the two points come together. For <span class="math inline">\(f(x)=x^2\)</span>, the secant slope from <span class="math inline">\(x=a\)</span> to <span class="math inline">\(x=a+h\)</span> is <span class="math display">\[\frac{f(a+h)-f(a)}{h}=\frac{(a+h)^2-a^2}{h}=2a+h,\quad
+h\ne0.\]</span> The expression approaches <span class="math inline">\(2a\)</span> as <span class="math inline">\(h\to0\)</span>. At <span class="math inline">\(a=2\)</span>, the instantaneous slope is <span class="math inline">\(4\)</span>, consistent with Laboratory C. In a
+calculus course, this becomes the derivative <span class="math inline">\(f'(a)=2a\)</span>. The key precalculus skills
+are manipulating expressions, evaluating differences, and interpreting
+slope with units.</p>
+<h2 id="extended-investigation-i-translating-and-rotating-the-geometric-picture">Extended
+investigation I: translating and rotating the geometric picture</h2>
+<p>Consider <span class="math inline">\(A(1,2)\)</span> and <span class="math inline">\(B(5,5)\)</span>. Their displacement is <span class="math inline">\((4,3)\)</span> and their distance is <span class="math inline">\(5\)</span>. Translate both points by <span class="math inline">\((2,-4)\)</span> to get <span class="math inline">\(A'(3,-2)\)</span> and <span class="math inline">\(B'(7,1)\)</span>. Calculate the new distance
+and slope. Then reflect the original points across the <span class="math inline">\(y\)</span>-axis. Compare the new slope with the
+original slope. Translation preserves distance and slope; reflection
+preserves distance but may change the sign of slope. Explain why by
+considering coordinate differences.</p>
+<h5 id="guided-practice.">Guided practice.</h5>
+<p>Translate <span class="math inline">\((0,1)\)</span> and <span class="math inline">\((3,5)\)</span> by <span class="math inline">\((-2,6)\)</span>. Compute the original and
+translated distances. <em>Check:</em> both distances are <span class="math inline">\(5\)</span>.</p>
+<h2 id="extended-investigation-ii-sensitivity-of-a-calibration-model">Extended
+investigation II: sensitivity of a calibration model</h2>
+<p>Suppose the first calibration standard remains <span class="math inline">\((2,9)\)</span>, but the second measurement varies
+from <span class="math inline">\((8,27)\)</span> to <span class="math inline">\((8,28)\)</span>. The slope changes from <span class="math inline">\(3\)</span> to <span class="math inline">\(19/6\approx3.167\)</span> signal units per mg/L.
+The intercept changes from <span class="math inline">\(3\)</span> to
+<span class="math inline">\(9-2(19/6)=8/3\)</span>. Compare the two
+models at <span class="math inline">\(c=5\)</span> and <span class="math inline">\(c=10\)</span>. Which prediction is more sensitive?
+Discuss why measurement noise, multiple standards, and model validation
+matter in scientific applications.</p>
+<h2 id="extended-investigation-iii-three-equations-and-three-unknowns">Extended
+investigation III: three equations and three unknowns</h2>
+<p>A system may involve more than two variables. Consider <span class="math display">\[x+y+z=6,\qquad x-y+z=2,\qquad 2x+y-z=1.\]</span>
+Subtract the second equation from the first to obtain <span class="math inline">\(2y=4\)</span>, so <span class="math inline">\(y=2\)</span>. Then <span class="math inline">\(x+z=4\)</span>. From the third, <span class="math inline">\(2x-z=-1\)</span>. Add these to get <span class="math inline">\(3x=3\)</span>, hence <span class="math inline">\(x=1\)</span> and <span class="math inline">\(z=3\)</span>. Verify in all three original
+equations. The same elimination principle extends to larger matrices,
+although computational tools become increasingly useful.</p>
+<h2 id="extended-investigation-iv-piecewise-linear-models">Extended
+investigation IV: piecewise linear models</h2>
+<p>Many real-world relationships have different slopes in different
+operating regimes. A service might cost <span class="math inline">\(C(t)=10+2t\)</span> for <span class="math inline">\(0\le t\le5\)</span>, but <span class="math inline">\(C(t)=20+1.5(t-5)\)</span> for <span class="math inline">\(t&gt;5\)</span>. Both formulas give <span class="math inline">\(20\)</span> at <span class="math inline">\(t=5\)</span>, so the model is continuous there,
+but the rate of change shifts from 2 to 1.5 cost units per time unit.
+Plot both pieces and explain why a single straight line would
+misrepresent the changing rate.</p>
+<h2 id="extended-investigation-v-constrained-intersections">Extended
+investigation V: constrained intersections</h2>
+<p>Consider <span class="math inline">\(x+y=12\)</span> and <span class="math inline">\(2x+5y=42\)</span>, with <span class="math inline">\(x,y\ge0\)</span>. Substitution gives <span class="math inline">\(x=12-y\)</span> and <span class="math inline">\(24-2y+5y=42\)</span>, so <span class="math inline">\(y=6\)</span> and <span class="math inline">\(x=6\)</span>. Now change the second equation to
+<span class="math inline">\(2x+5y=75\)</span>. The algebraic solution is
+<span class="math inline">\(y=17\)</span>, <span class="math inline">\(x=-5\)</span>, which satisfies both equations but
+violates nonnegativity. Explain why a mathematically correct solution
+may be infeasible in an applied model.</p>
+<h2 id="extended-investigation-vi-linear-inequalities-in-two-variables">Extended
+investigation VI: linear inequalities in two variables</h2>
+<p>A linear inequality such as <span class="math inline">\(2x+y\le
+10\)</span> describes a half-plane rather than a line. First graph the
+boundary <span class="math inline">\(2x+y=10\)</span>; because equality
+is allowed, draw a solid line. Test the origin: <span class="math inline">\(2(0)+0\le10\)</span> is true, so shade the side
+containing <span class="math inline">\((0,0)\)</span>. In a production
+model, we may also require <span class="math inline">\(x\ge0\)</span>
+and <span class="math inline">\(y\ge0\)</span>, restricting the solution
+to the first quadrant. The intersection of these three half-planes is a
+triangular feasible region with vertices <span class="math inline">\((0,0)\)</span>, <span class="math inline">\((5,0)\)</span>, and <span class="math inline">\((0,10)\)</span>.</p>
+<figure>
+<img alt="image" src="figures/precompiled/chapter03-05.svg"/>
+<figcaption aria-hidden="true">image</figcaption>
+</figure>
+<blockquote class="example">
+<p><strong>Example 16: Resource feasibility.</strong> A clinic assembles
+two kinds of educational kits. A standard kit uses 2 units of a resource
+and a premium kit uses 1 unit. At most 10 units are available. Express
+the feasible combinations, assuming nonnegative quantities.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> If <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> are the numbers of standard and premium
+kits, respectively, then <span class="math inline">\(2x+y\le10\)</span>,
+<span class="math inline">\(x\ge0\)</span>, and <span class="math inline">\(y\ge0\)</span>. Whole-kit decisions also require
+integer values. The graphical feasible region contains all continuous
+solutions, while feasible integer decisions are its lattice points.</p>
+</blockquote>
+<h5 id="guided-practice-12.">Guided practice 12.</h5>
+<p>Decide whether <span class="math inline">\((2,5)\)</span> and <span class="math inline">\((4,4)\)</span> satisfy <span class="math inline">\(2x+y\le10\)</span>. <em>Check:</em> yes; no.</p>
+<h2 id="extended-investigation-vii-an-introductory-optimization-question">Extended
+investigation VII: an introductory optimization question</h2>
+<p>Suppose the clinic earns 3 dollars of benefit per standard kit and 2
+dollars per premium kit, with resource constraint <span class="math inline">\(2x+y\le10\)</span>. The objective is <span class="math inline">\(B=3x+2y\)</span>. On the triangular feasible
+region, evaluate the objective at its three vertices: <span class="math inline">\(B(0,0)=0\)</span>, <span class="math inline">\(B(5,0)=15\)</span>, and <span class="math inline">\(B(0,10)=20\)</span>. Thus the largest value occurs
+at <span class="math inline">\((0,10)\)</span>, giving 20 units of
+benefit. This illustrates a fundamental idea from linear programming: a
+linear objective over a bounded polygon has an optimum at a vertex. More
+complex constraints can create many vertices, but the same geometric
+principle applies.</p>
+<h5 id="visual-investigation-6.">Visual investigation 6.</h5>
+<p>Draw the level lines <span class="math inline">\(3x+2y=10\)</span>,
+<span class="math inline">\(3x+2y=15\)</span>, and <span class="math inline">\(3x+2y=20\)</span> on the feasible-region graph.
+Explain why increasing the target shifts the line away from the origin.
+What changes if the objective is <span class="math inline">\(B=5x+y\)</span>?</p>
+<h2 id="extended-investigation-viii-interpreting-residuals-and-uncertainty">Extended
+investigation VIII: interpreting residuals and uncertainty</h2>
+<p>A line fitted to observed data rarely passes through every
+measurement. A <em>residual</em> is observed response minus predicted
+response: <span class="math inline">\(e_i=y_i-\widehat y_i\)</span>.
+Consider the calibration model <span class="math inline">\(\widehat
+S=3c+3\)</span> and measurements <span class="math inline">\((2,9)\)</span>, <span class="math inline">\((4,16)\)</span>, <span class="math inline">\((6,20)\)</span>, and <span class="math inline">\((8,27)\)</span>. Predicted signals are <span class="math inline">\(9,15,21,27\)</span>, giving residuals <span class="math inline">\(0,1,-1,0\)</span>. Residuals help us see where a
+model overpredicts or underpredicts. In later statistics courses,
+residual patterns are used to assess whether a linear model is
+appropriate. Here, the key distinction is between a mathematical line
+and imperfect empirical measurements.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Concentration</th>
+<th style="text-align: right;">Observed signal</th>
+<th style="text-align: right;">Predicted signal</th>
+<th style="text-align: right;">Residual</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">21</td>
+<td style="text-align: right;">-1</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">27</td>
+<td style="text-align: right;">27</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+<h5 id="guided-practice-13.">Guided practice 13.</h5>
+<p>A model predicts 18 units, but the observed reading is 16. Find the
+residual and explain its sign. <em>Check:</em> <span class="math inline">\(-2\)</span>; the model overpredicts by 2
+units.</p>
+<h2 id="extended-investigation-ix-geometric-derivation-of-the-line-equation">Extended
+investigation IX: geometric derivation of the line equation</h2>
+<p>Let a nonvertical line pass through <span class="math inline">\(P(x_1,y_1)\)</span> with slope <span class="math inline">\(m\)</span>. For any other point <span class="math inline">\(Q(x,y)\)</span> on the line, the slope definition
+gives <span class="math inline">\((y-y_1)/(x-x_1)=m\)</span>, provided
+<span class="math inline">\(x\ne x_1\)</span>. Multiplying yields <span class="math inline">\(y-y_1=m(x-x_1)\)</span>; this also holds at <span class="math inline">\(P\)</span> itself, where both sides are zero. Thus
+the point-slope formula is not merely a rule to memorize: it follows
+from the requirement that all points on a straight line share a common
+rise-to-run ratio. Expanding gives <span class="math inline">\(y=mx+(y_1-mx_1)\)</span>, so the intercept is
+<span class="math inline">\(b=y_1-mx_1\)</span>.</p>
+<blockquote class="example">
+<p><strong>Example 17: Derivation in context.</strong> A line through
+<span class="math inline">\((3,14)\)</span> has slope <span class="math inline">\(-2\)</span> units per minute. Derive its
+equation.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> Constant slope means <span class="math inline">\(y-14=-2(t-3)\)</span>. Therefore <span class="math inline">\(y=-2t+20\)</span>. At <span class="math inline">\(t=3\)</span>, the model returns <span class="math inline">\(14\)</span> as required; at <span class="math inline">\(t=0\)</span>, the extrapolated intercept is <span class="math inline">\(20\)</span>.</p>
+</blockquote>
+<h2 id="extended-investigation-x-why-two-equations-can-nearly-agree">Extended
+investigation X: why two equations can nearly agree</h2>
+<p>Consider <span class="math inline">\(x+y=10\)</span> and <span class="math inline">\(x+1.01y=10.05\)</span>. Subtracting gives <span class="math inline">\(0.01y=0.05\)</span>, so <span class="math inline">\(y=5\)</span> and <span class="math inline">\(x=5\)</span>. If the second right-hand side
+changes slightly to <span class="math inline">\(10.06\)</span>, then
+<span class="math inline">\(0.01y=0.06\)</span>, giving <span class="math inline">\(y=6\)</span> and <span class="math inline">\(x=4\)</span>. A change of only <span class="math inline">\(0.01\)</span> in a measurement has moved each
+coordinate by 1. This is an example of <em>sensitivity</em>: systems
+with nearly parallel lines may produce substantially different
+intersections when data change slightly. The determinant is <span class="math inline">\(1(1.01)-1(1)=0.01\)</span>, small but nonzero. A
+small determinant by itself is not a scale-invariant condition number,
+but it alerts us to examine numerical stability and units.</p>
+<h5 id="guided-practice-14.">Guided practice 14.</h5>
+<p>Solve <span class="math inline">\(x+y=10\)</span> and <span class="math inline">\(x+1.02y=10.10\)</span>. <em>Check:</em> <span class="math inline">\((5,5)\)</span>.</p>
+<h2 id="extended-investigation-xi-a-three-stage-model-comparison">Extended
+investigation XI: a three-stage model comparison</h2>
+<p>A simplified physiological measurement rises linearly from 5 to 17
+units between 0 and 4 minutes, stays at 17 units until 6 minutes, and
+then falls to 11 units by 9 minutes. Construct a piecewise linear
+function. The first slope is <span class="math inline">\((17-5)/4=3\)</span>, so <span class="math inline">\(y=5+3t\)</span> for <span class="math inline">\(0\le t\le4\)</span>. The middle slope is zero, so
+<span class="math inline">\(y=17\)</span> for <span class="math inline">\(4&lt;t\le6\)</span>. The final slope is <span class="math inline">\((11-17)/(9-6)=-2\)</span>, so <span class="math inline">\(y=17-2(t-6)\)</span> for <span class="math inline">\(6&lt;t\le9\)</span>. The pieces agree at their
+shared boundaries. Explain why the graph is continuous but changes slope
+abruptly at <span class="math inline">\(t=4\)</span> and <span class="math inline">\(t=6\)</span>. This prepares you to distinguish
+continuity and differentiability in calculus.</p>
+<h2 id="chapter-exercises">Chapter exercises</h2>
+<p><strong>Instructions.</strong> Show reasoning, label axes and units
+in applications, and verify system solutions. Technology may be used to
+check answers but not replace explanations.</p>
+<h3 class="unnumbered" id="coordinates-distance-and-midpoint">Coordinates, distance, and
+midpoint</h3>
+<ol type="1">
+<li><p>Plot <span class="math inline">\((-3,2)\)</span>, <span class="math inline">\((4,-1)\)</span>, and <span class="math inline">\((0,5)\)</span>; identify quadrants or
+axes.</p></li>
+<li><p>Find the distance between <span class="math inline">\((2,3)\)</span> and <span class="math inline">\((8,11)\)</span>.</p></li>
+<li><p>Find the midpoint of <span class="math inline">\((-6,4)\)</span>
+and <span class="math inline">\((10,-2)\)</span>.</p></li>
+<li><p>Find the point three-quarters of the way from <span class="math inline">\((0,0)\)</span> to <span class="math inline">\((8,12)\)</span>.</p></li>
+<li><p>Prove using the distance formula that <span class="math inline">\((0,0)\)</span>, <span class="math inline">\((3,4)\)</span>, and <span class="math inline">\((6,0)\)</span> form an isosceles
+triangle.</p></li>
+<li><p>Explain why switching the axes of a measurement plot can change
+the meaning of slope.</p></li>
+</ol>
+<h3 class="unnumbered" id="slope-and-equations-of-lines">Slope and
+equations of lines</h3>
+<ol type="1">
+<li><p>Find the slope through <span class="math inline">\((1,7)\)</span>
+and <span class="math inline">\((5,-1)\)</span>.</p></li>
+<li><p>Write the equation through <span class="math inline">\((-2,3)\)</span> and <span class="math inline">\((4,9)\)</span> in two forms.</p></li>
+<li><p>Find the intercepts of <span class="math inline">\(5x+2y=20\)</span>.</p></li>
+<li><p>Write an equation for the horizontal line through <span class="math inline">\((3,-4)\)</span>.</p></li>
+<li><p>Write an equation for the vertical line through <span class="math inline">\((-5,2)\)</span>.</p></li>
+<li><p>Find a line through <span class="math inline">\((2,1)\)</span>
+parallel to <span class="math inline">\(y=3x-7\)</span>.</p></li>
+<li><p>Find a line through <span class="math inline">\((2,1)\)</span>
+perpendicular to <span class="math inline">\(y=3x-7\)</span>.</p></li>
+<li><p>Explain why two different lines with the same slope never
+intersect.</p></li>
+<li><p>Determine whether <span class="math inline">\((1,2)\)</span>,
+<span class="math inline">\((3,6)\)</span>, and <span class="math inline">\((5,10)\)</span> are collinear.</p></li>
+</ol>
+<h3 class="unnumbered" id="systems-of-equations">Systems of
+equations</h3>
+<ol type="1">
+<li><p>Solve <span class="math inline">\(x+y=9\)</span> and <span class="math inline">\(x-y=3\)</span> by substitution.</p></li>
+<li><p>Solve <span class="math inline">\(2x+3y=12\)</span> and <span class="math inline">\(x-y=1\)</span> by elimination.</p></li>
+<li><p>Classify <span class="math inline">\(2x+4y=6\)</span> and <span class="math inline">\(x+2y=3\)</span>.</p></li>
+<li><p>Classify <span class="math inline">\(2x+4y=6\)</span> and <span class="math inline">\(x+2y=5\)</span>.</p></li>
+<li><p>Compute the determinant of the matrix with first row <span class="math inline">\((3,1)\)</span> and second row <span class="math inline">\((2,4)\)</span>.</p></li>
+<li><p>Use a matrix method to solve <span class="math inline">\(3x+y=11\)</span>, <span class="math inline">\(x-y=1\)</span>.</p></li>
+<li><p>Explain why a determinant of zero does not by itself imply
+inconsistency.</p></li>
+<li><p>Graph <span class="math inline">\(y=2x+1\)</span> and <span class="math inline">\(y=-x+7\)</span> and identify their
+intersection.</p></li>
+</ol>
+<h3 class="unnumbered" id="applications-and-mathematical-reasoning">Applications and
+mathematical reasoning</h3>
+<ol type="1">
+<li><p>A sensor reads 11 at concentration 2 and 29 at concentration 8.
+Build a calibration line.</p></li>
+<li><p>Using the preceding calibration, estimate concentration when the
+signal is 20.</p></li>
+<li><p>Explain why using the calibration line at concentration 100 is
+extrapolation.</p></li>
+<li><p>A mixture uses 3 mg/mL and 9 mg/mL stocks. Find volumes totaling
+20 mL and 120 mg.</p></li>
+<li><p>A clinic charges a fixed 25 dollars and 8 dollars per visit.
+Interpret slope and intercept.</p></li>
+<li><p>Find the average rate of change of <span class="math inline">\(f(x)=x^2+1\)</span> from <span class="math inline">\(x=1\)</span> to <span class="math inline">\(x=4\)</span>.</p></li>
+<li><p>For <span class="math inline">\(f(x)=x^2\)</span>, simplify <span class="math inline">\([f(3+h)-f(3)]/h\)</span> for <span class="math inline">\(h
+e0\)</span>.</p></li>
+<li><p>Explain the difference between a secant slope and a tangent
+slope.</p></li>
+<li><p>Construct a piecewise linear model with slopes 2 and 5 that joins
+continuously at <span class="math inline">\(x=3\)</span>.</p></li>
+<li><p>Choose two points with slope <span class="math inline">\(-2\)</span> and explain the units in an original
+applied context.</p></li>
+</ol>
+<h2 id="calculus-readiness-checkpoint">Calculus-readiness
+checkpoint</h2>
+<ol type="1">
+<li><p>Derive the formula for slope from two points and explain why the
+denominator must be nonzero.</p></li>
+<li><p>For <span class="math inline">\(f(x)=3x^2-2x\)</span>, simplify
+<span class="math inline">\([f(a+h)-f(a)]/h\)</span> for <span class="math inline">\(h\ne0\)</span>. <em>Check:</em> <span class="math inline">\(6a+3h-2\)</span>.</p></li>
+<li><p>Evaluate the preceding simplified expression as <span class="math inline">\(h\)</span> approaches zero, and explain its
+geometric meaning. <em>Check:</em> <span class="math inline">\(6a-2\)</span>; limiting secant slope.</p></li>
+<li><p>Explain why the rate of change of a linear function is constant
+while that of a quadratic is not.</p></li>
+<li><p>A calibration line has slope <span class="math inline">\(4\)</span> signal units per mg/L. Interpret the
+slope as a rate and describe one reason it may not remain constant for
+all concentrations.</p></li>
+</ol>
+<h2 class="unnumbered" id="looking-ahead-to-chapter-4">Looking ahead to
+Chapter 4</h2>
+<p>Chapter 4 develops functions, graphs, and multiple representations.
+The coordinate plane, slope, and linear models in this chapter provide
+the language for describing how an input determines an output. You will
+extend these ideas to nonlinear functions and compare their rates of
+change.</p>
+<h2 id="extended-application-comparing-calibration-services">Extended
+application: Comparing calibration services</h2>
+<p>A facility compares a service with a fixed fee of 40 dollars and 3
+dollars per sample against a second service charging 10 dollars plus 5
+dollars per sample. The quantities in this investigation are
+illustrative rather than measured observations.</p>
+<h3 id="formulating-the-mathematical-model">Formulating the mathematical
+model</h3>
+<p>The proposed relationship is <span class="math display">\[D(x)=(40+3x)-(10+5x).\]</span> Before
+calculating, identify the input and output, their units, and the
+interval on which the model is being studied. Distinguish the
+mathematical domain from the practical domain. The numerical study uses
+inputs from <span class="math inline">\(0\)</span> to <span class="math inline">\(30\)</span>.</p>
+<blockquote class="example">
+<p><strong>Example 18: Analytical investigation.</strong> Find the
+break-even sample count and explain the sign of <span class="math inline">\(D\)</span> on either side. Identify the slope and
+its units.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> <span class="math inline">\(30-2x=0\)</span> gives 15 samples. The first
+service costs more below 15 and less above 15. Slope is <span class="math inline">\(-2\)</span> dollars per sample.</p>
+</blockquote>
+<h3 id="connecting-numerical-and-graphical-representations">Connecting
+numerical and graphical representations</h3>
+<table>
+<caption>Selected predictions from the illustrative model. Values are
+rounded for display.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Samples</th>
+<th style="text-align: right;">Cost difference (dollars)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">30</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">7.5</td>
+<td style="text-align: right;">15</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">22.5</td>
+<td style="text-align: right;">-15</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">30</td>
+<td style="text-align: right;">-30</td>
+</tr>
+</tbody>
+</table>
+<figure>
+<img alt="Model predictions over the stated investigation interval. The graph represents a mathematical model, not observed data." src="figures/ch03/applied_project.svg" style="width:90.0%"/>
+<figcaption aria-hidden="true">Model predictions over the stated
+investigation interval. The graph represents a mathematical model, not
+observed data.</figcaption>
+</figure>
+<p><strong>Interpretation.</strong> Compare the tabulated values with
+the graph. Identify the intervals over which the output increases or
+decreases, and distinguish a sampled extremum from an exact analytical
+extremum. Explain whether interpolation and extrapolation have the same
+justification in this setting.</p>
+<h3 id="r-implementation">R implementation</h3>
+<p>The following standalone script defines the model, generates
+predictions, and draws a labeled graph. Read the formula before running
+the code. The sampled range is a numerical diagnostic, not a proof of
+the exact range.</p>
+<div class="code-shell"><div class="code-bar"><span>R</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a aria-hidden="true" href="#cb7-1" tabindex="-1"></a><span class="co"># Applied investigation: Comparing calibration services</span></span>
+<span id="cb7-2"><a aria-hidden="true" href="#cb7-2" tabindex="-1"></a><span class="co"># 1. Define the input domain and model</span></span>
+<span id="cb7-3"><a aria-hidden="true" href="#cb7-3" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">30</span>, <span class="at">length.out =</span> <span class="dv">301</span>)</span>
+<span id="cb7-4"><a aria-hidden="true" href="#cb7-4" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">30-2</span><span class="sc">*</span>x</span>
+<span id="cb7-5"><a aria-hidden="true" href="#cb7-5" tabindex="-1"></a></span>
+<span id="cb7-6"><a aria-hidden="true" href="#cb7-6" tabindex="-1"></a><span class="co"># 2. Inspect numerical predictions</span></span>
+<span id="cb7-7"><a aria-hidden="true" href="#cb7-7" tabindex="-1"></a>idx <span class="ot">&lt;-</span> <span class="fu">unique</span>(<span class="fu">round</span>(<span class="fu">seq</span>(<span class="dv">1</span>, <span class="fu">length</span>(x), <span class="at">length.out =</span> <span class="dv">5</span>)))</span>
+<span id="cb7-8"><a aria-hidden="true" href="#cb7-8" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">data.frame</span>(<span class="at">input =</span> x[idx], <span class="at">output =</span> y[idx]))</span>
+<span id="cb7-9"><a aria-hidden="true" href="#cb7-9" tabindex="-1"></a></span>
+<span id="cb7-10"><a aria-hidden="true" href="#cb7-10" tabindex="-1"></a><span class="co"># 3. Visualize the model with labeled axes</span></span>
+<span id="cb7-11"><a aria-hidden="true" href="#cb7-11" tabindex="-1"></a><span class="fu">plot</span>(x, y, <span class="at">type =</span> <span class="st">"l"</span>, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">"#176B87"</span>,</span>
+<span id="cb7-12"><a aria-hidden="true" href="#cb7-12" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Samples"</span>, <span class="at">ylab =</span> <span class="st">"Cost difference (dollars)"</span>)</span>
+<span id="cb7-13"><a aria-hidden="true" href="#cb7-13" tabindex="-1"></a><span class="fu">grid</span>()</span>
+<span id="cb7-14"><a aria-hidden="true" href="#cb7-14" tabindex="-1"></a></span>
+<span id="cb7-15"><a aria-hidden="true" href="#cb7-15" tabindex="-1"></a><span class="co"># 4. Check the sampled output range</span></span>
+<span id="cb7-16"><a aria-hidden="true" href="#cb7-16" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">range</span>(y))</span></code></pre></div></div>
+<h3 id="python-implementation">Python implementation</h3>
+<p>Repeat the same investigation using NumPy arrays and Matplotlib.
+Compare the printed predictions with the R output, allowing for
+rounding.</p>
+<div class="code-shell"><div class="code-bar"><span>Python</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a aria-hidden="true" href="#cb8-1" tabindex="-1"></a><span class="co"># Applied investigation: Comparing calibration services</span></span>
+<span id="cb8-2"><a aria-hidden="true" href="#cb8-2" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb8-3"><a aria-hidden="true" href="#cb8-3" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb8-4"><a aria-hidden="true" href="#cb8-4" tabindex="-1"></a></span>
+<span id="cb8-5"><a aria-hidden="true" href="#cb8-5" tabindex="-1"></a><span class="co"># 1. Define the input domain and model</span></span>
+<span id="cb8-6"><a aria-hidden="true" href="#cb8-6" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">30</span>, <span class="dv">301</span>)</span>
+<span id="cb8-7"><a aria-hidden="true" href="#cb8-7" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">30</span><span class="op">-</span><span class="dv">2</span><span class="op">*</span>x</span>
+<span id="cb8-8"><a aria-hidden="true" href="#cb8-8" tabindex="-1"></a></span>
+<span id="cb8-9"><a aria-hidden="true" href="#cb8-9" tabindex="-1"></a><span class="co"># 2. Inspect numerical predictions</span></span>
+<span id="cb8-10"><a aria-hidden="true" href="#cb8-10" tabindex="-1"></a>idx <span class="op">=</span> np.unique(np.linspace(<span class="dv">0</span>, <span class="bu">len</span>(x)<span class="op">-</span><span class="dv">1</span>, <span class="dv">5</span>).<span class="bu">round</span>().astype(<span class="bu">int</span>))</span>
+<span id="cb8-11"><a aria-hidden="true" href="#cb8-11" tabindex="-1"></a><span class="bu">print</span>(np.column_stack((x[idx], y[idx])))</span>
+<span id="cb8-12"><a aria-hidden="true" href="#cb8-12" tabindex="-1"></a></span>
+<span id="cb8-13"><a aria-hidden="true" href="#cb8-13" tabindex="-1"></a><span class="co"># 3. Visualize the model with labeled axes</span></span>
+<span id="cb8-14"><a aria-hidden="true" href="#cb8-14" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="fl">3.6</span>))</span>
+<span id="cb8-15"><a aria-hidden="true" href="#cb8-15" tabindex="-1"></a>ax.plot(x, y, <span class="st">"-"</span>, color<span class="op">=</span><span class="st">"#176B87"</span>, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb8-16"><a aria-hidden="true" href="#cb8-16" tabindex="-1"></a>ax.<span class="bu">set</span>(xlabel<span class="op">=</span><span class="st">"Samples"</span>, ylabel<span class="op">=</span><span class="st">"Cost difference (dollars)"</span>)</span>
+<span id="cb8-17"><a aria-hidden="true" href="#cb8-17" tabindex="-1"></a>ax.grid(alpha<span class="op">=</span><span class="fl">0.22</span>)</span>
+<span id="cb8-18"><a aria-hidden="true" href="#cb8-18" tabindex="-1"></a>ax.spines[[<span class="st">"top"</span>, <span class="st">"right"</span>]].set_visible(<span class="va">False</span>)</span>
+<span id="cb8-19"><a aria-hidden="true" href="#cb8-19" tabindex="-1"></a>fig.tight_layout()</span>
+<span id="cb8-20"><a aria-hidden="true" href="#cb8-20" tabindex="-1"></a>plt.show()</span>
+<span id="cb8-21"><a aria-hidden="true" href="#cb8-21" tabindex="-1"></a></span>
+<span id="cb8-22"><a aria-hidden="true" href="#cb8-22" tabindex="-1"></a><span class="co"># 4. Check the sampled output range</span></span>
+<span id="cb8-23"><a aria-hidden="true" href="#cb8-23" tabindex="-1"></a><span class="bu">print</span>(np.<span class="bu">min</span>(y), np.<span class="bu">max</span>(y))</span></code></pre></div></div>
+<h3 id="guided-practice-checking-the-model">Guided practice: checking
+the model</h3>
+<ol type="1">
+<li><p>Calculate the outputs at the two endpoints by hand. Compare them
+with the numerical table.</p></li>
+<li><p>Select an interior input not listed in the table. Predict the
+output before evaluating it in either language.</p></li>
+<li><p>Explain the meaning of the difference between the two endpoint
+outputs, including units. If appropriate, calculate the average rate of
+change.</p></li>
+<li><p>Identify a physical assumption of the model and describe a
+circumstance in which it would fail.</p></li>
+</ol>
+<h2 id="chapter-project-investigating-comparing-calibration-services">Chapter
+project: investigating Comparing calibration services</h2>
+<p>Prepare a short technical report for a reader who has not studied the
+model. Use the preceding case as a starting point, but develop your own
+investigation rather than merely reproducing the worked example.</p>
+<ol type="1">
+<li><p>State a quantitative question that can be answered using the
+model. Define all variables, units, and restrictions.</p></li>
+<li><p>Modify one meaningful numerical parameter in the formula. Explain
+what the change represents in the original context. Derive the revised
+formula and predict the direction of change before computing.</p></li>
+<li><p>Compare the original and revised models at five common admissible
+inputs. Present a labeled table and explain the largest difference in
+the table.</p></li>
+<li><p>Produce a graph containing both models on the same axes. Use a
+legend and distinguish the curves with line styles or markers. Explain
+the shape and any intersections.</p></li>
+<li><p>Solve your quantitative question algebraically where possible.
+Verify the result using R and Python; report any differences due to
+numerical precision.</p></li>
+<li><p>Discuss at least two limitations. Describe what measurements
+would be needed to assess the model in practice. Do not present
+simulated predictions as empirical evidence.</p></li>
+</ol>
+<h3 class="unnumbered" id="project-deliverables-and-assessment">Project
+deliverables and assessment</h3>
+<p>Submit a two- to three-page report, the two runnable scripts, and the
+labeled figure. The report should stand on its own without requiring the
+reader to inspect the code.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Criterion</th>
+<th style="text-align: right;">Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Mathematical formulation and domain</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Analytical reasoning and verification</td>
+<td style="text-align: right;">25</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Reproducible R and Python
+computations</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Graph and table quality</td>
+<td style="text-align: right;">15</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Interpretation and limitations</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Total</td>
+<td style="text-align: right;">100</td>
+</tr>
+</tbody>
+</table>
+<h2>Companion scripts</h2><p><a download="" href="code/ch03/applied_project.R">applied_project.R</a></p><p><a download="" href="code/ch03/applied_project.py">applied_project.py</a></p><p><a download="" href="code/ch03/chapter03_labs.R">chapter03_labs.R</a></p><p><a download="" href="code/ch03/chapter03_labs.py">chapter03_labs.py</a></p><footer><a href="chapter02.html">← Previous</a><a href="chapter04.html">Next →</a></footer><section class="investigation"><h2 id="interactive-investigation">Interactive investigation: Intersection of two lines</h2><div data-investigation="3"><p>Enable JavaScript to explore the model.</p></div><p><strong>Explore and explain:</strong> Find the intersection algebraically. When are the lines parallel or identical?</p></section>
+</main><nav aria-label="On this page" class="chapter-toc" id="TOC" role="doc-toc"><strong>On this page</strong>
+<ul>
+<li><a href="#coordinate-geometry-lines-and-systems-of-equations" id="toc-coordinate-geometry-lines-and-systems-of-equations">Coordinate
+Geometry, Lines, and Systems of Equations</a>
+<ul>
+<li><a href="#opening-investigation-what-does-a-calibration-line-tell-us" id="toc-opening-investigation-what-does-a-calibration-line-tell-us">Opening
+investigation: What does a calibration line tell us?</a></li>
+<li><a href="#learning-outcomes" id="toc-learning-outcomes">Learning
+outcomes</a></li>
+<li><a href="#prerequisite-diagnostic" id="toc-prerequisite-diagnostic">Prerequisite diagnostic</a></li>
+<li><a href="#the-cartesian-coordinate-plane" id="toc-the-cartesian-coordinate-plane">The Cartesian coordinate
+plane</a></li>
+<li><a href="#distance-between-two-points" id="toc-distance-between-two-points">Distance between two
+points</a></li>
+<li><a href="#midpoints-partitions-and-geometric-averages" id="toc-midpoints-partitions-and-geometric-averages">Midpoints,
+partitions, and geometric averages</a></li>
+<li><a href="#slope-as-a-rate-of-change" id="toc-slope-as-a-rate-of-change">Slope as a rate of change</a></li>
+<li><a href="#equations-of-lines-three-useful-forms" id="toc-equations-of-lines-three-useful-forms">Equations of lines: three
+useful forms</a>
+<ul>
+<li><a href="#slope-intercept-form" id="toc-slope-intercept-form">Slope-intercept form</a></li>
+<li><a href="#point-slope-form" id="toc-point-slope-form">Point-slope
+form</a></li>
+<li><a href="#standard-form-and-special-lines" id="toc-standard-form-and-special-lines">Standard form and special
+lines</a></li>
+</ul></li>
+<li><a href="#intercepts-and-graphical-interpretation" id="toc-intercepts-and-graphical-interpretation">Intercepts and
+graphical interpretation</a></li>
+<li><a href="#parallel-and-perpendicular-lines" id="toc-parallel-and-perpendicular-lines">Parallel and perpendicular
+lines</a></li>
+<li><a href="#building-and-evaluating-linear-models" id="toc-building-and-evaluating-linear-models">Building and evaluating
+linear models</a></li>
+<li><a href="#systems-of-two-linear-equations" id="toc-systems-of-two-linear-equations">Systems of two linear
+equations</a>
+<ul>
+<li><a href="#substitution-method" id="toc-substitution-method">Substitution method</a></li>
+<li><a href="#elimination-method" id="toc-elimination-method">Elimination method</a></li>
+</ul></li>
+<li><a href="#visual-investigation-4-the-geometry-of-solution-counts" id="toc-visual-investigation-4-the-geometry-of-solution-counts">Visual
+investigation 4: the geometry of solution counts</a></li>
+<li><a href="#dependent-and-inconsistent-systems" id="toc-dependent-and-inconsistent-systems">Dependent and inconsistent
+systems</a></li>
+<li><a href="#matrices-and-determinants-a-first-look" id="toc-matrices-and-determinants-a-first-look">Matrices and
+determinants: a first look</a></li>
+<li><a href="#applied-case-study-two-test-calibration-and-mixture-design" id="toc-applied-case-study-two-test-calibration-and-mixture-design">Applied
+case study: two-test calibration and mixture design</a></li>
+<li><a href="#computational-laboratory-a-plotting-points-and-lines" id="toc-computational-laboratory-a-plotting-points-and-lines">Computational
+laboratory A: plotting points and lines</a>
+<ul>
+<li><a href="#r-code" id="toc-r-code">R code</a></li>
+<li><a href="#python-code" id="toc-python-code">Python code</a></li>
+</ul></li>
+<li><a href="#computational-laboratory-b-solving-and-verifying-systems" id="toc-computational-laboratory-b-solving-and-verifying-systems">Computational
+laboratory B: solving and verifying systems</a>
+<ul>
+<li><a href="#r-code-1" id="toc-r-code-1">R code</a></li>
+<li><a href="#python-code-1" id="toc-python-code-1">Python code</a></li>
+</ul></li>
+<li><a href="#computational-laboratory-c-slopes-approaching-a-tangent" id="toc-computational-laboratory-c-slopes-approaching-a-tangent">Computational
+laboratory C: slopes approaching a tangent</a>
+<ul>
+<li><a href="#r-code-2" id="toc-r-code-2">R code</a></li>
+<li><a href="#python-code-2" id="toc-python-code-2">Python code</a></li>
+</ul></li>
+<li><a href="#guided-practice-workshop-five-integrated-problems" id="toc-guided-practice-workshop-five-integrated-problems">Guided
+practice workshop: five integrated problems</a></li>
+<li><a href="#common-misconceptions-and-mathematical-habits" id="toc-common-misconceptions-and-mathematical-habits">Common
+misconceptions and mathematical habits</a></li>
+<li><a href="#chapter-summary-and-formula-reference" id="toc-chapter-summary-and-formula-reference">Chapter summary and
+formula reference</a></li>
+<li><a href="#calculus-connection-secants-tangents-and-local-change" id="toc-calculus-connection-secants-tangents-and-local-change">Calculus
+connection: secants, tangents, and local change</a></li>
+<li><a href="#extended-investigation-i-translating-and-rotating-the-geometric-picture" id="toc-extended-investigation-i-translating-and-rotating-the-geometric-picture">Extended
+investigation I: translating and rotating the geometric picture</a></li>
+<li><a href="#extended-investigation-ii-sensitivity-of-a-calibration-model" id="toc-extended-investigation-ii-sensitivity-of-a-calibration-model">Extended
+investigation II: sensitivity of a calibration model</a></li>
+<li><a href="#extended-investigation-iii-three-equations-and-three-unknowns" id="toc-extended-investigation-iii-three-equations-and-three-unknowns">Extended
+investigation III: three equations and three unknowns</a></li>
+<li><a href="#extended-investigation-iv-piecewise-linear-models" id="toc-extended-investigation-iv-piecewise-linear-models">Extended
+investigation IV: piecewise linear models</a></li>
+<li><a href="#extended-investigation-v-constrained-intersections" id="toc-extended-investigation-v-constrained-intersections">Extended
+investigation V: constrained intersections</a></li>
+<li><a href="#extended-investigation-vi-linear-inequalities-in-two-variables" id="toc-extended-investigation-vi-linear-inequalities-in-two-variables">Extended
+investigation VI: linear inequalities in two variables</a></li>
+<li><a href="#extended-investigation-vii-an-introductory-optimization-question" id="toc-extended-investigation-vii-an-introductory-optimization-question">Extended
+investigation VII: an introductory optimization question</a></li>
+<li><a href="#extended-investigation-viii-interpreting-residuals-and-uncertainty" id="toc-extended-investigation-viii-interpreting-residuals-and-uncertainty">Extended
+investigation VIII: interpreting residuals and uncertainty</a></li>
+<li><a href="#extended-investigation-ix-geometric-derivation-of-the-line-equation" id="toc-extended-investigation-ix-geometric-derivation-of-the-line-equation">Extended
+investigation IX: geometric derivation of the line equation</a></li>
+<li><a href="#extended-investigation-x-why-two-equations-can-nearly-agree" id="toc-extended-investigation-x-why-two-equations-can-nearly-agree">Extended
+investigation X: why two equations can nearly agree</a></li>
+<li><a href="#extended-investigation-xi-a-three-stage-model-comparison" id="toc-extended-investigation-xi-a-three-stage-model-comparison">Extended
+investigation XI: a three-stage model comparison</a></li>
+<li><a href="#chapter-exercises" id="toc-chapter-exercises">Chapter
+exercises</a>
+<ul>
+<li><a href="#coordinates-distance-and-midpoint" id="toc-coordinates-distance-and-midpoint">Coordinates, distance, and
+midpoint</a></li>
+<li><a href="#slope-and-equations-of-lines" id="toc-slope-and-equations-of-lines">Slope and equations of
+lines</a></li>
+<li><a href="#systems-of-equations" id="toc-systems-of-equations">Systems of equations</a></li>
+<li><a href="#applications-and-mathematical-reasoning" id="toc-applications-and-mathematical-reasoning">Applications and
+mathematical reasoning</a></li>
+</ul></li>
+<li><a href="#calculus-readiness-checkpoint" id="toc-calculus-readiness-checkpoint">Calculus-readiness
+checkpoint</a></li>
+<li><a href="#looking-ahead-to-chapter-4" id="toc-looking-ahead-to-chapter-4">Looking ahead to Chapter 4</a></li>
+<li><a href="#extended-application-comparing-calibration-services" id="toc-extended-application-comparing-calibration-services">Extended
+application: Comparing calibration services</a>
+<ul>
+<li><a href="#formulating-the-mathematical-model" id="toc-formulating-the-mathematical-model">Formulating the mathematical
+model</a></li>
+<li><a href="#connecting-numerical-and-graphical-representations" id="toc-connecting-numerical-and-graphical-representations">Connecting
+numerical and graphical representations</a></li>
+<li><a href="#r-implementation" id="toc-r-implementation">R
+implementation</a></li>
+<li><a href="#python-implementation" id="toc-python-implementation">Python implementation</a></li>
+<li><a href="#guided-practice-checking-the-model" id="toc-guided-practice-checking-the-model">Guided practice: checking
+the model</a></li>
+</ul></li>
+<li><a href="#chapter-project-investigating-comparing-calibration-services" id="toc-chapter-project-investigating-comparing-calibration-services">Chapter
+project: investigating Comparing calibration services</a>
+<ul>
+<li><a href="#project-deliverables-and-assessment" id="toc-project-deliverables-and-assessment">Project deliverables and
+assessment</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav></div><script src="investigations.js"></script></body></html>

@@ -1,0 +1,1559 @@
+<!DOCTYPE html>
+
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8"/>
+<meta content="pandoc" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+<title>Real
+Numbers, Algebraic Expressions, and Mathematical Reasoning | Applied Precalculus</title>
+<style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+
+
+<link href="site.css" rel="stylesheet"/><script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script defer="" src="search-index.js"></script><script defer="" src="site.js"></script></head><body><nav class="site-nav" id="book-nav"><strong class="brand">Applied Precalculus</strong><p class="subtitle">Using R and Python</p><input aria-label="Search the book" id="book-search" placeholder="Search the book"/><div aria-live="polite" class="search-results" id="search-results"></div><p class="nav-label">Contents</p><a class="" href="index.html">Preface</a><a class="active" href="chapter01.html">1. Real Numbers, Algebraic Expressions, and Mathematical Reasoning</a><a class="" href="chapter02.html">2. Equations, Inequalities, and Applications</a><a class="" href="chapter03.html">3. Coordinate Geometry, Lines, and Systems of Equations</a><a class="" href="chapter04.html">4. Functions, Graphs, and Multiple Representations</a><a class="" href="chapter05.html">5. Transformations, Compositions, and Inverse Functions</a><a class="" href="chapter06.html">6. Polynomial and Rational Functions</a><a class="" href="chapter07.html">7. Exponential and Logarithmic Functions</a><a class="" href="chapter08.html">8. Angles, Radian Measure, and the Unit Circle</a><a class="" href="chapter09.html">9. Trigonometric Functions and Their Graphs</a><a class="" href="chapter10.html">10. Trigonometric Identities and Equations</a><a class="" href="chapter11.html">11. Applications of Trigonometry and Periodic Models</a><a class="" href="chapter12.html">12. Sequences, Series, and Mathematical Patterns</a><a class="" href="chapter13.html">13. Conic Sections and Parametric Equations</a><a class="" href="chapter14.html">14. Vectors, Polar Coordinates, and Geometric Modeling</a><a class="" href="chapter15.html">15. Rates of Change, Difference Quotients, and Limits</a><a class="" href="chapter16.html">16. Integrated Mathematical Modeling with R and Python</a><a class="" href="programming.html">Getting Started with R and Python</a><a class="" href="resources.html">Computational Resource Guide</a></nav><a class="skip" href="#main-content">Skip to content</a><header class="topbar"><button aria-controls="book-nav" aria-expanded="false" class="menu">Contents</button><span>Applied Precalculus / Online edition</span><span class="spacer"></span><a href="resources.html">Resources</a></header><div class="page-grid"><main id="main-content">
+
+<h1 id="real-numbers-algebraic-expressions-and-mathematical-reasoning">Real
+Numbers, Algebraic Expressions, and Mathematical Reasoning</h1>
+<p><strong>Chapter overview.</strong> A mathematical model is only as
+trustworthy as its numbers, units, and algebra. In health sciences, a
+conversion error can change the meaning of a measurement by a factor of
+one thousand. This chapter builds a precise language for numbers and
+expressions, develops methods for simplifying and interpreting them, and
+introduces R and Python as tools for numerical exploration and
+verification.</p>
+<p><strong>Learning outcomes.</strong> By the end of the chapter, you
+should be able to: classify real numbers; use order and interval
+notation; interpret absolute value as distance; apply exponent and
+radical laws while respecting domains; simplify and factor expressions;
+manipulate rational expressions with restrictions; use scientific
+notation and significant figures responsibly; perform dimensional
+analysis; distinguish exact from approximate results; and verify
+calculations with R and Python.</p>
+<h2 id="opening-investigation-how-much-does-a-unit-matter">Opening
+investigation: How much does a unit matter?</h2>
+<p>A laboratory report lists a mass of <span class="math inline">\(0.075\)</span> grams. A second report lists <span class="math inline">\(75\)</span> milligrams. Are these different
+measurements? Since <span class="math inline">\(1\,\mathrm{g}=1000\,\mathrm{mg}\)</span>, <span class="math inline">\(0.075\,\mathrm{g}\times(1000\,\mathrm{mg}/1\,\mathrm{g})=75\,\mathrm{mg}\)</span>.
+The numbers look different, but the quantities are equal. Throughout the
+chapter, always record the <em>number and its unit</em>.</p>
+<blockquote class="check">
+<p><strong>Concept check 1.</strong> A measurement is <span class="math inline">\(0.0042\)</span> meters. Express it in millimeters,
+and explain whether the numerical value becomes larger or smaller.</p>
+</blockquote>
+<h2 id="real-numbers-and-mathematical-language">Real numbers and
+mathematical language</h2>
+<p>The <em>natural numbers</em> are <span class="math inline">\(1,2,3,\ldots\)</span>; the <em>whole numbers</em>
+also include <span class="math inline">\(0\)</span>; the
+<em>integers</em> include negative whole numbers. A <em>rational
+number</em> can be expressed as <span class="math inline">\(a/b\)</span>
+with integers <span class="math inline">\(a,b\)</span> and <span class="math inline">\(b\ne0\)</span>. Irrational numbers such as <span class="math inline">\(\sqrt2\)</span> and <span class="math inline">\(\pi\)</span> cannot be written as such ratios.
+Together the rational and irrational numbers form <span class="math inline">\(\mathbb R\)</span>.</p>
+<blockquote class="example">
+<p><strong>Example 1: Classify numbers.</strong> Classify <span class="math inline">\(-7\)</span>, <span class="math inline">\(0\)</span>, <span class="math inline">\(3/8\)</span>, <span class="math inline">\(\sqrt{49}\)</span>, and <span class="math inline">\(\sqrt{5}\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> <span class="math inline">\(-7\)</span> is an integer and rational; <span class="math inline">\(0\)</span> is whole, integer, and rational; <span class="math inline">\(3/8\)</span> is rational; <span class="math inline">\(\sqrt{49}=7\)</span> is natural and rational;
+<span class="math inline">\(\sqrt5\)</span> is irrational. Every number
+listed is real.</p>
+</blockquote>
+<h3 id="order-and-intervals">Order and intervals</h3>
+<p>For real <span class="math inline">\(a&lt;b\)</span>, <span class="math inline">\((a,b)\)</span> excludes endpoints while <span class="math inline">\([a,b]\)</span> includes both. Mixed intervals
+<span class="math inline">\([a,b)\)</span> and <span class="math inline">\((a,b]\)</span> include exactly one endpoint.
+Infinite endpoints always use parentheses: <span class="math inline">\((-\infty,4]\)</span>. Union <span class="math inline">\(A\cup B\)</span> joins sets; intersection <span class="math inline">\(A\cap B\)</span> contains their common
+elements.</p>
+<blockquote class="example">
+<p><strong>Example 2: Translate an inequality.</strong> Write <span class="math inline">\(-2\le x&lt;5\)</span> as an interval and describe
+the endpoints.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> The interval is <span class="math inline">\([-2,5)\)</span>. The left endpoint <span class="math inline">\(-2\)</span> belongs to the set; <span class="math inline">\(5\)</span> does not.</p>
+</blockquote>
+<figure>
+<img alt="The interval [-2,5) has a closed endpoint at -2 and an open endpoint at 5." src="figures/precompiled/chapter01-01.svg"/>
+<figcaption aria-hidden="true">The interval <span class="math inline">\([-2,5)\)</span> has a closed endpoint at <span class="math inline">\(-2\)</span> and an open endpoint at <span class="math inline">\(5\)</span>.</figcaption>
+</figure>
+<h3 id="absolute-value-as-distance">Absolute value as distance</h3>
+<p>The absolute value <span class="math inline">\(|x|\)</span> is the
+distance from <span class="math inline">\(x\)</span> to <span class="math inline">\(0\)</span> on the number line: <span class="math display">\[|x|=\begin{cases}x,&amp;x\ge0,\\-x,&amp;x&lt;0.\end{cases}\]</span>
+More generally <span class="math inline">\(|x-a|\)</span> is the
+distance between <span class="math inline">\(x\)</span> and <span class="math inline">\(a\)</span>. Thus <span class="math inline">\(|x-3|\le2\)</span> means <span class="math inline">\(1\le x\le5\)</span>, whereas <span class="math inline">\(|x-3|&gt;2\)</span> means <span class="math inline">\(x&lt;1\)</span> or <span class="math inline">\(x&gt;5\)</span>.</p>
+<blockquote class="example">
+<p><strong>Example 3: Measurement tolerance.</strong> A target
+temperature is <span class="math inline">\(37.0^\circ\mathrm C\)</span>
+with tolerance <span class="math inline">\(0.4^\circ\mathrm C\)</span>.
+Express acceptable temperatures using absolute value and an
+interval.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> <span class="math inline">\(|T-37.0|\le0.4\)</span>. Subtracting the tolerance
+from the target gives <span class="math inline">\(36.6\le
+T\le37.4\)</span>, or <span class="math inline">\([36.6,37.4]\)</span>
+degrees Celsius.</p>
+</blockquote>
+<blockquote class="check">
+<p><strong>Concept check 2.</strong> Why is <span class="math inline">\(\sqrt{x^2}=|x|\)</span>, not always <span class="math inline">\(x\)</span>? Test <span class="math inline">\(x=-4\)</span>.</p>
+</blockquote>
+<h2 id="algebraic-expressions-and-the-order-of-operations">Algebraic
+expressions and the order of operations</h2>
+<p>An <em>expression</em> represents a value, whereas an
+<em>equation</em> asserts equality. A <em>variable</em> stands for a
+number in an allowed domain. Grouping symbols, powers,
+multiplication/division, and addition/subtraction govern the order of
+operations; multiplication and division at the same level are evaluated
+left to right.</p>
+<blockquote class="example">
+<p><strong>Example 4: Grouping changes a result.</strong> Compare <span class="math inline">\(6+12/3^2\)</span> and <span class="math inline">\((6+12)/3^2\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> Since <span class="math inline">\(3^2=9\)</span>, the first is <span class="math inline">\(6+12/9=22/3\)</span>. The second is <span class="math inline">\(18/9=2\)</span>.</p>
+</blockquote>
+<h3 id="distributive-property-and-combining-like-terms">Distributive
+property and combining like terms</h3>
+<p>For real <span class="math inline">\(a,b,c\)</span>, <span class="math inline">\(a(b+c)=ab+ac\)</span>. Only terms with the same
+variable part and exponent can be combined.</p>
+<blockquote class="example">
+<p><strong>Example 5: Simplify with care.</strong> Simplify <span class="math inline">\(3(2x-5)-2(x+4)+7\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> Distribute: <span class="math inline">\(6x-15-2x-8+7\)</span>. Combine like terms: <span class="math inline">\(4x-16\)</span>.</p>
+</blockquote>
+<h2 id="exponents-and-scientific-notation">Exponents and scientific
+notation</h2>
+<p>For nonzero <span class="math inline">\(a\)</span> and integers <span class="math inline">\(m,n\)</span>, <span class="math inline">\(a^ma^n=a^{m+n}\)</span>, <span class="math inline">\(a^m/a^n=a^{m-n}\)</span>, <span class="math inline">\((a^m)^n=a^{mn}\)</span>, <span class="math inline">\(a^0=1\)</span>, and <span class="math inline">\(a^{-n}=1/a^n\)</span>. Fractional exponents
+require domain care: for <span class="math inline">\(a&gt;0\)</span>,
+<span class="math inline">\(a^{m/n}=(\sqrt[n]{a})^m\)</span>. When <span class="math inline">\(n\)</span> is even, real even roots require
+nonnegative radicands.</p>
+<blockquote class="example">
+<p><strong>Example 6: Exponent rules.</strong> Simplify <span class="math inline">\(\dfrac{(2x^3)^2}{4x^{-1}}\)</span> for <span class="math inline">\(x\ne0\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> The numerator is <span class="math inline">\(4x^6\)</span>. Dividing by <span class="math inline">\(4x^{-1}\)</span> yields <span class="math inline">\(x^{6-(-1)}=x^7\)</span>. The original expression
+excludes <span class="math inline">\(x=0\)</span>.</p>
+</blockquote>
+<blockquote class="example">
+<p><strong>Example 7: Negative base versus negative sign.</strong>
+Evaluate <span class="math inline">\((-3)^2\)</span> and <span class="math inline">\(-3^2\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> <span class="math inline">\((-3)^2=9\)</span>, because the base is <span class="math inline">\(-3\)</span>. But <span class="math inline">\(-3^2=-(3^2)=-9\)</span>, because exponentiation
+precedes the leading minus sign.</p>
+</blockquote>
+<h3 id="scientific-notation">Scientific notation</h3>
+<p>A nonzero number in scientific notation has the form <span class="math inline">\(a\times10^n\)</span> with <span class="math inline">\(1\le|a|&lt;10\)</span> and integer <span class="math inline">\(n\)</span>. For example, <span class="math inline">\(0.000036=3.6\times10^{-5}\)</span> and <span class="math inline">\(7{,}200{,}000=7.2\times10^6\)</span>. A number
+written with a decimal point does not automatically convey infinite
+measurement precision.</p>
+<blockquote class="example">
+<p><strong>Example 8: Scale of a sample.</strong> A sample contains
+<span class="math inline">\(2.4\times10^6\)</span> cells per milliliter.
+Estimate the number in <span class="math inline">\(0.015\)</span>
+mL.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> <span class="math inline">\((2.4\times10^6\,\mathrm{cells/mL})(0.015\,\mathrm{mL})=3.6\times10^4\)</span>
+cells. The mL units cancel.</p>
+</blockquote>
+<h2 id="radicals-and-rational-exponents">Radicals and rational
+exponents</h2>
+<p>For <span class="math inline">\(a\ge0\)</span>, <span class="math inline">\(\sqrt a\)</span> denotes the <em>nonnegative</em>
+square root. Hence <span class="math inline">\(\sqrt{36}=6\)</span>,
+even though the equation <span class="math inline">\(x^2=36\)</span> has
+two solutions <span class="math inline">\(x=\pm6\)</span>. For
+nonnegative <span class="math inline">\(a,b\)</span>, <span class="math inline">\(\sqrt{ab}=\sqrt a\sqrt b\)</span>; it is generally
+false that <span class="math inline">\(\sqrt{a+b}=\sqrt a+\sqrt
+b\)</span>.</p>
+<blockquote class="example">
+<p><strong>Example 9: Simplifying radicals.</strong> Simplify <span class="math inline">\(\sqrt{72x^2}\)</span> for real <span class="math inline">\(x\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> <span class="math inline">\(\sqrt{72x^2}=\sqrt{36\cdot2}\sqrt{x^2}=6|x|\sqrt2\)</span>.
+If <span class="math inline">\(x\ge0\)</span> is known, this becomes
+<span class="math inline">\(6x\sqrt2\)</span>.</p>
+</blockquote>
+<blockquote class="example">
+<p><strong>Example 10: Rationalize a denominator.</strong> Simplify
+<span class="math inline">\(\dfrac{3}{\sqrt5}\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> Multiply numerator and denominator
+by <span class="math inline">\(\sqrt5\)</span>: <span class="math inline">\(3\sqrt5/5\)</span>. This changes the form, not the
+value.</p>
+</blockquote>
+<blockquote class="check">
+<p><strong>Concept check 3.</strong> Test the false identity <span class="math inline">\(\sqrt{9+16}=\sqrt9+\sqrt{16}\)</span>. What values
+do its two sides produce?</p>
+</blockquote>
+<h2 id="factoring-and-rational-expressions">Factoring and rational
+expressions</h2>
+<p>Factoring reverses distribution. Useful identities include <span class="math display">\[a^2-b^2=(a-b)(a+b),\qquad
+a^2+2ab+b^2=(a+b)^2.\]</span> A rational expression is a quotient of
+polynomials; its denominator cannot be zero. Cancel <em>factors</em>,
+not arbitrary terms.</p>
+<blockquote class="example">
+<p><strong>Example 11: Factor a trinomial.</strong> Factor <span class="math inline">\(x^2-5x+6\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> Find two numbers with product <span class="math inline">\(6\)</span> and sum <span class="math inline">\(-5\)</span>: <span class="math inline">\(-2\)</span> and <span class="math inline">\(-3\)</span>. Thus <span class="math inline">\(x^2-5x+6=(x-2)(x-3)\)</span>. Expanding checks the
+result.</p>
+</blockquote>
+<blockquote class="example">
+<p><strong>Example 12: Simplify and retain restrictions.</strong>
+Simplify <span class="math inline">\(\dfrac{x^2-9}{x^2-3x}\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> Factor numerator and denominator:
+<span class="math inline">\(\dfrac{(x-3)(x+3)}{x(x-3)}\)</span>. For
+<span class="math inline">\(x\ne0,3\)</span>, cancel the common factor
+to obtain <span class="math inline">\((x+3)/x\)</span>. The original
+expression is undefined at both <span class="math inline">\(0\)</span>
+and <span class="math inline">\(3\)</span>, even though the simplified
+formula alone is defined at <span class="math inline">\(3\)</span>.</p>
+</blockquote>
+<blockquote class="example">
+<p><strong>Example 13: Add rational expressions.</strong> Simplify <span class="math inline">\(\dfrac{2}{x}+\dfrac{3}{x+1}\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> The common denominator is <span class="math inline">\(x(x+1)\)</span>. Therefore <span class="math inline">\(\dfrac{2(x+1)+3x}{x(x+1)}=\dfrac{5x+2}{x(x+1)}\)</span>,
+for <span class="math inline">\(x\ne0,-1\)</span>.</p>
+</blockquote>
+<h2 id="dimensional-analysis-and-quantitative-reasoning">Dimensional
+analysis and quantitative reasoning</h2>
+<p>Units behave like algebraic factors. To convert <span class="math inline">\(2.5\)</span> liters to milliliters, multiply by
+<span class="math inline">\(1000\,\mathrm{mL}/1\,\mathrm L\)</span>,
+obtaining <span class="math inline">\(2500\)</span> mL. To convert a
+rate, convert both its numerator and denominator as needed. A physically
+meaningful formula must be dimensionally consistent: adding a time to a
+distance has no meaning.</p>
+<blockquote class="example">
+<p><strong>Example 14: Infusion rate: arithmetic illustration
+only.</strong> A hypothetical nonclinical liquid transfer moves <span class="math inline">\(180\)</span> mL in <span class="math inline">\(45\)</span> minutes. Find the rate in mL/hour.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> <span class="math inline">\(\dfrac{180\,\mathrm{mL}}{45\,\mathrm{min}}\cdot\dfrac{60\,\mathrm{min}}{1\,\mathrm{h}}=240\,\mathrm{mL/h}\)</span>.
+The minutes cancel. This is a units exercise, not a medical dosing
+recommendation.</p>
+</blockquote>
+<blockquote class="example">
+<p><strong>Example 15: Concentration conversion.</strong> A laboratory
+solution has <span class="math inline">\(0.08\)</span> g of solute in
+<span class="math inline">\(200\)</span> mL. Express the concentration
+in mg/mL.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> <span class="math inline">\(0.08\,\mathrm g=80\,\mathrm{mg}\)</span>. Dividing
+by <span class="math inline">\(200\,\mathrm{mL}\)</span> gives <span class="math inline">\(0.4\,\mathrm{mg/mL}\)</span>.</p>
+</blockquote>
+<h3 id="exact-and-approximate-quantities">Exact and approximate
+quantities</h3>
+<p>The identity <span class="math inline">\(1\,\mathrm
+m=100\,\mathrm{cm}\)</span> is exact by definition; a measured length of
+<span class="math inline">\(1.23\)</span> m is not exact. Computed
+answers should reflect measurement precision and the context. Avoid
+rounding intermediate results unnecessarily. Computers store many
+decimal quantities approximately, so equality tests on floating-point
+results need care.</p>
+<h2 id="visual-concept-investigation-distance-and-tolerance">Visual
+concept investigation: distance and tolerance</h2>
+<p>The plot below compares distance from a target with a horizontal
+tolerance level. The intersection points identify the boundary of an
+acceptable interval.</p>
+<figure>
+<img alt="The condition |x-3|\le2 holds between the two intersections, including endpoints." src="figures/precompiled/chapter01-02.svg"/>
+<figcaption aria-hidden="true">The condition <span class="math inline">\(|x-3|\le2\)</span> holds between the two
+intersections, including endpoints.</figcaption>
+</figure>
+<h2 id="computational-laboratories-the-same-mathematics-in-r-and-python">Computational
+laboratories: the same mathematics in R and Python</h2>
+<p>Both labs use the same numbers, definitions, and questions. No
+previous programming experience is assumed. Code outputs are numerical
+evidence, not mathematical proofs.</p>
+<h3 id="laboratory-a-numbers-powers-and-floating-point-arithmetic">Laboratory
+A: numbers, powers, and floating-point arithmetic</h3>
+<p>Run the accompanying <code>chapter01_lab.R</code> or
+<code>chapter01_lab.py</code>. Compare <span class="math inline">\((-3)^2\)</span> with <span class="math inline">\(-3^2\)</span>, verify a scientific-notation
+calculation, and inspect <span class="math inline">\(0.1+0.2\)</span>
+versus <span class="math inline">\(0.3\)</span>. Explain why a tiny
+floating-point difference does not imply an algebraic error. Record the
+original denominator restrictions when checking rational
+expressions.</p>
+<h3 id="laboratory-b-intervals-and-absolute-value-tolerance">Laboratory
+B: intervals and absolute-value tolerance</h3>
+<p>Plot <span class="math inline">\(y=|x-3|\)</span> together with <span class="math inline">\(y=2\)</span> over <span class="math inline">\(-1\le x\le7\)</span>. Identify where <span class="math inline">\(|x-3|\le2\)</span> and check <span class="math inline">\(x=1,3,5\)</span>. State why the graph supports but
+does not replace the exact solution <span class="math inline">\([1,5]\)</span>.</p>
+<h3 id="laboratory-c-unit-conversion-and-a-model">Laboratory C: unit
+conversion and a model</h3>
+<p>For the hypothetical sample mass <span class="math inline">\(0.075\)</span> g, calculate milligrams. Then
+consider a simple linear mass model <span class="math inline">\(m(v)=0.4v\)</span> mg, where <span class="math inline">\(v\)</span> is volume in mL. Plot it for <span class="math inline">\(0\le v\le10\)</span>, label units on both axes,
+and explain the meaning of its slope. Do not infer clinical suitability
+from this illustrative relationship.</p>
+<h2 id="applied-case-study-a-laboratory-concentration-audit">Applied
+case study: a laboratory concentration audit</h2>
+<p>A laboratory prepares a hypothetical solution containing <span class="math inline">\(0.12\)</span> g of a substance in <span class="math inline">\(300\)</span> mL. A technician records a
+concentration of <span class="math inline">\(0.4\)</span> mg/mL. Is the
+entry internally consistent? Convert <span class="math inline">\(0.12\)</span> g to <span class="math inline">\(120\)</span> mg and divide by <span class="math inline">\(300\)</span> mL to obtain <span class="math inline">\(0.4\)</span> mg/mL. Next, if <span class="math inline">\(25\)</span> mL is sampled, the model predicts
+<span class="math inline">\(10\)</span> mg of substance. Explain the
+assumptions: the solution is uniformly mixed, the stated amounts are
+accurate, and no material is lost. This is a mathematical consistency
+check, not a validation of any medical preparation.</p>
+<h2 id="common-misconceptions-and-mathematical-habits">Common
+misconceptions and mathematical habits</h2>
+<ul>
+<li><p>A negative exponent means a reciprocal, not a negative value:
+<span class="math inline">\(2^{-3}=1/8\)</span>.</p></li>
+<li><p><span class="math inline">\(\sqrt{x^2}=|x|\)</span> for real
+<span class="math inline">\(x\)</span>.</p></li>
+<li><p>Cancellation applies to common multiplicative factors, not sums:
+<span class="math inline">\((x+2)/x\ne2\)</span> in general.</p></li>
+<li><p>An algebraically simplified expression may retain excluded inputs
+from its original form.</p></li>
+<li><p>A computer-generated graph or decimal approximation does not
+establish an identity.</p></li>
+<li><p>Numerical answers without units can be ambiguous in applied
+settings.</p></li>
+</ul>
+<h2 id="deepening-the-foundations-mathematical-statements-and-justification">Deepening
+the foundations: mathematical statements and justification</h2>
+<p>Mathematics involves more than obtaining a numerical answer. A
+correct solution must identify the quantities involved, apply a valid
+property, and explain why the result answers the question. In this text
+we distinguish an <em>example</em>, which illustrates a rule, from a
+<em>justification</em>, which establishes that the rule applies to all
+allowed inputs. Testing a statement at several numbers may reveal a
+false claim, but it does not prove a universal claim.</p>
+<h3 id="equality-identities-and-conditional-statements">Equality,
+identities, and conditional statements</h3>
+<p>An equality such as <span class="math inline">\(2x+3=11\)</span> is
+true only for certain values of <span class="math inline">\(x\)</span>;
+solving gives <span class="math inline">\(x=4\)</span>. By contrast,
+<span class="math inline">\(2(x+3)=2x+6\)</span> is an
+<em>identity</em>: it is true for every real <span class="math inline">\(x\)</span>. An expression such as <span class="math inline">\((x^2-1)/(x-1)\)</span> agrees with <span class="math inline">\(x+1\)</span> whenever <span class="math inline">\(x\ne1\)</span>, but the expressions do not have
+identical domains. Thus the precise statement is <span class="math display">\[\frac{x^2-1}{x-1}=x+1\qquad\text{for
+}x\ne1.\]</span> Domain restrictions are part of the mathematical claim,
+not optional footnotes.</p>
+<blockquote class="example">
+<p><strong>Example 16: Is a proposed rule always true?.</strong> A
+student suggests that <span class="math inline">\((a+b)^2=a^2+b^2\)</span>. Determine whether this
+is an identity and derive the correct expansion.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> Testing <span class="math inline">\(a=b=1\)</span> gives <span class="math inline">\(4\)</span> on the left and <span class="math inline">\(2\)</span> on the right, so the proposed rule is
+false. Distribute carefully: <span class="math display">\[(a+b)^2=(a+b)(a+b)=a^2+ab+ba+b^2=a^2+2ab+b^2.\]</span>
+The cross term <span class="math inline">\(2ab\)</span> cannot be
+omitted.</p>
+</blockquote>
+<p><strong>Guided practice 1.</strong> Decide whether each statement is
+always true, sometimes true, or never true over the real numbers: (a)
+<span class="math inline">\(x^2\ge0\)</span>; (b) <span class="math inline">\(x^2=x\)</span>; (c) <span class="math inline">\(\sqrt{x^2}=x\)</span>. Give an example or
+counterexample and explain your classification.</p>
+<h3 id="a-reliable-four-stage-problem-solving-routine">A reliable
+four-stage problem-solving routine</h3>
+<p>For a quantitative question, first <em>interpret</em> the requested
+quantity and its units. Second, <em>represent</em> the relationships
+using expressions, diagrams, or equations. Third, <em>calculate</em>
+using valid algebra and carefully tracked restrictions. Finally,
+<em>check and interpret</em>: substitute into the original condition,
+evaluate reasonableness, and state units. These stages will recur
+throughout the book and become particularly important in calculus
+modeling.</p>
+<blockquote class="example">
+<p><strong>Example 17: Checking a laboratory conversion.</strong> A
+container holds <span class="math inline">\(0.0065\)</span> liters.
+Express its volume in milliliters and check by reversing the
+conversion.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> Because <span class="math inline">\(1\,\mathrm L=1000\,\mathrm{mL}\)</span>, we obtain
+<span class="math inline">\(0.0065\,\mathrm
+L\times1000\,\mathrm{mL/L}=6.5\,\mathrm{mL}\)</span>. Reversing gives
+<span class="math inline">\(6.5\,\mathrm{mL}\times(1\,\mathrm
+L/1000\,\mathrm{mL})=0.0065\,\mathrm L\)</span>. The cancellation of
+units confirms the direction of conversion.</p>
+</blockquote>
+<h2 id="visual-investigation-i-the-number-line-as-a-model-of-constraints">Visual
+investigation I: the number line as a model of constraints</h2>
+<p>A number line is a one-dimensional coordinate system. It makes the
+difference between a single solution, a continuous interval, and two
+disconnected intervals visible. In an applied setting, an interval might
+represent acceptable measurement values, a range of plausible inputs, or
+a region in which a model is valid.</p>
+<figure>
+<img alt="Intersecting two inequalities: only the values satisfying both remain in the bottom row." src="figures/precompiled/chapter01-03.svg"/>
+<figcaption aria-hidden="true">Intersecting two inequalities: only the
+values satisfying both remain in the bottom row.</figcaption>
+</figure>
+<blockquote class="example">
+<p><strong>Example 18: Intersect two requirements.</strong> A
+quality-control measurement must be at least <span class="math inline">\(-1\)</span> units and strictly below <span class="math inline">\(3\)</span> units. Represent the requirements
+individually and jointly.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> The conditions are <span class="math inline">\(x\ge-1\)</span> and <span class="math inline">\(x&lt;3\)</span>. Their intersection is <span class="math inline">\([-1,\infty)\cap(-\infty,3)=[-1,3)\)</span>. The
+left endpoint is included because equality is permitted; the right
+endpoint is excluded.</p>
+</blockquote>
+<p><strong>Guided practice 2.</strong> Sketch <span class="math inline">\(x&gt;-2\)</span> and <span class="math inline">\(x\le4\)</span> on separate number lines. Shade
+their intersection. Then sketch their union. Explain why the union
+differs from the intersection.</p>
+<h3 id="distance-midpoint-and-radius">Distance, midpoint, and
+radius</h3>
+<p>A useful way to describe an interval is through its <em>center</em>
+<span class="math inline">\(c\)</span> and <em>radius</em> <span class="math inline">\(r\)</span>. For <span class="math inline">\(r&gt;0\)</span>, the inequality <span class="math inline">\(|x-c|\le r\)</span> is equivalent to <span class="math inline">\(c-r\le x\le c+r\)</span>. Conversely, an interval
+<span class="math inline">\([a,b]\)</span> has midpoint <span class="math inline">\(c=(a+b)/2\)</span> and half-width <span class="math inline">\(r=(b-a)/2\)</span>. This correspondence is useful
+when communicating tolerances.</p>
+<blockquote class="example">
+<p><strong>Example 19: Recover a tolerance statement.</strong> Express
+the interval <span class="math inline">\([18.4,19.6]\)</span> as an
+absolute-value inequality.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> The midpoint is <span class="math inline">\((18.4+19.6)/2=19.0\)</span> and the radius is
+<span class="math inline">\((19.6-18.4)/2=0.6\)</span>. Therefore the
+interval is exactly <span class="math inline">\(|x-19.0|\le0.6\)</span>.</p>
+</blockquote>
+<p><strong>Guided practice 3.</strong> A measured diameter is acceptable
+when <span class="math inline">\(|d-12.5|&lt;0.2\)</span>. Write the
+corresponding open interval. What changes if the inequality is <span class="math inline">\(\le\)</span> instead of <span class="math inline">\(&lt;\)</span>?</p>
+<h2 id="visual-investigation-ii-why-order-of-operations-matters">Visual
+investigation II: why order of operations matters</h2>
+<p>A mathematical expression has structure. Parentheses determine which
+operations form a single unit, and a negative sign is not automatically
+part of a base. The expression <span class="math inline">\(-2^4\)</span>
+means <span class="math inline">\(-(2^4)=-16\)</span>, whereas <span class="math inline">\((-2)^4=16\)</span>. Likewise, <span class="math inline">\((-2)^3=-8\)</span>. The parity of the exponent
+matters when the base is negative.</p>
+<figure>
+<img alt="Even powers remove the sign of a negative base; odd powers retain it. The plotted nonnegative curves illustrate the contrast in magnitude." src="figures/precompiled/chapter01-04.svg"/>
+<figcaption aria-hidden="true">Even powers remove the sign of a negative
+base; odd powers retain it. The plotted nonnegative curves illustrate
+the contrast in magnitude.</figcaption>
+</figure>
+<h3 id="from-repeated-multiplication-to-exponent-laws">From repeated
+multiplication to exponent laws</h3>
+<p>For positive integers <span class="math inline">\(m,n\)</span>, the
+product <span class="math inline">\(a^m a^n\)</span> contains <span class="math inline">\(m+n\)</span> factors of <span class="math inline">\(a\)</span>, giving <span class="math inline">\(a^{m+n}\)</span>. The quotient <span class="math inline">\(a^m/a^n\)</span>, for <span class="math inline">\(a\ne0\)</span>, removes <span class="math inline">\(n\)</span> factors and leads to <span class="math inline">\(a^{m-n}\)</span>. To preserve this law when <span class="math inline">\(m=n\)</span>, we must have <span class="math inline">\(a^0=1\)</span> for <span class="math inline">\(a\ne0\)</span>. When <span class="math inline">\(m&lt;n\)</span>, negative exponents arise
+naturally: <span class="math inline">\(a^{-n}=1/a^n\)</span>. These are
+consequences of consistent definitions, not arbitrary memorized
+rules.</p>
+<blockquote class="example">
+<p><strong>Example 20: Explain each simplification.</strong> Simplify
+<span class="math inline">\(\dfrac{(2x^{-2}y^3)^2}{4x^{-1}y}\)</span>
+for <span class="math inline">\(x\ne0\)</span>, <span class="math inline">\(y\ne0\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> First square each factor in the
+numerator: <span class="math inline">\((2x^{-2}y^3)^2=4x^{-4}y^6\)</span>. Divide
+coefficients and subtract exponents: <span class="math inline">\(4x^{-4}y^6/(4x^{-1}y)=x^{-3}y^5=y^5/x^3\)</span>.
+The exclusions <span class="math inline">\(x\ne0\)</span> and <span class="math inline">\(y\ne0\)</span> come from the original
+expression.</p>
+</blockquote>
+<p><strong>Guided practice 4.</strong> Simplify <span class="math inline">\(\dfrac{(3a^2b^{-1})^2}{9ab^{-3}}\)</span>. State
+the original restrictions before simplifying, and verify the result by
+substituting <span class="math inline">\(a=2\)</span>, <span class="math inline">\(b=3\)</span>.</p>
+<h3 id="powers-of-ten-and-estimation">Powers of ten and estimation</h3>
+<p>Powers of ten provide a systematic way to compare scales. The ratio
+of <span class="math inline">\(3\times10^7\)</span> to <span class="math inline">\(6\times10^4\)</span> is <span class="math inline">\((3/6)\times10^3=500\)</span>. Thus the first
+quantity is five hundred times the second, not merely three orders of
+magnitude larger. When working with scientific notation, separate the
+coefficient calculation from the exponent calculation and then normalize
+the coefficient to the interval <span class="math inline">\([1,10)\)</span>.</p>
+<blockquote class="example">
+<p><strong>Example 21: Estimate before computing.</strong> A fictional
+sample contains <span class="math inline">\(4.8\times10^5\)</span>
+particles per mL. Estimate the count in <span class="math inline">\(0.025\)</span> mL.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> Compute <span class="math inline">\((4.8\times10^5)(2.5\times10^{-2})=12\times10^3=1.2\times10^4\)</span>
+particles. As a reasonableness check, <span class="math inline">\(0.025\)</span> mL is one-fortieth of a mL, and
+<span class="math inline">\(480{,}000/40=12{,}000\)</span>.</p>
+</blockquote>
+<h2 id="visual-investigation-iii-radicals-principal-roots-and-domains">Visual
+investigation III: radicals, principal roots, and domains</h2>
+<p>The equation <span class="math inline">\(x^2=9\)</span> has two
+solutions because both <span class="math inline">\(3\)</span> and <span class="math inline">\(-3\)</span> square to <span class="math inline">\(9\)</span>. However, the symbol <span class="math inline">\(\sqrt9\)</span> denotes the <em>principal</em>
+(nonnegative) square root, namely <span class="math inline">\(3\)</span>. The distinction is important: the
+square-root function assigns one output to each allowed input, while
+solving a quadratic equation can produce two solutions.</p>
+<figure>
+<img alt="The horizontal line y=9 intersects y=x^2 at x=-3 and x=3, but \sqrt9=3." src="figures/precompiled/chapter01-05.svg"/>
+<figcaption aria-hidden="true">The horizontal line <span class="math inline">\(y=9\)</span> intersects <span class="math inline">\(y=x^2\)</span> at <span class="math inline">\(x=-3\)</span> and <span class="math inline">\(x=3\)</span>, but <span class="math inline">\(\sqrt9=3\)</span>.</figcaption>
+</figure>
+<h3 id="why-sqrtx2x">Why <span class="math inline">\(\sqrt{x^2}=|x|\)</span></h3>
+<p>For <span class="math inline">\(x\ge0\)</span>, the nonnegative
+square root of <span class="math inline">\(x^2\)</span> is <span class="math inline">\(x\)</span>. For <span class="math inline">\(x&lt;0\)</span>, the nonnegative square root is
+<span class="math inline">\(-x\)</span>. Combining these cases gives
+<span class="math inline">\(\sqrt{x^2}=|x|\)</span>. In particular,
+replacing <span class="math inline">\(\sqrt{x^2}\)</span> with <span class="math inline">\(x\)</span> without knowing that <span class="math inline">\(x\ge0\)</span> may change the value of an
+expression.</p>
+<blockquote class="example">
+<p><strong>Example 22: Simplify with an unknown sign.</strong> Simplify
+<span class="math inline">\(\sqrt{50t^4}\)</span> for real <span class="math inline">\(t\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> Factor the radicand: <span class="math inline">\(\sqrt{50t^4}=\sqrt{25\cdot2}\sqrt{(t^2)^2}=5|t^2|\sqrt2=5t^2\sqrt2\)</span>,
+because <span class="math inline">\(t^2\ge0\)</span> for every real
+<span class="math inline">\(t\)</span>. Contrast this with <span class="math inline">\(\sqrt{50t^2}=5|t|\sqrt2\)</span>.</p>
+</blockquote>
+<p><strong>Guided practice 5.</strong> Simplify <span class="math inline">\(\sqrt{108x^2y^4}\)</span> for arbitrary real <span class="math inline">\(x,y\)</span>. Explain which absolute-value bars
+can be removed and why.</p>
+<h3 id="rational-exponents-and-allowable-inputs">Rational exponents and
+allowable inputs</h3>
+<p>For <span class="math inline">\(a\ge0\)</span>, <span class="math inline">\(a^{1/n}\)</span> denotes the principal <span class="math inline">\(n\)</span>th root when <span class="math inline">\(n\)</span> is even. For odd <span class="math inline">\(n\)</span>, real roots also exist for negative
+inputs. The expression <span class="math inline">\(a^{m/n}\)</span> can
+be interpreted as <span class="math inline">\((\sqrt[n]{a})^m\)</span>
+whenever this root is defined and the exponent notation is unambiguous.
+For example, <span class="math inline">\(16^{3/4}=(\sqrt[4]{16})^3=2^3=8\)</span>. A
+real-valued square root <span class="math inline">\(\sqrt{x-5}\)</span>
+requires <span class="math inline">\(x\ge5\)</span>. Domain restrictions
+should be identified before manipulating radicals.</p>
+<blockquote class="example">
+<p><strong>Example 23: Determine a domain.</strong> Find the real domain
+of <span class="math inline">\(f(x)=\sqrt{2x+6}/(x-1)\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> The square root requires <span class="math inline">\(2x+6\ge0\)</span>, hence <span class="math inline">\(x\ge-3\)</span>. The denominator requires <span class="math inline">\(x\ne1\)</span>. The domain is <span class="math inline">\([-3,1)\cup(1,\infty)\)</span>. Both restrictions
+must hold simultaneously.</p>
+</blockquote>
+<h2 id="visual-investigation-iv-factoring-as-geometric-decomposition">Visual
+investigation IV: factoring as geometric decomposition</h2>
+<p>Factoring is the reverse of expansion. The identity <span class="math inline">\((x+a)(x+b)=x^2+(a+b)x+ab\)</span> can be
+visualized as the area of a rectangle partitioned into four smaller
+rectangles when the lengths are positive. This picture explains why the
+coefficient of <span class="math inline">\(x\)</span> is the sum <span class="math inline">\(a+b\)</span> and the constant term is the product
+<span class="math inline">\(ab\)</span>.</p>
+<figure>
+<img alt="An area model for (x+a)(x+b)=x^2+(a+b)x+ab when side lengths are positive." src="figures/precompiled/chapter01-06.svg"/>
+<figcaption aria-hidden="true">An area model for <span class="math inline">\((x+a)(x+b)=x^2+(a+b)x+ab\)</span> when side
+lengths are positive.</figcaption>
+</figure>
+<blockquote class="example">
+<p><strong>Example 24: Factoring by reasoning about sum and
+product.</strong> Factor <span class="math inline">\(x^2+7x+12\)</span>
+and verify by multiplication.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> We seek <span class="math inline">\(a,b\)</span> with <span class="math inline">\(a+b=7\)</span> and <span class="math inline">\(ab=12\)</span>. The pair <span class="math inline">\(3,4\)</span> works, so <span class="math inline">\(x^2+7x+12=(x+3)(x+4)\)</span>. Expanding gives
+<span class="math inline">\(x^2+4x+3x+12=x^2+7x+12\)</span>.</p>
+</blockquote>
+<p><strong>Guided practice 6.</strong> Factor <span class="math inline">\(x^2-x-12\)</span>. Explain why the signs of the
+two factors differ, and check by expanding.</p>
+<h3 id="recognizing-patterns-without-guessing">Recognizing patterns
+without guessing</h3>
+<p>Common-factor extraction should be considered first. For instance,
+<span class="math inline">\(6x^3-24x=6x(x^2-4)=6x(x-2)(x+2)\)</span>.
+Difference-of-squares factoring works because <span class="math inline">\((a-b)(a+b)=a^2-b^2\)</span>; it does not directly
+apply to <span class="math inline">\(a^2+b^2\)</span> over the real
+numbers. Perfect-square trinomials follow from <span class="math inline">\((a\pm b)^2=a^2\pm2ab+b^2\)</span>. Recognizing a
+pattern is useful only when every term fits it.</p>
+<blockquote class="example">
+<p><strong>Example 25: A multistep factorization.</strong> Factor <span class="math inline">\(2x^3+8x^2+8x\)</span> completely.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> First extract the greatest common
+factor: <span class="math inline">\(2x(x^2+4x+4)\)</span>. The trinomial
+is a perfect square, giving <span class="math inline">\(2x(x+2)^2\)</span>. Expanding verifies the
+answer.</p>
+</blockquote>
+<h3 id="rational-expressions-and-removable-holes">Rational expressions
+and removable holes</h3>
+<p>Consider <span class="math inline">\(r(x)=(x^2-4)/(x-2)\)</span>. For
+<span class="math inline">\(x\ne2\)</span>, the expression equals <span class="math inline">\(x+2\)</span>. At <span class="math inline">\(x=2\)</span>, however, the original formula is
+undefined. Its graph is the line <span class="math inline">\(y=x+2\)</span> with a hole at <span class="math inline">\((2,4)\)</span>. This distinction anticipates an
+essential calculus idea: a function can approach a value at a point even
+when it is not defined there.</p>
+<figure>
+<img alt="The graph of (x^2-4)/(x-2) agrees with y=x+2 except at the excluded input x=2." src="figures/precompiled/chapter01-07.svg"/>
+<figcaption aria-hidden="true">The graph of <span class="math inline">\((x^2-4)/(x-2)\)</span> agrees with <span class="math inline">\(y=x+2\)</span> except at the excluded input <span class="math inline">\(x=2\)</span>.</figcaption>
+</figure>
+<p><strong>Guided practice 7.</strong> Simplify <span class="math inline">\((x^2-25)/(x-5)\)</span> and state its domain.
+Sketch the resulting line with the appropriate missing point. Explain
+why substituting <span class="math inline">\(x=5\)</span> into the
+simplified expression is not a valid evaluation of the original
+expression.</p>
+<h2 id="visual-investigation-v-units-as-algebraic-objects">Visual
+investigation V: units as algebraic objects</h2>
+<p>A measurement consists of a numerical value and a unit. Units can be
+multiplied, divided, and canceled, but only when the operation is
+meaningful. For example, a speed has units of distance divided by time;
+multiplying by a duration produces a distance. Adding <span class="math inline">\(5\,\mathrm{m}\)</span> to <span class="math inline">\(3\,\mathrm{s}\)</span> is undefined as a physical
+quantity because the units are incompatible.</p>
+<h3 id="building-a-conversion-chain">Building a conversion chain</h3>
+<p>Suppose a nonclinical pump transfers <span class="math inline">\(2.4\)</span> liters of water in <span class="math inline">\(3\)</span> hours. To express the average rate in
+mL/min, write <span class="math display">\[\frac{2.4\,\mathrm
+L}{3\,\mathrm h}\cdot\frac{1000\,\mathrm{mL}}{1\,\mathrm
+L}\cdot\frac{1\,\mathrm
+h}{60\,\mathrm{min}}=\frac{2400}{180}\,\mathrm{mL/min}\approx13.33\,\mathrm{mL/min}.\]</span>
+The unit cancellations show that the result has the requested
+dimensions. A numerical calculator alone cannot detect a reversed
+conversion factor, but writing units makes such mistakes visible.</p>
+<blockquote class="example">
+<p><strong>Example 26: Concentration and sample quantity.</strong> A
+fictional, uniformly mixed solution contains <span class="math inline">\(0.18\)</span> g of a marker in <span class="math inline">\(450\)</span> mL. Find the concentration in mg/mL
+and the marker mass in a <span class="math inline">\(30\)</span> mL
+sample.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> Convert <span class="math inline">\(0.18\)</span> g to <span class="math inline">\(180\)</span> mg. Then <span class="math inline">\(180/450=0.4\)</span> mg/mL. A <span class="math inline">\(30\)</span> mL sample contains <span class="math inline">\((0.4\,\mathrm{mg/mL})(30\,\mathrm{mL})=12\)</span>
+mg. The result assumes uniform mixing; it is not a clinical dosing
+calculation.</p>
+</blockquote>
+<p><strong>Guided practice 8.</strong> A fictional container has <span class="math inline">\(0.075\)</span> g of dissolved marker in <span class="math inline">\(250\)</span> mL. Compute mg/mL and the amount in a
+<span class="math inline">\(40\)</span> mL aliquot. Write each
+conversion factor explicitly.</p>
+<h3 id="dimensional-consistency-and-model-checking">Dimensional
+consistency and model checking</h3>
+<p>Suppose a model predicts mass from volume as <span class="math inline">\(m(v)=kv\)</span>. If <span class="math inline">\(m\)</span> is in mg and <span class="math inline">\(v\)</span> is in mL, then <span class="math inline">\(k\)</span> must have units mg/mL. If a proposed
+formula instead adds <span class="math inline">\(v\)</span> (mL) to
+<span class="math inline">\(k\)</span> (mg/mL), the terms have
+incompatible dimensions. Dimensional consistency does not prove that a
+model is scientifically correct, but inconsistency reveals that
+something is wrong with its formulation.</p>
+<h2 id="visual-investigation-vi-exact-values-and-numerical-approximation">Visual
+investigation VI: exact values and numerical approximation</h2>
+<p>A fraction such as <span class="math inline">\(1/3\)</span> is an
+exact number. A computer may display it as <span class="math inline">\(0.3333333\)</span>, which is a finite
+approximation. Similarly, <span class="math inline">\(\sqrt2\)</span> is
+exact notation for an irrational number, while <span class="math inline">\(1.4142\)</span> is an approximation. R and Python
+typically use finite-precision floating-point numbers for decimal
+calculations. A result that is extremely close to zero may therefore
+appear as a tiny nonzero value.</p>
+<blockquote class="example">
+<p><strong>Example 27: Approximation versus identity.</strong> Why might
+a program report that <span class="math inline">\(0.1+0.2\)</span> is
+not exactly equal to <span class="math inline">\(0.3\)</span>?</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> Many decimal fractions do not have
+finite binary floating-point representations. The stored approximations
+can differ slightly after arithmetic. This is a property of the
+representation, not a failure of the real-number identity <span class="math inline">\(0.1+0.2=0.3\)</span>. For numerical comparisons,
+use a suitable tolerance, such as <span class="math inline">\(|a-b|&lt;10^{-10}\)</span>, when the scale and
+required precision justify it.</p>
+</blockquote>
+<p><strong>Guided practice 9.</strong> Calculate <span class="math inline">\(\sqrt2\)</span> to four decimal places. Square the
+rounded value. Is the result exactly <span class="math inline">\(2\)</span>? Explain why the difference is
+expected.</p>
+<h3 id="percent-change-and-relative-error">Percent change and relative
+error</h3>
+<p>Absolute error measures a difference in the original units, while
+relative error compares the difference to a reference value. If an
+observed mass is <span class="math inline">\(9.8\)</span> g and a
+reference is <span class="math inline">\(10.0\)</span> g, the absolute
+error is <span class="math inline">\(|9.8-10.0|=0.2\)</span> g and the
+relative error is <span class="math inline">\(0.2/10.0=0.02\)</span>, or
+<span class="math inline">\(2\%\)</span>. The reference value must be
+nonzero to define relative error. Percent change uses a signed
+difference divided by the original value; percent error often uses an
+absolute difference. State which quantity you are computing.</p>
+<blockquote class="example">
+<p><strong>Example 28: Interpreting measurement variation.</strong> A
+sensor reads <span class="math inline">\(51.5\)</span> units when the
+reference is <span class="math inline">\(50.0\)</span> units. Find the
+signed difference and absolute relative error.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> The signed difference is <span class="math inline">\(51.5-50.0=1.5\)</span> units. The absolute
+relative error is <span class="math inline">\(|1.5|/50.0=0.03=3\%\)</span>. The reading is <span class="math inline">\(3\%\)</span> above the reference.</p>
+</blockquote>
+<h2 id="extended-computational-investigation-predict-run-explain">Extended
+computational investigation: predict, run, explain</h2>
+<p>The accompanying R and Python laboratory files provide complete,
+runnable versions of the investigations below. Each investigation
+presents the R code first, followed by the corresponding Python code, in
+full-width listings as in the companion calculus volumes. Before running
+a command, write down the expected mathematical result. Then run the
+calculation and explain any discrepancy. This routine prevents software
+from becoming a substitute for mathematical reasoning.</p>
+<h3 id="investigation-a-test-an-identity-numerically">Investigation A:
+test an identity numerically</h3>
+<p>For several values of <span class="math inline">\(x\)</span>, compare
+<span class="math inline">\((x+2)^2\)</span> with <span class="math inline">\(x^2+4x+4\)</span>. Then compare <span class="math inline">\((x+2)^2\)</span> with <span class="math inline">\(x^2+4\)</span>. One matching input is not a proof;
+a single mismatch disproves a proposed identity.</p>
+<h5 id="r">R</h5>
+<div class="code-shell"><div class="code-bar"><span>R</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a aria-hidden="true" href="#cb1-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">3</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">5</span>)</span>
+<span id="cb1-2"><a aria-hidden="true" href="#cb1-2" tabindex="-1"></a>lhs <span class="ot">&lt;-</span> (x <span class="sc">+</span> <span class="dv">2</span>)<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb1-3"><a aria-hidden="true" href="#cb1-3" tabindex="-1"></a>correct <span class="ot">&lt;-</span> x<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> <span class="dv">4</span><span class="sc">*</span>x <span class="sc">+</span> <span class="dv">4</span></span>
+<span id="cb1-4"><a aria-hidden="true" href="#cb1-4" tabindex="-1"></a>incorrect <span class="ot">&lt;-</span> x<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> <span class="dv">4</span></span>
+<span id="cb1-5"><a aria-hidden="true" href="#cb1-5" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">data.frame</span>(x, lhs, correct,</span>
+<span id="cb1-6"><a aria-hidden="true" href="#cb1-6" tabindex="-1"></a>                 incorrect))</span></code></pre></div></div>
+<h5 id="python">Python</h5>
+<div class="code-shell"><div class="code-bar"><span>Python</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" href="#cb2-1" tabindex="-1"></a>x_values <span class="op">=</span> [<span class="op">-</span><span class="dv">3</span>, <span class="op">-</span><span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">5</span>]</span>
+<span id="cb2-2"><a aria-hidden="true" href="#cb2-2" tabindex="-1"></a><span class="cf">for</span> x <span class="kw">in</span> x_values:</span>
+<span id="cb2-3"><a aria-hidden="true" href="#cb2-3" tabindex="-1"></a>    lhs <span class="op">=</span> (x <span class="op">+</span> <span class="dv">2</span>)<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb2-4"><a aria-hidden="true" href="#cb2-4" tabindex="-1"></a>    correct <span class="op">=</span> x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">4</span><span class="op">*</span>x <span class="op">+</span> <span class="dv">4</span></span>
+<span id="cb2-5"><a aria-hidden="true" href="#cb2-5" tabindex="-1"></a>    incorrect <span class="op">=</span> x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">4</span></span>
+<span id="cb2-6"><a aria-hidden="true" href="#cb2-6" tabindex="-1"></a>    <span class="bu">print</span>(x, lhs, correct, incorrect)</span></code></pre></div></div>
+<p><strong>Interpretation questions.</strong> Which formula agrees with
+the left side at every tested input? Find an input where the incorrect
+formula happens to agree. Why would that agreement not establish an
+identity?</p>
+<h3 id="investigation-b-numerical-tolerance-as-a-visual-region">Investigation
+B: numerical tolerance as a visual region</h3>
+<p>For a target value <span class="math inline">\(c=3\)</span> and
+tolerance <span class="math inline">\(r=2\)</span>, evaluate <span class="math inline">\(|x-c|\)</span> on a grid and compare it with <span class="math inline">\(r\)</span>. The accepted region is <span class="math inline">\([1,5]\)</span>. Use a graph to support the result,
+then justify the endpoints algebraically. Modify <span class="math inline">\(c\)</span> and <span class="math inline">\(r\)</span> to explore how the accepted interval
+shifts and changes width.</p>
+<h5 id="r-1">R</h5>
+<div class="code-shell"><div class="code-bar"><span>R</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a aria-hidden="true" href="#cb3-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">7</span>, <span class="at">length.out=</span><span class="dv">401</span>)</span>
+<span id="cb3-2"><a aria-hidden="true" href="#cb3-2" tabindex="-1"></a>distance <span class="ot">&lt;-</span> <span class="fu">abs</span>(x <span class="sc">-</span> <span class="dv">3</span>)</span>
+<span id="cb3-3"><a aria-hidden="true" href="#cb3-3" tabindex="-1"></a><span class="fu">plot</span>(x, distance, <span class="at">type=</span><span class="st">"l"</span>, <span class="at">lwd=</span><span class="dv">2</span>,</span>
+<span id="cb3-4"><a aria-hidden="true" href="#cb3-4" tabindex="-1"></a>     <span class="at">xlab=</span><span class="st">"x"</span>, <span class="at">ylab=</span><span class="st">"Distance"</span>)</span>
+<span id="cb3-5"><a aria-hidden="true" href="#cb3-5" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="dv">2</span>, <span class="at">col=</span><span class="st">"red"</span>, <span class="at">lty=</span><span class="dv">2</span>)</span>
+<span id="cb3-6"><a aria-hidden="true" href="#cb3-6" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">range</span>(x[distance <span class="sc">&lt;=</span> <span class="dv">2</span>]))</span></code></pre></div></div>
+<h5 id="python-1">Python</h5>
+<div class="code-shell"><div class="code-bar"><span>Python</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" href="#cb4-1" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb4-2"><a aria-hidden="true" href="#cb4-2" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb4-3"><a aria-hidden="true" href="#cb4-3" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">1</span>, <span class="dv">7</span>, <span class="dv">401</span>)</span>
+<span id="cb4-4"><a aria-hidden="true" href="#cb4-4" tabindex="-1"></a>distance <span class="op">=</span> np.<span class="bu">abs</span>(x <span class="op">-</span> <span class="dv">3</span>)</span>
+<span id="cb4-5"><a aria-hidden="true" href="#cb4-5" tabindex="-1"></a>plt.plot(x, distance)</span>
+<span id="cb4-6"><a aria-hidden="true" href="#cb4-6" tabindex="-1"></a>plt.axhline(<span class="dv">2</span>, color<span class="op">=</span><span class="st">"red"</span>, ls<span class="op">=</span><span class="st">"--"</span>)</span>
+<span id="cb4-7"><a aria-hidden="true" href="#cb4-7" tabindex="-1"></a>plt.xlabel(<span class="st">"x"</span>)</span>
+<span id="cb4-8"><a aria-hidden="true" href="#cb4-8" tabindex="-1"></a>plt.ylabel(<span class="st">"Distance"</span>)</span>
+<span id="cb4-9"><a aria-hidden="true" href="#cb4-9" tabindex="-1"></a>plt.show()</span>
+<span id="cb4-10"><a aria-hidden="true" href="#cb4-10" tabindex="-1"></a><span class="bu">print</span>(x[distance <span class="op">&lt;=</span> <span class="dv">2</span>].<span class="bu">min</span>(),</span>
+<span id="cb4-11"><a aria-hidden="true" href="#cb4-11" tabindex="-1"></a>      x[distance <span class="op">&lt;=</span> <span class="dv">2</span>].<span class="bu">max</span>())</span></code></pre></div></div>
+<p><strong>Interpretation questions.</strong> Why do the grid-based
+endpoints depend on sampling resolution? How can exact algebra avoid
+this issue? What happens if the tolerance is zero?</p>
+<h3 id="investigation-c-verify-a-unit-based-model">Investigation C:
+verify a unit-based model</h3>
+<p>Assume a fictional, uniformly mixed marker solution has concentration
+<span class="math inline">\(0.4\)</span> mg/mL. Let <span class="math inline">\(m(v)=0.4v\)</span> for <span class="math inline">\(0\le v\le10\)</span>. Make a table of <span class="math inline">\(v=0,2,4,6,8,10\)</span> and corresponding masses.
+Plot the points and connect them. Interpret the slope as <span class="math inline">\(0.4\)</span> mg for each additional mL. Explain
+why a straight line is appropriate only under the assumed constant
+concentration.</p>
+<h5 id="r-2">R</h5>
+<div class="code-shell"><div class="code-bar"><span>R</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a aria-hidden="true" href="#cb5-1" tabindex="-1"></a>v <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">10</span>, <span class="at">by=</span><span class="dv">2</span>)</span>
+<span id="cb5-2"><a aria-hidden="true" href="#cb5-2" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fl">0.4</span><span class="sc">*</span>v</span>
+<span id="cb5-3"><a aria-hidden="true" href="#cb5-3" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">data.frame</span>(<span class="at">volume_mL=</span>v,</span>
+<span id="cb5-4"><a aria-hidden="true" href="#cb5-4" tabindex="-1"></a>                 <span class="at">mass_mg=</span>m))</span>
+<span id="cb5-5"><a aria-hidden="true" href="#cb5-5" tabindex="-1"></a><span class="fu">plot</span>(v, m, <span class="at">type=</span><span class="st">"b"</span>, <span class="at">pch=</span><span class="dv">19</span>,</span>
+<span id="cb5-6"><a aria-hidden="true" href="#cb5-6" tabindex="-1"></a>     <span class="at">xlab=</span><span class="st">"Volume (mL)"</span>,</span>
+<span id="cb5-7"><a aria-hidden="true" href="#cb5-7" tabindex="-1"></a>     <span class="at">ylab=</span><span class="st">"Marker mass (mg)"</span>)</span></code></pre></div></div>
+<h5 id="python-2">Python</h5>
+<div class="code-shell"><div class="code-bar"><span>Python</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a aria-hidden="true" href="#cb6-1" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb6-2"><a aria-hidden="true" href="#cb6-2" tabindex="-1"></a>v <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">11</span>, <span class="dv">2</span>))</span>
+<span id="cb6-3"><a aria-hidden="true" href="#cb6-3" tabindex="-1"></a>m <span class="op">=</span> [<span class="fl">0.4</span><span class="op">*</span>t <span class="cf">for</span> t <span class="kw">in</span> v]</span>
+<span id="cb6-4"><a aria-hidden="true" href="#cb6-4" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">list</span>(<span class="bu">zip</span>(v, m)))</span>
+<span id="cb6-5"><a aria-hidden="true" href="#cb6-5" tabindex="-1"></a>plt.plot(v, m, marker<span class="op">=</span><span class="st">"o"</span>)</span>
+<span id="cb6-6"><a aria-hidden="true" href="#cb6-6" tabindex="-1"></a>plt.xlabel(<span class="st">"Volume (mL)"</span>)</span>
+<span id="cb6-7"><a aria-hidden="true" href="#cb6-7" tabindex="-1"></a>plt.ylabel(<span class="st">"Marker mass (mg)"</span>)</span>
+<span id="cb6-8"><a aria-hidden="true" href="#cb6-8" tabindex="-1"></a>plt.show()</span></code></pre></div></div>
+<p><strong>Interpretation questions.</strong> What is <span class="math inline">\(m(0)\)</span> and why? How much does mass change
+when volume increases from <span class="math inline">\(4\)</span> to
+<span class="math inline">\(7\)</span> mL? Why must the units of the
+slope be mg/mL?</p>
+<h2 id="guided-practice-workshop-from-explanation-to-independence">Guided
+practice workshop: from explanation to independence</h2>
+<p>The following activities are designed for collaborative work or
+individual study. For each problem, write the principle used before the
+arithmetic. Compare methods with a partner, and explain whether a
+computational check would add useful evidence.</p>
+<h3 class="unnumbered" id="workshop-1-interval-reasoning">Workshop 1:
+interval reasoning</h3>
+<p>A manufacturing measurement is acceptable when it is within <span class="math inline">\(0.15\)</span> mm of a target of <span class="math inline">\(8.00\)</span> mm. (a) Write an absolute-value
+inequality. (b) Write the interval. (c) Sketch the interval and label
+both endpoints. (d) Explain whether <span class="math inline">\(7.85\)</span> mm and <span class="math inline">\(8.16\)</span> mm qualify. (e) If the allowed
+tolerance is halved, determine the new interval.</p>
+<h3 class="unnumbered" id="workshop-2-exponent-reasoning">Workshop 2:
+exponent reasoning</h3>
+<p>A fictional sample has <span class="math inline">\(3.2\times10^6\)</span> cells per mL. (a) Estimate
+the count in <span class="math inline">\(0.005\)</span> mL. (b) Express
+the result in scientific notation. (c) Explain the exponent arithmetic.
+(d) Check using R or Python and compare with a mental estimate.</p>
+<h3 class="unnumbered" id="workshop-3-rational-expression-reasoning">Workshop 3:
+rational-expression reasoning</h3>
+<p>Consider <span class="math inline">\(q(x)=(x^2-6x+8)/(x-2)\)</span>.
+(a) Factor the numerator. (b) Simplify wherever allowed. (c) Identify
+the excluded input. (d) Evaluate <span class="math inline">\(q(3)\)</span> using both formulas. (e) Explain why
+<span class="math inline">\(q(2)\)</span> is undefined even though the
+simplified expression has a value at <span class="math inline">\(2\)</span>.</p>
+<h3 class="unnumbered" id="workshop-4-dimensional-reasoning">Workshop 4:
+dimensional reasoning</h3>
+<p>A fictional laboratory mixture contains <span class="math inline">\(0.24\)</span> g of a marker in <span class="math inline">\(600\)</span> mL. (a) Convert grams to milligrams.
+(b) Find the concentration in mg/mL. (c) Find the marker mass in <span class="math inline">\(75\)</span> mL. (d) State the assumption that
+makes the proportional model appropriate. (e) Identify which quantities
+are measured and which conversions are exact.</p>
+<h3 class="unnumbered" id="workshop-5-calculus-readiness">Workshop 5:
+calculus readiness</h3>
+<p>For <span class="math inline">\(h\ne0\)</span>, simplify <span class="math inline">\(\big((3+h)^2-9\big)/h\)</span>. (a) Expand the
+numerator. (b) Factor out <span class="math inline">\(h\)</span>. (c)
+Cancel only after stating the restriction. (d) Evaluate the simplified
+expression at <span class="math inline">\(h=0.1\)</span>, <span class="math inline">\(0.01\)</span>, and <span class="math inline">\(0.001\)</span>. (e) Explain what value the results
+approach and why the original expression cannot be evaluated at <span class="math inline">\(h=0\)</span>.</p>
+<h2 id="self-assessment-explain-the-mathematics">Self-assessment:
+explain the mathematics</h2>
+<p>Before proceeding to the chapter summary, check whether you can do
+more than reproduce a formula. Can you explain why negative exponents
+represent reciprocals? Can you derive a tolerance interval from a center
+and half-width? Can you distinguish a square-root symbol from the
+solutions of a squared equation? Can you simplify a rational expression
+while preserving excluded inputs? Can you use units to decide whether a
+model is meaningful? Can you identify when a numerical check is evidence
+rather than proof? If any answer is uncertain, revisit the relevant
+investigation and complete its guided practice without consulting the
+worked example.</p>
+<h2 id="additional-worked-applications-and-error-analysis">Additional
+worked applications and error analysis</h2>
+<blockquote class="example">
+<p><strong>Example 29: A complete tolerance analysis.</strong> A
+fictional instrument is calibrated to <span class="math inline">\(25.0\)</span> units with a maximum allowed
+deviation of <span class="math inline">\(0.75\)</span> units. Determine
+the acceptance region and assess readings of <span class="math inline">\(24.20\)</span>, <span class="math inline">\(25.70\)</span>, and <span class="math inline">\(25.80\)</span> units.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> Let <span class="math inline">\(x\)</span> be the reading. The deviation is <span class="math inline">\(|x-25.0|\)</span>, so acceptance requires <span class="math inline">\(|x-25.0|\le0.75\)</span>. Subtracting and adding
+<span class="math inline">\(0.75\)</span> gives <span class="math inline">\(24.25\le x\le25.75\)</span>. The reading <span class="math inline">\(24.20\)</span> is too low, <span class="math inline">\(25.70\)</span> is acceptable, and <span class="math inline">\(25.80\)</span> is too high. The endpoints are
+accepted because the condition is non-strict.</p>
+</blockquote>
+<blockquote class="example">
+<p><strong>Example 30: Error detection in a rational
+expression.</strong> A student writes <span class="math inline">\(\dfrac{x^2+5x}{x}=x+5\)</span> for every real
+<span class="math inline">\(x\)</span>. Evaluate the student’s
+reasoning.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> Factoring gives <span class="math inline">\(x(x+5)/x\)</span>. Canceling <span class="math inline">\(x\)</span> is valid only when <span class="math inline">\(x\ne0\)</span>. The simplified formula <span class="math inline">\(x+5\)</span> agrees with the original for all
+nonzero inputs, but the original is undefined at <span class="math inline">\(x=0\)</span>. The student’s algebra is correct on
+the restricted domain; the phrase “for every real <span class="math inline">\(x\)</span>” is not.</p>
+</blockquote>
+<blockquote class="example">
+<p><strong>Example 31: An application involving a rectangular
+region.</strong> A rectangular laboratory work surface has length <span class="math inline">\(x+4\)</span> cm and width <span class="math inline">\(x+2\)</span> cm, where <span class="math inline">\(x&gt;0\)</span>. Write and expand its area, then
+find the area when <span class="math inline">\(x=6\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> The area is <span class="math inline">\(A(x)=(x+4)(x+2)=x^2+6x+8\)</span> square
+centimeters. At <span class="math inline">\(x=6\)</span>, <span class="math inline">\(A(6)=36+36+8=80\,\mathrm{cm}^2\)</span>. Checking
+geometrically, the sides are <span class="math inline">\(10\)</span> cm
+and <span class="math inline">\(8\)</span> cm, and their product is
+<span class="math inline">\(80\,\mathrm{cm}^2\)</span>. The two methods
+agree.</p>
+</blockquote>
+<blockquote class="example">
+<p><strong>Example 32: Comparing absolute and relative
+differences.</strong> Two fictional devices measure the same reference
+quantity of <span class="math inline">\(200\)</span> units. Device A
+reads <span class="math inline">\(196\)</span> and device B reads <span class="math inline">\(207\)</span>. Which has the smaller absolute error
+and relative error?</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> Device A has absolute error <span class="math inline">\(|196-200|=4\)</span> units and relative error
+<span class="math inline">\(4/200=2\%\)</span>. Device B has absolute
+error <span class="math inline">\(|207-200|=7\)</span> units and
+relative error <span class="math inline">\(7/200=3.5\%\)</span>. Device
+A has the smaller error by both measures. These comparisons do not by
+themselves establish which device is more reliable across repeated
+measurements.</p>
+</blockquote>
+<h3 class="unnumbered" id="try-it-without-looking-back">Try it without
+looking back</h3>
+<ol type="1">
+<li><p>Write the acceptance interval for a target of <span class="math inline">\(42\)</span> with tolerance <span class="math inline">\(1.5\)</span>, then test readings <span class="math inline">\(40.4\)</span> and <span class="math inline">\(43.5\)</span>.</p></li>
+<li><p>Simplify <span class="math inline">\(\dfrac{3x^2-12x}{3x}\)</span> and retain the
+domain of the original expression.</p></li>
+<li><p>A rectangle has sides <span class="math inline">\(x+1\)</span>
+and <span class="math inline">\(x+7\)</span>. Expand its area and
+evaluate at <span class="math inline">\(x=2\)</span>.</p></li>
+<li><p>A measurement of <span class="math inline">\(81\)</span> is
+compared with reference <span class="math inline">\(80\)</span>. Find
+the signed difference and absolute relative error.</p></li>
+</ol>
+<p><strong>Reflection.</strong> For each solution, identify one
+mathematical check that would catch an error: substitution, reversing a
+conversion, expanding a factorization, checking an endpoint, or
+examining units. Explain which check is most informative and why.</p>
+<h2 id="chapter-summary-and-calculus-connection">Chapter summary and
+calculus connection</h2>
+<p>The real number system, inequalities, exponents, radicals, factoring,
+rational expressions, and units form the working language of
+precalculus. In calculus, difference quotients often require factoring
+and canceling a factor while carefully preserving domain restrictions.
+For example, for <span class="math inline">\(h\ne0\)</span>, <span class="math display">\[\frac{(x+h)^2-x^2}{h}=\frac{2xh+h^2}{h}=2x+h.\]</span>
+The restriction <span class="math inline">\(h\ne0\)</span> is essential
+during simplification; a later calculus course will study what happens
+as <span class="math inline">\(h\)</span> approaches zero.</p>
+<h2 id="chapter-exercises">Chapter exercises</h2>
+<p><em>Show intermediate steps, state restrictions, and include units
+when appropriate. For computational questions, explain the output in
+words.</em></p>
+<h3 class="unnumbered" id="number-systems-and-intervals">Number systems
+and intervals</h3>
+<ol type="1">
+<li><p>Classify <span class="math inline">\(-12\)</span>, <span class="math inline">\(0\)</span>, <span class="math inline">\(5/6\)</span>, <span class="math inline">\(\sqrt{81}\)</span>, and <span class="math inline">\(\pi\)</span> as natural, whole, integer, rational,
+or irrational where applicable.</p></li>
+<li><p>Write <span class="math inline">\(-4&lt;x\le2\)</span> in
+interval notation and sketch it.</p></li>
+<li><p>Write <span class="math inline">\((-\infty,-1)\cup[3,\infty)\)</span> as an
+inequality using “or.</p></li>
+<li><p>Find <span class="math inline">\([-3,4)\cap(1,7]\)</span>.</p></li>
+<li><p>Express all real numbers within <span class="math inline">\(0.6\)</span> of <span class="math inline">\(8\)</span> as an absolute-value inequality and
+interval.</p></li>
+<li><p>Solve <span class="math inline">\(|x+2|&lt;5\)</span> and express
+the answer in interval notation.</p></li>
+</ol>
+<h3 class="unnumbered" id="expressions-and-powers">Expressions and
+powers</h3>
+<ol type="1">
+<li><p>Evaluate <span class="math inline">\(5+18/3^2\)</span>
+exactly.</p></li>
+<li><p>Simplify <span class="math inline">\(4(3x-2)-5(x+1)\)</span>.</p></li>
+<li><p>Simplify <span class="math inline">\((3a^2b^{-1})^2/(9a^{-1})\)</span> and state
+restrictions.</p></li>
+<li><p>Explain the difference between <span class="math inline">\((-4)^2\)</span> and <span class="math inline">\(-4^2\)</span>.</p></li>
+<li><p>Write <span class="math inline">\(0.00000082\)</span> in
+scientific notation.</p></li>
+<li><p>Compute <span class="math inline">\((6\times10^5)(2\times10^{-3})\)</span> in
+scientific notation.</p></li>
+</ol>
+<h3 class="unnumbered" id="radicals-and-factoring">Radicals and
+factoring</h3>
+<ol type="1">
+<li><p>Simplify <span class="math inline">\(\sqrt{98x^2}\)</span> for
+real <span class="math inline">\(x\)</span>.</p></li>
+<li><p>Simplify <span class="math inline">\(\sqrt{48}+2\sqrt{3}\)</span>.</p></li>
+<li><p>Rationalize <span class="math inline">\(5/\sqrt{7}\)</span>.</p></li>
+<li><p>Factor <span class="math inline">\(x^2-7x+12\)</span>.</p></li>
+<li><p>Factor <span class="math inline">\(9y^2-25\)</span>.</p></li>
+<li><p>Explain why <span class="math inline">\(\sqrt{a+b}=\sqrt a+\sqrt
+b\)</span> is not a general identity.</p></li>
+</ol>
+<h3 class="unnumbered" id="rational-expressions">Rational
+expressions</h3>
+<ol type="1">
+<li><p>Simplify <span class="math inline">\((x^2-16)/(x^2+4x)\)</span>
+and state all exclusions.</p></li>
+<li><p>Add <span class="math inline">\(1/x+2/(x-3)\)</span> and state
+restrictions.</p></li>
+<li><p>Simplify <span class="math inline">\((x^2-1)/(x-1)\)</span>,
+noting the original domain.</p></li>
+<li><p>Identify the error in canceling the <span class="math inline">\(x\)</span> terms of <span class="math inline">\((x+4)/x\)</span> to obtain <span class="math inline">\(4\)</span>.</p></li>
+</ol>
+<h3 class="unnumbered" id="measurement-and-modeling">Measurement and
+modeling</h3>
+<ol type="1">
+<li><p>Convert <span class="math inline">\(0.035\)</span> g to
+mg.</p></li>
+<li><p>Convert <span class="math inline">\(1.8\)</span> L to
+mL.</p></li>
+<li><p>A nonclinical liquid transfer moves <span class="math inline">\(150\)</span> mL in <span class="math inline">\(30\)</span> minutes. Express its rate in
+mL/h.</p></li>
+<li><p>A sample has <span class="math inline">\(0.09\)</span> g of
+solute in <span class="math inline">\(150\)</span> mL. Find
+mg/mL.</p></li>
+<li><p>A measurement is <span class="math inline">\(12.0\pm0.3\)</span>
+cm. Give its allowable interval and absolute-value inequality.</p></li>
+<li><p>Explain the distinction between exact conversion factors and
+measured quantities.</p></li>
+</ol>
+<h3 class="unnumbered" id="computational-and-challenge">Computational
+and challenge</h3>
+<ol type="1">
+<li><p>Run both scripts and compare <span class="math inline">\(0.1+0.2\)</span> to <span class="math inline">\(0.3\)</span>. Explain the observation.</p></li>
+<li><p>Modify both plotting scripts to display <span class="math inline">\(|x-4|\)</span> and the threshold <span class="math inline">\(1.5\)</span>. Find the interval
+algebraically.</p></li>
+<li><p>Explain why <span class="math inline">\((x^2-9)/(x-3)\)</span>
+and <span class="math inline">\(x+3\)</span> are not the same function
+on all real numbers.</p></li>
+<li><p>Simplify <span class="math inline">\(((x+h)^2-x^2)/h\)</span> for
+<span class="math inline">\(h\ne0\)</span> and explain why <span class="math inline">\(h=0\)</span> is excluded.</p></li>
+</ol>
+<h2 id="calculus-readiness-checkpoint">Calculus readiness
+checkpoint</h2>
+<ol type="1">
+<li><p>Factor <span class="math inline">\(x^2-4\)</span> and simplify
+<span class="math inline">\((x^2-4)/(x-2)\)</span> with the correct
+restriction.</p></li>
+<li><p>For <span class="math inline">\(h\ne0\)</span>, simplify <span class="math inline">\(((3+h)^2-9)/h\)</span>.</p></li>
+<li><p>Interpret <span class="math inline">\(|x-5|&lt;0.2\)</span> as a
+distance statement and an interval.</p></li>
+<li><p>Explain why units matter when interpreting the slope of a
+graph.</p></li>
+</ol>
+<p><strong>Looking ahead.</strong> Chapter 2 will use these skills to
+solve equations and inequalities, identify extraneous solutions, and
+construct algebraic models.</p>
+<h2 id="extended-application-laboratory-dilution-audit">Extended
+application: Laboratory dilution audit</h2>
+<p>A teaching laboratory mixes 120 mg of dye into a variable volume of
+water. Assume complete mixing and negligible volume change from the dye.
+The quantities in this investigation are illustrative rather than
+measured observations.</p>
+<h3 id="formulating-the-mathematical-model">Formulating the mathematical
+model</h3>
+<p>The proposed relationship is <span class="math display">\[C(v)=120/v.\]</span> Before calculating, identify
+the input and output, their units, and the interval on which the model
+is being studied. Distinguish the mathematical domain from the practical
+domain. The numerical study uses inputs from <span class="math inline">\(100\)</span> to <span class="math inline">\(600\)</span>.</p>
+<blockquote class="example">
+<p><strong>Example 33: Analytical investigation.</strong> Derive the
+volume required for a concentration of <span class="math inline">\(0.4\)</span> mg/mL. Convert the original mass to
+grams and explain why volume must be positive.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> <span class="math inline">\(120/0.4=300\)</span> mL; <span class="math inline">\(120\)</span> mg is <span class="math inline">\(0.12\)</span> g. Zero volume makes the quotient
+undefined.</p>
+</blockquote>
+<h3 id="connecting-numerical-and-graphical-representations">Connecting
+numerical and graphical representations</h3>
+<table>
+<caption>Selected predictions from the illustrative model. Values are
+rounded for display.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Volume (mL)</th>
+<th style="text-align: right;">Concentration (mg/mL)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">1.2</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">225</td>
+<td style="text-align: right;">0.5333</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">350</td>
+<td style="text-align: right;">0.3429</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">475</td>
+<td style="text-align: right;">0.2526</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">600</td>
+<td style="text-align: right;">0.2</td>
+</tr>
+</tbody>
+</table>
+<figure>
+<img alt="Model predictions over the stated investigation interval. The graph represents a mathematical model, not observed data." src="figures/ch01/applied_project.svg" style="width:90.0%"/>
+<figcaption aria-hidden="true">Model predictions over the stated
+investigation interval. The graph represents a mathematical model, not
+observed data.</figcaption>
+</figure>
+<p><strong>Interpretation.</strong> Compare the tabulated values with
+the graph. Identify the intervals over which the output increases or
+decreases, and distinguish a sampled extremum from an exact analytical
+extremum. Explain whether interpolation and extrapolation have the same
+justification in this setting.</p>
+<h3 id="r-implementation">R implementation</h3>
+<p>The following standalone script defines the model, generates
+predictions, and draws a labeled graph. Read the formula before running
+the code. The sampled range is a numerical diagnostic, not a proof of
+the exact range.</p>
+<div class="code-shell"><div class="code-bar"><span>R</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a aria-hidden="true" href="#cb7-1" tabindex="-1"></a><span class="co"># Applied investigation: Laboratory dilution audit</span></span>
+<span id="cb7-2"><a aria-hidden="true" href="#cb7-2" tabindex="-1"></a><span class="co"># 1. Define the input domain and model</span></span>
+<span id="cb7-3"><a aria-hidden="true" href="#cb7-3" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">100</span>, <span class="dv">600</span>, <span class="at">length.out =</span> <span class="dv">301</span>)</span>
+<span id="cb7-4"><a aria-hidden="true" href="#cb7-4" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">120</span><span class="sc">/</span>x</span>
+<span id="cb7-5"><a aria-hidden="true" href="#cb7-5" tabindex="-1"></a></span>
+<span id="cb7-6"><a aria-hidden="true" href="#cb7-6" tabindex="-1"></a><span class="co"># 2. Inspect numerical predictions</span></span>
+<span id="cb7-7"><a aria-hidden="true" href="#cb7-7" tabindex="-1"></a>idx <span class="ot">&lt;-</span> <span class="fu">unique</span>(<span class="fu">round</span>(<span class="fu">seq</span>(<span class="dv">1</span>, <span class="fu">length</span>(x), <span class="at">length.out =</span> <span class="dv">5</span>)))</span>
+<span id="cb7-8"><a aria-hidden="true" href="#cb7-8" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">data.frame</span>(<span class="at">input =</span> x[idx], <span class="at">output =</span> y[idx]))</span>
+<span id="cb7-9"><a aria-hidden="true" href="#cb7-9" tabindex="-1"></a></span>
+<span id="cb7-10"><a aria-hidden="true" href="#cb7-10" tabindex="-1"></a><span class="co"># 3. Visualize the model with labeled axes</span></span>
+<span id="cb7-11"><a aria-hidden="true" href="#cb7-11" tabindex="-1"></a><span class="fu">plot</span>(x, y, <span class="at">type =</span> <span class="st">"l"</span>, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">"#176B87"</span>,</span>
+<span id="cb7-12"><a aria-hidden="true" href="#cb7-12" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Volume (mL)"</span>, <span class="at">ylab =</span> <span class="st">"Concentration (mg/mL)"</span>)</span>
+<span id="cb7-13"><a aria-hidden="true" href="#cb7-13" tabindex="-1"></a><span class="fu">grid</span>()</span>
+<span id="cb7-14"><a aria-hidden="true" href="#cb7-14" tabindex="-1"></a></span>
+<span id="cb7-15"><a aria-hidden="true" href="#cb7-15" tabindex="-1"></a><span class="co"># 4. Check the sampled output range</span></span>
+<span id="cb7-16"><a aria-hidden="true" href="#cb7-16" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">range</span>(y))</span></code></pre></div></div>
+<h3 id="python-implementation">Python implementation</h3>
+<p>Repeat the same investigation using NumPy arrays and Matplotlib.
+Compare the printed predictions with the R output, allowing for
+rounding.</p>
+<div class="code-shell"><div class="code-bar"><span>Python</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a aria-hidden="true" href="#cb8-1" tabindex="-1"></a><span class="co"># Applied investigation: Laboratory dilution audit</span></span>
+<span id="cb8-2"><a aria-hidden="true" href="#cb8-2" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb8-3"><a aria-hidden="true" href="#cb8-3" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb8-4"><a aria-hidden="true" href="#cb8-4" tabindex="-1"></a></span>
+<span id="cb8-5"><a aria-hidden="true" href="#cb8-5" tabindex="-1"></a><span class="co"># 1. Define the input domain and model</span></span>
+<span id="cb8-6"><a aria-hidden="true" href="#cb8-6" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">100</span>, <span class="dv">600</span>, <span class="dv">301</span>)</span>
+<span id="cb8-7"><a aria-hidden="true" href="#cb8-7" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">120</span><span class="op">/</span>x</span>
+<span id="cb8-8"><a aria-hidden="true" href="#cb8-8" tabindex="-1"></a></span>
+<span id="cb8-9"><a aria-hidden="true" href="#cb8-9" tabindex="-1"></a><span class="co"># 2. Inspect numerical predictions</span></span>
+<span id="cb8-10"><a aria-hidden="true" href="#cb8-10" tabindex="-1"></a>idx <span class="op">=</span> np.unique(np.linspace(<span class="dv">0</span>, <span class="bu">len</span>(x)<span class="op">-</span><span class="dv">1</span>, <span class="dv">5</span>).<span class="bu">round</span>().astype(<span class="bu">int</span>))</span>
+<span id="cb8-11"><a aria-hidden="true" href="#cb8-11" tabindex="-1"></a><span class="bu">print</span>(np.column_stack((x[idx], y[idx])))</span>
+<span id="cb8-12"><a aria-hidden="true" href="#cb8-12" tabindex="-1"></a></span>
+<span id="cb8-13"><a aria-hidden="true" href="#cb8-13" tabindex="-1"></a><span class="co"># 3. Visualize the model with labeled axes</span></span>
+<span id="cb8-14"><a aria-hidden="true" href="#cb8-14" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="fl">3.6</span>))</span>
+<span id="cb8-15"><a aria-hidden="true" href="#cb8-15" tabindex="-1"></a>ax.plot(x, y, <span class="st">"-"</span>, color<span class="op">=</span><span class="st">"#176B87"</span>, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb8-16"><a aria-hidden="true" href="#cb8-16" tabindex="-1"></a>ax.<span class="bu">set</span>(xlabel<span class="op">=</span><span class="st">"Volume (mL)"</span>, ylabel<span class="op">=</span><span class="st">"Concentration (mg/mL)"</span>)</span>
+<span id="cb8-17"><a aria-hidden="true" href="#cb8-17" tabindex="-1"></a>ax.grid(alpha<span class="op">=</span><span class="fl">0.22</span>)</span>
+<span id="cb8-18"><a aria-hidden="true" href="#cb8-18" tabindex="-1"></a>ax.spines[[<span class="st">"top"</span>, <span class="st">"right"</span>]].set_visible(<span class="va">False</span>)</span>
+<span id="cb8-19"><a aria-hidden="true" href="#cb8-19" tabindex="-1"></a>fig.tight_layout()</span>
+<span id="cb8-20"><a aria-hidden="true" href="#cb8-20" tabindex="-1"></a>plt.show()</span>
+<span id="cb8-21"><a aria-hidden="true" href="#cb8-21" tabindex="-1"></a></span>
+<span id="cb8-22"><a aria-hidden="true" href="#cb8-22" tabindex="-1"></a><span class="co"># 4. Check the sampled output range</span></span>
+<span id="cb8-23"><a aria-hidden="true" href="#cb8-23" tabindex="-1"></a><span class="bu">print</span>(np.<span class="bu">min</span>(y), np.<span class="bu">max</span>(y))</span></code></pre></div></div>
+<h3 id="guided-practice-checking-the-model">Guided practice: checking
+the model</h3>
+<ol type="1">
+<li><p>Calculate the outputs at the two endpoints by hand. Compare them
+with the numerical table.</p></li>
+<li><p>Select an interior input not listed in the table. Predict the
+output before evaluating it in either language.</p></li>
+<li><p>Explain the meaning of the difference between the two endpoint
+outputs, including units. If appropriate, calculate the average rate of
+change.</p></li>
+<li><p>Identify a physical assumption of the model and describe a
+circumstance in which it would fail.</p></li>
+</ol>
+<h2 id="chapter-project-investigating-laboratory-dilution-audit">Chapter
+project: investigating Laboratory dilution audit</h2>
+<p>Prepare a short technical report for a reader who has not studied the
+model. Use the preceding case as a starting point, but develop your own
+investigation rather than merely reproducing the worked example.</p>
+<ol type="1">
+<li><p>State a quantitative question that can be answered using the
+model. Define all variables, units, and restrictions.</p></li>
+<li><p>Modify one meaningful numerical parameter in the formula. Explain
+what the change represents in the original context. Derive the revised
+formula and predict the direction of change before computing.</p></li>
+<li><p>Compare the original and revised models at five common admissible
+inputs. Present a labeled table and explain the largest difference in
+the table.</p></li>
+<li><p>Produce a graph containing both models on the same axes. Use a
+legend and distinguish the curves with line styles or markers. Explain
+the shape and any intersections.</p></li>
+<li><p>Solve your quantitative question algebraically where possible.
+Verify the result using R and Python; report any differences due to
+numerical precision.</p></li>
+<li><p>Discuss at least two limitations. Describe what measurements
+would be needed to assess the model in practice. Do not present
+simulated predictions as empirical evidence.</p></li>
+</ol>
+<h3 class="unnumbered" id="project-deliverables-and-assessment">Project
+deliverables and assessment</h3>
+<p>Submit a two- to three-page report, the two runnable scripts, and the
+labeled figure. The report should stand on its own without requiring the
+reader to inspect the code.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Criterion</th>
+<th style="text-align: right;">Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Mathematical formulation and domain</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Analytical reasoning and verification</td>
+<td style="text-align: right;">25</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Reproducible R and Python
+computations</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Graph and table quality</td>
+<td style="text-align: right;">15</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Interpretation and limitations</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Total</td>
+<td style="text-align: right;">100</td>
+</tr>
+</tbody>
+</table>
+<h2>Companion scripts</h2><p><a download="" href="code/ch01/applied_project.R">applied_project.R</a></p><p><a download="" href="code/ch01/applied_project.py">applied_project.py</a></p><p><a download="" href="code/ch01/chapter01_lab.R">chapter01_lab.R</a></p><p><a download="" href="code/ch01/chapter01_lab.py">chapter01_lab.py</a></p><footer><a href="index.html">← Previous</a><a href="chapter02.html">Next →</a></footer><section class="investigation"><h2 id="interactive-investigation">Interactive investigation: Absolute value and distance</h2><div data-investigation="1"><p>Enable JavaScript to explore the model.</p></div><p><strong>Explore and explain:</strong> Where is the minimum? Solve |x − a| = 2.</p></section>
+</main><nav aria-label="On this page" class="chapter-toc" id="TOC" role="doc-toc"><strong>On this page</strong>
+<ul>
+<li><a href="#real-numbers-algebraic-expressions-and-mathematical-reasoning" id="toc-real-numbers-algebraic-expressions-and-mathematical-reasoning">Real
+Numbers, Algebraic Expressions, and Mathematical Reasoning</a>
+<ul>
+<li><a href="#opening-investigation-how-much-does-a-unit-matter" id="toc-opening-investigation-how-much-does-a-unit-matter">Opening
+investigation: How much does a unit matter?</a></li>
+<li><a href="#real-numbers-and-mathematical-language" id="toc-real-numbers-and-mathematical-language">Real numbers and
+mathematical language</a>
+<ul>
+<li><a href="#order-and-intervals" id="toc-order-and-intervals">Order
+and intervals</a></li>
+<li><a href="#absolute-value-as-distance" id="toc-absolute-value-as-distance">Absolute value as distance</a></li>
+</ul></li>
+<li><a href="#algebraic-expressions-and-the-order-of-operations" id="toc-algebraic-expressions-and-the-order-of-operations">Algebraic
+expressions and the order of operations</a>
+<ul>
+<li><a href="#distributive-property-and-combining-like-terms" id="toc-distributive-property-and-combining-like-terms">Distributive
+property and combining like terms</a></li>
+</ul></li>
+<li><a href="#exponents-and-scientific-notation" id="toc-exponents-and-scientific-notation">Exponents and scientific
+notation</a>
+<ul>
+<li><a href="#scientific-notation" id="toc-scientific-notation">Scientific notation</a></li>
+</ul></li>
+<li><a href="#radicals-and-rational-exponents" id="toc-radicals-and-rational-exponents">Radicals and rational
+exponents</a></li>
+<li><a href="#factoring-and-rational-expressions" id="toc-factoring-and-rational-expressions">Factoring and rational
+expressions</a></li>
+<li><a href="#dimensional-analysis-and-quantitative-reasoning" id="toc-dimensional-analysis-and-quantitative-reasoning">Dimensional
+analysis and quantitative reasoning</a>
+<ul>
+<li><a href="#exact-and-approximate-quantities" id="toc-exact-and-approximate-quantities">Exact and approximate
+quantities</a></li>
+</ul></li>
+<li><a href="#visual-concept-investigation-distance-and-tolerance" id="toc-visual-concept-investigation-distance-and-tolerance">Visual
+concept investigation: distance and tolerance</a></li>
+<li><a href="#computational-laboratories-the-same-mathematics-in-r-and-python" id="toc-computational-laboratories-the-same-mathematics-in-r-and-python">Computational
+laboratories: the same mathematics in R and Python</a>
+<ul>
+<li><a href="#laboratory-a-numbers-powers-and-floating-point-arithmetic" id="toc-laboratory-a-numbers-powers-and-floating-point-arithmetic">Laboratory
+A: numbers, powers, and floating-point arithmetic</a></li>
+<li><a href="#laboratory-b-intervals-and-absolute-value-tolerance" id="toc-laboratory-b-intervals-and-absolute-value-tolerance">Laboratory
+B: intervals and absolute-value tolerance</a></li>
+<li><a href="#laboratory-c-unit-conversion-and-a-model" id="toc-laboratory-c-unit-conversion-and-a-model">Laboratory C: unit
+conversion and a model</a></li>
+</ul></li>
+<li><a href="#applied-case-study-a-laboratory-concentration-audit" id="toc-applied-case-study-a-laboratory-concentration-audit">Applied
+case study: a laboratory concentration audit</a></li>
+<li><a href="#common-misconceptions-and-mathematical-habits" id="toc-common-misconceptions-and-mathematical-habits">Common
+misconceptions and mathematical habits</a></li>
+<li><a href="#deepening-the-foundations-mathematical-statements-and-justification" id="toc-deepening-the-foundations-mathematical-statements-and-justification">Deepening
+the foundations: mathematical statements and justification</a>
+<ul>
+<li><a href="#equality-identities-and-conditional-statements" id="toc-equality-identities-and-conditional-statements">Equality,
+identities, and conditional statements</a></li>
+<li><a href="#a-reliable-four-stage-problem-solving-routine" id="toc-a-reliable-four-stage-problem-solving-routine">A reliable
+four-stage problem-solving routine</a></li>
+</ul></li>
+<li><a href="#visual-investigation-i-the-number-line-as-a-model-of-constraints" id="toc-visual-investigation-i-the-number-line-as-a-model-of-constraints">Visual
+investigation I: the number line as a model of constraints</a>
+<ul>
+<li><a href="#distance-midpoint-and-radius" id="toc-distance-midpoint-and-radius">Distance, midpoint, and
+radius</a></li>
+</ul></li>
+<li><a href="#visual-investigation-ii-why-order-of-operations-matters" id="toc-visual-investigation-ii-why-order-of-operations-matters">Visual
+investigation II: why order of operations matters</a>
+<ul>
+<li><a href="#from-repeated-multiplication-to-exponent-laws" id="toc-from-repeated-multiplication-to-exponent-laws">From repeated
+multiplication to exponent laws</a></li>
+<li><a href="#powers-of-ten-and-estimation" id="toc-powers-of-ten-and-estimation">Powers of ten and
+estimation</a></li>
+</ul></li>
+<li><a href="#visual-investigation-iii-radicals-principal-roots-and-domains" id="toc-visual-investigation-iii-radicals-principal-roots-and-domains">Visual
+investigation III: radicals, principal roots, and domains</a>
+<ul>
+<li><a href="#why-sqrtx2x" id="toc-why-sqrtx2x">Why <span class="math inline">\(\sqrt{x^2}=|x|\)</span></a></li>
+<li><a href="#rational-exponents-and-allowable-inputs" id="toc-rational-exponents-and-allowable-inputs">Rational exponents and
+allowable inputs</a></li>
+</ul></li>
+<li><a href="#visual-investigation-iv-factoring-as-geometric-decomposition" id="toc-visual-investigation-iv-factoring-as-geometric-decomposition">Visual
+investigation IV: factoring as geometric decomposition</a>
+<ul>
+<li><a href="#recognizing-patterns-without-guessing" id="toc-recognizing-patterns-without-guessing">Recognizing patterns
+without guessing</a></li>
+<li><a href="#rational-expressions-and-removable-holes" id="toc-rational-expressions-and-removable-holes">Rational expressions
+and removable holes</a></li>
+</ul></li>
+<li><a href="#visual-investigation-v-units-as-algebraic-objects" id="toc-visual-investigation-v-units-as-algebraic-objects">Visual
+investigation V: units as algebraic objects</a>
+<ul>
+<li><a href="#building-a-conversion-chain" id="toc-building-a-conversion-chain">Building a conversion
+chain</a></li>
+<li><a href="#dimensional-consistency-and-model-checking" id="toc-dimensional-consistency-and-model-checking">Dimensional
+consistency and model checking</a></li>
+</ul></li>
+<li><a href="#visual-investigation-vi-exact-values-and-numerical-approximation" id="toc-visual-investigation-vi-exact-values-and-numerical-approximation">Visual
+investigation VI: exact values and numerical approximation</a>
+<ul>
+<li><a href="#percent-change-and-relative-error" id="toc-percent-change-and-relative-error">Percent change and relative
+error</a></li>
+</ul></li>
+<li><a href="#extended-computational-investigation-predict-run-explain" id="toc-extended-computational-investigation-predict-run-explain">Extended
+computational investigation: predict, run, explain</a>
+<ul>
+<li><a href="#investigation-a-test-an-identity-numerically" id="toc-investigation-a-test-an-identity-numerically">Investigation A:
+test an identity numerically</a></li>
+<li><a href="#investigation-b-numerical-tolerance-as-a-visual-region" id="toc-investigation-b-numerical-tolerance-as-a-visual-region">Investigation
+B: numerical tolerance as a visual region</a></li>
+<li><a href="#investigation-c-verify-a-unit-based-model" id="toc-investigation-c-verify-a-unit-based-model">Investigation C:
+verify a unit-based model</a></li>
+</ul></li>
+<li><a href="#guided-practice-workshop-from-explanation-to-independence" id="toc-guided-practice-workshop-from-explanation-to-independence">Guided
+practice workshop: from explanation to independence</a>
+<ul>
+<li><a href="#workshop-1-interval-reasoning" id="toc-workshop-1-interval-reasoning">Workshop 1: interval
+reasoning</a></li>
+<li><a href="#workshop-2-exponent-reasoning" id="toc-workshop-2-exponent-reasoning">Workshop 2: exponent
+reasoning</a></li>
+<li><a href="#workshop-3-rational-expression-reasoning" id="toc-workshop-3-rational-expression-reasoning">Workshop 3:
+rational-expression reasoning</a></li>
+<li><a href="#workshop-4-dimensional-reasoning" id="toc-workshop-4-dimensional-reasoning">Workshop 4: dimensional
+reasoning</a></li>
+<li><a href="#workshop-5-calculus-readiness" id="toc-workshop-5-calculus-readiness">Workshop 5: calculus
+readiness</a></li>
+</ul></li>
+<li><a href="#self-assessment-explain-the-mathematics" id="toc-self-assessment-explain-the-mathematics">Self-assessment:
+explain the mathematics</a></li>
+<li><a href="#additional-worked-applications-and-error-analysis" id="toc-additional-worked-applications-and-error-analysis">Additional
+worked applications and error analysis</a>
+<ul>
+<li><a href="#try-it-without-looking-back" id="toc-try-it-without-looking-back">Try it without looking
+back</a></li>
+</ul></li>
+<li><a href="#chapter-summary-and-calculus-connection" id="toc-chapter-summary-and-calculus-connection">Chapter summary and
+calculus connection</a></li>
+<li><a href="#chapter-exercises" id="toc-chapter-exercises">Chapter
+exercises</a>
+<ul>
+<li><a href="#number-systems-and-intervals" id="toc-number-systems-and-intervals">Number systems and
+intervals</a></li>
+<li><a href="#expressions-and-powers" id="toc-expressions-and-powers">Expressions and powers</a></li>
+<li><a href="#radicals-and-factoring" id="toc-radicals-and-factoring">Radicals and factoring</a></li>
+<li><a href="#rational-expressions" id="toc-rational-expressions">Rational expressions</a></li>
+<li><a href="#measurement-and-modeling" id="toc-measurement-and-modeling">Measurement and modeling</a></li>
+<li><a href="#computational-and-challenge" id="toc-computational-and-challenge">Computational and
+challenge</a></li>
+</ul></li>
+<li><a href="#calculus-readiness-checkpoint" id="toc-calculus-readiness-checkpoint">Calculus readiness
+checkpoint</a></li>
+<li><a href="#extended-application-laboratory-dilution-audit" id="toc-extended-application-laboratory-dilution-audit">Extended
+application: Laboratory dilution audit</a>
+<ul>
+<li><a href="#formulating-the-mathematical-model" id="toc-formulating-the-mathematical-model">Formulating the mathematical
+model</a></li>
+<li><a href="#connecting-numerical-and-graphical-representations" id="toc-connecting-numerical-and-graphical-representations">Connecting
+numerical and graphical representations</a></li>
+<li><a href="#r-implementation" id="toc-r-implementation">R
+implementation</a></li>
+<li><a href="#python-implementation" id="toc-python-implementation">Python implementation</a></li>
+<li><a href="#guided-practice-checking-the-model" id="toc-guided-practice-checking-the-model">Guided practice: checking
+the model</a></li>
+</ul></li>
+<li><a href="#chapter-project-investigating-laboratory-dilution-audit" id="toc-chapter-project-investigating-laboratory-dilution-audit">Chapter
+project: investigating Laboratory dilution audit</a>
+<ul>
+<li><a href="#project-deliverables-and-assessment" id="toc-project-deliverables-and-assessment">Project deliverables and
+assessment</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav></div><script src="investigations.js"></script></body></html>

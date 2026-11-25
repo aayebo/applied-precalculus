@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8"/>
+<meta content="pandoc" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+<title>Trigonometric Identities
+and Equations | Applied Precalculus</title>
+<style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+
+
+<link href="site.css" rel="stylesheet"/><script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script defer="" src="search-index.js"></script><script defer="" src="site.js"></script></head><body><nav class="site-nav" id="book-nav"><strong class="brand">Applied Precalculus</strong><p class="subtitle">Using R and Python</p><input aria-label="Search the book" id="book-search" placeholder="Search the book"/><div aria-live="polite" class="search-results" id="search-results"></div><p class="nav-label">Contents</p><a class="" href="index.html">Preface</a><a class="" href="chapter01.html">1. Real Numbers, Algebraic Expressions, and Mathematical Reasoning</a><a class="" href="chapter02.html">2. Equations, Inequalities, and Applications</a><a class="" href="chapter03.html">3. Coordinate Geometry, Lines, and Systems of Equations</a><a class="" href="chapter04.html">4. Functions, Graphs, and Multiple Representations</a><a class="" href="chapter05.html">5. Transformations, Compositions, and Inverse Functions</a><a class="" href="chapter06.html">6. Polynomial and Rational Functions</a><a class="" href="chapter07.html">7. Exponential and Logarithmic Functions</a><a class="" href="chapter08.html">8. Angles, Radian Measure, and the Unit Circle</a><a class="" href="chapter09.html">9. Trigonometric Functions and Their Graphs</a><a class="active" href="chapter10.html">10. Trigonometric Identities and Equations</a><a class="" href="chapter11.html">11. Applications of Trigonometry and Periodic Models</a><a class="" href="chapter12.html">12. Sequences, Series, and Mathematical Patterns</a><a class="" href="chapter13.html">13. Conic Sections and Parametric Equations</a><a class="" href="chapter14.html">14. Vectors, Polar Coordinates, and Geometric Modeling</a><a class="" href="chapter15.html">15. Rates of Change, Difference Quotients, and Limits</a><a class="" href="chapter16.html">16. Integrated Mathematical Modeling with R and Python</a><a class="" href="programming.html">Getting Started with R and Python</a><a class="" href="resources.html">Computational Resource Guide</a></nav><a class="skip" href="#main-content">Skip to content</a><header class="topbar"><button aria-controls="book-nav" aria-expanded="false" class="menu">Contents</button><span>Applied Precalculus / Online edition</span><span class="spacer"></span><a href="resources.html">Resources</a></header><div class="page-grid"><main id="main-content">
+
+<h1 id="trigonometric-identities-and-equations">Trigonometric Identities
+and Equations</h1>
+<h2 class="unnumbered" id="opening-context-simplifying-periodic-models">Opening context:
+simplifying periodic models</h2>
+<p>A rotating sensor, an oscillating instrument, or a periodic
+physiological measurement can often be represented by several apparently
+different trigonometric expressions. Identities explain why those
+expressions agree for every admissible input; equations identify the
+particular times or angles at which a measurement reaches a prescribed
+value. The distinction between an identity and an equation is central to
+this chapter.</p>
+<h2 class="unnumbered" id="learning-outcomes">Learning outcomes</h2>
+<p>By the end of this chapter, students should be able to (1)
+distinguish identities from equations; (2) use reciprocal, quotient,
+Pythagorean, cofunction, and parity identities; (3) prove identities
+with logically reversible algebra and domain checks; (4) derive and
+apply angle-sum, angle-difference, double-angle, and half-angle
+formulas; (5) solve trigonometric equations over intervals and over all
+real numbers; (6) interpret extraneous solutions and numerical
+approximations; and (7) investigate identities and equations with R and
+Python.</p>
+<h2 class="unnumbered" id="prerequisite-check">Prerequisite check</h2>
+<p>Review the unit circle and exact values (Chapter 8), graphs and
+periods of trigonometric functions (Chapter 9), and factoring, quadratic
+equations, and rational expressions (Chapters 1–2 and 6). All angles in
+this chapter are measured in radians unless otherwise indicated.</p>
+<h2 class="unnumbered" id="computational-workflow">Computational
+workflow</h2>
+<p>For each laboratory, first make an algebraic prediction, then execute
+the complete R listing, followed by the equivalent Python listing. Code
+is presented sequentially, never in side-by-side columns. Numerical
+agreement is evidence for a conjecture, not a proof of an identity.</p>
+<h2 id="identities-versus-equations">Identities versus equations</h2>
+<p>An <em>identity</em> is an equality true for every input where both
+sides are defined. An <em>equation</em> may hold only at selected
+inputs. For example, <span class="math inline">\(\sin^2x+\cos^2x=1\)</span> is an identity, whereas
+<span class="math inline">\(\sin x=1/2\)</span> holds only for certain
+angles. The common domain matters: <span class="math inline">\(\tan
+x=\sin x/\cos x\)</span> is an identity only when <span class="math inline">\(\cos x\ne0\)</span>. Numerical testing can reveal
+a false conjecture but cannot establish an identity for infinitely many
+inputs.</p>
+<blockquote class="example">
+<p><strong>Example 1.</strong> Decide whether <span class="math inline">\(\sin(2x)=2\sin x\)</span> is an identity. At <span class="math inline">\(x=\pi/2\)</span>, the left side is <span class="math inline">\(0\)</span> and the right side is <span class="math inline">\(2\)</span>, so the statement is false.</p>
+</blockquote>
+<p><strong>Guided practice 1.</strong> Classify <span class="math inline">\(\cos^2x=1-\sin^2x\)</span> and <span class="math inline">\(\cos x=0\)</span>; state their domains and, for
+the equation, give two solutions.</p>
+<h5 id="concept-check.">Concept check.</h5>
+<p>Explain the role of the domain, show intermediate algebraic steps,
+and distinguish an exact identity from a numerical approximation.</p>
+<h2 id="reciprocal-and-quotient-identities">Reciprocal and quotient
+identities</h2>
+<p>The reciprocal identities are <span class="math inline">\(\csc
+x=1/\sin x\)</span>, <span class="math inline">\(\sec x=1/\cos
+x\)</span>, and <span class="math inline">\(\cot x=1/\tan x\)</span>
+where the indicated denominators are nonzero. The quotient identities
+are <span class="math inline">\(\tan x=\sin x/\cos x\)</span> and <span class="math inline">\(\cot x=\cos x/\sin x\)</span>. They are
+particularly useful for rewriting complicated expressions in sine and
+cosine. Always carry exclusions from the original expression: canceling
+a factor does not restore a point at which the original expression was
+undefined.</p>
+<blockquote class="example">
+<p><strong>Example 2.</strong> Simplify <span class="math inline">\(\frac{\tan x}{\sec x}\)</span>. Writing the
+quotient in sine and cosine gives <span class="math inline">\(\frac{\sin
+x/\cos x}{1/\cos x}=\sin x\)</span> for <span class="math inline">\(\cos
+x\ne0\)</span>. The simplified formula extends to additional inputs, but
+the original does not.</p>
+</blockquote>
+<p><strong>Guided practice 2.</strong> Simplify <span class="math inline">\(\frac{\csc x-\sin x}{\cos x}\)</span> and identify
+every excluded input.</p>
+<h5 id="concept-check.-1">Concept check.</h5>
+<p>Explain the role of the domain, show intermediate algebraic steps,
+and distinguish an exact identity from a numerical approximation.</p>
+<h2 id="pythagorean-identities-and-geometric-derivation">Pythagorean
+identities and geometric derivation</h2>
+<p>A point <span class="math inline">\((\cos x,\sin x)\)</span> on the
+unit circle satisfies <span class="math inline">\(u^2+v^2=1\)</span>,
+hence <span class="math inline">\(\cos^2x+\sin^2x=1\)</span>. Dividing
+by <span class="math inline">\(\cos^2x\)</span> (when <span class="math inline">\(\cos x\ne0\)</span>) gives <span class="math inline">\(1+\tan^2x=\sec^2x\)</span>. Dividing by <span class="math inline">\(\sin^2x\)</span> (when <span class="math inline">\(\sin x\ne0\)</span>) gives <span class="math inline">\(1+\cot^2x=\csc^2x\)</span>. These identities
+convert sums of squares into single functions, but square roots require
+attention to signs.</p>
+<blockquote class="example">
+<p><strong>Example 3.</strong> Given <span class="math inline">\(\sin
+x=3/5\)</span> and <span class="math inline">\(x\)</span> in quadrant
+II, the Pythagorean identity yields <span class="math inline">\(\cos^2x=16/25\)</span>. Since cosine is negative
+in quadrant II, <span class="math inline">\(\cos x=-4/5\)</span> and
+<span class="math inline">\(\tan x=-3/4\)</span>.</p>
+</blockquote>
+<p><strong>Guided practice 3.</strong> If <span class="math inline">\(\tan x=-5/12\)</span> and <span class="math inline">\(x\)</span> lies in quadrant IV, find <span class="math inline">\(\sin x\)</span>, <span class="math inline">\(\cos
+x\)</span>, and <span class="math inline">\(\sec x\)</span>.</p>
+<h5 id="concept-check.-2">Concept check.</h5>
+<p>Explain the role of the domain, show intermediate algebraic steps,
+and distinguish an exact identity from a numerical approximation.</p>
+<h2 id="evenodd-periodic-and-cofunction-identities">Even–odd, periodic,
+and cofunction identities</h2>
+<p>The unit circle gives <span class="math inline">\(\sin(-x)=-\sin
+x\)</span> and <span class="math inline">\(\cos(-x)=\cos x\)</span>;
+tangent is odd wherever defined. Periodicity gives <span class="math inline">\(\sin(x+2\pi)=\sin x\)</span>, <span class="math inline">\(\cos(x+2\pi)=\cos x\)</span>, and <span class="math inline">\(\tan(x+\pi)=\tan x\)</span>. Complementary-angle
+relationships include <span class="math inline">\(\sin(\pi/2-x)=\cos
+x\)</span> and <span class="math inline">\(\cos(\pi/2-x)=\sin
+x\)</span>. These formulas reduce unfamiliar angles to reference
+angles.</p>
+<blockquote class="example">
+<p><strong>Example 4.</strong> Evaluate <span class="math inline">\(\sin(-7\pi/6)\)</span>. Oddness gives <span class="math inline">\(-\sin(7\pi/6)=-(-1/2)=1/2\)</span>.</p>
+</blockquote>
+<p><strong>Guided practice 4.</strong> Evaluate <span class="math inline">\(\cos(-5\pi/3)\)</span> and <span class="math inline">\(\sin(\pi/2-\pi/6)\)</span> exactly.</p>
+<h5 id="concept-check.-3">Concept check.</h5>
+<p>Explain the role of the domain, show intermediate algebraic steps,
+and distinguish an exact identity from a numerical approximation.</p>
+<h2 id="a-reliable-strategy-for-verifying-identities">A reliable
+strategy for verifying identities</h2>
+<p>Begin with the more complicated side and transform it into the other
+side. Useful moves include factoring, finding common denominators,
+multiplying by a conjugate, or rewriting in sine and cosine. Do not
+assume the identity by setting the two sides equal and performing steps
+that might not be reversible. Record restrictions introduced by
+division. A proof is a chain of justified equalities on the common
+domain.</p>
+<blockquote class="example">
+<p><strong>Example 5.</strong> Verify <span class="math inline">\(\frac{1-\cos^2x}{\sin x}=\sin x\)</span> for <span class="math inline">\(\sin x\ne0\)</span>. Substitute <span class="math inline">\(1-\cos^2x=\sin^2x\)</span>; dividing by <span class="math inline">\(\sin x\)</span> gives <span class="math inline">\(\sin x\)</span>.</p>
+</blockquote>
+<p><strong>Guided practice 5.</strong> Verify <span class="math inline">\(\frac{1-\sin^2x}{\cos x}=\cos x\)</span> and state
+why <span class="math inline">\(\cos x\ne0\)</span> is required.</p>
+<h5 id="concept-check.-4">Concept check.</h5>
+<p>Explain the role of the domain, show intermediate algebraic steps,
+and distinguish an exact identity from a numerical approximation.</p>
+<h2 id="factoring-and-conjugates-in-identity-proofs">Factoring and
+conjugates in identity proofs</h2>
+<p>The factorization <span class="math inline">\(a^2-b^2=(a-b)(a+b)\)</span> appears frequently in
+trigonometric proofs. Multiplying by the conjugate can convert <span class="math inline">\(1-\cos x\)</span> into <span class="math inline">\(\sin^2x/(1+\cos x)\)</span>, provided <span class="math inline">\(1+\cos x\ne0\)</span>. A successful simplification
+should preserve the domain of the original expression even when its
+final form looks simpler.</p>
+<blockquote class="example">
+<p><strong>Example 6.</strong> Show that <span class="math inline">\(\frac{1-\cos x}{\sin x}=\frac{\sin x}{1+\cos
+x}\)</span> on their common domain. Multiply the left numerator and
+denominator by <span class="math inline">\(1+\cos x\)</span>: <span class="math inline">\(\frac{1-\cos^2x}{\sin x(1+\cos x)}=\frac{\sin
+x}{1+\cos x}\)</span>.</p>
+</blockquote>
+<p><strong>Guided practice 6.</strong> Use a conjugate to simplify <span class="math inline">\(\frac{\sin x}{1-\cos x}\)</span> and state
+restrictions.</p>
+<h5 id="concept-check.-5">Concept check.</h5>
+<p>Explain the role of the domain, show intermediate algebraic steps,
+and distinguish an exact identity from a numerical approximation.</p>
+<h2 id="angle-sum-and-angle-difference-formulas">Angle-sum and
+angle-difference formulas</h2>
+<p>The fundamental addition formulas are <span class="math inline">\(\sin(a\pm b)=\sin a\cos b\pm\cos a\sin b\)</span>
+and <span class="math inline">\(\cos(a\pm b)=\cos a\cos b\mp\sin a\sin
+b\)</span>. They can be motivated geometrically by rotations: applying a
+rotation through <span class="math inline">\(b\)</span> after a rotation
+through <span class="math inline">\(a\)</span> has the same effect as a
+rotation through <span class="math inline">\(a+b\)</span>. The signs are
+different in the cosine formula; memorizing the pattern without
+understanding it is a common source of error.</p>
+<blockquote class="example">
+<p><strong>Example 7.</strong> Find <span class="math inline">\(\sin(5\pi/12)=\sin(\pi/4+\pi/6)=\frac{\sqrt2}{2}\frac{\sqrt3}{2}+\frac{\sqrt2}{2}\frac12=\frac{\sqrt6+\sqrt2}{4}\)</span>.</p>
+</blockquote>
+<p><strong>Guided practice 7.</strong> Find <span class="math inline">\(\cos(\pi/12)\)</span> exactly using <span class="math inline">\(\pi/4-\pi/6\)</span>.</p>
+<h5 id="concept-check.-6">Concept check.</h5>
+<p>Explain the role of the domain, show intermediate algebraic steps,
+and distinguish an exact identity from a numerical approximation.</p>
+<h2 id="the-tangent-addition-formula">The tangent addition formula</h2>
+<p>Dividing the sine addition formula by the cosine addition formula
+gives <span class="math inline">\(\tan(a+b)=\frac{\tan a+\tan b}{1-\tan
+a\tan b}\)</span> whenever all expressions are defined. Similarly, <span class="math inline">\(\tan(a-b)=\frac{\tan a-\tan b}{1+\tan a\tan
+b}\)</span>. The formula cannot be applied blindly at angles where
+tangent is undefined or where the resulting denominator vanishes.</p>
+<blockquote class="example">
+<p><strong>Example 8.</strong> Compute <span class="math inline">\(\tan(\pi/12)=\tan(\pi/4-\pi/6)=\frac{1-1/\sqrt3}{1+1/\sqrt3}=2-\sqrt3\)</span>.</p>
+</blockquote>
+<p><strong>Guided practice 8.</strong> Use the tangent sum formula to
+compute <span class="math inline">\(\tan(5\pi/12)\)</span>.</p>
+<h5 id="concept-check.-7">Concept check.</h5>
+<p>Explain the role of the domain, show intermediate algebraic steps,
+and distinguish an exact identity from a numerical approximation.</p>
+<h2 id="double-angle-identities">Double-angle identities</h2>
+<p>Set <span class="math inline">\(a=b=x\)</span> in the addition
+formulas to obtain <span class="math inline">\(\sin2x=2\sin x\cos
+x\)</span> and <span class="math inline">\(\cos2x=\cos^2x-\sin^2x=1-2\sin^2x=2\cos^2x-1\)</span>.
+For tangent, <span class="math inline">\(\tan2x=2\tan
+x/(1-\tan^2x)\)</span> where defined. Choose the cosine form that
+matches the known information. These formulas also explain why the
+frequency of a periodic signal can double when it is squared.</p>
+<blockquote class="example">
+<p><strong>Example 9.</strong> If <span class="math inline">\(\sin
+x=3/5\)</span> and <span class="math inline">\(\cos x=4/5\)</span>, then
+<span class="math inline">\(\sin2x=24/25\)</span> and <span class="math inline">\(\cos2x=16/25-9/25=7/25\)</span>.</p>
+</blockquote>
+<p><strong>Guided practice 9.</strong> Given <span class="math inline">\(\cos x=-5/13\)</span> and <span class="math inline">\(x\)</span> in quadrant II, calculate <span class="math inline">\(\sin2x\)</span> and <span class="math inline">\(\cos2x\)</span>.</p>
+<h5 id="concept-check.-8">Concept check.</h5>
+<p>Explain the role of the domain, show intermediate algebraic steps,
+and distinguish an exact identity from a numerical approximation.</p>
+<h2 id="half-angle-and-power-reduction-identities">Half-angle and
+power-reduction identities</h2>
+<p>From <span class="math inline">\(\cos2u=1-2\sin^2u\)</span> and <span class="math inline">\(\cos2u=2\cos^2u-1\)</span>, set <span class="math inline">\(u=x/2\)</span> to obtain <span class="math inline">\(\sin^2(x/2)=(1-\cos x)/2\)</span> and <span class="math inline">\(\cos^2(x/2)=(1+\cos x)/2\)</span>. Thus <span class="math inline">\(\sin(x/2)=\pm\sqrt{(1-\cos x)/2}\)</span> and
+<span class="math inline">\(\cos(x/2)=\pm\sqrt{(1+\cos x)/2}\)</span>;
+the quadrant of <span class="math inline">\(x/2\)</span> determines the
+sign. Power-reduction formulas <span class="math inline">\(\sin^2x=(1-\cos2x)/2\)</span> and <span class="math inline">\(\cos^2x=(1+\cos2x)/2\)</span> will later support
+integration.</p>
+<blockquote class="example">
+<p><strong>Example 10.</strong> Find <span class="math inline">\(\sin(\pi/8)\)</span>. Since <span class="math inline">\(\pi/8\)</span> is in quadrant I, <span class="math inline">\(\sin(\pi/8)=\sqrt{(1-\cos(\pi/4))/2}=\frac12\sqrt{2-\sqrt2}\)</span>.</p>
+</blockquote>
+<p><strong>Guided practice 10.</strong> Find <span class="math inline">\(\cos(\pi/8)\)</span> and explain the sign
+choice.</p>
+<h5 id="concept-check.-9">Concept check.</h5>
+<p>Explain the role of the domain, show intermediate algebraic steps,
+and distinguish an exact identity from a numerical approximation.</p>
+<h2 id="product-to-sum-and-sum-to-product-identities">Product-to-sum and
+sum-to-product identities</h2>
+<p>Adding and subtracting angle-sum formulas yields <span class="math inline">\(2\sin a\cos b=\sin(a+b)+\sin(a-b)\)</span> and
+<span class="math inline">\(2\cos a\cos b=\cos(a+b)+\cos(a-b)\)</span>.
+Another useful identity is <span class="math inline">\(2\sin a\sin
+b=\cos(a-b)-\cos(a+b)\)</span>. These transformations are useful for
+periodic signal analysis and later integration, but they do not change
+the physical meaning of the underlying measurements.</p>
+<blockquote class="example">
+<p><strong>Example 11.</strong> Rewrite <span class="math inline">\(\sin3x\cos x=\tfrac12[\sin4x+\sin2x]\)</span>. The
+right side exposes two frequencies in a product of periodic signals.</p>
+</blockquote>
+<p><strong>Guided practice 11.</strong> Rewrite <span class="math inline">\(\cos4x\cos2x\)</span> as a sum and identify its
+two angular frequencies.</p>
+<h5 id="concept-check.-10">Concept check.</h5>
+<p>Explain the role of the domain, show intermediate algebraic steps,
+and distinguish an exact identity from a numerical approximation.</p>
+<h2 id="solving-basic-trigonometric-equations">Solving basic
+trigonometric equations</h2>
+<p>To solve <span class="math inline">\(\sin x=c\)</span> or <span class="math inline">\(\cos x=c\)</span>, first determine whether <span class="math inline">\(c\in[-1,1]\)</span>, then find the reference angle
+and the appropriate quadrants. For tangent, solutions repeat every <span class="math inline">\(\pi\)</span>. Give either all solutions using an
+integer parameter <span class="math inline">\(k\)</span> or a complete
+list on the specified interval. Checking endpoints matters when the
+interval is closed.</p>
+<blockquote class="example">
+<p><strong>Example 12.</strong> Solve <span class="math inline">\(\sin
+x=\sqrt3/2\)</span> on <span class="math inline">\([0,2\pi)\)</span>.
+The reference angle is <span class="math inline">\(\pi/3\)</span>, and
+sine is positive in quadrants I and II, giving <span class="math inline">\(x=\pi/3,2\pi/3\)</span>. For all real <span class="math inline">\(x\)</span>, add <span class="math inline">\(2k\pi\)</span> to each family.</p>
+</blockquote>
+<p><strong>Guided practice 12.</strong> Solve <span class="math inline">\(\cos x=-1/2\)</span> on <span class="math inline">\([-\pi,\pi]\)</span> and solve <span class="math inline">\(\tan x=1\)</span> for all real <span class="math inline">\(x\)</span>.</p>
+<h5 id="concept-check.-11">Concept check.</h5>
+<p>Explain the role of the domain, show intermediate algebraic steps,
+and distinguish an exact identity from a numerical approximation.</p>
+<h2 id="factoring-and-quadratic-trigonometric-equations">Factoring and
+quadratic trigonometric equations</h2>
+<p>Treat a trigonometric expression such as <span class="math inline">\(\sin x\)</span> as an algebraic variable when the
+equation is polynomial in that expression. Factor or use the quadratic
+formula, reject impossible values outside <span class="math inline">\([-1,1]\)</span>, and then solve each remaining
+trigonometric equation. Dividing by <span class="math inline">\(\sin
+x\)</span> or <span class="math inline">\(\cos x\)</span> can
+accidentally discard solutions when that factor is zero; factoring is
+safer.</p>
+<blockquote class="example">
+<p><strong>Example 13.</strong> Solve <span class="math inline">\(2\sin^2x-\sin x-1=0\)</span> on <span class="math inline">\([0,2\pi)\)</span>. Factor <span class="math inline">\((2\sin x+1)(\sin x-1)=0\)</span>. Thus <span class="math inline">\(\sin x=-1/2\)</span> or <span class="math inline">\(1\)</span>, yielding <span class="math inline">\(x=7\pi/6,11\pi/6,\pi/2\)</span>.</p>
+</blockquote>
+<p><strong>Guided practice 13.</strong> Solve <span class="math inline">\(2\cos^2x+\cos x-1=0\)</span> on <span class="math inline">\([0,2\pi)\)</span>.</p>
+<h5 id="concept-check.-12">Concept check.</h5>
+<p>Explain the role of the domain, show intermediate algebraic steps,
+and distinguish an exact identity from a numerical approximation.</p>
+<h2 id="equations-involving-multiple-angles-and-restrictions">Equations
+involving multiple angles and restrictions</h2>
+<p>For equations such as <span class="math inline">\(\sin(2x)=0\)</span>, solve first for the entire
+inner angle <span class="math inline">\(u=2x\)</span>, then divide to
+recover <span class="math inline">\(x\)</span>. When solving on an
+interval, map its endpoints through the substitution so no roots are
+omitted. Squaring both sides can introduce extraneous solutions, and
+multiplying by a potentially zero expression can alter the solution set.
+Verify candidates in the original equation.</p>
+<blockquote class="example">
+<p><strong>Example 14.</strong> Solve <span class="math inline">\(\cos(2x)=0\)</span> on <span class="math inline">\([0,2\pi)\)</span>. Since <span class="math inline">\(2x=\pi/2+k\pi\)</span>, <span class="math inline">\(x=\pi/4+k\pi/2\)</span>. The interval gives <span class="math inline">\(x=\pi/4,3\pi/4,5\pi/4,7\pi/4\)</span>.</p>
+</blockquote>
+<p><strong>Guided practice 14.</strong> Solve <span class="math inline">\(\sin(3x)=0\)</span> on <span class="math inline">\([0,2\pi)\)</span> and explain how many solutions
+there are.</p>
+<h5 id="concept-check.-13">Concept check.</h5>
+<p>Explain the role of the domain, show intermediate algebraic steps,
+and distinguish an exact identity from a numerical approximation.</p>
+<h2 id="applications-timing-and-periodic-thresholds">Applications:
+timing and periodic thresholds</h2>
+<p>Suppose a simplified respiratory sensor follows <span class="math inline">\(S(t)=2+0.8\sin(\pi t/3)\)</span>, with <span class="math inline">\(t\)</span> in seconds and output in arbitrary
+sensor units. To find times at which <span class="math inline">\(S(t)=2.4\)</span>, solve <span class="math inline">\(\sin(\pi t/3)=1/2\)</span>. This yields <span class="math inline">\(t=0.5+6k\)</span> or <span class="math inline">\(t=2.5+6k\)</span> seconds. In the first <span class="math inline">\(12\)</span> seconds, the threshold occurs at <span class="math inline">\(0.5,2.5,6.5,8.5\)</span>. These are mathematical
+predictions; real sensor noise may shift observed crossing times.</p>
+<blockquote class="example">
+<p><strong>Example 15.</strong> A rotating laboratory marker has height
+<span class="math inline">\(h(t)=5+2\cos(\pi t/4)\)</span> cm. Solve
+<span class="math inline">\(h(t)=6\)</span> for <span class="math inline">\(0\le t&lt;8\)</span>. We need <span class="math inline">\(\cos(\pi t/4)=1/2\)</span>, so <span class="math inline">\(\pi t/4=\pi/3,5\pi/3\)</span>, giving <span class="math inline">\(t=4/3\)</span> and <span class="math inline">\(20/3\)</span> seconds.</p>
+</blockquote>
+<p><strong>Guided practice 15.</strong> A periodic temperature model is
+<span class="math inline">\(T(t)=37+0.5\sin(\pi t/12)\)</span>. Find all
+<span class="math inline">\(t\)</span> in <span class="math inline">\([0,24)\)</span> for which <span class="math inline">\(T(t)=37.25\)</span> and interpret the units.</p>
+<h5 id="concept-check.-14">Concept check.</h5>
+<p>Explain the role of the domain, show intermediate algebraic steps,
+and distinguish an exact identity from a numerical approximation.</p>
+<h2 id="preparation-for-calculus-identities-and-difference-quotients">Preparation
+for calculus: identities and difference quotients</h2>
+<p>The angle-addition formula provides the key algebraic step in the
+derivative of sine. For <span class="math inline">\(h\ne0\)</span>,
+<span class="math inline">\(\frac{\sin(x+h)-\sin x}{h}=\sin x\frac{\cos
+h-1}{h}+\cos x\frac{\sin h}{h}\)</span>. In calculus, the radian-based
+limits <span class="math inline">\(\lim_{h\to0}(\sin h)/h=1\)</span> and
+<span class="math inline">\(\lim_{h\to0}(\cos h-1)/h=0\)</span> lead to
+the derivative <span class="math inline">\(\cos x\)</span>. At this
+stage, students should understand the exact algebraic decomposition; the
+limit arguments belong to calculus.</p>
+<blockquote class="example">
+<p><strong>Example 16.</strong> At <span class="math inline">\(x=0\)</span>, the difference quotient for sine
+becomes <span class="math inline">\(\sin h/h\)</span>. Evaluate it for
+<span class="math inline">\(h=0.1,0.01,0.001\)</span> (radians) and
+observe its approach to <span class="math inline">\(1\)</span>.</p>
+</blockquote>
+<p><strong>Guided practice 16.</strong> Use the cosine addition formula
+to expand <span class="math inline">\([\cos(x+h)-\cos x]/h\)</span>
+without taking a limit.</p>
+<h5 id="concept-check.-15">Concept check.</h5>
+<p>Explain the role of the domain, show intermediate algebraic steps,
+and distinguish an exact identity from a numerical approximation.</p>
+<h2 id="visual-investigations">Visual investigations</h2>
+<h3 class="unnumbered" id="investigation-1-the-pythagorean-identity-on-the-unit-circle">Investigation
+1: The Pythagorean identity on the unit circle</h3>
+<p>Draw a unit circle with a point <span class="math inline">\(P=(\cos
+x,\sin x)\)</span> in quadrant II. Construct the right triangle to the
+horizontal axis and label its signed coordinates. Explain why the
+squared coordinates sum to one regardless of the quadrant. Compare this
+geometric proof with testing five numerical angles.</p>
+<figure>
+<img alt="image" src="figures/precompiled/chapter10-01.svg"/>
+<figcaption aria-hidden="true">image</figcaption>
+</figure>
+<h3 class="unnumbered" id="investigation-2-angle-addition-as-rotation">Investigation 2: Angle
+addition as rotation</h3>
+<p>Sketch two consecutive rotations through <span class="math inline">\(a=\pi/6\)</span> and <span class="math inline">\(b=\pi/4\)</span>. Compare the final unit-circle
+coordinates with <span class="math inline">\(\cos(a+b)\)</span> and
+<span class="math inline">\(\sin(a+b)\)</span> from the addition
+formulas. Explain why <span class="math inline">\(\sin(a+b)\)</span> is
+not generally <span class="math inline">\(\sin a+\sin b\)</span>.</p>
+<h3 class="unnumbered" id="investigation-3-double-angle-frequency">Investigation 3:
+Double-angle frequency</h3>
+<p>Graph <span class="math inline">\(y=\sin x\)</span> and <span class="math inline">\(y=\sin2x\)</span> for <span class="math inline">\(0\le x\le2\pi\)</span>. Mark zeros and peaks and
+compare the periods. Then graph <span class="math inline">\(y=\sin^2x\)</span> and <span class="math inline">\(y=(1-\cos2x)/2\)</span>; explain the perfect
+overlap algebraically.</p>
+<figure>
+<img alt="image" src="figures/precompiled/chapter10-02.svg"/>
+<figcaption aria-hidden="true">image</figcaption>
+</figure>
+<h3 class="unnumbered" id="investigation-4-a-sign-trap-in-half-angle-formulas">Investigation 4:
+A sign trap in half-angle formulas</h3>
+<p>Evaluate <span class="math inline">\(\cos x\)</span> at <span class="math inline">\(x=4\pi/3\)</span> and use it to calculate <span class="math inline">\(\sin(x/2)\)</span>. Explain why the positive
+square root is correct even though <span class="math inline">\(\cos
+x\)</span> is negative. Repeat for <span class="math inline">\(x=10\pi/3\)</span> and identify the appropriate
+sign.</p>
+<h3 class="unnumbered" id="investigation-5-equation-roots-versus-identity-graphs">Investigation
+5: Equation roots versus identity graphs</h3>
+<p>On the same axes, plot <span class="math inline">\(y=\sin x\)</span>
+and <span class="math inline">\(y=1/2\)</span> over <span class="math inline">\([0,4\pi]\)</span>. Count the intersections, report
+their exact coordinates, and compare with the general solution families.
+Then compare <span class="math inline">\(y=\sin^2x+\cos^2x\)</span> with
+<span class="math inline">\(y=1\)</span>; explain why this is a
+different kind of equality.</p>
+<figure>
+<img alt="image" src="figures/precompiled/chapter10-03.svg"/>
+<figcaption aria-hidden="true">image</figcaption>
+</figure>
+<h3 class="unnumbered" id="investigation-6-model-crossing-times-and-units">Investigation 6:
+Model crossing times and units</h3>
+<p>For <span class="math inline">\(S(t)=2+0.8\sin(\pi t/3)\)</span>,
+construct a table every half-second over <span class="math inline">\([0,12]\)</span>. Graph the sensor output and
+horizontal threshold <span class="math inline">\(2.4\)</span>. Identify
+crossings graphically, then derive exact times. Describe why numerical
+grid resolution may miss a crossing.</p>
+<h2 id="extended-guided-workshops">Extended guided workshops</h2>
+<h3 class="unnumbered" id="workshop-a-verify-or-refute">Workshop A:
+Verify or refute</h3>
+<p>For each statement, decide whether it is an identity. If true, give a
+proof on the common domain; if false, provide an exact counterexample:
+(a) <span class="math inline">\(\sin(a+b)=\sin a+\sin b\)</span>; (b)
+<span class="math inline">\(\sec^2x-\tan^2x=1\)</span>; (c) <span class="math inline">\(\frac{\sin2x}{2\sin x}=\cos x\)</span>; (d) <span class="math inline">\(\cos^2x=(1+\cos2x)/2\)</span>. <strong>Worked
+discussion.</strong> (a) is false at <span class="math inline">\(a=b=\pi/2\)</span>. (b) follows by dividing the
+unit-circle identity by <span class="math inline">\(\cos^2x\)</span>;
+exclude <span class="math inline">\(\cos x=0\)</span>. (c) follows from
+the double-angle identity but only where <span class="math inline">\(\sin x\ne0\)</span>. (d) is the power-reduction
+identity and holds for all real <span class="math inline">\(x\)</span>.</p>
+<h3 class="unnumbered" id="workshop-b-exact-values-without-a-calculator">Workshop B: Exact
+values without a calculator</h3>
+<p>Find <span class="math inline">\(\sin75^\circ\)</span>, <span class="math inline">\(\cos15^\circ\)</span>, <span class="math inline">\(\tan15^\circ\)</span>, and <span class="math inline">\(\sin22.5^\circ\)</span>. Show the decomposition of
+each angle and explain the correct quadrant/sign. <strong>Worked
+discussion.</strong> The respective values are <span class="math inline">\((\sqrt6+\sqrt2)/4\)</span>, <span class="math inline">\((\sqrt6+\sqrt2)/4\)</span>, <span class="math inline">\(2-\sqrt3\)</span>, and <span class="math inline">\(\sqrt{2-\sqrt2}/2\)</span>.</p>
+<h3 class="unnumbered" id="workshop-c-a-complete-solution-set-audit">Workshop C: A complete
+solution-set audit</h3>
+<p>Solve <span class="math inline">\(2\cos^2x-3\cos x+1=0\)</span> on
+<span class="math inline">\([0,2\pi]\)</span>, listing endpoints
+explicitly. Compare solving by factoring with dividing by <span class="math inline">\(\cos x\)</span>. <strong>Worked
+discussion.</strong> <span class="math inline">\((2\cos x-1)(\cos
+x-1)=0\)</span>, so <span class="math inline">\(\cos x=1/2\)</span> or
+<span class="math inline">\(1\)</span>. The solutions are <span class="math inline">\(0,\pi/3,5\pi/3,2\pi\)</span>. Both <span class="math inline">\(0\)</span> and <span class="math inline">\(2\pi\)</span> belong to the closed interval.</p>
+<h3 class="unnumbered" id="workshop-d-physiological-signal-threshold">Workshop D: Physiological
+signal threshold</h3>
+<p>A simplified sensor reads <span class="math inline">\(R(t)=10+3\cos(\pi t/6)\)</span> units. Determine
+its period, find all times in <span class="math inline">\([0,24)\)</span> when <span class="math inline">\(R(t)=11.5\)</span>, and explain how the result
+changes if the sensor clock is shifted by two seconds. <strong>Worked
+discussion.</strong> The period is <span class="math inline">\(12\)</span> s. The equation becomes <span class="math inline">\(\cos(\pi t/6)=1/2\)</span>, giving <span class="math inline">\(t=2,10,14,22\)</span> s. A two-second right shift
+adds two seconds modulo the observation window.</p>
+<h3 class="unnumbered" id="workshop-e-from-identity-to-a-calculus-formula">Workshop E: From
+identity to a calculus formula</h3>
+<p>Starting from <span class="math inline">\(\sin(x+h)=\sin x\cos h+\cos
+x\sin h\)</span>, subtract <span class="math inline">\(\sin x\)</span>,
+divide by <span class="math inline">\(h\ne0\)</span>, and group terms.
+Interpret the numerical values of <span class="math inline">\(\sin
+h/h\)</span> and <span class="math inline">\((\cos h-1)/h\)</span> for
+small positive and negative <span class="math inline">\(h\)</span>.
+<strong>Worked discussion.</strong> The result is <span class="math inline">\(\sin x(\cos h-1)/h+\cos x\sin h/h\)</span>. In
+radians, the two numerical factors approach <span class="math inline">\(0\)</span> and <span class="math inline">\(1\)</span> respectively, suggesting the derivative
+of sine.</p>
+<h2 id="computational-laboratory-a-checking-identities-numerically">Computational
+Laboratory A: Checking identities numerically</h2>
+<p><strong>Goal.</strong> Compare both sides of Pythagorean and
+double-angle identities over a grid, and investigate floating-point
+error. Exact algebraic proof remains necessary.</p>
+<h3 class="unnumbered" id="r-code">R code</h3>
+<div class="code-shell"><div class="code-bar"><span>R</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a aria-hidden="true" href="#cb1-1" tabindex="-1"></a><span class="co"># Laboratory A: identities and numerical precision</span></span>
+<span id="cb1-2"><a aria-hidden="true" href="#cb1-2" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">2</span><span class="sc">*</span>pi, <span class="dv">2</span><span class="sc">*</span>pi, <span class="at">length.out =</span> <span class="dv">1001</span>)</span>
+<span id="cb1-3"><a aria-hidden="true" href="#cb1-3" tabindex="-1"></a>pythagorean_error <span class="ot">&lt;-</span> <span class="fu">sin</span>(x)<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> <span class="fu">cos</span>(x)<span class="sc">^</span><span class="dv">2</span> <span class="sc">-</span> <span class="dv">1</span></span>
+<span id="cb1-4"><a aria-hidden="true" href="#cb1-4" tabindex="-1"></a>double_angle_error <span class="ot">&lt;-</span> <span class="fu">sin</span>(<span class="dv">2</span><span class="sc">*</span>x) <span class="sc">-</span> <span class="dv">2</span><span class="sc">*</span><span class="fu">sin</span>(x)<span class="sc">*</span><span class="fu">cos</span>(x)</span>
+<span id="cb1-5"><a aria-hidden="true" href="#cb1-5" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Max Pythagorean error:"</span>, <span class="fu">max</span>(<span class="fu">abs</span>(pythagorean_error)), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb1-6"><a aria-hidden="true" href="#cb1-6" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Max double-angle error:"</span>, <span class="fu">max</span>(<span class="fu">abs</span>(double_angle_error)), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb1-7"><a aria-hidden="true" href="#cb1-7" tabindex="-1"></a><span class="fu">plot</span>(x, pythagorean_error, <span class="at">type=</span><span class="st">"l"</span>, <span class="at">col=</span><span class="st">"blue"</span>, <span class="at">xlab=</span><span class="st">"Angle (radians)"</span>, <span class="at">ylab=</span><span class="st">"Numerical difference"</span>, <span class="at">main=</span><span class="st">"Floating-point identity check"</span>)</span>
+<span id="cb1-8"><a aria-hidden="true" href="#cb1-8" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="dv">0</span>, <span class="at">lty=</span><span class="dv">2</span>)</span></code></pre></div></div>
+<h3 class="unnumbered" id="python-code">Python code</h3>
+<div class="code-shell"><div class="code-bar"><span>Python</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" href="#cb2-1" tabindex="-1"></a><span class="co"># Laboratory A: identities and numerical precision</span></span>
+<span id="cb2-2"><a aria-hidden="true" href="#cb2-2" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-3"><a aria-hidden="true" href="#cb2-3" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-4"><a aria-hidden="true" href="#cb2-4" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">2</span><span class="op">*</span>np.pi, <span class="dv">2</span><span class="op">*</span>np.pi, <span class="dv">1001</span>)</span>
+<span id="cb2-5"><a aria-hidden="true" href="#cb2-5" tabindex="-1"></a>e1 <span class="op">=</span> np.sin(x)<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> np.cos(x)<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> <span class="dv">1</span></span>
+<span id="cb2-6"><a aria-hidden="true" href="#cb2-6" tabindex="-1"></a>e2 <span class="op">=</span> np.sin(<span class="dv">2</span><span class="op">*</span>x) <span class="op">-</span> <span class="dv">2</span><span class="op">*</span>np.sin(x)<span class="op">*</span>np.cos(x)</span>
+<span id="cb2-7"><a aria-hidden="true" href="#cb2-7" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Max Pythagorean error:"</span>, np.<span class="bu">max</span>(np.<span class="bu">abs</span>(e1)))</span>
+<span id="cb2-8"><a aria-hidden="true" href="#cb2-8" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Max double-angle error:"</span>, np.<span class="bu">max</span>(np.<span class="bu">abs</span>(e2)))</span>
+<span id="cb2-9"><a aria-hidden="true" href="#cb2-9" tabindex="-1"></a>plt.plot(x, e1)</span>
+<span id="cb2-10"><a aria-hidden="true" href="#cb2-10" tabindex="-1"></a>plt.axhline(<span class="dv">0</span>, linestyle<span class="op">=</span><span class="st">"--"</span>, color<span class="op">=</span><span class="st">"black"</span>)</span>
+<span id="cb2-11"><a aria-hidden="true" href="#cb2-11" tabindex="-1"></a>plt.xlabel(<span class="st">"Angle (radians)"</span>)</span>
+<span id="cb2-12"><a aria-hidden="true" href="#cb2-12" tabindex="-1"></a>plt.ylabel(<span class="st">"Numerical difference"</span>)</span>
+<span id="cb2-13"><a aria-hidden="true" href="#cb2-13" tabindex="-1"></a>plt.title(<span class="st">"Floating-point identity check"</span>)</span>
+<span id="cb2-14"><a aria-hidden="true" href="#cb2-14" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb2-15"><a aria-hidden="true" href="#cb2-15" tabindex="-1"></a>plt.savefig(<span class="st">"labA_python.png"</span>, dpi<span class="op">=</span><span class="dv">160</span>)</span>
+<span id="cb2-16"><a aria-hidden="true" href="#cb2-16" tabindex="-1"></a>plt.close()</span></code></pre></div></div>
+<p><strong>Interpretation.</strong> Explain why a maximum discrepancy
+near machine precision is expected and why numerical agreement at
+finitely many inputs is not a proof.</p>
+<h2 id="computational-laboratory-b-solving-trigonometric-equations">Computational
+Laboratory B: Solving trigonometric equations</h2>
+<p><strong>Goal.</strong> Plot a trigonometric function and a target
+threshold; compare grid-based approximations with exact roots. The
+bisection routine brackets roots only where the function changes sign,
+so tangent roots and even-multiplicity roots need additional care.</p>
+<h3 class="unnumbered" id="r-code-1">R code</h3>
+<div class="code-shell"><div class="code-bar"><span>R</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a aria-hidden="true" href="#cb3-1" tabindex="-1"></a><span class="co"># Laboratory B: solving sin(x) = 1/2 numerically</span></span>
+<span id="cb3-2"><a aria-hidden="true" href="#cb3-2" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x) <span class="fu">sin</span>(x) <span class="sc">-</span> <span class="fl">0.5</span></span>
+<span id="cb3-3"><a aria-hidden="true" href="#cb3-3" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">4</span><span class="sc">*</span>pi, <span class="at">length.out=</span><span class="dv">2001</span>)</span>
+<span id="cb3-4"><a aria-hidden="true" href="#cb3-4" tabindex="-1"></a><span class="fu">plot</span>(x, <span class="fu">sin</span>(x), <span class="at">type=</span><span class="st">"l"</span>, <span class="at">col=</span><span class="st">"blue"</span>, <span class="at">xlab=</span><span class="st">"x (radians)"</span>, <span class="at">ylab=</span><span class="st">"y"</span>, <span class="at">main=</span><span class="st">"Sine and target threshold"</span>)</span>
+<span id="cb3-5"><a aria-hidden="true" href="#cb3-5" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="fl">0.5</span>, <span class="at">col=</span><span class="st">"red"</span>, <span class="at">lty=</span><span class="dv">2</span>)</span>
+<span id="cb3-6"><a aria-hidden="true" href="#cb3-6" tabindex="-1"></a>roots <span class="ot">&lt;-</span> <span class="fu">c</span>(pi<span class="sc">/</span><span class="dv">6</span>, <span class="dv">5</span><span class="sc">*</span>pi<span class="sc">/</span><span class="dv">6</span>, <span class="dv">13</span><span class="sc">*</span>pi<span class="sc">/</span><span class="dv">6</span>, <span class="dv">17</span><span class="sc">*</span>pi<span class="sc">/</span><span class="dv">6</span>)</span>
+<span id="cb3-7"><a aria-hidden="true" href="#cb3-7" tabindex="-1"></a><span class="fu">points</span>(roots, <span class="fu">sin</span>(roots), <span class="at">pch=</span><span class="dv">19</span>)</span>
+<span id="cb3-8"><a aria-hidden="true" href="#cb3-8" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">data.frame</span>(<span class="at">root=</span>roots, <span class="at">residual=</span><span class="fu">f</span>(roots)))</span></code></pre></div></div>
+<h3 class="unnumbered" id="python-code-1">Python code</h3>
+<div class="code-shell"><div class="code-bar"><span>Python</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" href="#cb4-1" tabindex="-1"></a><span class="co"># Laboratory B: solving sin(x) = 1/2 numerically</span></span>
+<span id="cb4-2"><a aria-hidden="true" href="#cb4-2" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb4-3"><a aria-hidden="true" href="#cb4-3" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb4-4"><a aria-hidden="true" href="#cb4-4" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">4</span><span class="op">*</span>np.pi, <span class="dv">2001</span>)</span>
+<span id="cb4-5"><a aria-hidden="true" href="#cb4-5" tabindex="-1"></a>roots <span class="op">=</span> np.array([np.pi<span class="op">/</span><span class="dv">6</span>, <span class="dv">5</span><span class="op">*</span>np.pi<span class="op">/</span><span class="dv">6</span>, <span class="dv">13</span><span class="op">*</span>np.pi<span class="op">/</span><span class="dv">6</span>, <span class="dv">17</span><span class="op">*</span>np.pi<span class="op">/</span><span class="dv">6</span>])</span>
+<span id="cb4-6"><a aria-hidden="true" href="#cb4-6" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Root and residual:"</span>)</span>
+<span id="cb4-7"><a aria-hidden="true" href="#cb4-7" tabindex="-1"></a><span class="cf">for</span> r <span class="kw">in</span> roots:</span>
+<span id="cb4-8"><a aria-hidden="true" href="#cb4-8" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>r<span class="sc">:.9f}</span><span class="ss">  </span><span class="sc">{</span>np<span class="sc">.</span>sin(r)<span class="op">-</span><span class="fl">0.5</span><span class="sc">:.2e}</span><span class="ss">"</span>)</span>
+<span id="cb4-9"><a aria-hidden="true" href="#cb4-9" tabindex="-1"></a>plt.plot(x, np.sin(x), label<span class="op">=</span><span class="st">"sin(x)"</span>)</span>
+<span id="cb4-10"><a aria-hidden="true" href="#cb4-10" tabindex="-1"></a>plt.axhline(<span class="fl">0.5</span>, color<span class="op">=</span><span class="st">"red"</span>, linestyle<span class="op">=</span><span class="st">"--"</span>, label<span class="op">=</span><span class="st">"target"</span>)</span>
+<span id="cb4-11"><a aria-hidden="true" href="#cb4-11" tabindex="-1"></a>plt.scatter(roots, np.sin(roots), color<span class="op">=</span><span class="st">"black"</span>)</span>
+<span id="cb4-12"><a aria-hidden="true" href="#cb4-12" tabindex="-1"></a>plt.xlabel(<span class="st">"x (radians)"</span>)</span>
+<span id="cb4-13"><a aria-hidden="true" href="#cb4-13" tabindex="-1"></a>plt.legend()</span>
+<span id="cb4-14"><a aria-hidden="true" href="#cb4-14" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb4-15"><a aria-hidden="true" href="#cb4-15" tabindex="-1"></a>plt.savefig(<span class="st">"labB_python.png"</span>, dpi<span class="op">=</span><span class="dv">160</span>)</span>
+<span id="cb4-16"><a aria-hidden="true" href="#cb4-16" tabindex="-1"></a>plt.close()</span></code></pre></div></div>
+<p><strong>Interpretation.</strong> Compare numerical roots with <span class="math inline">\(\pi/6,5\pi/6,13\pi/6,17\pi/6\)</span> for <span class="math inline">\(\sin x=1/2\)</span> on <span class="math inline">\([0,4\pi]\)</span>.</p>
+<h2 id="computational-laboratory-c-periodic-sensor-thresholds">Computational
+Laboratory C: Periodic sensor thresholds</h2>
+<p><strong>Goal.</strong> Simulate a simplified periodic measurement,
+mark its threshold crossings, and verify them algebraically. All
+quantities are illustrative, not clinical recommendations.</p>
+<h3 class="unnumbered" id="r-code-2">R code</h3>
+<div class="code-shell"><div class="code-bar"><span>R</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a aria-hidden="true" href="#cb5-1" tabindex="-1"></a><span class="co"># Laboratory C: periodic sensor and threshold times</span></span>
+<span id="cb5-2"><a aria-hidden="true" href="#cb5-2" tabindex="-1"></a>sensor <span class="ot">&lt;-</span> <span class="cf">function</span>(t) <span class="dv">2</span> <span class="sc">+</span> <span class="fl">0.8</span><span class="sc">*</span><span class="fu">sin</span>(pi<span class="sc">*</span>t<span class="sc">/</span><span class="dv">3</span>)</span>
+<span id="cb5-3"><a aria-hidden="true" href="#cb5-3" tabindex="-1"></a>t <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">12</span>, <span class="at">length.out=</span><span class="dv">1201</span>)</span>
+<span id="cb5-4"><a aria-hidden="true" href="#cb5-4" tabindex="-1"></a>crossings <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.5</span>, <span class="fl">2.5</span>, <span class="fl">6.5</span>, <span class="fl">8.5</span>)</span>
+<span id="cb5-5"><a aria-hidden="true" href="#cb5-5" tabindex="-1"></a><span class="fu">plot</span>(t, <span class="fu">sensor</span>(t), <span class="at">type=</span><span class="st">"l"</span>, <span class="at">col=</span><span class="st">"blue"</span>, <span class="at">xlab=</span><span class="st">"Time (seconds)"</span>, <span class="at">ylab=</span><span class="st">"Sensor units"</span>, <span class="at">main=</span><span class="st">"Illustrative periodic sensor"</span>)</span>
+<span id="cb5-6"><a aria-hidden="true" href="#cb5-6" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="fl">2.4</span>, <span class="at">col=</span><span class="st">"red"</span>, <span class="at">lty=</span><span class="dv">2</span>)</span>
+<span id="cb5-7"><a aria-hidden="true" href="#cb5-7" tabindex="-1"></a><span class="fu">points</span>(crossings, <span class="fu">sensor</span>(crossings), <span class="at">pch=</span><span class="dv">19</span>)</span>
+<span id="cb5-8"><a aria-hidden="true" href="#cb5-8" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">data.frame</span>(<span class="at">time=</span>crossings, <span class="at">sensor=</span><span class="fu">sensor</span>(crossings)))</span></code></pre></div></div>
+<h3 class="unnumbered" id="python-code-2">Python code</h3>
+<div class="code-shell"><div class="code-bar"><span>Python</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a aria-hidden="true" href="#cb6-1" tabindex="-1"></a><span class="co"># Laboratory C: periodic sensor and threshold times</span></span>
+<span id="cb6-2"><a aria-hidden="true" href="#cb6-2" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb6-3"><a aria-hidden="true" href="#cb6-3" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb6-4"><a aria-hidden="true" href="#cb6-4" tabindex="-1"></a><span class="kw">def</span> sensor(t):</span>
+<span id="cb6-5"><a aria-hidden="true" href="#cb6-5" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">2</span> <span class="op">+</span> <span class="fl">0.8</span><span class="op">*</span>np.sin(np.pi<span class="op">*</span>t<span class="op">/</span><span class="dv">3</span>)</span>
+<span id="cb6-6"><a aria-hidden="true" href="#cb6-6" tabindex="-1"></a>t <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">12</span>, <span class="dv">1201</span>)</span>
+<span id="cb6-7"><a aria-hidden="true" href="#cb6-7" tabindex="-1"></a>crossings <span class="op">=</span> np.array([<span class="fl">0.5</span>, <span class="fl">2.5</span>, <span class="fl">6.5</span>, <span class="fl">8.5</span>])</span>
+<span id="cb6-8"><a aria-hidden="true" href="#cb6-8" tabindex="-1"></a><span class="cf">for</span> time <span class="kw">in</span> crossings:</span>
+<span id="cb6-9"><a aria-hidden="true" href="#cb6-9" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"t=</span><span class="sc">{</span>time<span class="sc">:.1f}</span><span class="ss"> s, sensor=</span><span class="sc">{</span>sensor(time)<span class="sc">:.3f}</span><span class="ss">"</span>)</span>
+<span id="cb6-10"><a aria-hidden="true" href="#cb6-10" tabindex="-1"></a>plt.plot(t, sensor(t), label<span class="op">=</span><span class="st">"sensor"</span>)</span>
+<span id="cb6-11"><a aria-hidden="true" href="#cb6-11" tabindex="-1"></a>plt.axhline(<span class="fl">2.4</span>, color<span class="op">=</span><span class="st">"red"</span>, linestyle<span class="op">=</span><span class="st">"--"</span>, label<span class="op">=</span><span class="st">"threshold"</span>)</span>
+<span id="cb6-12"><a aria-hidden="true" href="#cb6-12" tabindex="-1"></a>plt.scatter(crossings, sensor(crossings), color<span class="op">=</span><span class="st">"black"</span>)</span>
+<span id="cb6-13"><a aria-hidden="true" href="#cb6-13" tabindex="-1"></a>plt.xlabel(<span class="st">"Time (seconds)"</span>)</span>
+<span id="cb6-14"><a aria-hidden="true" href="#cb6-14" tabindex="-1"></a>plt.ylabel(<span class="st">"Sensor units"</span>)</span>
+<span id="cb6-15"><a aria-hidden="true" href="#cb6-15" tabindex="-1"></a>plt.legend()</span>
+<span id="cb6-16"><a aria-hidden="true" href="#cb6-16" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb6-17"><a aria-hidden="true" href="#cb6-17" tabindex="-1"></a>plt.savefig(<span class="st">"labC_python.png"</span>, dpi<span class="op">=</span><span class="dv">160</span>)</span>
+<span id="cb6-18"><a aria-hidden="true" href="#cb6-18" tabindex="-1"></a>plt.close()</span></code></pre></div></div>
+<p><strong>Interpretation.</strong> Describe the period, units,
+threshold, and the limitations of a noiseless sinusoidal model.</p>
+<h2 id="additional-guided-practice-a-structured-problem-solving-clinic">Additional
+guided practice: a structured problem-solving clinic</h2>
+<h3 class="unnumbered" id="clinic-1-what-does-a-complete-proof-require">Clinic 1: What does a
+complete proof require?</h3>
+<p>Consider <span class="math inline">\(\frac{\sec x-\cos x}{\tan
+x}=\sin x\)</span>. A first attempt might substitute numerical angles
+and observe agreement. A valid proof instead begins with the left side,
+rewrites <span class="math inline">\(\sec x-\cos x=(1-\cos^2x)/\cos
+x=\sin^2x/\cos x\)</span>, and divides by <span class="math inline">\(\tan x=\sin x/\cos x\)</span> to obtain <span class="math inline">\(\sin x\)</span>. This proof is valid only when
+<span class="math inline">\(\sin x\ne0\)</span> and <span class="math inline">\(\cos x\ne0\)</span>, which are precisely the
+restrictions required by the original left side. The right side is
+defined everywhere, but the identity is asserted only on the common
+domain.</p>
+<p><strong>Try it.</strong> Verify <span class="math inline">\(\frac{\csc x-\sin x}{\cot x}=\cos x\)</span>.
+Before simplifying, write down all excluded angles. Then ask whether the
+simplified expression extends beyond the original domain.</p>
+<h3 class="unnumbered" id="clinic-2-choosing-a-useful-identity">Clinic
+2: Choosing a useful identity</h3>
+<p>A common difficulty is deciding which identity to apply first. When
+an expression contains <span class="math inline">\(\sin^2x+\cos^2x\)</span>, use the unit-circle
+identity. When it contains <span class="math inline">\(\sin x\cos
+x\)</span>, consider <span class="math inline">\(\sin2x\)</span>. When a
+fraction contains <span class="math inline">\(1-\cos x\)</span> or <span class="math inline">\(1+\cos x\)</span>, try a conjugate. When an angle
+is a sum of special angles, use an addition formula. When a
+trigonometric equation contains a square, factor as an algebraic
+quadratic before using the unit circle.</p>
+<p><strong>Try it.</strong> For each expression, name the first identity
+you would use, then simplify: (a) <span class="math inline">\(2\sin
+x\cos x\)</span>; (b) <span class="math inline">\(1-2\sin^2x\)</span>;
+(c) <span class="math inline">\(\sin(\pi/3+\pi/4)\)</span>; (d) <span class="math inline">\(\frac{1-\cos^2x}{1+\cos x}\)</span>. State the
+restrictions for (d).</p>
+<h3 class="unnumbered" id="clinic-3-counting-solutions-without-missing-endpoints">Clinic 3:
+Counting solutions without missing endpoints</h3>
+<p>Suppose <span class="math inline">\(\sin(2x)=1/2\)</span> on <span class="math inline">\([0,2\pi]\)</span>. Set <span class="math inline">\(u=2x\)</span>, so <span class="math inline">\(u\in[0,4\pi]\)</span>. Within this interval, <span class="math inline">\(u=\pi/6,5\pi/6,13\pi/6,17\pi/6\)</span>. Therefore
+<span class="math inline">\(x=\pi/12,5\pi/12,13\pi/12,17\pi/12\)</span>.
+Simply solving for <span class="math inline">\(u\)</span> on <span class="math inline">\([0,2\pi]\)</span> would miss half the answers. The
+substitution must transform the interval as well as the equation.</p>
+<p><strong>Try it.</strong> Solve <span class="math inline">\(\cos(3x)=1/2\)</span> on <span class="math inline">\([0,2\pi)\)</span> by first solving for <span class="math inline">\(u=3x\)</span> on <span class="math inline">\([0,6\pi)\)</span>. Verify the number of roots with
+a graph.</p>
+<h3 class="unnumbered" id="clinic-4-exact-answers-versus-approximate-answers">Clinic 4: Exact
+answers versus approximate answers</h3>
+<p>Exact answers such as <span class="math inline">\(\pi/6\)</span>
+preserve mathematical structure. A decimal approximation such as <span class="math inline">\(0.523599\)</span> can be useful for a time
+measurement, but it is not identical to the exact number. In
+applications, state the input units and round only after solving. If the
+model is approximate, do not report excessive precision merely because
+the calculator supplies many digits.</p>
+<p><strong>Try it.</strong> A sensor has model <span class="math inline">\(S(t)=3+\sin(\pi t/4)\)</span>, with <span class="math inline">\(t\)</span> measured in seconds. Find every
+crossing of <span class="math inline">\(S(t)=3.5\)</span> in <span class="math inline">\([0,16)\)</span>. Report exact times and then
+approximate to the nearest hundredth of a second. Explain why these are
+model-based crossing times.</p>
+<h2 id="collaborative-investigation-build-and-critique-a-periodic-model">Collaborative
+investigation: build and critique a periodic model</h2>
+<p>In groups, choose a simplified periodic context (a rotating marker, a
+laboratory oscillator, or a repeated temperature cycle). Specify a
+baseline, amplitude, and period with units. Construct a sinusoidal model
+and select a threshold that is neither the maximum nor the minimum.
+Solve the threshold equation exactly if possible, then plot the model
+and confirm the crossing times. Finally, critique the model: Which
+assumptions make the sinusoidal form plausible? What kinds of noise,
+drift, or asymmetry would make the prediction less reliable? Submit the
+equation, a labeled graph, a complete solution set on a specified
+interval, and a short paragraph distinguishing exact mathematics from
+assumptions about the real-world process.</p>
+<h2 id="chapter-summary-and-formula-reference">Chapter summary and
+formula reference</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Concept</th>
+<th style="text-align: left;">Formula or principle</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Pythagorean</td>
+<td style="text-align: left;"><span class="math inline">\(\sin^2x+\cos^2x=1\)</span>; <span class="math inline">\(1+\tan^2x=\sec^2x\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Reciprocal</td>
+<td style="text-align: left;"><span class="math inline">\(\sec x=1/\cos
+x\)</span>, <span class="math inline">\(\csc x=1/\sin x\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Sine addition</td>
+<td style="text-align: left;"><span class="math inline">\(\sin(a\pm
+b)=\sin a\cos b\pm\cos a\sin b\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Cosine addition</td>
+<td style="text-align: left;"><span class="math inline">\(\cos(a\pm
+b)=\cos a\cos b\mp\sin a\sin b\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Double angle</td>
+<td style="text-align: left;"><span class="math inline">\(\sin2x=2\sin
+x\cos x\)</span>; <span class="math inline">\(\cos2x=1-2\sin^2x\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Power reduction</td>
+<td style="text-align: left;"><span class="math inline">\(\sin^2x=(1-\cos2x)/2\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Equation solving</td>
+<td style="text-align: left;">Find reference angle, quadrants, period,
+interval, and verify</td>
+</tr>
+</tbody>
+</table>
+<h2 id="chapter-review-exercises">Chapter review exercises</h2>
+<p><strong>Part I: Conceptual reasoning.</strong> Provide explanations
+and domain restrictions.</p>
+<ol type="1">
+<li><p>Explain why testing an identity at one hundred angles does not
+prove it.</p></li>
+<li><p>State the domain of <span class="math inline">\(\tan x=\sin
+x/\cos x\)</span>.</p></li>
+<li><p>Give an example of an identity and an equation that look similar
+but have different meanings.</p></li>
+<li><p>Explain why <span class="math inline">\(\sqrt{\cos^2x}=|\cos
+x|\)</span>, not necessarily <span class="math inline">\(\cos
+x\)</span>.</p></li>
+<li><p>Describe how a periodic solution family differs from a principal
+inverse-trigonometric value.</p></li>
+<li><p>Explain why dividing <span class="math inline">\(\sin x\cos
+x=0\)</span> by <span class="math inline">\(\sin x\)</span> can lose
+solutions.</p></li>
+</ol>
+<p><strong>Part II: Identities and exact values.</strong></p>
+<ol type="1">
+<li><p>Simplify <span class="math inline">\((1-\sin^2x)/\cos x\)</span>
+on its domain.</p></li>
+<li><p>Prove <span class="math inline">\((\sec x-\cos x)/\sin x=\sin
+x/\cos x\)</span> on the common domain.</p></li>
+<li><p>Evaluate <span class="math inline">\(\sin(\pi/12)\)</span>
+exactly.</p></li>
+<li><p>Evaluate <span class="math inline">\(\cos(5\pi/12)\)</span>
+exactly.</p></li>
+<li><p>Evaluate <span class="math inline">\(\tan(5\pi/12)\)</span>
+exactly.</p></li>
+<li><p>Find <span class="math inline">\(\sin2x\)</span> when <span class="math inline">\(\sin x=5/13\)</span> and <span class="math inline">\(x\)</span> is in quadrant II.</p></li>
+<li><p>Find <span class="math inline">\(\cos2x\)</span> when <span class="math inline">\(\cos x=3/5\)</span> and <span class="math inline">\(x\)</span> is in quadrant IV.</p></li>
+<li><p>Find <span class="math inline">\(\cos(\pi/8)\)</span> using a
+half-angle formula.</p></li>
+<li><p>Rewrite <span class="math inline">\(\sin5x\cos2x\)</span> as a
+sum.</p></li>
+<li><p>Rewrite <span class="math inline">\(\sin^2(3x)\)</span> in terms
+of a cosine.</p></li>
+<li><p>Prove <span class="math inline">\(\frac{1}{1+\cos
+x}+\frac{1}{1-\cos x}=2\csc^2x\)</span> on the common domain.</p></li>
+<li><p>Prove <span class="math inline">\(\tan x+\cot x=\sec x\csc
+x\)</span> on the common domain.</p></li>
+</ol>
+<p><strong>Part III: Solve exactly.</strong></p>
+<ol type="1">
+<li><p>Solve <span class="math inline">\(\sin x=-\sqrt2/2\)</span> on
+<span class="math inline">\([0,2\pi)\)</span>.</p></li>
+<li><p>Solve <span class="math inline">\(\cos x=\sqrt3/2\)</span> on
+<span class="math inline">\([-\pi,\pi]\)</span>.</p></li>
+<li><p>Solve <span class="math inline">\(\tan x=-1\)</span> for all real
+<span class="math inline">\(x\)</span>.</p></li>
+<li><p>Solve <span class="math inline">\(2\sin^2x+\sin x-1=0\)</span> on
+<span class="math inline">\([0,2\pi)\)</span>.</p></li>
+<li><p>Solve <span class="math inline">\(2\cos^2x-\cos x-1=0\)</span> on
+<span class="math inline">\([0,2\pi)\)</span>.</p></li>
+<li><p>Solve <span class="math inline">\(\sin2x=0\)</span> on <span class="math inline">\([0,2\pi)\)</span>.</p></li>
+<li><p>Solve <span class="math inline">\(\cos3x=1\)</span> on <span class="math inline">\([0,2\pi)\)</span>.</p></li>
+<li><p>Solve <span class="math inline">\(\sin x\cos x=0\)</span> on
+<span class="math inline">\([0,2\pi)\)</span> without dividing by either
+factor.</p></li>
+</ol>
+<p><strong>Part IV: Modeling and calculus readiness.</strong></p>
+<ol type="1">
+<li><p>For <span class="math inline">\(S(t)=4+2\sin(\pi t/5)\)</span>,
+find all <span class="math inline">\(t\in[0,20)\)</span> with <span class="math inline">\(S(t)=5\)</span>.</p></li>
+<li><p>For <span class="math inline">\(H(t)=8+3\cos(\pi t/4)\)</span>,
+find all <span class="math inline">\(t\in[0,16)\)</span> with <span class="math inline">\(H(t)=9.5\)</span>.</p></li>
+<li><p>Expand <span class="math inline">\([\sin(x+h)-\sin x]/h\)</span>
+using an addition identity.</p></li>
+<li><p>Evaluate <span class="math inline">\(\sin h/h\)</span> for <span class="math inline">\(h=0.1,0.01,0.001\)</span> and explain the role of
+radians.</p></li>
+</ol>
+<h2 id="calculus-readiness-checkpoint">Calculus-readiness
+checkpoint</h2>
+<p>Without using derivative rules, rewrite <span class="math inline">\([\cos(x+h)-\cos x]/h\)</span> as a sum of two
+terms involving <span class="math inline">\(\sin h/h\)</span> and <span class="math inline">\((\cos h-1)/h\)</span>. Explain how the
+trigonometric identities developed in this chapter make this possible.
+Then discuss why a graphical or computational experiment suggests, but
+does not establish, the limiting result.</p>
+<h2 class="unnumbered" id="looking-ahead">Looking ahead</h2>
+<p>Chapter 11 applies trigonometry to triangles, navigation, periodic
+processes, and real-world modeling. The identity and equation techniques
+here will also reappear in single-variable calculus, particularly when
+differentiating and integrating trigonometric functions.</p>
+<h2 id="extended-application-power-in-an-oscillating-signal">Extended
+application: Power in an oscillating signal</h2>
+<p>A normalized oscillating signal has instantaneous squared amplitude
+given by the square of its sine component. The quantities in this
+investigation are illustrative rather than measured observations.</p>
+<h3 id="formulating-the-mathematical-model">Formulating the mathematical
+model</h3>
+<p>The proposed relationship is <span class="math display">\[P(\theta)=\sin^2\theta.\]</span> Before
+calculating, identify the input and output, their units, and the
+interval on which the model is being studied. Distinguish the
+mathematical domain from the practical domain. The numerical study uses
+inputs from <span class="math inline">\(0\)</span> to <span class="math inline">\(6.28\)</span>.</p>
+<blockquote class="example">
+<p><strong>Example 17: Analytical investigation.</strong> Use a
+double-angle identity to rewrite <span class="math inline">\(P\)</span>.
+Solve <span class="math inline">\(P=1/4\)</span> on <span class="math inline">\([0,2\pi)\)</span>.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> <span class="math inline">\(P=(1-\cos 2\theta)/2\)</span>. Solutions are <span class="math inline">\(\pi/6,5\pi/6,7\pi/6,11\pi/6\)</span>.</p>
+</blockquote>
+<h3 id="connecting-numerical-and-graphical-representations">Connecting
+numerical and graphical representations</h3>
+<table>
+<caption>Selected predictions from the illustrative model. Values are
+rounded for display.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Phase (rad)</th>
+<th style="text-align: right;">Squared amplitude</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1.57</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3.14</td>
+<td style="text-align: right;">4.278e-26</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4.71</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">6.28</td>
+<td style="text-align: right;">1.711e-25</td>
+</tr>
+</tbody>
+</table>
+<figure>
+<img alt="Model predictions over the stated investigation interval. The graph represents a mathematical model, not observed data." src="figures/ch10/applied_project.svg" style="width:90.0%"/>
+<figcaption aria-hidden="true">Model predictions over the stated
+investigation interval. The graph represents a mathematical model, not
+observed data.</figcaption>
+</figure>
+<p><strong>Interpretation.</strong> Compare the tabulated values with
+the graph. Identify the intervals over which the output increases or
+decreases, and distinguish a sampled extremum from an exact analytical
+extremum. Explain whether interpolation and extrapolation have the same
+justification in this setting.</p>
+<h3 id="r-implementation">R implementation</h3>
+<p>The following standalone script defines the model, generates
+predictions, and draws a labeled graph. Read the formula before running
+the code. The sampled range is a numerical diagnostic, not a proof of
+the exact range.</p>
+<div class="code-shell"><div class="code-bar"><span>R</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a aria-hidden="true" href="#cb7-1" tabindex="-1"></a><span class="co"># Applied investigation: Power in an oscillating signal</span></span>
+<span id="cb7-2"><a aria-hidden="true" href="#cb7-2" tabindex="-1"></a><span class="co"># 1. Define the input domain and model</span></span>
+<span id="cb7-3"><a aria-hidden="true" href="#cb7-3" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="fl">6.28318530718</span>, <span class="at">length.out =</span> <span class="dv">301</span>)</span>
+<span id="cb7-4"><a aria-hidden="true" href="#cb7-4" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">sin</span>(x)<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb7-5"><a aria-hidden="true" href="#cb7-5" tabindex="-1"></a></span>
+<span id="cb7-6"><a aria-hidden="true" href="#cb7-6" tabindex="-1"></a><span class="co"># 2. Inspect numerical predictions</span></span>
+<span id="cb7-7"><a aria-hidden="true" href="#cb7-7" tabindex="-1"></a>idx <span class="ot">&lt;-</span> <span class="fu">unique</span>(<span class="fu">round</span>(<span class="fu">seq</span>(<span class="dv">1</span>, <span class="fu">length</span>(x), <span class="at">length.out =</span> <span class="dv">5</span>)))</span>
+<span id="cb7-8"><a aria-hidden="true" href="#cb7-8" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">data.frame</span>(<span class="at">input =</span> x[idx], <span class="at">output =</span> y[idx]))</span>
+<span id="cb7-9"><a aria-hidden="true" href="#cb7-9" tabindex="-1"></a></span>
+<span id="cb7-10"><a aria-hidden="true" href="#cb7-10" tabindex="-1"></a><span class="co"># 3. Visualize the model with labeled axes</span></span>
+<span id="cb7-11"><a aria-hidden="true" href="#cb7-11" tabindex="-1"></a><span class="fu">plot</span>(x, y, <span class="at">type =</span> <span class="st">"l"</span>, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">"#176B87"</span>,</span>
+<span id="cb7-12"><a aria-hidden="true" href="#cb7-12" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Phase (rad)"</span>, <span class="at">ylab =</span> <span class="st">"Squared amplitude"</span>)</span>
+<span id="cb7-13"><a aria-hidden="true" href="#cb7-13" tabindex="-1"></a><span class="fu">grid</span>()</span>
+<span id="cb7-14"><a aria-hidden="true" href="#cb7-14" tabindex="-1"></a></span>
+<span id="cb7-15"><a aria-hidden="true" href="#cb7-15" tabindex="-1"></a><span class="co"># 4. Check the sampled output range</span></span>
+<span id="cb7-16"><a aria-hidden="true" href="#cb7-16" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">range</span>(y))</span></code></pre></div></div>
+<h3 id="python-implementation">Python implementation</h3>
+<p>Repeat the same investigation using NumPy arrays and Matplotlib.
+Compare the printed predictions with the R output, allowing for
+rounding.</p>
+<div class="code-shell"><div class="code-bar"><span>Python</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a aria-hidden="true" href="#cb8-1" tabindex="-1"></a><span class="co"># Applied investigation: Power in an oscillating signal</span></span>
+<span id="cb8-2"><a aria-hidden="true" href="#cb8-2" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb8-3"><a aria-hidden="true" href="#cb8-3" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb8-4"><a aria-hidden="true" href="#cb8-4" tabindex="-1"></a></span>
+<span id="cb8-5"><a aria-hidden="true" href="#cb8-5" tabindex="-1"></a><span class="co"># 1. Define the input domain and model</span></span>
+<span id="cb8-6"><a aria-hidden="true" href="#cb8-6" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="fl">6.28318530718</span>, <span class="dv">301</span>)</span>
+<span id="cb8-7"><a aria-hidden="true" href="#cb8-7" tabindex="-1"></a>y <span class="op">=</span> np.sin(x)<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb8-8"><a aria-hidden="true" href="#cb8-8" tabindex="-1"></a></span>
+<span id="cb8-9"><a aria-hidden="true" href="#cb8-9" tabindex="-1"></a><span class="co"># 2. Inspect numerical predictions</span></span>
+<span id="cb8-10"><a aria-hidden="true" href="#cb8-10" tabindex="-1"></a>idx <span class="op">=</span> np.unique(np.linspace(<span class="dv">0</span>, <span class="bu">len</span>(x)<span class="op">-</span><span class="dv">1</span>, <span class="dv">5</span>).<span class="bu">round</span>().astype(<span class="bu">int</span>))</span>
+<span id="cb8-11"><a aria-hidden="true" href="#cb8-11" tabindex="-1"></a><span class="bu">print</span>(np.column_stack((x[idx], y[idx])))</span>
+<span id="cb8-12"><a aria-hidden="true" href="#cb8-12" tabindex="-1"></a></span>
+<span id="cb8-13"><a aria-hidden="true" href="#cb8-13" tabindex="-1"></a><span class="co"># 3. Visualize the model with labeled axes</span></span>
+<span id="cb8-14"><a aria-hidden="true" href="#cb8-14" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="fl">3.6</span>))</span>
+<span id="cb8-15"><a aria-hidden="true" href="#cb8-15" tabindex="-1"></a>ax.plot(x, y, <span class="st">"-"</span>, color<span class="op">=</span><span class="st">"#176B87"</span>, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb8-16"><a aria-hidden="true" href="#cb8-16" tabindex="-1"></a>ax.<span class="bu">set</span>(xlabel<span class="op">=</span><span class="st">"Phase (rad)"</span>, ylabel<span class="op">=</span><span class="st">"Squared amplitude"</span>)</span>
+<span id="cb8-17"><a aria-hidden="true" href="#cb8-17" tabindex="-1"></a>ax.grid(alpha<span class="op">=</span><span class="fl">0.22</span>)</span>
+<span id="cb8-18"><a aria-hidden="true" href="#cb8-18" tabindex="-1"></a>ax.spines[[<span class="st">"top"</span>, <span class="st">"right"</span>]].set_visible(<span class="va">False</span>)</span>
+<span id="cb8-19"><a aria-hidden="true" href="#cb8-19" tabindex="-1"></a>fig.tight_layout()</span>
+<span id="cb8-20"><a aria-hidden="true" href="#cb8-20" tabindex="-1"></a>plt.show()</span>
+<span id="cb8-21"><a aria-hidden="true" href="#cb8-21" tabindex="-1"></a></span>
+<span id="cb8-22"><a aria-hidden="true" href="#cb8-22" tabindex="-1"></a><span class="co"># 4. Check the sampled output range</span></span>
+<span id="cb8-23"><a aria-hidden="true" href="#cb8-23" tabindex="-1"></a><span class="bu">print</span>(np.<span class="bu">min</span>(y), np.<span class="bu">max</span>(y))</span></code></pre></div></div>
+<h3 id="guided-practice-checking-the-model">Guided practice: checking
+the model</h3>
+<ol type="1">
+<li><p>Calculate the outputs at the two endpoints by hand. Compare them
+with the numerical table.</p></li>
+<li><p>Select an interior input not listed in the table. Predict the
+output before evaluating it in either language.</p></li>
+<li><p>Explain the meaning of the difference between the two endpoint
+outputs, including units. If appropriate, calculate the average rate of
+change.</p></li>
+<li><p>Identify a physical assumption of the model and describe a
+circumstance in which it would fail.</p></li>
+</ol>
+<h2 id="chapter-project-investigating-power-in-an-oscillating-signal">Chapter
+project: investigating Power in an oscillating signal</h2>
+<p>Prepare a short technical report for a reader who has not studied the
+model. Use the preceding case as a starting point, but develop your own
+investigation rather than merely reproducing the worked example.</p>
+<ol type="1">
+<li><p>State a quantitative question that can be answered using the
+model. Define all variables, units, and restrictions.</p></li>
+<li><p>Modify one meaningful numerical parameter in the formula. Explain
+what the change represents in the original context. Derive the revised
+formula and predict the direction of change before computing.</p></li>
+<li><p>Compare the original and revised models at five common admissible
+inputs. Present a labeled table and explain the largest difference in
+the table.</p></li>
+<li><p>Produce a graph containing both models on the same axes. Use a
+legend and distinguish the curves with line styles or markers. Explain
+the shape and any intersections.</p></li>
+<li><p>Solve your quantitative question algebraically where possible.
+Verify the result using R and Python; report any differences due to
+numerical precision.</p></li>
+<li><p>Discuss at least two limitations. Describe what measurements
+would be needed to assess the model in practice. Do not present
+simulated predictions as empirical evidence.</p></li>
+</ol>
+<h3 class="unnumbered" id="project-deliverables-and-assessment">Project
+deliverables and assessment</h3>
+<p>Submit a two- to three-page report, the two runnable scripts, and the
+labeled figure. The report should stand on its own without requiring the
+reader to inspect the code.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Criterion</th>
+<th style="text-align: right;">Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Mathematical formulation and domain</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Analytical reasoning and verification</td>
+<td style="text-align: right;">25</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Reproducible R and Python
+computations</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Graph and table quality</td>
+<td style="text-align: right;">15</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Interpretation and limitations</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Total</td>
+<td style="text-align: right;">100</td>
+</tr>
+</tbody>
+</table>
+<h2>Companion scripts</h2><p><a download="" href="code/ch10/applied_project.R">applied_project.R</a></p><p><a download="" href="code/ch10/applied_project.py">applied_project.py</a></p><p><a download="" href="code/ch10/labA.R">labA.R</a></p><p><a download="" href="code/ch10/labA.py">labA.py</a></p><p><a download="" href="code/ch10/labB.R">labB.R</a></p><p><a download="" href="code/ch10/labB.py">labB.py</a></p><p><a download="" href="code/ch10/labC.R">labC.R</a></p><p><a download="" href="code/ch10/labC.py">labC.py</a></p><footer><a href="chapter09.html">← Previous</a><a href="chapter11.html">Next →</a></footer><section class="investigation"><h2 id="interactive-investigation">Interactive investigation: Trigonometric equations</h2><div data-investigation="10"><p>Enable JavaScript to explore the model.</p></div><p><strong>Explore and explain:</strong> Count solutions on one full period. When are there none?</p></section>
+</main><nav aria-label="On this page" class="chapter-toc" id="TOC" role="doc-toc"><strong>On this page</strong>
+<ul>
+<li><a href="#trigonometric-identities-and-equations" id="toc-trigonometric-identities-and-equations">Trigonometric Identities
+and Equations</a>
+<ul>
+<li><a href="#opening-context-simplifying-periodic-models" id="toc-opening-context-simplifying-periodic-models">Opening context:
+simplifying periodic models</a></li>
+<li><a href="#learning-outcomes" id="toc-learning-outcomes">Learning
+outcomes</a></li>
+<li><a href="#prerequisite-check" id="toc-prerequisite-check">Prerequisite check</a></li>
+<li><a href="#computational-workflow" id="toc-computational-workflow">Computational workflow</a></li>
+<li><a href="#identities-versus-equations" id="toc-identities-versus-equations">Identities versus
+equations</a></li>
+<li><a href="#reciprocal-and-quotient-identities" id="toc-reciprocal-and-quotient-identities">Reciprocal and quotient
+identities</a></li>
+<li><a href="#pythagorean-identities-and-geometric-derivation" id="toc-pythagorean-identities-and-geometric-derivation">Pythagorean
+identities and geometric derivation</a></li>
+<li><a href="#evenodd-periodic-and-cofunction-identities" id="toc-evenodd-periodic-and-cofunction-identities">Even–odd, periodic,
+and cofunction identities</a></li>
+<li><a href="#a-reliable-strategy-for-verifying-identities" id="toc-a-reliable-strategy-for-verifying-identities">A reliable
+strategy for verifying identities</a></li>
+<li><a href="#factoring-and-conjugates-in-identity-proofs" id="toc-factoring-and-conjugates-in-identity-proofs">Factoring and
+conjugates in identity proofs</a></li>
+<li><a href="#angle-sum-and-angle-difference-formulas" id="toc-angle-sum-and-angle-difference-formulas">Angle-sum and
+angle-difference formulas</a></li>
+<li><a href="#the-tangent-addition-formula" id="toc-the-tangent-addition-formula">The tangent addition
+formula</a></li>
+<li><a href="#double-angle-identities" id="toc-double-angle-identities">Double-angle identities</a></li>
+<li><a href="#half-angle-and-power-reduction-identities" id="toc-half-angle-and-power-reduction-identities">Half-angle and
+power-reduction identities</a></li>
+<li><a href="#product-to-sum-and-sum-to-product-identities" id="toc-product-to-sum-and-sum-to-product-identities">Product-to-sum and
+sum-to-product identities</a></li>
+<li><a href="#solving-basic-trigonometric-equations" id="toc-solving-basic-trigonometric-equations">Solving basic
+trigonometric equations</a></li>
+<li><a href="#factoring-and-quadratic-trigonometric-equations" id="toc-factoring-and-quadratic-trigonometric-equations">Factoring and
+quadratic trigonometric equations</a></li>
+<li><a href="#equations-involving-multiple-angles-and-restrictions" id="toc-equations-involving-multiple-angles-and-restrictions">Equations
+involving multiple angles and restrictions</a></li>
+<li><a href="#applications-timing-and-periodic-thresholds" id="toc-applications-timing-and-periodic-thresholds">Applications:
+timing and periodic thresholds</a></li>
+<li><a href="#preparation-for-calculus-identities-and-difference-quotients" id="toc-preparation-for-calculus-identities-and-difference-quotients">Preparation
+for calculus: identities and difference quotients</a></li>
+<li><a href="#visual-investigations" id="toc-visual-investigations">Visual investigations</a>
+<ul>
+<li><a href="#investigation-1-the-pythagorean-identity-on-the-unit-circle" id="toc-investigation-1-the-pythagorean-identity-on-the-unit-circle">Investigation
+1: The Pythagorean identity on the unit circle</a></li>
+<li><a href="#investigation-2-angle-addition-as-rotation" id="toc-investigation-2-angle-addition-as-rotation">Investigation 2:
+Angle addition as rotation</a></li>
+<li><a href="#investigation-3-double-angle-frequency" id="toc-investigation-3-double-angle-frequency">Investigation 3:
+Double-angle frequency</a></li>
+<li><a href="#investigation-4-a-sign-trap-in-half-angle-formulas" id="toc-investigation-4-a-sign-trap-in-half-angle-formulas">Investigation
+4: A sign trap in half-angle formulas</a></li>
+<li><a href="#investigation-5-equation-roots-versus-identity-graphs" id="toc-investigation-5-equation-roots-versus-identity-graphs">Investigation
+5: Equation roots versus identity graphs</a></li>
+<li><a href="#investigation-6-model-crossing-times-and-units" id="toc-investigation-6-model-crossing-times-and-units">Investigation 6:
+Model crossing times and units</a></li>
+</ul></li>
+<li><a href="#extended-guided-workshops" id="toc-extended-guided-workshops">Extended guided workshops</a>
+<ul>
+<li><a href="#workshop-a-verify-or-refute" id="toc-workshop-a-verify-or-refute">Workshop A: Verify or
+refute</a></li>
+<li><a href="#workshop-b-exact-values-without-a-calculator" id="toc-workshop-b-exact-values-without-a-calculator">Workshop B: Exact
+values without a calculator</a></li>
+<li><a href="#workshop-c-a-complete-solution-set-audit" id="toc-workshop-c-a-complete-solution-set-audit">Workshop C: A complete
+solution-set audit</a></li>
+<li><a href="#workshop-d-physiological-signal-threshold" id="toc-workshop-d-physiological-signal-threshold">Workshop D:
+Physiological signal threshold</a></li>
+<li><a href="#workshop-e-from-identity-to-a-calculus-formula" id="toc-workshop-e-from-identity-to-a-calculus-formula">Workshop E: From
+identity to a calculus formula</a></li>
+</ul></li>
+<li><a href="#computational-laboratory-a-checking-identities-numerically" id="toc-computational-laboratory-a-checking-identities-numerically">Computational
+Laboratory A: Checking identities numerically</a>
+<ul>
+<li><a href="#r-code" id="toc-r-code">R code</a></li>
+<li><a href="#python-code" id="toc-python-code">Python code</a></li>
+</ul></li>
+<li><a href="#computational-laboratory-b-solving-trigonometric-equations" id="toc-computational-laboratory-b-solving-trigonometric-equations">Computational
+Laboratory B: Solving trigonometric equations</a>
+<ul>
+<li><a href="#r-code-1" id="toc-r-code-1">R code</a></li>
+<li><a href="#python-code-1" id="toc-python-code-1">Python code</a></li>
+</ul></li>
+<li><a href="#computational-laboratory-c-periodic-sensor-thresholds" id="toc-computational-laboratory-c-periodic-sensor-thresholds">Computational
+Laboratory C: Periodic sensor thresholds</a>
+<ul>
+<li><a href="#r-code-2" id="toc-r-code-2">R code</a></li>
+<li><a href="#python-code-2" id="toc-python-code-2">Python code</a></li>
+</ul></li>
+<li><a href="#additional-guided-practice-a-structured-problem-solving-clinic" id="toc-additional-guided-practice-a-structured-problem-solving-clinic">Additional
+guided practice: a structured problem-solving clinic</a>
+<ul>
+<li><a href="#clinic-1-what-does-a-complete-proof-require" id="toc-clinic-1-what-does-a-complete-proof-require">Clinic 1: What does
+a complete proof require?</a></li>
+<li><a href="#clinic-2-choosing-a-useful-identity" id="toc-clinic-2-choosing-a-useful-identity">Clinic 2: Choosing a useful
+identity</a></li>
+<li><a href="#clinic-3-counting-solutions-without-missing-endpoints" id="toc-clinic-3-counting-solutions-without-missing-endpoints">Clinic 3:
+Counting solutions without missing endpoints</a></li>
+<li><a href="#clinic-4-exact-answers-versus-approximate-answers" id="toc-clinic-4-exact-answers-versus-approximate-answers">Clinic 4:
+Exact answers versus approximate answers</a></li>
+</ul></li>
+<li><a href="#collaborative-investigation-build-and-critique-a-periodic-model" id="toc-collaborative-investigation-build-and-critique-a-periodic-model">Collaborative
+investigation: build and critique a periodic model</a></li>
+<li><a href="#chapter-summary-and-formula-reference" id="toc-chapter-summary-and-formula-reference">Chapter summary and
+formula reference</a></li>
+<li><a href="#chapter-review-exercises" id="toc-chapter-review-exercises">Chapter review exercises</a></li>
+<li><a href="#calculus-readiness-checkpoint" id="toc-calculus-readiness-checkpoint">Calculus-readiness
+checkpoint</a></li>
+<li><a href="#looking-ahead" id="toc-looking-ahead">Looking
+ahead</a></li>
+<li><a href="#extended-application-power-in-an-oscillating-signal" id="toc-extended-application-power-in-an-oscillating-signal">Extended
+application: Power in an oscillating signal</a>
+<ul>
+<li><a href="#formulating-the-mathematical-model" id="toc-formulating-the-mathematical-model">Formulating the mathematical
+model</a></li>
+<li><a href="#connecting-numerical-and-graphical-representations" id="toc-connecting-numerical-and-graphical-representations">Connecting
+numerical and graphical representations</a></li>
+<li><a href="#r-implementation" id="toc-r-implementation">R
+implementation</a></li>
+<li><a href="#python-implementation" id="toc-python-implementation">Python implementation</a></li>
+<li><a href="#guided-practice-checking-the-model" id="toc-guided-practice-checking-the-model">Guided practice: checking
+the model</a></li>
+</ul></li>
+<li><a href="#chapter-project-investigating-power-in-an-oscillating-signal" id="toc-chapter-project-investigating-power-in-an-oscillating-signal">Chapter
+project: investigating Power in an oscillating signal</a>
+<ul>
+<li><a href="#project-deliverables-and-assessment" id="toc-project-deliverables-and-assessment">Project deliverables and
+assessment</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav></div><script src="investigations.js"></script></body></html>

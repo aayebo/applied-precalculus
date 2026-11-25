@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8"/>
+<meta content="pandoc" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+<title>Rates of
+Change, Difference Quotients, and Limits | Applied Precalculus</title>
+<style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+
+
+<link href="site.css" rel="stylesheet"/><script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script defer="" src="search-index.js"></script><script defer="" src="site.js"></script></head><body><nav class="site-nav" id="book-nav"><strong class="brand">Applied Precalculus</strong><p class="subtitle">Using R and Python</p><input aria-label="Search the book" id="book-search" placeholder="Search the book"/><div aria-live="polite" class="search-results" id="search-results"></div><p class="nav-label">Contents</p><a class="" href="index.html">Preface</a><a class="" href="chapter01.html">1. Real Numbers, Algebraic Expressions, and Mathematical Reasoning</a><a class="" href="chapter02.html">2. Equations, Inequalities, and Applications</a><a class="" href="chapter03.html">3. Coordinate Geometry, Lines, and Systems of Equations</a><a class="" href="chapter04.html">4. Functions, Graphs, and Multiple Representations</a><a class="" href="chapter05.html">5. Transformations, Compositions, and Inverse Functions</a><a class="" href="chapter06.html">6. Polynomial and Rational Functions</a><a class="" href="chapter07.html">7. Exponential and Logarithmic Functions</a><a class="" href="chapter08.html">8. Angles, Radian Measure, and the Unit Circle</a><a class="" href="chapter09.html">9. Trigonometric Functions and Their Graphs</a><a class="" href="chapter10.html">10. Trigonometric Identities and Equations</a><a class="" href="chapter11.html">11. Applications of Trigonometry and Periodic Models</a><a class="" href="chapter12.html">12. Sequences, Series, and Mathematical Patterns</a><a class="" href="chapter13.html">13. Conic Sections and Parametric Equations</a><a class="" href="chapter14.html">14. Vectors, Polar Coordinates, and Geometric Modeling</a><a class="active" href="chapter15.html">15. Rates of Change, Difference Quotients, and Limits</a><a class="" href="chapter16.html">16. Integrated Mathematical Modeling with R and Python</a><a class="" href="programming.html">Getting Started with R and Python</a><a class="" href="resources.html">Computational Resource Guide</a></nav><a class="skip" href="#main-content">Skip to content</a><header class="topbar"><button aria-controls="book-nav" aria-expanded="false" class="menu">Contents</button><span>Applied Precalculus / Online edition</span><span class="spacer"></span><a href="resources.html">Resources</a></header><div class="page-grid"><main id="main-content">
+
+<h1 id="rates-of-change-difference-quotients-and-limits">Rates of
+Change, Difference Quotients, and Limits</h1>
+<h2 class="unnumbered" id="opening-context-from-patterns-to-instantaneous-change">Opening
+context: from patterns to instantaneous change</h2>
+<p>Earlier chapters developed functions, graphical models, and algebraic
+reasoning. This chapter asks a new question: how quickly does a quantity
+change <em>at a particular instant</em>? Average change is easy to
+calculate from two measurements; instantaneous change requires a
+limiting argument. This bridge from precalculus to calculus is
+especially useful for analyzing motion, medication concentrations, and
+laboratory sensor readings. All applied data in this chapter are
+illustrative unless otherwise stated.</p>
+<h2 class="unnumbered" id="learning-outcomes">Learning outcomes</h2>
+<p>Students will compute and interpret average rates; construct and
+simplify difference quotients; estimate tangent slopes numerically and
+graphically; evaluate elementary limits by substitution, factoring, and
+rationalization; distinguish one-sided and two-sided limits; classify
+discontinuities; and explain how measurement noise affects numerical
+estimates.</p>
+<h2 class="unnumbered" id="how-to-use-the-computational-laboratories">How to use the
+computational laboratories</h2>
+<p>Predict analytically before executing code. Each laboratory presents
+<strong>R first</strong>, then <strong>Python</strong>, in separate
+full-width listings. R and Python use different indexing conventions,
+but both use radians for trigonometric calculations. Record mathematical
+conclusions in complete sentences with units where appropriate.</p>
+<h2 id="why-rates-of-change-matter">Why rates of change matter</h2>
+<p>A quantity can change even when its current value is known precisely.
+A concentration of <span class="math inline">\(8\)</span> mg/L does not
+tell us whether the concentration is rising or falling. Rates compare a
+change in an output with a change in an input. For a function <span class="math inline">\(f\)</span>, the average rate of change on <span class="math inline">\([a,b]\)</span> is <span class="math inline">\([f(b)-f(a)]/(b-a)\)</span>, provided <span class="math inline">\(a\ne b\)</span>. Units are output units per input
+unit. A negative rate describes a decrease, not an invalid
+measurement.</p>
+<p><strong>Worked example.</strong> A temperature increases from <span class="math inline">\(18^\circ\)</span>C at 8:00 to <span class="math inline">\(24^\circ\)</span>C at 11:00. Its average rate is
+<span class="math inline">\((24-18)/(11-8)=2^\circ\)</span>C per hour.
+This does not imply the temperature rose at exactly that rate every
+minute.</p>
+<p><strong>Guided practice.</strong> A laboratory concentration drops
+from <span class="math inline">\(15\)</span> to <span class="math inline">\(9\)</span> mg/L over 4 hours. Find the average
+rate and interpret its sign.</p>
+<h2 id="secant-lines-and-average-rates">Secant lines and average
+rates</h2>
+<p>On the graph <span class="math inline">\(y=f(x)\)</span>, the average
+rate of change over <span class="math inline">\([a,b]\)</span> equals
+the slope of the secant line through <span class="math inline">\((a,f(a))\)</span> and <span class="math inline">\((b,f(b))\)</span>. The secant equation is <span class="math inline">\(y-f(a)=m_{a,b}(x-a)\)</span>. A secant slope
+depends on two input values; it is not generally the slope at one point.
+Moving <span class="math inline">\(b\)</span> toward <span class="math inline">\(a\)</span> creates a sequence of secant lines that
+may approach a tangent.</p>
+<p><strong>Worked example.</strong> For <span class="math inline">\(f(x)=x^2\)</span>, the secant from <span class="math inline">\(x=1\)</span> to <span class="math inline">\(x=3\)</span> has slope <span class="math inline">\((9-1)/(3-1)=4\)</span> and equation <span class="math inline">\(y-1=4(x-1)\)</span>.</p>
+<p><strong>Guided practice.</strong> For <span class="math inline">\(f(x)=x^2-2x\)</span>, find the secant slope on
+<span class="math inline">\([0,3]\)</span> and write the secant
+equation.</p>
+<h5 id="visual-investigation.">Visual investigation.</h5>
+<p>Sketch the relevant function on graph paper or using technology. Mark
+the inputs and output values from the worked example. Predict the
+behavior before calculating it; compare estimates from the left and
+right where meaningful. <strong>Reflection:</strong> Which features are
+established by algebra, and which are only suggested by the graph?</p>
+<h2 id="the-difference-quotient">The difference quotient</h2>
+<p>The expression <span class="math inline">\([f(a+h)-f(a)]/h\)</span>
+is the difference quotient at <span class="math inline">\(a\)</span>
+with increment <span class="math inline">\(h\ne0\)</span>. It measures
+an average rate over an interval of width <span class="math inline">\(h\)</span>. The algebraic form matters:
+simplifying first often reveals what happens as <span class="math inline">\(h\)</span> becomes small. The condition <span class="math inline">\(h\ne0\)</span> must be maintained during
+cancellation.</p>
+<p><strong>Worked example.</strong> For <span class="math inline">\(f(x)=x^2+3x\)</span>, <span class="math inline">\(f(a+h)-f(a)=2ah+h^2+3h\)</span>, so the difference
+quotient is <span class="math inline">\(2a+h+3\)</span> for <span class="math inline">\(h\ne0\)</span>.</p>
+<p><strong>Guided practice.</strong> Compute and simplify the difference
+quotient for <span class="math inline">\(f(x)=2x^2-5x+1\)</span>. State
+the restriction on <span class="math inline">\(h\)</span>.</p>
+<h5 id="visual-investigation.-1">Visual investigation.</h5>
+<p>Sketch the relevant function on graph paper or using technology. Mark
+the inputs and output values from the worked example. Predict the
+behavior before calculating it; compare estimates from the left and
+right where meaningful. <strong>Reflection:</strong> Which features are
+established by algebra, and which are only suggested by the graph?</p>
+<h2 id="difference-quotients-for-rational-functions">Difference
+quotients for rational functions</h2>
+<p>Rational functions require attention to domain restrictions before
+and after simplification. When <span class="math inline">\(f(x)=1/x\)</span>, <span class="math inline">\([f(a+h)-f(a)]/h=-1/[a(a+h)]\)</span> as long as
+<span class="math inline">\(h\ne0\)</span>, <span class="math inline">\(a\ne0\)</span>, and <span class="math inline">\(a+h\ne0\)</span>. A canceled factor does not
+restore a previously excluded input. This distinction prepares students
+to understand removable discontinuities.</p>
+<p><strong>Worked example.</strong> At <span class="math inline">\(a=2\)</span>, the difference quotient for <span class="math inline">\(f(x)=1/x\)</span> becomes <span class="math inline">\(-1/[2(2+h)]\)</span>, which approaches <span class="math inline">\(-1/4\)</span> as <span class="math inline">\(h\)</span> approaches zero.</p>
+<p><strong>Guided practice.</strong> For <span class="math inline">\(f(x)=3/x\)</span>, simplify the difference
+quotient at <span class="math inline">\(a=1\)</span> and list every
+excluded value of <span class="math inline">\(h\)</span>.</p>
+<h2 id="numerical-estimates-of-instantaneous-change">Numerical estimates
+of instantaneous change</h2>
+<p>A table of difference quotients for smaller positive and negative
+<span class="math inline">\(h\)</span> can suggest a limiting rate.
+Compare both sides: numerical agreement is evidence, not a proof.
+Floating-point arithmetic can lose accuracy when <span class="math inline">\(h\)</span> is extremely small because subtraction
+of nearly equal values introduces cancellation error. Use moderate
+decreasing increments and algebra whenever possible.</p>
+<p><strong>Worked example.</strong> For <span class="math inline">\(f(x)=x^2\)</span> at <span class="math inline">\(a=2\)</span>, the difference quotient equals <span class="math inline">\(4+h\)</span>. Values at <span class="math inline">\(h=0.1,0.01,-0.01,-0.1\)</span> are <span class="math inline">\(4.1,4.01,3.99,3.9\)</span>, suggesting a rate of
+<span class="math inline">\(4\)</span>.</p>
+<p><strong>Guided practice.</strong> Construct a table for <span class="math inline">\(f(x)=x^2+1\)</span> at <span class="math inline">\(a=3\)</span> with <span class="math inline">\(h=\pm0.1,\pm0.01\)</span>. Predict the limiting
+slope.</p>
+<h5 id="visual-investigation.-2">Visual investigation.</h5>
+<p>Sketch the relevant function on graph paper or using technology. Mark
+the inputs and output values from the worked example. Predict the
+behavior before calculating it; compare estimates from the left and
+right where meaningful. <strong>Reflection:</strong> Which features are
+established by algebra, and which are only suggested by the graph?</p>
+<h2 id="tangent-lines-as-limiting-secants">Tangent lines as limiting
+secants</h2>
+<p>A tangent line represents the local linear direction of a smooth
+curve. If secant slopes approach a finite value <span class="math inline">\(m\)</span> as <span class="math inline">\(h\to0\)</span>, the tangent line at <span class="math inline">\(x=a\)</span> is <span class="math inline">\(y-f(a)=m(x-a)\)</span>. A tangent need not touch a
+graph at only one point. Some graphs have corners, cusps, vertical
+tangents, or discontinuities, where a finite tangent slope may fail to
+exist.</p>
+<p><strong>Worked example.</strong> For <span class="math inline">\(f(x)=x^2\)</span> at <span class="math inline">\(a=2\)</span>, the limiting slope is <span class="math inline">\(4\)</span>. The tangent is <span class="math inline">\(y-4=4(x-2)\)</span>, or <span class="math inline">\(y=4x-4\)</span>.</p>
+<p><strong>Guided practice.</strong> Find the tangent line to <span class="math inline">\(f(x)=x^2+3x\)</span> at <span class="math inline">\(x=1\)</span> by simplifying the difference
+quotient.</p>
+<h5 id="visual-investigation.-3">Visual investigation.</h5>
+<p>Sketch the relevant function on graph paper or using technology. Mark
+the inputs and output values from the worked example. Predict the
+behavior before calculating it; compare estimates from the left and
+right where meaningful. <strong>Reflection:</strong> Which features are
+established by algebra, and which are only suggested by the graph?</p>
+<h2 id="the-intuitive-idea-of-a-limit">The intuitive idea of a
+limit</h2>
+<p>The notation <span class="math inline">\(\lim_{x\to a}f(x)=L\)</span>
+says that values of <span class="math inline">\(f(x)\)</span> can be
+made arbitrarily close to <span class="math inline">\(L\)</span> by
+choosing <span class="math inline">\(x\)</span> sufficiently close to
+<span class="math inline">\(a\)</span> but different from <span class="math inline">\(a\)</span>. The value <span class="math inline">\(f(a)\)</span> may differ from <span class="math inline">\(L\)</span> or may not be defined. A limit is about
+behavior near a point, not necessarily at the point. A table and graph
+can motivate a conjecture; algebra can establish it in familiar
+cases.</p>
+<p><strong>Worked example.</strong> For <span class="math inline">\(f(x)=(x^2-4)/(x-2)\)</span> with <span class="math inline">\(x\ne2\)</span>, factoring gives <span class="math inline">\(f(x)=x+2\)</span>. Thus the limit as <span class="math inline">\(x\to2\)</span> is <span class="math inline">\(4\)</span> even though the original expression is
+undefined at <span class="math inline">\(2\)</span>.</p>
+<p><strong>Guided practice.</strong> Evaluate <span class="math inline">\(\lim_{x\to3}(x^2-9)/(x-3)\)</span> and explain why
+direct substitution into the original fraction fails.</p>
+<h5 id="visual-investigation.-4">Visual investigation.</h5>
+<p>Sketch the relevant function on graph paper or using technology. Mark
+the inputs and output values from the worked example. Predict the
+behavior before calculating it; compare estimates from the left and
+right where meaningful. <strong>Reflection:</strong> Which features are
+established by algebra, and which are only suggested by the graph?</p>
+<h2 id="one-sided-limits">One-sided limits</h2>
+<p>A left-hand limit <span class="math inline">\(\lim_{x\to
+a^-}f(x)\)</span> approaches <span class="math inline">\(a\)</span>
+through smaller inputs; a right-hand limit <span class="math inline">\(\lim_{x\to a^+}f(x)\)</span> approaches through
+larger inputs. A finite two-sided limit exists exactly when both
+one-sided limits exist and are equal. This is essential for piecewise
+models with changes in rules at a threshold.</p>
+<p><strong>Worked example.</strong> Let <span class="math inline">\(f(x)=x+1\)</span> for <span class="math inline">\(x&lt;2\)</span> and <span class="math inline">\(f(x)=5-x\)</span> for <span class="math inline">\(x\ge2\)</span>. Both one-sided limits at <span class="math inline">\(2\)</span> equal <span class="math inline">\(3\)</span>, so the two-sided limit is <span class="math inline">\(3\)</span>.</p>
+<p><strong>Guided practice.</strong> For <span class="math inline">\(g(x)=x^2\)</span> if <span class="math inline">\(x&lt;1\)</span> and <span class="math inline">\(g(x)=x+2\)</span> if <span class="math inline">\(x\ge1\)</span>, find both one-sided limits at
+<span class="math inline">\(1\)</span>.</p>
+<h5 id="visual-investigation.-5">Visual investigation.</h5>
+<p>Sketch the relevant function on graph paper or using technology. Mark
+the inputs and output values from the worked example. Predict the
+behavior before calculating it; compare estimates from the left and
+right where meaningful. <strong>Reflection:</strong> Which features are
+established by algebra, and which are only suggested by the graph?</p>
+<h2 id="limit-laws-and-direct-substitution">Limit laws and direct
+substitution</h2>
+<p>For functions with finite limits, sums, differences, products, and
+quotients (with nonzero denominator limit) preserve limits. Polynomials
+are continuous everywhere, so their limits can be found by direct
+substitution. Rational functions are continuous wherever their
+denominators are nonzero. These facts justify many quick evaluations,
+but they do not justify dividing by zero.</p>
+<p><strong>Worked example.</strong> <span class="math inline">\(\lim_{x\to2}(3x^2-x+1)=3(4)-2+1=11\)</span>. For
+<span class="math inline">\(\lim_{x\to2}(x+1)/(x-4)\)</span>, the
+denominator is nonzero, giving <span class="math inline">\(-3/2\)</span>.</p>
+<p><strong>Guided practice.</strong> Evaluate <span class="math inline">\(\lim_{x\to-1}(2x^3+5x)\)</span> and <span class="math inline">\(\lim_{x\to1}(x^2+2)/(x+3)\)</span>.</p>
+<h2 id="indeterminate-forms-and-factoring">Indeterminate forms and
+factoring</h2>
+<p>A quotient that yields <span class="math inline">\(0/0\)</span> under
+substitution is indeterminate: it does not tell us the limit. Factoring,
+rationalizing, or rewriting may reveal a simpler expression for nearby
+inputs. Never treat <span class="math inline">\(0/0\)</span> as a
+numerical answer. Each simplification should preserve equality on a
+punctured neighborhood of the target point.</p>
+<p><strong>Worked example.</strong> <span class="math inline">\(\lim_{x\to3}(x^2-9)/(x-3)=\lim_{x\to3}(x+3)=6\)</span>
+after factoring and canceling for <span class="math inline">\(x\ne3\)</span>.</p>
+<p><strong>Guided practice.</strong> Evaluate <span class="math inline">\(\lim_{x\to-2}(x^2+5x+6)/(x+2)\)</span> by
+factoring. State why the cancellation is valid for the limit.</p>
+<h5 id="visual-investigation.-6">Visual investigation.</h5>
+<p>Sketch the relevant function on graph paper or using technology. Mark
+the inputs and output values from the worked example. Predict the
+behavior before calculating it; compare estimates from the left and
+right where meaningful. <strong>Reflection:</strong> Which features are
+established by algebra, and which are only suggested by the graph?</p>
+<h2 id="rationalization-and-radical-limits">Rationalization and radical
+limits</h2>
+<p>When radicals produce a <span class="math inline">\(0/0\)</span>
+expression, multiply numerator and denominator by the conjugate. The
+identity <span class="math inline">\((A-B)(A+B)=A^2-B^2\)</span> often
+removes the troublesome radical difference. The resulting expression is
+equivalent only where the original is defined, which is sufficient for
+evaluating a nearby limit.</p>
+<p><strong>Worked example.</strong> For <span class="math inline">\(x\ne0\)</span>, <span class="math inline">\((\sqrt{4+x}-2)/x=1/(\sqrt{4+x}+2)\)</span>.
+Therefore the limit as <span class="math inline">\(x\to0\)</span> is
+<span class="math inline">\(1/4\)</span>.</p>
+<p><strong>Guided practice.</strong> Evaluate <span class="math inline">\(\lim_{h\to0}(\sqrt{9+h}-3)/h\)</span> using a
+conjugate.</p>
+<h5 id="visual-investigation.-7">Visual investigation.</h5>
+<p>Sketch the relevant function on graph paper or using technology. Mark
+the inputs and output values from the worked example. Predict the
+behavior before calculating it; compare estimates from the left and
+right where meaningful. <strong>Reflection:</strong> Which features are
+established by algebra, and which are only suggested by the graph?</p>
+<h2 id="infinite-behavior-and-asymptotes">Infinite behavior and
+asymptotes</h2>
+<p>An infinite limit describes unbounded growth or decrease near an
+input; it is not a finite limit. For example, <span class="math inline">\(1/(x-2)\)</span> tends to <span class="math inline">\(-\infty\)</span> from the left and <span class="math inline">\(+\infty\)</span> from the right. A vertical
+asymptote may occur at <span class="math inline">\(x=2\)</span>.
+Horizontal asymptotes concern behavior as <span class="math inline">\(x\to\pm\infty\)</span>. These are different
+questions and should not be conflated.</p>
+<p><strong>Worked example.</strong> For <span class="math inline">\(f(x)=2+1/x\)</span>, the function approaches <span class="math inline">\(2\)</span> as <span class="math inline">\(x\to\infty\)</span>, so <span class="math inline">\(y=2\)</span> is a horizontal asymptote; <span class="math inline">\(x=0\)</span> is a vertical asymptote.</p>
+<p><strong>Guided practice.</strong> Describe the one-sided behavior of
+<span class="math inline">\(1/(x+3)\)</span> near <span class="math inline">\(x=-3\)</span> and its behavior as <span class="math inline">\(x\to\infty\)</span>.</p>
+<h5 id="visual-investigation.-8">Visual investigation.</h5>
+<p>Sketch the relevant function on graph paper or using technology. Mark
+the inputs and output values from the worked example. Predict the
+behavior before calculating it; compare estimates from the left and
+right where meaningful. <strong>Reflection:</strong> Which features are
+established by algebra, and which are only suggested by the graph?</p>
+<h2 id="continuity-at-a-point">Continuity at a point</h2>
+<p>A function is continuous at <span class="math inline">\(a\)</span> if
+(1) <span class="math inline">\(f(a)\)</span> is defined, (2) <span class="math inline">\(\lim_{x\to a}f(x)\)</span> exists, and (3) the
+limit equals <span class="math inline">\(f(a)\)</span>. Discontinuities
+include removable holes, jumps, and infinite behavior. A physical model
+may be continuous over a time range even if a piecewise formula changes
+there; matching one-sided values is the key.</p>
+<p><strong>Worked example.</strong> Define <span class="math inline">\(f(x)=(x^2-1)/(x-1)\)</span> for <span class="math inline">\(x\ne1\)</span> and <span class="math inline">\(f(1)=2\)</span>. Then <span class="math inline">\(f\)</span> is continuous at <span class="math inline">\(1\)</span>, because the nearby expression is <span class="math inline">\(x+1\)</span> and its limit is <span class="math inline">\(2\)</span>.</p>
+<p><strong>Guided practice.</strong> Choose <span class="math inline">\(c\)</span> so <span class="math inline">\(f(x)=2x+1\)</span> for <span class="math inline">\(x&lt;2\)</span> and <span class="math inline">\(f(x)=x+c\)</span> for <span class="math inline">\(x\ge2\)</span> is continuous at <span class="math inline">\(2\)</span>.</p>
+<h5 id="visual-investigation.-9">Visual investigation.</h5>
+<p>Sketch the relevant function on graph paper or using technology. Mark
+the inputs and output values from the worked example. Predict the
+behavior before calculating it; compare estimates from the left and
+right where meaningful. <strong>Reflection:</strong> Which features are
+established by algebra, and which are only suggested by the graph?</p>
+<h2 id="absolute-value-and-corners">Absolute value and corners</h2>
+<p>The absolute-value function <span class="math inline">\(f(x)=|x|\)</span> is continuous at zero but has
+different left and right secant slopes there. For <span class="math inline">\(h&gt;0\)</span>, <span class="math inline">\(|h|/h=1\)</span>; for <span class="math inline">\(h&lt;0\)</span>, it equals <span class="math inline">\(-1\)</span>. Thus a single finite limiting slope
+does not exist. Continuity alone is not sufficient for
+differentiability.</p>
+<p><strong>Worked example.</strong> For <span class="math inline">\(f(x)=|x-3|\)</span>, the graph has a corner at
+<span class="math inline">\(x=3\)</span>. The left slope is <span class="math inline">\(-1\)</span> and the right slope is <span class="math inline">\(1\)</span>.</p>
+<p><strong>Guided practice.</strong> Use the difference quotient to
+decide whether <span class="math inline">\(f(x)=|x+2|\)</span> has a
+tangent slope at <span class="math inline">\(x=-2\)</span>.</p>
+<h5 id="visual-investigation.-10">Visual investigation.</h5>
+<p>Sketch the relevant function on graph paper or using technology. Mark
+the inputs and output values from the worked example. Predict the
+behavior before calculating it; compare estimates from the left and
+right where meaningful. <strong>Reflection:</strong> Which features are
+established by algebra, and which are only suggested by the graph?</p>
+<h2 id="piecewise-models-and-threshold-decisions">Piecewise models and
+threshold decisions</h2>
+<p>Piecewise functions can represent different regimes, such as a
+baseline response below a threshold and a new response above it. Check
+one-sided limits, the assigned function value, and units. A
+discontinuity may be intentional (an instantaneous policy change) or a
+modeling defect (an implausible jump in a physiological quantity).
+Mathematical conclusions depend on the assumptions of the model.</p>
+<p><strong>Worked example.</strong> A device reports <span class="math inline">\(S(t)=2t+1\)</span> for <span class="math inline">\(t&lt;4\)</span> and <span class="math inline">\(S(t)=t+5\)</span> for <span class="math inline">\(t\ge4\)</span>. Both rules approach <span class="math inline">\(9\)</span> at <span class="math inline">\(t=4\)</span>, so the model is continuous
+there.</p>
+<p><strong>Guided practice.</strong> Replace the second rule by <span class="math inline">\(S(t)=t+c\)</span> and find <span class="math inline">\(c\)</span> that preserves continuity at <span class="math inline">\(t=4\)</span>.</p>
+<h2 id="average-versus-instantaneous-velocity">Average versus
+instantaneous velocity</h2>
+<p>For a position model <span class="math inline">\(s(t)\)</span>,
+average velocity over <span class="math inline">\([t,t+h]\)</span> is
+<span class="math inline">\([s(t+h)-s(t)]/h\)</span>. Its limiting
+value, when it exists, is instantaneous velocity. Velocity is signed;
+speed is its magnitude in one-dimensional motion. Units must be carried
+through the calculation. A position model need not be physically valid
+for all times.</p>
+<p><strong>Worked example.</strong> For <span class="math inline">\(s(t)=5t^2\)</span> meters, the average velocity
+from <span class="math inline">\(t=2\)</span> to <span class="math inline">\(t=2+h\)</span> is <span class="math inline">\(20+5h\)</span> m/s. As <span class="math inline">\(h\to0\)</span>, instantaneous velocity is <span class="math inline">\(20\)</span> m/s.</p>
+<p><strong>Guided practice.</strong> For <span class="math inline">\(s(t)=3t^2+2t\)</span> meters, find average
+velocity on <span class="math inline">\([1,1+h]\)</span> and estimate
+instantaneous velocity at <span class="math inline">\(t=1\)</span>.</p>
+<h5 id="visual-investigation.-11">Visual investigation.</h5>
+<p>Sketch the relevant function on graph paper or using technology. Mark
+the inputs and output values from the worked example. Predict the
+behavior before calculating it; compare estimates from the left and
+right where meaningful. <strong>Reflection:</strong> Which features are
+established by algebra, and which are only suggested by the graph?</p>
+<h2 id="measurement-noise-and-numerical-differentiation">Measurement
+noise and numerical differentiation</h2>
+<p>Real measurements are noisy. When a difference quotient divides a
+small difference by a small time interval, noise can be amplified. For
+observations <span class="math inline">\(y_i=f(t_i)+\epsilon_i\)</span>,
+a forward-difference estimate <span class="math inline">\([y_{i+1}-y_i]/\Delta t\)</span> contains noise
+difference <span class="math inline">\((\epsilon_{i+1}-\epsilon_i)/\Delta t\)</span>.
+Therefore smaller spacing does not always yield a better empirical
+estimate. Compare trends across several scales and report
+uncertainty.</p>
+<p><strong>Worked example.</strong> If two readings each have errors as
+large as <span class="math inline">\(0.02\)</span> units and the time
+gap is <span class="math inline">\(0.01\)</span> s, the difference
+quotient can have error as large as <span class="math inline">\(0.04/0.01=4\)</span> units/s.</p>
+<p><strong>Guided practice.</strong> If readings have errors at most
+<span class="math inline">\(0.01\)</span> mg/L and the time gap is <span class="math inline">\(0.1\)</span> h, bound the possible error in the
+forward-difference estimate.</p>
+<h5 id="visual-investigation.-12">Visual investigation.</h5>
+<p>Sketch the relevant function on graph paper or using technology. Mark
+the inputs and output values from the worked example. Predict the
+behavior before calculating it; compare estimates from the left and
+right where meaningful. <strong>Reflection:</strong> Which features are
+established by algebra, and which are only suggested by the graph?</p>
+<h2 id="limits-and-model-interpretation">Limits and model
+interpretation</h2>
+<p>The mathematical limit of a model need not correspond to an
+attainable physical measurement. For instance, a concentration model may
+approach zero without ever equaling zero. Distinguish an algebraic limit
+from an empirical claim. Always state the model’s domain, assumptions,
+units, and whether the question concerns a local limit or a long-term
+prediction.</p>
+<p><strong>Worked example.</strong> For <span class="math inline">\(C(t)=12e^{-0.3t}\)</span> mg/L with <span class="math inline">\(t\ge0\)</span>, <span class="math inline">\(C(t)\)</span> approaches <span class="math inline">\(0\)</span> as <span class="math inline">\(t\to\infty\)</span>, but the formula is strictly
+positive for every finite <span class="math inline">\(t\)</span>.</p>
+<p><strong>Guided practice.</strong> For <span class="math inline">\(P(t)=100/(1+4e^{-0.2t})\)</span>, predict the
+long-run level and explain its meaning in context.</p>
+<h5 id="visual-investigation.-13">Visual investigation.</h5>
+<p>Sketch the relevant function on graph paper or using technology. Mark
+the inputs and output values from the worked example. Predict the
+behavior before calculating it; compare estimates from the left and
+right where meaningful. <strong>Reflection:</strong> Which features are
+established by algebra, and which are only suggested by the graph?</p>
+<h2 id="a-preview-of-the-derivative">A preview of the derivative</h2>
+<p>The derivative at <span class="math inline">\(a\)</span> is defined,
+when the finite limit exists, by <span class="math inline">\(f'(a)=\lim_{h\to0}[f(a+h)-f(a)]/h\)</span>. In
+this chapter the emphasis is on constructing and understanding that
+limit, not memorizing differentiation rules. Later calculus chapters
+develop systematic methods for evaluating derivatives and using them to
+optimize models and analyze change.</p>
+<p><strong>Worked example.</strong> For <span class="math inline">\(f(x)=x^2\)</span>, algebra gives <span class="math inline">\([f(a+h)-f(a)]/h=2a+h\)</span>. The limiting value
+is <span class="math inline">\(2a\)</span>, which is the slope of the
+tangent at <span class="math inline">\(x=a\)</span>.</p>
+<p><strong>Guided practice.</strong> Use the limit definition to find
+the derivative of <span class="math inline">\(f(x)=4x+7\)</span> at an
+arbitrary input <span class="math inline">\(a\)</span>.</p>
+<h2 id="visual-gallery-secants-tangents-and-removable-discontinuities">Visual
+gallery: secants, tangents, and removable discontinuities</h2>
+<figure>
+<img alt="image" src="figures/precompiled/chapter15-01.svg"/>
+<figcaption aria-hidden="true">image</figcaption>
+</figure>
+<figure>
+<img alt="image" src="figures/precompiled/chapter15-02.svg"/>
+<figcaption aria-hidden="true">image</figcaption>
+</figure>
+<h2 id="computational-laboratory-a-secant-slopes-and-tangent-estimates">Computational
+laboratory A: secant slopes and tangent estimates</h2>
+<p><strong>Prediction.</strong> For <span class="math inline">\(f(x)=x^2+3x\)</span> at <span class="math inline">\(a=2\)</span>, simplify the difference quotient
+before running the code. What value should the slopes approach?</p>
+<h3 class="unnumbered" id="r-code">R code</h3>
+<div class="code-shell"><div class="code-bar"><span>R</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a aria-hidden="true" href="#cb1-1" tabindex="-1"></a><span class="co"># Laboratory A: secant slopes and tangent estimates</span></span>
+<span id="cb1-2"><a aria-hidden="true" href="#cb1-2" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x) x<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> <span class="dv">3</span><span class="sc">*</span>x</span>
+<span id="cb1-3"><a aria-hidden="true" href="#cb1-3" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb1-4"><a aria-hidden="true" href="#cb1-4" tabindex="-1"></a>h <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, .<span class="dv">5</span>, .<span class="dv">1</span>, .<span class="dv">01</span>, <span class="sc">-</span>.<span class="dv">01</span>, <span class="sc">-</span>.<span class="dv">1</span>, <span class="sc">-</span>.<span class="dv">5</span>)</span>
+<span id="cb1-5"><a aria-hidden="true" href="#cb1-5" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">h=</span>h, <span class="at">secant=</span>(<span class="fu">f</span>(a<span class="sc">+</span>h)<span class="sc">-</span><span class="fu">f</span>(a))<span class="sc">/</span>h, <span class="at">exact=</span><span class="dv">2</span><span class="sc">*</span>a<span class="sc">+</span>h<span class="sc">+</span><span class="dv">3</span>)</span>
+<span id="cb1-6"><a aria-hidden="true" href="#cb1-6" tabindex="-1"></a><span class="fu">print</span>(result)</span>
+<span id="cb1-7"><a aria-hidden="true" href="#cb1-7" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">4</span>,<span class="at">length.out=</span><span class="dv">300</span>)</span>
+<span id="cb1-8"><a aria-hidden="true" href="#cb1-8" tabindex="-1"></a><span class="fu">plot</span>(x,<span class="fu">f</span>(x),<span class="at">type=</span><span class="st">"l"</span>,<span class="at">lwd=</span><span class="dv">2</span>,<span class="at">xlab=</span><span class="st">"x"</span>,<span class="at">ylab=</span><span class="st">"f(x)"</span>,<span class="at">main=</span><span class="st">"Secant to tangent"</span>)</span>
+<span id="cb1-9"><a aria-hidden="true" href="#cb1-9" tabindex="-1"></a><span class="fu">lines</span>(x,<span class="fu">f</span>(a)<span class="sc">+</span><span class="dv">7</span><span class="sc">*</span>(x<span class="sc">-</span>a),<span class="at">col=</span><span class="st">"red"</span>,<span class="at">lwd=</span><span class="dv">2</span>)</span>
+<span id="cb1-10"><a aria-hidden="true" href="#cb1-10" tabindex="-1"></a><span class="fu">points</span>(a,<span class="fu">f</span>(a),<span class="at">pch=</span><span class="dv">19</span>)</span>
+<span id="cb1-11"><a aria-hidden="true" href="#cb1-11" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">"topleft"</span>,<span class="fu">c</span>(<span class="st">"f(x)"</span>,<span class="st">"tangent"</span>),<span class="at">col=</span><span class="fu">c</span>(<span class="st">"black"</span>,<span class="st">"red"</span>),<span class="at">lty=</span><span class="dv">1</span>,<span class="at">bty=</span><span class="st">"n"</span>)</span></code></pre></div></div>
+<h3 class="unnumbered" id="python-code">Python code</h3>
+<div class="code-shell"><div class="code-bar"><span>Python</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" href="#cb2-1" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-2"><a aria-hidden="true" href="#cb2-2" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-3"><a aria-hidden="true" href="#cb2-3" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
+<span id="cb2-4"><a aria-hidden="true" href="#cb2-4" tabindex="-1"></a>Path(<span class="st">"figures"</span>).mkdir(exist_ok<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb2-5"><a aria-hidden="true" href="#cb2-5" tabindex="-1"></a>a <span class="op">=</span> <span class="fl">2.0</span></span>
+<span id="cb2-6"><a aria-hidden="true" href="#cb2-6" tabindex="-1"></a>f <span class="op">=</span> <span class="kw">lambda</span> x: x<span class="op">*</span>x <span class="op">+</span> <span class="dv">3</span><span class="op">*</span>x</span>
+<span id="cb2-7"><a aria-hidden="true" href="#cb2-7" tabindex="-1"></a>h <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="fl">.5</span>, <span class="fl">.1</span>, <span class="fl">.01</span>, <span class="op">-</span><span class="fl">.01</span>, <span class="op">-</span><span class="fl">.1</span>, <span class="op">-</span><span class="fl">.5</span>])</span>
+<span id="cb2-8"><a aria-hidden="true" href="#cb2-8" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"h, secant slope, exact simplified slope"</span>)</span>
+<span id="cb2-9"><a aria-hidden="true" href="#cb2-9" tabindex="-1"></a><span class="cf">for</span> step <span class="kw">in</span> h:</span>
+<span id="cb2-10"><a aria-hidden="true" href="#cb2-10" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>step<span class="sc">:8.3f}</span><span class="ss"> </span><span class="sc">{</span>(f(a<span class="op">+</span>step)<span class="op">-</span>f(a))<span class="op">/</span>step<span class="sc">:12.6f}</span><span class="ss"> </span><span class="sc">{</span><span class="dv">2</span><span class="op">*</span>a<span class="op">+</span>step<span class="op">+</span><span class="dv">3</span><span class="sc">:12.6f}</span><span class="ss">"</span>)</span>
+<span id="cb2-11"><a aria-hidden="true" href="#cb2-11" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">300</span>)</span>
+<span id="cb2-12"><a aria-hidden="true" href="#cb2-12" tabindex="-1"></a>plt.plot(x, f(x), label<span class="op">=</span><span class="st">"f(x)=x^2+3x"</span>)</span>
+<span id="cb2-13"><a aria-hidden="true" href="#cb2-13" tabindex="-1"></a>plt.plot(x, f(a)<span class="op">+</span><span class="dv">7</span><span class="op">*</span>(x<span class="op">-</span>a), label<span class="op">=</span><span class="st">"tangent estimate at a=2"</span>)</span>
+<span id="cb2-14"><a aria-hidden="true" href="#cb2-14" tabindex="-1"></a>plt.scatter([a],[f(a)])</span>
+<span id="cb2-15"><a aria-hidden="true" href="#cb2-15" tabindex="-1"></a>plt.xlabel(<span class="st">"x"</span>)<span class="op">;</span>plt.ylabel(<span class="st">"f(x)"</span>)<span class="op">;</span>plt.legend()<span class="op">;</span>plt.tight_layout()</span>
+<span id="cb2-16"><a aria-hidden="true" href="#cb2-16" tabindex="-1"></a>plt.savefig(<span class="st">"figures/labA_python.png"</span>, dpi<span class="op">=</span><span class="dv">180</span>)</span>
+<span id="cb2-17"><a aria-hidden="true" href="#cb2-17" tabindex="-1"></a>plt.close()</span></code></pre></div></div>
+<p><strong>Interpretation.</strong> Explain why very tiny <span class="math inline">\(h\)</span> can produce unreliable floating-point
+results. Compare the output with the exact formula.</p>
+<h2 id="computational-laboratory-b-one-sided-limits-and-continuity">Computational
+laboratory B: one-sided limits and continuity</h2>
+<p><strong>Prediction.</strong> For the piecewise function <span class="math inline">\(g(x)=x+1\)</span> when <span class="math inline">\(x&lt;2\)</span> and <span class="math inline">\(g(x)=5-x\)</span> when <span class="math inline">\(x\ge2\)</span>, find both one-sided limits at
+<span class="math inline">\(2\)</span>.</p>
+<h3 class="unnumbered" id="r-code-1">R code</h3>
+<div class="code-shell"><div class="code-bar"><span>R</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a aria-hidden="true" href="#cb3-1" tabindex="-1"></a><span class="co"># Laboratory B: one-sided limits and continuity</span></span>
+<span id="cb3-2"><a aria-hidden="true" href="#cb3-2" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="cf">function</span>(x) <span class="fu">ifelse</span>(x<span class="sc">&lt;</span><span class="dv">2</span>,x<span class="sc">+</span><span class="dv">1</span>,<span class="dv">5</span><span class="sc">-</span>x)</span>
+<span id="cb3-3"><a aria-hidden="true" href="#cb3-3" tabindex="-1"></a><span class="cf">for</span> (h <span class="cf">in</span> <span class="fu">c</span>(.<span class="dv">1</span>,.<span class="dv">01</span>,.<span class="dv">001</span>)) {</span>
+<span id="cb3-4"><a aria-hidden="true" href="#cb3-4" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">"h:"</span>,h,<span class="st">"left:"</span>,<span class="fu">g</span>(<span class="dv">2</span><span class="sc">-</span>h),<span class="st">"right:"</span>,<span class="fu">g</span>(<span class="dv">2</span><span class="sc">+</span>h),<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb3-5"><a aria-hidden="true" href="#cb3-5" tabindex="-1"></a>}</span>
+<span id="cb3-6"><a aria-hidden="true" href="#cb3-6" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">4</span>,<span class="at">length.out=</span><span class="dv">401</span>)</span>
+<span id="cb3-7"><a aria-hidden="true" href="#cb3-7" tabindex="-1"></a><span class="fu">plot</span>(x,<span class="fu">g</span>(x),<span class="at">type=</span><span class="st">"l"</span>,<span class="at">lwd=</span><span class="dv">2</span>,<span class="at">xlab=</span><span class="st">"x"</span>,<span class="at">ylab=</span><span class="st">"g(x)"</span>,<span class="at">main=</span><span class="st">"Piecewise continuity"</span>)</span>
+<span id="cb3-8"><a aria-hidden="true" href="#cb3-8" tabindex="-1"></a><span class="fu">points</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="at">pch=</span><span class="dv">19</span>)</span></code></pre></div></div>
+<h3 class="unnumbered" id="python-code-1">Python code</h3>
+<div class="code-shell"><div class="code-bar"><span>Python</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" href="#cb4-1" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb4-2"><a aria-hidden="true" href="#cb4-2" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb4-3"><a aria-hidden="true" href="#cb4-3" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
+<span id="cb4-4"><a aria-hidden="true" href="#cb4-4" tabindex="-1"></a>Path(<span class="st">"figures"</span>).mkdir(exist_ok<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb4-5"><a aria-hidden="true" href="#cb4-5" tabindex="-1"></a><span class="kw">def</span> g(x):</span>
+<span id="cb4-6"><a aria-hidden="true" href="#cb4-6" tabindex="-1"></a>    <span class="cf">return</span> np.where(x <span class="op">&lt;</span> <span class="dv">2</span>, x<span class="op">+</span><span class="dv">1</span>, <span class="dv">5</span><span class="op">-</span>x)</span>
+<span id="cb4-7"><a aria-hidden="true" href="#cb4-7" tabindex="-1"></a><span class="cf">for</span> h <span class="kw">in</span> [<span class="fl">.1</span>,<span class="fl">.01</span>,<span class="fl">.001</span>]:</span>
+<span id="cb4-8"><a aria-hidden="true" href="#cb4-8" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"h=</span><span class="sc">{</span>h<span class="sc">:g}</span><span class="ss">, left=</span><span class="sc">{</span>g(<span class="dv">2</span><span class="op">-</span>h)<span class="sc">:.6f}</span><span class="ss">, right=</span><span class="sc">{</span>g(<span class="dv">2</span><span class="op">+</span>h)<span class="sc">:.6f}</span><span class="ss">"</span>)</span>
+<span id="cb4-9"><a aria-hidden="true" href="#cb4-9" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>,<span class="dv">4</span>,<span class="dv">401</span>)</span>
+<span id="cb4-10"><a aria-hidden="true" href="#cb4-10" tabindex="-1"></a>plt.plot(x,g(x),label<span class="op">=</span><span class="st">"continuous piecewise model"</span>)</span>
+<span id="cb4-11"><a aria-hidden="true" href="#cb4-11" tabindex="-1"></a>plt.scatter([<span class="dv">2</span>],[<span class="dv">3</span>])<span class="op">;</span>plt.xlabel(<span class="st">"x"</span>)<span class="op">;</span>plt.ylabel(<span class="st">"g(x)"</span>)</span>
+<span id="cb4-12"><a aria-hidden="true" href="#cb4-12" tabindex="-1"></a>plt.legend()<span class="op">;</span>plt.tight_layout()<span class="op">;</span>plt.savefig(<span class="st">"figures/labB_python.png"</span>,dpi<span class="op">=</span><span class="dv">180</span>)</span>
+<span id="cb4-13"><a aria-hidden="true" href="#cb4-13" tabindex="-1"></a>plt.close()</span></code></pre></div></div>
+<p><strong>Interpretation.</strong> Modify the second branch to <span class="math inline">\(6-x\)</span> and describe what changes at the
+join.</p>
+<h2 id="computational-laboratory-c-noisy-measurement-rates">Computational
+laboratory C: noisy measurement rates</h2>
+<p><strong>Prediction.</strong> Consider a simulated concentration <span class="math inline">\(C(t)=10e^{-0.25t}\)</span> mg/L. Will a shorter
+measurement interval always improve a rate estimate when readings are
+noisy?</p>
+<h3 class="unnumbered" id="r-code-2">R code</h3>
+<div class="code-shell"><div class="code-bar"><span>R</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a aria-hidden="true" href="#cb5-1" tabindex="-1"></a><span class="co"># Laboratory C: noisy concentration measurements</span></span>
+<span id="cb5-2"><a aria-hidden="true" href="#cb5-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">15</span>)</span>
+<span id="cb5-3"><a aria-hidden="true" href="#cb5-3" tabindex="-1"></a>Cfun <span class="ot">&lt;-</span> <span class="cf">function</span>(t) <span class="dv">10</span><span class="sc">*</span><span class="fu">exp</span>(<span class="sc">-</span>.<span class="dv">25</span><span class="sc">*</span>t)</span>
+<span id="cb5-4"><a aria-hidden="true" href="#cb5-4" tabindex="-1"></a>t <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">8</span>,<span class="at">by=</span>.<span class="dv">1</span>)</span>
+<span id="cb5-5"><a aria-hidden="true" href="#cb5-5" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">Cfun</span>(t)<span class="sc">+</span><span class="fu">rnorm</span>(<span class="fu">length</span>(t),<span class="at">mean=</span><span class="dv">0</span>,<span class="at">sd=</span>.<span class="dv">04</span>)</span>
+<span id="cb5-6"><a aria-hidden="true" href="#cb5-6" tabindex="-1"></a>dt <span class="ot">&lt;-</span> <span class="fu">diff</span>(t)</span>
+<span id="cb5-7"><a aria-hidden="true" href="#cb5-7" tabindex="-1"></a>rate <span class="ot">&lt;-</span> <span class="fu">diff</span>(y)<span class="sc">/</span>dt</span>
+<span id="cb5-8"><a aria-hidden="true" href="#cb5-8" tabindex="-1"></a>truth <span class="ot">&lt;-</span> <span class="sc">-</span>.<span class="dv">25</span><span class="sc">*</span><span class="fu">Cfun</span>(t[<span class="sc">-</span><span class="fu">length</span>(t)])</span>
+<span id="cb5-9"><a aria-hidden="true" href="#cb5-9" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">head</span>(<span class="fu">data.frame</span>(<span class="at">t=</span>t[<span class="sc">-</span><span class="fu">length</span>(t)],<span class="at">observed=</span>rate,<span class="at">model=</span>truth),<span class="dv">12</span>))</span>
+<span id="cb5-10"><a aria-hidden="true" href="#cb5-10" tabindex="-1"></a><span class="fu">plot</span>(t[<span class="sc">-</span><span class="fu">length</span>(t)],rate,<span class="at">type=</span><span class="st">"l"</span>,<span class="at">xlab=</span><span class="st">"time (hours)"</span>,<span class="at">ylab=</span><span class="st">"rate (mg/L/hour)"</span>,<span class="at">main=</span><span class="st">"Noisy rates"</span>)</span>
+<span id="cb5-11"><a aria-hidden="true" href="#cb5-11" tabindex="-1"></a><span class="fu">lines</span>(t[<span class="sc">-</span><span class="fu">length</span>(t)],truth,<span class="at">col=</span><span class="st">"red"</span>,<span class="at">lwd=</span><span class="dv">2</span>)</span>
+<span id="cb5-12"><a aria-hidden="true" href="#cb5-12" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">"bottomright"</span>,<span class="fu">c</span>(<span class="st">"noisy forward differences"</span>,<span class="st">"model rate"</span>),<span class="at">col=</span><span class="fu">c</span>(<span class="st">"black"</span>,<span class="st">"red"</span>),<span class="at">lty=</span><span class="dv">1</span>,<span class="at">bty=</span><span class="st">"n"</span>)</span></code></pre></div></div>
+<h3 class="unnumbered" id="python-code-2">Python code</h3>
+<div class="code-shell"><div class="code-bar"><span>Python</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a aria-hidden="true" href="#cb6-1" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb6-2"><a aria-hidden="true" href="#cb6-2" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb6-3"><a aria-hidden="true" href="#cb6-3" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
+<span id="cb6-4"><a aria-hidden="true" href="#cb6-4" tabindex="-1"></a>Path(<span class="st">"figures"</span>).mkdir(exist_ok<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb6-5"><a aria-hidden="true" href="#cb6-5" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">15</span>)</span>
+<span id="cb6-6"><a aria-hidden="true" href="#cb6-6" tabindex="-1"></a><span class="kw">def</span> C(t): <span class="cf">return</span> <span class="dv">10</span><span class="op">*</span>np.exp(<span class="op">-</span><span class="fl">.25</span><span class="op">*</span>t)</span>
+<span id="cb6-7"><a aria-hidden="true" href="#cb6-7" tabindex="-1"></a>t <span class="op">=</span> np.linspace(<span class="dv">0</span>,<span class="dv">8</span>,<span class="dv">81</span>)</span>
+<span id="cb6-8"><a aria-hidden="true" href="#cb6-8" tabindex="-1"></a>noise <span class="op">=</span> rng.normal(<span class="dv">0</span>,<span class="fl">.04</span>,<span class="bu">len</span>(t))</span>
+<span id="cb6-9"><a aria-hidden="true" href="#cb6-9" tabindex="-1"></a>y <span class="op">=</span> C(t)<span class="op">+</span>noise</span>
+<span id="cb6-10"><a aria-hidden="true" href="#cb6-10" tabindex="-1"></a>dt <span class="op">=</span> t[<span class="dv">1</span>]<span class="op">-</span>t[<span class="dv">0</span>]</span>
+<span id="cb6-11"><a aria-hidden="true" href="#cb6-11" tabindex="-1"></a>rate <span class="op">=</span> np.diff(y)<span class="op">/</span>dt</span>
+<span id="cb6-12"><a aria-hidden="true" href="#cb6-12" tabindex="-1"></a>truth <span class="op">=</span> <span class="op">-</span><span class="fl">.25</span><span class="op">*</span>C(t[:<span class="op">-</span><span class="dv">1</span>])</span>
+<span id="cb6-13"><a aria-hidden="true" href="#cb6-13" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"time, observed forward rate, model instantaneous rate"</span>)</span>
+<span id="cb6-14"><a aria-hidden="true" href="#cb6-14" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>,<span class="bu">len</span>(rate),<span class="dv">10</span>): <span class="bu">print</span>(<span class="bu">round</span>(t[i],<span class="dv">2</span>),<span class="bu">round</span>(rate[i],<span class="dv">4</span>),<span class="bu">round</span>(truth[i],<span class="dv">4</span>))</span>
+<span id="cb6-15"><a aria-hidden="true" href="#cb6-15" tabindex="-1"></a>plt.plot(t[:<span class="op">-</span><span class="dv">1</span>],rate,label<span class="op">=</span><span class="st">"noisy forward differences"</span>)</span>
+<span id="cb6-16"><a aria-hidden="true" href="#cb6-16" tabindex="-1"></a>plt.plot(t[:<span class="op">-</span><span class="dv">1</span>],truth,label<span class="op">=</span><span class="st">"model instantaneous rate"</span>)</span>
+<span id="cb6-17"><a aria-hidden="true" href="#cb6-17" tabindex="-1"></a>plt.xlabel(<span class="st">"time (hours)"</span>)<span class="op">;</span>plt.ylabel(<span class="st">"rate (mg/L/hour)"</span>)</span>
+<span id="cb6-18"><a aria-hidden="true" href="#cb6-18" tabindex="-1"></a>plt.legend()<span class="op">;</span>plt.tight_layout()<span class="op">;</span>plt.savefig(<span class="st">"figures/labC_python.png"</span>,dpi<span class="op">=</span><span class="dv">180</span>)</span>
+<span id="cb6-19"><a aria-hidden="true" href="#cb6-19" tabindex="-1"></a>plt.close()</span></code></pre></div></div>
+<p><strong>Interpretation.</strong> Compare the noiseless theoretical
+slope with forward differences computed from noisy measurements. Discuss
+units and sensitivity.</p>
+<h2 id="extended-applied-workshops-with-worked-solutions">Extended
+applied workshops with worked solutions</h2>
+<h3 class="unnumbered" id="workshop-1-medication-concentration">Workshop
+1: Medication concentration</h3>
+<p><strong>Problem.</strong> A simulated concentration follows <span class="math inline">\(C(t)=20/(1+t)\)</span> mg/L, with <span class="math inline">\(t\)</span> in hours. (a) Find the average change
+from <span class="math inline">\(t=1\)</span> to <span class="math inline">\(t=3\)</span>. (b) Simplify <span class="math inline">\([C(2+h)-C(2)]/h\)</span>. (c) Find its limit as
+<span class="math inline">\(h\to0\)</span>. (d) Interpret the sign and
+units.</p>
+<p><strong>Worked solution.</strong> (a) <span class="math inline">\((5-10)/2=-2.5\)</span> mg/L/h. (b) <span class="math inline">\(-20/[(3+h)3]\)</span> for <span class="math inline">\(h\ne0\)</span> and <span class="math inline">\(h\ne-3\)</span>. (c) <span class="math inline">\(-20/9\)</span> mg/L/h. (d) The model predicts
+decreasing concentration near hour 2.</p>
+<h3 class="unnumbered" id="workshop-2-sensor-calibration">Workshop 2:
+Sensor calibration</h3>
+<p><strong>Problem.</strong> A sensor output is modeled by <span class="math inline">\(S(x)=(x^2-16)/(x-4)\)</span> for <span class="math inline">\(x\ne4\)</span>. (a) Simplify for permitted inputs.
+(b) Find the limit as <span class="math inline">\(x\to4\)</span>. (c)
+What value would fill the hole continuously? (d) Explain why this does
+not prove a real sensor operates at <span class="math inline">\(x=4\)</span>.</p>
+<p><strong>Worked solution.</strong> For <span class="math inline">\(x\ne4\)</span>, <span class="math inline">\(S(x)=x+4\)</span>. The limit is 8. Defining <span class="math inline">\(S(4)=8\)</span> makes the model continuous, but
+the physical operating range must be validated independently.</p>
+<h3 class="unnumbered" id="workshop-3-piecewise-monitoring-threshold">Workshop 3: Piecewise
+monitoring threshold</h3>
+<p><strong>Problem.</strong> A monitoring score uses <span class="math inline">\(M(t)=2t+3\)</span> for <span class="math inline">\(t&lt;5\)</span> and <span class="math inline">\(M(t)=t+c\)</span> for <span class="math inline">\(t\ge5\)</span>. (a) Find <span class="math inline">\(c\)</span> for continuity. (b) Find the average
+rate over <span class="math inline">\([4,6]\)</span> with that value.
+(c) Explain whether a continuous model must have a single tangent slope
+at <span class="math inline">\(5\)</span>.</p>
+<p><strong>Worked solution.</strong> Left limit <span class="math inline">\(13\)</span>, right value <span class="math inline">\(5+c\)</span>, so <span class="math inline">\(c=8\)</span>. Then <span class="math inline">\(M(4)=11\)</span> and <span class="math inline">\(M(6)=14\)</span>, giving <span class="math inline">\(1.5\)</span> score units per time unit. The left
+and right slopes are 2 and 1, so the join is a corner.</p>
+<h3 class="unnumbered" id="workshop-4-quadratic-motion">Workshop 4:
+Quadratic motion</h3>
+<p><strong>Problem.</strong> A simplified position is <span class="math inline">\(s(t)=4t^2-3t\)</span> meters. (a) Compute average
+velocity on <span class="math inline">\([2,2+h]\)</span>. (b) Find the
+limiting velocity. (c) Write the tangent line to the position graph at
+<span class="math inline">\(t=2\)</span>. (d) Explain why this does not
+imply constant velocity.</p>
+<p><strong>Worked solution.</strong> <span class="math inline">\([s(2+h)-s(2)]/h=13+4h\)</span>, so the limit is
+<span class="math inline">\(13\)</span> m/s. Since <span class="math inline">\(s(2)=10\)</span>, the tangent is <span class="math inline">\(s=10+13(t-2)\)</span>. The quadratic model has
+changing slope.</p>
+<h3 class="unnumbered" id="workshop-5-measurement-resolution">Workshop
+5: Measurement resolution</h3>
+<p><strong>Problem.</strong> Two noisy readings each differ from the
+true reading by at most <span class="math inline">\(0.015\)</span>
+units. (a) Bound the worst-case error in a forward-difference rate with
+<span class="math inline">\(\Delta t=0.1\)</span> s. (b) Repeat with
+<span class="math inline">\(\Delta t=0.01\)</span> s. (c) Explain the
+tradeoff between local approximation and noise amplification.</p>
+<p><strong>Worked solution.</strong> Worst-case difference error is
+<span class="math inline">\(0.03\)</span> units, yielding rate errors at
+most <span class="math inline">\(0.3\)</span> units/s and <span class="math inline">\(3\)</span> units/s respectively. Smaller spacing
+improves local approximation for smooth functions but magnifies
+measurement error.</p>
+<h2 id="guided-problem-solving-studio-four-methods-for-estimating-a-rate">Guided
+problem-solving studio: four methods for estimating a rate</h2>
+<p>Consider <span class="math inline">\(f(x)=x^2-2x+4\)</span> at <span class="math inline">\(a=3\)</span>. We will obtain the same local slope
+using four complementary representations.</p>
+<h3 class="unnumbered" id="method-1-a-table-of-nearby-values">Method 1:
+a table of nearby values</h3>
+<p>Evaluate <span class="math inline">\(f(3)=7\)</span>. For <span class="math inline">\(h=0.5,0.1,0.01,-0.01,-0.1,-0.5\)</span>, compute
+<span class="math inline">\([f(3+h)-7]/h\)</span>. The results are <span class="math inline">\(4.5,4.1,4.01,3.99,3.9,3.5\)</span>. Notice that
+the forward and backward estimates bracket <span class="math inline">\(4\)</span>.</p>
+<h3 class="unnumbered" id="method-2-exact-algebra">Method 2: exact
+algebra</h3>
+<p>Expand <span class="math inline">\(f(3+h)=(3+h)^2-2(3+h)+4=7+4h+h^2\)</span>.
+Consequently, for <span class="math inline">\(h\ne0\)</span>, <span class="math display">\[\frac{f(3+h)-f(3)}{h}=\frac{4h+h^2}{h}=4+h.\]</span>
+The expression approaches <span class="math inline">\(4\)</span> as
+<span class="math inline">\(h\to0\)</span>. This algebraic result
+explains the numerical table rather than merely agreeing with it.</p>
+<h3 class="unnumbered" id="method-3-a-graphical-secant">Method 3: a
+graphical secant</h3>
+<p>Plot <span class="math inline">\((3,7)\)</span> and <span class="math inline">\((3+h,f(3+h))\)</span> for <span class="math inline">\(h=1\)</span> and <span class="math inline">\(h=-1\)</span>. The two secants have slopes <span class="math inline">\(5\)</span> and <span class="math inline">\(3\)</span>. As the second point moves toward the
+first, the secant lines approach the line <span class="math inline">\(y-7=4(x-3)\)</span>. Sketch this limiting line and
+check that it passes through <span class="math inline">\((3,7)\)</span>.</p>
+<h3 class="unnumbered" id="method-4-interpretation">Method 4:
+interpretation</h3>
+<p>If <span class="math inline">\(x\)</span> measures hours and <span class="math inline">\(f(x)\)</span> measures a simulated response in
+arbitrary units, the instantaneous rate is <span class="math inline">\(4\)</span> response units per hour at hour 3. This
+local rate is not the same as a long-run average. <strong>Guided
+extension:</strong> Repeat all four methods for <span class="math inline">\(g(x)=2x^2+x\)</span> at <span class="math inline">\(a=1\)</span>. Compare which representation is most
+useful for explanation, estimation, and exact verification.</p>
+<h2 id="visual-investigation-a-limit-can-exist-without-a-function-value">Visual
+investigation: a limit can exist without a function value</h2>
+<p>Consider the rule <span class="math display">\[q(x)=\frac{x^2-1}{x-1},\qquad x\ne1.\]</span></p>
+<ol type="1">
+<li><p>Construct a table at <span class="math inline">\(x=0.9,0.99,0.999,1.001,1.01,1.1\)</span>.</p></li>
+<li><p>Simplify the expression for <span class="math inline">\(x\ne1\)</span>. Explain why <span class="math inline">\(q(1)\)</span> is not defined even though the
+simplified expression <span class="math inline">\(x+1\)</span> has a
+value at <span class="math inline">\(1\)</span>.</p></li>
+<li><p>Sketch the line <span class="math inline">\(y=x+1\)</span> with
+an open circle at <span class="math inline">\((1,2)\)</span>.</p></li>
+<li><p>Define a new function <span class="math inline">\(Q\)</span> by
+assigning <span class="math inline">\(Q(1)=2\)</span> and keeping <span class="math inline">\(Q(x)=q(x)\)</span> elsewhere. Is <span class="math inline">\(Q\)</span> continuous at <span class="math inline">\(1\)</span>?</p></li>
+<li><p>Instead assign <span class="math inline">\(Q(1)=5\)</span>. What
+happens to the limit? What happens to continuity?</p></li>
+</ol>
+<p><strong>Takeaway.</strong> A limit describes nearby behavior and is
+unchanged by altering the value at the target input alone. Continuity
+requires that nearby behavior and the assigned value agree.</p>
+<h2 id="visual-investigation-continuity-versus-smoothness">Visual
+investigation: continuity versus smoothness</h2>
+<p>Three graphs may all pass through the same point but behave
+differently nearby: a smooth parabola, a V-shaped absolute-value graph,
+and a step function. Examine <span class="math inline">\(f(x)=x^2\)</span>, <span class="math inline">\(g(x)=|x|\)</span>, and <span class="math inline">\(h(x)=0\)</span> for <span class="math inline">\(x&lt;0\)</span> and <span class="math inline">\(h(x)=1\)</span> for <span class="math inline">\(x\ge0\)</span>.</p>
+<ol type="1">
+<li><p>Find the left and right limits at <span class="math inline">\(x=0\)</span> for all three functions.</p></li>
+<li><p>Determine which functions are continuous at <span class="math inline">\(0\)</span>.</p></li>
+<li><p>Calculate the left and right difference-quotient limits for <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span> at <span class="math inline">\(0\)</span>.</p></li>
+<li><p>Explain why a corner can be continuous without having a single
+tangent slope.</p></li>
+<li><p>Give an applied scenario where a jump is reasonable and another
+where a jump would suggest a poor model.</p></li>
+</ol>
+<p><strong>Worked synthesis.</strong> For <span class="math inline">\(f\)</span>, both one-sided difference-quotient
+limits are <span class="math inline">\(0\)</span>. For <span class="math inline">\(g\)</span>, they are <span class="math inline">\(-1\)</span> and <span class="math inline">\(1\)</span>. For <span class="math inline">\(h\)</span>, the left and right function limits are
+<span class="math inline">\(0\)</span> and <span class="math inline">\(1\)</span>, so there is no two-sided limit at
+zero. These distinctions prepare students for the formal definition of
+differentiability.</p>
+<h2 id="practice-with-feedback-identify-the-mathematical-mistake">Practice
+with feedback: identify the mathematical mistake</h2>
+<ol type="1">
+<li><p>A student writes <span class="math inline">\(\lim_{x\to2}(x^2-4)/(x-2)=0/0=0\)</span>.
+<strong>Correction:</strong> <span class="math inline">\(0/0\)</span> is
+indeterminate; factor to obtain a limit of <span class="math inline">\(4\)</span>.</p></li>
+<li><p>A student cancels <span class="math inline">\(h\)</span> in a
+difference quotient and concludes the original quotient is defined at
+<span class="math inline">\(h=0\)</span>. <strong>Correction:</strong>
+the simplified formula agrees only for nonzero <span class="math inline">\(h\)</span>; a limit can still exist.</p></li>
+<li><p>A student claims a graph approaching <span class="math inline">\(3\)</span> from the left and <span class="math inline">\(5\)</span> from the right has limit <span class="math inline">\(4\)</span>. <strong>Correction:</strong> the
+one-sided limits differ, so no two-sided limit exists.</p></li>
+<li><p>A student says a continuous function must have a tangent line at
+every point. <strong>Correction:</strong> <span class="math inline">\(|x|\)</span> is continuous at zero but has a
+corner.</p></li>
+<li><p>A student interprets a rate of <span class="math inline">\(-2\)</span> mg/L/h as a negative concentration.
+<strong>Correction:</strong> a negative rate means the concentration is
+decreasing; it says nothing by itself about the concentration’s
+sign.</p></li>
+<li><p>A student computes a noisy difference quotient using a very small
+time gap and assumes the result is automatically more accurate.
+<strong>Correction:</strong> small denominators amplify measurement
+noise; resolution and uncertainty matter.</p></li>
+</ol>
+<h2 id="chapter-review-conceptual-algebraic-and-applied-exercises">Chapter
+review: conceptual, algebraic, and applied exercises</h2>
+<p><strong>Instructions.</strong> Show reasoning, identify excluded
+inputs, and report units in applications. For numerical estimates,
+compare both sides of the target input.</p>
+<ol type="1">
+<li><p>Find the average rate of <span class="math inline">\(f(x)=3x+7\)</span> on <span class="math inline">\([1,5]\)</span>.</p></li>
+<li><p>Find the average rate of <span class="math inline">\(f(x)=x^2\)</span> on <span class="math inline">\([-2,1]\)</span>.</p></li>
+<li><p>Write the secant line to <span class="math inline">\(y=x^2+1\)</span> through inputs <span class="math inline">\(1\)</span> and <span class="math inline">\(4\)</span>.</p></li>
+<li><p>Simplify the difference quotient for <span class="math inline">\(f(x)=x^2-4x\)</span>.</p></li>
+<li><p>Simplify the difference quotient for <span class="math inline">\(f(x)=5x^2+2\)</span>.</p></li>
+<li><p>Simplify the difference quotient for <span class="math inline">\(f(x)=1/x\)</span> at <span class="math inline">\(a=3\)</span>.</p></li>
+<li><p>Find the limiting slope of <span class="math inline">\(f(x)=x^2\)</span> at <span class="math inline">\(a=-1\)</span>.</p></li>
+<li><p>Find the tangent line to <span class="math inline">\(f(x)=x^2+2x\)</span> at <span class="math inline">\(a=1\)</span>.</p></li>
+<li><p>Evaluate <span class="math inline">\(\lim_{x\to3}(2x^2-x)\)</span>.</p></li>
+<li><p>Evaluate <span class="math inline">\(\lim_{x\to-1}(x^2+3)/(x-2)\)</span>.</p></li>
+<li><p>Evaluate <span class="math inline">\(\lim_{x\to2}(x^2-4)/(x-2)\)</span>.</p></li>
+<li><p>Evaluate <span class="math inline">\(\lim_{x\to-3}(x^2+5x+6)/(x+3)\)</span>.</p></li>
+<li><p>Evaluate <span class="math inline">\(\lim_{h\to0}(\sqrt{16+h}-4)/h\)</span>.</p></li>
+<li><p>Evaluate <span class="math inline">\(\lim_{x\to1}(\sqrt{x+3}-2)/(x-1)\)</span>.</p></li>
+<li><p>Explain why <span class="math inline">\(0/0\)</span> is not a
+limit value.</p></li>
+<li><p>Find left and right limits of <span class="math inline">\(1/(x-1)\)</span> at <span class="math inline">\(x=1\)</span>.</p></li>
+<li><p>Find the horizontal asymptote of <span class="math inline">\(f(x)=4+2/x\)</span>.</p></li>
+<li><p>Determine whether <span class="math inline">\(f(x)=|x|\)</span>
+has a finite tangent slope at <span class="math inline">\(0\)</span>.</p></li>
+<li><p>Choose <span class="math inline">\(c\)</span> for continuity of
+<span class="math inline">\(f(x)=x+2\)</span> for <span class="math inline">\(x&lt;3\)</span>, <span class="math inline">\(f(x)=2x+c\)</span> for <span class="math inline">\(x\ge3\)</span>.</p></li>
+<li><p>Give an example of a removable discontinuity.</p></li>
+<li><p>Give an example of a jump discontinuity.</p></li>
+<li><p>Explain why a graph cannot prove a limit exists.</p></li>
+<li><p>Explain the distinction between a limit and a function
+value.</p></li>
+<li><p>Find the average velocity of <span class="math inline">\(s(t)=2t^2\)</span> on <span class="math inline">\([1,4]\)</span>.</p></li>
+<li><p>Estimate the instantaneous velocity of <span class="math inline">\(s(t)=t^2+5t\)</span> at <span class="math inline">\(t=2\)</span>.</p></li>
+<li><p>For <span class="math inline">\(C(t)=8e^{-0.2t}\)</span>, find
+the long-run limit and interpret.</p></li>
+<li><p>Bound the rate error if two measurements have errors at most
+<span class="math inline">\(0.01\)</span> and <span class="math inline">\(\Delta t=0.02\)</span>.</p></li>
+<li><p>Compare forward and backward secant slopes for <span class="math inline">\(f(x)=x^2\)</span> at <span class="math inline">\(a=2\)</span>.</p></li>
+<li><p>Explain why continuity does not guarantee
+differentiability.</p></li>
+<li><p>Describe the units of <span class="math inline">\([f(t+h)-f(t)]/h\)</span> if <span class="math inline">\(f\)</span> measures mg/L and <span class="math inline">\(t\)</span> measures hours.</p></li>
+<li><p>Construct a piecewise function continuous at <span class="math inline">\(x=1\)</span> with different left and right
+slopes.</p></li>
+<li><p>Compute <span class="math inline">\(\lim_{h\to0}[(a+h)^2-a^2]/h\)</span> for arbitrary
+<span class="math inline">\(a\)</span>.</p></li>
+<li><p>Explain why <span class="math inline">\(h=0\)</span> is excluded
+from a difference quotient.</p></li>
+<li><p>For <span class="math inline">\(f(x)=1/(x+2)\)</span>, list its
+domain and vertical asymptote.</p></li>
+<li><p>Design a table to estimate <span class="math inline">\(\lim_{x\to0}(\sin x)/x\)</span> in
+radians.</p></li>
+</ol>
+<h2 id="calculus-readiness-checkpoint">Calculus-readiness
+checkpoint</h2>
+<ol type="1">
+<li><p>Explain in words what <span class="math inline">\(\lim_{h\to0}[f(a+h)-f(a)]/h\)</span>
+measures.</p></li>
+<li><p>Compute this limit for <span class="math inline">\(f(x)=x^2+4x\)</span> at <span class="math inline">\(a=2\)</span>.</p></li>
+<li><p>Distinguish a secant line, a tangent line, and a vertical
+asymptote.</p></li>
+<li><p>Explain how one-sided limits diagnose a jump
+discontinuity.</p></li>
+<li><p>Describe why numerical evidence must be checked against algebraic
+structure.</p></li>
+</ol>
+<h2 id="extended-application-estimating-instantaneous-velocity">Extended
+application: Estimating instantaneous velocity</h2>
+<p>A cart follows the idealized position law <span class="math inline">\(s(t)=2t^2+3t\)</span> meters. Estimate its
+velocity at time 2 using a nonzero time increment. The quantities in
+this investigation are illustrative rather than measured
+observations.</p>
+<h3 id="formulating-the-mathematical-model">Formulating the mathematical
+model</h3>
+<p>The proposed relationship is <span class="math display">\[Q(h)=11+2h.\]</span> Before calculating, identify
+the input and output, their units, and the interval on which the model
+is being studied. Distinguish the mathematical domain from the practical
+domain. The numerical study uses inputs from <span class="math inline">\(-1\)</span> to <span class="math inline">\(1\)</span>.</p>
+<blockquote class="example">
+<p><strong>Example 1: Analytical investigation.</strong> Derive <span class="math inline">\(Q(h)\)</span> from the difference quotient for
+<span class="math inline">\(h\ne0\)</span>. Find the limit and explain
+the meaning of the missing input.</p>
+</blockquote>
+<blockquote class="solution">
+<p><strong>Worked solution.</strong> Expansion gives <span class="math inline">\([s(2+h)-s(2)]/h=11+2h\)</span>. Limit is 11 m/s;
+the original quotient is undefined at zero.</p>
+</blockquote>
+<h3 id="connecting-numerical-and-graphical-representations">Connecting
+numerical and graphical representations</h3>
+<table>
+<caption>Selected predictions from the illustrative model. Values are
+rounded for display.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Increment (s)</th>
+<th style="text-align: right;">Secant velocity (m/s)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">-1</td>
+<td style="text-align: right;">9</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">-0.5</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">11</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">0.5</td>
+<td style="text-align: right;">12</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">13</td>
+</tr>
+</tbody>
+</table>
+<figure>
+<img alt="Model predictions over the stated investigation interval. The graph represents a mathematical model, not observed data." src="figures/ch15/applied_project.svg" style="width:90.0%"/>
+<figcaption aria-hidden="true">Model predictions over the stated
+investigation interval. The graph represents a mathematical model, not
+observed data.</figcaption>
+</figure>
+<p><strong>Interpretation.</strong> Compare the tabulated values with
+the graph. Identify the intervals over which the output increases or
+decreases, and distinguish a sampled extremum from an exact analytical
+extremum. Explain whether interpolation and extrapolation have the same
+justification in this setting.</p>
+<h3 id="r-implementation">R implementation</h3>
+<p>The following standalone script defines the model, generates
+predictions, and draws a labeled graph. Read the formula before running
+the code. The sampled range is a numerical diagnostic, not a proof of
+the exact range.</p>
+<div class="code-shell"><div class="code-bar"><span>R</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a aria-hidden="true" href="#cb7-1" tabindex="-1"></a><span class="co"># Applied investigation: Estimating instantaneous velocity</span></span>
+<span id="cb7-2"><a aria-hidden="true" href="#cb7-2" tabindex="-1"></a><span class="co"># 1. Define the input domain and model</span></span>
+<span id="cb7-3"><a aria-hidden="true" href="#cb7-3" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span>, <span class="at">length.out =</span> <span class="dv">301</span>)</span>
+<span id="cb7-4"><a aria-hidden="true" href="#cb7-4" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">11</span><span class="sc">+</span><span class="dv">2</span><span class="sc">*</span>x</span>
+<span id="cb7-5"><a aria-hidden="true" href="#cb7-5" tabindex="-1"></a></span>
+<span id="cb7-6"><a aria-hidden="true" href="#cb7-6" tabindex="-1"></a><span class="co"># 2. Inspect numerical predictions</span></span>
+<span id="cb7-7"><a aria-hidden="true" href="#cb7-7" tabindex="-1"></a>idx <span class="ot">&lt;-</span> <span class="fu">unique</span>(<span class="fu">round</span>(<span class="fu">seq</span>(<span class="dv">1</span>, <span class="fu">length</span>(x), <span class="at">length.out =</span> <span class="dv">5</span>)))</span>
+<span id="cb7-8"><a aria-hidden="true" href="#cb7-8" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">data.frame</span>(<span class="at">input =</span> x[idx], <span class="at">output =</span> y[idx]))</span>
+<span id="cb7-9"><a aria-hidden="true" href="#cb7-9" tabindex="-1"></a></span>
+<span id="cb7-10"><a aria-hidden="true" href="#cb7-10" tabindex="-1"></a><span class="co"># 3. Visualize the model with labeled axes</span></span>
+<span id="cb7-11"><a aria-hidden="true" href="#cb7-11" tabindex="-1"></a><span class="fu">plot</span>(x, y, <span class="at">type =</span> <span class="st">"l"</span>, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">"#176B87"</span>,</span>
+<span id="cb7-12"><a aria-hidden="true" href="#cb7-12" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Increment (s)"</span>, <span class="at">ylab =</span> <span class="st">"Secant velocity (m/s)"</span>)</span>
+<span id="cb7-13"><a aria-hidden="true" href="#cb7-13" tabindex="-1"></a><span class="fu">grid</span>()</span>
+<span id="cb7-14"><a aria-hidden="true" href="#cb7-14" tabindex="-1"></a></span>
+<span id="cb7-15"><a aria-hidden="true" href="#cb7-15" tabindex="-1"></a><span class="co"># 4. Check the sampled output range</span></span>
+<span id="cb7-16"><a aria-hidden="true" href="#cb7-16" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">range</span>(y))</span></code></pre></div></div>
+<h3 id="python-implementation">Python implementation</h3>
+<p>Repeat the same investigation using NumPy arrays and Matplotlib.
+Compare the printed predictions with the R output, allowing for
+rounding.</p>
+<div class="code-shell"><div class="code-bar"><span>Python</span><button class="copy" type="button">Copy code</button></div><div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a aria-hidden="true" href="#cb8-1" tabindex="-1"></a><span class="co"># Applied investigation: Estimating instantaneous velocity</span></span>
+<span id="cb8-2"><a aria-hidden="true" href="#cb8-2" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb8-3"><a aria-hidden="true" href="#cb8-3" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb8-4"><a aria-hidden="true" href="#cb8-4" tabindex="-1"></a></span>
+<span id="cb8-5"><a aria-hidden="true" href="#cb8-5" tabindex="-1"></a><span class="co"># 1. Define the input domain and model</span></span>
+<span id="cb8-6"><a aria-hidden="true" href="#cb8-6" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">301</span>)</span>
+<span id="cb8-7"><a aria-hidden="true" href="#cb8-7" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">11</span><span class="op">+</span><span class="dv">2</span><span class="op">*</span>x</span>
+<span id="cb8-8"><a aria-hidden="true" href="#cb8-8" tabindex="-1"></a></span>
+<span id="cb8-9"><a aria-hidden="true" href="#cb8-9" tabindex="-1"></a><span class="co"># 2. Inspect numerical predictions</span></span>
+<span id="cb8-10"><a aria-hidden="true" href="#cb8-10" tabindex="-1"></a>idx <span class="op">=</span> np.unique(np.linspace(<span class="dv">0</span>, <span class="bu">len</span>(x)<span class="op">-</span><span class="dv">1</span>, <span class="dv">5</span>).<span class="bu">round</span>().astype(<span class="bu">int</span>))</span>
+<span id="cb8-11"><a aria-hidden="true" href="#cb8-11" tabindex="-1"></a><span class="bu">print</span>(np.column_stack((x[idx], y[idx])))</span>
+<span id="cb8-12"><a aria-hidden="true" href="#cb8-12" tabindex="-1"></a></span>
+<span id="cb8-13"><a aria-hidden="true" href="#cb8-13" tabindex="-1"></a><span class="co"># 3. Visualize the model with labeled axes</span></span>
+<span id="cb8-14"><a aria-hidden="true" href="#cb8-14" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="fl">3.6</span>))</span>
+<span id="cb8-15"><a aria-hidden="true" href="#cb8-15" tabindex="-1"></a>ax.plot(x, y, <span class="st">"-"</span>, color<span class="op">=</span><span class="st">"#176B87"</span>, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb8-16"><a aria-hidden="true" href="#cb8-16" tabindex="-1"></a>ax.<span class="bu">set</span>(xlabel<span class="op">=</span><span class="st">"Increment (s)"</span>, ylabel<span class="op">=</span><span class="st">"Secant velocity (m/s)"</span>)</span>
+<span id="cb8-17"><a aria-hidden="true" href="#cb8-17" tabindex="-1"></a>ax.grid(alpha<span class="op">=</span><span class="fl">0.22</span>)</span>
+<span id="cb8-18"><a aria-hidden="true" href="#cb8-18" tabindex="-1"></a>ax.spines[[<span class="st">"top"</span>, <span class="st">"right"</span>]].set_visible(<span class="va">False</span>)</span>
+<span id="cb8-19"><a aria-hidden="true" href="#cb8-19" tabindex="-1"></a>fig.tight_layout()</span>
+<span id="cb8-20"><a aria-hidden="true" href="#cb8-20" tabindex="-1"></a>plt.show()</span>
+<span id="cb8-21"><a aria-hidden="true" href="#cb8-21" tabindex="-1"></a></span>
+<span id="cb8-22"><a aria-hidden="true" href="#cb8-22" tabindex="-1"></a><span class="co"># 4. Check the sampled output range</span></span>
+<span id="cb8-23"><a aria-hidden="true" href="#cb8-23" tabindex="-1"></a><span class="bu">print</span>(np.<span class="bu">min</span>(y), np.<span class="bu">max</span>(y))</span></code></pre></div></div>
+<h3 id="guided-practice-checking-the-model">Guided practice: checking
+the model</h3>
+<ol type="1">
+<li><p>Calculate the outputs at the two endpoints by hand. Compare them
+with the numerical table.</p></li>
+<li><p>Select an interior input not listed in the table. Predict the
+output before evaluating it in either language.</p></li>
+<li><p>Explain the meaning of the difference between the two endpoint
+outputs, including units. If appropriate, calculate the average rate of
+change.</p></li>
+<li><p>Identify a physical assumption of the model and describe a
+circumstance in which it would fail.</p></li>
+</ol>
+<h2 id="chapter-project-investigating-estimating-instantaneous-velocity">Chapter
+project: investigating Estimating instantaneous velocity</h2>
+<p>Prepare a short technical report for a reader who has not studied the
+model. Use the preceding case as a starting point, but develop your own
+investigation rather than merely reproducing the worked example.</p>
+<ol type="1">
+<li><p>State a quantitative question that can be answered using the
+model. Define all variables, units, and restrictions.</p></li>
+<li><p>Modify one meaningful numerical parameter in the formula. Explain
+what the change represents in the original context. Derive the revised
+formula and predict the direction of change before computing.</p></li>
+<li><p>Compare the original and revised models at five common admissible
+inputs. Present a labeled table and explain the largest difference in
+the table.</p></li>
+<li><p>Produce a graph containing both models on the same axes. Use a
+legend and distinguish the curves with line styles or markers. Explain
+the shape and any intersections.</p></li>
+<li><p>Solve your quantitative question algebraically where possible.
+Verify the result using R and Python; report any differences due to
+numerical precision.</p></li>
+<li><p>Discuss at least two limitations. Describe what measurements
+would be needed to assess the model in practice. Do not present
+simulated predictions as empirical evidence.</p></li>
+</ol>
+<h3 class="unnumbered" id="project-deliverables-and-assessment">Project
+deliverables and assessment</h3>
+<p>Submit a two- to three-page report, the two runnable scripts, and the
+labeled figure. The report should stand on its own without requiring the
+reader to inspect the code.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Criterion</th>
+<th style="text-align: right;">Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Mathematical formulation and domain</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Analytical reasoning and verification</td>
+<td style="text-align: right;">25</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Reproducible R and Python
+computations</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Graph and table quality</td>
+<td style="text-align: right;">15</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Interpretation and limitations</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Total</td>
+<td style="text-align: right;">100</td>
+</tr>
+</tbody>
+</table>
+<h2 class="unnumbered" id="chapter-summary">Chapter summary</h2>
+<p>The transition to calculus begins with a precise question about
+change. Secant slopes quantify average change; difference quotients
+prepare a limiting process; tangent slopes capture local change when the
+limit exists. Limits describe behavior near an input, and continuity
+compares that behavior with the assigned function value. Mathematical
+modeling adds domain, units, uncertainty, and interpretation to these
+ideas.</p>
+<h2>Companion scripts</h2><p><a download="" href="code/ch15/applied_project.R">applied_project.R</a></p><p><a download="" href="code/ch15/applied_project.py">applied_project.py</a></p><p><a download="" href="code/ch15/labA.R">labA.R</a></p><p><a download="" href="code/ch15/labA.py">labA.py</a></p><p><a download="" href="code/ch15/labB.R">labB.R</a></p><p><a download="" href="code/ch15/labB.py">labB.py</a></p><p><a download="" href="code/ch15/labC.R">labC.R</a></p><p><a download="" href="code/ch15/labC.py">labC.py</a></p><footer><a href="chapter14.html">← Previous</a><a href="chapter16.html">Next →</a></footer><section class="investigation"><h2 id="interactive-investigation">Interactive investigation: Secant approaching a tangent</h2><div data-investigation="15"><p>Enable JavaScript to explore the model.</p></div><p><strong>Explore and explain:</strong> Reduce h and compare the secant slope with 2a.</p></section>
+</main><nav aria-label="On this page" class="chapter-toc" id="TOC" role="doc-toc"><strong>On this page</strong>
+<ul>
+<li><a href="#rates-of-change-difference-quotients-and-limits" id="toc-rates-of-change-difference-quotients-and-limits">Rates of
+Change, Difference Quotients, and Limits</a>
+<ul>
+<li><a href="#opening-context-from-patterns-to-instantaneous-change" id="toc-opening-context-from-patterns-to-instantaneous-change">Opening
+context: from patterns to instantaneous change</a></li>
+<li><a href="#learning-outcomes" id="toc-learning-outcomes">Learning
+outcomes</a></li>
+<li><a href="#how-to-use-the-computational-laboratories" id="toc-how-to-use-the-computational-laboratories">How to use the
+computational laboratories</a></li>
+<li><a href="#why-rates-of-change-matter" id="toc-why-rates-of-change-matter">Why rates of change matter</a></li>
+<li><a href="#secant-lines-and-average-rates" id="toc-secant-lines-and-average-rates">Secant lines and average
+rates</a></li>
+<li><a href="#the-difference-quotient" id="toc-the-difference-quotient">The difference quotient</a></li>
+<li><a href="#difference-quotients-for-rational-functions" id="toc-difference-quotients-for-rational-functions">Difference
+quotients for rational functions</a></li>
+<li><a href="#numerical-estimates-of-instantaneous-change" id="toc-numerical-estimates-of-instantaneous-change">Numerical estimates
+of instantaneous change</a></li>
+<li><a href="#tangent-lines-as-limiting-secants" id="toc-tangent-lines-as-limiting-secants">Tangent lines as limiting
+secants</a></li>
+<li><a href="#the-intuitive-idea-of-a-limit" id="toc-the-intuitive-idea-of-a-limit">The intuitive idea of a
+limit</a></li>
+<li><a href="#one-sided-limits" id="toc-one-sided-limits">One-sided
+limits</a></li>
+<li><a href="#limit-laws-and-direct-substitution" id="toc-limit-laws-and-direct-substitution">Limit laws and direct
+substitution</a></li>
+<li><a href="#indeterminate-forms-and-factoring" id="toc-indeterminate-forms-and-factoring">Indeterminate forms and
+factoring</a></li>
+<li><a href="#rationalization-and-radical-limits" id="toc-rationalization-and-radical-limits">Rationalization and radical
+limits</a></li>
+<li><a href="#infinite-behavior-and-asymptotes" id="toc-infinite-behavior-and-asymptotes">Infinite behavior and
+asymptotes</a></li>
+<li><a href="#continuity-at-a-point" id="toc-continuity-at-a-point">Continuity at a point</a></li>
+<li><a href="#absolute-value-and-corners" id="toc-absolute-value-and-corners">Absolute value and corners</a></li>
+<li><a href="#piecewise-models-and-threshold-decisions" id="toc-piecewise-models-and-threshold-decisions">Piecewise models and
+threshold decisions</a></li>
+<li><a href="#average-versus-instantaneous-velocity" id="toc-average-versus-instantaneous-velocity">Average versus
+instantaneous velocity</a></li>
+<li><a href="#measurement-noise-and-numerical-differentiation" id="toc-measurement-noise-and-numerical-differentiation">Measurement
+noise and numerical differentiation</a></li>
+<li><a href="#limits-and-model-interpretation" id="toc-limits-and-model-interpretation">Limits and model
+interpretation</a></li>
+<li><a href="#a-preview-of-the-derivative" id="toc-a-preview-of-the-derivative">A preview of the
+derivative</a></li>
+<li><a href="#visual-gallery-secants-tangents-and-removable-discontinuities" id="toc-visual-gallery-secants-tangents-and-removable-discontinuities">Visual
+gallery: secants, tangents, and removable discontinuities</a></li>
+<li><a href="#computational-laboratory-a-secant-slopes-and-tangent-estimates" id="toc-computational-laboratory-a-secant-slopes-and-tangent-estimates">Computational
+laboratory A: secant slopes and tangent estimates</a>
+<ul>
+<li><a href="#r-code" id="toc-r-code">R code</a></li>
+<li><a href="#python-code" id="toc-python-code">Python code</a></li>
+</ul></li>
+<li><a href="#computational-laboratory-b-one-sided-limits-and-continuity" id="toc-computational-laboratory-b-one-sided-limits-and-continuity">Computational
+laboratory B: one-sided limits and continuity</a>
+<ul>
+<li><a href="#r-code-1" id="toc-r-code-1">R code</a></li>
+<li><a href="#python-code-1" id="toc-python-code-1">Python code</a></li>
+</ul></li>
+<li><a href="#computational-laboratory-c-noisy-measurement-rates" id="toc-computational-laboratory-c-noisy-measurement-rates">Computational
+laboratory C: noisy measurement rates</a>
+<ul>
+<li><a href="#r-code-2" id="toc-r-code-2">R code</a></li>
+<li><a href="#python-code-2" id="toc-python-code-2">Python code</a></li>
+</ul></li>
+<li><a href="#extended-applied-workshops-with-worked-solutions" id="toc-extended-applied-workshops-with-worked-solutions">Extended
+applied workshops with worked solutions</a>
+<ul>
+<li><a href="#workshop-1-medication-concentration" id="toc-workshop-1-medication-concentration">Workshop 1: Medication
+concentration</a></li>
+<li><a href="#workshop-2-sensor-calibration" id="toc-workshop-2-sensor-calibration">Workshop 2: Sensor
+calibration</a></li>
+<li><a href="#workshop-3-piecewise-monitoring-threshold" id="toc-workshop-3-piecewise-monitoring-threshold">Workshop 3: Piecewise
+monitoring threshold</a></li>
+<li><a href="#workshop-4-quadratic-motion" id="toc-workshop-4-quadratic-motion">Workshop 4: Quadratic
+motion</a></li>
+<li><a href="#workshop-5-measurement-resolution" id="toc-workshop-5-measurement-resolution">Workshop 5: Measurement
+resolution</a></li>
+</ul></li>
+<li><a href="#guided-problem-solving-studio-four-methods-for-estimating-a-rate" id="toc-guided-problem-solving-studio-four-methods-for-estimating-a-rate">Guided
+problem-solving studio: four methods for estimating a rate</a>
+<ul>
+<li><a href="#method-1-a-table-of-nearby-values" id="toc-method-1-a-table-of-nearby-values">Method 1: a table of nearby
+values</a></li>
+<li><a href="#method-2-exact-algebra" id="toc-method-2-exact-algebra">Method 2: exact algebra</a></li>
+<li><a href="#method-3-a-graphical-secant" id="toc-method-3-a-graphical-secant">Method 3: a graphical
+secant</a></li>
+<li><a href="#method-4-interpretation" id="toc-method-4-interpretation">Method 4: interpretation</a></li>
+</ul></li>
+<li><a href="#visual-investigation-a-limit-can-exist-without-a-function-value" id="toc-visual-investigation-a-limit-can-exist-without-a-function-value">Visual
+investigation: a limit can exist without a function value</a></li>
+<li><a href="#visual-investigation-continuity-versus-smoothness" id="toc-visual-investigation-continuity-versus-smoothness">Visual
+investigation: continuity versus smoothness</a></li>
+<li><a href="#practice-with-feedback-identify-the-mathematical-mistake" id="toc-practice-with-feedback-identify-the-mathematical-mistake">Practice
+with feedback: identify the mathematical mistake</a></li>
+<li><a href="#chapter-review-conceptual-algebraic-and-applied-exercises" id="toc-chapter-review-conceptual-algebraic-and-applied-exercises">Chapter
+review: conceptual, algebraic, and applied exercises</a></li>
+<li><a href="#calculus-readiness-checkpoint" id="toc-calculus-readiness-checkpoint">Calculus-readiness
+checkpoint</a></li>
+<li><a href="#extended-application-estimating-instantaneous-velocity" id="toc-extended-application-estimating-instantaneous-velocity">Extended
+application: Estimating instantaneous velocity</a>
+<ul>
+<li><a href="#formulating-the-mathematical-model" id="toc-formulating-the-mathematical-model">Formulating the mathematical
+model</a></li>
+<li><a href="#connecting-numerical-and-graphical-representations" id="toc-connecting-numerical-and-graphical-representations">Connecting
+numerical and graphical representations</a></li>
+<li><a href="#r-implementation" id="toc-r-implementation">R
+implementation</a></li>
+<li><a href="#python-implementation" id="toc-python-implementation">Python implementation</a></li>
+<li><a href="#guided-practice-checking-the-model" id="toc-guided-practice-checking-the-model">Guided practice: checking
+the model</a></li>
+</ul></li>
+<li><a href="#chapter-project-investigating-estimating-instantaneous-velocity" id="toc-chapter-project-investigating-estimating-instantaneous-velocity">Chapter
+project: investigating Estimating instantaneous velocity</a>
+<ul>
+<li><a href="#project-deliverables-and-assessment" id="toc-project-deliverables-and-assessment">Project deliverables and
+assessment</a></li>
+</ul></li>
+<li><a href="#chapter-summary" id="toc-chapter-summary">Chapter
+summary</a></li>
+</ul></li>
+</ul>
+</nav></div><script src="investigations.js"></script></body></html>
