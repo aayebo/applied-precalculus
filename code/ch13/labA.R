@@ -1,0 +1,8 @@
+t <- seq(0, 2*pi, length.out=400)
+par(mfrow=c(1,2))
+plot(3*cos(t), 2*sin(t), type="l", asp=1, xlab="x", ylab="y", main="Ellipse")
+u <- seq(-1.4,1.4,length.out=300)
+plot(c(2*cosh(u),-2*cosh(u)), c(3*sinh(u),3*sinh(u)), type="n", asp=1, xlab="x", ylab="y", main="Hyperbola")
+lines(2*cosh(u),3*sinh(u),col="blue"); lines(-2*cosh(u),3*sinh(u),col="red")
+abline(a=0,b=1.5,lty=2);abline(a=0,b=-1.5,lty=2)
+par(mfrow=c(1,1))

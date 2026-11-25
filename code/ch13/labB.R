@@ -1,0 +1,7 @@
+t <- seq(0,2*pi,length.out=400)
+x <- 3*cos(t); y <- 2*sin(t)
+plot(x,y,type="l",asp=1,xlab="x",ylab="y",main="Parameterized ellipse")
+points(x[1],y[1],pch=19,col="red")
+idx <- c(1,101,201,301)
+arrows(x[idx],y[idx],x[idx+4],y[idx+4],length=0.12,col="blue")
+cat("Start:",x[1],y[1],"\n")

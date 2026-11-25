@@ -1,0 +1,21 @@
+import numpy as np
+import matplotlib.pyplot as plt
+t = np.arange(6,dtype=float)
+y = np.array([19.8,15.0,11.7,8.7,6.8,5.2])
+b, a = np.polyfit(t,y,1)
+k, logA = np.polyfit(t,np.log(y),1)
+linear = a+b*t
+expo = np.exp(logA+k*t)
+rmse = lambda z: np.sqrt(np.mean((y-z)**2))
+print(f"Linear RMSE={rmse(linear):.4f}")
+print(f"Exponential A={np.exp(logA):.4f}, k={k:.4f}, RMSE={rmse(expo):.4f}")
+plt.figure(figsize=(7,4))
+plt.scatter(t,y,label="Observations")
+plt.plot(t,linear,label="Linear fit")
+plt.plot(t,expo,label="Exponential fit")
+plt.xlabel("Time (hours)")
+plt.ylabel("Measurement (units)")
+plt.legend()
+plt.tight_layout()
+plt.savefig("figures/labB_python.png",dpi=170)
+plt.close()
